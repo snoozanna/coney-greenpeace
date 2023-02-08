@@ -474,7 +474,7 @@ setup.checkForRepeats = (array,element) => {
   </div>
   <div class="nav-wrapper">
     <div class="nav-item logo">
-          <img src="./assets/img/triangles-08.png"
+          <img src="./assets/img/triangles-08.png">
     </div>
   </div></footer>
 
