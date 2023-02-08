@@ -645,7 +645,7 @@ You have two options:
       <<set $codeword to $codeword.toUpperCase()>>
       /% CODEWORD CORRECT %/
       <<if $codeword isnot "" and $codeword is "EXTRACTION">>
-      <<replace "#coderesult">><h2 class="subtitle">CORRECT</h2><</replace>>
+      <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
       <<timed 3s>><<set $prevpass to $passage>><<goto "mod1intro">><</timed>>
       <</if>>
         /% CODEWORD INCORRECT %/
