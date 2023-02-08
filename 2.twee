@@ -1,0 +1,684 @@
+:: StoryTitle
+Greenpeace Session Two
+
+
+:: StoryData
+{
+	"ifid": "F9E39354-F641-4070-8B45-C314A3FDC8C8",
+	"format": "SugarCube",
+	"format-version": "2.36.1",
+	"start": "landing",
+	"zoom": 0.6
+}
+
+
+:: Story Stylesheet [stylesheet]
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
+@import url("./styles/generics.css");
+
+
+/* GET RID OF TWINE STYLES */
+
+#story{
+  margin:0;
+}
+
+#passages {
+	max-width: 100%;
+
+}
+
+#story a.link-external:after {
+	content: "";
+}
+
+button{
+    background-color: transparent;
+    border: #fff 1px solid;
+    border-radius: 3px;
+}
+
+button:hover{
+	background-color:#cf1b98;
+	border: #fff 1px solid;
+	color: #fff;
+}
+
+a {
+  color: #f2647d;
+}
+
+a:active {
+  background-color: #f2647d;
+}
+
+a:hover {
+  color: #fff;
+}
+
+#story a.link-external:after {
+	content: "";
+}
+
+#story {
+	margin: 0
+}
+
+/* GENERAL STYLES */
+body{
+  font-size: 1.6rem;
+  font-family: "Space Grotesk";
+  overflow:scroll;
+  background:#000;
+  /* padding: 1.5rem */
+  display:flex;
+  flex-direction: column
+}
+
+header{
+  display:flex;
+  justify-content: flex-end;
+  align-items: center;
+    padding: 2rem
+}
+
+main{
+   padding: 2rem;
+   margin-block-end: 4rem
+}
+
+footer{
+   display:flex;
+  justify-content: space-between;
+  align-items: flex-end; 
+  position:fixed;
+  bottom: 0;
+  padding: 2rem;
+  width: 100%;
+  background-color: #000
+}
+
+nav{
+  display:flex;
+    justify-content: space-between;
+}
+
+.nav-wrapper{
+display:flex;
+  flex-direction:column;
+align-items: flex-start
+}
+
+.nav-wrapper:last-child{
+align-items: flex-end
+}
+
+.nav-item{
+  margin-block-end: 1.5rem
+}
+
+.nav-item:last-child{
+  margin-block-end: 0
+}
+
+
+.nav-wrapper:last-child{
+display:flex;
+align-items: flex-end
+}
+
+.menu-wrapper{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.menu-wrapper > button{
+margin-inline-end: 10px;
+margin-block-end: 10px
+}
+
+.door-container{
+  display:flex;
+  flex-direction: row;
+justify-content: space-around;
+  align-items:center;
+  text-align: right;
+}
+
+.door-item{
+  display:flex;
+  flex-direction:column
+}
+
+.door-item > button > img {
+  max-width: 7rem
+}
+
+.door-item > span {
+  text-align: center
+}
+
+textarea{
+  min-width: 60vw
+}
+
+.wordcontainer{
+  display:flex;
+  flex-direction: row;
+}
+
+.letter-item > input[type=text]{
+    min-width: 2em;
+  	max-width: 2em;
+  	margin-inline-end:10px;
+}
+
+.letter-item > .correct-letter{
+  min-width: 2em;
+  	max-width: 2em;
+  	margin-inline-end:10px;
+}
+
+.detector{
+ width: 50%;
+}
+
+.spinning{
+
+  animation-name: spin;
+  animation-duration: 2000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+  /* transform: rotate(3deg); */
+   /* transform: rotate(0.3rad);/ */
+   /* transform: rotate(3grad); */ 
+   /* transform: rotate(.03turn);  */
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+
+/* MAP */
+	.map{
+width: 100%;
+    height: 60vh;
+    border: 0;
+    margin: auto;
+    }
+
+
+.directions-card {
+    display: none!important
+}
+
+@media screen and (min-width: 450px) {
+.map{
+	max-width:60vw;
+	height:50vh;
+	border:0
+}
+}
+
+
+:: Story JavaScript [script]
+$('#ui-bar').remove();
+$(document.head).find('#style-ui-bar').remove();
+// TYPEWRITER FN
+!function() {
+    postrender.typewriter = function (b) {
+        if (this.tags) {
+            var r = new RegExp("t8n.typewriter.([0-9]+)(?:[^0-9]|$)","g");
+            var t = r.exec(this.tags.toString());
+            if (t) {
+                typeout(b, t[1]+0);
+            }
+        }
+        return b;
+    };
+    var typeout = function(c,t) {
+        var Furl = function(current) {
+            this.n = current;
+            this.out = false;
+            this.data = current.nodeValue;
+            current.nodeValue = "";
+            this.kids = [];
+            var cn = current.childNodes;
+            if (current.style && current.style.display=="none") {
+                return;
+            }
+            while (cn.length>0) {
+                var f = new Furl(cn[0]);
+                current.removeChild(cn[0]);
+                f.out = true;this.kids.push(f);
+            }
+        };
+        var nodes = new Furl(c);
+        var unfurl = function(furled,d) {
+            var n = furled.n;
+            if (furled.out) {
+                d.appendChild(n);
+                furled.out = false;
+            }
+            if (furled.data) {
+                n.nodeValue += furled.data[0];
+                furled.data = furled.data.slice(1);
+                return true;
+            }
+            for (var j=0; j<furled.kids.length; j++) {
+                var ret = unfurl(furled.kids[j],n);
+                if (ret) {
+                    return true;
+                }
+            }
+            return false;
+        };
+        var title = passage();
+        var intr = setInterval (
+            function() {
+                if (passage() == title && unfurl(nodes,null)) {
+                    return;
+                }
+                clearInterval(intr);
+            }
+        ,t);
+    };
+}();
+
+// MAKE MAP FUNCTION
+
+setup.generateDirectionsMap = function (origin, dest){
+const iFrame = document.createElement("iframe")
+iFrame.classList.add("map")
+iFrame.setAttribute("loading", "lazy")
+iFrame.setAttribute("referrerpolicy", "no-referrer-when-downgrade")
+// iFrame.setAttribute("allowfullscreen")
+iFrame.setAttribute("src", `https://www.google.com/maps/embed/v1/directions?key=AIzaSyBDRwRTMpSybNcmgkYVX1yZ0YmBbNhs9qU&center=${origin.lat},${origin.long}&zoom=17&origin=${origin.lat},${origin.long}&destination=${dest.lat},${dest.long}&mode=walking`)
+const mount = document.getElementById("mapMount")
+console.log(iFrame)
+return iFrame
+// this.mapMount.appendChild(iFrame)
+}
+//Get random 5 letter word
+
+setup.generate5LetterCode = () => {
+const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+let word = ""
+for (let i =0 ; i < 5 ; i++){
+word += alphabet[Math.round((alphabet.length-1)*Math.random())];
+}
+  return word;
+}
+
+//Check if an array contains multiple instances of an element
+
+setup.checkForRepeats = (array,element) => {
+ const arrayCopy = [...array];
+ const duplicates = arrayCopy.filter((item, index) => index !== arrayCopy.indexOf(item));
+ return duplicates.contains(element)
+}
+
+
+:: StoryInit {"position":"100,100","size":"100,100"}
+<<cacheaudio "badjoke" "https://youhavefoundconey.net/CG/what/assets/audio/badjoke.mp3">>
+<<waitforaudio>>
+
+
+:: header {"position":"100,225","size":"100,100"}
+<header>Greenpeace</header>
+
+
+:: footer {"position":"100,375","size":"100,100"}
+<footer><div class="nav-wrapper "><div class="nav-item"><<button "Replay">><<goto $passage>><</button>> </div><div class="nav-item"><<button "Back">><<goto $prevpass>><</button>></div></div><div class="nav-wrapper"><div class="nav-item"><<button "I'm lost">><<goto "lost">><</button>></div></div></footer>
+
+
+:: lost {"position":"450,50","size":"100,100"}
+<<set $passage to "lost">><<include "header">>
+<main>
+Sorry to hear that you're lost! 
+You have two options:
+
+<<button "Begin the adventure again">><<goto "landing">><</button>>
+
+<<button "Take me straight to the end location!">><<goto "end">><</button>>
+</main>
+<<include "footer">>
+
+
+:: landing {"position":"450,50","size":"100,100"}
+<<set $passage to "landing">>
+<<include "header">>
+<main>
+  Module List here?
+
+  Module 1 - complete
+  Module 2 - complete
+  Module 3 -
+  Module 4 -
+  ...etc
+
+<div class="menu-wrapper">
+  <<button "start">><<set $prevpass to $passage>><<goto "kaiIntro">><</button>>
+
+</div>
+</main>
+<<include "footer">>
+
+
+:: kaiIntro 
+<<set $passage to "kaiIntro">>
+<<include "header">>
+<main>
+<p>Hello - it's Kai again
+If you are listening to me that means you must have my Gift to you, and you must have found the codeword to get in, so someone must have listened to the phone message. Great work.
+/
+Last time we spoke I introduced myself, and I told you some things about me. I told you that I work with Greenpeace and Coney and a bit about who Greenpeace and Coney are. 
+
+I also told you that I'm a playful activist but I didn't really tell you what that means… 
+/
+Playful activists spark change through play.
+We do this through 'playfulness' - which is an attitude.
+It's a way of relating to the world, to systems, and to the act of making change - we play with them.
+We also spark change through the act of 'playing'.
+We create games or interactive experiences that ask questions, offer new solutions, and show the frank reality of how things are.
+/
+Together in this project we’ll be playful activists making a piece of Playful Climate Activism. 
+/
+We’re going to be looking at Climate Change. 
+Sorry, some people would like us to say Climate Change... but sometimes I find it hard to even get the words out of my mouth, because let’s be honest - it’s a Climate Emergency.
+/
+Change sounds natural, or even reversible, like changing your height by growing just a little bit taller.  No, I’m kidding 5ft 6 suits me fine thank you, and what we’re really looking at is destruction. It’s a crisis. 
+As we’re at the start of the project, let’s work out where we’re starting from. 
+</p>
+<<button "next">><<set $prevpass to $passage>><<goto "CodewordMod3">><</button>>
+</main>
+
+
+
+
+
+:: CodewordMod3
+<<set $passage to "CodewordMod3">>
+<<include "header">>
+<main>
+<p>
+Let’s enter Module 3’s Codeword to dive in:
+</p>
+<div id="coderesult"></div>
+/% CODEWORD FEEDBACK %/
+<div id="resultbutton">
+/% CODEWORD INPUT %/
+<div class="code-input">
+<<textbox "$codeword" "">></div>
+<<button "Enter">>
+</div>
+/% STANDARDISE INPUT %/
+<<set $codeword to $codeword.toUpperCase()>>
+/% CODEWORD CORRECT %/
+<<if $codeword isnot "" and $codeword is "CONTEXT">>
+<<replace "#coderesult">>CORRECT<</replace>>
+I may not be present, but Teacher you are! 
+Can you help me out here? 
+Can you ask the class: When you hear the words Climate Emergency, what is the first thing you think of? 
+
+<<timed 3s>>
+  <<set $prevpass to $passage>>
+    <<replace "#coderesult">>
+    I may not be present, but Teacher you are! 
+    Can you help me out here? 
+    Can you ask the class: When you hear the words Climate Emergency, what is the first thing you think of? <<button "Next">><<goto "mod3intro">><</button>><</replace>><</timed>>
+<</if>>
+  /% CODEWORD INCORRECT %/
+  <<if $codeword isnot "" and $codeword is not "CONTEXT">>
+  <<replace "#coderesult">>Thats not right.<</replace>>
+  <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+  <</if>><</button>>
+  </div>
+</main>
+
+
+
+:: mod3intro
+<<set $passage to "mod3intro">>
+<<include "header">>
+<main>
+<p>
+You might have discussed how the planet is warming up because of human’s carbon emissions. You might have talked about cars, planes, or cows. 
+/
+You might have spoken about how the richest 10% of people cause half the world’s total CO2 emissions. 
+You may have spoken about eating vegan, pollution, Fridays for Future, Autumn Peltier, Net Zero by 2050, a target of 1.5 degrees, Greta Thunberg, Extinction Rebellion, Reduce, Reuse, Recycle... 
+/
+
+You might have talked about the Climate Emergency being complex, or about how it overlaps with so many other emergencies: the pandemic, the cost-of-living crisis…. 
+/
+You might not have said any of this, or you might have said a million other things. You’ll know totally different things from me, and probably more, and you’ll know so much more how the Climate Emergency affects you - where you live, where you go to school. 
+/
+We can see this emergency happening all around us. 
+History has taught us you don’t stand still in an emergency. You act. 
+/
+
+Before we think about action, we need to start by understanding how things are.
+And from the very beginning, we need to understand that the Climate Emergency is not isolated, it's not separate from other struggles. or violence, or destruction. It is all interconnected. 
+/
+We’re going to hear from Dr Mya-Rose Craig and watch a video she made for Greenpeace.
+Dr Mya-Rose Craig is a climate activist from the UK 
+She’s great. 
+/
+
+Before the video though, I’m going to give a content warning. 
+Her video is about racism and environmental destruction.
+This video is really honest
+And you might find it hard to watch at points. 
+We’ll break it up though. 
+Take it step by step, together. 
+Teacher, please do speak to the class about what they might need whilst watching this video
+/
+
+I'm going to hand over to Dr Mya-Rose Craig now – 
+
+
+
+Click <<button "Play">><<set $prevpass to $passage>><<goto "mod3vid">><</button>>when you are ready. 
+
+</p>
+</main>
+
+:: mod3vid
+<<set $passage to "mod3vid">>
+<<include "header">>
+<main>
+Video
+
+<<button "Next">><<set $prevpass to $passage>><<goto "mod1int1">><</button>>
+</main>
+
+:: mod1int1
+<<set $passage to "mod1int1">>
+<<include "header">>
+<main>
+<p>
+3.18
+Ok, let’s hold there, we’ve just heard a lot and let’s sit with it for a second. Teacher, either as a class or in small groups can we take a moment to reflect on what we’ve just watched. Can you check in on the following questions
+-	How do people feel? 
+-	Mya-Rose talked about how our nature and climate emergencies have roots in the British Empire and systemic racism - How do you think they’re connected? 
+
+
+When ready click <<button "Move On">><<set $prevpass to $passage>><<goto "mod1int2">><</button>>
+
+</p>
+</main>
+
+:: mod1int2
+<<set $passage to "mod1int2">>
+<<include "header">>
+<main>
+<p>
+6.25
+Ok let’s pause again for a moment. Mya-Rose has covered a lot – the drastic inequality of those who are living with the impacts of the climate crisis yet causing the least pollution. And we’ve heard lots about palm oil too…like lots of things, the raw ingredient of palm oil itself isn’t bad, but when it’s commercially extracted (like Unilever do) that’s when we get 250,000 football pitches worth of deforestation. Teacher, can we take a moment to reflect on what we’ve heard. Let’s cover these questions
+-	How are you feeling in your bodies? 
+-	Do you see any new connections? 
+-	How do you think this all links to us, in the UK? 
+
+<<timed 5s>><<set $prevpass to $passage>><<goto "mod1int3">><</timed>>
+
+</p>
+</main>
+
+:: mod1int3
+<<set $passage to "mod1int3">>
+<<include "header">>
+<main>
+<p>
+9.10
+Thanks Mya-Rose. 
+We’ll move on in a moment, but before we do, let’s reflect on what we’ve just heard. A lot of that was closer to home, maybe it shifted something for you. 
+Some questions you might ask
+-	Did you think the climate emergency and racism were linked before? 
+-	What did you think about Mya-Rose’s thoughts on collective over individualistic action?
+-	What do you think it means for activists to come together to make change? 
+
+I’d recommend 5 minutes to chat here, and when ready click <<button "Move On">><<set $prevpass to $passage>><<goto "mod3outro">><</button>>
+
+</p>
+</main>
+
+:: mod3outro
+<<set $passage to "mod3outro">>
+<<include "header">>
+<main>
+<p>
+You might have found that video hard to watch 
+You might have been upset by what you saw. 
+You might feel angry, numb, frustrated 
+It might leave a feeling in your stomach that you don’t have the words for at the moment.
+You might not know how you feel yet. 
+/
+This video only brings everything into sharper focus
+In order to begin, we have to look honestly at the way things are
+At the legacies of colonialism
+At who is already living in the realities of the climate emergency
+At how systemic racism, the British empire and the climate emergency are intertwined. 
+/
+This project is about taking action 
+About not standing still 
+It's about making change
+/
+Activism is hard, and complicated 
+It won’t be nice all the time, and we might get things wrong 
+We’re going to have to work together, as Mya-Rose said 
+But I know you are the group to do this.
+You wouldn’t be in this room if you weren’t 
+/
+So, we have looked at the big world system and seen its flaws, now let’s pull it back to this room. To a different type of system. 
+A game system. 
+And how we mod it. 
+/
+</p>
+<<button "Next">><<set $prevpass to $passage>><<goto "CodewordMod4">><</button>>
+
+</main>
+
+:: CodewordMod4
+<<set $passage to "CodewordMod4">>
+<<include "header">>
+<main>
+<p>
+Enter the Module 4 Codeword:
+</p>
+<div id="coderesult"></div>
+/% CODEWORD FEEDBACK %/
+<div id="resultbutton">
+/% CODEWORD INPUT %/
+<div class="code-input">
+<<textbox "$codeword" "">></div>
+<<button "Enter">>
+</div>
+/% STANDARDISE INPUT %/
+<<set $codeword to $codeword.toUpperCase()>>
+/% CODEWORD CORRECT %/
+<<if $codeword isnot "" and $codeword is "POTATO">>
+<<replace "#coderesult">>CORRECT<</replace>>
+<<timed 3s>><<set $prevpass to $passage>><<goto "mod4intro">><</timed>>
+<</if>>
+  /% CODEWORD INCORRECT %/
+  <<if $codeword isnot "" and $codeword is not "POTATO">>
+  <<replace "#coderesult">>Thats not right.<</replace>>
+  <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+  <</if>><</button>>
+  </div>
+</main>
+
+:: mod4intro
+<<set $passage to "mod4intro">>
+<<include "header">>
+<main>
+<p>
+Anyone like Potatoes? Amazing – everyone. I can’t see so I’ll just make up what I’d like to think is happening. 
+We’re going to play a game called Roast-The-Potato. 
+/
+It used to be Roast-The-Goose, but ya know, I’m trying to reduce my emissions and I like Roast Potatoes. 
+For this game you’ll need a chair and to be sat in a circle. 
+One person needs to put their chair in the centre of the circle though. 
+Teacher I’ll hand over to you to explain how to Roast.  
+
+When you have finished click <<button "Move On">><<set $prevpass to $passage>><<goto "mod4outro">><</button>>
+
+</p>
+</main>
+
+
+
+:: mod4outro
+<<set $passage to "mod4outro">>
+<<include "header">>
+<main>
+<p>
+We play games of systems not to reduce them, not to suggest they are unreal, not to forget the violence they cause.
+We play games of systems because games can change.
+When we play a game of a system, this shows us that systems can change too.
+We can mod a system to create a different one.
+When we know what we're trying to build, the kind of system we want to create, we can use this to guide us.
+/
+
+We can use games to look to the future, to imagine how things could be different.
+Games can also remind us how flawed and broken things are. Like the extraction economy game did in our last session. 
+They can remind us that we're living in a system that destroys our Earth by pulling things out of it.
+That this system serves those with power. 
+/
+And changing games reminds us that things can be different.
+It reminds us that change is possible.
+Isn’t it time we played a different game?
+
+<<button "Next">><<set $prevpass to $passage>><<goto "mod4outrob">><</button>>
+</p>
+</main>
+
+:: mod4outrob
+<<set $passage to "mod4outrob">>
+<<include "header">>
+<main>
+<p>
+That’s it for this week. 
+
+Oh yeah, a codeword. To get into the next session of the box you’ll need one.  
+Text me [CARE] to get that – 07400179362 if you’ve forgotten. 
+
+Take care. 
+
+</p>
+</main>
+
+
+
+
+
+
+
