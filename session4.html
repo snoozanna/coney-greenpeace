@@ -98,7 +98,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<!-- UUID://F9E39354-F641-4070-8B45-C319A3FDC8C7// --><tw-storydata name="Greenpeace Session Three" startnode="7" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="F9E39354-F641-4070-8B45-C319A3FDC8C7" zoom="0.6" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
+	<!-- UUID://F9E39354-F641-4070-8B45-C311A3FDC8C7// --><tw-storydata name="Greenpeace Session Three" startnode="7" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="F9E39354-F641-4070-8B45-C311A3FDC8C7" zoom="0.6" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;700&display=swap'); 
 @import url("./styles/generics.css");
 @import url("./styles/styles.css");</style><script role="script" id="twine-user-script" type="text/twine-javascript">$('#ui-bar').remove();
@@ -179,8 +179,11 @@ setup.checkForRepeats = (array,element) => {
 &lt;&lt;set $mod2 to true&gt;&gt;
 &lt;&lt;set $mod3 to true&gt;&gt;
 &lt;&lt;set $mod4 to true&gt;&gt;
-&lt;&lt;set $mod5 to false&gt;&gt;
-&lt;&lt;set $mod6 to false&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="header" tags="nobr" position="100,225" size="100,100">&lt;header&gt;$module&lt;/header&gt;</tw-passagedata><tw-passagedata pid="3" name="footer" tags="nobr" position="100,375" size="100,100">&lt;footer&gt;
+&lt;&lt;set $mod5 to true&gt;&gt;
+&lt;&lt;set $mod6 to true&gt;&gt;
+&lt;&lt;set $mod7 to false&gt;&gt;
+&lt;&lt;set $mod8 to false&gt;&gt;
+&lt;&lt;set $mod9 to false&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="header" tags="nobr" position="100,225" size="100,100">&lt;header&gt;$module&lt;/header&gt;</tw-passagedata><tw-passagedata pid="3" name="footer" tags="nobr" position="100,375" size="100,100">&lt;footer&gt;
   &lt;div class=&quot;nav-wrapper btns&quot;&gt;
     &lt;div class=&quot;nav-item &quot;&gt;
       &lt;&lt;button &quot;Replay&quot;&gt;&gt;&lt;&lt;goto $passage&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -236,11 +239,23 @@ You have two options:
 &lt;&lt;if $mod6 is true&gt;&gt;
   &lt;&lt;addclass &quot;#mod6&quot; &quot;complete&quot;&gt;&gt;
     &lt;&lt;append &quot;#mod6&quot; t8n&gt;&gt; &lt;h3 class=&quot;complete&quot;&gt;Complete&lt;/h3&gt;&lt;&lt;/append&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $mod7 is true&gt;&gt;
+  &lt;&lt;addclass &quot;#mod7&quot; &quot;complete&quot;&gt;&gt;
+    &lt;&lt;append &quot;#mod7&quot; t8n&gt;&gt; &lt;h3 class=&quot;complete&quot;&gt;Complete&lt;/h3&gt;&lt;&lt;/append&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $mod8 is true&gt;&gt;
+  &lt;&lt;addclass &quot;#mod8&quot; &quot;complete&quot;&gt;&gt;
+    &lt;&lt;append &quot;#mod8&quot; t8n&gt;&gt; &lt;h3 class=&quot;complete&quot;&gt;Complete&lt;/h3&gt;&lt;&lt;/append&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $mod9 is true&gt;&gt;
+  &lt;&lt;addclass &quot;#mod9&quot; &quot;complete&quot;&gt;&gt;
+    &lt;&lt;append &quot;#mod9&quot; t8n&gt;&gt; &lt;h3 class=&quot;complete&quot;&gt;Complete&lt;/h3&gt;&lt;&lt;/append&gt;&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="landing" tags="nobr" position="450,50" size="100,100">&lt;&lt;set $passage to &quot;landing&quot;&gt;&gt;
 
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;main class=&quot;modules&quot;&gt;
-  &lt;h1 class=&quot;title&quot;&gt;SESSION THREE &lt;/h1&gt;
+  &lt;h1 class=&quot;title&quot;&gt;SESSION FOUR &lt;/h1&gt;
   &lt;div class=&quot;menu-wrapper module-list&quot;&gt;
   &lt;div class=&quot;menu-item mod1&quot; id=&quot;mod1&quot;&gt; 
       &lt;h2 class=&quot;subtitle&quot;&gt;Module 1&lt;/h2&gt;
@@ -260,40 +275,43 @@ You have two options:
       &lt;/div&gt;  
 &lt;div class=&quot;menu-item&quot; id=&quot;mod5&quot;&gt; 
       &lt;h2 class=&quot;subtitle&quot;&gt;Module 5&lt;/h2&gt;
-       &lt;&lt;button &quot;start&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;kaiIntro&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+           &lt;&lt;button &quot;start&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
       &lt;/div&gt;
  &lt;div class=&quot;menu-item&quot; id=&quot;mod6&quot;&gt; 
       &lt;h2 class=&quot;subtitle&quot;&gt;Module 6&lt;/h2&gt;
-        &lt;&lt;button &quot;start&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;CodewordMod6&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+            &lt;&lt;button &quot;start&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
       &lt;/div&gt;
-  &lt;div class=&quot;menu-item &quot;&gt; 
+  &lt;div class=&quot;menu-item&quot; id=&quot;mod7&quot;&gt; 
       &lt;h2 class=&quot;subtitle&quot;&gt;Module 7&lt;/h2&gt;
+       &lt;&lt;button &quot;start&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;kaiIntro&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
- &lt;div class=&quot;menu-item&quot;&gt; 
+ &lt;div class=&quot;menu-item&quot; id=&quot;mod8&quot;&gt; 
       &lt;h2 class=&quot;subtitle&quot;&gt;Module 8&lt;/h2&gt;
+      &lt;&lt;button &quot;start&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;CodewordMod8&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
       &lt;/div&gt;
-&lt;div class=&quot;menu-item&quot;&gt; 
+&lt;div class=&quot;menu-item&quot; id=&quot;mod9&quot;&gt; 
       &lt;h2 class=&quot;subtitle&quot;&gt;Module 9&lt;/h2&gt;
+      &lt;&lt;button &quot;start&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;CodewordMod9&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
       &lt;/div&gt;
-&lt;div class=&quot;menu-item&quot;&gt; 
+&lt;div class=&quot;menu-item&quot; id=&quot;mod10&quot;&gt; 
       &lt;h2 class=&quot;subtitle&quot;&gt;Module 10&lt;/h2&gt;
       &lt;/div&gt;  
-&lt;div class=&quot;menu-item&quot;&gt; 
+&lt;div class=&quot;menu-item&quot; id=&quot;mod11&quot;&gt; 
       &lt;h2 class=&quot;subtitle&quot;&gt;Module 11&lt;/h2&gt;
       &lt;/div&gt;
- &lt;div class=&quot;menu-item&quot;&gt; 
+ &lt;div class=&quot;menu-item&quot; id=&quot;mod12&quot;&gt; 
       &lt;h2 class=&quot;subtitle&quot;&gt;Module 12&lt;/h2&gt;
       &lt;/div&gt;
- &lt;div class=&quot;menu-item&quot;&gt; 
+ &lt;div class=&quot;menu-item&quot; id=&quot;mod13&quot;&gt; 
       &lt;h2 class=&quot;subtitle&quot;&gt;Module 13&lt;/h2&gt;
       &lt;/div&gt;
-&lt;div class=&quot;menu-item&quot;&gt; 
+&lt;div class=&quot;menu-item&quot; id=&quot;mod14&quot;&gt; 
       &lt;h2 class=&quot;subtitle&quot;&gt;Module 14&lt;/h2&gt;
       &lt;/div&gt;
-&lt;div class=&quot;menu-item&quot;&gt; 
+&lt;div class=&quot;menu-item&quot; id=&quot;mod15&quot;&gt; 
       &lt;h2 class=&quot;subtitle&quot;&gt;Module 15&lt;/h2&gt;
       &lt;/div&gt;  
-&lt;div class=&quot;menu-item&quot;&gt; 
+&lt;div class=&quot;menu-item&quot; id=&quot;mod16&quot;&gt; 
       &lt;h2 class=&quot;subtitle&quot;&gt;Module 16&lt;/h2&gt;
       &lt;/div&gt;
  &lt;div class=&quot;menu-item&quot;&gt; 
@@ -315,32 +333,32 @@ You have two options:
 
     &lt;div class=&quot;text-wrapper&quot;&gt;
     &lt;p&gt;  Hello. &lt;/p&gt;
-&lt;p&gt;Glad you got into the next component! &lt;/p&gt;
-&lt;p&gt;Here we are then – ready to play.&lt;/p&gt;
+&lt;p&gt;Hello. &lt;/p&gt;
+&lt;p&gt;Hope you are enjoying the surprise of each of these compartments – and breaking up the pyramid! &lt;/p&gt;
+&lt;p&gt;Here we are again ready to play.&lt;/p&gt;
 &lt;p&gt;Working towards a Playful Action. &lt;/p&gt;
 &lt;p&gt;Inspired by Codename: Violet. &lt;/p&gt;
-&lt;p&gt;I should probably explain more about how Codename: Violet started, seeing as we are starting our action too. I’ll sum it up in 32 seconds. &lt;/p&gt;
-/
-&lt;p&gt;Codename: Violet was run by a group of 8-10 year olds who Coney work with. We call them the Young Coneys, because, well it’s simple really, they work with Coney &amp; they are young. They make play about the stuff they are passionate about. They’re Playful Activists too. In fact, they started all this Playful Activism stuff for us. Codename: Violet did. &lt;/p&gt;
-/
-&lt;p&gt;It all started with an email from Greenpeace to Coney. &lt;/p&gt;
-&lt;p&gt;(in a fake voice 1) Do you know any kids who might want to be involved in our Ditch Diesel Campaign?&lt;/p&gt;
-&lt;p&gt;(in a fake voice 2) What’s that? &lt;/p&gt;
-&lt;p&gt;(in a fake voice 1) A campaign about Air Pollution &amp; Diesel cars. &lt;/p&gt;
-&lt;p&gt;(in a fake voice 2) Yep, maybe, but what would they do? &lt;/p&gt;
-&lt;p&gt;(in a fake voice 1) We want them to come up with a plan. We’ll help but we want you to design it. Make it using their skills. &lt;/p&gt;
-/
-&lt;p&gt;Great voices Kai – thanks everyone. &lt;/p&gt;
-&lt;p&gt;32 seconds…ish.&lt;/p&gt; 
+/* / */
+&lt;p&gt;So, you’ve chosen your focus. &lt;/p&gt;
+&lt;p&gt;You might have gone and looked up a bit more about it – or maybe not.&lt;/p&gt;
+&lt;p&gt;In Violet we did a deep dive to look at who had power to do something about our focus. &lt;/p&gt;
+&lt;p&gt;Breaking it down: &lt;/p&gt;
+&lt;p&gt;Diesel Cars = Air Pollution&lt;/p&gt;
+/* / */
+&lt;p&gt;And our target became those people who make Diesel Cars and make lots of money off them&lt;/p&gt;
+&lt;p&gt;So, we targeted a Car Industry Gala Dinner where all the executives and leaders in the industry would be meeting. &lt;/p&gt;
+&lt;p&gt;Power is what we’re looking at today &lt;/p&gt;
+&lt;p&gt;First up, let’s build on those Recon Cards. &lt;/p&gt;
 
-         &lt;&lt;button &quot;next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;CodewordMod5&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+
+         &lt;&lt;button &quot;next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;CodewordMod7&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
     &lt;/div&gt;
   
  
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="9" name="CodewordMod5" tags="nobr" position="1100,100" size="100,100">&lt;&lt;set $passage to &quot;CodewordMod5&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="9" name="CodewordMod7" tags="nobr" position="1100,100" size="100,100">&lt;&lt;set $passage to &quot;CodewordMod7&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;codeword&quot;&gt;
@@ -350,7 +368,7 @@ You have two options:
 
   &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
   &lt;p&gt;
-Let’s enter Module 5’s Codeword to dive in:
+Let’s enter Module 7’s Codeword to dive in:
 &lt;/p&gt;
   /% CODEWORD INPUT %/
       &lt;div class=&quot;code-input&quot;&gt;
@@ -362,14 +380,14 @@ Let’s enter Module 5’s Codeword to dive in:
       /% STANDARDISE INPUT %/
       &lt;&lt;set $codeword to $codeword.toUpperCase()&gt;&gt;
       /% CODEWORD CORRECT %/
-  &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;TRUMP&quot;&gt;&gt;
+  &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;RECON&quot;&gt;&gt;
 &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
 &lt;&lt;timed 3s&gt;&gt;
   &lt;&lt;set $prevpass to $passage&gt;&gt;
-    &lt;&lt;goto &quot;mod5intro&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
+    &lt;&lt;goto &quot;mod7intro&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;&lt;/if&gt;&gt;
         /% CODEWORD INCORRECT %/
-        &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;TRUMP&quot;&gt;&gt;
+        &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;RECON&quot;&gt;&gt;
         &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
         &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
         &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -379,82 +397,75 @@ Let’s enter Module 5’s Codeword to dive in:
     &lt;/div&gt;
   &lt;/main&gt;
     &lt;&lt;include &quot;footercode&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="mod5intro" tags="nobr" position="1225,100" size="100,100">&lt;&lt;set $passage to &quot;mod5intro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 5&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="mod7intro" tags="nobr" position="1225,100" size="100,100">&lt;&lt;set $passage to &quot;mod7intro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 7&quot;&gt;&gt;
   &lt;div class=&quot;wrapper&quot;&gt;
     &lt;&lt;include &quot;header&quot;&gt;&gt;
     &lt;main  class=&quot;speaking&quot;&gt;
         &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt;We began Codename: Violet by playing a game called Mundane Making Mastery to help us get to know one another and the different things we can make. &lt;/p&gt;
+&lt;p&gt;We’ve spoken about the system in play in the world&lt;/p&gt;
+&lt;p&gt;And where power sits but now it’s time to focus on our target. &lt;/p&gt;
+&lt;p&gt;It’s time to work out who has power around us in this space. &lt;/p&gt;
+&lt;p&gt;As we are making our Playful Action at this school. &lt;/p&gt;
+&lt;p&gt;So, we need to know what is happening here. &lt;/p&gt;
 /* / */
-&lt;p&gt;Everyone has a mundane making skill, and we share ours to build us as a team. Each mundane making skill, each thing we know about each other helps us build a connection. My mundane making skill is that I am excellent at Roast Potatoes. Seriously I am the Roastie Expert. Also, making fake voices…as you saw earlier. &lt;/p&gt;
-/* / */
-&lt;p&gt;
-  So now we know each other a little better too. We’re connected. 
-  And we’re going to play it here.  
-&lt;/p&gt;
-
+&lt;p&gt;You know it fairly well I bet, that’s one of the reasons we are working with you.&lt;/p&gt; 
+&lt;p&gt;You are the experts. &lt;/p&gt;
+&lt;p&gt;You go to the school.&lt;/p&gt;
+&lt;p&gt;But now we need to come together to look at our target. To share the things we know, and notice things we haven’t seen. &lt;/p&gt;
+&lt;p&gt;So, we’re going to map it. The system that is in play, and who has power here. &lt;/p&gt;
+&lt;p&gt;Once we understand power, we can make choices strategically about how we take action. &lt;/p&gt;
     
-    &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;mod5a&quot;&gt;&gt;&lt;&lt;/button&gt;&gt; 
+    &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;mod7a&quot;&gt;&gt;&lt;&lt;/button&gt;&gt; 
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footer&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="11" name="mod5a" tags="nobr" position="100,225" size="100,100">&lt;&lt;set $passage to &quot;mod5a&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="11" name="mod7a" tags="nobr" position="100,225" size="100,100">&lt;&lt;set $passage to &quot;mod7a&quot;&gt;&gt;
   &lt;div class=&quot;wrapper&quot;&gt;
     &lt;&lt;include &quot;header&quot;&gt;&gt;
     &lt;main  class=&quot;speaking&quot;&gt;
         &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt;Teacher, can we pair up? &lt;/p&gt;
-&lt;p&gt;Once you’ve got a pair, find out their mundane making skills, and tell them yours. &lt;/p&gt;
-&lt;p&gt;Then you’ll share that back to the group. Maybe you are great at making spag bol, you can make great playlists for friends or maybe you are just good at making loud noises.&lt;/p&gt;
+&lt;p&gt;Toby to add instructions &lt;/p&gt;
 
-
-    &lt;p&gt;When done click&lt;&lt;button &quot;Move On&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;mod5b&quot;&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/p&gt;
+    &lt;p&gt;When done click &lt;&lt;button &quot;Move On&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;mod7outro&quot;&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/p&gt;
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footer&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="mod5b" tags="nobr" position="225,225" size="100,100">&lt;&lt;set $passage to &quot;mod5b&quot;&gt;&gt;
-  &lt;div class=&quot;wrapper&quot;&gt;
-    &lt;&lt;include &quot;header&quot;&gt;&gt;
-    &lt;main  class=&quot;speaking&quot;&gt;
-        &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt;Teacher, time to hand out the cards – fill out the cards and give yourself a rating out of 100 for your Mundane Making skills, it’s a bit like Top Trumps.  &lt;/p&gt;
-&lt;p&gt;I’m probably a 78.7 on Roasties&lt;/p&gt;
-&lt;p&gt;A 52 on fake voices. (Let’s be honest)&lt;/p&gt;
-&lt;p&gt;And a 96 on making references to my height. &lt;/p&gt;
-    &lt;p&gt;When you have finished &lt;&lt;button &quot;Move On&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;mod5outro&quot;&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/p&gt;
-   &lt;/div&gt;
-    &lt;/main&gt;
-         &lt;&lt;include &quot;footer&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="mod5outro" tags="nobr" position="350,225" size="100,100">&lt;&lt;set $passage to &quot;mod5outro&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="mod7outro" tags="nobr" position="225,225" size="100,100">&lt;&lt;set $passage to &quot;mod7outro&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
       &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt;Excellent Talents to have in the room. &lt;/p&gt;
-&lt;p&gt;I say that, again not knowing for sure, as I’m not live. &lt;/p&gt;
-&lt;p&gt;A pre-record. &lt;/p&gt;
-&lt;p&gt;I can share things, but you can’t share things back– it’s a bit of a shame really – but it doesn’t mean we’re not connected. &lt;/p&gt;
-/* / */
-&lt;p&gt;By understanding where we&#39;re all coming from, what we value, what mundane making mastery we have in the space, we build a collective. When we&#39;re all connected it&#39;s like a web, we&#39;re strong, and flexible, and we stop working as a set of individuals and we start to collaborate as a group. &lt;/p&gt;
-&lt;p&gt;Playful Action is built on that – collaboration.  &lt;/p&gt;
-&lt;p&gt;
-  Fold the feet out on your cards, and this will become your Playful Activist Card.
-  Keep them safe, we’ll need them later in this process. 
-&lt;/p&gt;
+&lt;p&gt;So now we have a map of your school &lt;/p&gt;
 
+&lt;p&gt;Of the places and spaces, and of the people too &lt;/p&gt;
+
+&lt;p&gt;When we map people, we see power &lt;/p&gt;
+
+&lt;p&gt;And we need to see power to make change &lt;/p&gt;
+
+&lt;p&gt;It’s like a row of dominoes &lt;/p&gt;
+
+&lt;p&gt;Or one of those videos where you knock over a glass, which pours out water, which turns on a light which toasts a marshmallow… you know &lt;/p&gt;
 /* / */
-&lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod5 to true&gt;&gt;&lt;&lt;goto &quot;CodewordMod6&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+
+&lt;p&gt;When we can see power, and how its all connected, we know which domino to knock over &lt;/p&gt;
+
+&lt;p&gt;Once the dominoes are falling, then things start to change &lt;/p&gt;
+
+&lt;p&gt;Let’s look at the potential of that change…&lt;/p&gt;
+
+&lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod7 to true&gt;&gt;&lt;&lt;goto &quot;CodewordMod8&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="CodewordMod6" tags="nobr" position="475,225" size="100,100">&lt;&lt;set $passage to &quot;CodewordMod6&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="CodewordMod8" tags="nobr" position="350,225" size="100,100">&lt;&lt;set $passage to &quot;CodewordMod8&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;codeword&quot;&gt;
 
 &lt;div class=&quot;codeword-title-wrapper&quot;&gt;&lt;h1 class=&quot;title&quot;&gt;Enter &lt;/h1&gt;&lt;h1 class=&quot;title&quot;&gt;Codeword&lt;/h1&gt;&lt;/div&gt;
 &lt;p&gt;
-Enter the Module 6 Codeword:
+Enter the Module 8 Codeword:
 &lt;/p&gt;
  
 
@@ -470,12 +481,12 @@ Enter the Module 6 Codeword:
       /% STANDARDISE INPUT %/
       &lt;&lt;set $codeword to $codeword.toUpperCase()&gt;&gt;
       /% CODEWORD CORRECT %/
-      &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;FOCUS&quot;&gt;&gt;
+      &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;IMAGINE&quot;&gt;&gt;
       &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-      &lt;&lt;timed 3s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;mod6intro&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
+      &lt;&lt;timed 3s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;mod8intro&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
       &lt;&lt;/if&gt;&gt;
         /% CODEWORD INCORRECT %/
-        &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;FOCUS&quot;&gt;&gt;
+        &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;IMAGINE&quot;&gt;&gt;
         &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
         &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
         &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -485,122 +496,209 @@ Enter the Module 6 Codeword:
     &lt;/div&gt;
   &lt;/main&gt;
     &lt;&lt;include &quot;footercode&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="mod6intro" tags="nobr" position="600,225" size="100,100">&lt;&lt;set $passage to &quot;mod6intro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 6&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="mod8intro" tags="nobr" position="475,225" size="100,100">&lt;&lt;set $passage to &quot;mod8intro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 8&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
     &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt;So, we now know who we are but what is our focus. We need to know what you are passionate about. &lt;/p&gt;
-&lt;p&gt;The Young Coneys were working on Air Pollution – they knew more than most people in the room already – because it was affecting them in the day to day. They were experts.  &lt;/p&gt;
+&lt;p&gt;Now we’ve reached the time for some dreaming &lt;/p&gt;
+
+&lt;p&gt;To imagine what if? &lt;/p&gt;
+
+&lt;p&gt;For you to think not about what you want to change, but to think about how your school will be different when it has changed &lt;/p&gt;
+
+&lt;p&gt;Having the dream, imagining success is the first step &lt;/p&gt;
 /* / */
-&lt;p&gt;Now for the biggest understatement ever to have left my lips &lt;/p&gt;
-&lt;p&gt;The Climate Crisis is quite a large topic...&lt;/p&gt;
-&lt;p&gt;Wow Kai understatement of the year &lt;/p&gt;
-&lt;p&gt;And we can’t focus on all of it. &lt;/p&gt;
-&lt;p&gt;Wow, Kai, 2 for 2&lt;/p&gt;
-&lt;p&gt;Yes, it’s an understatement, &lt;/p&gt;
-&lt;p&gt;yes, it’s ridiculous to say, but also, yes, it is true &lt;/p&gt;
-&lt;p&gt;So, we need to find our path. &lt;/p&gt;
-&lt;p&gt;The route we are going to go down as a group. &lt;/p&gt;
 
-&lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;mod6a&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;p&gt;
+  Imagining myself 2 inches taller is the only way I can get there 
+  I kid I kid 
+&lt;/p&gt;
+
+&lt;p&gt;But for real, it’s important that we imagine, that we think about what success could be -  &lt;/p&gt;
+
+&lt;p&gt;How would your school be different if you were successful? &lt;/p&gt;
+
+&lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;mod8a&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="mod6a" tags="nobr" position="725,225" size="100,100">&lt;&lt;set $passage to &quot;mod6a&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="mod8a" tags="nobr" position="600,225" size="100,100">&lt;&lt;set $passage to &quot;mod8a&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
     &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt;So, we’re going to look global and meet 6 humans. &lt;/p&gt;
+&lt;p&gt;WHAT HAPPENED IF THIS SCHOOL DIDN’T HAVE THOSE RULES&lt;/p&gt;
+&lt;p&gt;WHAT RULES WOULD CHANGE THINGS HERE&lt;/p&gt;
+&lt;p&gt;WHAT SYSTEM CHANGE WOULD INFLUENCE OUR FOCUS? &lt;/p&gt;
 
-&lt;p&gt;Teacher, get the class into 6 groups and share out the Character Cards. &lt;/p&gt;
-
-&lt;p&gt;In 6 groups, you will introduce us to these humans and why their passion should be ours here.&lt;/p&gt;
-
-&lt;p&gt;All the information is on the cards. &lt;/p&gt;
-
-When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;mod6outro&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;mod8outro&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="mod6outro" tags="nobr" position="850,225" size="100,100">&lt;&lt;set $passage to &quot;mod6outro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="mod8outro" tags="nobr" position="725,225" size="100,100">&lt;&lt;set $passage to &quot;mod8outro&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
     &lt;div class=&quot;text-wrapper&quot; id=&quot;mount&quot;&gt;
-&lt;p&gt;We build our plans using the models of others &lt;/p&gt;
-&lt;p&gt;These stories give us a small insight into playful activism that is happening all over the Earth &lt;/p&gt;
-&lt;p&gt;Then by thinking about us: about how their stories relate to us here, and about what we want to change &lt;/p&gt;
-&lt;p&gt;We can find our focus. &lt;/p&gt;
-&lt;p&gt;We need to choose a path&lt;/p&gt;
-/* / */
-&lt;p&gt;Who do you connect to most in this school? What theme do you feel passionate about? We’re going to take an old-fashioned vote. &lt;/p&gt;
-&lt;p&gt;Teacher, can you hold the vote, and then select which theme you’ll focus on. &lt;/p&gt;
+&lt;p&gt;And now you have your goal &lt;/p&gt;
+
+&lt;p&gt;If this was a game &lt;/p&gt;
+&lt;p&gt;(You know I love games) &lt;/p&gt;
+
+&lt;p&gt;This would be your objective, your mission &lt;/p&gt;
+
+&lt;p&gt;
+  Create the school where… you can fill in the blanks. &lt;/p&gt;  
+&lt;p&gt;Actually do, as a class, summarise it and write it on the SUCCESS Card. &lt;/p&gt;
+
+/* // */
+
+&lt;p&gt;Seeing success doesn’t make it happen, of course, there are many more steps to take, obstacles in the way… but no worries, obstacles are what makes a game good. &lt;/p&gt;
+
+&lt;p&gt;It’d be no fun if it was all easy, would it? &lt;/p&gt;
+
+&lt;p&gt;Last up in our exploration of power, we need to look at ourselves. &lt;/p&gt;
 
 
-TBC need to work on choice reaction
-
-
-&lt;&lt;button &quot;Air Pollution&quot;&gt;&gt;
-  &lt;&lt;timed 1s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;Air Pollution&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
-  &lt;&lt;set $choice to &quot;Air Pollution – inspired by Alejandro Daly&quot;&gt;&gt;
-  &lt;&lt;timed 5s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod6 to true&gt;&gt;&lt;&lt;goto &quot;sessionoutro&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $mod8 to true&gt;&gt;
+&lt;&lt;goto &quot;CodewordMod9&quot;&gt;&gt;
 &lt;&lt;/button&gt;&gt;
-&lt;&lt;button &quot;Meat Consumption&quot;&gt;&gt;
-  &lt;&lt;timed 1s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;Meat Consumption&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
-  &lt;&lt;set $choice to &quot;Meat Consumption – inspired by Genesis Butler&quot;&gt;&gt;
-  &lt;&lt;timed 5s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod6 to true&gt;&gt;&lt;&lt;goto &quot;sessionoutro&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
-&lt;&lt;/button&gt;&gt;
-&lt;&lt;button &quot;Plastic Pollution&quot;&gt;&gt;
-  &lt;&lt;timed 1s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;Plastic Pollution&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
-  &lt;&lt;set $choice to &quot;Plastic Pollution – inspired by Melati &amp; Isabel Wijsen&quot;&gt;&gt;
-  &lt;&lt;timed 5s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod6 to true&gt;&gt;&lt;&lt;goto &quot;sessionoutro&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
-&lt;&lt;/button&gt;&gt;
-&lt;&lt;button &quot;Sustainable Palm Oil&quot;&gt;&gt;
-  &lt;&lt;timed 1s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;Sustainable Palm Oil&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
-  &lt;&lt;set $choice to &quot;Sustainable Palm Oil – inspired by Salsabila Khairunnisa&quot;&gt;&gt;
-  &lt;&lt;timed 5s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod6 to true&gt;&gt;&lt;&lt;goto &quot;sessionoutro&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
-&lt;&lt;/button&gt;&gt;
-&lt;&lt;button &quot;Deforestation &amp; Biodiversity&quot;&gt;&gt;
-  &lt;&lt;timed 1s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;Deforestation &amp; Biodiversity&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
-  &lt;&lt;set $choice to &quot;Deforestation &amp; Biodiversity – inspired by Professor Wangari Maathai&quot;&gt;&gt;
-  &lt;&lt;timed 5s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod6 to true&gt;&gt;&lt;&lt;goto &quot;sessionoutro&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
-&lt;&lt;/button&gt;&gt;
-
-&lt;&lt;button &quot;Fast Fashion&quot;&gt;&gt;
-  &lt;&lt;timed 1s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;Fast Fashion&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
-  &lt;&lt;set $choice to &quot;Fast Fashion – inspired by X&quot;&gt;&gt;
-  &lt;&lt;timed 5s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod6 to true&gt;&gt;&lt;&lt;goto &quot;sessionoutro&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
-&lt;&lt;/button&gt;&gt;
-
-
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="18" name="sessionoutro" tags="nobr" position="975,225" size="100,100">&lt;&lt;set $passage to &quot;sessionoutro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="CodewordMod9" tags="nobr" position="850,225" size="100,100">&lt;&lt;set $passage to &quot;CodewordMod9&quot;&gt;&gt;
+&lt;div class=&quot;wrapper&quot;&gt;
+  &lt;&lt;include &quot;header&quot;&gt;&gt;
+  &lt;main class=&quot;codeword&quot;&gt;
+
+&lt;div class=&quot;codeword-title-wrapper&quot;&gt;&lt;h1 class=&quot;title&quot;&gt;Enter &lt;/h1&gt;&lt;h1 class=&quot;title&quot;&gt;Codeword&lt;/h1&gt;&lt;/div&gt;
+&lt;p&gt;
+Enter the Module 9 Codeword:
+&lt;/p&gt;
+ 
+
+
+  &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+  /% CODEWORD INPUT %/
+      &lt;div class=&quot;code-input&quot;&gt;
+      &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
+    &lt;/div&gt;
+   &lt;div class=&quot;btn-result-wrapper&quot;&gt;
+      &lt;&lt;button &quot;Enter&quot;&gt;&gt;  
+          &lt;/div&gt;
+      /% STANDARDISE INPUT %/
+      &lt;&lt;set $codeword to $codeword.toUpperCase()&gt;&gt;
+      /% CODEWORD CORRECT %/
+      &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;COMFORT&quot;&gt;&gt;
+      &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;timed 3s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;mod9intro&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
+      &lt;&lt;/if&gt;&gt;
+        /% CODEWORD INCORRECT %/
+        &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;COMFORT&quot;&gt;&gt;
+        &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+        &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+        &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt; 
+          /% CODEWORD FEEDBACK %/
+          &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
+   &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/main&gt;
+    &lt;&lt;include &quot;footercode&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="18" name="mod9intro" tags="nobr" position="975,225" size="100,100">&lt;&lt;set $passage to &quot;mod9intro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 4&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
     &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt;That’s it for this week. &lt;/p&gt;
-&lt;p&gt;We’ve seen humans from across the world taking action.  &lt;/p&gt;
-&lt;p&gt;You’ve picked to focus on $choice&lt;/p&gt;
-
-&lt;p&gt;Each of the acts though were gifts given by the groups to their communities.&lt;/p&gt;
-&lt;p&gt;Just like your act of playful activism will be a gift to your community&lt;/p&gt;
-&lt;p&gt;That’s why we are working with you – the experts on the target.  &lt;/p&gt;
-&lt;p&gt;The target for your act is&lt;/p&gt;
-&lt;p&gt;Here. &lt;/p&gt;
-&lt;p&gt;This school. &lt;/p&gt;
+&lt;p&gt;There are lots of different types of power in this room. &lt;/p&gt;
+&lt;p&gt;Your teacher has power over this space.  &lt;/p&gt;
+&lt;p&gt;There is power with you as a group of activists, as people making change &lt;/p&gt;
+&lt;p&gt;I have power to – quite a lot actually – I can say words without much interruption – I can talk about Roasting Potatoes with no concerns you’ll interrupt!  &lt;/p&gt;
 /* / */
-&lt;p&gt;The last envelope in the compartment has your Recon Cards. &lt;/p&gt;
-&lt;p&gt;Cards to inspire you before the next session. &lt;/p&gt;
-&lt;p&gt;To get intelligence on our target. &lt;/p&gt;
-&lt;p&gt;Time to close for today. &lt;/p&gt;
-&lt;p&gt;But a code for you to dive deeper.&lt;/p&gt;
-&lt;p&gt;[HOPEY]. &lt;/p&gt;
-&lt;p&gt;Take care. &lt;/p&gt;
+&lt;p&gt;Each of you will have power over others &lt;/p&gt;
+&lt;p&gt;But power is rarely something that is balanced &lt;/p&gt;
+&lt;p&gt;
+  People have power because of their job, because of money, because of the connections they have or because of the family they come from, because of how they’re gendered or how they’re racialised. 
+  Some of these can be unearned privileges, that others don’t have. For one person, something might be easy, while for someone else, it is very hard. 
+&lt;/p&gt;
+/* / */
+&lt;p&gt;The imbalance of power exists all over the world, and it exists in this very room too &lt;/p&gt;
+&lt;p&gt;If we want to act together, we need to see that &lt;/p&gt;
+&lt;p&gt;We need to look at power and privilege, and at what we find comfortable &lt;/p&gt;
+&lt;p&gt;We have to do this for us to be able to work honestly and well together &lt;/p&gt;
+&lt;p&gt;We’re going to find our Comfort in Action &lt;/p&gt;
+
+ &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;mod9a&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;/div&gt;
+ &lt;/main&gt;
+     &lt;&lt;include &quot;footer&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name="mod9a" tags="nobr" position="1100,225" size="100,100">&lt;&lt;set $passage to &quot;mod9a&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 9&quot;&gt;&gt;
+&lt;div class=&quot;wrapper&quot;&gt;
+  &lt;&lt;include &quot;header&quot;&gt;&gt;
+  &lt;main class=&quot;speaking&quot;&gt;
+    &lt;div class=&quot;text-wrapper&quot;&gt;
+&lt;p&gt;Teacher, the instructions are on the Module Card. &lt;/p&gt;
+&lt;p&gt; Alongside, a Comfort Marker. &lt;/p&gt;
+&lt;p&gt;Click when you are ready to  &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;mod9outro&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+ &lt;/main&gt;
+     &lt;&lt;include &quot;footer&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="20" name="mod9outro" tags="nobr" position="1225,225" size="100,100">&lt;&lt;set $passage to &quot;mod9outro&quot;&gt;&gt;
+&lt;div class=&quot;wrapper&quot;&gt;
+  &lt;&lt;include &quot;header&quot;&gt;&gt;
+  &lt;main class=&quot;speaking&quot;&gt;
+      &lt;div class=&quot;text-wrapper&quot;&gt;
+&lt;p&gt;Comfort in Action is a layered thing. &lt;/p&gt;
+&lt;p&gt;It’s about us and the roles we want to play. But it’s also about the systems that we’re part of. &lt;/p&gt;
+&lt;p&gt;For some of us, there are environments, circumstances, systems that can be unsafe. &lt;/p&gt;
+
+&lt;p&gt;//•	Actor can describe their own identity in whatever way they feel comfortable //&lt;/p&gt;
+
+&lt;p&gt;I don’t look like other climate protestors, and when I started being a playful activist, I found that hard. &lt;/p&gt;
+/* / */
+&lt;p&gt;I wondered where my space was, where I fit in and where I could play the part I wanted to. &lt;/p&gt;
+&lt;p&gt;But looking honestly at my comfort in action and sharing that comfort in action with others helped. It meant that I only had to take on the roles I felt comfortable with, and I didn’t feel any need to explain or justify where I was, or why I was there. By discussing comfort in action, we made sure it was all out in the open. &lt;/p&gt;
+/* / */
+&lt;p&gt;We can note that some of us have greater privileges and we might use our power to reduce the burden on others in the activist spaces, particularly those who share the identities or experience of those who we are seeking justice for. &lt;/p&gt;
+&lt;p&gt;By understanding comfort in action for our whole team we&#39;re able to work as a collective. We can work together to make sure everything happens, that all roles are played, but that no one is put at risk, that all of us are comfortable.  &lt;/p&gt;
+/* / */
+&lt;p&gt;I hope you all feel more comfortable thinking about where you are comfortable &lt;/p&gt;
+&lt;p&gt;You all look pretty comfy… or well, I’m going to assume you do! &lt;/p&gt;
+
+&lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod9 to true&gt;&gt;&lt;&lt;goto &quot;sessionoutro&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;/div&gt;
+&lt;/main&gt;
+     &lt;&lt;include &quot;footer&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="21" name="sessionoutro" tags="nobr" position="100,350" size="100,100">&lt;&lt;set $passage to &quot;sessionoutro&quot;&gt;&gt;
+&lt;div class=&quot;wrapper&quot;&gt;
+  &lt;&lt;include &quot;header&quot;&gt;&gt;
+  &lt;main class=&quot;speaking&quot;&gt;
+    &lt;div class=&quot;text-wrapper&quot;&gt;
+&lt;p&gt;And so that’s us at the end of today. &lt;/p&gt;
+
+&lt;p&gt;Today has been all about looking. &lt;/p&gt;
+&lt;p&gt;about looking around to see your school, and where power sits in it, &lt;/p&gt;
+&lt;p&gt;
+  about looking in to see where you feel comfortable in action 
+  and about looking to the future, to imagine what success looks like 
+&lt;/p&gt;
+
+/* / */
+
+&lt;p&gt;Now you’ve done the looking, it’s time to start doing. &lt;/p&gt;
+
+&lt;p&gt;Next session you’re going to meet someone. They’re the artist I mentioned, another Playful Activist.  &lt;/p&gt;
+
+&lt;p&gt;They’re the last missing member of our team, and they’re going to join you to put these ideas into playful action. &lt;/p&gt;
+/* / */
+
+&lt;p&gt;Until next time… &lt;/p&gt;
+&lt;p&gt;And in case that wasn’t quite enough &lt;/p&gt;
+&lt;p&gt;There’s a final message for you &lt;/p&gt;
+&lt;p&gt;Text [POWER] to 07400179362 to pick it up &lt;/p&gt;
+
+&lt;p&gt;I’ll see you soon. &lt;/p&gt;
 
 
 &lt;&lt;button &quot;Finish&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;landing&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;

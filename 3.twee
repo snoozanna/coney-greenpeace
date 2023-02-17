@@ -106,6 +106,8 @@ setup.checkForRepeats = (array,element) => {
 <<set $mod2 to true>>
 <<set $mod3 to true>>
 <<set $mod4 to true>>
+<<set $mod5 to false>>
+<<set $mod6 to false>>
 
 
 
@@ -492,7 +494,7 @@ Enter the Module 6 Codeword:
 
 
 :: mod6a [nobr]
-<<set $passage to "mod6intro2">>
+<<set $passage to "mod6a">>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">

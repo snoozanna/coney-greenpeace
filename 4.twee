@@ -1,0 +1,720 @@
+:: StoryTitle
+Greenpeace Session Three
+
+
+:: StoryData
+{
+	"ifid": "F9E39354-F641-4070-8B45-C311A3FDC8C7",
+	"format": "SugarCube",
+	"format-version": "2.36.1",
+	"start": "landing",
+	"zoom": 0.6
+}
+
+
+:: Story Stylesheet [stylesheet]
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;700&display=swap'); 
+@import url("./styles/generics.css");
+@import url("./styles/styles.css");
+
+
+
+
+
+:: Story JavaScript [script]
+$('#ui-bar').remove();
+$(document.head).find('#style-ui-bar').remove();
+// TYPEWRITER FN
+!function() {
+    postrender.typewriter = function (b) {
+        if (this.tags) {
+            var r = new RegExp("t8n.typewriter.([0-9]+)(?:[^0-9]|$)","g");
+            var t = r.exec(this.tags.toString());
+            if (t) {
+                typeout(b, t[1]+0);
+            }
+        }
+        return b;
+    };
+    var typeout = function(c,t) {
+        var Furl = function(current) {
+            this.n = current;
+            this.out = false;
+            this.data = current.nodeValue;
+            current.nodeValue = "";
+            this.kids = [];
+            var cn = current.childNodes;
+            if (current.style && current.style.display=="none") {
+                return;
+            }
+            while (cn.length>0) {
+                var f = new Furl(cn[0]);
+                current.removeChild(cn[0]);
+                f.out = true;this.kids.push(f);
+            }
+        };
+        var nodes = new Furl(c);
+        var unfurl = function(furled,d) {
+            var n = furled.n;
+            if (furled.out) {
+                d.appendChild(n);
+                furled.out = false;
+            }
+            if (furled.data) {
+                n.nodeValue += furled.data[0];
+                furled.data = furled.data.slice(1);
+                return true;
+            }
+            for (var j=0; j<furled.kids.length; j++) {
+                var ret = unfurl(furled.kids[j],n);
+                if (ret) {
+                    return true;
+                }
+            }
+            return false;
+        };
+        var title = passage();
+        var intr = setInterval (
+            function() {
+                if (passage() == title && unfurl(nodes,null)) {
+                    return;
+                }
+                clearInterval(intr);
+            }
+        ,t);
+    };
+}();
+
+
+
+//Check if an array contains multiple instances of an element
+
+setup.checkForRepeats = (array,element) => {
+ const arrayCopy = [...array];
+ const duplicates = arrayCopy.filter((item, index) => index !== arrayCopy.indexOf(item));
+ return duplicates.contains(element)
+}
+
+
+:: StoryInit {"position":"100,100","size":"100,100"}
+
+<<cacheaudio "badjoke" "https://youhavefoundconey.net/CG/what/assets/audio/badjoke.mp3">>
+<<waitforaudio>>
+
+<<set $mod1 to true>>
+<<set $mod2 to true>>
+<<set $mod3 to true>>
+<<set $mod4 to true>>
+<<set $mod5 to true>>
+<<set $mod6 to true>>
+<<set $mod7 to false>>
+<<set $mod8 to false>>
+<<set $mod9 to false>>
+
+
+
+:: header  [nobr]{"position":"100,225","size":"100,100"}
+<header>$module</header>
+
+
+:: footer [nobr] {"position":"100,375","size":"100,100"}
+<footer>
+  <div class="nav-wrapper btns">
+    <div class="nav-item ">
+      <<button "Replay">><<goto $passage>><</button>> 
+    </div>
+    <div class="nav-item">
+      <<button "Back">><<goto $prevpass>><</button>>
+    </div>
+  </div>
+  <div class="nav-wrapper">
+    <div class="nav-item logo">
+      <img src="./assets/img/triangles-08.png">
+    </div>
+  </div></footer>
+
+:: footercode [nobr]{"position":"100,375","size":"100,100"}
+<footer>
+  <div class="nav-wrapper ">
+    
+    <div class="nav-item">
+      <<button "Back">><<goto $prevpass>><</button>>
+    </div>
+  </div>
+  <div class="nav-wrapper">
+    <div class="nav-item logo">
+          <img src="./assets/img/triangles-08.png">
+    </div>
+  </div></footer>
+
+:: lost {"position":"450,50","size":"100,100"}
+<<set $passage to "lost">><<include "header">>
+<main>
+Sorry to hear that you're lost! 
+You have two options:
+
+<<button "Begin the adventure again">><<goto "landing">><</button>>
+
+<<button "Take me straight to the end location!">><<goto "end">><</button>>
+</main>
+<<include "footer">>
+
+:: checkmodules
+<<if $mod1 is true>>
+  <<addclass "#mod1 ""complete">>
+  <<append "#mod1" t8n>> <h3 class="complete">Complete</h3><</append>>
+<</if>>
+<<if $mod2 is true>>
+  <<addclass "#mod2" "complete">>
+    <<append "#mod2" t8n>> <h3 class="complete">Complete</h3><</append>>
+<</if>>
+<<if $mod3 is true>>
+  <<addclass "#mod3" "complete">>
+    <<append "#mod3" t8n>> <h3 class="complete">Complete</h3><</append>>
+<</if>>
+<<if $mod4 is true>>
+  <<addclass "#mod4" "complete">>
+    <<append "#mod4" t8n>> <h3 class="complete">Complete</h3><</append>>
+<</if>>
+<<if $mod5 is true>>
+  <<addclass "#mod5" "complete">>
+    <<append "#mod5" t8n>> <h3 class="complete">Complete</h3><</append>>
+<</if>>
+<<if $mod6 is true>>
+  <<addclass "#mod6" "complete">>
+    <<append "#mod6" t8n>> <h3 class="complete">Complete</h3><</append>>
+<</if>>
+<<if $mod7 is true>>
+  <<addclass "#mod7" "complete">>
+    <<append "#mod7" t8n>> <h3 class="complete">Complete</h3><</append>>
+<</if>>
+<<if $mod8 is true>>
+  <<addclass "#mod8" "complete">>
+    <<append "#mod8" t8n>> <h3 class="complete">Complete</h3><</append>>
+<</if>>
+<<if $mod9 is true>>
+  <<addclass "#mod9" "complete">>
+    <<append "#mod9" t8n>> <h3 class="complete">Complete</h3><</append>>
+<</if>>
+
+
+:: landing [nobr]{"position":"450,50","size":"100,100"}
+<<set $passage to "landing">>
+
+<div class="wrapper">
+  <main class="modules">
+  <h1 class="title">SESSION FOUR </h1>
+  <div class="menu-wrapper module-list">
+  <div class="menu-item mod1" id="mod1"> 
+      <h2 class="subtitle">Module 1</h2>
+      <<button "start">><</button>>
+      </div>
+ <div class="menu-item" id="mod2"> 
+      <h2 class="subtitle">Module 2</h2>
+      <<button "start">><</button>>
+      </div>
+<div class="menu-item" id="mod3"> 
+      <h2 class="subtitle">Module 3</h2>
+      <<button "start">><</button>>
+      </div>
+<div class="menu-item" id="mod4"> 
+      <h2 class="subtitle">Module 4</h2>
+       <<button "start">><</button>>
+      </div>  
+<div class="menu-item" id="mod5"> 
+      <h2 class="subtitle">Module 5</h2>
+           <<button "start">><</button>>
+      </div>
+ <div class="menu-item" id="mod6"> 
+      <h2 class="subtitle">Module 6</h2>
+            <<button "start">><</button>>
+      </div>
+  <div class="menu-item" id="mod7"> 
+      <h2 class="subtitle">Module 7</h2>
+       <<button "start">><<set $prevpass to $passage>><<goto "kaiIntro">><</button>>
+</div>
+ <div class="menu-item" id="mod8"> 
+      <h2 class="subtitle">Module 8</h2>
+      <<button "start">><<set $prevpass to $passage>><<goto "CodewordMod8">><</button>>
+      </div>
+<div class="menu-item" id="mod9"> 
+      <h2 class="subtitle">Module 9</h2>
+      <<button "start">><<set $prevpass to $passage>><<goto "CodewordMod9">><</button>>
+      </div>
+<div class="menu-item" id="mod10"> 
+      <h2 class="subtitle">Module 10</h2>
+      </div>  
+<div class="menu-item" id="mod11"> 
+      <h2 class="subtitle">Module 11</h2>
+      </div>
+ <div class="menu-item" id="mod12"> 
+      <h2 class="subtitle">Module 12</h2>
+      </div>
+ <div class="menu-item" id="mod13"> 
+      <h2 class="subtitle">Module 13</h2>
+      </div>
+<div class="menu-item" id="mod14"> 
+      <h2 class="subtitle">Module 14</h2>
+      </div>
+<div class="menu-item" id="mod15"> 
+      <h2 class="subtitle">Module 15</h2>
+      </div>  
+<div class="menu-item" id="mod16"> 
+      <h2 class="subtitle">Module 16</h2>
+      </div>
+ <div class="menu-item"> 
+      <h2 class="subtitle">Module 17</h2>
+      </div>
+  <div class="menu-item"> 
+      <h2 class="subtitle">Module 18</h2>
+      </div>
+   
+  </div>
+  </main>
+  <<include "footer">></div>
+  <<done>><<include "checkmodules">><</done>>
+
+:: kaiIntro [nobr]
+<<set $passage to "kaiIntro">><<set $module to "Introduction">>
+<div class="wrapper">
+  <<include "header">>
+    /* <h1 class="title top">Hello - it's Kai again</h1> */
+  <main class="speaking">
+ <h1 class="title ">Hello - it's Kai again</h1>
+
+    <div class="text-wrapper">
+    <p>  Hello. </p>
+<p>Hello. </p>
+<p>Hope you are enjoying the surprise of each of these compartments – and breaking up the pyramid! </p>
+<p>Here we are again ready to play.</p>
+<p>Working towards a Playful Action. </p>
+<p>Inspired by Codename: Violet. </p>
+/* / */
+<p>So, you’ve chosen your focus. </p>
+<p>You might have gone and looked up a bit more about it – or maybe not.</p>
+<p>In Violet we did a deep dive to look at who had power to do something about our focus. </p>
+<p>Breaking it down: </p>
+<p>Diesel Cars = Air Pollution</p>
+/* / */
+<p>And our target became those people who make Diesel Cars and make lots of money off them</p>
+<p>So, we targeted a Car Industry Gala Dinner where all the executives and leaders in the industry would be meeting. </p>
+<p>Power is what we’re looking at today </p>
+<p>First up, let’s build on those Recon Cards. </p>
+
+
+         <<button "next">><<set $prevpass to $passage>><<goto "CodewordMod7">><</button>>
+    </div>
+  
+ 
+
+</main>
+<<include "footer">>
+</div>
+
+
+
+
+
+
+:: CodewordMod7 [nobr]
+<<set $passage to "CodewordMod7">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="codeword">
+
+<div class="codeword-title-wrapper" id="wrapper"><h1 class="title">Enter </h1><h1 class="title">Codeword</h1></div>
+
+
+  <div id="codewordWrapper" class="codeword-wrapper">
+  <p>
+Let’s enter Module 7’s Codeword to dive in:
+</p>
+  /% CODEWORD INPUT %/
+      <div class="code-input">
+      <<textbox "$codeword" "">>
+    </div>
+   <div class="btn-result-wrapper">
+      <<button "Enter">>  
+          </div>
+      /% STANDARDISE INPUT %/
+      <<set $codeword to $codeword.toUpperCase()>>
+      /% CODEWORD CORRECT %/
+  <<if $codeword isnot "" and $codeword is "RECON">>
+<<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+<<timed 3s>>
+  <<set $prevpass to $passage>>
+    <<goto "mod7intro">><</timed>>
+<</if>>
+        /% CODEWORD INCORRECT %/
+        <<if $codeword isnot "" and $codeword is not "RECON">>
+        <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+        <</if>><</button>> 
+          /% CODEWORD FEEDBACK %/
+          <div id="coderesult"></div>
+   </div>
+    </div>
+  </main>
+    <<include "footercode">>
+  </div>
+
+
+:: mod7intro [nobr]
+<<set $passage to "mod7intro">><<set $module to "Module 7">>
+  <div class="wrapper">
+    <<include "header">>
+    <main  class="speaking">
+        <div class="text-wrapper">
+<p>We’ve spoken about the system in play in the world</p>
+<p>And where power sits but now it’s time to focus on our target. </p>
+<p>It’s time to work out who has power around us in this space. </p>
+<p>As we are making our Playful Action at this school. </p>
+<p>So, we need to know what is happening here. </p>
+/* / */
+<p>You know it fairly well I bet, that’s one of the reasons we are working with you.</p> 
+<p>You are the experts. </p>
+<p>You go to the school.</p>
+<p>But now we need to come together to look at our target. To share the things we know, and notice things we haven’t seen. </p>
+<p>So, we’re going to map it. The system that is in play, and who has power here. </p>
+<p>Once we understand power, we can make choices strategically about how we take action. </p>
+    
+    <<button "Next">><<set $prevpass to $passage>><<goto "mod7a">><</button>> 
+   </div>
+    </main>
+         <<include "footer">>
+  </div>
+
+:: mod7a [nobr]
+<<set $passage to "mod7a">>
+  <div class="wrapper">
+    <<include "header">>
+    <main  class="speaking">
+        <div class="text-wrapper">
+<p>Toby to add instructions </p>
+
+    <p>When done click <<button "Move On">><<set $prevpass to $passage>><<goto "mod7outro">><</button>> </p>
+   </div>
+    </main>
+         <<include "footer">>
+  </div>
+
+
+
+
+:: mod7outro [nobr]
+<<set $passage to "mod7outro">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+      <div class="text-wrapper">
+<p>So now we have a map of your school </p>
+
+<p>Of the places and spaces, and of the people too </p>
+
+<p>When we map people, we see power </p>
+
+<p>And we need to see power to make change </p>
+
+<p>It’s like a row of dominoes </p>
+
+<p>Or one of those videos where you knock over a glass, which pours out water, which turns on a light which toasts a marshmallow… you know </p>
+/* / */
+
+<p>When we can see power, and how its all connected, we know which domino to knock over </p>
+
+<p>Once the dominoes are falling, then things start to change </p>
+
+<p>Let’s look at the potential of that change…</p>
+
+<<button "Next">><<set $prevpass to $passage>><<set $mod7 to true>><<goto "CodewordMod8">><</button>>
+</div>
+</main>
+     <<include "footer">>
+</div>
+
+:: CodewordMod8 [nobr]
+<<set $passage to "CodewordMod8">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="codeword">
+
+<div class="codeword-title-wrapper"><h1 class="title">Enter </h1><h1 class="title">Codeword</h1></div>
+<p>
+Enter the Module 8 Codeword:
+</p>
+ 
+
+
+  <div id="codewordWrapper" class="codeword-wrapper">
+  /% CODEWORD INPUT %/
+      <div class="code-input">
+      <<textbox "$codeword" "">>
+    </div>
+   <div class="btn-result-wrapper">
+      <<button "Enter">>  
+          </div>
+      /% STANDARDISE INPUT %/
+      <<set $codeword to $codeword.toUpperCase()>>
+      /% CODEWORD CORRECT %/
+      <<if $codeword isnot "" and $codeword is "IMAGINE">>
+      <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+      <<timed 3s>><<set $prevpass to $passage>><<goto "mod8intro">><</timed>>
+      <</if>>
+        /% CODEWORD INCORRECT %/
+        <<if $codeword isnot "" and $codeword is not "IMAGINE">>
+        <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+        <</if>><</button>> 
+          /% CODEWORD FEEDBACK %/
+          <div id="coderesult"></div>
+   </div>
+    </div>
+  </main>
+    <<include "footercode">>
+  </div>
+
+:: mod8intro [nobr]
+<<set $passage to "mod8intro">><<set $module to "Module 8">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper">
+<p>Now we’ve reached the time for some dreaming </p>
+
+<p>To imagine what if? </p>
+
+<p>For you to think not about what you want to change, but to think about how your school will be different when it has changed </p>
+
+<p>Having the dream, imagining success is the first step </p>
+/* / */
+
+<p>
+  Imagining myself 2 inches taller is the only way I can get there 
+  I kid I kid 
+</p>
+
+<p>But for real, it’s important that we imagine, that we think about what success could be -  </p>
+
+<p>How would your school be different if you were successful? </p>
+
+<<button "Next">><<set $prevpass to $passage>><<goto "mod8a">><</button>>
+</div>
+ </main>
+     <<include "footer">>
+</div>
+
+
+:: mod8a [nobr]
+<<set $passage to "mod8a">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper">
+<p>WHAT HAPPENED IF THIS SCHOOL DIDN’T HAVE THOSE RULES</p>
+<p>WHAT RULES WOULD CHANGE THINGS HERE</p>
+<p>WHAT SYSTEM CHANGE WOULD INFLUENCE OUR FOCUS? </p>
+
+When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "mod8outro">><</button>>
+</div>
+ </main>
+     <<include "footer">>
+</div>
+
+
+:: mod8outro [nobr]
+<<set $passage to "mod8outro">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper" id="mount">
+<p>And now you have your goal </p>
+
+<p>If this was a game </p>
+<p>(You know I love games) </p>
+
+<p>This would be your objective, your mission </p>
+
+<p>
+  Create the school where… you can fill in the blanks. </p>  
+<p>Actually do, as a class, summarise it and write it on the SUCCESS Card. </p>
+
+/* // */
+
+<p>Seeing success doesn’t make it happen, of course, there are many more steps to take, obstacles in the way… but no worries, obstacles are what makes a game good. </p>
+
+<p>It’d be no fun if it was all easy, would it? </p>
+
+<p>Last up in our exploration of power, we need to look at ourselves. </p>
+
+
+<<button "Next">><<set $mod8 to true>>
+<<goto "CodewordMod9">>
+<</button>>
+</div>
+ </main>
+     <<include "footer">>
+</div>
+
+
+:: CodewordMod9 [nobr]
+<<set $passage to "CodewordMod9">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="codeword">
+
+<div class="codeword-title-wrapper"><h1 class="title">Enter </h1><h1 class="title">Codeword</h1></div>
+<p>
+Enter the Module 9 Codeword:
+</p>
+ 
+
+
+  <div id="codewordWrapper" class="codeword-wrapper">
+  /% CODEWORD INPUT %/
+      <div class="code-input">
+      <<textbox "$codeword" "">>
+    </div>
+   <div class="btn-result-wrapper">
+      <<button "Enter">>  
+          </div>
+      /% STANDARDISE INPUT %/
+      <<set $codeword to $codeword.toUpperCase()>>
+      /% CODEWORD CORRECT %/
+      <<if $codeword isnot "" and $codeword is "COMFORT">>
+      <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+      <<timed 3s>><<set $prevpass to $passage>><<goto "mod9intro">><</timed>>
+      <</if>>
+        /% CODEWORD INCORRECT %/
+        <<if $codeword isnot "" and $codeword is not "COMFORT">>
+        <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+        <</if>><</button>> 
+          /% CODEWORD FEEDBACK %/
+          <div id="coderesult"></div>
+   </div>
+    </div>
+  </main>
+    <<include "footercode">>
+  </div>
+
+
+
+:: mod9intro [nobr]
+<<set $passage to "mod9intro">><<set $module to "Module 4">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper">
+<p>There are lots of different types of power in this room. </p>
+<p>Your teacher has power over this space.  </p>
+<p>There is power with you as a group of activists, as people making change </p>
+<p>I have power to – quite a lot actually – I can say words without much interruption – I can talk about Roasting Potatoes with no concerns you’ll interrupt!  </p>
+/* / */
+<p>Each of you will have power over others </p>
+<p>But power is rarely something that is balanced </p>
+<p>
+  People have power because of their job, because of money, because of the connections they have or because of the family they come from, because of how they’re gendered or how they’re racialised. 
+  Some of these can be unearned privileges, that others don’t have. For one person, something might be easy, while for someone else, it is very hard. 
+</p>
+/* / */
+<p>The imbalance of power exists all over the world, and it exists in this very room too </p>
+<p>If we want to act together, we need to see that </p>
+<p>We need to look at power and privilege, and at what we find comfortable </p>
+<p>We have to do this for us to be able to work honestly and well together </p>
+<p>We’re going to find our Comfort in Action </p>
+
+ <<button "Next">><<set $prevpass to $passage>><<goto "mod9a">><</button>>
+</div>
+ </main>
+     <<include "footer">>
+</div>
+
+:: mod9a [nobr]
+<<set $passage to "mod9a">><<set $module to "Module 9">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper">
+<p>Teacher, the instructions are on the Module Card. </p>
+<p> Alongside, a Comfort Marker. </p>
+<p>Click when you are ready to  <<button "Move on">><<set $prevpass to $passage>><<goto "mod9outro">><</button>></p>
+
+</div>
+ </main>
+     <<include "footer">>
+</div>
+
+:: mod9outro [nobr]
+<<set $passage to "mod9outro">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+      <div class="text-wrapper">
+<p>Comfort in Action is a layered thing. </p>
+<p>It’s about us and the roles we want to play. But it’s also about the systems that we’re part of. </p>
+<p>For some of us, there are environments, circumstances, systems that can be unsafe. </p>
+
+<p>//•	Actor can describe their own identity in whatever way they feel comfortable //</p>
+
+<p>I don’t look like other climate protestors, and when I started being a playful activist, I found that hard. </p>
+/* / */
+<p>I wondered where my space was, where I fit in and where I could play the part I wanted to. </p>
+<p>But looking honestly at my comfort in action and sharing that comfort in action with others helped. It meant that I only had to take on the roles I felt comfortable with, and I didn’t feel any need to explain or justify where I was, or why I was there. By discussing comfort in action, we made sure it was all out in the open. </p>
+/* / */
+<p>We can note that some of us have greater privileges and we might use our power to reduce the burden on others in the activist spaces, particularly those who share the identities or experience of those who we are seeking justice for. </p>
+<p>By understanding comfort in action for our whole team we're able to work as a collective. We can work together to make sure everything happens, that all roles are played, but that no one is put at risk, that all of us are comfortable.  </p>
+/* / */
+<p>I hope you all feel more comfortable thinking about where you are comfortable </p>
+<p>You all look pretty comfy… or well, I’m going to assume you do! </p>
+
+<<button "Next">><<set $prevpass to $passage>><<set $mod9 to true>><<goto "sessionoutro">><</button>>
+</div>
+</main>
+     <<include "footer">>
+</div>
+
+:: sessionoutro [nobr]
+<<set $passage to "sessionoutro">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper">
+<p>And so that’s us at the end of today. </p>
+
+<p>Today has been all about looking. </p>
+<p>about looking around to see your school, and where power sits in it, </p>
+<p>
+  about looking in to see where you feel comfortable in action 
+  and about looking to the future, to imagine what success looks like 
+</p>
+
+/* / */
+
+<p>Now you’ve done the looking, it’s time to start doing. </p>
+
+<p>Next session you’re going to meet someone. They’re the artist I mentioned, another Playful Activist.  </p>
+
+<p>They’re the last missing member of our team, and they’re going to join you to put these ideas into playful action. </p>
+/* / */
+
+<p>Until next time… </p>
+<p>And in case that wasn’t quite enough </p>
+<p>There’s a final message for you </p>
+<p>Text [POWER] to 07400179362 to pick it up </p>
+
+<p>I’ll see you soon. </p>
+
+
+<<button "Finish">><<set $prevpass to $passage>><<goto "landing">><</button>>
+</div>
+  </main>
+     <<include "footer">>
+</div>
+
+
+
+
+
+
+
