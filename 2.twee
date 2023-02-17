@@ -470,7 +470,7 @@ She’s great.
 </div>
 
 :: mod3outro [nobr]
-<<set $passage to "mod1int3">>
+<<set $passage to "mod3outro">>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
