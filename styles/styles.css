@@ -116,6 +116,10 @@ h2.subtitle {
   margin-left: -10rem;
 }
 
+h1.title.top {
+  margin-left: -3rem;
+}
+
 .spinning {
   animation-name: spin;
   animation-duration: 2000ms;
@@ -187,7 +191,7 @@ nav {
 .nav-wrapper.btns {
   background-color: white;
   padding: 0.6rem;
-  margin-bottom: -2rem;
+  margin-bottom: -4rem;
 }
 
 .nav-wrapper.btns > .nav-item > button {
@@ -231,7 +235,7 @@ main.modules > h1.title {
 .menu-wrapper.module-list > .menu-item {
   border: 1px solid white;
   width: 13%;
-  height: 15vh;
+  height: 13vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -277,6 +281,12 @@ main.speaking {
 }
 
 main.speaking.scroll {
+  overflow: scroll;
+}
+
+main.speaking > .text-wrapper {
+  width: 100%;
+  height: 45vh;
   overflow: scroll;
 }
 

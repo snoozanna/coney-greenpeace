@@ -268,6 +268,7 @@ You have two options:
 <div class="wrapper">
 <<include "header">>
   <main class="speaking">
+      <div class="text-wrapper">
   <p>
   If we were in the same space, no screen </p>
 <p>  I’d ask about you </p>
@@ -278,7 +279,9 @@ You have two options:
 <p>  But that doesn’t mean that everything is pre-decided </p>
  <p> Or that there is nothing to be discovered - it’s just all up to you. </p>
   <<button "next">><<set $prevpass to $passage>><<goto "kaiIntro4">><</button>>
+  </div>
   </main>
+
     <<include "footer">>
 </div>
 
@@ -289,12 +292,13 @@ You have two options:
 <div class="wrapper">
 <<include "header">>
   <main class="speaking">
-  
+      <div class="text-wrapper">
 <p>So, you've maybe heard of Greenpeace before.</p>
 <p>Greenpeace are a group of activists who take action against the climate and nature emergencies.</p>
 <p>  They believe we are all Activists</p>
 
   <<button "next">><<set $prevpass to $passage>><<goto "kaiIntro5">><</button>>
+  </div>
   </main>
       <<include "footer">>
 </div>
@@ -305,13 +309,14 @@ You have two options:
 <div class="wrapper">
 <<include "header">>
   <main class="speaking">
-
+    <div class="text-wrapper">
   <p>You may have heard of Coney too (quite possible not but ya know)</p>
 <p>  Coney are a group of playful activists.</p>
  <p> Coney create interactive performances, adventures, and games to make change through play.</p>
 
 
   <<button "next">><<set $prevpass to $passage>><<goto "CodewordMod1">><</button>>
+  </div>
   </main>
       <<include "footer">>
 </div>
@@ -366,6 +371,7 @@ You have two options:
   <div class="wrapper">
     <<include "header">>
     <main  class="speaking">
+        <div class="text-wrapper">
     <p>Good find – we’ll need those codewords when we move forward. </p>
     <p>This game is going to introduce a system to you all, and then give you the chance to play with it. </p>
     
@@ -375,6 +381,7 @@ You have two options:
    <p> I’ll take us through. </p>
     
    <p> When ready click <<button "Move On">><<set $prevpass to $passage>><<goto "mod1a">><</button>></p>
+   </div>
     </main>
          <<include "footer">>
   </div>
@@ -385,6 +392,7 @@ You have two options:
 <div class="wrapper">
   <<include "header">>
     <main  class="speaking">
+        <div class="text-wrapper">
  <div id="mount">
     <p>
     Great – Does everyone understand the rules of the game? </p>
@@ -411,7 +419,7 @@ You have two options:
       <<button "Next">><<set $prevpass to $passage>><<goto "mod1outroKai">><</button>>
     <</replace>><</button>>
  </div>
-  
+  </div>
 
   </main>
   <<include "footer">>
@@ -422,6 +430,7 @@ You have two options:
 <div class="wrapper">
 <<include "header">>
   <main class="speaking">
+      <div class="text-wrapper">
   <p>
   <p>I call this the ‘extraction economy game’ because it shows us just how the extraction economy works and what it can do </p>
   <p>The 'extraction economy' game lays bare our flawed system.</p>
@@ -435,6 +444,7 @@ You have two options:
   <p>We’ll explore where some of that power has come from in the next session. </p>
   </p>
   <<button "Next">><<set $prevpass to $passage>><<goto "mod1outro">><</button>>
+  </div>
   </main>
     <<include "footer">>
 </div>
@@ -444,6 +454,7 @@ You have two options:
 <div class="wrapper">
   <<include "header">>
   <main class="speaking scroll">
+      <div class="text-wrapper">
   <p>
   Now we're going to leave the extraction economy for today, and instead look at what we’re doing here in this room, and what we’re going to do together in this project. </p>
   
@@ -462,7 +473,7 @@ You have two options:
   <p>One I was involved in planning, creating and delivering.</p>
   <p>The operation was called Codename: Violet. </p>
   <<button "Next">><<set $mod1 to true>><<set $prevpass to $passage>><<goto "CodewordMod2">><</button>>
-  
+  </div>
   </main>
   <<include "footer">>
 </div>
@@ -512,6 +523,7 @@ You have two options:
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
+      <div class="text-wrapper">
   <p>  Codename: Violet was an odd name. </p>
  <p> Often names gives us a clue of what is to come</p>
   <p>They tell us something… </p>
@@ -522,6 +534,7 @@ You have two options:
  <p> It was chosen as the identity of the group. </p>
  <p> So, we are going to work out our Codename. </p>
    <<button "Next">><<set $prevpass to $passage>><<goto "mod2introb">><</button>>
+   </div>
   </main>
   <<include "footer">>
 </div>
@@ -531,10 +544,12 @@ You have two options:
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
+      <div class="text-wrapper">
   <p>You’re going to find the Most Interesting Thing You Have In Common.</p> 
   <p>Teacher, over to you for this one, all of the instructions are on the Mod Card. </p>
   <p>When ready click <<button "Move On">><<set $prevpass to $passage>><<goto "mod2outro">><</button>>
   </p>
+  </div>
   </main>
      <<include "footer">>
 </div>
@@ -544,6 +559,7 @@ You have two options:
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
+      <div class="text-wrapper">
   <p> Sometimes it’s useful to have a codename, to have a front </p>
   <p>A codename can keep things secret or hidden if we need it </p>
  <p> And a front allows us to play </p>
@@ -556,6 +572,7 @@ You have two options:
  <div class="enter-codename-wrapper ">
    <<textbox "$codename" "">>
        <<button "SEND TO CONEY & GREENPEACE">><<set $prevpass to $passage>><<goto "mod2outrokai">><</button>>
+       </div>
  </div>
   </main>
      <<include "footer">>
@@ -565,12 +582,12 @@ You have two options:
 <<set $passage to "mod2outrokai">>
 <div class="wrapper">
   <<include "header">>
-  <main class="speaking scroll">
+  <main class="speaking ">
  <div class="codeword-title-wrapper indent">
    <h1 class="title"> Thank you! </h1>
     <h1 class="title"> $codename </h1>
  </div>
-  
+      <div class="text-wrapper">
   <p>That’s the end of the first session – we are off - on our way!</p>
   <p>As we go through this process together, I'm going to tell you more about playful climate activism and more about Codename: Violet.</p>
  <p> For now, the codename is all I'll tell you, but at the start, it was all we knew too.</p>
@@ -589,7 +606,7 @@ You have two options:
  <p> Take good care.</p>
   
   <<button "Next">><<set $prevpass to $passage>><<set $mod2 to true>><<goto "landing">><</button>>
-
+</div>
   </main>
      <<include "footer">>
 </div>

@@ -246,30 +246,35 @@ You have two options:
 <<set $passage to "kaiIntro">><<set $module to "Introduction">>
 <div class="wrapper">
   <<include "header">>
+    /* <h1 class="title top">Hello - it's Kai again</h1> */
   <main class="speaking">
-  <h1 class="title">Hello - it's Kai again</h1>
-  <p>
-  If you are listening to me that means you must have my Gift to you, and you must have found the codeword to get in, so someone must have listened to the phone message. Great work.</p>
-  /* / */
-  <p>Last time we spoke I introduced myself, and I told you some things about me. I told you that I work with Greenpeace and Coney and a bit about who Greenpeace and Coney are. </p>
+ <h1 class="title ">Hello - it's Kai again</h1>
 
-  <p>I also told you that I'm a playful activist but I didn't really tell you what that means… </p>
-  /* / */
-  <p>Playful activists spark change through play.</p>
-  <p>We do this through 'playfulness' - which is an attitude.</p>
-  <p>It's a way of relating to the world, to systems, and to the act of making change - we play with them.</p>
-  <p>We also spark change through the act of 'playing'.</p>
-  <p>We create games or interactive experiences that ask questions, offer new solutions, and show the frank reality of how things are.</p>
-  /* / */
-  <p>Together in this project we’ll be playful activists making a piece of Playful Climate Activism. </p>
-  /* / */
-  <p>We’re going to be looking at Climate Change. </p>
-  <p>Sorry, some people would like us to say Climate Change... but sometimes I find it hard to even get the words out of my mouth, because let’s be honest - it’s a Climate Emergency.</p>
-  /* / */
-  <p>Change sounds natural, or even reversible, like changing your height by growing just a little bit taller.  No, I’m kidding 5ft 6 suits me fine thank you, and what we’re really looking at is destruction. It’s a crisis. </p>
-  <p>As we’re at the start of the project, let’s work out where we’re starting from. </p>
+    <div class="text-wrapper">
+      <p>  If you are listening to me that means you must have my Gift to you, and you must have found the codeword to get in, so someone must have listened to the phone message. Great work.</p>
+      /* / */
+      <p>Last time we spoke I introduced myself, and I told you some things about me. I told you that I work with Greenpeace and Coney and a bit about who Greenpeace and Coney are. </p>
+    
+      <p>I also told you that I'm a playful activist but I didn't really tell you what that means… </p>
+      /* / */
+      <p>Playful activists spark change through play.</p>
+      <p>We do this through 'playfulness' - which is an attitude.</p>
+      <p>It's a way of relating to the world, to systems, and to the act of making change - we play with them.</p>
+      <p>We also spark change through the act of 'playing'.</p>
+      <p>We create games or interactive experiences that ask questions, offer new solutions, and show the frank reality of how things are.</p>
+      /* / */
+      <p>Together in this project we’ll be playful activists making a piece of Playful Climate Activism. </p>
+      /* / */
+      <p>We’re going to be looking at Climate Change. </p>
+      <p>Sorry, some people would like us to say Climate Change... but sometimes I find it hard to even get the words out of my mouth, because let’s be honest - it’s a Climate Emergency.</p>
+      /* / */
+      <p>Change sounds natural, or even reversible, like changing your height by growing just a little bit taller.  No, I’m kidding 5ft 6 suits me fine thank you, and what we’re really looking at is destruction. It’s a crisis. </p>
+      <p>As we’re at the start of the project, let’s work out where we’re starting from. </p>
+         <<button "next">><<set $prevpass to $passage>><<goto "CodewordMod3">><</button>>
+    </div>
+  
+ 
 
-  <<button "next">><<set $prevpass to $passage>><<goto "CodewordMod3">><</button>>
 </main>
 <<include "footer">>
 </div>
@@ -331,6 +336,7 @@ Let’s enter Module 3’s Codeword to dive in:
   <div class="wrapper">
     <<include "header">>
     <main  class="speaking">
+        <div class="text-wrapper">
 <p>  You might have discussed how the planet is warming up because of human’s carbon emissions. You might have talked about cars, planes, or cows. </p>
 /* / */
 <p>You might have spoken about how the richest 10% of people cause half the world’s total CO2 emissions. </p>
@@ -369,6 +375,7 @@ She’s great.
 <p>I'm going to hand over to Dr Mya-Rose Craig now – </p>
     
    <p> Click <<button "Move On">><<set $prevpass to $passage>><<goto "mod3vid">><</button>>when you are ready. </p>
+   </div>
     </main>
          <<include "footer">>
   </div>
@@ -395,6 +402,7 @@ She’s great.
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
+      <div class="text-wrapper">
   <p> 3.18</p>
 <p>Ok, let’s hold there, we’ve just heard a lot and let’s sit with it for a second. </p>
 <p>
@@ -409,6 +417,7 @@ She’s great.
 
 
 <p>When ready click <<button "Move On">><<set $prevpass to $passage>><<goto "mod1int2">><</button>></p>
+</div>
 
   </main>
      <<include "footer">>
@@ -419,6 +428,7 @@ She’s great.
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
+      <div class="text-wrapper">
   <p> 6.25</p>
 <p>Ok let’s pause again for a moment. </p>
 <p>Mya-Rose has covered a lot – the drastic inequality of those who are living with the impacts of the climate crisis yet causing the least pollution. And we’ve heard lots about palm oil too…like lots of things, the raw ingredient of palm oil itself isn’t bad, but when it’s commercially extracted (like Unilever do) that’s when we get 250,000 football pitches worth of deforestation. </p>
@@ -431,7 +441,7 @@ She’s great.
 
 
 <p>When ready click <<button "Move On">><<set $prevpass to $passage>><<goto "mod1int3">><</button>></p>
-
+</div>
   </main>
      <<include "footer">>
 </div>
@@ -441,6 +451,7 @@ She’s great.
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
+      <div class="text-wrapper">
   <p> 9.10</p>
 <p>Thanks Mya-Rose. </p>
 <p>We’ll move on in a moment, but before we do, let’s reflect on what we’ve just heard.</p> 
@@ -453,7 +464,7 @@ She’s great.
 </ul>
 
 <p>I’d recommend 5 minutes to chat here, and when ready click <<button "Move On">><<set $prevpass to $passage>><<goto "mod3outro">><</button>></p>
-
+</div>
   </main>
      <<include "footer">>
 </div>
@@ -463,6 +474,7 @@ She’s great.
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
+      <div class="text-wrapper">
 <p>You might have found that video hard to watch </p>
 <p>You might have been upset by what you saw. </p>
 <p>You might feel angry, numb, frustrated </p>
@@ -490,6 +502,7 @@ She’s great.
 <p>And how we mod it.</p> 
 /* / */
 <<button "Next">><<set $prevpass to $passage>><<set $mod3 to true>><<goto "CodewordMod4">><</button>>
+</div>
 </main>
      <<include "footer">>
 </div>
@@ -540,7 +553,7 @@ Enter the Module 4 Codeword:
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
-
+    <div class="text-wrapper">
 <p>
 Anyone like Potatoes? Amazing – everyone. I can’t see so I’ll just make up what I’d like to think is happening. </p>
 <p>We’re going to play a game called Roast-The-Potato. </p>
@@ -551,7 +564,7 @@ Anyone like Potatoes? Amazing – everyone. I can’t see so I’ll just make up
 <p>Teacher I’ll hand over to you to explain how to Roast.  </p>
 
 <p>When you have finished click <<button "Move On">><<set $prevpass to $passage>><<goto "mod4outro">><</button>></p>
-
+</div>
  </main>
      <<include "footer">>
 </div>
@@ -563,7 +576,7 @@ Anyone like Potatoes? Amazing – everyone. I can’t see so I’ll just make up
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
-
+    <div class="text-wrapper">
 <p>
 We play games of systems not to reduce them, not to suggest they are unreal, not to forget the violence they cause.</p>
 <p>We play games of systems because games can change.</p>
@@ -584,7 +597,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <p>Isn’t it time we played a different game?</p>
 
 <<button "Next">><<set $prevpass to $passage>><<set $mod4 to true>><<goto "mod4outrob">><</button>>
-
+</div>
  </main>
      <<include "footer">>
 </div>
@@ -594,7 +607,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
-
+    <div class="text-wrapper">
 <p>That’s it for this week. </p>
 
 <p>Oh yeah, a codeword. To get into the next session of the box you’ll need one.  </p>
@@ -603,6 +616,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <p>Take care. </p>
 
 <<button "Finish">><<set $prevpass to $passage>><<goto "landing">><</button>>
+</div>
   </main>
      <<include "footer">>
 </div>
