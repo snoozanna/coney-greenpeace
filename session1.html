@@ -101,324 +101,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 	<!-- UUID://F9E39354-F641-4070-8B45-C314A3FDC8C8// --><tw-storydata name="Greenpeace Session One" startnode="7" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="F9E39354-F641-4070-8B45-C314A3FDC8C8" zoom="0.6" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;700&display=swap');
 @import url("./styles/generics.css");
-
-
-/* CONSTANTS  */
-
-:root {
-  --violet: #8000FF;
-  --orange: #84372b;
-  --green: #57b1a9;
-  --pink: #912657;
-    --grey: rgba(129,129,129,0.65);
-}
-
-
-/* GET RID OF TWINE STYLES */
-
-#story{
-  margin:0;
-}
-
-#passages {
-	max-width: 100%;
-}
-
-.passage{
-   padding: 5rem;
-    height: 100vh;
-}
-
-#story a.link-external:after {
-	content: "";
-}
-
-button{
-    background-color: transparent;
-    border: #fff 1px solid;
-    border-radius: 3px;
-}
-
-button:hover{
-	background-color:var(--green);
-	border: #fff 1px solid;
-	color: #fff;
-}
-
-a {
-  color: #var(--green);;
-}
-
-a:active {
-  background-color: #var(--green);;
-}
-
-a:hover {
-  color: #fff;
-}
-
-#story a.link-external:after {
-	content: "";
-}
-
-#story {
-	margin: 0
-}
-
-/* GENERAL STYLES */
-body{
-  font-size: 1.6rem;
-  font-family: "Space Grotesk";
-  overflow:scroll;
-  background:var(--violet);
-
-background: rgb(186,0,255);
-background: linear-gradient(-39deg, rgba(186,0,255,0.9962578781512605) 11%, rgba(128,0,255,1) 100%);
-  /* padding: 1.5rem */
-  /* display:flex; */
-  /* flex-direction: column; */
-     /* border: 1px solid black; */
-     /* margin: 5rem; */
-}
-
-header{
-  display:flex;
-  justify-content: flex-end;
-  align-items: center;
-    padding: 2rem
-}
-
-.wrapper{
-      height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border: 2px solid white;
-}
-
-main{
-   padding: 2rem;
-   margin-block-end: 4rem;
-
-}
-
-textarea{
-  min-width: 60vw
-}
-
-h1, h2{
-font-family: 'Jura', sans-serif;
-}
-
-h1.title,  h2.subtitle{
-    background: black;
-    width: fit-content;
-    padding: 0 1rem;
-    transform: rotate(-4deg);
-    margin-left: -10rem;
-}
-
-
-.spinning{
-
-  animation-name: spin;
-  animation-duration: 2000ms;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear; 
-  /* transform: rotate(3deg); */
-   /* transform: rotate(0.3rad);/ */
-   /* transform: rotate(3grad); */ 
-   /* transform: rotate(.03turn);  */
-}
-
-@keyframes spin {
-    from {
-        transform:rotate(0deg);
-    }
-    to {
-        transform:rotate(360deg);
-    }
-}
-
-/* FOOTER */
-
-footer{
-   display:flex;
-  justify-content: space-between;
-  align-items: flex-end; 
-  /* position:fixed; */
-  bottom: 0;
-  padding: 2rem;
-  width: 100%;
-  height:10%;
-  background-color: transparent;
-}
-
-nav{
-  display:flex;
-    justify-content: space-between;
-}
-
-.nav-wrapper{
-display:flex;
-  flex-direction:row;
-align-items: flex-start
-}
-
-.nav-wrapper:last-child{
-align-items: flex-end
-}
-
-.nav-item{
-  margin-inline-end: 1.5rem
-}
-
-.nav-item.logo{
-      width: 20rem;
-    margin-right: -5rem;
-    margin-bottom: -5rem;
-}
-
-.nav-wrapper:last-child{
-display:flex;
-align-items: flex-end
-}
-
-/* MODULE LIST */
-
-main.modules{
-  padding: 4rem
-}
-
-main.modules > h1.title {
-  margin: 0;
-  text-align: center;
-}
-
-.menu-wrapper{
-  display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.menu-wrapper > button{
-margin-inline-end: 10px;
-margin-block-end: 10px
-}
-
-
-.menu-wrapper.module-list{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content: center;
-  align-items:center;
-  gap: 4rem;
-  height:100%;
-}
-
-.menu-wrapper.module-list > .menu-item{
-border: 1px solid white;
-width:25%;
-height: 15rem;
-display:flex;
-flex-direction:column;
-justify-content: center;
-align-items: center;
-border-radius: 5px;
-position:relative;
-background-color: var(--grey);
-}
-
-.menu-wrapper.module-list > .menu-item.complete{
-  background-color: var(--green)
-}
-.menu-wrapper.module-list > .menu-item > h2 {
-  position:absolute;
-  bottom: -3rem;
-  right: 0
-}
-
-.menu-wrapper.module-list > .menu-item > .macro-append-insert > h3.complete {
-     position: absolute;
-    top: 0rem;
-    left: 8rem;
-}
-
-h3.complete{
-    background: var(--pink);
-    width: fit-content;
-    padding: 0 1rem;
-    transform: rotate(-4deg);
-    margin-left: -10rem;
-}
-
-h2.subtitle.complete{
-    background: var(--pink);
-
-}
-
-
-/* SPEAKING  */
-
-main.speaking{
-  padding: 1rem 8rem;
-  /* overflow:scroll; */
-}
-
-main.speaking.scroll{
-
-  overflow:scroll;
-}
-
-
-
-/* CODEWORD  */
-
-main.codeword{
-  padding: 0 8rem;
-
-}
-
-.codeword-title-wrapper{
-  text-transform: uppercase;
-
-}
-
-.codeword-title-wrapper > h1.title:last-child{
-   transform: rotate(4deg);
-    margin-left: -5rem;
-}
-
-.codeword-title-wrapper.indent > h1.title{
-    margin-left: 0rem;
-}
-
-.codeword-title-wrapper.indent > h1.title:last-child{
-   transform: rotate(4deg);
-    margin-left: 5rem;
-}
-
-.code-input{
-  margin-block-end: 2rem
-}
-
-.codeword-wrapper > .btn-result-wrapper{
-  display:flex;
-  align-items: baseline
-}
-
-.codeword-wrapper > .btn-result-wrapper > button{
- margin-inline-end:2rem
-}
-
-#coderesult > h2.subtitle {
-  margin-left: 0
-}
-
-.enter-codename-wrapper > input {
-   margin-inline-end: 2rem
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript">$('#ui-bar').remove();
+@import url("./styles/styles.css");</style><script role="script" id="twine-user-script" type="text/twine-javascript">$('#ui-bar').remove();
 $(document.head).find('#style-ui-bar').remove();
 // TYPEWRITER FN
 !function() {
@@ -481,30 +164,7 @@ $(document.head).find('#style-ui-bar').remove();
     };
 }();
 
-// MAKE MAP FUNCTION
 
-setup.generateDirectionsMap = function (origin, dest){
-const iFrame = document.createElement("iframe")
-iFrame.classList.add("map")
-iFrame.setAttribute("loading", "lazy")
-iFrame.setAttribute("referrerpolicy", "no-referrer-when-downgrade")
-// iFrame.setAttribute("allowfullscreen")
-iFrame.setAttribute("src", `https://www.google.com/maps/embed/v1/directions?key=AIzaSyBDRwRTMpSybNcmgkYVX1yZ0YmBbNhs9qU&center=${origin.lat},${origin.long}&zoom=17&origin=${origin.lat},${origin.long}&destination=${dest.lat},${dest.long}&mode=walking`)
-const mount = document.getElementById("mapMount")
-console.log(iFrame)
-return iFrame
-// this.mapMount.appendChild(iFrame)
-}
-//Get random 5 letter word
-
-setup.generate5LetterCode = () => {
-const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-let word = ""
-for (let i =0 ; i < 5 ; i++){
-word += alphabet[Math.round((alphabet.length-1)*Math.random())];
-}
-  return word;
-}
 
 //Check if an array contains multiple instances of an element
 
@@ -517,7 +177,7 @@ setup.checkForRepeats = (array,element) => {
 
 &lt;&lt;set $mod1 to false&gt;&gt;
 &lt;&lt;set $mod2 to false&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="header" tags="" position="100,225" size="100,100">&lt;header&gt;$module&lt;/header&gt;</tw-passagedata><tw-passagedata pid="3" name="footer" tags="nobr" position="100,375" size="100,100">&lt;footer&gt;
-  &lt;div class=&quot;nav-wrapper &quot;&gt;
+  &lt;div class=&quot;nav-wrapper btns&quot;&gt;
     &lt;div class=&quot;nav-item&quot;&gt;
       &lt;&lt;button &quot;Replay&quot;&gt;&gt;&lt;&lt;goto $passage&gt;&gt;&lt;&lt;/button&gt;&gt; 
     &lt;/div&gt;
@@ -559,7 +219,7 @@ You have two options:
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="landing" tags="nobr" position="450,50" size="100,100">&lt;&lt;set $passage to &quot;landing&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;main class=&quot;modules&quot;&gt;
-  &lt;h1 class=&quot;title&quot;&gt;TITLE&lt;/h1&gt;
+  &lt;h1 class=&quot;title&quot;&gt;SESSION ONE&lt;/h1&gt;
   &lt;div class=&quot;menu-wrapper module-list&quot;&gt;
   &lt;div class=&quot;menu-item mod1&quot; id=&quot;mod1&quot;&gt; 
       &lt;h2 class=&quot;subtitle&quot;&gt;Module 1&lt;/h2&gt;
@@ -579,6 +239,42 @@ You have two options:
       &lt;/div&gt;
  &lt;div class=&quot;menu-item&quot;&gt; 
       &lt;h2 class=&quot;subtitle&quot;&gt;Module 6&lt;/h2&gt;
+      &lt;/div&gt;
+  &lt;div class=&quot;menu-item &quot;&gt; 
+      &lt;h2 class=&quot;subtitle&quot;&gt;Module 7&lt;/h2&gt;
+&lt;/div&gt;
+ &lt;div class=&quot;menu-item&quot;&gt; 
+      &lt;h2 class=&quot;subtitle&quot;&gt;Module 8&lt;/h2&gt;
+      &lt;/div&gt;
+&lt;div class=&quot;menu-item&quot;&gt; 
+      &lt;h2 class=&quot;subtitle&quot;&gt;Module 9&lt;/h2&gt;
+      &lt;/div&gt;
+&lt;div class=&quot;menu-item&quot;&gt; 
+      &lt;h2 class=&quot;subtitle&quot;&gt;Module 10&lt;/h2&gt;
+      &lt;/div&gt;  
+&lt;div class=&quot;menu-item&quot;&gt; 
+      &lt;h2 class=&quot;subtitle&quot;&gt;Module 11&lt;/h2&gt;
+      &lt;/div&gt;
+ &lt;div class=&quot;menu-item&quot;&gt; 
+      &lt;h2 class=&quot;subtitle&quot;&gt;Module 12&lt;/h2&gt;
+      &lt;/div&gt;
+ &lt;div class=&quot;menu-item&quot;&gt; 
+      &lt;h2 class=&quot;subtitle&quot;&gt;Module 13&lt;/h2&gt;
+      &lt;/div&gt;
+&lt;div class=&quot;menu-item&quot;&gt; 
+      &lt;h2 class=&quot;subtitle&quot;&gt;Module 14&lt;/h2&gt;
+      &lt;/div&gt;
+&lt;div class=&quot;menu-item&quot;&gt; 
+      &lt;h2 class=&quot;subtitle&quot;&gt;Module 15&lt;/h2&gt;
+      &lt;/div&gt;  
+&lt;div class=&quot;menu-item&quot;&gt; 
+      &lt;h2 class=&quot;subtitle&quot;&gt;Module 16&lt;/h2&gt;
+      &lt;/div&gt;
+ &lt;div class=&quot;menu-item&quot;&gt; 
+      &lt;h2 class=&quot;subtitle&quot;&gt;Module 17&lt;/h2&gt;
+      &lt;/div&gt;
+  &lt;div class=&quot;menu-item&quot;&gt; 
+      &lt;h2 class=&quot;subtitle&quot;&gt;Module 18&lt;/h2&gt;
       &lt;/div&gt;
    
   &lt;/div&gt;
@@ -688,7 +384,7 @@ You have two options:
     &lt;/div&gt;
   &lt;/main&gt;
     &lt;&lt;include &quot;footercode&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="mod1intro" tags="nobr" position="475,225" size="100,100">&lt;&lt;set $passage to &quot;kaiIntro2&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 1&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="mod1intro" tags="nobr" position="475,225" size="100,100">&lt;&lt;set $passage to &quot;mod1intro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 1&quot;&gt;&gt;
   &lt;div class=&quot;wrapper&quot;&gt;
     &lt;&lt;include &quot;header&quot;&gt;&gt;
     &lt;main  class=&quot;speaking&quot;&gt;

@@ -1,0 +1,326 @@
+/* CONSTANTS  */
+
+:root {
+  --violet: #8000ff;
+  --orange: #84372b;
+  --green: #57b1a9;
+  --pink: #912657;
+  --grey: rgba(129, 129, 129, 0.65);
+}
+
+/* GET RID OF TWINE STYLES */
+
+#story {
+  margin: 0;
+}
+
+#passages {
+  max-width: 100%;
+}
+
+.passage {
+  padding: 5rem;
+  height: 100vh;
+}
+
+#story a.link-external:after {
+  content: "";
+}
+
+button {
+  background-color: transparent;
+  border: #fff 1px solid;
+  border-radius: 3px;
+}
+
+button:hover {
+  background-color: var(--green);
+  border: #fff 1px solid;
+  color: #fff;
+}
+
+a {
+  color: #var(--green);
+}
+
+a:active {
+  background-color: #var(--green);
+}
+
+a:hover {
+  color: #fff;
+}
+
+#story a.link-external:after {
+  content: "";
+}
+
+#story {
+  margin: 0;
+}
+
+/* GENERAL STYLES */
+body {
+  font-size: 1.6rem;
+  font-family: "Space Grotesk";
+  overflow: scroll;
+  background: var(--violet);
+  background: rgb(186, 0, 255);
+  background: linear-gradient(
+    -39deg,
+    rgba(186, 0, 255, 0.9962578781512605) 11%,
+    rgba(128, 0, 255, 1) 100%
+  );
+  /* padding: 1.5rem */
+  /* display:flex; */
+  /* flex-direction: column; */
+  /* border: 1px solid black; */
+  /* margin: 5rem; */
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 2rem;
+}
+
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 2px solid white;
+}
+
+main {
+  padding: 2rem;
+  margin-block-end: 4rem;
+}
+
+textarea {
+  min-width: 60vw;
+}
+
+h1,
+h2 {
+  font-family: "Jura", sans-serif;
+}
+
+h1.title,
+h2.subtitle {
+  background: black;
+  width: fit-content;
+  padding: 0 1rem;
+  transform: rotate(-4deg);
+  margin-left: -10rem;
+}
+
+.spinning {
+  animation-name: spin;
+  animation-duration: 2000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  /* transform: rotate(3deg); */
+  /* transform: rotate(0.3rad);/ */
+  /* transform: rotate(3grad); */
+  /* transform: rotate(.03turn);  */
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* FOOTER */
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  /* position:fixed; */
+  bottom: 0;
+  padding: 2rem;
+  width: 100%;
+  height: 10%;
+  background-color: transparent;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.nav-wrapper:last-child {
+  align-items: flex-end;
+}
+
+.nav-item {
+  margin-inline-end: 1.5rem;
+}
+
+.nav-item:last-child {
+  margin-inline-end: 0;
+}
+
+.nav-item.logo {
+  width: 20rem;
+  margin-right: -5rem;
+  margin-bottom: -5rem;
+}
+
+.nav-wrapper:last-child {
+  display: flex;
+  align-items: flex-end;
+}
+
+.nav-wrapper.btns {
+  background-color: white;
+  padding: 0.6rem;
+  margin-bottom: -2rem;
+}
+
+.nav-wrapper.btns > .nav-item > button {
+  color: black;
+}
+
+/* MODULE LIST */
+
+main.modules {
+  padding: 4rem;
+}
+
+main.modules > h1.title {
+  margin: 0;
+  text-align: center;
+  margin-top: -2rem;
+  margin-bottom: 1rem;
+}
+
+.menu-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.menu-wrapper > button {
+  margin-inline-end: 10px;
+  margin-block-end: 10px;
+}
+
+.menu-wrapper.module-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  height: 100%;
+}
+
+.menu-wrapper.module-list > .menu-item {
+  border: 1px solid white;
+  width: 13%;
+  height: 15vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  position: relative;
+  background-color: var(--grey);
+}
+
+.menu-wrapper.module-list > .menu-item.complete {
+  background-color: var(--green);
+}
+.menu-wrapper.module-list > .menu-item > h2 {
+  position: absolute;
+  bottom: -3rem;
+  right: 0;
+  font-size: 1.8rem;
+}
+
+.menu-wrapper.module-list > .menu-item > .macro-append-insert > h3.complete {
+  position: absolute;
+  top: 0rem;
+  left: 8rem;
+}
+
+h3.complete {
+  background: var(--pink);
+  width: fit-content;
+  padding: 0 1rem;
+  transform: rotate(-4deg);
+  margin-left: -10rem;
+}
+
+h2.subtitle.complete {
+  background: var(--pink);
+}
+
+/* SPEAKING  */
+
+main.speaking {
+  padding: 1rem 8rem;
+  /* overflow:scroll; */
+}
+
+main.speaking.scroll {
+  overflow: scroll;
+}
+
+/* CODEWORD  */
+
+main.codeword {
+  padding: 0 8rem;
+}
+
+.codeword-title-wrapper {
+  text-transform: uppercase;
+}
+
+.codeword-title-wrapper > h1.title:last-child {
+  transform: rotate(4deg);
+  margin-left: -5rem;
+}
+
+.codeword-title-wrapper.indent > h1.title {
+  margin-left: 0rem;
+}
+
+.codeword-title-wrapper.indent > h1.title:last-child {
+  transform: rotate(4deg);
+  margin-left: 5rem;
+}
+
+.code-input {
+  margin-block-end: 2rem;
+}
+
+.codeword-wrapper > .btn-result-wrapper {
+  display: flex;
+  align-items: baseline;
+}
+
+.codeword-wrapper > .btn-result-wrapper > button {
+  margin-inline-end: 2rem;
+}
+
+#coderesult > h2.subtitle {
+  margin-left: 0;
+}
+
+.enter-codename-wrapper > input {
+  margin-inline-end: 2rem;
+}
