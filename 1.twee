@@ -162,77 +162,109 @@ You have two options:
   <<addclass "#mod2" "complete">>
     <<append "#mod2" t8n>> <h3 class="complete">Complete</h3><</append>>
 <</if>>
+<<if $mod3 is true>>
+  <<addclass "#mod3" "complete">>
+    <<append "#mod3" t8n>> <h3 class="complete">Complete</h3><</append>>
+<</if>>
+<<if $mod4 is true>>
+  <<addclass "#mod4" "complete">>
+    <<append "#mod4" t8n>> <h3 class="complete">Complete</h3><</append>>
+<</if>>
+<<if $mod5 is true>>
+  <<addclass "#mod5" "complete">>
+    <<append "#mod5" t8n>> <h3 class="complete">Complete</h3><</append>>
+<</if>>
+<<if $mod6 is true>>
+  <<addclass "#mod6" "complete">>
+    <<append "#mod6" t8n>> <h3 class="complete">Complete</h3><</append>>
+<</if>>
+<<if $mod7 is true>>
+  <<addclass "#mod7" "complete">>
+    <<append "#mod7" t8n>> <h3 class="complete">Complete</h3><</append>>
+<</if>>
+<<if $mod8 is true>>
+  <<addclass "#mod8" "complete">>
+    <<append "#mod8" t8n>> <h3 class="complete">Complete</h3><</append>>
+<</if>>
+<<if $mod9 is true>>
+  <<addclass "#mod9" "complete">>
+    <<append "#mod9" t8n>> <h3 class="complete">Complete</h3><</append>>
+<</if>>
 
 :: landing [nobr]{"position":"450,50","size":"100,100"}
 <<set $passage to "landing">>
+<div class="wrapper">
+
+  <main class="codeword">
+
+<div class="codeword-title-wrapper"><h1 class="title">Enter </h1><h1 class="title">codeword</h1></div>
+ <p> Enter session codeword.</p>
+ 
+
+
+  <div id="codewordWrapper" class="codeword-wrapper">
+  /% CODEWORD INPUT %/
+      <div class="code-input">
+      <<textbox "$codeword" "">>
+    </div>
+   <div class="btn-result-wrapper">
+      <<button "Enter">>  
+          </div>
+      /% STANDARDISE INPUT %/
+      <<set $codeword to $codeword.toUpperCase()>>
+      /% CODEWORD CORRECT %/
+      <<if $codeword isnot "" and $codeword is "ONE">>
+      <<replace "#coderesult">><h2 class="subtitle complete">Session 1</h2><</replace>>
+      <<timed 3s>><<set $prevpass to $passage>><<goto "1modulelist">><</timed>>
+      <</if>>
+          <<if $codeword isnot "" and $codeword is "TWO">>
+      <<replace "#coderesult">><h2 class="subtitle complete">Session 2</h2><</replace>>
+      <<timed 3s>><<set $prevpass to $passage>><<goto "2modulelist">><</timed>>
+      <</if>>
+      <<if $codeword isnot "" and $codeword is "THREE">>
+      <<replace "#coderesult">><h2 class="subtitle complete">Session 3</h2><</replace>>
+      <<timed 3s>><<set $prevpass to $passage>><<goto "3modulelist">><</timed>>
+      <</if>>
+      <<if $codeword isnot "" and $codeword is "FOUR">>
+      <<replace "#coderesult">><h2 class="subtitle complete">Session 4</h2><</replace>>
+      <<timed 3s>><<set $prevpass to $passage>><<goto "4modulelist">><</timed>>
+      <</if>>
+        /% CODEWORD INCORRECT %/
+        /* <<if $codeword isnot "" and $codeword is not "ONE">>
+        <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+        <</if>> */
+        <</button>> 
+          /% CODEWORD FEEDBACK %/
+          <div id="coderesult"></div>
+   </div>
+    </div>
+  </main>
+    <<include "footercode">>
+  </div>
+
+:: 1modulelist [nobr]
+<<set $passage to "modulelist">>
 <div class="wrapper">
   <main class="modules">
   <h1 class="title">SESSION ONE</h1>
   <div class="menu-wrapper module-list">
   <div class="menu-item mod1" id="mod1"> 
       <h2 class="subtitle">Module 1</h2>
-      <<button "start">><<set $prevpass to $passage>><<goto "kaiIntro">><</button>></div>
+      <<button "start">><<set $prevpass to $passage>><<goto "1kaiIntro">><</button>></div>
  <div class="menu-item" id="mod2"> 
       <h2 class="subtitle">Module 2</h2>
-      <<button "start">><<set $prevpass to $passage>><<goto "CodewordMod2">><</button>>
+      <<button "start">><<set $prevpass to $passage>><<goto "1CodewordMod2">><</button>>
       </div>
-<div class="menu-item"> 
-      <h2 class="subtitle">Module 3</h2>
-      </div>
-<div class="menu-item"> 
-      <h2 class="subtitle">Module 4</h2>
-      </div>
-<div class="menu-item"> 
-      <h2 class="subtitle">Module 5</h2>
-      </div>
- <div class="menu-item"> 
-      <h2 class="subtitle">Module 6</h2>
-      </div>
-  <div class="menu-item "> 
-      <h2 class="subtitle">Module 7</h2>
-</div>
- <div class="menu-item"> 
-      <h2 class="subtitle">Module 8</h2>
-      </div>
-<div class="menu-item"> 
-      <h2 class="subtitle">Module 9</h2>
-      </div>
-<div class="menu-item"> 
-      <h2 class="subtitle">Module 10</h2>
-      </div>  
-<div class="menu-item"> 
-      <h2 class="subtitle">Module 11</h2>
-      </div>
- <div class="menu-item"> 
-      <h2 class="subtitle">Module 12</h2>
-      </div>
- <div class="menu-item"> 
-      <h2 class="subtitle">Module 13</h2>
-      </div>
-<div class="menu-item"> 
-      <h2 class="subtitle">Module 14</h2>
-      </div>
-<div class="menu-item"> 
-      <h2 class="subtitle">Module 15</h2>
-      </div>  
-<div class="menu-item"> 
-      <h2 class="subtitle">Module 16</h2>
-      </div>
- <div class="menu-item"> 
-      <h2 class="subtitle">Module 17</h2>
-      </div>
-  <div class="menu-item"> 
-      <h2 class="subtitle">Module 18</h2>
-      </div>
-   
   </div>
   </main>
   <<include "footer">></div>
   <<done>><<include "checkmodules">><</done>>
 
 
-:: kaiIntro [nobr]
-<<set $passage to "kaiIntro">><<set $module to "Introduction">>
+
+:: 1kaiIntro [nobr]
+<<set $passage to "1kaiIntro">><<set $module to "Introduction">>
 <div class="wrapper">
 <<include "header">>
 <main class="speaking">
@@ -240,14 +272,14 @@ You have two options:
 <p>I'm a playful activist.</p>
 <p>I’m here because I work with Greenpeace & Coney.</p>
 <p>I’ll explain more about them later</p>
-<<button "next">><<set $prevpass to $passage>><<goto "kaiIntro2">><</button>>
+<<button "next">><<set $prevpass to $passage>><<goto "1kaiIntro2">><</button>>
 </main>
 <<include "footer">>
 </div>
 
 
-:: kaiIntro2[nobr]
-<<set $passage to "kaiIntro2">>
+:: 1kaiIntro2[nobr]
+<<set $passage to "1kaiIntro2">>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -256,15 +288,15 @@ You have two options:
   <p>I’m 5ft 6</p>
   <p>I make games, like Roast Potatoes and, occasionally, make bad jokes. </p>
   <p>It's great to meet all of you.</p>
-  <<button "next">><<set $prevpass to $passage>><<goto "kaiIntro3">><</button>>
+  <<button "next">><<set $prevpass to $passage>><<goto "1kaiIntro3">><</button>>
 
   </main>
   <<include "footer">>
 </div>
 
 
-:: kaiIntro3 [nobr]
-<<set $passage to "kaiIntro3">>
+:: 1kaiIntro3 [nobr]
+<<set $passage to "1kaiIntro3">>
 <div class="wrapper">
 <<include "header">>
   <main class="speaking">
@@ -278,7 +310,7 @@ You have two options:
 <p>  I’m pre-recorded </p>
 <p>  But that doesn’t mean that everything is pre-decided </p>
  <p> Or that there is nothing to be discovered - it’s just all up to you. </p>
-  <<button "next">><<set $prevpass to $passage>><<goto "kaiIntro4">><</button>>
+  <<button "next">><<set $prevpass to $passage>><<goto "1kaiIntro4">><</button>>
   </div>
   </main>
 
@@ -287,8 +319,8 @@ You have two options:
 
 
 
-:: kaiIntro4 [nobr]
-<<set $passage to "kaiIntro4">>
+:: 1kaiIntro4 [nobr]
+<<set $passage to "1kaiIntro4">>
 <div class="wrapper">
 <<include "header">>
   <main class="speaking">
@@ -297,15 +329,15 @@ You have two options:
 <p>Greenpeace are a group of activists who take action against the climate and nature emergencies.</p>
 <p>  They believe we are all Activists</p>
 
-  <<button "next">><<set $prevpass to $passage>><<goto "kaiIntro5">><</button>>
+  <<button "next">><<set $prevpass to $passage>><<goto "1kaiIntro5">><</button>>
   </div>
   </main>
       <<include "footer">>
 </div>
 
 
-:: kaiIntro5[nobr]
-<<set $passage to "kaiIntro5">>
+:: 1kaiIntro5[nobr]
+<<set $passage to "1kaiIntro5">>
 <div class="wrapper">
 <<include "header">>
   <main class="speaking">
@@ -315,15 +347,15 @@ You have two options:
  <p> Coney create interactive performances, adventures, and games to make change through play.</p>
 
 
-  <<button "next">><<set $prevpass to $passage>><<goto "CodewordMod1">><</button>>
+  <<button "next">><<set $prevpass to $passage>><<goto "1CodewordMod1">><</button>>
   </div>
   </main>
       <<include "footer">>
 </div>
 
 
-:: CodewordMod1 [nobr]
-<<set $passage to "CodewordMod1">>
+:: 1CodewordMod1 [nobr]
+<<set $passage to "1CodewordMod1">>
 <div class="wrapper">
   <<include "header">>
   <main class="codeword">
@@ -349,7 +381,7 @@ You have two options:
       /% CODEWORD CORRECT %/
       <<if $codeword isnot "" and $codeword is "EXTRACTION">>
       <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
-      <<timed 3s>><<set $prevpass to $passage>><<goto "mod1intro">><</timed>>
+      <<timed 3s>><<set $prevpass to $passage>><<goto "1mod1intro">><</timed>>
       <</if>>
         /% CODEWORD INCORRECT %/
         <<if $codeword isnot "" and $codeword is not "EXTRACTION">>
@@ -366,8 +398,8 @@ You have two options:
 
   
   
-:: mod1intro [nobr]
-  <<set $passage to "mod1intro">><<set $module to "Module 1">>
+:: 1mod1intro [nobr]
+  <<set $passage to "1mod1intro">><<set $module to "Module 1">>
   <div class="wrapper">
     <<include "header">>
     <main  class="speaking">
@@ -380,14 +412,14 @@ You have two options:
       Break the class into groups, hand out the resources and come back to me when you are ready to start playing. </p>
    <p> I’ll take us through. </p>
     
-   <p> When ready click <<button "Move On">><<set $prevpass to $passage>><<goto "mod1a">><</button>></p>
+   <p> When ready click <<button "Move On">><<set $prevpass to $passage>><<goto "1mod1a">><</button>></p>
    </div>
     </main>
          <<include "footer">>
   </div>
 
 
-:: mod1a [nobr]
+:: 1mod1a [nobr]
 <<set $passage to "mod1a">>
 <div class="wrapper">
   <<include "header">>
@@ -425,8 +457,8 @@ You have two options:
   <<include "footer">>
 </div>
 
-:: mod1outroKai [nobr]
-<<set $passage to "mod1outroKai">>
+:: 1mod1outroKai [nobr]
+<<set $passage to "1mod1outroKai">>
 <div class="wrapper">
 <<include "header">>
   <main class="speaking">
@@ -443,14 +475,14 @@ You have two options:
   <p>Those who can and will take what they need, with no care for what comes next or what is left behind.</p>
   <p>We’ll explore where some of that power has come from in the next session. </p>
   </p>
-  <<button "Next">><<set $prevpass to $passage>><<goto "mod1outro">><</button>>
+  <<button "Next">><<set $prevpass to $passage>><<goto "1mod1outro">><</button>>
   </div>
   </main>
     <<include "footer">>
 </div>
 
-:: mod1outro [nobr]
-<<set $passage to "mod1outro">>
+:: 1mod1outro [nobr]
+<<set $passage to "1mod1outro">>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking scroll">
@@ -472,15 +504,15 @@ You have two options:
 <p>  On an operation we’ll explore more about together.</p>
   <p>One I was involved in planning, creating and delivering.</p>
   <p>The operation was called Codename: Violet. </p>
-  <<button "Next">><<set $mod1 to true>><<set $prevpass to $passage>><<goto "CodewordMod2">><</button>>
+  <<button "Next">><<set $mod1 to true>><<set $prevpass to $passage>><<goto "1CodewordMod2">><</button>>
   </div>
   </main>
   <<include "footer">>
 </div>
 
 
-:: CodewordMod2 [nobr]
-<<set $passage to "CodewordMod2">>
+:: 1CodewordMod2 [nobr]
+<<set $passage to "1CodewordMod2">>
 <div class="wrapper">
   <<include "header">>
   <main class="codeword">
@@ -503,7 +535,7 @@ You have two options:
       /% CODEWORD CORRECT %/
       <<if $codeword isnot "" and $codeword is "FRONT">>
       <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
-      <<timed 3s>><<set $prevpass to $passage>><<goto "mod2intro">><</timed>>
+      <<timed 3s>><<set $prevpass to $passage>><<goto "1mod2intro">><</timed>>
       <</if>>
         /% CODEWORD INCORRECT %/
         <<if $codeword isnot "" and $codeword is not "FRONT">>
@@ -518,8 +550,8 @@ You have two options:
     <<include "footercode">>
   </div>
 
-:: mod2intro[nobr]
-<<set $passage to "mod2intro">><<set $module to "Module 2">>
+:: 1mod2intro[nobr]
+<<set $passage to "1mod2intro">><<set $module to "Module 2">>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -533,29 +565,29 @@ You have two options:
  <p> But actually, Violet was chosen by the group of Playful Activists. </p>
  <p> It was chosen as the identity of the group. </p>
  <p> So, we are going to work out our Codename. </p>
-   <<button "Next">><<set $prevpass to $passage>><<goto "mod2introb">><</button>>
+   <<button "Next">><<set $prevpass to $passage>><<goto "1mod2introb">><</button>>
    </div>
   </main>
   <<include "footer">>
 </div>
 
-:: mod2introb[nobr]
-<<set $passage to "mod2introb">>
+:: 1mod2introb[nobr]
+<<set $passage to "1mod2introb">>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
       <div class="text-wrapper">
   <p>You’re going to find the Most Interesting Thing You Have In Common.</p> 
   <p>Teacher, over to you for this one, all of the instructions are on the Mod Card. </p>
-  <p>When ready click <<button "Move On">><<set $prevpass to $passage>><<goto "mod2outro">><</button>>
+  <p>When ready click <<button "Move On">><<set $prevpass to $passage>><<goto "1mod2outro">><</button>>
   </p>
   </div>
   </main>
      <<include "footer">>
 </div>
 
-:: mod2outro[nobr]
-<<set $passage to "mod2outro">>
+:: 1mod2outro[nobr]
+<<set $passage to "1mod2outro">>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -571,15 +603,15 @@ You have two options:
  <p> (You may want to make it short and snappy)</p>
  <div class="enter-codename-wrapper ">
    <<textbox "$codename" "">>
-       <<button "SEND TO CONEY & GREENPEACE">><<set $prevpass to $passage>><<goto "mod2outrokai">><</button>>
+       <<button "SEND TO CONEY & GREENPEACE">><<set $prevpass to $passage>><<goto "1mod2outrokai">><</button>>
        </div>
  </div>
   </main>
      <<include "footer">>
 </div>
 
-:: mod2outrokai [nobr]
-<<set $passage to "mod2outrokai">>
+:: 1mod2outrokai [nobr]
+<<set $passage to "1mod2outrokai">>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking ">
@@ -612,8 +644,1241 @@ You have two options:
 </div>
 
 
+/* SESSION 2 */
 
 
+:: 2modulelist [nobr]
+<<set $passage to "2modulelist">>
+<div class="wrapper">
+  <main class="modules">
+  <h1 class="title">SESSION TWO</h1>
+  <div class="menu-wrapper module-list">
+<div class="menu-item" id="mod3"> 
+      <h2 class="subtitle">Module 3</h2>
+      <<button "start">><<set $prevpass to $passage>><<goto "2kaiIntro">><</button>>
+      </div>
+<div class="menu-item" id="mod4"> 
+      <h2 class="subtitle">Module 4</h2>
+       <<button "start">><<set $prevpass to $passage>><<goto "2CodewordMod4">><</button>>
+      </div>  
+  </div>
+  </main>
+  <<include "footer">></div>
+  <<done>><<include "checkmodules">><</done>>
+
+
+:: 2kaiIntro [nobr]
+<<set $passage to "2kaiIntro">><<set $module to "Introduction">>
+<div class="wrapper">
+  <<include "header">>
+    /* <h1 class="title top">Hello - it's Kai again</h1> */
+  <main class="speaking">
+ <h1 class="title ">Hello - it's Kai again</h1>
+
+    <div class="text-wrapper">
+      <p>  If you are listening to me that means you must have my Gift to you, and you must have found the codeword to get in, so someone must have listened to the phone message. Great work.</p>
+      /* / */
+      <p>Last time we spoke I introduced myself, and I told you some things about me. I told you that I work with Greenpeace and Coney and a bit about who Greenpeace and Coney are. </p>
+    
+      <p>I also told you that I'm a playful activist but I didn't really tell you what that means… </p>
+      /* / */
+      <p>Playful activists spark change through play.</p>
+      <p>We do this through 'playfulness' - which is an attitude.</p>
+      <p>It's a way of relating to the world, to systems, and to the act of making change - we play with them.</p>
+      <p>We also spark change through the act of 'playing'.</p>
+      <p>We create games or interactive experiences that ask questions, offer new solutions, and show the frank reality of how things are.</p>
+      /* / */
+      <p>Together in this project we’ll be playful activists making a piece of Playful Climate Activism. </p>
+      /* / */
+      <p>We’re going to be looking at Climate Change. </p>
+      <p>Sorry, some people would like us to say Climate Change... but sometimes I find it hard to even get the words out of my mouth, because let’s be honest - it’s a Climate Emergency.</p>
+      /* / */
+      <p>Change sounds natural, or even reversible, like changing your height by growing just a little bit taller.  No, I’m kidding 5ft 6 suits me fine thank you, and what we’re really looking at is destruction. It’s a crisis. </p>
+      <p>As we’re at the start of the project, let’s work out where we’re starting from. </p>
+         <<button "next">><<set $prevpass to $passage>><<goto "2CodewordMod3">><</button>>
+    </div>
+  
+ 
+
+</main>
+<<include "footer">>
+</div>
+
+
+
+
+
+
+:: 2CodewordMod3 [nobr]
+<<set $passage to "2CodewordMod3">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="codeword">
+
+<div class="codeword-title-wrapper" id="wrapper"><h1 class="title">Enter </h1><h1 class="title">Codeword</h1></div>
+
+
+  <div id="codewordWrapper" class="codeword-wrapper">
+  <p>
+Let’s enter Module 3’s Codeword to dive in:
+</p>
+  /% CODEWORD INPUT %/
+      <div class="code-input">
+      <<textbox "$codeword" "">>
+    </div>
+   <div class="btn-result-wrapper">
+      <<button "Enter">>  
+          </div>
+      /% STANDARDISE INPUT %/
+      <<set $codeword to $codeword.toUpperCase()>>
+      /% CODEWORD CORRECT %/
+  <<if $codeword isnot "" and $codeword is "CONTEXT">>
+<<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+<<timed 3s>>
+  <<set $prevpass to $passage>>
+    <<replace "#codewordWrapper">>
+   <p> I may not be present, but Teacher you are! </p>
+    <p>Can you help me out here? </p>
+   <p> Can you ask the class: </p>
+   <p>When you hear the words Climate Emergency, what is the first thing you think of? </p><<button "Next">><<goto "2mod3intro">><</button>><</replace>><</timed>>
+<</if>>
+        /% CODEWORD INCORRECT %/
+        <<if $codeword isnot "" and $codeword is not "CONTEXT">>
+        <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+        <</if>><</button>> 
+          /% CODEWORD FEEDBACK %/
+          <div id="coderesult"></div>
+   </div>
+    </div>
+  </main>
+    <<include "footercode">>
+  </div>
+
+
+:: 2mod3intro [nobr]
+<<set $passage to "2mod3intro">><<set $module to "Module 3">>
+  <div class="wrapper">
+    <<include "header">>
+    <main  class="speaking">
+        <div class="text-wrapper">
+<p>  You might have discussed how the planet is warming up because of human’s carbon emissions. You might have talked about cars, planes, or cows. </p>
+/* / */
+<p>You might have spoken about how the richest 10% of people cause half the world’s total CO2 emissions. </p>
+<p>You may have spoken about eating vegan, pollution, Fridays for Future, Autumn Peltier, Net Zero by 2050, a target of 1.5 degrees, Greta Thunberg, Extinction Rebellion, Reduce, Reuse, Recycle... </p>
+/* / */
+
+<p>You might have talked about the Climate Emergency being complex, or about how it overlaps with so many other emergencies: the pandemic, the cost-of-living crisis…. </p>
+/* / */
+<p>You might not have said any of this, or you might have said a million other things. You’ll know totally different things from me, and probably more, and you’ll know so much more how the Climate Emergency affects you - where you live, where you go to school. </p>
+/* / */
+<p>
+  We can see this emergency happening all around us. 
+  History has taught us you don’t stand still in an emergency. You act. 
+</p>
+/* / */
+
+<p>
+  Before we think about action, we need to start by understanding how things are.
+  And from the very beginning, we need to understand that the Climate Emergency is not isolated, it's not separate from other struggles. or violence, or destruction. It is all interconnected. 
+</p>
+/* / */
+We’re going to hear from Dr Mya-Rose Craig and watch a video she made for Greenpeace.
+Dr Mya-Rose Craig is a climate activist from the UK 
+She’s great. 
+/* / */
+
+<p>Before the video though, I’m going to give a content warning. </p>
+<p>Her video is about racism and environmental destruction.</p>
+<p>This video is really honest</p>
+<p>And you might find it hard to watch at points. </p>
+<p>We’ll break it up though. </p>
+<p>Take it step by step, together. </p>
+<p>Teacher, please do speak to the class about what they might need whilst watching this video</p>
+/* / */
+
+<p>I'm going to hand over to Dr Mya-Rose Craig now – </p>
+    
+   <p> Click <<button "Move On">><<set $prevpass to $passage>><<goto "2mod3vid">><</button>>when you are ready. </p>
+   </div>
+    </main>
+         <<include "footer">>
+  </div>
+
+
+
+
+
+
+:: 2mod3vid [nobr]
+
+<<set $passage to "2mod3vid">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+  <p> Video</p>
+<<button "Next">><<set $prevpass to $passage>><<goto "2mod1int1">><</button>>
+  </main>
+     <<include "footer">>
+</div>
+
+:: 2mod1int1 [nobr]
+<<set $passage to "2mod1int1">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+      <div class="text-wrapper">
+  <p> 3.18</p>
+<p>Ok, let’s hold there, we’ve just heard a lot and let’s sit with it for a second. </p>
+<p>
+  Teacher, either as a class or in small groups can we take a moment to reflect on w
+  hat we’ve just watched.
+</p> 
+<p>Can you check in on the following questions</p>
+<ul>
+ <li> -	How do people feel? </li>
+ <li> -	Mya-Rose talked about how our nature and climate emergencies have roots in the British Empire and systemic racism - How do you think they’re connected? </li>
+</ul>
+
+
+<p>When ready click <<button "Move On">><<set $prevpass to $passage>><<goto "2mod1int2">><</button>></p>
+</div>
+
+  </main>
+     <<include "footer">>
+</div>
+
+:: 2mod1int2 [nobr]
+<<set $passage to "2mod1int2">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+      <div class="text-wrapper">
+  <p> 6.25</p>
+<p>Ok let’s pause again for a moment. </p>
+<p>Mya-Rose has covered a lot – the drastic inequality of those who are living with the impacts of the climate crisis yet causing the least pollution. And we’ve heard lots about palm oil too…like lots of things, the raw ingredient of palm oil itself isn’t bad, but when it’s commercially extracted (like Unilever do) that’s when we get 250,000 football pitches worth of deforestation. </p>
+<p>Teacher, can we take a moment to reflect on what we’ve heard. Let’s cover these questions</p>
+<ul>
+  <li>-	How are you feeling in your bodies? </li>
+ <li> -	Do you see any new connections? </li>
+  <li>-	How do you think this all links to us, in the UK?</li>
+</ul>
+
+
+<p>When ready click <<button "Move On">><<set $prevpass to $passage>><<goto "2mod1int3">><</button>></p>
+</div>
+  </main>
+     <<include "footer">>
+</div>
+
+:: 2mod1int3 [nobr]
+<<set $passage to "2mod1int3">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+      <div class="text-wrapper">
+  <p> 9.10</p>
+<p>Thanks Mya-Rose. </p>
+<p>We’ll move on in a moment, but before we do, let’s reflect on what we’ve just heard.</p> 
+<p>A lot of that was closer to home, maybe it shifted something for you. </p>
+<p>Some questions you might ask</p>
+<ul>
+<li>  -	Did you think the climate emergency and racism were linked before? </li>
+ <li> -	What did you think about Mya-Rose’s thoughts on collective over individualistic action?</li>
+ <li> -	What do you think it means for activists to come together to make change? </li>
+</ul>
+
+<p>I’d recommend 5 minutes to chat here, and when ready click <<button "Move On">><<set $prevpass to $passage>><<goto "2mod3outro">><</button>></p>
+</div>
+  </main>
+     <<include "footer">>
+</div>
+
+:: 2mod3outro [nobr]
+<<set $passage to "2mod3outro">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+      <div class="text-wrapper">
+<p>You might have found that video hard to watch </p>
+<p>You might have been upset by what you saw. </p>
+<p>You might feel angry, numb, frustrated </p>
+<p>It might leave a feeling in your stomach that you don’t have the words for at the moment.</p>
+<p>You might not know how you feel yet. </p>
+/* / */
+<p>This video only brings everything into sharper focus</p>
+<p>In order to begin, we have to look honestly at the way things are</p>
+<p>At the legacies of colonialism</p>
+<p>At who is already living in the realities of the climate emergency</p>
+<p>At how systemic racism, the British empire and the climate emergency are intertwined. </p>
+/* / */
+<p>This project is about taking action </p>
+<p>About not standing still </p>
+<p>It's about making change</p>
+/* / */
+<p>Activism is hard, and complicated </p>
+<p>It won’t be nice all the time, and we might get things wrong </p>
+<p>We’re going to have to work together, as Mya-Rose said </p>
+<p>But I know you are the group to do this.</p>
+<p>You wouldn’t be in this room if you weren’t </p>
+/* / */
+<p>So, we have looked at the big world system and seen its flaws, now let’s pull it back to this room. To a different type of system. </p>
+<p>A game system. </p>
+<p>And how we mod it.</p> 
+/* / */
+<<button "Next">><<set $prevpass to $passage>><<set $mod3 to true>><<goto "2CodewordMod4">><</button>>
+</div>
+</main>
+     <<include "footer">>
+</div>
+
+:: 2CodewordMod4 [nobr]
+<<set $passage to "2CodewordMod4">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="codeword">
+
+<div class="codeword-title-wrapper"><h1 class="title">Enter </h1><h1 class="title">Codeword</h1></div>
+<p>
+Enter the Module 4 Codeword:
+</p>
+ 
+
+
+  <div id="codewordWrapper" class="codeword-wrapper">
+  /% CODEWORD INPUT %/
+      <div class="code-input">
+      <<textbox "$codeword" "">>
+    </div>
+   <div class="btn-result-wrapper">
+      <<button "Enter">>  
+          </div>
+      /% STANDARDISE INPUT %/
+      <<set $codeword to $codeword.toUpperCase()>>
+      /% CODEWORD CORRECT %/
+      <<if $codeword isnot "" and $codeword is "POTATO">>
+      <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+      <<timed 3s>><<set $prevpass to $passage>><<goto "2mod4intro">><</timed>>
+      <</if>>
+        /% CODEWORD INCORRECT %/
+        <<if $codeword isnot "" and $codeword is not "POTATO">>
+        <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+        <</if>><</button>> 
+          /% CODEWORD FEEDBACK %/
+          <div id="coderesult"></div>
+   </div>
+    </div>
+  </main>
+    <<include "footercode">>
+  </div>
+
+:: 2mod4intro [nobr]
+<<set $passage to "2mod4intro">><<set $module to "Module 4">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper">
+<p>
+Anyone like Potatoes? Amazing – everyone. I can’t see so I’ll just make up what I’d like to think is happening. </p>
+<p>We’re going to play a game called Roast-The-Potato. </p>
+/* / */
+<p>It used to be Roast-The-Goose, but ya know, I’m trying to reduce my emissions and I like Roast Potatoes. </p>
+<p>For this game you’ll need a chair and to be sat in a circle. </p>
+<p>One person needs to put their chair in the centre of the circle though. </p>
+<p>Teacher I’ll hand over to you to explain how to Roast.  </p>
+
+<p>When you have finished click <<button "Move On">><<set $prevpass to $passage>><<goto "2mod4outro">><</button>></p>
+</div>
+ </main>
+     <<include "footer">>
+</div>
+
+
+
+:: 2mod4outro [nobr]
+<<set $passage to "2mod4outro">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper">
+<p>
+We play games of systems not to reduce them, not to suggest they are unreal, not to forget the violence they cause.</p>
+<p>We play games of systems because games can change.</p>
+<p>
+  When we play a game of a system, this shows us that systems can change too.
+  We can mod a system to create a different one.
+</p>
+<p>When we know what we're trying to build, the kind of system we want to create, we can use this to guide us.</p>
+/* / */
+
+<p>We can use games to look to the future, to imagine how things could be different.</p>
+<p>Games can also remind us how flawed and broken things are. Like the extraction economy game did in our last session. </p>
+<p>They can remind us that we're living in a system that destroys our Earth by pulling things out of it.</p>
+<p>That this system serves those with power. </p>
+/* / */
+<p>And changing games reminds us that things can be different.</p>
+<p>It reminds us that change is possible.</p>
+<p>Isn’t it time we played a different game?</p>
+
+<<button "Next">><<set $prevpass to $passage>><<set $mod4 to true>><<goto "2mod4outrob">><</button>>
+</div>
+ </main>
+     <<include "footer">>
+</div>
+
+:: 2mod4outrob [nobr]
+<<set $passage to "mod4outrob">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper">
+<p>That’s it for this week. </p>
+
+<p>Oh yeah, a codeword. To get into the next session of the box you’ll need one.  </p>
+<p>Text me [CARE] to get that – 07400179362 if you’ve forgotten. </p>
+
+<p>Take care. </p>
+
+<<button "Finish">><<set $prevpass to $passage>><<goto "landing">><</button>>
+</div>
+  </main>
+     <<include "footer">>
+</div>
+
+
+/* SESSION 3 */
+
+:: 3modulelist [nobr]
+<<set $passage to "3modulelist">>
+<div class="wrapper">
+  <main class="modules">
+  <h1 class="title">SESSION THREE</h1>
+  <div class="menu-wrapper module-list">
+<div class="menu-item" id="mod5"> 
+      <h2 class="subtitle">Module 5</h2>
+       <<button "start">><<set $prevpass to $passage>><<goto "3kaiIntro">><</button>>
+      </div>
+ <div class="menu-item" id="mod6"> 
+      <h2 class="subtitle">Module 6</h2>
+        <<button "start">><<set $prevpass to $passage>><<goto "3CodewordMod6">><</button>>
+      </div>
+  </div>
+  </main>
+  <<include "footer">></div>
+  <<done>><<include "checkmodules">><</done>>
+
+
+:: 3kaiIntro [nobr]
+<<set $passage to "3kaiIntro">><<set $module to "Introduction">>
+<div class="wrapper">
+  <<include "header">>
+    /* <h1 class="title top">Hello - it's Kai again</h1> */
+  <main class="speaking">
+ <h1 class="title ">Hello - it's Kai again</h1>
+
+    <div class="text-wrapper">
+    <p>  Hello. </p>
+<p>Glad you got into the next component! </p>
+<p>Here we are then – ready to play.</p>
+<p>Working towards a Playful Action. </p>
+<p>Inspired by Codename: Violet. </p>
+<p>I should probably explain more about how Codename: Violet started, seeing as we are starting our action too. I’ll sum it up in 32 seconds. </p>
+/
+<p>Codename: Violet was run by a group of 8-10 year olds who Coney work with. We call them the Young Coneys, because, well it’s simple really, they work with Coney & they are young. They make play about the stuff they are passionate about. They’re Playful Activists too. In fact, they started all this Playful Activism stuff for us. Codename: Violet did. </p>
+/
+<p>It all started with an email from Greenpeace to Coney. </p>
+<p>(in a fake voice 1) Do you know any kids who might want to be involved in our Ditch Diesel Campaign?</p>
+<p>(in a fake voice 2) What’s that? </p>
+<p>(in a fake voice 1) A campaign about Air Pollution & Diesel cars. </p>
+<p>(in a fake voice 2) Yep, maybe, but what would they do? </p>
+<p>(in a fake voice 1) We want them to come up with a plan. We’ll help but we want you to design it. Make it using their skills. </p>
+/
+<p>Great voices Kai – thanks everyone. </p>
+<p>32 seconds…ish.</p> 
+
+         <<button "next">><<set $prevpass to $passage>><<goto "3CodewordMod5">><</button>>
+    </div>
+  
+ 
+
+</main>
+<<include "footer">>
+</div>
+
+
+
+
+
+
+:: 3CodewordMod5 [nobr]
+<<set $passage to "3CodewordMod5">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="codeword">
+
+<div class="codeword-title-wrapper" id="wrapper"><h1 class="title">Enter </h1><h1 class="title">Codeword</h1></div>
+
+
+  <div id="codewordWrapper" class="codeword-wrapper">
+  <p>
+Let’s enter Module 5’s Codeword to dive in:
+</p>
+  /% CODEWORD INPUT %/
+      <div class="code-input">
+      <<textbox "$codeword" "">>
+    </div>
+   <div class="btn-result-wrapper">
+      <<button "Enter">>  
+          </div>
+      /% STANDARDISE INPUT %/
+      <<set $codeword to $codeword.toUpperCase()>>
+      /% CODEWORD CORRECT %/
+  <<if $codeword isnot "" and $codeword is "TRUMP">>
+<<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+<<timed 3s>>
+  <<set $prevpass to $passage>>
+    <<goto "3mod5intro">><</timed>>
+<</if>>
+        /% CODEWORD INCORRECT %/
+        <<if $codeword isnot "" and $codeword is not "TRUMP">>
+        <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+        <</if>><</button>> 
+          /% CODEWORD FEEDBACK %/
+          <div id="coderesult"></div>
+   </div>
+    </div>
+  </main>
+    <<include "footercode">>
+  </div>
+
+
+:: 3mod5intro [nobr]
+<<set $passage to "3mod5intro">><<set $module to "Module 5">>
+  <div class="wrapper">
+    <<include "header">>
+    <main  class="speaking">
+        <div class="text-wrapper">
+<p>We began Codename: Violet by playing a game called Mundane Making Mastery to help us get to know one another and the different things we can make. </p>
+/* / */
+<p>Everyone has a mundane making skill, and we share ours to build us as a team. Each mundane making skill, each thing we know about each other helps us build a connection. My mundane making skill is that I am excellent at Roast Potatoes. Seriously I am the Roastie Expert. Also, making fake voices…as you saw earlier. </p>
+/* / */
+<p>
+  So now we know each other a little better too. We’re connected. 
+  And we’re going to play it here.  
+</p>
+
+    
+    <<button "Next">><<set $prevpass to $passage>><<goto "3mod5a">><</button>> 
+   </div>
+    </main>
+         <<include "footer">>
+  </div>
+
+:: 3mod5a [nobr]
+<<set $passage to "3mod5a">>
+  <div class="wrapper">
+    <<include "header">>
+    <main  class="speaking">
+        <div class="text-wrapper">
+<p>Teacher, can we pair up? </p>
+<p>Once you’ve got a pair, find out their mundane making skills, and tell them yours. </p>
+<p>Then you’ll share that back to the group. Maybe you are great at making spag bol, you can make great playlists for friends or maybe you are just good at making loud noises.</p>
+
+
+    <p>When done click<<button "Move On">><<set $prevpass to $passage>><<goto "3mod5b">><</button>> </p>
+   </div>
+    </main>
+         <<include "footer">>
+  </div>
+
+
+:: 3mod5b [nobr]
+<<set $passage to "3mod5b">>
+  <div class="wrapper">
+    <<include "header">>
+    <main  class="speaking">
+        <div class="text-wrapper">
+<p>Teacher, time to hand out the cards – fill out the cards and give yourself a rating out of 100 for your Mundane Making skills, it’s a bit like Top Trumps.  </p>
+<p>I’m probably a 78.7 on Roasties</p>
+<p>A 52 on fake voices. (Let’s be honest)</p>
+<p>And a 96 on making references to my height. </p>
+    <p>When you have finished <<button "Move On">><<set $prevpass to $passage>><<goto "3mod5outro">><</button>> </p>
+   </div>
+    </main>
+         <<include "footer">>
+  </div>
+
+
+
+
+:: 3mod5outro [nobr]
+<<set $passage to "3mod5outro">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+      <div class="text-wrapper">
+<p>Excellent Talents to have in the room. </p>
+<p>I say that, again not knowing for sure, as I’m not live. </p>
+<p>A pre-record. </p>
+<p>I can share things, but you can’t share things back– it’s a bit of a shame really – but it doesn’t mean we’re not connected. </p>
+/* / */
+<p>By understanding where we're all coming from, what we value, what mundane making mastery we have in the space, we build a collective. When we're all connected it's like a web, we're strong, and flexible, and we stop working as a set of individuals and we start to collaborate as a group. </p>
+<p>Playful Action is built on that – collaboration.  </p>
+<p>
+  Fold the feet out on your cards, and this will become your Playful Activist Card.
+  Keep them safe, we’ll need them later in this process. 
+</p>
+
+/* / */
+<<button "Next">><<set $prevpass to $passage>><<set $mod5 to true>><<goto "3CodewordMod6">><</button>>
+</div>
+</main>
+     <<include "footer">>
+</div>
+
+:: 3CodewordMod6 [nobr]
+<<set $passage to "3CodewordMod6">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="codeword">
+
+<div class="codeword-title-wrapper"><h1 class="title">Enter </h1><h1 class="title">Codeword</h1></div>
+<p>
+Enter the Module 6 Codeword:
+</p>
+ 
+
+
+  <div id="codewordWrapper" class="codeword-wrapper">
+  /% CODEWORD INPUT %/
+      <div class="code-input">
+      <<textbox "$codeword" "">>
+    </div>
+   <div class="btn-result-wrapper">
+      <<button "Enter">>  
+          </div>
+      /% STANDARDISE INPUT %/
+      <<set $codeword to $codeword.toUpperCase()>>
+      /% CODEWORD CORRECT %/
+      <<if $codeword isnot "" and $codeword is "FOCUS">>
+      <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+      <<timed 3s>><<set $prevpass to $passage>><<goto "3mod6intro">><</timed>>
+      <</if>>
+        /% CODEWORD INCORRECT %/
+        <<if $codeword isnot "" and $codeword is not "FOCUS">>
+        <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+        <</if>><</button>> 
+          /% CODEWORD FEEDBACK %/
+          <div id="coderesult"></div>
+   </div>
+    </div>
+  </main>
+    <<include "footercode">>
+  </div>
+
+:: 3mod6intro [nobr]
+<<set $passage to "3mod6intro">><<set $module to "Module 6">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper">
+<p>So, we now know who we are but what is our focus. We need to know what you are passionate about. </p>
+<p>The Young Coneys were working on Air Pollution – they knew more than most people in the room already – because it was affecting them in the day to day. They were experts.  </p>
+/* / */
+<p>Now for the biggest understatement ever to have left my lips </p>
+<p>The Climate Crisis is quite a large topic...</p>
+<p>Wow Kai understatement of the year </p>
+<p>And we can’t focus on all of it. </p>
+<p>Wow, Kai, 2 for 2</p>
+<p>Yes, it’s an understatement, </p>
+<p>yes, it’s ridiculous to say, but also, yes, it is true </p>
+<p>So, we need to find our path. </p>
+<p>The route we are going to go down as a group. </p>
+
+<<button "Next">><<set $prevpass to $passage>><<goto "3mod6a">><</button>>
+</div>
+ </main>
+     <<include "footer">>
+</div>
+
+
+:: 3mod6a [nobr]
+<<set $passage to "3mod6a">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper">
+<p>So, we’re going to look global and meet 6 humans. </p>
+
+<p>Teacher, get the class into 6 groups and share out the Character Cards. </p>
+
+<p>In 6 groups, you will introduce us to these humans and why their passion should be ours here.</p>
+
+<p>All the information is on the cards. </p>
+
+When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "3mod6outro">><</button>>
+</div>
+ </main>
+     <<include "footer">>
+</div>
+
+
+:: 3mod6outro [nobr]
+<<set $passage to "3mod6outro">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper" id="mount">
+<p>We build our plans using the models of others </p>
+<p>These stories give us a small insight into playful activism that is happening all over the Earth </p>
+<p>Then by thinking about us: about how their stories relate to us here, and about what we want to change </p>
+<p>We can find our focus. </p>
+<p>We need to choose a path</p>
+/* / */
+<p>Who do you connect to most in this school? What theme do you feel passionate about? We’re going to take an old-fashioned vote. </p>
+<p>Teacher, can you hold the vote, and then select which theme you’ll focus on. </p>
+
+
+TBC need to work on choice reaction
+
+
+<<button "Air Pollution">>
+  <<timed 1s>><<replace "#mount">>Air Pollution<</replace>><</timed>>
+  <<set $choice to "Air Pollution – inspired by Alejandro Daly">>
+  <<timed 5s>><<set $prevpass to $passage>><<set $mod6 to true>><<goto "3sessionoutro">><</timed>>
+<</button>>
+<<button "Meat Consumption">>
+  <<timed 1s>><<replace "#mount">>Meat Consumption<</replace>><</timed>>
+  <<set $choice to "Meat Consumption – inspired by Genesis Butler">>
+  <<timed 5s>><<set $prevpass to $passage>><<set $mod6 to true>><<goto "3sessionoutro">><</timed>>
+<</button>>
+<<button "Plastic Pollution">>
+  <<timed 1s>><<replace "#mount">>Plastic Pollution<</replace>><</timed>>
+  <<set $choice to "Plastic Pollution – inspired by Melati & Isabel Wijsen">>
+  <<timed 5s>><<set $prevpass to $passage>><<set $mod6 to true>><<goto "3sessionoutro">><</timed>>
+<</button>>
+<<button "Sustainable Palm Oil">>
+  <<timed 1s>><<replace "#mount">>Sustainable Palm Oil<</replace>><</timed>>
+  <<set $choice to "Sustainable Palm Oil – inspired by Salsabila Khairunnisa">>
+  <<timed 5s>><<set $prevpass to $passage>><<set $mod6 to true>><<goto "3sessionoutro">><</timed>>
+<</button>>
+<<button "Deforestation & Biodiversity">>
+  <<timed 1s>><<replace "#mount">>Deforestation & Biodiversity<</replace>><</timed>>
+  <<set $choice to "Deforestation & Biodiversity – inspired by Professor Wangari Maathai">>
+  <<timed 5s>><<set $prevpass to $passage>><<set $mod6 to true>><<goto "3sessionoutro">><</timed>>
+<</button>>
+
+<<button "Fast Fashion">>
+  <<timed 1s>><<replace "#mount">>Fast Fashion<</replace>><</timed>>
+  <<set $choice to "Fast Fashion – inspired by X">>
+  <<timed 5s>><<set $prevpass to $passage>><<set $mod6 to true>><<goto "3sessionoutro">><</timed>>
+<</button>>
+
+
+</div>
+ </main>
+     <<include "footer">>
+</div>
+
+:: 3sessionoutro [nobr]
+<<set $passage to "3sessionoutro">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper">
+<p>That’s it for this week. </p>
+<p>We’ve seen humans from across the world taking action.  </p>
+<p>You’ve picked to focus on $choice</p>
+
+<p>Each of the acts though were gifts given by the groups to their communities.</p>
+<p>Just like your act of playful activism will be a gift to your community</p>
+<p>That’s why we are working with you – the experts on the target.  </p>
+<p>The target for your act is</p>
+<p>Here. </p>
+<p>This school. </p>
+/* / */
+<p>The last envelope in the compartment has your Recon Cards. </p>
+<p>Cards to inspire you before the next session. </p>
+<p>To get intelligence on our target. </p>
+<p>Time to close for today. </p>
+<p>But a code for you to dive deeper.</p>
+<p>[HOPEY]. </p>
+<p>Take care. </p>
+
+
+<<button "Finish">><<set $prevpass to $passage>><<goto "landing">><</button>>
+</div>
+  </main>
+     <<include "footer">>
+</div>
+
+
+
+/* SESSION 4  */
+
+:: 4modulelist [nobr]
+<<set $passage to "4modulelist">>
+<div class="wrapper">
+  <main class="modules">
+  <h1 class="title">SESSION FOUR</h1>
+  <div class="menu-wrapper module-list">
+<div class="menu-item" id="mod7"> 
+      <h2 class="subtitle">Module 7</h2>
+       <<button "start">><<set $prevpass to $passage>><<goto "4kaiIntro">><</button>>
+</div>
+ <div class="menu-item" id="mod8"> 
+      <h2 class="subtitle">Module 8</h2>
+      <<button "start">><<set $prevpass to $passage>><<goto "4CodewordMod8">><</button>>
+      </div>
+<div class="menu-item" id="mod9"> 
+      <h2 class="subtitle">Module 9</h2>
+      <<button "start">><<set $prevpass to $passage>><<goto "4CodewordMod9">><</button>>
+      </div>
+  </div>
+  </main>
+  <<include "footer">></div>
+  <<done>><<include "checkmodules">><</done>>
+
+
+:: 4kaiIntro [nobr]
+<<set $passage to "4kaiIntro">><<set $module to "Introduction">>
+<div class="wrapper">
+  <<include "header">>
+    /* <h1 class="title top">Hello - it's Kai again</h1> */
+  <main class="speaking">
+ <h1 class="title ">Hello - it's Kai again</h1>
+
+    <div class="text-wrapper">
+    <p>  Hello. </p>
+<p>Hello. </p>
+<p>Hope you are enjoying the surprise of each of these compartments – and breaking up the pyramid! </p>
+<p>Here we are again ready to play.</p>
+<p>Working towards a Playful Action. </p>
+<p>Inspired by Codename: Violet. </p>
+/* / */
+<p>So, you’ve chosen your focus. </p>
+<p>You might have gone and looked up a bit more about it – or maybe not.</p>
+<p>In Violet we did a deep dive to look at who had power to do something about our focus. </p>
+<p>Breaking it down: </p>
+<p>Diesel Cars = Air Pollution</p>
+/* / */
+<p>And our target became those people who make Diesel Cars and make lots of money off them</p>
+<p>So, we targeted a Car Industry Gala Dinner where all the executives and leaders in the industry would be meeting. </p>
+<p>Power is what we’re looking at today </p>
+<p>First up, let’s build on those Recon Cards. </p>
+
+
+         <<button "next">><<set $prevpass to $passage>><<goto "4CodewordMod7">><</button>>
+    </div>
+  
+ 
+
+</main>
+<<include "footer">>
+</div>
+
+
+
+
+
+
+:: 4CodewordMod7 [nobr]
+<<set $passage to "4CodewordMod7">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="codeword">
+
+<div class="codeword-title-wrapper" id="wrapper"><h1 class="title">Enter </h1><h1 class="title">Codeword</h1></div>
+
+
+  <div id="codewordWrapper" class="codeword-wrapper">
+  <p>
+Let’s enter Module 7’s Codeword to dive in:
+</p>
+  /% CODEWORD INPUT %/
+      <div class="code-input">
+      <<textbox "$codeword" "">>
+    </div>
+   <div class="btn-result-wrapper">
+      <<button "Enter">>  
+          </div>
+      /% STANDARDISE INPUT %/
+      <<set $codeword to $codeword.toUpperCase()>>
+      /% CODEWORD CORRECT %/
+  <<if $codeword isnot "" and $codeword is "RECON">>
+<<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+<<timed 3s>>
+  <<set $prevpass to $passage>>
+    <<goto "4mod7intro">><</timed>>
+<</if>>
+        /% CODEWORD INCORRECT %/
+        <<if $codeword isnot "" and $codeword is not "RECON">>
+        <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+        <</if>><</button>> 
+          /% CODEWORD FEEDBACK %/
+          <div id="coderesult"></div>
+   </div>
+    </div>
+  </main>
+    <<include "footercode">>
+  </div>
+
+
+:: 4mod7intro [nobr]
+<<set $passage to "4mod7intro">><<set $module to "Module 7">>
+  <div class="wrapper">
+    <<include "header">>
+    <main  class="speaking">
+        <div class="text-wrapper">
+<p>We’ve spoken about the system in play in the world</p>
+<p>And where power sits but now it’s time to focus on our target. </p>
+<p>It’s time to work out who has power around us in this space. </p>
+<p>As we are making our Playful Action at this school. </p>
+<p>So, we need to know what is happening here. </p>
+/* / */
+<p>You know it fairly well I bet, that’s one of the reasons we are working with you.</p> 
+<p>You are the experts. </p>
+<p>You go to the school.</p>
+<p>But now we need to come together to look at our target. To share the things we know, and notice things we haven’t seen. </p>
+<p>So, we’re going to map it. The system that is in play, and who has power here. </p>
+<p>Once we understand power, we can make choices strategically about how we take action. </p>
+    
+    <<button "Next">><<set $prevpass to $passage>><<goto "4mod7a">><</button>> 
+   </div>
+    </main>
+         <<include "footer">>
+  </div>
+
+:: 4mod7a [nobr]
+<<set $passage to "mod7a">>
+  <div class="wrapper">
+    <<include "header">>
+    <main  class="speaking">
+        <div class="text-wrapper">
+<p>Toby to add instructions </p>
+
+    <p>When done click <<button "Move On">><<set $prevpass to $passage>><<goto "4mod7outro">><</button>> </p>
+   </div>
+    </main>
+         <<include "footer">>
+  </div>
+
+
+
+
+:: 4mod7outro [nobr]
+<<set $passage to "4mod7outro">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+      <div class="text-wrapper">
+<p>So now we have a map of your school </p>
+
+<p>Of the places and spaces, and of the people too </p>
+
+<p>When we map people, we see power </p>
+
+<p>And we need to see power to make change </p>
+
+<p>It’s like a row of dominoes </p>
+
+<p>Or one of those videos where you knock over a glass, which pours out water, which turns on a light which toasts a marshmallow… you know </p>
+/* / */
+
+<p>When we can see power, and how its all connected, we know which domino to knock over </p>
+
+<p>Once the dominoes are falling, then things start to change </p>
+
+<p>Let’s look at the potential of that change…</p>
+
+<<button "Next">><<set $prevpass to $passage>><<set $mod7 to true>><<goto "4CodewordMod8">><</button>>
+</div>
+</main>
+     <<include "footer">>
+</div>
+
+:: 4CodewordMod8 [nobr]
+<<set $passage to "4CodewordMod8">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="codeword">
+
+<div class="codeword-title-wrapper"><h1 class="title">Enter </h1><h1 class="title">Codeword</h1></div>
+<p>
+Enter the Module 8 Codeword:
+</p>
+ 
+
+
+  <div id="codewordWrapper" class="codeword-wrapper">
+  /% CODEWORD INPUT %/
+      <div class="code-input">
+      <<textbox "$codeword" "">>
+    </div>
+   <div class="btn-result-wrapper">
+      <<button "Enter">>  
+          </div>
+      /% STANDARDISE INPUT %/
+      <<set $codeword to $codeword.toUpperCase()>>
+      /% CODEWORD CORRECT %/
+      <<if $codeword isnot "" and $codeword is "IMAGINE">>
+      <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+      <<timed 3s>><<set $prevpass to $passage>><<goto "4mod8intro">><</timed>>
+      <</if>>
+        /% CODEWORD INCORRECT %/
+        <<if $codeword isnot "" and $codeword is not "IMAGINE">>
+        <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+        <</if>><</button>> 
+          /% CODEWORD FEEDBACK %/
+          <div id="coderesult"></div>
+   </div>
+    </div>
+  </main>
+    <<include "footercode">>
+  </div>
+
+:: 4mod8intro [nobr]
+<<set $passage to "4mod8intro">><<set $module to "Module 8">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper">
+<p>Now we’ve reached the time for some dreaming </p>
+
+<p>To imagine what if? </p>
+
+<p>For you to think not about what you want to change, but to think about how your school will be different when it has changed </p>
+
+<p>Having the dream, imagining success is the first step </p>
+/* / */
+
+<p>
+  Imagining myself 2 inches taller is the only way I can get there 
+  I kid I kid 
+</p>
+
+<p>But for real, it’s important that we imagine, that we think about what success could be -  </p>
+
+<p>How would your school be different if you were successful? </p>
+
+<<button "Next">><<set $prevpass to $passage>><<goto "4mod8a">><</button>>
+</div>
+ </main>
+     <<include "footer">>
+</div>
+
+
+:: 4mod8a [nobr]
+<<set $passage to "4mod8a">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper">
+<p>WHAT HAPPENED IF THIS SCHOOL DIDN’T HAVE THOSE RULES</p>
+<p>WHAT RULES WOULD CHANGE THINGS HERE</p>
+<p>WHAT SYSTEM CHANGE WOULD INFLUENCE OUR FOCUS? </p>
+
+When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "4mod8outro">><</button>>
+</div>
+ </main>
+     <<include "footer">>
+</div>
+
+
+:: 4mod8outro [nobr]
+<<set $passage to "4mod8outro">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper" id="mount">
+<p>And now you have your goal </p>
+
+<p>If this was a game </p>
+<p>(You know I love games) </p>
+
+<p>This would be your objective, your mission </p>
+
+<p>
+  Create the school where… you can fill in the blanks. </p>  
+<p>Actually do, as a class, summarise it and write it on the SUCCESS Card. </p>
+
+/* // */
+
+<p>Seeing success doesn’t make it happen, of course, there are many more steps to take, obstacles in the way… but no worries, obstacles are what makes a game good. </p>
+
+<p>It’d be no fun if it was all easy, would it? </p>
+
+<p>Last up in our exploration of power, we need to look at ourselves. </p>
+
+
+<<button "Next">><<set $mod8 to true>>
+<<goto "4CodewordMod9">>
+<</button>>
+</div>
+ </main>
+     <<include "footer">>
+</div>
+
+
+:: 4CodewordMod9 [nobr]
+<<set $passage to "4CodewordMod9">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="codeword">
+
+<div class="codeword-title-wrapper"><h1 class="title">Enter </h1><h1 class="title">Codeword</h1></div>
+<p>
+Enter the Module 9 Codeword:
+</p>
+ 
+
+
+  <div id="codewordWrapper" class="codeword-wrapper">
+  /% CODEWORD INPUT %/
+      <div class="code-input">
+      <<textbox "$codeword" "">>
+    </div>
+   <div class="btn-result-wrapper">
+      <<button "Enter">>  
+          </div>
+      /% STANDARDISE INPUT %/
+      <<set $codeword to $codeword.toUpperCase()>>
+      /% CODEWORD CORRECT %/
+      <<if $codeword isnot "" and $codeword is "COMFORT">>
+      <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+      <<timed 3s>><<set $prevpass to $passage>><<goto "4mod9intro">><</timed>>
+      <</if>>
+        /% CODEWORD INCORRECT %/
+        <<if $codeword isnot "" and $codeword is not "COMFORT">>
+        <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+        <</if>><</button>> 
+          /% CODEWORD FEEDBACK %/
+          <div id="coderesult"></div>
+   </div>
+    </div>
+  </main>
+    <<include "footercode">>
+  </div>
+
+
+
+:: 4mod9intro [nobr]
+<<set $passage to "4mod9intro">><<set $module to "Module 4">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper">
+<p>There are lots of different types of power in this room. </p>
+<p>Your teacher has power over this space.  </p>
+<p>There is power with you as a group of activists, as people making change </p>
+<p>I have power to – quite a lot actually – I can say words without much interruption – I can talk about Roasting Potatoes with no concerns you’ll interrupt!  </p>
+/* / */
+<p>Each of you will have power over others </p>
+<p>But power is rarely something that is balanced </p>
+<p>
+  People have power because of their job, because of money, because of the connections they have or because of the family they come from, because of how they’re gendered or how they’re racialised. 
+  Some of these can be unearned privileges, that others don’t have. For one person, something might be easy, while for someone else, it is very hard. 
+</p>
+/* / */
+<p>The imbalance of power exists all over the world, and it exists in this very room too </p>
+<p>If we want to act together, we need to see that </p>
+<p>We need to look at power and privilege, and at what we find comfortable </p>
+<p>We have to do this for us to be able to work honestly and well together </p>
+<p>We’re going to find our Comfort in Action </p>
+
+ <<button "Next">><<set $prevpass to $passage>><<goto "4mod9a">><</button>>
+</div>
+ </main>
+     <<include "footer">>
+</div>
+
+:: 4mod9a [nobr]
+<<set $passage to "4mod9a">><<set $module to "Module 9">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper">
+<p>Teacher, the instructions are on the Module Card. </p>
+<p> Alongside, a Comfort Marker. </p>
+<p>Click when you are ready to  <<button "Move on">><<set $prevpass to $passage>><<goto "4mod9outro">><</button>></p>
+
+</div>
+ </main>
+     <<include "footer">>
+</div>
+
+:: 4mod9outro [nobr]
+<<set $passage to "4mod9outro">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+      <div class="text-wrapper">
+<p>Comfort in Action is a layered thing. </p>
+<p>It’s about us and the roles we want to play. But it’s also about the systems that we’re part of. </p>
+<p>For some of us, there are environments, circumstances, systems that can be unsafe. </p>
+
+<p>//•	Actor can describe their own identity in whatever way they feel comfortable //</p>
+
+<p>I don’t look like other climate protestors, and when I started being a playful activist, I found that hard. </p>
+/* / */
+<p>I wondered where my space was, where I fit in and where I could play the part I wanted to. </p>
+<p>But looking honestly at my comfort in action and sharing that comfort in action with others helped. It meant that I only had to take on the roles I felt comfortable with, and I didn’t feel any need to explain or justify where I was, or why I was there. By discussing comfort in action, we made sure it was all out in the open. </p>
+/* / */
+<p>We can note that some of us have greater privileges and we might use our power to reduce the burden on others in the activist spaces, particularly those who share the identities or experience of those who we are seeking justice for. </p>
+<p>By understanding comfort in action for our whole team we're able to work as a collective. We can work together to make sure everything happens, that all roles are played, but that no one is put at risk, that all of us are comfortable.  </p>
+/* / */
+<p>I hope you all feel more comfortable thinking about where you are comfortable </p>
+<p>You all look pretty comfy… or well, I’m going to assume you do! </p>
+
+<<button "Next">><<set $prevpass to $passage>><<set $mod9 to true>><<goto "4sessionoutro">><</button>>
+</div>
+</main>
+     <<include "footer">>
+</div>
+
+:: 4sessionoutro [nobr]
+<<set $passage to "4sessionoutro">>
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking">
+    <div class="text-wrapper">
+<p>And so that’s us at the end of today. </p>
+
+<p>Today has been all about looking. </p>
+<p>about looking around to see your school, and where power sits in it, </p>
+<p>
+  about looking in to see where you feel comfortable in action 
+  and about looking to the future, to imagine what success looks like 
+</p>
+
+/* / */
+
+<p>Now you’ve done the looking, it’s time to start doing. </p>
+
+<p>Next session you’re going to meet someone. They’re the artist I mentioned, another Playful Activist.  </p>
+
+<p>They’re the last missing member of our team, and they’re going to join you to put these ideas into playful action. </p>
+/* / */
+
+<p>Until next time… </p>
+<p>And in case that wasn’t quite enough </p>
+<p>There’s a final message for you </p>
+<p>Text [POWER] to 07400179362 to pick it up </p>
+
+<p>I’ll see you soon. </p>
+
+
+<<button "Finish">><<set $prevpass to $passage>><<goto "landing">><</button>>
+</div>
+  </main>
+     <<include "footer">>
+</div>
 
 
 
