@@ -126,6 +126,26 @@ setup.checkForRepeats = (array,element) => {
     </div>
   </div></footer>
 
+:: footerskip [nobr]{"position":"100,375","size":"100,100"}
+<footer>
+  <div class="nav-wrapper btns">
+    <div class="nav-item">
+      <<button "Replay">><<goto $passage>><</button>> 
+    </div>
+    <div class="nav-item">
+      <<button "Back">><<goto $prevpass>><</button>>
+    </div>
+    <div class="nav-item">
+      <<button "Skip">><<set $prevpass to $passage>><<goto $nextpass>><</button>>
+    </div>
+  </div>
+  <div class="nav-wrapper">
+    <div class="nav-item logo">
+      <img src="./assets/img/triangles-08.png">
+    </div>
+  </div></footer>
+
+
 :: footercode [nobr]{"position":"100,375","size":"100,100"}
 <footer>
   <div class="nav-wrapper ">
@@ -244,7 +264,7 @@ You have two options:
   </div>
 
 :: 1modulelist [nobr]
-<<set $passage to "modulelist">>
+<<set $passage to "1modulelist">>
 <div class="wrapper">
   <main class="modules">
   <h1 class="title">SESSION ONE</h1>
@@ -264,7 +284,7 @@ You have two options:
 
 
 :: 1kaiIntro [nobr]
-<<set $passage to "1kaiIntro">><<set $module to "Introduction">>
+<<set $passage to "1kaiIntro">><<set $nextpass to "1kaiIntro2">><<set $module to "Introduction">>
 <div class="wrapper">
 <<include "header">>
 <main class="speaking">
@@ -274,12 +294,12 @@ You have two options:
 <p>I’ll explain more about them later</p>
 <<button "next">><<set $prevpass to $passage>><<goto "1kaiIntro2">><</button>>
 </main>
-<<include "footer">>
+<<include "footerskip">>
 </div>
 
 
 :: 1kaiIntro2[nobr]
-<<set $passage to "1kaiIntro2">>
+<<set $passage to "1kaiIntro2">><<set $nextpass to "1kaiIntro3">>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -289,14 +309,13 @@ You have two options:
   <p>I make games, like Roast Potatoes and, occasionally, make bad jokes. </p>
   <p>It's great to meet all of you.</p>
   <<button "next">><<set $prevpass to $passage>><<goto "1kaiIntro3">><</button>>
-
   </main>
-  <<include "footer">>
+  <<include "footerskip">>
 </div>
 
 
 :: 1kaiIntro3 [nobr]
-<<set $passage to "1kaiIntro3">>
+<<set $passage to "1kaiIntro3">><<set $nextpass to "1kaiIntro4">>
 <div class="wrapper">
 <<include "header">>
   <main class="speaking">
@@ -313,14 +332,13 @@ You have two options:
   <<button "next">><<set $prevpass to $passage>><<goto "1kaiIntro4">><</button>>
   </div>
   </main>
-
-    <<include "footer">>
+    <<include "footerskip">>
 </div>
 
 
 
 :: 1kaiIntro4 [nobr]
-<<set $passage to "1kaiIntro4">>
+<<set $passage to "1kaiIntro4">><<set $nextpass to "1kaiIntro5">>
 <div class="wrapper">
 <<include "header">>
   <main class="speaking">
@@ -328,16 +346,15 @@ You have two options:
 <p>So, you've maybe heard of Greenpeace before.</p>
 <p>Greenpeace are a group of activists who take action against the climate and nature emergencies.</p>
 <p>  They believe we are all Activists</p>
-
   <<button "next">><<set $prevpass to $passage>><<goto "1kaiIntro5">><</button>>
   </div>
   </main>
-      <<include "footer">>
+      <<include "footerskip">>
 </div>
 
 
 :: 1kaiIntro5[nobr]
-<<set $passage to "1kaiIntro5">>
+<<set $passage to "1kaiIntro5">><<set $nextpass to "1CodewordMod1">>
 <div class="wrapper">
 <<include "header">>
   <main class="speaking">
@@ -346,11 +363,10 @@ You have two options:
 <p>  Coney are a group of playful activists.</p>
  <p> Coney create interactive performances, adventures, and games to make change through play.</p>
 
-
   <<button "next">><<set $prevpass to $passage>><<goto "1CodewordMod1">><</button>>
   </div>
   </main>
-      <<include "footer">>
+      <<include "footerskip">>
 </div>
 
 
@@ -359,7 +375,6 @@ You have two options:
 <div class="wrapper">
   <<include "header">>
   <main class="codeword">
-
 <div class="codeword-title-wrapper"><h1 class="title">Enter </h1><h1 class="title">Codeword</h1></div>
  <p> We're going to start this project by playing a game.</p>
 <p>  A game I made actually. </p>
@@ -668,7 +683,7 @@ You have two options:
 
 
 :: 2kaiIntro [nobr]
-<<set $passage to "2kaiIntro">><<set $module to "Introduction">>
+<<set $passage to "2kaiIntro">><<set $nextpass to "2CodewordMod3">><<set $module to "Introduction">>
 <div class="wrapper">
   <<include "header">>
     /* <h1 class="title top">Hello - it's Kai again</h1> */
@@ -701,7 +716,7 @@ You have two options:
  
 
 </main>
-<<include "footer">>
+<<include "footerskip">>
 </div>
 
 
@@ -757,7 +772,7 @@ Let’s enter Module 3’s Codeword to dive in:
 
 
 :: 2mod3intro [nobr]
-<<set $passage to "2mod3intro">><<set $module to "Module 3">>
+<<set $passage to "2mod3intro">><<set $module to "Module 3">><<set $nextpass to "2mod3vid">>
   <div class="wrapper">
     <<include "header">>
     <main  class="speaking">
@@ -802,7 +817,7 @@ She’s great.
    <p> Click <<button "Move On">><<set $prevpass to $passage>><<goto "2mod3vid">><</button>>when you are ready. </p>
    </div>
     </main>
-         <<include "footer">>
+         <<include "footerskip">>
   </div>
 
 
@@ -1070,7 +1085,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 
 
 :: 3kaiIntro [nobr]
-<<set $passage to "3kaiIntro">><<set $module to "Introduction">>
+<<set $passage to "3kaiIntro">><<set $module to "Introduction">><<set $nextpass to "3CodewordMod5">>
 <div class="wrapper">
   <<include "header">>
     /* <h1 class="title top">Hello - it's Kai again</h1> */
@@ -1103,7 +1118,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
  
 
 </main>
-<<include "footer">>
+<<include "footerskip">>
 </div>
 
 
@@ -1155,7 +1170,7 @@ Let’s enter Module 5’s Codeword to dive in:
 
 
 :: 3mod5intro [nobr]
-<<set $passage to "3mod5intro">><<set $module to "Module 5">>
+<<set $passage to "3mod5intro">><<set $module to "Module 5">><<set $nextpass to "3mod5a">>
   <div class="wrapper">
     <<include "header">>
     <main  class="speaking">
@@ -1173,7 +1188,7 @@ Let’s enter Module 5’s Codeword to dive in:
     <<button "Next">><<set $prevpass to $passage>><<goto "3mod5a">><</button>> 
    </div>
     </main>
-         <<include "footer">>
+         <<include "footerskip">>
   </div>
 
 :: 3mod5a [nobr]
@@ -1444,7 +1459,7 @@ TBC need to work on choice reaction
 
 
 :: 4kaiIntro [nobr]
-<<set $passage to "4kaiIntro">><<set $module to "Introduction">>
+<<set $passage to "4kaiIntro">><<set $module to "Introduction">><<set $nextpass to "4CodewordMod7">>
 <div class="wrapper">
   <<include "header">>
     /* <h1 class="title top">Hello - it's Kai again</h1> */
@@ -1477,7 +1492,7 @@ TBC need to work on choice reaction
  
 
 </main>
-<<include "footer">>
+<<include "footerskip">>
 </div>
 
 
@@ -1529,7 +1544,7 @@ Let’s enter Module 7’s Codeword to dive in:
 
 
 :: 4mod7intro [nobr]
-<<set $passage to "4mod7intro">><<set $module to "Module 7">>
+<<set $passage to "4mod7intro">><<set $module to "Module 7">><<set $nextpass to "4mod7a" >>
   <div class="wrapper">
     <<include "header">>
     <main  class="speaking">
@@ -1550,7 +1565,7 @@ Let’s enter Module 7’s Codeword to dive in:
     <<button "Next">><<set $prevpass to $passage>><<goto "4mod7a">><</button>> 
    </div>
     </main>
-         <<include "footer">>
+         <<include "footerskip">>
   </div>
 
 :: 4mod7a [nobr]
@@ -1643,7 +1658,7 @@ Enter the Module 8 Codeword:
   </div>
 
 :: 4mod8intro [nobr]
-<<set $passage to "4mod8intro">><<set $module to "Module 8">>
+<<set $passage to "4mod8intro">><<set $nextpass to "4mod8a">><<set $module to "Module 8">>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -1669,7 +1684,7 @@ Enter the Module 8 Codeword:
 <<button "Next">><<set $prevpass to $passage>><<goto "4mod8a">><</button>>
 </div>
  </main>
-     <<include "footer">>
+     <<include "footerskip">>
 </div>
 
 
@@ -1769,7 +1784,7 @@ Enter the Module 9 Codeword:
 
 
 :: 4mod9intro [nobr]
-<<set $passage to "4mod9intro">><<set $module to "Module 4">>
+<<set $passage to "4mod9intro">><<set $nextpass to "4mod9a">><<set $module to "Module 4">>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
