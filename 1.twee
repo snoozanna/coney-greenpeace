@@ -371,7 +371,7 @@ You have two options:
 
 
 :: 1CodewordMod1 [nobr]
-<<set $passage to "1CodewordMod1">>
+<<set $passage to "1CodewordMod1">><<set $module to "Module 1">>
 <div class="wrapper">
   <<include "header">>
   <main class="codeword">
@@ -725,7 +725,7 @@ You have two options:
 
 
 :: 2CodewordMod3 [nobr]
-<<set $passage to "2CodewordMod3">>
+<<set $passage to "2CodewordMod3">><<set $module to "Module 3">>
 <div class="wrapper">
   <<include "header">>
   <main class="codeword">
@@ -948,7 +948,7 @@ She’s great.
 </div>
 
 :: 2CodewordMod4 [nobr]
-<<set $passage to "2CodewordMod4">>
+<<set $passage to "2CodewordMod4">><<set $module to "Module 4">>
 <div class="wrapper">
   <<include "header">>
   <main class="codeword">
@@ -1127,7 +1127,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 
 
 :: 3CodewordMod5 [nobr]
-<<set $passage to "3CodewordMod5">>
+<<set $passage to "3CodewordMod5">><<set $module to "Module 5">>
 <div class="wrapper">
   <<include "header">>
   <main class="codeword">
@@ -1254,7 +1254,7 @@ Let’s enter Module 5’s Codeword to dive in:
 </div>
 
 :: 3CodewordMod6 [nobr]
-<<set $passage to "3CodewordMod6">>
+<<set $passage to "3CodewordMod6">><<set $module to "Module 6">>
 <div class="wrapper">
   <<include "header">>
   <main class="codeword">
@@ -1501,12 +1501,13 @@ TBC need to work on choice reaction
 
 
 :: 4CodewordMod7 [nobr]
-<<set $passage to "4CodewordMod7">>
+<<set $passage to "4CodewordMod7">><<set $module to "Module 7">>
 <div class="wrapper">
   <<include "header">>
   <main class="codeword">
 
 <div class="codeword-title-wrapper" id="wrapper"><h1 class="title">Enter </h1><h1 class="title">Codeword</h1></div>
+
 
 
   <div id="codewordWrapper" class="codeword-wrapper">
@@ -1617,7 +1618,7 @@ Let’s enter Module 7’s Codeword to dive in:
 </div>
 
 :: 4CodewordMod8 [nobr]
-<<set $passage to "4CodewordMod8">>
+<<set $passage to "4CodewordMod8">><<set $module to "Module 8">>
 <div class="wrapper">
   <<include "header">>
   <main class="codeword">
@@ -1741,7 +1742,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "4mo
 
 
 :: 4CodewordMod9 [nobr]
-<<set $passage to "4CodewordMod9">>
+<<set $passage to "4CodewordMod9">><<set $module to "Module 9">>
 <div class="wrapper">
   <<include "header">>
   <main class="codeword">
