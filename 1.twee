@@ -180,18 +180,42 @@ setup.checkForRepeats = (array,element) => {
     </div>
   </div></footer>
 
+:: loading [nobr]
 
-:: lost {"position":"450,50","size":"100,100"}
-<<set $passage to "lost">><<include "header">>
-<main>
-Sorry to hear that you're lost! 
-You have two options:
+<div class="loading-container">
+  <div class="container">
+    <div class="side left"></div>
+    <div class="side front"></div>
+    <div class="side right"></div>
+    <div class="side back"></div>
+    /* <div class="shadow"></div> */
+  </div>
+  <div class="loading-title-container">
+  <div id="mount"></div>
+ <<timed 0.1s>><<replace "#mount">><<type 100ms>> <h2>Loading...</h2> <</type>><</replace>><</timed>>
+ <<timed 3s>><<replace "#mount">><<type 100ms>> <h2>Loading...</h2> <</type>><</replace>><</timed>>
+  </div>
+</div >
+ <<timed 5s>><<set $prevpass to $passage>>
+            /* <<goto "loading">> */
+              <<goto $nextpass>>
+            <</timed>>
 
-<<button "Begin the adventure again">><<goto "landing">><</button>>
+:: unlock [nobr]
 
-<<button "Take me straight to the end location!">><<goto "end">><</button>>
-</main>
-<<include "footer">>
+<div class="triangle-container">
+  <div class="triangle-wrapper-upper">
+    <!--   <div class="triangle four up "></div> -->
+    <div id ="topTriangle" class="triangle four up fade-in4  "></div>
+  </div>
+  <div class="triangle-wrapper-lower">
+    <!--   <div class="triangle four up "></div> -->
+    <div class="triangle one up fade-in1"></div>
+    <div class="triangle two down fade-in2"></div>
+    <div class="triangle three up fade-in3"></div>
+  </div>
+</div>
+
 
 :: checkmodules
 <<if $session is 1>>
@@ -323,7 +347,9 @@ You have two options:
 <div class="wrapper box">
 
   <main class="codeword landing">
-<img src="./assets/img/triangles-08.png" class="hero">
+/* <img src="./assets/img/triangles-08.png" class="hero"> */
+
+<<include "unlock">>
 <div >
   <div class="codeword-title-wrapper"><h1 class="title">Enter </h1><h1 class="title">session</h1></div>
    <p> Enter session codeword.</p>
@@ -342,36 +368,44 @@ You have two options:
         <<set $codeword to $codeword.toUpperCase()>>
         /% CODEWORD CORRECT %/
         <<if $codeword isnot "" and $codeword is "ONE">>
+        <<addclass "#topTriangle" "unlock">>
         <<replace "#coderesult">><h2 class="subtitle complete">Session 1</h2><</replace>>
-        <<timed 3s>><<set $prevpass to $passage>><<goto "1modulelist">><</timed>>
+        <<timed 3s>><<set $prevpass to $passage>><<goto "1kaiIntro">><</timed>>
         <</if>>
             <<if $codeword isnot "" and $codeword is "TWO">>
+              <<addclass "#topTriangle" "unlock">>
         <<replace "#coderesult">><h2 class="subtitle complete">Session 2</h2><</replace>>
-        <<timed 3s>><<set $prevpass to $passage>><<goto "2modulelist">><</timed>>
+        <<timed 3s>><<set $prevpass to $passage>><<goto "2kaiIntro">><</timed>>
         <</if>>
         <<if $codeword isnot "" and $codeword is "THREE">>
+          <<addclass "#topTriangle" "unlock">>
         <<replace "#coderesult">><h2 class="subtitle complete">Session 3</h2><</replace>>
-        <<timed 3s>><<set $prevpass to $passage>><<goto "3modulelist">><</timed>>
+        <<timed 3s>><<set $prevpass to $passage>><<goto "3kaiIntro">><</timed>>
         <</if>>
         <<if $codeword isnot "" and $codeword is "FOUR">>
+          <<addclass "#topTriangle" "unlock">>
         <<replace "#coderesult">><h2 class="subtitle complete">Session 4</h2><</replace>>
-        <<timed 3s>><<set $prevpass to $passage>><<goto "4modulelist">><</timed>>
+        <<timed 3s>><<set $prevpass to $passage>><<goto "4kaiIntro">><</timed>>
         <</if>>
          <<if $codeword isnot "" and $codeword is "FIVE">>
+          <<addclass "#topTriangle" "unlock">>
         <<replace "#coderesult">><h2 class="subtitle complete">Session 5</h2><</replace>>
-        <<timed 3s>><<set $prevpass to $passage>><<goto "5modulelist">><</timed>>
+        <<timed 3s>><<set $prevpass to $passage>><<goto "5kaiIntro">><</timed>>
         <</if>>
          <<if $codeword isnot "" and $codeword is "SIX">>
+           <<addclass "#topTriangle" "unlock">>
         <<replace "#coderesult">><h2 class="subtitle complete">Session 6</h2><</replace>>
-        <<timed 3s>><<set $prevpass to $passage>><<goto "6modulelist">><</timed>>
+        <<timed 3s>><<set $prevpass to $passage>><<goto "6kaiIntro">><</timed>>
         <</if>>
          <<if $codeword isnot "" and $codeword is "SEVEN">>
+           <<addclass "#topTriangle" "unlock">>
         <<replace "#coderesult">><h2 class="subtitle complete">Session 7</h2><</replace>>
-        <<timed 3s>><<set $prevpass to $passage>><<goto "7modulelist">><</timed>>
+        <<timed 3s>><<set $prevpass to $passage>><<goto "7kaiIntro">><</timed>>
         <</if>>
          <<if $codeword isnot "" and $codeword is "EIGHT">>
+           <<addclass "#topTriangle" "unlock">>
         <<replace "#coderesult">><h2 class="subtitle complete">Session 8</h2><</replace>>
-        <<timed 3s>><<set $prevpass to $passage>><<goto "8modulelist">><</timed>>
+        <<timed 3s>><<set $prevpass to $passage>><<goto "8kaiIntro">><</timed>>
         <</if>>
           /% CODEWORD INCORRECT %/
           /* <<if $codeword isnot "" and $codeword is not "ONE">>
@@ -387,27 +421,6 @@ You have two options:
   </main>
     /* <<include "footercode">> */
   </div>
-
-:: 1modulelist [nobr]
-<<set $passage to "1modulelist">><<set $session to 1>>
-<div class="wrapper box">
-  <main class="modules">
-  <h1 class="title">SESSION ONE</h1>
-  <div class="menu-wrapper module-list">
-  <div class="menu-item " id="mod1"> 
-    <img src="./assets/img/mod1.jpg" alt="module one">
-      /* <h2 class="subtitle">Module 1</h2> */
-      <<button "start">><<set $prevpass to $passage>><<goto "1kaiIntro">><</button>></div>
- <div class="menu-item" id="mod2"> 
-  <img src="./assets/img/mod2.jpg" alt="module two">
-      /* <h2 class="subtitle">Module 2</h2> */
-      <<button "start">><<set $prevpass to $passage>><<goto "1CodewordMod2">><</button>>
-      </div>
-  </div>
-  </main>
-  <<include "footerbox">></div>
-  <<done>><<include "checkmodules">><</done>>
-
 
 
 :: 1kaiIntro [nobr]
@@ -481,7 +494,7 @@ You have two options:
 
 
 :: 1kaiIntro5[nobr]
-<<set $passage to "1kaiIntro5">><<set $nextpass to "1CodewordMod1">>
+<<set $passage to "1kaiIntro5">><<set $nextpass to "1modulelist">>
 <div class="wrapper">
 <<include "header">>
   <main class="speaking">
@@ -489,56 +502,90 @@ You have two options:
   <p>You may have heard of Coney too (quite possible not but ya know)</p>
 <p>  Coney are a group of playful activists.</p>
  <p> Coney create interactive performances, adventures, and games to make change through play.</p>
-
-  <<button "next">><<set $prevpass to $passage>><<goto "1CodewordMod1">><</button>>
+ <p> We're going to start this project by playing a game.</p>
+<p>  A game I made actually. </p>
+  <p>But to get in, you need a codeword. </p>
+  <<button "next">><<set $prevpass to $passage>><<goto "1modulelist">><</button>>
   </div>
   </main>
       <<include "footerskip">>
 </div>
 
-
-:: 1CodewordMod1 [nobr]
-<<set $passage to "1CodewordMod1">><<set $module to "Module 1">><<include "checkmodulenamelist">>
+:: 1modulelist [nobr]
+<<set $passage to "1modulelist">><<set $session to 1>>
 <div class="wrapper box">
-  <<include "header">>
-  <main class="codeword">
-<div class="codeword-title-wrapper"><h1 class="title">Enter </h1><h1 class="title">Codeword</h1></div>
- <p> We're going to start this project by playing a game.</p>
-<p>  A game I made actually. </p>
-  <p>But to get in, you need a codeword. </p>
-  <p>Enter the codeword for Module 1 </p>
- 
-
-
-  <div id="codewordWrapper" class="codeword-wrapper">
-  /% CODEWORD INPUT %/
-      <div class="code-input">
-      <<textbox "$codeword" "">>
-    </div>
-   <div class="btn-result-wrapper">
-      <<button "Enter">>  
+  <main class="modules">
+  <h1 class="title">SESSION ONE</h1>
+    /* <div class="codeword-title-wrapper"><h1 class="title">Enter </h1><h1 class="title">Codeword</h1></div> */
+      <div class="menu-wrapper module-list">
+      <div class="menu-item " id="mod1"> 
+        <img src="./assets/img/mod1.jpg" alt="module one">
+          <div id="codewordWrapper" class="codeword-wrapper">
+      /% CODEWORD INPUT %/
+          <div class="code-input">
+          <<textbox "$codeword" "">>
+        </div>
+      <div class="btn-result-wrapper">
+          <<button "Enter">>  
+              </div>
+          /% STANDARDISE INPUT %/
+          <<set $codeword to $codeword.toUpperCase()>>
+          /% CODEWORD CORRECT %/
+          <<if $codeword isnot "" and $codeword is "EXTRACTION">>
+            <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+            <<timed 3s>><<set $prevpass to $passage>>
+              <<set $nextpass to "1mod1intro">>
+            <<goto "loading">>
+            <</timed>>
+          <</if>>
+            /% CODEWORD INCORRECT %/
+            <<if $codeword isnot "" and $codeword is not "EXTRACTION">>
+            <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
+            <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
+            <</if>><</button>> 
+              /% CODEWORD FEEDBACK %/
+              <div class="coderesult"  id="coderesult"></div>
+            </div>
+            </div>
+          /* <<button "start">><<set $prevpass to $passage>><<goto "1kaiIntro">><</button>> */
           </div>
-      /% STANDARDISE INPUT %/
-      <<set $codeword to $codeword.toUpperCase()>>
-      /% CODEWORD CORRECT %/
-      <<if $codeword isnot "" and $codeword is "EXTRACTION">>
-      <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
-      <<timed 3s>><<set $prevpass to $passage>><<goto "1mod1intro">><</timed>>
-      <</if>>
-        /% CODEWORD INCORRECT %/
-        <<if $codeword isnot "" and $codeword is not "EXTRACTION">>
-        <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
-        <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
-        <</if>><</button>> 
+    <div class="menu-item" id="mod2"> 
+      <img src="./assets/img/mod2.jpg" alt="module two">
+          <div id="codewordWrapper" class="codeword-wrapper">
+      /% CODEWORD INPUT %/
+          <div class="code-input">
+          <<textbox "$codeword" "">>
+        </div>
+      <div class="btn-result-wrapper">
+          <<button "Enter">>  
+                </div>
+            /% STANDARDISE INPUT %/
+            <<set $codeword to $codeword.toUpperCase()>>
+            /% CODEWORD CORRECT %/
+            <<if $codeword isnot "" and $codeword is "FRONT">>
+            <<replace "#coderesult2">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+            <<timed 3s>>
+              <<set $prevpass to $passage>>
+               <<set $nextpass to "1mod2intro">>
+            <<goto "loading">>
+            <</timed>>
+            <</if>>
+              /% CODEWORD INCORRECT %/
+              <<if $codeword isnot "" and $codeword is not "FRONT">>
+              <<replace "#coderesult2">><h2 class="subtitle">Thats not right.</h2><</replace>>
+              <<timed 1.5s>><<replace "#coderesult2">><</replace>><</timed>>
+              <</if>>
+          <</button>> 
           /% CODEWORD FEEDBACK %/
-          <div id="coderesult"></div>
-   </div>
-    </div>
+            <div class="coderesult" id="coderesult2"></div>   
+      </div>
+        </div>
+          /* <<button "start">><<set $prevpass to $passage>><<goto "1CodewordMod2">><</button>> */
+          </div>
+      </div>
   </main>
-    <<include "footercode">>
-  </div>
-
-  
+  <<include "footerbox">></div>
+  <<done>><<include "checkmodules">><</done>>
   
 :: 1mod1intro [nobr]
   <<set $passage to "1mod1intro">><<set $module to "Module 1">><<include "checkmodulenamelist">>
@@ -653,44 +700,6 @@ You have two options:
 </div>
 
 
-:: 1CodewordMod2 [nobr]
-<<set $passage to "1CodewordMod2">><<set $module to "Module 2">><<include "checkmodulenamelist">>
-<div class="wrapper box">
-  <<include "header">>
-  <main class="codeword">
-
-<div class="codeword-title-wrapper"><h1 class="title">Enter </h1><h1 class="title">Codeword</h1></div>
- <p> Enter Module 2’s Codeword for the final game of this session.</p>
- 
-
-
-  <div id="codewordWrapper" class="codeword-wrapper">
-  /% CODEWORD INPUT %/
-      <div class="code-input">
-      <<textbox "$codeword" "">>
-    </div>
-   <div class="btn-result-wrapper">
-      <<button "Enter">>  
-          </div>
-      /% STANDARDISE INPUT %/
-      <<set $codeword to $codeword.toUpperCase()>>
-      /% CODEWORD CORRECT %/
-      <<if $codeword isnot "" and $codeword is "FRONT">>
-      <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
-      <<timed 3s>><<set $prevpass to $passage>><<goto "1mod2intro">><</timed>>
-      <</if>>
-        /% CODEWORD INCORRECT %/
-        <<if $codeword isnot "" and $codeword is not "FRONT">>
-        <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
-        <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
-        <</if>><</button>> 
-          /% CODEWORD FEEDBACK %/
-          <div id="coderesult"></div>
-   </div>
-    </div>
-  </main>
-    <<include "footercode">>
-  </div>
 
 :: 1mod2intro[nobr]
 <<set $passage to "1mod2intro">><<set $module to "Module 2">><<include "checkmodulenamelist">>
@@ -789,30 +798,10 @@ You have two options:
 /* SESSION 2 */
 
 
-:: 2modulelist [nobr]
-<<set $passage to "2modulelist">><<set $session to 2>>
-<div class="wrapper box">
-  <main class="modules">
-  <h1 class="title">SESSION TWO</h1>
-  <div class="menu-wrapper module-list">
-<div class="menu-item" id="mod3"> 
-<img src="./assets/img/mod3.jpg" alt="module three">
-      /* <h2 class="subtitle">Module 3</h2> */
-      <<button "start">><<set $prevpass to $passage>><<goto "2kaiIntro">><</button>>
-      </div>
-<div class="menu-item" id="mod4"> 
-<img src="./assets/img/mod4.jpg" alt="module four">
-      /* <h2 class="subtitle">Module 4</h2> */
-       <<button "start">><<set $prevpass to $passage>><<goto "2CodewordMod4">><</button>>
-      </div>  
-  </div>
-  </main>
-  <<include "footerbox">></div>
-  <<done>><<include "checkmodules">><</done>>
 
 
 :: 2kaiIntro [nobr]
-<<set $passage to "2kaiIntro">><<set $nextpass to "2CodewordMod3">><<set $module to "Introduction">><<include "checkmodulenamelist">>
+<<set $passage to "2kaiIntro">><<set $nextpass to "2modulelist">><<set $module to "Introduction">><<include "checkmodulenamelist">>
 <div class="wrapper">
   <<include "header">>
     /* <h1 class="title top">Hello - it's Kai again</h1> */
@@ -839,7 +828,7 @@ You have two options:
       /* / */
       <p>Change sounds natural, or even reversible, like changing your height by growing just a little bit taller.  No, I’m kidding 5ft 6 suits me fine thank you, and what we’re really looking at is destruction. It’s a crisis. </p>
       <p>As we’re at the start of the project, let’s work out where we’re starting from. </p>
-         <<button "next">><<set $prevpass to $passage>><<goto "2CodewordMod3">><</button>>
+         <<button "next">><<set $prevpass to $passage>><<goto "2modulelist">><</button>>
     </div>
   
  
@@ -849,23 +838,20 @@ You have two options:
 </div>
 
 
-
-
-
-
-:: 2CodewordMod3 [nobr]
-<<set $passage to "2CodewordMod3">><<set $module to "Module 3">><<include "checkmodulenamelist">>
+:: 2modulelist [nobr]
+<<set $passage to "2modulelist">><<set $session to 2>>
 <div class="wrapper box">
-  <<include "header">>
-  <main class="codeword">
+  <main class="modules">
+  <h1 class="title">SESSION TWO</h1>
 
-<div class="codeword-title-wrapper" id="wrapper"><h1 class="title">Enter </h1><h1 class="title">Codeword</h1></div>
+  <div class="menu-wrapper module-list">
+<div class="menu-item" id="mod3"> 
 
-
-  <div id="codewordWrapper" class="codeword-wrapper">
-  <p>
+<img src="./assets/img/mod3.jpg" alt="module three">
+     <div id="codewordWrapper" class="codeword-wrapper">
+  /* <p>
 Let’s enter Module 3’s Codeword to dive in:
-</p>
+</p> */
   /% CODEWORD INPUT %/
       <div class="code-input">
       <<textbox "$codeword" "">>
@@ -878,13 +864,11 @@ Let’s enter Module 3’s Codeword to dive in:
       /% CODEWORD CORRECT %/
   <<if $codeword isnot "" and $codeword is "CONTEXT">>
 <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
-<<timed 3s>>
-  <<set $prevpass to $passage>>
-    <<replace "#codewordWrapper">>
-   <p> I may not be present, but Teacher you are! </p>
-    <p>Can you help me out here? </p>
-   <p> Can you ask the class: </p>
-   <p>When you hear the words Climate Emergency, what is the first thing you think of? </p><<button "Next">><<goto "2mod3intro">><</button>><</replace>><</timed>>
+   <<timed 3s>>
+              <<set $prevpass to $passage>>
+               <<set $nextpass to "2mod3preintro">>
+            <<goto "loading">>
+        <</timed>>
 <</if>>
         /% CODEWORD INCORRECT %/
         <<if $codeword isnot "" and $codeword is not "CONTEXT">>
@@ -892,12 +876,64 @@ Let’s enter Module 3’s Codeword to dive in:
         <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
         <</if>><</button>> 
           /% CODEWORD FEEDBACK %/
-          <div id="coderesult"></div>
+          <div id="coderesult" class="coderesult"></div>
    </div>
     </div>
-  </main>
-    <<include "footercode">>
+      </div>
+<div class="menu-item" id="mod4"> 
+<img src="./assets/img/mod4.jpg" alt="module four">
+    
+  <div id="codewordWrapper" class="codeword-wrapper">
+  /% CODEWORD INPUT %/
+      <div class="code-input">
+      <<textbox "$codeword" "">>
+    </div>
+   <div class="btn-result-wrapper">
+      <<button "Enter">>  
+          </div>
+      /% STANDARDISE INPUT %/
+      <<set $codeword to $codeword.toUpperCase()>>
+      /% CODEWORD CORRECT %/
+      <<if $codeword isnot "" and $codeword is "POTATO">>
+      <<replace "#coderesult2">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+       <<timed 3s>>
+          <<set $prevpass to $passage>>
+          <<set $nextpass to "2mod4intro">>
+          <<goto "loading">>
+        <</timed>>
+      <</if>>
+        /% CODEWORD INCORRECT %/
+        <<if $codeword isnot "" and $codeword is not "POTATO">>
+        <<replace "#coderesult2">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult2">><</replace>><</timed>>
+        <</if>><</button>> 
+          /% CODEWORD FEEDBACK %/
+          <div id="coderesult2" class="coderesult"></div>
+   </div>
+    </div>
+      </div>  
   </div>
+  </main>
+  <<include "footerbox">></div>
+  <<done>><<include "checkmodules">><</done>>
+
+
+:: 2mod3preintro [nobr]
+<<set $passage to "2mod3intro">><<set $module to "Module 3">><<include "checkmodulenamelist">><<set $nextpass to "2mod3intro">>
+  <div class="wrapper">
+    <<include "header">>
+    <main  class="speaking">
+        <div class="text-wrapper">
+ <p> I may not be present, but Teacher you are! </p>
+    <p>Can you help me out here? </p>
+   <p> Can you ask the class: </p>
+   <p>When you hear the words Climate Emergency, what is the first thing you think of? </p><<button "Next">><<goto "2mod3intro">><</button>>
+ 
+   </div>
+    </main>
+         <<include "footerskip">>
+  </div>
+
 
 
 :: 2mod3intro [nobr]
@@ -1076,46 +1112,6 @@ She’s great.
      <<include "footer">>
 </div>
 
-:: 2CodewordMod4 [nobr]
-<<set $passage to "2CodewordMod4">><<set $module to "Module 4">><<include "checkmodulenamelist">>
-<div class="wrapper box">
-  <<include "header">>
-  <main class="codeword">
-
-<div class="codeword-title-wrapper"><h1 class="title">Enter </h1><h1 class="title">Codeword</h1></div>
-<p>
-Enter the Module 4 Codeword:
-</p>
- 
-
-
-  <div id="codewordWrapper" class="codeword-wrapper">
-  /% CODEWORD INPUT %/
-      <div class="code-input">
-      <<textbox "$codeword" "">>
-    </div>
-   <div class="btn-result-wrapper">
-      <<button "Enter">>  
-          </div>
-      /% STANDARDISE INPUT %/
-      <<set $codeword to $codeword.toUpperCase()>>
-      /% CODEWORD CORRECT %/
-      <<if $codeword isnot "" and $codeword is "POTATO">>
-      <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
-      <<timed 3s>><<set $prevpass to $passage>><<goto "2mod4intro">><</timed>>
-      <</if>>
-        /% CODEWORD INCORRECT %/
-        <<if $codeword isnot "" and $codeword is not "POTATO">>
-        <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
-        <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
-        <</if>><</button>> 
-          /% CODEWORD FEEDBACK %/
-          <div id="coderesult"></div>
-   </div>
-    </div>
-  </main>
-    <<include "footercode">>
-  </div>
 
 :: 2mod4intro [nobr]
 <<set $passage to "2mod4intro">><<set $module to "Module 4">><<include "checkmodulenamelist">>
@@ -1193,30 +1189,10 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 
 /* SESSION 3 */
 
-:: 3modulelist [nobr]
-<<set $passage to "3modulelist">><<set $session to 3>>
-<div class="wrapper box">
-  <main class="modules">
-  <h1 class="title">SESSION THREE</h1>
-  <div class="menu-wrapper module-list">
-<div class="menu-item" id="mod5"> 
-<img src="./assets/img/mod5.jpg" alt="module three">
-      /* <h2 class="subtitle">Module 5</h2> */
-       <<button "start">><<set $prevpass to $passage>><<goto "3kaiIntro">><</button>>
-      </div>
- <div class="menu-item" id="mod6"> 
- <img src="./assets/img/mod6.jpg" alt="module three">
-      /* <h2 class="subtitle">Module 6</h2> */
-        <<button "start">><<set $prevpass to $passage>><<goto "3CodewordMod6">><</button>>
-      </div>
-  </div>
-  </main>
-  <<include "footerbox">></div>
-  <<done>><<include "checkmodules">><</done>>
 
 
 :: 3kaiIntro [nobr]
-<<set $passage to "3kaiIntro">><<set $module to "Introduction">><<set $nextpass to "3CodewordMod5">>
+<<set $passage to "3kaiIntro">><<set $module to "Introduction">><<include "checkmodulenamelist">><<set $nextpass to "3modulelist">>
 <div class="wrapper">
   <<include "header">>
     /* <h1 class="title top">Hello - it's Kai again</h1> */
@@ -1243,7 +1219,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <p>Great voices Kai – thanks everyone. </p>
 <p>32 seconds…ish.</p> 
 
-         <<button "next">><<set $prevpass to $passage>><<goto "3CodewordMod5">><</button>>
+         <<button "next">><<set $prevpass to $passage>><<goto "3modulelist">><</button>>
     </div>
   
  
@@ -1252,24 +1228,17 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<include "footerskip">>
 </div>
 
-
-
-
-
-
-:: 3CodewordMod5 [nobr]
-<<set $passage to "3CodewordMod5">><<set $module to "Module 5">>
+:: 3modulelist [nobr]
+<<set $passage to "3modulelist">><<set $session to 3>>
 <div class="wrapper box">
-  <<include "header">>
-  <main class="codeword">
-
-<div class="codeword-title-wrapper" id="wrapper"><h1 class="title">Enter </h1><h1 class="title">Codeword</h1></div>
-
-
+  <main class="modules">
+  <h1 class="title">SESSION THREE</h1>
+  <div class="menu-wrapper module-list">
+<div class="menu-item" id="mod5"> 
+<img src="./assets/img/mod5.jpg" alt="module three">
+  
   <div id="codewordWrapper" class="codeword-wrapper">
-  <p>
-Let’s enter Module 5’s Codeword to dive in:
-</p>
+
   /% CODEWORD INPUT %/
       <div class="code-input">
       <<textbox "$codeword" "">>
@@ -1280,28 +1249,67 @@ Let’s enter Module 5’s Codeword to dive in:
       /% STANDARDISE INPUT %/
       <<set $codeword to $codeword.toUpperCase()>>
       /% CODEWORD CORRECT %/
-  <<if $codeword isnot "" and $codeword is "TRUMP">>
+  <<if $codeword isnot "" and $codeword is "TALENT">>
 <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
-<<timed 3s>>
-  <<set $prevpass to $passage>>
-    <<goto "3mod5intro">><</timed>>
+  <<timed 3s>>
+          <<set $prevpass to $passage>>
+          <<set $nextpass to "3mod5intro">>
+          <<goto "loading">>
+        <</timed>>
 <</if>>
         /% CODEWORD INCORRECT %/
-        <<if $codeword isnot "" and $codeword is not "TRUMP">>
+        <<if $codeword isnot "" and $codeword is not "TALENT">>
         <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
         <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
         <</if>><</button>> 
           /% CODEWORD FEEDBACK %/
-          <div id="coderesult"></div>
+          <div id="coderesult" class="coderesult"></div>
    </div>
     </div>
-  </main>
-    <<include "footercode">>
+      </div>
+ <div class="menu-item" id="mod6"> 
+ <img src="./assets/img/mod6.jpg" alt="module three">
+  <div id="codewordWrapper" class="codeword-wrapper">
+  /% CODEWORD INPUT %/
+      <div class="code-input">
+      <<textbox "$codeword" "">>
+    </div>
+   <div class="btn-result-wrapper">
+      <<button "Enter">>  
+          </div>
+      /% STANDARDISE INPUT %/
+      <<set $codeword to $codeword.toUpperCase()>>
+      /% CODEWORD CORRECT %/
+      <<if $codeword isnot "" and $codeword is "FOCUS">>
+      <<replace "#coderesult2">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+
+      <<timed 3s>>
+          <<set $prevpass to $passage>>
+          <<set $nextpass to "3mod6intro">>
+          <<goto "loading">>
+        <</timed>>
+      <</if>>
+        /% CODEWORD INCORRECT %/
+        <<if $codeword isnot "" and $codeword is not "FOCUS">>
+        <<replace "#coderesult2">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult2">><</replace>><</timed>>
+        <</if>><</button>> 
+          /% CODEWORD FEEDBACK %/
+          <div id="coderesult2" class="coderesult"></div>
+   </div>
+    </div>
+      </div>
   </div>
+  </main>
+  <<include "footerbox">></div>
+  <<done>><<include "checkmodules">><</done>>
+
+
+
 
 
 :: 3mod5intro [nobr]
-<<set $passage to "3mod5intro">><<set $module to "Module 5">><<set $nextpass to "3mod5a">>
+<<set $passage to "3mod5intro">><<set $module to "Module 5">><<include "checkmodulenamelist">><<set $nextpass to "3mod5a">>
   <div class="wrapper">
     <<include "header">>
     <main  class="speaking">
@@ -1384,49 +1392,9 @@ Let’s enter Module 5’s Codeword to dive in:
      <<include "footer">>
 </div>
 
-:: 3CodewordMod6 [nobr]
-<<set $passage to "3CodewordMod6">><<set $module to "Module 6">>
-<div class="wrapper box">
-  <<include "header">>
-  <main class="codeword">
-
-<div class="codeword-title-wrapper"><h1 class="title">Enter </h1><h1 class="title">Codeword</h1></div>
-<p>
-Enter the Module 6 Codeword:
-</p>
- 
-
-
-  <div id="codewordWrapper" class="codeword-wrapper">
-  /% CODEWORD INPUT %/
-      <div class="code-input">
-      <<textbox "$codeword" "">>
-    </div>
-   <div class="btn-result-wrapper">
-      <<button "Enter">>  
-          </div>
-      /% STANDARDISE INPUT %/
-      <<set $codeword to $codeword.toUpperCase()>>
-      /% CODEWORD CORRECT %/
-      <<if $codeword isnot "" and $codeword is "FOCUS">>
-      <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
-      <<timed 3s>><<set $prevpass to $passage>><<goto "3mod6intro">><</timed>>
-      <</if>>
-        /% CODEWORD INCORRECT %/
-        <<if $codeword isnot "" and $codeword is not "FOCUS">>
-        <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
-        <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
-        <</if>><</button>> 
-          /% CODEWORD FEEDBACK %/
-          <div id="coderesult"></div>
-   </div>
-    </div>
-  </main>
-    <<include "footercode">>
-  </div>
 
 :: 3mod6intro [nobr]
-<<set $passage to "3mod6intro">><<set $module to "Module 6">>
+<<set $passage to "3mod6intro">><<set $module to "Module 6">><<include "checkmodulenamelist">>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -1565,35 +1533,9 @@ TBC need to work on choice reaction
 
 /* SESSION 4  */
 
-:: 4modulelist [nobr]
-<<set $passage to "4modulelist">><<set $session to 4>>
-<div class="wrapper box">
-  <main class="modules">
-  <h1 class="title">SESSION FOUR</h1>
-  <div class="menu-wrapper module-list">
-<div class="menu-item" id="mod7"> 
-<img src="./assets/img/mod7.jpg" alt="module seven">
-      /* <h2 class="subtitle">Module 7</h2> */
-       <<button "start">><<set $prevpass to $passage>><<goto "4kaiIntro">><</button>>
-</div>
- <div class="menu-item" id="mod8"> 
- <img src="./assets/img/mod8.jpg" alt="module eight">
-      /* <h2 class="subtitle">Module 8</h2> */
-      <<button "start">><<set $prevpass to $passage>><<goto "4CodewordMod8">><</button>>
-      </div>
-<div class="menu-item" id="mod9"> 
-<img src="./assets/img/mod9.jpg" alt="module nine">
-      /* <h2 class="subtitle">Module 9</h2> */
-      <<button "start">><<set $prevpass to $passage>><<goto "4CodewordMod9">><</button>>
-      </div>
-  </div>
-  </main>
-  <<include "footerbox">></div>
-  <<done>><<include "checkmodules">><</done>>
-
 
 :: 4kaiIntro [nobr]
-<<set $passage to "4kaiIntro">><<set $module to "Introduction">><<set $nextpass to "4CodewordMod7">>
+<<set $passage to "4kaiIntro">><<set $module to "Introduction">><<include "checkmodulenamelist">><<set $nextpass to "4modulelist">>
 <div class="wrapper">
   <<include "header">>
     /* <h1 class="title top">Hello - it's Kai again</h1> */
@@ -1601,7 +1543,6 @@ TBC need to work on choice reaction
  <h1 class="title ">Hello - it's Kai again</h1>
 
     <div class="text-wrapper">
-    <p>  Hello. </p>
 <p>Hello. </p>
 <p>Hope you are enjoying the surprise of each of these compartments – and breaking up the pyramid! </p>
 <p>Here we are again ready to play.</p>
@@ -1620,7 +1561,7 @@ TBC need to work on choice reaction
 <p>First up, let’s build on those Recon Cards. </p>
 
 
-         <<button "next">><<set $prevpass to $passage>><<goto "4CodewordMod7">><</button>>
+         <<button "next">><<set $prevpass to $passage>><<goto "4modulelist">><</button>>
     </div>
   
  
@@ -1630,24 +1571,18 @@ TBC need to work on choice reaction
 </div>
 
 
-
-
-
-
-:: 4CodewordMod7 [nobr]
-<<set $passage to "4CodewordMod7">><<set $module to "Module 7">>
+:: 4modulelist [nobr]
+<<set $passage to "4modulelist">><<set $session to 4>>
 <div class="wrapper box">
-  <<include "header">>
-  <main class="codeword">
-
-<div class="codeword-title-wrapper" id="wrapper"><h1 class="title">Enter </h1><h1 class="title">Codeword</h1></div>
-
-
-
-  <div id="codewordWrapper" class="codeword-wrapper">
-  <p>
+  <main class="modules">
+  <h1 class="title">SESSION FOUR</h1>
+  <div class="menu-wrapper module-list">
+<div class="menu-item" id="mod7"> 
+  <img src="./assets/img/mod7.jpg" alt="module seven">
+   <div id="codewordWrapper" class="codeword-wrapper">
+  /* <p>
 Let’s enter Module 7’s Codeword to dive in:
-</p>
+</p> */
   /% CODEWORD INPUT %/
       <div class="code-input">
       <<textbox "$codeword" "">>
@@ -1660,9 +1595,11 @@ Let’s enter Module 7’s Codeword to dive in:
       /% CODEWORD CORRECT %/
   <<if $codeword isnot "" and $codeword is "RECON">>
 <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
-<<timed 3s>>
-  <<set $prevpass to $passage>>
-    <<goto "4mod7intro">><</timed>>
+  <<timed 3s>>
+          <<set $prevpass to $passage>>
+          <<set $nextpass to "4mod7intro">>
+          <<goto "loading">>
+        <</timed>>
 <</if>>
         /% CODEWORD INCORRECT %/
         <<if $codeword isnot "" and $codeword is not "RECON">>
@@ -1670,16 +1607,80 @@ Let’s enter Module 7’s Codeword to dive in:
         <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
         <</if>><</button>> 
           /% CODEWORD FEEDBACK %/
-          <div id="coderesult"></div>
+          <div id="coderesult" class="coderesult"></div>
    </div>
     </div>
-  </main>
-    <<include "footercode">>
+</div>
+ <div class="menu-item" id="mod8"> 
+ <img src="./assets/img/mod8.jpg" alt="module eight">
+    <div id="codewordWrapper" class="codeword-wrapper">
+  /% CODEWORD INPUT %/
+      <div class="code-input">
+      <<textbox "$codeword" "">>
+    </div>
+   <div class="btn-result-wrapper">
+      <<button "Enter">>  
+          </div>
+      /% STANDARDISE INPUT %/
+      <<set $codeword to $codeword.toUpperCase()>>
+      /% CODEWORD CORRECT %/
+      <<if $codeword isnot "" and $codeword is "IMAGINE">>
+      <<replace "#coderesult2">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+      <<timed 3s>>
+          <<set $prevpass to $passage>>
+          <<set $nextpass to "4mod8intro">>
+          <<goto "loading">>
+        <</timed>>
+      <</if>>
+        /% CODEWORD INCORRECT %/
+        <<if $codeword isnot "" and $codeword is not "IMAGINE">>
+        <<replace "#coderesult2">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult2">><</replace>><</timed>>
+        <</if>><</button>> 
+          /% CODEWORD FEEDBACK %/
+          <div id="coderesult2" class="coderesult"></div>
+   </div>
+    </div>
+      </div>
+<div class="menu-item" id="mod9"> 
+<img src="./assets/img/mod9.jpg" alt="module nine">
+      <div id="codewordWrapper" class="codeword-wrapper">
+  /% CODEWORD INPUT %/
+      <div class="code-input">
+      <<textbox "$codeword" "">>
+    </div>
+   <div class="btn-result-wrapper">
+      <<button "Enter">>  
+          </div>
+      /% STANDARDISE INPUT %/
+      <<set $codeword to $codeword.toUpperCase()>>
+      /% CODEWORD CORRECT %/
+      <<if $codeword isnot "" and $codeword is "COMFORT">>
+      <<replace "#coderesult3">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+      <<timed 3s>>
+          <<set $prevpass to $passage>>
+          <<set $nextpass to "4mod9intro">>
+          <<goto "loading">>
+        <</timed>>
+      <</if>>
+        /% CODEWORD INCORRECT %/
+        <<if $codeword isnot "" and $codeword is not "COMFORT">>
+        <<replace "#coderesult3">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult3">><</replace>><</timed>>
+        <</if>><</button>> 
+          /% CODEWORD FEEDBACK %/
+          <div id="coderesult3" class="coderesult"></div>
+   </div>
+    </div>
+      </div>
   </div>
+  </main>
+  <<include "footerbox">></div>
+  <<done>><<include "checkmodules">><</done>>
 
 
 :: 4mod7intro [nobr]
-<<set $passage to "4mod7intro">><<set $module to "Module 7">><<set $nextpass to "4mod7a" >>
+<<set $passage to "4mod7intro">><<set $module to "Module 7">><<include "checkmodulenamelist">><<set $nextpass to "4mod7a" >>
   <div class="wrapper">
     <<include "header">>
     <main  class="speaking">
@@ -1718,8 +1719,6 @@ Let’s enter Module 7’s Codeword to dive in:
   </div>
 
 
-
-
 :: 4mod7outro [nobr]
 <<set $passage to "4mod7outro">>
 <div class="wrapper">
@@ -1751,49 +1750,9 @@ Let’s enter Module 7’s Codeword to dive in:
      <<include "footer">>
 </div>
 
-:: 4CodewordMod8 [nobr]
-<<set $passage to "4CodewordMod8">><<set $module to "Module 8">>
-<div class="wrapper box">
-  <<include "header">>
-  <main class="codeword">
-
-<div class="codeword-title-wrapper"><h1 class="title">Enter </h1><h1 class="title">Codeword</h1></div>
-<p>
-Enter the Module 8 Codeword:
-</p>
- 
-
-
-  <div id="codewordWrapper" class="codeword-wrapper">
-  /% CODEWORD INPUT %/
-      <div class="code-input">
-      <<textbox "$codeword" "">>
-    </div>
-   <div class="btn-result-wrapper">
-      <<button "Enter">>  
-          </div>
-      /% STANDARDISE INPUT %/
-      <<set $codeword to $codeword.toUpperCase()>>
-      /% CODEWORD CORRECT %/
-      <<if $codeword isnot "" and $codeword is "IMAGINE">>
-      <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
-      <<timed 3s>><<set $prevpass to $passage>><<goto "4mod8intro">><</timed>>
-      <</if>>
-        /% CODEWORD INCORRECT %/
-        <<if $codeword isnot "" and $codeword is not "IMAGINE">>
-        <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
-        <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
-        <</if>><</button>> 
-          /% CODEWORD FEEDBACK %/
-          <div id="coderesult"></div>
-   </div>
-    </div>
-  </main>
-    <<include "footercode">>
-  </div>
 
 :: 4mod8intro [nobr]
-<<set $passage to "4mod8intro">><<set $nextpass to "4mod8a">><<set $module to "Module 8">>
+<<set $passage to "4mod8intro">><<set $nextpass to "4mod8a">><<set $module to "Module 8">><<include "checkmodulenamelist">>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -1875,51 +1834,9 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "4mo
 </div>
 
 
-:: 4CodewordMod9 [nobr]
-<<set $passage to "4CodewordMod9">><<set $module to "Module 9">>
-<div class="wrapper box">
-  <<include "header">>
-  <main class="codeword">
-
-<div class="codeword-title-wrapper"><h1 class="title">Enter </h1><h1 class="title">Codeword</h1></div>
-<p>
-Enter the Module 9 Codeword:
-</p>
- 
-
-
-  <div id="codewordWrapper" class="codeword-wrapper">
-  /% CODEWORD INPUT %/
-      <div class="code-input">
-      <<textbox "$codeword" "">>
-    </div>
-   <div class="btn-result-wrapper">
-      <<button "Enter">>  
-          </div>
-      /% STANDARDISE INPUT %/
-      <<set $codeword to $codeword.toUpperCase()>>
-      /% CODEWORD CORRECT %/
-      <<if $codeword isnot "" and $codeword is "COMFORT">>
-      <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
-      <<timed 3s>><<set $prevpass to $passage>><<goto "4mod9intro">><</timed>>
-      <</if>>
-        /% CODEWORD INCORRECT %/
-        <<if $codeword isnot "" and $codeword is not "COMFORT">>
-        <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
-        <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
-        <</if>><</button>> 
-          /% CODEWORD FEEDBACK %/
-          <div id="coderesult"></div>
-   </div>
-    </div>
-  </main>
-    <<include "footercode">>
-  </div>
-
-
 
 :: 4mod9intro [nobr]
-<<set $passage to "4mod9intro">><<set $nextpass to "4mod9a">><<set $module to "Module 4">>
+<<set $passage to "4mod9intro">><<set $nextpass to "4mod9a">><<set $module to "Module 9">><<include "checkmodulenamelist">>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -1949,7 +1866,7 @@ Enter the Module 9 Codeword:
 </div>
 
 :: 4mod9a [nobr]
-<<set $passage to "4mod9a">><<set $module to "Module 9">>
+<<set $passage to "4mod9a">><<set $module to "Module 9">><<include "checkmodulenamelist">>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -2034,35 +1951,9 @@ Enter the Module 9 Codeword:
 
 /* SESSION 5 */
 
-:: 5modulelist [nobr]
-<<set $passage to "5modulelist">><<set $session to 5>>
-<div class="wrapper box">
-  <main class="modules">
-  <h1 class="title">SESSION FIVE</h1>
-  <div class="menu-wrapper module-list">
-<div class="menu-item" id="mod10"> 
-  <img src="./assets/img/mod10.jpg" alt="module ten">
-      <h2 class="subtitle">Module 10</h2>
-       <<button "start">><<set $prevpass to $passage>><<goto "5kaiIntro">><</button>>
-      </div>
- <div class="menu-item" id="mod11"> 
-  <img src="./assets/img/mod11.jpg" alt="module eleven">
-      <h2 class="subtitle">Module 11</h2>
-        <<button "start">><<set $prevpass to $passage>><<goto "5CodewordMod11">><</button>>
-      </div>
-       <div class="menu-item" id="mod12"> 
-  <img src="./assets/img/mod12.jpg" alt="module twelve">
-      <h2 class="subtitle">Module 12</h2>
-        <<button "start">><<set $prevpass to $passage>><<goto "5CodewordMod12">><</button>>
-      </div>
-  </div>
-  </main>
-  <<include "footerbox">></div>
-  <<done>><<include "checkmodules">><</done>>
-
 
 :: 5kaiIntro [nobr]
-<<set $passage to "5kaiIntro">><<set $module to "Introduction">><<set $nextpass to "5kaiIntro2">>
+<<set $passage to "5kaiIntro">><<set $module to "Introduction">><<include "checkmodulenamelist">><<set $nextpass to "5kaiIntro2">>
 <div class="wrapper">
   <<include "header">>
     /* <h1 class="title top">Hello - it's Kai again</h1> */
@@ -2092,7 +1983,7 @@ Enter the Module 9 Codeword:
 </div>
 
 :: 5kaiIntro2 [nobr]
-<<set $passage to "5kaiIntro2">><<set $module to "Introduction">><<set $nextpass to "5CodewordMod10">>
+<<set $passage to "5kaiIntro2">><<set $module to "Introduction">><<include "checkmodulenamelist">><<set $nextpass to "5modulelist">>
 <div class="wrapper">
   <<include "header">>
     /* <h1 class="title top">Hello - it's Kai again</h1> */
@@ -2102,7 +1993,7 @@ Enter the Module 9 Codeword:
     <div class="text-wrapper">
 <p>... </p>
 
-         <<button "next">><<set $prevpass to $passage>><<goto "5CodewordMod10">><</button>>
+         <<button "next">><<set $prevpass to $passage>><<goto "5modulelist">><</button>>
     </div>
   
  
@@ -2113,19 +2004,16 @@ Enter the Module 9 Codeword:
 
 
 
-:: 5CodewordMod10 [nobr]
-<<set $passage to "5CodewordMod10">><<set $module to "Module 10">>
+:: 5modulelist [nobr]
+<<set $passage to "5modulelist">><<set $session to 5>>
 <div class="wrapper box">
-  <<include "header">>
-  <main class="codeword">
-
-<div class="codeword-title-wrapper" id="wrapper"><h1 class="title">Enter </h1><h1 class="title">Codeword</h1></div>
-
-
-  <div id="codewordWrapper" class="codeword-wrapper">
-  <p>
-Let’s enter Module 10’s Codeword to dive in:
-</p>
+  <main class="modules">
+  <h1 class="title">SESSION FIVE</h1>
+  <div class="menu-wrapper module-list">
+<div class="menu-item" id="mod10"> 
+  <img src="./assets/img/mod10.jpg" alt="module ten">
+      <div id="codewordWrapper" class="codeword-wrapper">
+ 
   /% CODEWORD INPUT %/
       <div class="code-input">
       <<textbox "$codeword" "">>
@@ -2138,9 +2026,11 @@ Let’s enter Module 10’s Codeword to dive in:
       /% CODEWORD CORRECT %/
   <<if $codeword isnot "" and $codeword is "ASK">>
 <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
-<<timed 3s>>
-  <<set $prevpass to $passage>>
-    <<goto "5mod10intro">><</timed>>
+  <<timed 3s>>
+          <<set $prevpass to $passage>>
+          <<set $nextpass to "5mod10intro">>
+          <<goto "loading">>
+        <</timed>>
 <</if>>
         /% CODEWORD INCORRECT %/
         <<if $codeword isnot "" and $codeword is not "ASK">>
@@ -2148,16 +2038,83 @@ Let’s enter Module 10’s Codeword to dive in:
         <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
         <</if>><</button>> 
           /% CODEWORD FEEDBACK %/
-          <div id="coderesult"></div>
+          <div id="coderesult" class="coderesult"></div>
    </div>
     </div>
-  </main>
-    <<include "footercode">>
+      </div>
+ <div class="menu-item" id="mod11"> 
+  <img src="./assets/img/mod11.jpg" alt="module eleven">
+      <div id="codewordWrapper" class="codeword-wrapper">
+  /% CODEWORD INPUT %/
+      <div class="code-input">
+      <<textbox "$codeword" "">>
+    </div>
+   <div class="btn-result-wrapper">
+      <<button "Enter">>  
+          </div>
+      /% STANDARDISE INPUT %/
+      <<set $codeword to $codeword.toUpperCase()>>
+      /% CODEWORD CORRECT %/
+      <<if $codeword isnot "" and $codeword is "ACTION">>
+      <<replace "#coderesult2">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+
+        <<timed 3s>>
+          <<set $prevpass to $passage>>
+          <<set $nextpass to "5mod11intro">>
+          <<goto "loading">>
+        <</timed>>
+      <</if>>
+        /% CODEWORD INCORRECT %/
+        <<if $codeword isnot "" and $codeword is not "ACTION">>
+        <<replace "#coderesult2">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult2">><</replace>><</timed>>
+        <</if>><</button>> 
+          /% CODEWORD FEEDBACK %/
+          <div id="coderesult2" class="coderesult"></div>
+   </div>
+    </div>
+      </div>
+       <div class="menu-item" id="mod12"> 
+  <img src="./assets/img/mod12.jpg" alt="module twelve">
+      /* <h2 class="subtitle">Module 12</h2> */
+       <div id="codewordWrapper" class="codeword-wrapper">
+  /% CODEWORD INPUT %/
+      <div class="code-input">
+      <<textbox "$codeword" "">>
+    </div>
+   <div class="btn-result-wrapper">
+      <<button "Enter">>  
+          </div>
+      /% STANDARDISE INPUT %/
+      <<set $codeword to $codeword.toUpperCase()>>
+      /% CODEWORD CORRECT %/
+      <<if $codeword isnot "" and $codeword is "GIFT">>
+      <<replace "#coderesult3">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+  
+        <<timed 3s>>
+          <<set $prevpass to $passage>>
+          <<set $nextpass to "5mod12intro">>
+          <<goto "loading">>
+        <</timed>>
+      <</if>>
+        /% CODEWORD INCORRECT %/
+        <<if $codeword isnot "" and $codeword is not "GIFT">>
+        <<replace "#coderesult3">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult3">><</replace>><</timed>>
+        <</if>><</button>> 
+          /% CODEWORD FEEDBACK %/
+          <div id="coderesult3" class="coderesult"></div>
+   </div>
+    </div>
+      </div>
   </div>
+  </main>
+  <<include "footerbox">></div>
+  <<done>><<include "checkmodules">><</done>>
 
 
 :: 5mod10intro [nobr]
-<<set $passage to "5mod10intro">><<set $module to "Module 10">><<set $nextpass to "5mod10a">>
+<<set $passage to "5mod10intro">><<set $module to "Module 10">><<include "checkmodulenamelist">><<set $nextpass to "5mod10a">>
   <div class="wrapper">
     <<include "header">>
     <main  class="speaking">
@@ -2244,49 +2201,9 @@ Let’s enter Module 10’s Codeword to dive in:
      <<include "footer">>
 </div>
 
-:: 5CodewordMod11 [nobr]
-<<set $passage to "5CodewordMod11">><<set $module to "Module 11">>
-<div class="wrapper box">
-  <<include "header">>
-  <main class="codeword">
-
-<div class="codeword-title-wrapper"><h1 class="title">Enter </h1><h1 class="title">Codeword</h1></div>
-<p>
-Enter the Module 11 Codeword:
-</p>
- 
-
-
-  <div id="codewordWrapper" class="codeword-wrapper">
-  /% CODEWORD INPUT %/
-      <div class="code-input">
-      <<textbox "$codeword" "">>
-    </div>
-   <div class="btn-result-wrapper">
-      <<button "Enter">>  
-          </div>
-      /% STANDARDISE INPUT %/
-      <<set $codeword to $codeword.toUpperCase()>>
-      /% CODEWORD CORRECT %/
-      <<if $codeword isnot "" and $codeword is "ACTION">>
-      <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
-      <<timed 3s>><<set $prevpass to $passage>><<goto "5mod11intro">><</timed>>
-      <</if>>
-        /% CODEWORD INCORRECT %/
-        <<if $codeword isnot "" and $codeword is not "ACTION">>
-        <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
-        <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
-        <</if>><</button>> 
-          /% CODEWORD FEEDBACK %/
-          <div id="coderesult"></div>
-   </div>
-    </div>
-  </main>
-    <<include "footercode">>
-  </div>
 
 :: 5mod11intro [nobr]
-<<set $passage to "5mod11intro">><<set $module to "Module 11">>
+<<set $passage to "5mod11intro">><<set $module to "Module 11">><<include "checkmodulenamelist">>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -2380,49 +2297,9 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "5mo
 </div>
 
 
-:: 5CodewordMod12 [nobr]
-<<set $passage to "5CodewordMod12">><<set $module to "Module 12">>
-<div class="wrapper box">
-  <<include "header">>
-  <main class="codeword">
-
-<div class="codeword-title-wrapper"><h1 class="title">Enter </h1><h1 class="title">Codeword</h1></div>
-<p>
-Enter the Module 12 Codeword:
-</p>
- 
-
-
-  <div id="codewordWrapper" class="codeword-wrapper">
-  /% CODEWORD INPUT %/
-      <div class="code-input">
-      <<textbox "$codeword" "">>
-    </div>
-   <div class="btn-result-wrapper">
-      <<button "Enter">>  
-          </div>
-      /% STANDARDISE INPUT %/
-      <<set $codeword to $codeword.toUpperCase()>>
-      /% CODEWORD CORRECT %/
-      <<if $codeword isnot "" and $codeword is "GIFT">>
-      <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
-      <<timed 3s>><<set $prevpass to $passage>><<goto "5mod12intro">><</timed>>
-      <</if>>
-        /% CODEWORD INCORRECT %/
-        <<if $codeword isnot "" and $codeword is not "GIFT">>
-        <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
-        <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
-        <</if>><</button>> 
-          /% CODEWORD FEEDBACK %/
-          <div id="coderesult"></div>
-   </div>
-    </div>
-  </main>
-    <<include "footercode">>
-  </div>
 
 :: 5mod12intro [nobr]
-<<set $passage to "5mod12intro">><<set $module to "Module 12">>
+<<set $passage to "5mod12intro">><<set $module to "Module 12">><<include "checkmodulenamelist">>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -2513,30 +2390,9 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "5mo
 
 /* SESSION 6 */
 
-:: 6modulelist [nobr]
-<<set $passage to "6modulelist">><<set $session to 6>>
-<div class="wrapper box">
-  <main class="modules">
-  <h1 class="title">SESSION SIX</h1>
-  <div class="menu-wrapper module-list">
-<div class="menu-item" id="mod13"> 
-  <img src="./assets/img/mod13.jpg" alt="module thirteen">
-      /* <h2 class="subtitle">Module 13</h2> */
-       <<button "start">><<set $prevpass to $passage>><<goto "6kaiIntro">><</button>>
-      </div>
- <div class="menu-item" id="mod14"> 
-  <img src="./assets/img/mod14.jpg" alt="module fourteen">
-      /* <h2 class="subtitle">Module 14</h2> */
-        <<button "start">><<set $prevpass to $passage>><<goto "6CodewordMod14">><</button>>
-      </div>
-  </div>
-  </main>
-  <<include "footerbox">></div>
-  <<done>><<include "checkmodules">><</done>>
-
 
 :: 6kaiIntro [nobr]
-<<set $passage to "6kaiIntro">><<set $module to "Introduction">><<set $nextpass to "5CodewordMod10">>
+<<set $passage to "6kaiIntro">><<set $module to "Introduction">><<include "checkmodulenamelist">><<set $nextpass to "6modulelist">>
 <div class="wrapper">
   <<include "header">>
     /* <h1 class="title top">Hello - it's Kai again</h1> */
@@ -2573,7 +2429,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "5mo
 <p>I hope you are too </p>
 <p>Before we let you, and your Artist, of the creative leash, we need to chat about hats. </p>
 
-         <<button "next">><<set $prevpass to $passage>><<goto "6CodewordMod13">><</button>>
+         <<button "next">><<set $prevpass to $passage>><<goto "6modulelist">><</button>>
     </div>
   
  
@@ -2582,19 +2438,17 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "5mo
 <<include "footerskip">>
 </div>
 
-:: 6CodewordMod13 [nobr]
-<<set $passage to "6CodewordMod13">><<set $module to "Module 13">>
+:: 6modulelist [nobr]
+<<set $passage to "6modulelist">><<set $session to 6>>
 <div class="wrapper box">
-  <<include "header">>
-  <main class="codeword">
-
-<div class="codeword-title-wrapper" id="wrapper"><h1 class="title">Enter </h1><h1 class="title">Codeword</h1></div>
-
-
-  <div id="codewordWrapper" class="codeword-wrapper">
-  <p>
-Let’s enter Module 13’s Codeword to dive in:
-</p>
+  <main class="modules">
+  <h1 class="title">SESSION SIX</h1>
+  <div class="menu-wrapper module-list">
+<div class="menu-item" id="mod13"> 
+  <img src="./assets/img/mod13.jpg" alt="module thirteen">
+      /* <h2 class="subtitle">Module 13</h2> */
+       <div id="codewordWrapper" class="codeword-wrapper">
+ 
   /% CODEWORD INPUT %/
       <div class="code-input">
       <<textbox "$codeword" "">>
@@ -2607,9 +2461,11 @@ Let’s enter Module 13’s Codeword to dive in:
       /% CODEWORD CORRECT %/
   <<if $codeword isnot "" and $codeword is "HATS">>
 <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
-<<timed 3s>>
-  <<set $prevpass to $passage>>
-    <<goto "6mod13intro">><</timed>>
+ <<timed 3s>>
+          <<set $prevpass to $passage>>
+          <<set $nextpass to "6mod13intro">>
+          <<goto "loading">>
+        <</timed>>
 <</if>>
         /% CODEWORD INCORRECT %/
         <<if $codeword isnot "" and $codeword is not "HATS">>
@@ -2617,16 +2473,52 @@ Let’s enter Module 13’s Codeword to dive in:
         <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
         <</if>><</button>> 
           /% CODEWORD FEEDBACK %/
-          <div id="coderesult"></div>
+          <div id="coderesult" class="coderesult"></div>
    </div>
     </div>
-  </main>
-    <<include "footercode">>
+      </div>
+ <div class="menu-item" id="mod14"> 
+  <img src="./assets/img/mod14.jpg" alt="module fourteen">
+      /* <h2 class="subtitle">Module 14</h2> */
+<div id="codewordWrapper" class="codeword-wrapper">
+  /% CODEWORD INPUT %/
+      <div class="code-input">
+      <<textbox "$codeword" "">>
+    </div>
+   <div class="btn-result-wrapper">
+      <<button "Enter">>  
+          </div>
+      /% STANDARDISE INPUT %/
+      <<set $codeword to $codeword.toUpperCase()>>
+      /% CODEWORD CORRECT %/
+      <<if $codeword isnot "" and $codeword is "MAKING">>
+      <<replace "#coderesult2">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+
+     <<timed 3s>>
+          <<set $prevpass to $passage>>
+          <<set $nextpass to "6mod14intro">>
+          <<goto "loading">>
+        <</timed>>
+      <</if>>
+        /% CODEWORD INCORRECT %/
+        <<if $codeword isnot "" and $codeword is not "MAKING">>
+        <<replace "#coderesult2">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult2">><</replace>><</timed>>
+        <</if>><</button>> 
+          /% CODEWORD FEEDBACK %/
+          <div id="coderesult2" class="coderesult"></div>
+   </div>
+    </div>
+      </div>
   </div>
+  </main>
+  <<include "footerbox">></div>
+  <<done>><<include "checkmodules">><</done>>
+
 
 
 :: 6mod13intro [nobr]
-<<set $passage to "6mod13intro">><<set $module to "Module 13">><<set $nextpass to "6mod13a">>
+<<set $passage to "6mod13intro">><<set $module to "Module 13">><<include "checkmodulenamelist">><<set $nextpass to "6mod13a">>
   <div class="wrapper">
     <<include "header">>
     <main  class="speaking">
@@ -2702,55 +2594,15 @@ Let’s enter Module 13’s Codeword to dive in:
 <p>You know the game, time for the Codeword. </p>
 
 
-<<button "Next">><<set $prevpass to $passage>><<set $mod13 to true>><<goto "landing">><</button>>
+<<button "Next">><<set $prevpass to $passage>><<set $mod13 to true>><<goto "6modulelist">><</button>>
 </div>
 </main>
      <<include "footer">>
 </div>
 
-:: 6CodewordMod14 [nobr]
-<<set $passage to "6CodewordMod14">><<set $module to "Module 14">>
-<div class="wrapper box">
-  <<include "header">>
-  <main class="codeword">
-
-<div class="codeword-title-wrapper"><h1 class="title">Enter </h1><h1 class="title">Codeword</h1></div>
-<p>
-Enter the Module 14 Codeword:
-</p>
- 
-
-
-  <div id="codewordWrapper" class="codeword-wrapper">
-  /% CODEWORD INPUT %/
-      <div class="code-input">
-      <<textbox "$codeword" "">>
-    </div>
-   <div class="btn-result-wrapper">
-      <<button "Enter">>  
-          </div>
-      /% STANDARDISE INPUT %/
-      <<set $codeword to $codeword.toUpperCase()>>
-      /% CODEWORD CORRECT %/
-      <<if $codeword isnot "" and $codeword is "MAKING">>
-      <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
-      <<timed 3s>><<set $prevpass to $passage>><<goto "6mod14intro">><</timed>>
-      <</if>>
-        /% CODEWORD INCORRECT %/
-        <<if $codeword isnot "" and $codeword is not "MAKING">>
-        <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
-        <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
-        <</if>><</button>> 
-          /% CODEWORD FEEDBACK %/
-          <div id="coderesult"></div>
-   </div>
-    </div>
-  </main>
-    <<include "footercode">>
-  </div>
 
 :: 6mod14intro [nobr]
-<<set $passage to "6mod14intro">><<set $module to "Module 14">>
+<<set $passage to "6mod14intro">><<set $module to "Module 14">><<include "checkmodulenamelist">>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -2842,31 +2694,8 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 
 /* SESSION 7 */
 
-:: 7modulelist [nobr]
-<<set $passage to "7modulelist">><<set $session to 7>>
-<div class="wrapper box">
-  <main class="modules">
-  <h1 class="title">SESSION SEVEN</h1>
-  <div class="menu-wrapper module-list">
-<div class="menu-item" id="mod15"> 
-  <img src="./assets/img/mod15.jpg" alt="module fifteen">
-      /* <h2 class="subtitle">Module 15</h2> */
-       <<button "start">><<set $prevpass to $passage>><<goto "7kaiIntro">><</button>>
-      </div>
- <div class="menu-item" id="mod16"> 
-  <img src="./assets/img/mod16.jpg" alt="module sixteen">
-      /* <h2 class="subtitle">Module 16</h2> */
-        <<button "start">><<set $prevpass to $passage>><<goto "7CodewordMod16">><</button>>
-      </div>
-
-  </div>
-  </main>
-  <<include "footerbox">></div>
-  <<done>><<include "checkmodules">><</done>>
-
-
 :: 7kaiIntro [nobr]
-<<set $passage to "7kaiIntro">><<set $module to "Introduction">><<set $nextpass to "7CodewordMod15">>
+<<set $passage to "7kaiIntro">><<set $module to "Introduction">><<include "checkmodulenamelist">><<set $nextpass to "7modulelist">>
 <div class="wrapper">
   <<include "header">>
     /* <h1 class="title top">Hello - it's Kai again</h1> */
@@ -2901,7 +2730,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <p>It doesn’t mean it won’t have impact </p>
 <p>So, let’s talk about that before the delivery</p>
 
-         <<button "next">><<set $prevpass to $passage>><<goto "7CodewordMod15">><</button>>
+         <<button "next">><<set $prevpass to $passage>><<goto "7modulelist">><</button>>
     </div>
   
  
@@ -2911,18 +2740,16 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 </div>
 
 
-:: 7CodewordMod15 [nobr]
-<<set $passage to "7CodewordMod15">><<set $module to "Module 15">>
+:: 7modulelist [nobr]
+<<set $passage to "7modulelist">><<set $session to 7>>
 <div class="wrapper box">
-  <<include "header">>
-  <main class="codeword">
-
-<div class="codeword-title-wrapper" id="wrapper"><h1 class="title">Enter </h1><h1 class="title">Codeword</h1></div>
-
-  <div id="codewordWrapper" class="codeword-wrapper">
-  <p>
-Enter the code for Module 15:
-</p>
+  <main class="modules">
+  <h1 class="title">SESSION SEVEN</h1>
+  <div class="menu-wrapper module-list">
+<div class="menu-item" id="mod15"> 
+  <img src="./assets/img/mod15.jpg" alt="module fifteen">
+      /* <h2 class="subtitle">Module 15</h2> */
+       <div id="codewordWrapper" class="codeword-wrapper">
   /% CODEWORD INPUT %/
       <div class="code-input">
       <<textbox "$codeword" "">>
@@ -2935,9 +2762,11 @@ Enter the code for Module 15:
       /% CODEWORD CORRECT %/
   <<if $codeword isnot "" and $codeword is "ABORT">>
 <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
-<<timed 3s>>
-  <<set $prevpass to $passage>>
-    <<goto "7mod15intro">><</timed>>
+  <<timed 3s>>
+          <<set $prevpass to $passage>>
+          <<set $nextpass to "7mod15intro">>
+          <<goto "loading">>
+        <</timed>> 
 <</if>>
         /% CODEWORD INCORRECT %/
         <<if $codeword isnot "" and $codeword is not "ABORT">>
@@ -2945,16 +2774,53 @@ Enter the code for Module 15:
         <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
         <</if>><</button>> 
           /% CODEWORD FEEDBACK %/
-          <div id="coderesult"></div>
+          <div id="coderesult" class="coderesult"></div>
    </div>
     </div>
-  </main>
-    <<include "footercode">>
+      </div>
+ <div class="menu-item" id="mod16"> 
+  <img src="./assets/img/mod16.jpg" alt="module sixteen">
+      /* <h2 class="subtitle">Module 16</h2> */
+        <div id="codewordWrapper" class="codeword-wrapper">
+  /% CODEWORD INPUT %/
+      <div class="code-input">
+      <<textbox "$codeword" "">>
+    </div>
+   <div class="btn-result-wrapper">
+      <<button "Enter">>  
+          </div>
+      /% STANDARDISE INPUT %/
+      <<set $codeword to $codeword.toUpperCase()>>
+      /% CODEWORD CORRECT %/
+      <<if $codeword isnot "" and $codeword is "DELIVERY">>
+      <<replace "#coderesult2">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+       <<timed 3s>>
+          <<set $prevpass to $passage>>
+          <<set $nextpass to "7mod16intro">>
+          <<goto "loading">>
+        <</timed>>
+      <</if>>
+        /% CODEWORD INCORRECT %/
+        <<if $codeword isnot "" and $codeword is not "DELIVERY">>
+        <<replace "#coderesult2">><h2 class="subtitle">Thats not right.</h2><</replace>>
+        <<timed 1.5s>><<replace "#coderesult2">><</replace>><</timed>>
+        <</if>><</button>> 
+          /% CODEWORD FEEDBACK %/
+          <div id="coderesult2" class="coderesult"></div>
+   </div>
+    </div>
+      </div>
+
   </div>
+  </main>
+  <<include "footerbox">></div>
+  <<done>><<include "checkmodules">><</done>>
+
+
 
 
 :: 7mod15intro [nobr]
-<<set $passage to "7mod15intro">><<set $module to "Module 15">><<set $nextpass to "7mod15a">>
+<<set $passage to "7mod15intro">><<set $module to "Module 15">><<include "checkmodulenamelist">><<set $nextpass to "7mod15a">>
   <div class="wrapper">
     <<include "header">>
     <main  class="speaking">
@@ -3029,49 +2895,9 @@ Enter the code for Module 15:
      <<include "footer">>
 </div>
 
-:: 7CodewordMod16 [nobr]
-<<set $passage to "7CodewordMod16">><<set $module to "Module 16">>
-<div class="wrapper box">
-  <<include "header">>
-  <main class="codeword">
-
-<div class="codeword-title-wrapper"><h1 class="title">Enter </h1><h1 class="title">Codeword</h1></div>
-<p>
-Enter the Module 16 Codeword:
-</p>
- 
-
-
-  <div id="codewordWrapper" class="codeword-wrapper">
-  /% CODEWORD INPUT %/
-      <div class="code-input">
-      <<textbox "$codeword" "">>
-    </div>
-   <div class="btn-result-wrapper">
-      <<button "Enter">>  
-          </div>
-      /% STANDARDISE INPUT %/
-      <<set $codeword to $codeword.toUpperCase()>>
-      /% CODEWORD CORRECT %/
-      <<if $codeword isnot "" and $codeword is "DELIVERY">>
-      <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
-      <<timed 3s>><<set $prevpass to $passage>><<goto "7mod16intro">><</timed>>
-      <</if>>
-        /% CODEWORD INCORRECT %/
-        <<if $codeword isnot "" and $codeword is not "DELIVERY">>
-        <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
-        <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
-        <</if>><</button>> 
-          /% CODEWORD FEEDBACK %/
-          <div id="coderesult"></div>
-   </div>
-    </div>
-  </main>
-    <<include "footercode">>
-  </div>
 
 :: 7mod16intro [nobr]
-<<set $passage to "7mod16intro">><<set $module to "Module 16">>
+<<set $passage to "7mod16intro">><<set $module to "Module 16">><<include "checkmodulenamelist">>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -3189,27 +3015,8 @@ Enter the Module 16 Codeword:
 
 /* SESSION 8 */
 
-:: 8modulelist [nobr]
-<<set $passage to "8modulelist">><<set $session to 8>>
-<div class="wrapper box">
-  <main class="modules">
-  <h1 class="title">SESSION EIGHT</h1>
- 
-  <div class="menu-wrapper module-list">
-<div class="menu-item" id="mod17"> 
-  <img src="./assets/img/mod17.jpg" alt="module seventeen">
-      <h2 class="subtitle">Module 17</h2>
-       <<button "start">><<set $prevpass to $passage>><<goto "8kaiIntro">><</button>>
-      </div>
-      </div>
-
-  </main>
-  <<include "footerbox">></div>
-  <<done>><<include "checkmodules">><</done>>
-
-
 :: 8kaiIntro [nobr]
-<<set $passage to "8kaiIntro">><<set $module to "Introduction">><<set $nextpass to "8CodewordMod17">>
+<<set $passage to "8kaiIntro">><<set $module to "Introduction">><<set $nextpass to "8modulelist">>
 <div class="wrapper">
   <<include "header">>
     /* <h1 class="title top">Hello - it's Kai again</h1> */
@@ -3235,7 +3042,7 @@ Enter the Module 16 Codeword:
 <p>This was all of us. </p>
 <p>A module card is needed – there’s only one for this session. </p>
 
-         <<button "next">><<set $prevpass to $passage>><<goto "8CodewordMod17">><</button>>
+         <<button "next">><<set $prevpass to $passage>><<goto "8modulelist">><</button>>
     </div>
   
  
@@ -3244,19 +3051,17 @@ Enter the Module 16 Codeword:
 <<include "footerskip">>
 </div>
 
-
-:: 8CodewordMod17 [nobr]
-<<set $passage to "8CodewordMod17">><<set $module to "Module 17">>
+:: 8modulelist [nobr]
+<<set $passage to "8modulelist">><<set $session to 8>>
 <div class="wrapper box">
-  <<include "header">>
-  <main class="codeword">
-
-<div class="codeword-title-wrapper" id="wrapper"><h1 class="title">Enter </h1><h1 class="title">Codeword</h1></div>
-
-  <div id="codewordWrapper" class="codeword-wrapper">
-  <p>
-Enter the code for Module 17:
-</p>
+  <main class="modules">
+  <h1 class="title">SESSION EIGHT</h1>
+ 
+  <div class="menu-wrapper module-list">
+<div class="menu-item" id="mod17"> 
+  <img src="./assets/img/mod17.jpg" alt="module seventeen">
+      /* <h2 class="subtitle">Module 17</h2> */
+      <div id="codewordWrapper" class="codeword-wrapper">
   /% CODEWORD INPUT %/
       <div class="code-input">
       <<textbox "$codeword" "">>
@@ -3269,9 +3074,11 @@ Enter the code for Module 17:
       /% CODEWORD CORRECT %/
   <<if $codeword isnot "" and $codeword is "VIOLET">>
 <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
-<<timed 3s>>
-  <<set $prevpass to $passage>>
-    <<goto "8mod17intro">><</timed>>
+ <<timed 3s>>
+          <<set $prevpass to $passage>>
+          <<set $nextpass to "8mod17intro">>
+          <<goto "loading">>
+        <</timed>>
 <</if>>
         /% CODEWORD INCORRECT %/
         <<if $codeword isnot "" and $codeword is not "VIOLET">>
@@ -3279,16 +3086,20 @@ Enter the code for Module 17:
         <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
         <</if>><</button>> 
           /% CODEWORD FEEDBACK %/
-          <div id="coderesult"></div>
+          <div id="coderesult" class="coderesult"></div>
    </div>
     </div>
+      </div>
+      </div>
+
   </main>
-    <<include "footercode">>
-  </div>
+  <<include "footerbox">></div>
+  <<done>><<include "checkmodules">><</done>>
+
 
 
 :: 8mod17intro [nobr]
-<<set $passage to "8mod17intro">><<set $module to "Module 15">><<set $nextpass to "7mod15a">>
+<<set $passage to "8mod17intro">><<set $module to "Module 17">><<include "checkmodulenamelist">><<set $nextpass to "7mod15a">>
   <div class="wrapper">
     <<include "header">>
     <main  class="speaking">

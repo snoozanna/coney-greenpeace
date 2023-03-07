@@ -98,7 +98,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<!-- UUID://F9E39354-F641-4070-8B45-C314A3FDC8C8// --><tw-storydata name="Greenpeace X Coney" startnode="10" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="F9E39354-F641-4070-8B45-C314A3FDC8C8" zoom="0.6" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
+	<!-- UUID://F9E39354-F641-4070-8B45-C314A3FDC8C8// --><tw-storydata name="Greenpeace X Coney" startnode="11" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="F9E39354-F641-4070-8B45-C314A3FDC8C8" zoom="0.6" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;700&display=swap');
 @import url("./styles/generics.css");
 @import url("./styles/styles.css");</style><script role="script" id="twine-user-script" type="text/twine-javascript">$('#ui-bar').remove();
@@ -233,16 +233,35 @@ setup.checkForRepeats = (array,element) => {
     &lt;div class=&quot;nav-item logo&quot;&gt;
           &lt;img src=&quot;./assets/img/triangles-08.png&quot;&gt;
     &lt;/div&gt;
-  &lt;/div&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="7" name="lost" tags="" position="450,50" size="100,100">&lt;&lt;set $passage to &quot;lost&quot;&gt;&gt;&lt;&lt;include &quot;header&quot;&gt;&gt;
-&lt;main&gt;
-Sorry to hear that you&#39;re lost! 
-You have two options:
-
-&lt;&lt;button &quot;Begin the adventure again&quot;&gt;&gt;&lt;&lt;goto &quot;landing&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
-
-&lt;&lt;button &quot;Take me straight to the end location!&quot;&gt;&gt;&lt;&lt;goto &quot;end&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
-&lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="checkmodules" tags="" position="975,100" size="100,100">&lt;&lt;if $session is 1&gt;&gt;
+  &lt;/div&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="7" name="loading" tags="nobr" position="850,100" size="100,100">&lt;div class=&quot;loading-container&quot;&gt;
+  &lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;side left&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;side front&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;side right&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;side back&quot;&gt;&lt;/div&gt;
+    /* &lt;div class=&quot;shadow&quot;&gt;&lt;/div&gt; */
+  &lt;/div&gt;
+  &lt;div class=&quot;loading-title-container&quot;&gt;
+  &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+ &lt;&lt;timed 0.1s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 100ms&gt;&gt; &lt;h2&gt;Loading...&lt;/h2&gt; &lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+ &lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 100ms&gt;&gt; &lt;h2&gt;Loading...&lt;/h2&gt; &lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+  &lt;/div&gt;
+&lt;/div &gt;
+ &lt;&lt;timed 5s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;
+            /* &lt;&lt;goto &quot;loading&quot;&gt;&gt; */
+              &lt;&lt;goto $nextpass&gt;&gt;
+            &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="unlock" tags="nobr" position="975,100" size="100,100">&lt;div class=&quot;triangle-container&quot;&gt;
+  &lt;div class=&quot;triangle-wrapper-upper&quot;&gt;
+    &lt;!--   &lt;div class=&quot;triangle four up &quot;&gt;&lt;/div&gt; --&gt;
+    &lt;div id =&quot;topTriangle&quot; class=&quot;triangle four up fade-in4  &quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;triangle-wrapper-lower&quot;&gt;
+    &lt;!--   &lt;div class=&quot;triangle four up &quot;&gt;&lt;/div&gt; --&gt;
+    &lt;div class=&quot;triangle one up fade-in1&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;triangle two down fade-in2&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;triangle three up fade-in3&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="9" name="checkmodules" tags="" position="1100,100" size="100,100">&lt;&lt;if $session is 1&gt;&gt;
   &lt;&lt;if $mod1 is true&gt;&gt;
     &lt;&lt;addclass &quot;#mod1 &quot;&quot;complete&quot;&gt;&gt;
     &lt;&lt;append &quot;#mod1&quot; t8n&gt;&gt; &lt;h3 class=&quot;complete&quot;&gt;Complete&lt;/h3&gt;&lt;&lt;/append&gt;&gt;
@@ -325,7 +344,7 @@ You have two options:
     &lt;&lt;addclass &quot;#mod17&quot; &quot;complete&quot;&gt;&gt;
       &lt;&lt;append &quot;#mod17&quot; t8n&gt;&gt; &lt;h3 class=&quot;complete&quot;&gt;Complete&lt;/h3&gt;&lt;&lt;/append&gt;&gt;
   &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="checkmodulenamelist" tags="nobr" position="1100,100" size="100,100">&lt;&lt;if $module is &quot;Introduction&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="checkmodulenamelist" tags="nobr" position="1225,100" size="100,100">&lt;&lt;if $module is &quot;Introduction&quot;&gt;&gt;
   &lt;&lt;set $modulename to &quot;&quot;&gt;&gt;
 &lt;&lt;elseif $module is &quot;Module 1&quot;&gt;&gt;
   &lt;&lt;set $modulename to &quot;Playing The System&quot;&gt;&gt;
@@ -361,11 +380,13 @@ You have two options:
   &lt;&lt;set $modulename to &quot;Delivering a Gift&quot;&gt;&gt;
 &lt;&lt;elseif $module is &quot;Module 17&quot;&gt;&gt;
   &lt;&lt;set $modulename to &quot;The Story of the Gifts&quot;&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="landing" tags="nobr" position="450,50" size="100,100">&lt;&lt;set $passage to &quot;landing&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="landing" tags="nobr" position="450,50" size="100,100">&lt;&lt;set $passage to &quot;landing&quot;&gt;&gt;
 &lt;div class=&quot;wrapper box&quot;&gt;
 
   &lt;main class=&quot;codeword landing&quot;&gt;
-&lt;img src=&quot;./assets/img/triangles-08.png&quot; class=&quot;hero&quot;&gt;
+/* &lt;img src=&quot;./assets/img/triangles-08.png&quot; class=&quot;hero&quot;&gt; */
+
+&lt;&lt;include &quot;unlock&quot;&gt;&gt;
 &lt;div &gt;
   &lt;div class=&quot;codeword-title-wrapper&quot;&gt;&lt;h1 class=&quot;title&quot;&gt;Enter &lt;/h1&gt;&lt;h1 class=&quot;title&quot;&gt;session&lt;/h1&gt;&lt;/div&gt;
    &lt;p&gt; Enter session codeword.&lt;/p&gt;
@@ -384,36 +405,44 @@ You have two options:
         &lt;&lt;set $codeword to $codeword.toUpperCase()&gt;&gt;
         /% CODEWORD CORRECT %/
         &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;ONE&quot;&gt;&gt;
+        &lt;&lt;addclass &quot;#topTriangle&quot; &quot;unlock&quot;&gt;&gt;
         &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;Session 1&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-        &lt;&lt;timed 3s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;1modulelist&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
+        &lt;&lt;timed 3s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;1kaiIntro&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
         &lt;&lt;/if&gt;&gt;
             &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;TWO&quot;&gt;&gt;
+              &lt;&lt;addclass &quot;#topTriangle&quot; &quot;unlock&quot;&gt;&gt;
         &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;Session 2&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-        &lt;&lt;timed 3s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;2modulelist&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
+        &lt;&lt;timed 3s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;2kaiIntro&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
         &lt;&lt;/if&gt;&gt;
         &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;THREE&quot;&gt;&gt;
+          &lt;&lt;addclass &quot;#topTriangle&quot; &quot;unlock&quot;&gt;&gt;
         &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;Session 3&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-        &lt;&lt;timed 3s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;3modulelist&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
+        &lt;&lt;timed 3s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;3kaiIntro&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
         &lt;&lt;/if&gt;&gt;
         &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;FOUR&quot;&gt;&gt;
+          &lt;&lt;addclass &quot;#topTriangle&quot; &quot;unlock&quot;&gt;&gt;
         &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;Session 4&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-        &lt;&lt;timed 3s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;4modulelist&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
+        &lt;&lt;timed 3s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;4kaiIntro&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
         &lt;&lt;/if&gt;&gt;
          &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;FIVE&quot;&gt;&gt;
+          &lt;&lt;addclass &quot;#topTriangle&quot; &quot;unlock&quot;&gt;&gt;
         &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;Session 5&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-        &lt;&lt;timed 3s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;5modulelist&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
+        &lt;&lt;timed 3s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;5kaiIntro&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
         &lt;&lt;/if&gt;&gt;
          &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;SIX&quot;&gt;&gt;
+           &lt;&lt;addclass &quot;#topTriangle&quot; &quot;unlock&quot;&gt;&gt;
         &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;Session 6&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-        &lt;&lt;timed 3s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;6modulelist&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
+        &lt;&lt;timed 3s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;6kaiIntro&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
         &lt;&lt;/if&gt;&gt;
          &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;SEVEN&quot;&gt;&gt;
+           &lt;&lt;addclass &quot;#topTriangle&quot; &quot;unlock&quot;&gt;&gt;
         &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;Session 7&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-        &lt;&lt;timed 3s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;7modulelist&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
+        &lt;&lt;timed 3s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;7kaiIntro&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
         &lt;&lt;/if&gt;&gt;
          &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;EIGHT&quot;&gt;&gt;
+           &lt;&lt;addclass &quot;#topTriangle&quot; &quot;unlock&quot;&gt;&gt;
         &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;Session 8&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-        &lt;&lt;timed 3s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;8modulelist&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
+        &lt;&lt;timed 3s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;8kaiIntro&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
         &lt;&lt;/if&gt;&gt;
           /% CODEWORD INCORRECT %/
           /* &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;ONE&quot;&gt;&gt;
@@ -428,24 +457,7 @@ You have two options:
 &lt;/div&gt;
   &lt;/main&gt;
     /* &lt;&lt;include &quot;footercode&quot;&gt;&gt; */
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="11" name="1modulelist" tags="nobr" position="100,225" size="100,100">&lt;&lt;set $passage to &quot;1modulelist&quot;&gt;&gt;&lt;&lt;set $session to 1&gt;&gt;
-&lt;div class=&quot;wrapper box&quot;&gt;
-  &lt;main class=&quot;modules&quot;&gt;
-  &lt;h1 class=&quot;title&quot;&gt;SESSION ONE&lt;/h1&gt;
-  &lt;div class=&quot;menu-wrapper module-list&quot;&gt;
-  &lt;div class=&quot;menu-item &quot; id=&quot;mod1&quot;&gt; 
-    &lt;img src=&quot;./assets/img/mod1.jpg&quot; alt=&quot;module one&quot;&gt;
-      /* &lt;h2 class=&quot;subtitle&quot;&gt;Module 1&lt;/h2&gt; */
-      &lt;&lt;button &quot;start&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;1kaiIntro&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
- &lt;div class=&quot;menu-item&quot; id=&quot;mod2&quot;&gt; 
-  &lt;img src=&quot;./assets/img/mod2.jpg&quot; alt=&quot;module two&quot;&gt;
-      /* &lt;h2 class=&quot;subtitle&quot;&gt;Module 2&lt;/h2&gt; */
-      &lt;&lt;button &quot;start&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;1CodewordMod2&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
-      &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;/main&gt;
-  &lt;&lt;include &quot;footerbox&quot;&gt;&gt;&lt;/div&gt;
-  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="1kaiIntro" tags="nobr" position="225,225" size="100,100">&lt;&lt;set $passage to &quot;1kaiIntro&quot;&gt;&gt;&lt;&lt;set $nextpass to &quot;1kaiIntro2&quot;&gt;&gt;&lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="1kaiIntro" tags="nobr" position="225,225" size="100,100">&lt;&lt;set $passage to &quot;1kaiIntro&quot;&gt;&gt;&lt;&lt;set $nextpass to &quot;1kaiIntro2&quot;&gt;&gt;&lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
 &lt;&lt;include &quot;header&quot;&gt;&gt;
 &lt;main class=&quot;speaking&quot;&gt;
@@ -498,7 +510,7 @@ You have two options:
   &lt;/div&gt;
   &lt;/main&gt;
       &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="1kaiIntro5" tags="nobr" position="725,225" size="100,100">&lt;&lt;set $passage to &quot;1kaiIntro5&quot;&gt;&gt;&lt;&lt;set $nextpass to &quot;1CodewordMod1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="1kaiIntro5" tags="nobr" position="725,225" size="100,100">&lt;&lt;set $passage to &quot;1kaiIntro5&quot;&gt;&gt;&lt;&lt;set $nextpass to &quot;1modulelist&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
 &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -506,50 +518,87 @@ You have two options:
   &lt;p&gt;You may have heard of Coney too (quite possible not but ya know)&lt;/p&gt;
 &lt;p&gt;  Coney are a group of playful activists.&lt;/p&gt;
  &lt;p&gt; Coney create interactive performances, adventures, and games to make change through play.&lt;/p&gt;
-
-  &lt;&lt;button &quot;next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;1CodewordMod1&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
-  &lt;/div&gt;
-  &lt;/main&gt;
-      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="1CodewordMod1" tags="nobr" position="850,225" size="100,100">&lt;&lt;set $passage to &quot;1CodewordMod1&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 1&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
-&lt;div class=&quot;wrapper box&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-  &lt;main class=&quot;codeword&quot;&gt;
-&lt;div class=&quot;codeword-title-wrapper&quot;&gt;&lt;h1 class=&quot;title&quot;&gt;Enter &lt;/h1&gt;&lt;h1 class=&quot;title&quot;&gt;Codeword&lt;/h1&gt;&lt;/div&gt;
  &lt;p&gt; We&#39;re going to start this project by playing a game.&lt;/p&gt;
 &lt;p&gt;  A game I made actually. &lt;/p&gt;
   &lt;p&gt;But to get in, you need a codeword. &lt;/p&gt;
-  &lt;p&gt;Enter the codeword for Module 1 &lt;/p&gt;
- 
-
-
-  &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
-  /% CODEWORD INPUT %/
-      &lt;div class=&quot;code-input&quot;&gt;
-      &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
-    &lt;/div&gt;
-   &lt;div class=&quot;btn-result-wrapper&quot;&gt;
-      &lt;&lt;button &quot;Enter&quot;&gt;&gt;  
-          &lt;/div&gt;
-      /% STANDARDISE INPUT %/
-      &lt;&lt;set $codeword to $codeword.toUpperCase()&gt;&gt;
-      /% CODEWORD CORRECT %/
-      &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;EXTRACTION&quot;&gt;&gt;
-      &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-      &lt;&lt;timed 3s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;1mod1intro&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
-      &lt;&lt;/if&gt;&gt;
-        /% CODEWORD INCORRECT %/
-        &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;EXTRACTION&quot;&gt;&gt;
-        &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-        &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
-        &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt; 
-          /% CODEWORD FEEDBACK %/
-          &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
-   &lt;/div&gt;
-    &lt;/div&gt;
+  &lt;&lt;button &quot;next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;1modulelist&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+  &lt;/div&gt;
   &lt;/main&gt;
-    &lt;&lt;include &quot;footercode&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="18" name="1mod1intro" tags="nobr" position="975,225" size="100,100">&lt;&lt;set $passage to &quot;1mod1intro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 1&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
+      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="1modulelist" tags="nobr" position="850,225" size="100,100">&lt;&lt;set $passage to &quot;1modulelist&quot;&gt;&gt;&lt;&lt;set $session to 1&gt;&gt;
+&lt;div class=&quot;wrapper box&quot;&gt;
+  &lt;main class=&quot;modules&quot;&gt;
+  &lt;h1 class=&quot;title&quot;&gt;SESSION ONE&lt;/h1&gt;
+    /* &lt;div class=&quot;codeword-title-wrapper&quot;&gt;&lt;h1 class=&quot;title&quot;&gt;Enter &lt;/h1&gt;&lt;h1 class=&quot;title&quot;&gt;Codeword&lt;/h1&gt;&lt;/div&gt; */
+      &lt;div class=&quot;menu-wrapper module-list&quot;&gt;
+      &lt;div class=&quot;menu-item &quot; id=&quot;mod1&quot;&gt; 
+        &lt;img src=&quot;./assets/img/mod1.jpg&quot; alt=&quot;module one&quot;&gt;
+          &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+      /% CODEWORD INPUT %/
+          &lt;div class=&quot;code-input&quot;&gt;
+          &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
+        &lt;/div&gt;
+      &lt;div class=&quot;btn-result-wrapper&quot;&gt;
+          &lt;&lt;button &quot;Enter&quot;&gt;&gt;  
+              &lt;/div&gt;
+          /% STANDARDISE INPUT %/
+          &lt;&lt;set $codeword to $codeword.toUpperCase()&gt;&gt;
+          /% CODEWORD CORRECT %/
+          &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;EXTRACTION&quot;&gt;&gt;
+            &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+            &lt;&lt;timed 3s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;
+              &lt;&lt;set $nextpass to &quot;1mod1intro&quot;&gt;&gt;
+            &lt;&lt;goto &quot;loading&quot;&gt;&gt;
+            &lt;&lt;/timed&gt;&gt;
+          &lt;&lt;/if&gt;&gt;
+            /% CODEWORD INCORRECT %/
+            &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;EXTRACTION&quot;&gt;&gt;
+            &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+            &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+            &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt; 
+              /% CODEWORD FEEDBACK %/
+              &lt;div class=&quot;coderesult&quot;  id=&quot;coderesult&quot;&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+          /* &lt;&lt;button &quot;start&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;1kaiIntro&quot;&gt;&gt;&lt;&lt;/button&gt;&gt; */
+          &lt;/div&gt;
+    &lt;div class=&quot;menu-item&quot; id=&quot;mod2&quot;&gt; 
+      &lt;img src=&quot;./assets/img/mod2.jpg&quot; alt=&quot;module two&quot;&gt;
+          &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+      /% CODEWORD INPUT %/
+          &lt;div class=&quot;code-input&quot;&gt;
+          &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
+        &lt;/div&gt;
+      &lt;div class=&quot;btn-result-wrapper&quot;&gt;
+          &lt;&lt;button &quot;Enter&quot;&gt;&gt;  
+                &lt;/div&gt;
+            /% STANDARDISE INPUT %/
+            &lt;&lt;set $codeword to $codeword.toUpperCase()&gt;&gt;
+            /% CODEWORD CORRECT %/
+            &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;FRONT&quot;&gt;&gt;
+            &lt;&lt;replace &quot;#coderesult2&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+            &lt;&lt;timed 3s&gt;&gt;
+              &lt;&lt;set $prevpass to $passage&gt;&gt;
+               &lt;&lt;set $nextpass to &quot;1mod2intro&quot;&gt;&gt;
+            &lt;&lt;goto &quot;loading&quot;&gt;&gt;
+            &lt;&lt;/timed&gt;&gt;
+            &lt;&lt;/if&gt;&gt;
+              /% CODEWORD INCORRECT %/
+              &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;FRONT&quot;&gt;&gt;
+              &lt;&lt;replace &quot;#coderesult2&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+              &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult2&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+              &lt;&lt;/if&gt;&gt;
+          &lt;&lt;/button&gt;&gt; 
+          /% CODEWORD FEEDBACK %/
+            &lt;div class=&quot;coderesult&quot; id=&quot;coderesult2&quot;&gt;&lt;/div&gt;   
+      &lt;/div&gt;
+        &lt;/div&gt;
+          /* &lt;&lt;button &quot;start&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;1CodewordMod2&quot;&gt;&gt;&lt;&lt;/button&gt;&gt; */
+          &lt;/div&gt;
+      &lt;/div&gt;
+  &lt;/main&gt;
+  &lt;&lt;include &quot;footerbox&quot;&gt;&gt;&lt;/div&gt;
+  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="1mod1intro" tags="nobr" position="975,225" size="100,100">&lt;&lt;set $passage to &quot;1mod1intro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 1&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
   &lt;div class=&quot;wrapper&quot;&gt;
     &lt;&lt;include &quot;header&quot;&gt;&gt;
     &lt;main  class=&quot;speaking&quot;&gt;
@@ -648,43 +697,7 @@ You have two options:
   &lt;/div&gt;
   &lt;/main&gt;
   &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="1CodewordMod2" tags="nobr" position="225,350" size="100,100">&lt;&lt;set $passage to &quot;1CodewordMod2&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 2&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
-&lt;div class=&quot;wrapper box&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-  &lt;main class=&quot;codeword&quot;&gt;
-
-&lt;div class=&quot;codeword-title-wrapper&quot;&gt;&lt;h1 class=&quot;title&quot;&gt;Enter &lt;/h1&gt;&lt;h1 class=&quot;title&quot;&gt;Codeword&lt;/h1&gt;&lt;/div&gt;
- &lt;p&gt; Enter Module 2’s Codeword for the final game of this session.&lt;/p&gt;
- 
-
-
-  &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
-  /% CODEWORD INPUT %/
-      &lt;div class=&quot;code-input&quot;&gt;
-      &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
-    &lt;/div&gt;
-   &lt;div class=&quot;btn-result-wrapper&quot;&gt;
-      &lt;&lt;button &quot;Enter&quot;&gt;&gt;  
-          &lt;/div&gt;
-      /% STANDARDISE INPUT %/
-      &lt;&lt;set $codeword to $codeword.toUpperCase()&gt;&gt;
-      /% CODEWORD CORRECT %/
-      &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;FRONT&quot;&gt;&gt;
-      &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-      &lt;&lt;timed 3s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;1mod2intro&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
-      &lt;&lt;/if&gt;&gt;
-        /% CODEWORD INCORRECT %/
-        &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;FRONT&quot;&gt;&gt;
-        &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-        &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
-        &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt; 
-          /% CODEWORD FEEDBACK %/
-          &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
-   &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/main&gt;
-    &lt;&lt;include &quot;footercode&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="1mod2intro" tags="nobr" position="350,350" size="100,100">&lt;&lt;set $passage to &quot;1mod2intro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 2&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="1mod2intro" tags="nobr" position="225,350" size="100,100">&lt;&lt;set $passage to &quot;1mod2intro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 2&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -702,7 +715,7 @@ You have two options:
    &lt;/div&gt;
   &lt;/main&gt;
   &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="1mod2introb" tags="nobr" position="475,350" size="100,100">&lt;&lt;set $passage to &quot;1mod2introb&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="1mod2introb" tags="nobr" position="350,350" size="100,100">&lt;&lt;set $passage to &quot;1mod2introb&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -714,7 +727,7 @@ You have two options:
   &lt;/div&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="25" name="1mod2outro" tags="nobr" position="600,350" size="100,100">&lt;&lt;set $passage to &quot;1mod2outro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="1mod2outro" tags="nobr" position="475,350" size="100,100">&lt;&lt;set $passage to &quot;1mod2outro&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -735,7 +748,7 @@ You have two options:
  &lt;/div&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="26" name="1mod2outrokai" tags="nobr" position="725,350" size="100,100">&lt;&lt;set $passage to &quot;1mod2outrokai&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="25" name="1mod2outrokai" tags="nobr" position="600,350" size="100,100">&lt;&lt;set $passage to &quot;1mod2outrokai&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking &quot;&gt;
@@ -768,25 +781,7 @@ You have two options:
 &lt;/div&gt;
 
 
-/* SESSION 2 */</tw-passagedata><tw-passagedata pid="27" name="2modulelist" tags="nobr" position="850,350" size="100,100">&lt;&lt;set $passage to &quot;2modulelist&quot;&gt;&gt;&lt;&lt;set $session to 2&gt;&gt;
-&lt;div class=&quot;wrapper box&quot;&gt;
-  &lt;main class=&quot;modules&quot;&gt;
-  &lt;h1 class=&quot;title&quot;&gt;SESSION TWO&lt;/h1&gt;
-  &lt;div class=&quot;menu-wrapper module-list&quot;&gt;
-&lt;div class=&quot;menu-item&quot; id=&quot;mod3&quot;&gt; 
-&lt;img src=&quot;./assets/img/mod3.jpg&quot; alt=&quot;module three&quot;&gt;
-      /* &lt;h2 class=&quot;subtitle&quot;&gt;Module 3&lt;/h2&gt; */
-      &lt;&lt;button &quot;start&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;2kaiIntro&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
-      &lt;/div&gt;
-&lt;div class=&quot;menu-item&quot; id=&quot;mod4&quot;&gt; 
-&lt;img src=&quot;./assets/img/mod4.jpg&quot; alt=&quot;module four&quot;&gt;
-      /* &lt;h2 class=&quot;subtitle&quot;&gt;Module 4&lt;/h2&gt; */
-       &lt;&lt;button &quot;start&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;2CodewordMod4&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
-      &lt;/div&gt;  
-  &lt;/div&gt;
-  &lt;/main&gt;
-  &lt;&lt;include &quot;footerbox&quot;&gt;&gt;&lt;/div&gt;
-  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="28" name="2kaiIntro" tags="nobr" position="975,350" size="100,100">&lt;&lt;set $passage to &quot;2kaiIntro&quot;&gt;&gt;&lt;&lt;set $nextpass to &quot;2CodewordMod3&quot;&gt;&gt;&lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
+/* SESSION 2 */</tw-passagedata><tw-passagedata pid="26" name="2kaiIntro" tags="nobr" position="725,350" size="100,100">&lt;&lt;set $passage to &quot;2kaiIntro&quot;&gt;&gt;&lt;&lt;set $nextpass to &quot;2modulelist&quot;&gt;&gt;&lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
     /* &lt;h1 class=&quot;title top&quot;&gt;Hello - it&#39;s Kai again&lt;/h1&gt; */
@@ -813,25 +808,26 @@ You have two options:
       /* / */
       &lt;p&gt;Change sounds natural, or even reversible, like changing your height by growing just a little bit taller.  No, I’m kidding 5ft 6 suits me fine thank you, and what we’re really looking at is destruction. It’s a crisis. &lt;/p&gt;
       &lt;p&gt;As we’re at the start of the project, let’s work out where we’re starting from. &lt;/p&gt;
-         &lt;&lt;button &quot;next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;2CodewordMod3&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+         &lt;&lt;button &quot;next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;2modulelist&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
     &lt;/div&gt;
   
  
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="29" name="2CodewordMod3" tags="nobr" position="1100,350" size="100,100">&lt;&lt;set $passage to &quot;2CodewordMod3&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 3&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="27" name="2modulelist" tags="nobr" position="850,350" size="100,100">&lt;&lt;set $passage to &quot;2modulelist&quot;&gt;&gt;&lt;&lt;set $session to 2&gt;&gt;
 &lt;div class=&quot;wrapper box&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-  &lt;main class=&quot;codeword&quot;&gt;
+  &lt;main class=&quot;modules&quot;&gt;
+  &lt;h1 class=&quot;title&quot;&gt;SESSION TWO&lt;/h1&gt;
 
-&lt;div class=&quot;codeword-title-wrapper&quot; id=&quot;wrapper&quot;&gt;&lt;h1 class=&quot;title&quot;&gt;Enter &lt;/h1&gt;&lt;h1 class=&quot;title&quot;&gt;Codeword&lt;/h1&gt;&lt;/div&gt;
+  &lt;div class=&quot;menu-wrapper module-list&quot;&gt;
+&lt;div class=&quot;menu-item&quot; id=&quot;mod3&quot;&gt; 
 
-
-  &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
-  &lt;p&gt;
+&lt;img src=&quot;./assets/img/mod3.jpg&quot; alt=&quot;module three&quot;&gt;
+     &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+  /* &lt;p&gt;
 Let’s enter Module 3’s Codeword to dive in:
-&lt;/p&gt;
+&lt;/p&gt; */
   /% CODEWORD INPUT %/
       &lt;div class=&quot;code-input&quot;&gt;
       &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
@@ -844,13 +840,11 @@ Let’s enter Module 3’s Codeword to dive in:
       /% CODEWORD CORRECT %/
   &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;CONTEXT&quot;&gt;&gt;
 &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;timed 3s&gt;&gt;
-  &lt;&lt;set $prevpass to $passage&gt;&gt;
-    &lt;&lt;replace &quot;#codewordWrapper&quot;&gt;&gt;
-   &lt;p&gt; I may not be present, but Teacher you are! &lt;/p&gt;
-    &lt;p&gt;Can you help me out here? &lt;/p&gt;
-   &lt;p&gt; Can you ask the class: &lt;/p&gt;
-   &lt;p&gt;When you hear the words Climate Emergency, what is the first thing you think of? &lt;/p&gt;&lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;goto &quot;2mod3intro&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+   &lt;&lt;timed 3s&gt;&gt;
+              &lt;&lt;set $prevpass to $passage&gt;&gt;
+               &lt;&lt;set $nextpass to &quot;2mod3preintro&quot;&gt;&gt;
+            &lt;&lt;goto &quot;loading&quot;&gt;&gt;
+        &lt;&lt;/timed&gt;&gt;
 &lt;&lt;/if&gt;&gt;
         /% CODEWORD INCORRECT %/
         &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;CONTEXT&quot;&gt;&gt;
@@ -858,12 +852,59 @@ Let’s enter Module 3’s Codeword to dive in:
         &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
         &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt; 
           /% CODEWORD FEEDBACK %/
-          &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
+          &lt;div id=&quot;coderesult&quot; class=&quot;coderesult&quot;&gt;&lt;/div&gt;
    &lt;/div&gt;
     &lt;/div&gt;
+      &lt;/div&gt;
+&lt;div class=&quot;menu-item&quot; id=&quot;mod4&quot;&gt; 
+&lt;img src=&quot;./assets/img/mod4.jpg&quot; alt=&quot;module four&quot;&gt;
+    
+  &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+  /% CODEWORD INPUT %/
+      &lt;div class=&quot;code-input&quot;&gt;
+      &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
+    &lt;/div&gt;
+   &lt;div class=&quot;btn-result-wrapper&quot;&gt;
+      &lt;&lt;button &quot;Enter&quot;&gt;&gt;  
+          &lt;/div&gt;
+      /% STANDARDISE INPUT %/
+      &lt;&lt;set $codeword to $codeword.toUpperCase()&gt;&gt;
+      /% CODEWORD CORRECT %/
+      &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;POTATO&quot;&gt;&gt;
+      &lt;&lt;replace &quot;#coderesult2&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+       &lt;&lt;timed 3s&gt;&gt;
+          &lt;&lt;set $prevpass to $passage&gt;&gt;
+          &lt;&lt;set $nextpass to &quot;2mod4intro&quot;&gt;&gt;
+          &lt;&lt;goto &quot;loading&quot;&gt;&gt;
+        &lt;&lt;/timed&gt;&gt;
+      &lt;&lt;/if&gt;&gt;
+        /% CODEWORD INCORRECT %/
+        &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;POTATO&quot;&gt;&gt;
+        &lt;&lt;replace &quot;#coderesult2&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+        &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult2&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+        &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt; 
+          /% CODEWORD FEEDBACK %/
+          &lt;div id=&quot;coderesult2&quot; class=&quot;coderesult&quot;&gt;&lt;/div&gt;
+   &lt;/div&gt;
+    &lt;/div&gt;
+      &lt;/div&gt;  
+  &lt;/div&gt;
   &lt;/main&gt;
-    &lt;&lt;include &quot;footercode&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="30" name="2mod3intro" tags="nobr" position="1225,350" size="100,100">&lt;&lt;set $passage to &quot;2mod3intro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 3&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;&lt;&lt;set $nextpass to &quot;2mod3vid&quot;&gt;&gt;
+  &lt;&lt;include &quot;footerbox&quot;&gt;&gt;&lt;/div&gt;
+  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="28" name="2mod3preintro" tags="nobr" position="975,350" size="100,100">&lt;&lt;set $passage to &quot;2mod3intro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 3&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;&lt;&lt;set $nextpass to &quot;2mod3intro&quot;&gt;&gt;
+  &lt;div class=&quot;wrapper&quot;&gt;
+    &lt;&lt;include &quot;header&quot;&gt;&gt;
+    &lt;main  class=&quot;speaking&quot;&gt;
+        &lt;div class=&quot;text-wrapper&quot;&gt;
+ &lt;p&gt; I may not be present, but Teacher you are! &lt;/p&gt;
+    &lt;p&gt;Can you help me out here? &lt;/p&gt;
+   &lt;p&gt; Can you ask the class: &lt;/p&gt;
+   &lt;p&gt;When you hear the words Climate Emergency, what is the first thing you think of? &lt;/p&gt;&lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;goto &quot;2mod3intro&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+ 
+   &lt;/div&gt;
+    &lt;/main&gt;
+         &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="29" name="2mod3intro" tags="nobr" position="1100,350" size="100,100">&lt;&lt;set $passage to &quot;2mod3intro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 3&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;&lt;&lt;set $nextpass to &quot;2mod3vid&quot;&gt;&gt;
   &lt;div class=&quot;wrapper&quot;&gt;
     &lt;&lt;include &quot;header&quot;&gt;&gt;
     &lt;main  class=&quot;speaking&quot;&gt;
@@ -909,7 +950,7 @@ She’s great.
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="2mod3vid" tags="nobr" position="100,475" size="100,100">&lt;&lt;set $passage to &quot;2mod3vid&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="30" name="2mod3vid" tags="nobr" position="1225,350" size="100,100">&lt;&lt;set $passage to &quot;2mod3vid&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -917,7 +958,7 @@ She’s great.
 &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;2mod1int1&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="2mod1int1" tags="nobr" position="225,475" size="100,100">&lt;&lt;set $passage to &quot;2mod1int1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="2mod1int1" tags="nobr" position="100,475" size="100,100">&lt;&lt;set $passage to &quot;2mod1int1&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -940,7 +981,7 @@ She’s great.
 
   &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="2mod1int2" tags="nobr" position="350,475" size="100,100">&lt;&lt;set $passage to &quot;2mod1int2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="2mod1int2" tags="nobr" position="225,475" size="100,100">&lt;&lt;set $passage to &quot;2mod1int2&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -960,7 +1001,7 @@ She’s great.
 &lt;/div&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="34" name="2mod1int3" tags="nobr" position="475,475" size="100,100">&lt;&lt;set $passage to &quot;2mod1int3&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="2mod1int3" tags="nobr" position="350,475" size="100,100">&lt;&lt;set $passage to &quot;2mod1int3&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -980,7 +1021,7 @@ She’s great.
 &lt;/div&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="35" name="2mod3outro" tags="nobr" position="600,475" size="100,100">&lt;&lt;set $passage to &quot;2mod3outro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="34" name="2mod3outro" tags="nobr" position="475,475" size="100,100">&lt;&lt;set $passage to &quot;2mod3outro&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -1015,45 +1056,7 @@ She’s great.
 &lt;/div&gt;
 &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="36" name="2CodewordMod4" tags="nobr" position="725,475" size="100,100">&lt;&lt;set $passage to &quot;2CodewordMod4&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 4&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
-&lt;div class=&quot;wrapper box&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-  &lt;main class=&quot;codeword&quot;&gt;
-
-&lt;div class=&quot;codeword-title-wrapper&quot;&gt;&lt;h1 class=&quot;title&quot;&gt;Enter &lt;/h1&gt;&lt;h1 class=&quot;title&quot;&gt;Codeword&lt;/h1&gt;&lt;/div&gt;
-&lt;p&gt;
-Enter the Module 4 Codeword:
-&lt;/p&gt;
- 
-
-
-  &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
-  /% CODEWORD INPUT %/
-      &lt;div class=&quot;code-input&quot;&gt;
-      &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
-    &lt;/div&gt;
-   &lt;div class=&quot;btn-result-wrapper&quot;&gt;
-      &lt;&lt;button &quot;Enter&quot;&gt;&gt;  
-          &lt;/div&gt;
-      /% STANDARDISE INPUT %/
-      &lt;&lt;set $codeword to $codeword.toUpperCase()&gt;&gt;
-      /% CODEWORD CORRECT %/
-      &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;POTATO&quot;&gt;&gt;
-      &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-      &lt;&lt;timed 3s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;2mod4intro&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
-      &lt;&lt;/if&gt;&gt;
-        /% CODEWORD INCORRECT %/
-        &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;POTATO&quot;&gt;&gt;
-        &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-        &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
-        &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt; 
-          /% CODEWORD FEEDBACK %/
-          &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
-   &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/main&gt;
-    &lt;&lt;include &quot;footercode&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="37" name="2mod4intro" tags="nobr" position="850,475" size="100,100">&lt;&lt;set $passage to &quot;2mod4intro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 4&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="35" name="2mod4intro" tags="nobr" position="600,475" size="100,100">&lt;&lt;set $passage to &quot;2mod4intro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 4&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -1071,7 +1074,7 @@ Anyone like Potatoes? Amazing – everyone. I can’t see so I’ll just make up
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="38" name="2mod4outro" tags="nobr" position="975,475" size="100,100">&lt;&lt;set $passage to &quot;2mod4outro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="36" name="2mod4outro" tags="nobr" position="725,475" size="100,100">&lt;&lt;set $passage to &quot;2mod4outro&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -1099,7 +1102,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="39" name="2mod4outrob" tags="nobr" position="1100,475" size="100,100">&lt;&lt;set $passage to &quot;mod4outrob&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="37" name="2mod4outrob" tags="nobr" position="850,475" size="100,100">&lt;&lt;set $passage to &quot;mod4outrob&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -1118,25 +1121,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 &lt;/div&gt;
 
 
-/* SESSION 3 */</tw-passagedata><tw-passagedata pid="40" name="3modulelist" tags="nobr" position="1225,475" size="100,100">&lt;&lt;set $passage to &quot;3modulelist&quot;&gt;&gt;&lt;&lt;set $session to 3&gt;&gt;
-&lt;div class=&quot;wrapper box&quot;&gt;
-  &lt;main class=&quot;modules&quot;&gt;
-  &lt;h1 class=&quot;title&quot;&gt;SESSION THREE&lt;/h1&gt;
-  &lt;div class=&quot;menu-wrapper module-list&quot;&gt;
-&lt;div class=&quot;menu-item&quot; id=&quot;mod5&quot;&gt; 
-&lt;img src=&quot;./assets/img/mod5.jpg&quot; alt=&quot;module three&quot;&gt;
-      /* &lt;h2 class=&quot;subtitle&quot;&gt;Module 5&lt;/h2&gt; */
-       &lt;&lt;button &quot;start&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;3kaiIntro&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
-      &lt;/div&gt;
- &lt;div class=&quot;menu-item&quot; id=&quot;mod6&quot;&gt; 
- &lt;img src=&quot;./assets/img/mod6.jpg&quot; alt=&quot;module three&quot;&gt;
-      /* &lt;h2 class=&quot;subtitle&quot;&gt;Module 6&lt;/h2&gt; */
-        &lt;&lt;button &quot;start&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;3CodewordMod6&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
-      &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;/main&gt;
-  &lt;&lt;include &quot;footerbox&quot;&gt;&gt;&lt;/div&gt;
-  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="41" name="3kaiIntro" tags="nobr" position="100,600" size="100,100">&lt;&lt;set $passage to &quot;3kaiIntro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;&lt;&lt;set $nextpass to &quot;3CodewordMod5&quot;&gt;&gt;
+/* SESSION 3 */</tw-passagedata><tw-passagedata pid="38" name="3kaiIntro" tags="nobr" position="975,475" size="100,100">&lt;&lt;set $passage to &quot;3kaiIntro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;&lt;&lt;set $nextpass to &quot;3modulelist&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
     /* &lt;h1 class=&quot;title top&quot;&gt;Hello - it&#39;s Kai again&lt;/h1&gt; */
@@ -1163,25 +1148,23 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 &lt;p&gt;Great voices Kai – thanks everyone. &lt;/p&gt;
 &lt;p&gt;32 seconds…ish.&lt;/p&gt; 
 
-         &lt;&lt;button &quot;next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;3CodewordMod5&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+         &lt;&lt;button &quot;next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;3modulelist&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
     &lt;/div&gt;
   
  
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="42" name="3CodewordMod5" tags="nobr" position="225,600" size="100,100">&lt;&lt;set $passage to &quot;3CodewordMod5&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 5&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="39" name="3modulelist" tags="nobr" position="1100,475" size="100,100">&lt;&lt;set $passage to &quot;3modulelist&quot;&gt;&gt;&lt;&lt;set $session to 3&gt;&gt;
 &lt;div class=&quot;wrapper box&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-  &lt;main class=&quot;codeword&quot;&gt;
-
-&lt;div class=&quot;codeword-title-wrapper&quot; id=&quot;wrapper&quot;&gt;&lt;h1 class=&quot;title&quot;&gt;Enter &lt;/h1&gt;&lt;h1 class=&quot;title&quot;&gt;Codeword&lt;/h1&gt;&lt;/div&gt;
-
-
+  &lt;main class=&quot;modules&quot;&gt;
+  &lt;h1 class=&quot;title&quot;&gt;SESSION THREE&lt;/h1&gt;
+  &lt;div class=&quot;menu-wrapper module-list&quot;&gt;
+&lt;div class=&quot;menu-item&quot; id=&quot;mod5&quot;&gt; 
+&lt;img src=&quot;./assets/img/mod5.jpg&quot; alt=&quot;module three&quot;&gt;
+  
   &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
-  &lt;p&gt;
-Let’s enter Module 5’s Codeword to dive in:
-&lt;/p&gt;
+
   /% CODEWORD INPUT %/
       &lt;div class=&quot;code-input&quot;&gt;
       &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
@@ -1192,24 +1175,60 @@ Let’s enter Module 5’s Codeword to dive in:
       /% STANDARDISE INPUT %/
       &lt;&lt;set $codeword to $codeword.toUpperCase()&gt;&gt;
       /% CODEWORD CORRECT %/
-  &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;TRUMP&quot;&gt;&gt;
+  &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;TALENT&quot;&gt;&gt;
 &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;timed 3s&gt;&gt;
-  &lt;&lt;set $prevpass to $passage&gt;&gt;
-    &lt;&lt;goto &quot;3mod5intro&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
+  &lt;&lt;timed 3s&gt;&gt;
+          &lt;&lt;set $prevpass to $passage&gt;&gt;
+          &lt;&lt;set $nextpass to &quot;3mod5intro&quot;&gt;&gt;
+          &lt;&lt;goto &quot;loading&quot;&gt;&gt;
+        &lt;&lt;/timed&gt;&gt;
 &lt;&lt;/if&gt;&gt;
         /% CODEWORD INCORRECT %/
-        &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;TRUMP&quot;&gt;&gt;
+        &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;TALENT&quot;&gt;&gt;
         &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
         &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
         &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt; 
           /% CODEWORD FEEDBACK %/
-          &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
+          &lt;div id=&quot;coderesult&quot; class=&quot;coderesult&quot;&gt;&lt;/div&gt;
    &lt;/div&gt;
     &lt;/div&gt;
+      &lt;/div&gt;
+ &lt;div class=&quot;menu-item&quot; id=&quot;mod6&quot;&gt; 
+ &lt;img src=&quot;./assets/img/mod6.jpg&quot; alt=&quot;module three&quot;&gt;
+  &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+  /% CODEWORD INPUT %/
+      &lt;div class=&quot;code-input&quot;&gt;
+      &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
+    &lt;/div&gt;
+   &lt;div class=&quot;btn-result-wrapper&quot;&gt;
+      &lt;&lt;button &quot;Enter&quot;&gt;&gt;  
+          &lt;/div&gt;
+      /% STANDARDISE INPUT %/
+      &lt;&lt;set $codeword to $codeword.toUpperCase()&gt;&gt;
+      /% CODEWORD CORRECT %/
+      &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;FOCUS&quot;&gt;&gt;
+      &lt;&lt;replace &quot;#coderesult2&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+
+      &lt;&lt;timed 3s&gt;&gt;
+          &lt;&lt;set $prevpass to $passage&gt;&gt;
+          &lt;&lt;set $nextpass to &quot;3mod6intro&quot;&gt;&gt;
+          &lt;&lt;goto &quot;loading&quot;&gt;&gt;
+        &lt;&lt;/timed&gt;&gt;
+      &lt;&lt;/if&gt;&gt;
+        /% CODEWORD INCORRECT %/
+        &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;FOCUS&quot;&gt;&gt;
+        &lt;&lt;replace &quot;#coderesult2&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+        &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult2&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+        &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt; 
+          /% CODEWORD FEEDBACK %/
+          &lt;div id=&quot;coderesult2&quot; class=&quot;coderesult&quot;&gt;&lt;/div&gt;
+   &lt;/div&gt;
+    &lt;/div&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
   &lt;/main&gt;
-    &lt;&lt;include &quot;footercode&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="43" name="3mod5intro" tags="nobr" position="350,600" size="100,100">&lt;&lt;set $passage to &quot;3mod5intro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 5&quot;&gt;&gt;&lt;&lt;set $nextpass to &quot;3mod5a&quot;&gt;&gt;
+  &lt;&lt;include &quot;footerbox&quot;&gt;&gt;&lt;/div&gt;
+  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="40" name="3mod5intro" tags="nobr" position="1225,475" size="100,100">&lt;&lt;set $passage to &quot;3mod5intro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 5&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;&lt;&lt;set $nextpass to &quot;3mod5a&quot;&gt;&gt;
   &lt;div class=&quot;wrapper&quot;&gt;
     &lt;&lt;include &quot;header&quot;&gt;&gt;
     &lt;main  class=&quot;speaking&quot;&gt;
@@ -1228,7 +1247,7 @@ Let’s enter Module 5’s Codeword to dive in:
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="44" name="3mod5a" tags="nobr" position="475,600" size="100,100">&lt;&lt;set $passage to &quot;3mod5a&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="41" name="3mod5a" tags="nobr" position="100,600" size="100,100">&lt;&lt;set $passage to &quot;3mod5a&quot;&gt;&gt;
   &lt;div class=&quot;wrapper&quot;&gt;
     &lt;&lt;include &quot;header&quot;&gt;&gt;
     &lt;main  class=&quot;speaking&quot;&gt;
@@ -1242,7 +1261,7 @@ Let’s enter Module 5’s Codeword to dive in:
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footer&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="45" name="3mod5b" tags="nobr" position="600,600" size="100,100">&lt;&lt;set $passage to &quot;3mod5b&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="42" name="3mod5b" tags="nobr" position="225,600" size="100,100">&lt;&lt;set $passage to &quot;3mod5b&quot;&gt;&gt;
   &lt;div class=&quot;wrapper&quot;&gt;
     &lt;&lt;include &quot;header&quot;&gt;&gt;
     &lt;main  class=&quot;speaking&quot;&gt;
@@ -1255,7 +1274,7 @@ Let’s enter Module 5’s Codeword to dive in:
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footer&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="46" name="3mod5outro" tags="nobr" position="725,600" size="100,100">&lt;&lt;set $passage to &quot;3mod5outro&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="43" name="3mod5outro" tags="nobr" position="350,600" size="100,100">&lt;&lt;set $passage to &quot;3mod5outro&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -1277,45 +1296,7 @@ Let’s enter Module 5’s Codeword to dive in:
 &lt;/div&gt;
 &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="47" name="3CodewordMod6" tags="nobr" position="850,600" size="100,100">&lt;&lt;set $passage to &quot;3CodewordMod6&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 6&quot;&gt;&gt;
-&lt;div class=&quot;wrapper box&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-  &lt;main class=&quot;codeword&quot;&gt;
-
-&lt;div class=&quot;codeword-title-wrapper&quot;&gt;&lt;h1 class=&quot;title&quot;&gt;Enter &lt;/h1&gt;&lt;h1 class=&quot;title&quot;&gt;Codeword&lt;/h1&gt;&lt;/div&gt;
-&lt;p&gt;
-Enter the Module 6 Codeword:
-&lt;/p&gt;
- 
-
-
-  &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
-  /% CODEWORD INPUT %/
-      &lt;div class=&quot;code-input&quot;&gt;
-      &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
-    &lt;/div&gt;
-   &lt;div class=&quot;btn-result-wrapper&quot;&gt;
-      &lt;&lt;button &quot;Enter&quot;&gt;&gt;  
-          &lt;/div&gt;
-      /% STANDARDISE INPUT %/
-      &lt;&lt;set $codeword to $codeword.toUpperCase()&gt;&gt;
-      /% CODEWORD CORRECT %/
-      &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;FOCUS&quot;&gt;&gt;
-      &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-      &lt;&lt;timed 3s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;3mod6intro&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
-      &lt;&lt;/if&gt;&gt;
-        /% CODEWORD INCORRECT %/
-        &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;FOCUS&quot;&gt;&gt;
-        &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-        &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
-        &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt; 
-          /% CODEWORD FEEDBACK %/
-          &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
-   &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/main&gt;
-    &lt;&lt;include &quot;footercode&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="48" name="3mod6intro" tags="nobr" position="975,600" size="100,100">&lt;&lt;set $passage to &quot;3mod6intro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 6&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="44" name="3mod6intro" tags="nobr" position="475,600" size="100,100">&lt;&lt;set $passage to &quot;3mod6intro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 6&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -1337,7 +1318,7 @@ Enter the Module 6 Codeword:
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="49" name="3mod6a" tags="nobr" position="1100,600" size="100,100">&lt;&lt;set $passage to &quot;3mod6a&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="45" name="3mod6a" tags="nobr" position="600,600" size="100,100">&lt;&lt;set $passage to &quot;3mod6a&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -1354,7 +1335,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="50" name="3mod6outro" tags="nobr" position="1225,600" size="100,100">&lt;&lt;set $passage to &quot;3mod6outro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="46" name="3mod6outro" tags="nobr" position="725,600" size="100,100">&lt;&lt;set $passage to &quot;3mod6outro&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -1408,7 +1389,7 @@ TBC need to work on choice reaction
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="51" name="3sessionoutro" tags="nobr" position="100,725" size="100,100">&lt;&lt;set $passage to &quot;3sessionoutro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="47" name="3sessionoutro" tags="nobr" position="850,600" size="100,100">&lt;&lt;set $passage to &quot;3sessionoutro&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -1441,30 +1422,7 @@ TBC need to work on choice reaction
 
 
 
-/* SESSION 4  */</tw-passagedata><tw-passagedata pid="52" name="4modulelist" tags="nobr" position="225,725" size="100,100">&lt;&lt;set $passage to &quot;4modulelist&quot;&gt;&gt;&lt;&lt;set $session to 4&gt;&gt;
-&lt;div class=&quot;wrapper box&quot;&gt;
-  &lt;main class=&quot;modules&quot;&gt;
-  &lt;h1 class=&quot;title&quot;&gt;SESSION FOUR&lt;/h1&gt;
-  &lt;div class=&quot;menu-wrapper module-list&quot;&gt;
-&lt;div class=&quot;menu-item&quot; id=&quot;mod7&quot;&gt; 
-&lt;img src=&quot;./assets/img/mod7.jpg&quot; alt=&quot;module seven&quot;&gt;
-      /* &lt;h2 class=&quot;subtitle&quot;&gt;Module 7&lt;/h2&gt; */
-       &lt;&lt;button &quot;start&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;4kaiIntro&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
-&lt;/div&gt;
- &lt;div class=&quot;menu-item&quot; id=&quot;mod8&quot;&gt; 
- &lt;img src=&quot;./assets/img/mod8.jpg&quot; alt=&quot;module eight&quot;&gt;
-      /* &lt;h2 class=&quot;subtitle&quot;&gt;Module 8&lt;/h2&gt; */
-      &lt;&lt;button &quot;start&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;4CodewordMod8&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
-      &lt;/div&gt;
-&lt;div class=&quot;menu-item&quot; id=&quot;mod9&quot;&gt; 
-&lt;img src=&quot;./assets/img/mod9.jpg&quot; alt=&quot;module nine&quot;&gt;
-      /* &lt;h2 class=&quot;subtitle&quot;&gt;Module 9&lt;/h2&gt; */
-      &lt;&lt;button &quot;start&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;4CodewordMod9&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
-      &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;/main&gt;
-  &lt;&lt;include &quot;footerbox&quot;&gt;&gt;&lt;/div&gt;
-  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="53" name="4kaiIntro" tags="nobr" position="350,725" size="100,100">&lt;&lt;set $passage to &quot;4kaiIntro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;&lt;&lt;set $nextpass to &quot;4CodewordMod7&quot;&gt;&gt;
+/* SESSION 4  */</tw-passagedata><tw-passagedata pid="48" name="4kaiIntro" tags="nobr" position="975,600" size="100,100">&lt;&lt;set $passage to &quot;4kaiIntro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;&lt;&lt;set $nextpass to &quot;4modulelist&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
     /* &lt;h1 class=&quot;title top&quot;&gt;Hello - it&#39;s Kai again&lt;/h1&gt; */
@@ -1472,7 +1430,6 @@ TBC need to work on choice reaction
  &lt;h1 class=&quot;title &quot;&gt;Hello - it&#39;s Kai again&lt;/h1&gt;
 
     &lt;div class=&quot;text-wrapper&quot;&gt;
-    &lt;p&gt;  Hello. &lt;/p&gt;
 &lt;p&gt;Hello. &lt;/p&gt;
 &lt;p&gt;Hope you are enjoying the surprise of each of these compartments – and breaking up the pyramid! &lt;/p&gt;
 &lt;p&gt;Here we are again ready to play.&lt;/p&gt;
@@ -1491,26 +1448,24 @@ TBC need to work on choice reaction
 &lt;p&gt;First up, let’s build on those Recon Cards. &lt;/p&gt;
 
 
-         &lt;&lt;button &quot;next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;4CodewordMod7&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+         &lt;&lt;button &quot;next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;4modulelist&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
     &lt;/div&gt;
   
  
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="54" name="4CodewordMod7" tags="nobr" position="475,725" size="100,100">&lt;&lt;set $passage to &quot;4CodewordMod7&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 7&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="49" name="4modulelist" tags="nobr" position="1100,600" size="100,100">&lt;&lt;set $passage to &quot;4modulelist&quot;&gt;&gt;&lt;&lt;set $session to 4&gt;&gt;
 &lt;div class=&quot;wrapper box&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-  &lt;main class=&quot;codeword&quot;&gt;
-
-&lt;div class=&quot;codeword-title-wrapper&quot; id=&quot;wrapper&quot;&gt;&lt;h1 class=&quot;title&quot;&gt;Enter &lt;/h1&gt;&lt;h1 class=&quot;title&quot;&gt;Codeword&lt;/h1&gt;&lt;/div&gt;
-
-
-
-  &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
-  &lt;p&gt;
+  &lt;main class=&quot;modules&quot;&gt;
+  &lt;h1 class=&quot;title&quot;&gt;SESSION FOUR&lt;/h1&gt;
+  &lt;div class=&quot;menu-wrapper module-list&quot;&gt;
+&lt;div class=&quot;menu-item&quot; id=&quot;mod7&quot;&gt; 
+  &lt;img src=&quot;./assets/img/mod7.jpg&quot; alt=&quot;module seven&quot;&gt;
+   &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+  /* &lt;p&gt;
 Let’s enter Module 7’s Codeword to dive in:
-&lt;/p&gt;
+&lt;/p&gt; */
   /% CODEWORD INPUT %/
       &lt;div class=&quot;code-input&quot;&gt;
       &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
@@ -1523,9 +1478,11 @@ Let’s enter Module 7’s Codeword to dive in:
       /% CODEWORD CORRECT %/
   &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;RECON&quot;&gt;&gt;
 &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;timed 3s&gt;&gt;
-  &lt;&lt;set $prevpass to $passage&gt;&gt;
-    &lt;&lt;goto &quot;4mod7intro&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
+  &lt;&lt;timed 3s&gt;&gt;
+          &lt;&lt;set $prevpass to $passage&gt;&gt;
+          &lt;&lt;set $nextpass to &quot;4mod7intro&quot;&gt;&gt;
+          &lt;&lt;goto &quot;loading&quot;&gt;&gt;
+        &lt;&lt;/timed&gt;&gt;
 &lt;&lt;/if&gt;&gt;
         /% CODEWORD INCORRECT %/
         &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;RECON&quot;&gt;&gt;
@@ -1533,12 +1490,76 @@ Let’s enter Module 7’s Codeword to dive in:
         &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
         &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt; 
           /% CODEWORD FEEDBACK %/
-          &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
+          &lt;div id=&quot;coderesult&quot; class=&quot;coderesult&quot;&gt;&lt;/div&gt;
    &lt;/div&gt;
     &lt;/div&gt;
+&lt;/div&gt;
+ &lt;div class=&quot;menu-item&quot; id=&quot;mod8&quot;&gt; 
+ &lt;img src=&quot;./assets/img/mod8.jpg&quot; alt=&quot;module eight&quot;&gt;
+    &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+  /% CODEWORD INPUT %/
+      &lt;div class=&quot;code-input&quot;&gt;
+      &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
+    &lt;/div&gt;
+   &lt;div class=&quot;btn-result-wrapper&quot;&gt;
+      &lt;&lt;button &quot;Enter&quot;&gt;&gt;  
+          &lt;/div&gt;
+      /% STANDARDISE INPUT %/
+      &lt;&lt;set $codeword to $codeword.toUpperCase()&gt;&gt;
+      /% CODEWORD CORRECT %/
+      &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;IMAGINE&quot;&gt;&gt;
+      &lt;&lt;replace &quot;#coderesult2&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;timed 3s&gt;&gt;
+          &lt;&lt;set $prevpass to $passage&gt;&gt;
+          &lt;&lt;set $nextpass to &quot;4mod8intro&quot;&gt;&gt;
+          &lt;&lt;goto &quot;loading&quot;&gt;&gt;
+        &lt;&lt;/timed&gt;&gt;
+      &lt;&lt;/if&gt;&gt;
+        /% CODEWORD INCORRECT %/
+        &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;IMAGINE&quot;&gt;&gt;
+        &lt;&lt;replace &quot;#coderesult2&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+        &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult2&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+        &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt; 
+          /% CODEWORD FEEDBACK %/
+          &lt;div id=&quot;coderesult2&quot; class=&quot;coderesult&quot;&gt;&lt;/div&gt;
+   &lt;/div&gt;
+    &lt;/div&gt;
+      &lt;/div&gt;
+&lt;div class=&quot;menu-item&quot; id=&quot;mod9&quot;&gt; 
+&lt;img src=&quot;./assets/img/mod9.jpg&quot; alt=&quot;module nine&quot;&gt;
+      &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+  /% CODEWORD INPUT %/
+      &lt;div class=&quot;code-input&quot;&gt;
+      &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
+    &lt;/div&gt;
+   &lt;div class=&quot;btn-result-wrapper&quot;&gt;
+      &lt;&lt;button &quot;Enter&quot;&gt;&gt;  
+          &lt;/div&gt;
+      /% STANDARDISE INPUT %/
+      &lt;&lt;set $codeword to $codeword.toUpperCase()&gt;&gt;
+      /% CODEWORD CORRECT %/
+      &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;COMFORT&quot;&gt;&gt;
+      &lt;&lt;replace &quot;#coderesult3&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;timed 3s&gt;&gt;
+          &lt;&lt;set $prevpass to $passage&gt;&gt;
+          &lt;&lt;set $nextpass to &quot;4mod9intro&quot;&gt;&gt;
+          &lt;&lt;goto &quot;loading&quot;&gt;&gt;
+        &lt;&lt;/timed&gt;&gt;
+      &lt;&lt;/if&gt;&gt;
+        /% CODEWORD INCORRECT %/
+        &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;COMFORT&quot;&gt;&gt;
+        &lt;&lt;replace &quot;#coderesult3&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+        &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult3&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+        &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt; 
+          /% CODEWORD FEEDBACK %/
+          &lt;div id=&quot;coderesult3&quot; class=&quot;coderesult&quot;&gt;&lt;/div&gt;
+   &lt;/div&gt;
+    &lt;/div&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
   &lt;/main&gt;
-    &lt;&lt;include &quot;footercode&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="55" name="4mod7intro" tags="nobr" position="600,725" size="100,100">&lt;&lt;set $passage to &quot;4mod7intro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 7&quot;&gt;&gt;&lt;&lt;set $nextpass to &quot;4mod7a&quot; &gt;&gt;
+  &lt;&lt;include &quot;footerbox&quot;&gt;&gt;&lt;/div&gt;
+  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="50" name="4mod7intro" tags="nobr" position="1225,600" size="100,100">&lt;&lt;set $passage to &quot;4mod7intro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 7&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;&lt;&lt;set $nextpass to &quot;4mod7a&quot; &gt;&gt;
   &lt;div class=&quot;wrapper&quot;&gt;
     &lt;&lt;include &quot;header&quot;&gt;&gt;
     &lt;main  class=&quot;speaking&quot;&gt;
@@ -1560,7 +1581,7 @@ Let’s enter Module 7’s Codeword to dive in:
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="56" name="4mod7a" tags="nobr" position="725,725" size="100,100">&lt;&lt;set $passage to &quot;mod7a&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="51" name="4mod7a" tags="nobr" position="100,725" size="100,100">&lt;&lt;set $passage to &quot;mod7a&quot;&gt;&gt;
   &lt;div class=&quot;wrapper&quot;&gt;
     &lt;&lt;include &quot;header&quot;&gt;&gt;
     &lt;main  class=&quot;speaking&quot;&gt;
@@ -1571,7 +1592,7 @@ Let’s enter Module 7’s Codeword to dive in:
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footer&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="57" name="4mod7outro" tags="nobr" position="850,725" size="100,100">&lt;&lt;set $passage to &quot;4mod7outro&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="52" name="4mod7outro" tags="nobr" position="225,725" size="100,100">&lt;&lt;set $passage to &quot;4mod7outro&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -1599,45 +1620,7 @@ Let’s enter Module 7’s Codeword to dive in:
 &lt;/div&gt;
 &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="58" name="4CodewordMod8" tags="nobr" position="975,725" size="100,100">&lt;&lt;set $passage to &quot;4CodewordMod8&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 8&quot;&gt;&gt;
-&lt;div class=&quot;wrapper box&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-  &lt;main class=&quot;codeword&quot;&gt;
-
-&lt;div class=&quot;codeword-title-wrapper&quot;&gt;&lt;h1 class=&quot;title&quot;&gt;Enter &lt;/h1&gt;&lt;h1 class=&quot;title&quot;&gt;Codeword&lt;/h1&gt;&lt;/div&gt;
-&lt;p&gt;
-Enter the Module 8 Codeword:
-&lt;/p&gt;
- 
-
-
-  &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
-  /% CODEWORD INPUT %/
-      &lt;div class=&quot;code-input&quot;&gt;
-      &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
-    &lt;/div&gt;
-   &lt;div class=&quot;btn-result-wrapper&quot;&gt;
-      &lt;&lt;button &quot;Enter&quot;&gt;&gt;  
-          &lt;/div&gt;
-      /% STANDARDISE INPUT %/
-      &lt;&lt;set $codeword to $codeword.toUpperCase()&gt;&gt;
-      /% CODEWORD CORRECT %/
-      &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;IMAGINE&quot;&gt;&gt;
-      &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-      &lt;&lt;timed 3s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;4mod8intro&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
-      &lt;&lt;/if&gt;&gt;
-        /% CODEWORD INCORRECT %/
-        &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;IMAGINE&quot;&gt;&gt;
-        &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-        &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
-        &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt; 
-          /% CODEWORD FEEDBACK %/
-          &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
-   &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/main&gt;
-    &lt;&lt;include &quot;footercode&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="59" name="4mod8intro" tags="nobr" position="1100,725" size="100,100">&lt;&lt;set $passage to &quot;4mod8intro&quot;&gt;&gt;&lt;&lt;set $nextpass to &quot;4mod8a&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 8&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="53" name="4mod8intro" tags="nobr" position="350,725" size="100,100">&lt;&lt;set $passage to &quot;4mod8intro&quot;&gt;&gt;&lt;&lt;set $nextpass to &quot;4mod8a&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 8&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -1664,7 +1647,7 @@ Enter the Module 8 Codeword:
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="60" name="4mod8a" tags="nobr" position="1225,725" size="100,100">&lt;&lt;set $passage to &quot;4mod8a&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="54" name="4mod8a" tags="nobr" position="475,725" size="100,100">&lt;&lt;set $passage to &quot;4mod8a&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -1677,7 +1660,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="61" name="4mod8outro" tags="nobr" position="100,850" size="100,100">&lt;&lt;set $passage to &quot;4mod8outro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="55" name="4mod8outro" tags="nobr" position="600,725" size="100,100">&lt;&lt;set $passage to &quot;4mod8outro&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -1708,45 +1691,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="62" name="4CodewordMod9" tags="nobr" position="225,850" size="100,100">&lt;&lt;set $passage to &quot;4CodewordMod9&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 9&quot;&gt;&gt;
-&lt;div class=&quot;wrapper box&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-  &lt;main class=&quot;codeword&quot;&gt;
-
-&lt;div class=&quot;codeword-title-wrapper&quot;&gt;&lt;h1 class=&quot;title&quot;&gt;Enter &lt;/h1&gt;&lt;h1 class=&quot;title&quot;&gt;Codeword&lt;/h1&gt;&lt;/div&gt;
-&lt;p&gt;
-Enter the Module 9 Codeword:
-&lt;/p&gt;
- 
-
-
-  &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
-  /% CODEWORD INPUT %/
-      &lt;div class=&quot;code-input&quot;&gt;
-      &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
-    &lt;/div&gt;
-   &lt;div class=&quot;btn-result-wrapper&quot;&gt;
-      &lt;&lt;button &quot;Enter&quot;&gt;&gt;  
-          &lt;/div&gt;
-      /% STANDARDISE INPUT %/
-      &lt;&lt;set $codeword to $codeword.toUpperCase()&gt;&gt;
-      /% CODEWORD CORRECT %/
-      &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;COMFORT&quot;&gt;&gt;
-      &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-      &lt;&lt;timed 3s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;4mod9intro&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
-      &lt;&lt;/if&gt;&gt;
-        /% CODEWORD INCORRECT %/
-        &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;COMFORT&quot;&gt;&gt;
-        &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-        &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
-        &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt; 
-          /% CODEWORD FEEDBACK %/
-          &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
-   &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/main&gt;
-    &lt;&lt;include &quot;footercode&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="63" name="4mod9intro" tags="nobr" position="350,850" size="100,100">&lt;&lt;set $passage to &quot;4mod9intro&quot;&gt;&gt;&lt;&lt;set $nextpass to &quot;4mod9a&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 4&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="56" name="4mod9intro" tags="nobr" position="725,725" size="100,100">&lt;&lt;set $passage to &quot;4mod9intro&quot;&gt;&gt;&lt;&lt;set $nextpass to &quot;4mod9a&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 9&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -1773,7 +1718,7 @@ Enter the Module 9 Codeword:
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="64" name="4mod9a" tags="nobr" position="475,850" size="100,100">&lt;&lt;set $passage to &quot;4mod9a&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 9&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="57" name="4mod9a" tags="nobr" position="850,725" size="100,100">&lt;&lt;set $passage to &quot;4mod9a&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 9&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -1785,7 +1730,7 @@ Enter the Module 9 Codeword:
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="65" name="4mod9outro" tags="nobr" position="600,850" size="100,100">&lt;&lt;set $passage to &quot;4mod9outro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="58" name="4mod9outro" tags="nobr" position="975,725" size="100,100">&lt;&lt;set $passage to &quot;4mod9outro&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -1811,7 +1756,7 @@ Enter the Module 9 Codeword:
 &lt;/div&gt;
 &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="66" name="4sessionoutro" tags="nobr" position="725,850" size="100,100">&lt;&lt;set $passage to &quot;4sessionoutro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="59" name="4sessionoutro" tags="nobr" position="1100,725" size="100,100">&lt;&lt;set $passage to &quot;4sessionoutro&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -1850,30 +1795,7 @@ Enter the Module 9 Codeword:
 
 
 
-/* SESSION 5 */</tw-passagedata><tw-passagedata pid="67" name="5modulelist" tags="nobr" position="850,850" size="100,100">&lt;&lt;set $passage to &quot;5modulelist&quot;&gt;&gt;&lt;&lt;set $session to 5&gt;&gt;
-&lt;div class=&quot;wrapper box&quot;&gt;
-  &lt;main class=&quot;modules&quot;&gt;
-  &lt;h1 class=&quot;title&quot;&gt;SESSION FIVE&lt;/h1&gt;
-  &lt;div class=&quot;menu-wrapper module-list&quot;&gt;
-&lt;div class=&quot;menu-item&quot; id=&quot;mod10&quot;&gt; 
-  &lt;img src=&quot;./assets/img/mod10.jpg&quot; alt=&quot;module ten&quot;&gt;
-      &lt;h2 class=&quot;subtitle&quot;&gt;Module 10&lt;/h2&gt;
-       &lt;&lt;button &quot;start&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;5kaiIntro&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
-      &lt;/div&gt;
- &lt;div class=&quot;menu-item&quot; id=&quot;mod11&quot;&gt; 
-  &lt;img src=&quot;./assets/img/mod11.jpg&quot; alt=&quot;module eleven&quot;&gt;
-      &lt;h2 class=&quot;subtitle&quot;&gt;Module 11&lt;/h2&gt;
-        &lt;&lt;button &quot;start&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;5CodewordMod11&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
-      &lt;/div&gt;
-       &lt;div class=&quot;menu-item&quot; id=&quot;mod12&quot;&gt; 
-  &lt;img src=&quot;./assets/img/mod12.jpg&quot; alt=&quot;module twelve&quot;&gt;
-      &lt;h2 class=&quot;subtitle&quot;&gt;Module 12&lt;/h2&gt;
-        &lt;&lt;button &quot;start&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;5CodewordMod12&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
-      &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;/main&gt;
-  &lt;&lt;include &quot;footerbox&quot;&gt;&gt;&lt;/div&gt;
-  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="68" name="5kaiIntro" tags="nobr" position="975,850" size="100,100">&lt;&lt;set $passage to &quot;5kaiIntro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;&lt;&lt;set $nextpass to &quot;5kaiIntro2&quot;&gt;&gt;
+/* SESSION 5 */</tw-passagedata><tw-passagedata pid="60" name="5kaiIntro" tags="nobr" position="1225,725" size="100,100">&lt;&lt;set $passage to &quot;5kaiIntro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;&lt;&lt;set $nextpass to &quot;5kaiIntro2&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
     /* &lt;h1 class=&quot;title top&quot;&gt;Hello - it&#39;s Kai again&lt;/h1&gt; */
@@ -1900,7 +1822,7 @@ Enter the Module 9 Codeword:
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="69" name="5kaiIntro2" tags="nobr" position="1100,850" size="100,100">&lt;&lt;set $passage to &quot;5kaiIntro2&quot;&gt;&gt;&lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;&lt;&lt;set $nextpass to &quot;5CodewordMod10&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="61" name="5kaiIntro2" tags="nobr" position="100,850" size="100,100">&lt;&lt;set $passage to &quot;5kaiIntro2&quot;&gt;&gt;&lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;&lt;&lt;set $nextpass to &quot;5modulelist&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
     /* &lt;h1 class=&quot;title top&quot;&gt;Hello - it&#39;s Kai again&lt;/h1&gt; */
@@ -1910,25 +1832,22 @@ Enter the Module 9 Codeword:
     &lt;div class=&quot;text-wrapper&quot;&gt;
 &lt;p&gt;... &lt;/p&gt;
 
-         &lt;&lt;button &quot;next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;5CodewordMod10&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+         &lt;&lt;button &quot;next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;5modulelist&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
     &lt;/div&gt;
   
  
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="70" name="5CodewordMod10" tags="nobr" position="1225,850" size="100,100">&lt;&lt;set $passage to &quot;5CodewordMod10&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 10&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="62" name="5modulelist" tags="nobr" position="225,850" size="100,100">&lt;&lt;set $passage to &quot;5modulelist&quot;&gt;&gt;&lt;&lt;set $session to 5&gt;&gt;
 &lt;div class=&quot;wrapper box&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-  &lt;main class=&quot;codeword&quot;&gt;
-
-&lt;div class=&quot;codeword-title-wrapper&quot; id=&quot;wrapper&quot;&gt;&lt;h1 class=&quot;title&quot;&gt;Enter &lt;/h1&gt;&lt;h1 class=&quot;title&quot;&gt;Codeword&lt;/h1&gt;&lt;/div&gt;
-
-
-  &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
-  &lt;p&gt;
-Let’s enter Module 10’s Codeword to dive in:
-&lt;/p&gt;
+  &lt;main class=&quot;modules&quot;&gt;
+  &lt;h1 class=&quot;title&quot;&gt;SESSION FIVE&lt;/h1&gt;
+  &lt;div class=&quot;menu-wrapper module-list&quot;&gt;
+&lt;div class=&quot;menu-item&quot; id=&quot;mod10&quot;&gt; 
+  &lt;img src=&quot;./assets/img/mod10.jpg&quot; alt=&quot;module ten&quot;&gt;
+      &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+ 
   /% CODEWORD INPUT %/
       &lt;div class=&quot;code-input&quot;&gt;
       &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
@@ -1941,9 +1860,11 @@ Let’s enter Module 10’s Codeword to dive in:
       /% CODEWORD CORRECT %/
   &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;ASK&quot;&gt;&gt;
 &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;timed 3s&gt;&gt;
-  &lt;&lt;set $prevpass to $passage&gt;&gt;
-    &lt;&lt;goto &quot;5mod10intro&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
+  &lt;&lt;timed 3s&gt;&gt;
+          &lt;&lt;set $prevpass to $passage&gt;&gt;
+          &lt;&lt;set $nextpass to &quot;5mod10intro&quot;&gt;&gt;
+          &lt;&lt;goto &quot;loading&quot;&gt;&gt;
+        &lt;&lt;/timed&gt;&gt;
 &lt;&lt;/if&gt;&gt;
         /% CODEWORD INCORRECT %/
         &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;ASK&quot;&gt;&gt;
@@ -1951,12 +1872,79 @@ Let’s enter Module 10’s Codeword to dive in:
         &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
         &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt; 
           /% CODEWORD FEEDBACK %/
-          &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
+          &lt;div id=&quot;coderesult&quot; class=&quot;coderesult&quot;&gt;&lt;/div&gt;
    &lt;/div&gt;
     &lt;/div&gt;
+      &lt;/div&gt;
+ &lt;div class=&quot;menu-item&quot; id=&quot;mod11&quot;&gt; 
+  &lt;img src=&quot;./assets/img/mod11.jpg&quot; alt=&quot;module eleven&quot;&gt;
+      &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+  /% CODEWORD INPUT %/
+      &lt;div class=&quot;code-input&quot;&gt;
+      &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
+    &lt;/div&gt;
+   &lt;div class=&quot;btn-result-wrapper&quot;&gt;
+      &lt;&lt;button &quot;Enter&quot;&gt;&gt;  
+          &lt;/div&gt;
+      /% STANDARDISE INPUT %/
+      &lt;&lt;set $codeword to $codeword.toUpperCase()&gt;&gt;
+      /% CODEWORD CORRECT %/
+      &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;ACTION&quot;&gt;&gt;
+      &lt;&lt;replace &quot;#coderesult2&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+
+        &lt;&lt;timed 3s&gt;&gt;
+          &lt;&lt;set $prevpass to $passage&gt;&gt;
+          &lt;&lt;set $nextpass to &quot;5mod11intro&quot;&gt;&gt;
+          &lt;&lt;goto &quot;loading&quot;&gt;&gt;
+        &lt;&lt;/timed&gt;&gt;
+      &lt;&lt;/if&gt;&gt;
+        /% CODEWORD INCORRECT %/
+        &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;ACTION&quot;&gt;&gt;
+        &lt;&lt;replace &quot;#coderesult2&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+        &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult2&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+        &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt; 
+          /% CODEWORD FEEDBACK %/
+          &lt;div id=&quot;coderesult2&quot; class=&quot;coderesult&quot;&gt;&lt;/div&gt;
+   &lt;/div&gt;
+    &lt;/div&gt;
+      &lt;/div&gt;
+       &lt;div class=&quot;menu-item&quot; id=&quot;mod12&quot;&gt; 
+  &lt;img src=&quot;./assets/img/mod12.jpg&quot; alt=&quot;module twelve&quot;&gt;
+      /* &lt;h2 class=&quot;subtitle&quot;&gt;Module 12&lt;/h2&gt; */
+       &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+  /% CODEWORD INPUT %/
+      &lt;div class=&quot;code-input&quot;&gt;
+      &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
+    &lt;/div&gt;
+   &lt;div class=&quot;btn-result-wrapper&quot;&gt;
+      &lt;&lt;button &quot;Enter&quot;&gt;&gt;  
+          &lt;/div&gt;
+      /% STANDARDISE INPUT %/
+      &lt;&lt;set $codeword to $codeword.toUpperCase()&gt;&gt;
+      /% CODEWORD CORRECT %/
+      &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;GIFT&quot;&gt;&gt;
+      &lt;&lt;replace &quot;#coderesult3&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+  
+        &lt;&lt;timed 3s&gt;&gt;
+          &lt;&lt;set $prevpass to $passage&gt;&gt;
+          &lt;&lt;set $nextpass to &quot;5mod12intro&quot;&gt;&gt;
+          &lt;&lt;goto &quot;loading&quot;&gt;&gt;
+        &lt;&lt;/timed&gt;&gt;
+      &lt;&lt;/if&gt;&gt;
+        /% CODEWORD INCORRECT %/
+        &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;GIFT&quot;&gt;&gt;
+        &lt;&lt;replace &quot;#coderesult3&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+        &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult3&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+        &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt; 
+          /% CODEWORD FEEDBACK %/
+          &lt;div id=&quot;coderesult3&quot; class=&quot;coderesult&quot;&gt;&lt;/div&gt;
+   &lt;/div&gt;
+    &lt;/div&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
   &lt;/main&gt;
-    &lt;&lt;include &quot;footercode&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="71" name="5mod10intro" tags="nobr" position="100,975" size="100,100">&lt;&lt;set $passage to &quot;5mod10intro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 10&quot;&gt;&gt;&lt;&lt;set $nextpass to &quot;5mod10a&quot;&gt;&gt;
+  &lt;&lt;include &quot;footerbox&quot;&gt;&gt;&lt;/div&gt;
+  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="63" name="5mod10intro" tags="nobr" position="350,850" size="100,100">&lt;&lt;set $passage to &quot;5mod10intro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 10&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;&lt;&lt;set $nextpass to &quot;5mod10a&quot;&gt;&gt;
   &lt;div class=&quot;wrapper&quot;&gt;
     &lt;&lt;include &quot;header&quot;&gt;&gt;
     &lt;main  class=&quot;speaking&quot;&gt;
@@ -1990,7 +1978,7 @@ Let’s enter Module 10’s Codeword to dive in:
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="72" name="5mod10a" tags="nobr" position="225,975" size="100,100">&lt;&lt;set $passage to &quot;5mod10a&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="64" name="5mod10a" tags="nobr" position="475,850" size="100,100">&lt;&lt;set $passage to &quot;5mod10a&quot;&gt;&gt;
   &lt;div class=&quot;wrapper&quot;&gt;
     &lt;&lt;include &quot;header&quot;&gt;&gt;
     &lt;main  class=&quot;speaking&quot;&gt;
@@ -1999,7 +1987,7 @@ Let’s enter Module 10’s Codeword to dive in:
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footer&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="73" name="5mod10outro" tags="nobr" position="350,975" size="100,100">&lt;&lt;set $passage to &quot;5mod10outro&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="65" name="5mod10outro" tags="nobr" position="600,850" size="100,100">&lt;&lt;set $passage to &quot;5mod10outro&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -2033,45 +2021,7 @@ Let’s enter Module 10’s Codeword to dive in:
 &lt;/div&gt;
 &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="74" name="5CodewordMod11" tags="nobr" position="475,975" size="100,100">&lt;&lt;set $passage to &quot;5CodewordMod11&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 11&quot;&gt;&gt;
-&lt;div class=&quot;wrapper box&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-  &lt;main class=&quot;codeword&quot;&gt;
-
-&lt;div class=&quot;codeword-title-wrapper&quot;&gt;&lt;h1 class=&quot;title&quot;&gt;Enter &lt;/h1&gt;&lt;h1 class=&quot;title&quot;&gt;Codeword&lt;/h1&gt;&lt;/div&gt;
-&lt;p&gt;
-Enter the Module 11 Codeword:
-&lt;/p&gt;
- 
-
-
-  &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
-  /% CODEWORD INPUT %/
-      &lt;div class=&quot;code-input&quot;&gt;
-      &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
-    &lt;/div&gt;
-   &lt;div class=&quot;btn-result-wrapper&quot;&gt;
-      &lt;&lt;button &quot;Enter&quot;&gt;&gt;  
-          &lt;/div&gt;
-      /% STANDARDISE INPUT %/
-      &lt;&lt;set $codeword to $codeword.toUpperCase()&gt;&gt;
-      /% CODEWORD CORRECT %/
-      &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;ACTION&quot;&gt;&gt;
-      &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-      &lt;&lt;timed 3s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;5mod11intro&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
-      &lt;&lt;/if&gt;&gt;
-        /% CODEWORD INCORRECT %/
-        &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;ACTION&quot;&gt;&gt;
-        &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-        &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
-        &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt; 
-          /% CODEWORD FEEDBACK %/
-          &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
-   &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/main&gt;
-    &lt;&lt;include &quot;footercode&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="75" name="5mod11intro" tags="nobr" position="600,975" size="100,100">&lt;&lt;set $passage to &quot;5mod11intro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 11&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="66" name="5mod11intro" tags="nobr" position="725,850" size="100,100">&lt;&lt;set $passage to &quot;5mod11intro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 11&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -2102,7 +2052,7 @@ Enter the Module 11 Codeword:
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="76" name="5mod11a" tags="nobr" position="725,975" size="100,100">&lt;&lt;set $passage to &quot;5mod11a&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="67" name="5mod11a" tags="nobr" position="850,850" size="100,100">&lt;&lt;set $passage to &quot;5mod11a&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -2113,7 +2063,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="77" name="5mod11outro" tags="nobr" position="850,975" size="100,100">&lt;&lt;set $passage to &quot;5mod11outro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="68" name="5mod11outro" tags="nobr" position="975,850" size="100,100">&lt;&lt;set $passage to &quot;5mod11outro&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -2154,45 +2104,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="78" name="5CodewordMod12" tags="nobr" position="975,975" size="100,100">&lt;&lt;set $passage to &quot;5CodewordMod12&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 12&quot;&gt;&gt;
-&lt;div class=&quot;wrapper box&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-  &lt;main class=&quot;codeword&quot;&gt;
-
-&lt;div class=&quot;codeword-title-wrapper&quot;&gt;&lt;h1 class=&quot;title&quot;&gt;Enter &lt;/h1&gt;&lt;h1 class=&quot;title&quot;&gt;Codeword&lt;/h1&gt;&lt;/div&gt;
-&lt;p&gt;
-Enter the Module 12 Codeword:
-&lt;/p&gt;
- 
-
-
-  &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
-  /% CODEWORD INPUT %/
-      &lt;div class=&quot;code-input&quot;&gt;
-      &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
-    &lt;/div&gt;
-   &lt;div class=&quot;btn-result-wrapper&quot;&gt;
-      &lt;&lt;button &quot;Enter&quot;&gt;&gt;  
-          &lt;/div&gt;
-      /% STANDARDISE INPUT %/
-      &lt;&lt;set $codeword to $codeword.toUpperCase()&gt;&gt;
-      /% CODEWORD CORRECT %/
-      &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;GIFT&quot;&gt;&gt;
-      &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-      &lt;&lt;timed 3s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;5mod12intro&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
-      &lt;&lt;/if&gt;&gt;
-        /% CODEWORD INCORRECT %/
-        &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;GIFT&quot;&gt;&gt;
-        &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-        &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
-        &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt; 
-          /% CODEWORD FEEDBACK %/
-          &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
-   &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/main&gt;
-    &lt;&lt;include &quot;footercode&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="79" name="5mod12intro" tags="nobr" position="1100,975" size="100,100">&lt;&lt;set $passage to &quot;5mod12intro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 12&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="69" name="5mod12intro" tags="nobr" position="1100,850" size="100,100">&lt;&lt;set $passage to &quot;5mod12intro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 12&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -2217,7 +2129,7 @@ Enter the Module 12 Codeword:
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="80" name="5mod12a" tags="nobr" position="1225,975" size="100,100">&lt;&lt;set $passage to &quot;5mod12a&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="70" name="5mod12a" tags="nobr" position="1225,850" size="100,100">&lt;&lt;set $passage to &quot;5mod12a&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -2228,7 +2140,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="81" name="5mod12outro" tags="nobr" position="100,1100" size="100,100">&lt;&lt;set $passage to &quot;5mod12outro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="71" name="5mod12outro" tags="nobr" position="100,975" size="100,100">&lt;&lt;set $passage to &quot;5mod12outro&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -2248,7 +2160,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="82" name="5sessionoutro" tags="nobr" position="225,1100" size="100,100">&lt;&lt;set $passage to &quot;5sessionoutro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="72" name="5sessionoutro" tags="nobr" position="225,975" size="100,100">&lt;&lt;set $passage to &quot;5sessionoutro&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -2269,25 +2181,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;
 
 
-/* SESSION 6 */</tw-passagedata><tw-passagedata pid="83" name="6modulelist" tags="nobr" position="350,1100" size="100,100">&lt;&lt;set $passage to &quot;6modulelist&quot;&gt;&gt;&lt;&lt;set $session to 6&gt;&gt;
-&lt;div class=&quot;wrapper box&quot;&gt;
-  &lt;main class=&quot;modules&quot;&gt;
-  &lt;h1 class=&quot;title&quot;&gt;SESSION SIX&lt;/h1&gt;
-  &lt;div class=&quot;menu-wrapper module-list&quot;&gt;
-&lt;div class=&quot;menu-item&quot; id=&quot;mod13&quot;&gt; 
-  &lt;img src=&quot;./assets/img/mod13.jpg&quot; alt=&quot;module thirteen&quot;&gt;
-      /* &lt;h2 class=&quot;subtitle&quot;&gt;Module 13&lt;/h2&gt; */
-       &lt;&lt;button &quot;start&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;6kaiIntro&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
-      &lt;/div&gt;
- &lt;div class=&quot;menu-item&quot; id=&quot;mod14&quot;&gt; 
-  &lt;img src=&quot;./assets/img/mod14.jpg&quot; alt=&quot;module fourteen&quot;&gt;
-      /* &lt;h2 class=&quot;subtitle&quot;&gt;Module 14&lt;/h2&gt; */
-        &lt;&lt;button &quot;start&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;6CodewordMod14&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
-      &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;/main&gt;
-  &lt;&lt;include &quot;footerbox&quot;&gt;&gt;&lt;/div&gt;
-  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="84" name="6kaiIntro" tags="nobr" position="475,1100" size="100,100">&lt;&lt;set $passage to &quot;6kaiIntro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;&lt;&lt;set $nextpass to &quot;5CodewordMod10&quot;&gt;&gt;
+/* SESSION 6 */</tw-passagedata><tw-passagedata pid="73" name="6kaiIntro" tags="nobr" position="350,975" size="100,100">&lt;&lt;set $passage to &quot;6kaiIntro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;&lt;&lt;set $nextpass to &quot;6modulelist&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
     /* &lt;h1 class=&quot;title top&quot;&gt;Hello - it&#39;s Kai again&lt;/h1&gt; */
@@ -2324,25 +2218,23 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;p&gt;I hope you are too &lt;/p&gt;
 &lt;p&gt;Before we let you, and your Artist, of the creative leash, we need to chat about hats. &lt;/p&gt;
 
-         &lt;&lt;button &quot;next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;6CodewordMod13&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+         &lt;&lt;button &quot;next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;6modulelist&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
     &lt;/div&gt;
   
  
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="85" name="6CodewordMod13" tags="nobr" position="600,1100" size="100,100">&lt;&lt;set $passage to &quot;6CodewordMod13&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 13&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="74" name="6modulelist" tags="nobr" position="475,975" size="100,100">&lt;&lt;set $passage to &quot;6modulelist&quot;&gt;&gt;&lt;&lt;set $session to 6&gt;&gt;
 &lt;div class=&quot;wrapper box&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-  &lt;main class=&quot;codeword&quot;&gt;
-
-&lt;div class=&quot;codeword-title-wrapper&quot; id=&quot;wrapper&quot;&gt;&lt;h1 class=&quot;title&quot;&gt;Enter &lt;/h1&gt;&lt;h1 class=&quot;title&quot;&gt;Codeword&lt;/h1&gt;&lt;/div&gt;
-
-
-  &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
-  &lt;p&gt;
-Let’s enter Module 13’s Codeword to dive in:
-&lt;/p&gt;
+  &lt;main class=&quot;modules&quot;&gt;
+  &lt;h1 class=&quot;title&quot;&gt;SESSION SIX&lt;/h1&gt;
+  &lt;div class=&quot;menu-wrapper module-list&quot;&gt;
+&lt;div class=&quot;menu-item&quot; id=&quot;mod13&quot;&gt; 
+  &lt;img src=&quot;./assets/img/mod13.jpg&quot; alt=&quot;module thirteen&quot;&gt;
+      /* &lt;h2 class=&quot;subtitle&quot;&gt;Module 13&lt;/h2&gt; */
+       &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+ 
   /% CODEWORD INPUT %/
       &lt;div class=&quot;code-input&quot;&gt;
       &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
@@ -2355,9 +2247,11 @@ Let’s enter Module 13’s Codeword to dive in:
       /% CODEWORD CORRECT %/
   &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;HATS&quot;&gt;&gt;
 &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;timed 3s&gt;&gt;
-  &lt;&lt;set $prevpass to $passage&gt;&gt;
-    &lt;&lt;goto &quot;6mod13intro&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
+ &lt;&lt;timed 3s&gt;&gt;
+          &lt;&lt;set $prevpass to $passage&gt;&gt;
+          &lt;&lt;set $nextpass to &quot;6mod13intro&quot;&gt;&gt;
+          &lt;&lt;goto &quot;loading&quot;&gt;&gt;
+        &lt;&lt;/timed&gt;&gt;
 &lt;&lt;/if&gt;&gt;
         /% CODEWORD INCORRECT %/
         &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;HATS&quot;&gt;&gt;
@@ -2365,12 +2259,47 @@ Let’s enter Module 13’s Codeword to dive in:
         &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
         &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt; 
           /% CODEWORD FEEDBACK %/
-          &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
+          &lt;div id=&quot;coderesult&quot; class=&quot;coderesult&quot;&gt;&lt;/div&gt;
    &lt;/div&gt;
     &lt;/div&gt;
+      &lt;/div&gt;
+ &lt;div class=&quot;menu-item&quot; id=&quot;mod14&quot;&gt; 
+  &lt;img src=&quot;./assets/img/mod14.jpg&quot; alt=&quot;module fourteen&quot;&gt;
+      /* &lt;h2 class=&quot;subtitle&quot;&gt;Module 14&lt;/h2&gt; */
+&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+  /% CODEWORD INPUT %/
+      &lt;div class=&quot;code-input&quot;&gt;
+      &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
+    &lt;/div&gt;
+   &lt;div class=&quot;btn-result-wrapper&quot;&gt;
+      &lt;&lt;button &quot;Enter&quot;&gt;&gt;  
+          &lt;/div&gt;
+      /% STANDARDISE INPUT %/
+      &lt;&lt;set $codeword to $codeword.toUpperCase()&gt;&gt;
+      /% CODEWORD CORRECT %/
+      &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;MAKING&quot;&gt;&gt;
+      &lt;&lt;replace &quot;#coderesult2&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+
+     &lt;&lt;timed 3s&gt;&gt;
+          &lt;&lt;set $prevpass to $passage&gt;&gt;
+          &lt;&lt;set $nextpass to &quot;6mod14intro&quot;&gt;&gt;
+          &lt;&lt;goto &quot;loading&quot;&gt;&gt;
+        &lt;&lt;/timed&gt;&gt;
+      &lt;&lt;/if&gt;&gt;
+        /% CODEWORD INCORRECT %/
+        &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;MAKING&quot;&gt;&gt;
+        &lt;&lt;replace &quot;#coderesult2&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+        &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult2&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+        &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt; 
+          /% CODEWORD FEEDBACK %/
+          &lt;div id=&quot;coderesult2&quot; class=&quot;coderesult&quot;&gt;&lt;/div&gt;
+   &lt;/div&gt;
+    &lt;/div&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
   &lt;/main&gt;
-    &lt;&lt;include &quot;footercode&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="86" name="6mod13intro" tags="nobr" position="725,1100" size="100,100">&lt;&lt;set $passage to &quot;6mod13intro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 13&quot;&gt;&gt;&lt;&lt;set $nextpass to &quot;6mod13a&quot;&gt;&gt;
+  &lt;&lt;include &quot;footerbox&quot;&gt;&gt;&lt;/div&gt;
+  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="75" name="6mod13intro" tags="nobr" position="600,975" size="100,100">&lt;&lt;set $passage to &quot;6mod13intro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 13&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;&lt;&lt;set $nextpass to &quot;6mod13a&quot;&gt;&gt;
   &lt;div class=&quot;wrapper&quot;&gt;
     &lt;&lt;include &quot;header&quot;&gt;&gt;
     &lt;main  class=&quot;speaking&quot;&gt;
@@ -2397,7 +2326,7 @@ Let’s enter Module 13’s Codeword to dive in:
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="87" name="6mod13a" tags="nobr" position="850,1100" size="100,100">&lt;&lt;set $passage to &quot;6mod13a&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="76" name="6mod13a" tags="nobr" position="725,975" size="100,100">&lt;&lt;set $passage to &quot;6mod13a&quot;&gt;&gt;
   &lt;div class=&quot;wrapper&quot;&gt;
     &lt;&lt;include &quot;header&quot;&gt;&gt;
     &lt;main  class=&quot;speaking&quot;&gt;
@@ -2406,7 +2335,7 @@ Let’s enter Module 13’s Codeword to dive in:
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footer&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="88" name="6mod13outro" tags="nobr" position="975,1100" size="100,100">&lt;&lt;set $passage to &quot;6mod13outro&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="77" name="6mod13outro" tags="nobr" position="850,975" size="100,100">&lt;&lt;set $passage to &quot;6mod13outro&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -2438,49 +2367,11 @@ Let’s enter Module 13’s Codeword to dive in:
 &lt;p&gt;You know the game, time for the Codeword. &lt;/p&gt;
 
 
-&lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod13 to true&gt;&gt;&lt;&lt;goto &quot;landing&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod13 to true&gt;&gt;&lt;&lt;goto &quot;6modulelist&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
 &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="89" name="6CodewordMod14" tags="nobr" position="1100,1100" size="100,100">&lt;&lt;set $passage to &quot;6CodewordMod14&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 14&quot;&gt;&gt;
-&lt;div class=&quot;wrapper box&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-  &lt;main class=&quot;codeword&quot;&gt;
-
-&lt;div class=&quot;codeword-title-wrapper&quot;&gt;&lt;h1 class=&quot;title&quot;&gt;Enter &lt;/h1&gt;&lt;h1 class=&quot;title&quot;&gt;Codeword&lt;/h1&gt;&lt;/div&gt;
-&lt;p&gt;
-Enter the Module 14 Codeword:
-&lt;/p&gt;
- 
-
-
-  &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
-  /% CODEWORD INPUT %/
-      &lt;div class=&quot;code-input&quot;&gt;
-      &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
-    &lt;/div&gt;
-   &lt;div class=&quot;btn-result-wrapper&quot;&gt;
-      &lt;&lt;button &quot;Enter&quot;&gt;&gt;  
-          &lt;/div&gt;
-      /% STANDARDISE INPUT %/
-      &lt;&lt;set $codeword to $codeword.toUpperCase()&gt;&gt;
-      /% CODEWORD CORRECT %/
-      &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;MAKING&quot;&gt;&gt;
-      &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-      &lt;&lt;timed 3s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;6mod14intro&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
-      &lt;&lt;/if&gt;&gt;
-        /% CODEWORD INCORRECT %/
-        &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;MAKING&quot;&gt;&gt;
-        &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-        &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
-        &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt; 
-          /% CODEWORD FEEDBACK %/
-          &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
-   &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/main&gt;
-    &lt;&lt;include &quot;footercode&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="90" name="6mod14intro" tags="nobr" position="1225,1100" size="100,100">&lt;&lt;set $passage to &quot;6mod14intro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 14&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="78" name="6mod14intro" tags="nobr" position="975,975" size="100,100">&lt;&lt;set $passage to &quot;6mod14intro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 14&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -2508,7 +2399,7 @@ Enter the Module 14 Codeword:
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="91" name="6mod14a" tags="nobr" position="100,1225" size="100,100">&lt;&lt;set $passage to &quot;6mod14a&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="79" name="6mod14a" tags="nobr" position="1100,975" size="100,100">&lt;&lt;set $passage to &quot;6mod14a&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -2519,7 +2410,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="92" name="6mod14outro" tags="nobr" position="225,1225" size="100,100">&lt;&lt;set $passage to &quot;6mod14outro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="80" name="6mod14outro" tags="nobr" position="1225,975" size="100,100">&lt;&lt;set $passage to &quot;6mod14outro&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -2536,7 +2427,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="93" name="6sessionoutro" tags="nobr" position="350,1225" size="100,100">&lt;&lt;set $passage to &quot;6sessionoutro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="81" name="6sessionoutro" tags="nobr" position="100,1100" size="100,100">&lt;&lt;set $passage to &quot;6sessionoutro&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -2559,26 +2450,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 
 
 
-/* SESSION 7 */</tw-passagedata><tw-passagedata pid="94" name="7modulelist" tags="nobr" position="475,1225" size="100,100">&lt;&lt;set $passage to &quot;7modulelist&quot;&gt;&gt;&lt;&lt;set $session to 7&gt;&gt;
-&lt;div class=&quot;wrapper box&quot;&gt;
-  &lt;main class=&quot;modules&quot;&gt;
-  &lt;h1 class=&quot;title&quot;&gt;SESSION SEVEN&lt;/h1&gt;
-  &lt;div class=&quot;menu-wrapper module-list&quot;&gt;
-&lt;div class=&quot;menu-item&quot; id=&quot;mod15&quot;&gt; 
-  &lt;img src=&quot;./assets/img/mod15.jpg&quot; alt=&quot;module fifteen&quot;&gt;
-      /* &lt;h2 class=&quot;subtitle&quot;&gt;Module 15&lt;/h2&gt; */
-       &lt;&lt;button &quot;start&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;7kaiIntro&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
-      &lt;/div&gt;
- &lt;div class=&quot;menu-item&quot; id=&quot;mod16&quot;&gt; 
-  &lt;img src=&quot;./assets/img/mod16.jpg&quot; alt=&quot;module sixteen&quot;&gt;
-      /* &lt;h2 class=&quot;subtitle&quot;&gt;Module 16&lt;/h2&gt; */
-        &lt;&lt;button &quot;start&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;7CodewordMod16&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
-      &lt;/div&gt;
-
-  &lt;/div&gt;
-  &lt;/main&gt;
-  &lt;&lt;include &quot;footerbox&quot;&gt;&gt;&lt;/div&gt;
-  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="95" name="7kaiIntro" tags="nobr" position="600,1225" size="100,100">&lt;&lt;set $passage to &quot;7kaiIntro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;&lt;&lt;set $nextpass to &quot;7CodewordMod15&quot;&gt;&gt;
+/* SESSION 7 */</tw-passagedata><tw-passagedata pid="82" name="7kaiIntro" tags="nobr" position="225,1100" size="100,100">&lt;&lt;set $passage to &quot;7kaiIntro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;&lt;&lt;set $nextpass to &quot;7modulelist&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
     /* &lt;h1 class=&quot;title top&quot;&gt;Hello - it&#39;s Kai again&lt;/h1&gt; */
@@ -2613,24 +2485,22 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;p&gt;It doesn’t mean it won’t have impact &lt;/p&gt;
 &lt;p&gt;So, let’s talk about that before the delivery&lt;/p&gt;
 
-         &lt;&lt;button &quot;next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;7CodewordMod15&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+         &lt;&lt;button &quot;next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;7modulelist&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
     &lt;/div&gt;
   
  
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="96" name="7CodewordMod15" tags="nobr" position="725,1225" size="100,100">&lt;&lt;set $passage to &quot;7CodewordMod15&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 15&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="83" name="7modulelist" tags="nobr" position="350,1100" size="100,100">&lt;&lt;set $passage to &quot;7modulelist&quot;&gt;&gt;&lt;&lt;set $session to 7&gt;&gt;
 &lt;div class=&quot;wrapper box&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-  &lt;main class=&quot;codeword&quot;&gt;
-
-&lt;div class=&quot;codeword-title-wrapper&quot; id=&quot;wrapper&quot;&gt;&lt;h1 class=&quot;title&quot;&gt;Enter &lt;/h1&gt;&lt;h1 class=&quot;title&quot;&gt;Codeword&lt;/h1&gt;&lt;/div&gt;
-
-  &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
-  &lt;p&gt;
-Enter the code for Module 15:
-&lt;/p&gt;
+  &lt;main class=&quot;modules&quot;&gt;
+  &lt;h1 class=&quot;title&quot;&gt;SESSION SEVEN&lt;/h1&gt;
+  &lt;div class=&quot;menu-wrapper module-list&quot;&gt;
+&lt;div class=&quot;menu-item&quot; id=&quot;mod15&quot;&gt; 
+  &lt;img src=&quot;./assets/img/mod15.jpg&quot; alt=&quot;module fifteen&quot;&gt;
+      /* &lt;h2 class=&quot;subtitle&quot;&gt;Module 15&lt;/h2&gt; */
+       &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
   /% CODEWORD INPUT %/
       &lt;div class=&quot;code-input&quot;&gt;
       &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
@@ -2643,9 +2513,11 @@ Enter the code for Module 15:
       /% CODEWORD CORRECT %/
   &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;ABORT&quot;&gt;&gt;
 &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;timed 3s&gt;&gt;
-  &lt;&lt;set $prevpass to $passage&gt;&gt;
-    &lt;&lt;goto &quot;7mod15intro&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
+  &lt;&lt;timed 3s&gt;&gt;
+          &lt;&lt;set $prevpass to $passage&gt;&gt;
+          &lt;&lt;set $nextpass to &quot;7mod15intro&quot;&gt;&gt;
+          &lt;&lt;goto &quot;loading&quot;&gt;&gt;
+        &lt;&lt;/timed&gt;&gt; 
 &lt;&lt;/if&gt;&gt;
         /% CODEWORD INCORRECT %/
         &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;ABORT&quot;&gt;&gt;
@@ -2653,12 +2525,47 @@ Enter the code for Module 15:
         &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
         &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt; 
           /% CODEWORD FEEDBACK %/
-          &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
+          &lt;div id=&quot;coderesult&quot; class=&quot;coderesult&quot;&gt;&lt;/div&gt;
    &lt;/div&gt;
     &lt;/div&gt;
+      &lt;/div&gt;
+ &lt;div class=&quot;menu-item&quot; id=&quot;mod16&quot;&gt; 
+  &lt;img src=&quot;./assets/img/mod16.jpg&quot; alt=&quot;module sixteen&quot;&gt;
+      /* &lt;h2 class=&quot;subtitle&quot;&gt;Module 16&lt;/h2&gt; */
+        &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+  /% CODEWORD INPUT %/
+      &lt;div class=&quot;code-input&quot;&gt;
+      &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
+    &lt;/div&gt;
+   &lt;div class=&quot;btn-result-wrapper&quot;&gt;
+      &lt;&lt;button &quot;Enter&quot;&gt;&gt;  
+          &lt;/div&gt;
+      /% STANDARDISE INPUT %/
+      &lt;&lt;set $codeword to $codeword.toUpperCase()&gt;&gt;
+      /% CODEWORD CORRECT %/
+      &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;DELIVERY&quot;&gt;&gt;
+      &lt;&lt;replace &quot;#coderesult2&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+       &lt;&lt;timed 3s&gt;&gt;
+          &lt;&lt;set $prevpass to $passage&gt;&gt;
+          &lt;&lt;set $nextpass to &quot;7mod16intro&quot;&gt;&gt;
+          &lt;&lt;goto &quot;loading&quot;&gt;&gt;
+        &lt;&lt;/timed&gt;&gt;
+      &lt;&lt;/if&gt;&gt;
+        /% CODEWORD INCORRECT %/
+        &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;DELIVERY&quot;&gt;&gt;
+        &lt;&lt;replace &quot;#coderesult2&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+        &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult2&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+        &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt; 
+          /% CODEWORD FEEDBACK %/
+          &lt;div id=&quot;coderesult2&quot; class=&quot;coderesult&quot;&gt;&lt;/div&gt;
+   &lt;/div&gt;
+    &lt;/div&gt;
+      &lt;/div&gt;
+
+  &lt;/div&gt;
   &lt;/main&gt;
-    &lt;&lt;include &quot;footercode&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="97" name="7mod15intro" tags="nobr" position="850,1225" size="100,100">&lt;&lt;set $passage to &quot;7mod15intro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 15&quot;&gt;&gt;&lt;&lt;set $nextpass to &quot;7mod15a&quot;&gt;&gt;
+  &lt;&lt;include &quot;footerbox&quot;&gt;&gt;&lt;/div&gt;
+  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="84" name="7mod15intro" tags="nobr" position="475,1100" size="100,100">&lt;&lt;set $passage to &quot;7mod15intro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 15&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;&lt;&lt;set $nextpass to &quot;7mod15a&quot;&gt;&gt;
   &lt;div class=&quot;wrapper&quot;&gt;
     &lt;&lt;include &quot;header&quot;&gt;&gt;
     &lt;main  class=&quot;speaking&quot;&gt;
@@ -2691,7 +2598,7 @@ Enter the code for Module 15:
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="98" name="7mod15a" tags="nobr" position="975,1225" size="100,100">&lt;&lt;set $passage to &quot;7mod15a&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="85" name="7mod15a" tags="nobr" position="600,1100" size="100,100">&lt;&lt;set $passage to &quot;7mod15a&quot;&gt;&gt;
   &lt;div class=&quot;wrapper&quot;&gt;
     &lt;&lt;include &quot;header&quot;&gt;&gt;
     &lt;main  class=&quot;speaking&quot;&gt;
@@ -2700,7 +2607,7 @@ Enter the code for Module 15:
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footer&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="99" name="7mod15outro" tags="nobr" position="1100,1225" size="100,100">&lt;&lt;set $passage to &quot;7mod15outro&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="86" name="7mod15outro" tags="nobr" position="725,1100" size="100,100">&lt;&lt;set $passage to &quot;7mod15outro&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -2723,45 +2630,7 @@ Enter the code for Module 15:
 &lt;/div&gt;
 &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="100" name="7CodewordMod16" tags="nobr" position="1225,1225" size="100,100">&lt;&lt;set $passage to &quot;7CodewordMod16&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 16&quot;&gt;&gt;
-&lt;div class=&quot;wrapper box&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-  &lt;main class=&quot;codeword&quot;&gt;
-
-&lt;div class=&quot;codeword-title-wrapper&quot;&gt;&lt;h1 class=&quot;title&quot;&gt;Enter &lt;/h1&gt;&lt;h1 class=&quot;title&quot;&gt;Codeword&lt;/h1&gt;&lt;/div&gt;
-&lt;p&gt;
-Enter the Module 16 Codeword:
-&lt;/p&gt;
- 
-
-
-  &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
-  /% CODEWORD INPUT %/
-      &lt;div class=&quot;code-input&quot;&gt;
-      &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
-    &lt;/div&gt;
-   &lt;div class=&quot;btn-result-wrapper&quot;&gt;
-      &lt;&lt;button &quot;Enter&quot;&gt;&gt;  
-          &lt;/div&gt;
-      /% STANDARDISE INPUT %/
-      &lt;&lt;set $codeword to $codeword.toUpperCase()&gt;&gt;
-      /% CODEWORD CORRECT %/
-      &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;DELIVERY&quot;&gt;&gt;
-      &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-      &lt;&lt;timed 3s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;7mod16intro&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
-      &lt;&lt;/if&gt;&gt;
-        /% CODEWORD INCORRECT %/
-        &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;DELIVERY&quot;&gt;&gt;
-        &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle&quot;&gt;Thats not right.&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-        &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
-        &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt; 
-          /% CODEWORD FEEDBACK %/
-          &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
-   &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/main&gt;
-    &lt;&lt;include &quot;footercode&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="101" name="7mod16intro" tags="nobr" position="100,1350" size="100,100">&lt;&lt;set $passage to &quot;7mod16intro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 16&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="87" name="7mod16intro" tags="nobr" position="850,1100" size="100,100">&lt;&lt;set $passage to &quot;7mod16intro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 16&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -2807,7 +2676,7 @@ Enter the Module 16 Codeword:
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="102" name="7mod16outro" tags="nobr" position="225,1350" size="100,100">&lt;&lt;set $passage to &quot;7mod16outro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="88" name="7mod16outro" tags="nobr" position="975,1100" size="100,100">&lt;&lt;set $passage to &quot;7mod16outro&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -2832,7 +2701,7 @@ Enter the Module 16 Codeword:
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="103" name="7sessionoutro" tags="nobr" position="350,1350" size="100,100">&lt;&lt;set $passage to &quot;7sessionoutro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="89" name="7sessionoutro" tags="nobr" position="1100,1100" size="100,100">&lt;&lt;set $passage to &quot;7sessionoutro&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -2868,22 +2737,7 @@ Enter the Module 16 Codeword:
 
 
 
-/* SESSION 8 */</tw-passagedata><tw-passagedata pid="104" name="8modulelist" tags="nobr" position="475,1350" size="100,100">&lt;&lt;set $passage to &quot;8modulelist&quot;&gt;&gt;&lt;&lt;set $session to 8&gt;&gt;
-&lt;div class=&quot;wrapper box&quot;&gt;
-  &lt;main class=&quot;modules&quot;&gt;
-  &lt;h1 class=&quot;title&quot;&gt;SESSION EIGHT&lt;/h1&gt;
- 
-  &lt;div class=&quot;menu-wrapper module-list&quot;&gt;
-&lt;div class=&quot;menu-item&quot; id=&quot;mod17&quot;&gt; 
-  &lt;img src=&quot;./assets/img/mod17.jpg&quot; alt=&quot;module seventeen&quot;&gt;
-      &lt;h2 class=&quot;subtitle&quot;&gt;Module 17&lt;/h2&gt;
-       &lt;&lt;button &quot;start&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;8kaiIntro&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-
-  &lt;/main&gt;
-  &lt;&lt;include &quot;footerbox&quot;&gt;&gt;&lt;/div&gt;
-  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="105" name="8kaiIntro" tags="nobr" position="600,1350" size="100,100">&lt;&lt;set $passage to &quot;8kaiIntro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;&lt;&lt;set $nextpass to &quot;8CodewordMod17&quot;&gt;&gt;
+/* SESSION 8 */</tw-passagedata><tw-passagedata pid="90" name="8kaiIntro" tags="nobr" position="1225,1100" size="100,100">&lt;&lt;set $passage to &quot;8kaiIntro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;&lt;&lt;set $nextpass to &quot;8modulelist&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
     /* &lt;h1 class=&quot;title top&quot;&gt;Hello - it&#39;s Kai again&lt;/h1&gt; */
@@ -2909,24 +2763,23 @@ Enter the Module 16 Codeword:
 &lt;p&gt;This was all of us. &lt;/p&gt;
 &lt;p&gt;A module card is needed – there’s only one for this session. &lt;/p&gt;
 
-         &lt;&lt;button &quot;next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;8CodewordMod17&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+         &lt;&lt;button &quot;next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;8modulelist&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
     &lt;/div&gt;
   
  
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="106" name="8CodewordMod17" tags="nobr" position="725,1350" size="100,100">&lt;&lt;set $passage to &quot;8CodewordMod17&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 17&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="91" name="8modulelist" tags="nobr" position="100,1225" size="100,100">&lt;&lt;set $passage to &quot;8modulelist&quot;&gt;&gt;&lt;&lt;set $session to 8&gt;&gt;
 &lt;div class=&quot;wrapper box&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-  &lt;main class=&quot;codeword&quot;&gt;
-
-&lt;div class=&quot;codeword-title-wrapper&quot; id=&quot;wrapper&quot;&gt;&lt;h1 class=&quot;title&quot;&gt;Enter &lt;/h1&gt;&lt;h1 class=&quot;title&quot;&gt;Codeword&lt;/h1&gt;&lt;/div&gt;
-
-  &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
-  &lt;p&gt;
-Enter the code for Module 17:
-&lt;/p&gt;
+  &lt;main class=&quot;modules&quot;&gt;
+  &lt;h1 class=&quot;title&quot;&gt;SESSION EIGHT&lt;/h1&gt;
+ 
+  &lt;div class=&quot;menu-wrapper module-list&quot;&gt;
+&lt;div class=&quot;menu-item&quot; id=&quot;mod17&quot;&gt; 
+  &lt;img src=&quot;./assets/img/mod17.jpg&quot; alt=&quot;module seventeen&quot;&gt;
+      /* &lt;h2 class=&quot;subtitle&quot;&gt;Module 17&lt;/h2&gt; */
+      &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
   /% CODEWORD INPUT %/
       &lt;div class=&quot;code-input&quot;&gt;
       &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
@@ -2939,9 +2792,11 @@ Enter the code for Module 17:
       /% CODEWORD CORRECT %/
   &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;VIOLET&quot;&gt;&gt;
 &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
-&lt;&lt;timed 3s&gt;&gt;
-  &lt;&lt;set $prevpass to $passage&gt;&gt;
-    &lt;&lt;goto &quot;8mod17intro&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
+ &lt;&lt;timed 3s&gt;&gt;
+          &lt;&lt;set $prevpass to $passage&gt;&gt;
+          &lt;&lt;set $nextpass to &quot;8mod17intro&quot;&gt;&gt;
+          &lt;&lt;goto &quot;loading&quot;&gt;&gt;
+        &lt;&lt;/timed&gt;&gt;
 &lt;&lt;/if&gt;&gt;
         /% CODEWORD INCORRECT %/
         &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is not &quot;VIOLET&quot;&gt;&gt;
@@ -2949,12 +2804,15 @@ Enter the code for Module 17:
         &lt;&lt;timed 1.5s&gt;&gt;&lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
         &lt;&lt;/if&gt;&gt;&lt;&lt;/button&gt;&gt; 
           /% CODEWORD FEEDBACK %/
-          &lt;div id=&quot;coderesult&quot;&gt;&lt;/div&gt;
+          &lt;div id=&quot;coderesult&quot; class=&quot;coderesult&quot;&gt;&lt;/div&gt;
    &lt;/div&gt;
     &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+
   &lt;/main&gt;
-    &lt;&lt;include &quot;footercode&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="107" name="8mod17intro" tags="nobr" position="850,1350" size="100,100">&lt;&lt;set $passage to &quot;8mod17intro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 15&quot;&gt;&gt;&lt;&lt;set $nextpass to &quot;7mod15a&quot;&gt;&gt;
+  &lt;&lt;include &quot;footerbox&quot;&gt;&gt;&lt;/div&gt;
+  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="92" name="8mod17intro" tags="nobr" position="225,1225" size="100,100">&lt;&lt;set $passage to &quot;8mod17intro&quot;&gt;&gt;&lt;&lt;set $module to &quot;Module 17&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;&lt;&lt;set $nextpass to &quot;7mod15a&quot;&gt;&gt;
   &lt;div class=&quot;wrapper&quot;&gt;
     &lt;&lt;include &quot;header&quot;&gt;&gt;
     &lt;main  class=&quot;speaking&quot;&gt;
@@ -2973,7 +2831,7 @@ Enter the code for Module 17:
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="108" name="8mod17intro2" tags="nobr" position="975,1350" size="100,100">&lt;&lt;set $passage to &quot;8mod17intro2&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="93" name="8mod17intro2" tags="nobr" position="350,1225" size="100,100">&lt;&lt;set $passage to &quot;8mod17intro2&quot;&gt;&gt;
   &lt;div class=&quot;wrapper&quot;&gt;
     &lt;&lt;include &quot;header&quot;&gt;&gt;
     &lt;main  class=&quot;speaking&quot;&gt;
@@ -2983,7 +2841,7 @@ Enter the code for Module 17:
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footer&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="109" name="8mod17intro3" tags="nobr" position="1100,1350" size="100,100">&lt;&lt;set $passage to &quot;8mod17intro3&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="94" name="8mod17intro3" tags="nobr" position="475,1225" size="100,100">&lt;&lt;set $passage to &quot;8mod17intro3&quot;&gt;&gt;
   &lt;div class=&quot;wrapper&quot;&gt;
     &lt;&lt;include &quot;header&quot;&gt;&gt;
     &lt;main  class=&quot;speaking&quot;&gt;
@@ -2998,7 +2856,7 @@ Enter the code for Module 17:
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footer&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="110" name="8mod17a" tags="nobr" position="1225,1350" size="100,100">&lt;&lt;set $passage to &quot;8mod17a&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="95" name="8mod17a" tags="nobr" position="600,1225" size="100,100">&lt;&lt;set $passage to &quot;8mod17a&quot;&gt;&gt;
   &lt;div class=&quot;wrapper&quot;&gt;
     &lt;&lt;include &quot;header&quot;&gt;&gt;
     &lt;main  class=&quot;speaking&quot;&gt;
@@ -3020,7 +2878,7 @@ Enter the code for Module 17:
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footer&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="111" name="8mod17outro" tags="nobr" position="100,1475" size="100,100">&lt;&lt;set $passage to &quot;8mod17outro&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="96" name="8mod17outro" tags="nobr" position="725,1225" size="100,100">&lt;&lt;set $passage to &quot;8mod17outro&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -3031,7 +2889,7 @@ Enter the code for Module 17:
 &lt;/div&gt;
 &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="112" name="8sessionoutro" tags="nobr" position="225,1475" size="100,100">&lt;&lt;set $passage to &quot;8sessionoutro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="97" name="8sessionoutro" tags="nobr" position="850,1225" size="100,100">&lt;&lt;set $passage to &quot;8sessionoutro&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
