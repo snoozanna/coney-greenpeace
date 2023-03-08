@@ -518,57 +518,83 @@ setup.checkForRepeats = (array,element) => {
   <h1 class="title">SESSION ONE</h1>
     /* <div class="codeword-title-wrapper"><h1 class="title">Enter </h1><h1 class="title">Codeword</h1></div> */
       <div class="menu-wrapper module-list">
-      <div class="menu-item " id="mod1"> 
-        <img src="./assets/img/mod1.jpg" alt="module one">
-          <div id="codewordWrapper" class="codeword-wrapper">
+     <div class="menu-item flip-card" id="mod1"> 
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+      <img src="./assets/img/mod1.jpg" alt="module card" >
+        <div id="codewordWrapper" class="codeword-wrapper">
       /% CODEWORD INPUT %/
           <div class="code-input">
           <<textbox "$codeword" "">>
-        </div>
-      <div class="btn-result-wrapper">
-          <<button "Enter">>  
-              </div>
-          /% STANDARDISE INPUT %/
-          <<set $codeword to $codeword.toUpperCase()>>
-          /% CODEWORD CORRECT %/
-          <<if $codeword isnot "" and $codeword is "EXTRACTION">>
-            <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
-            <<timed 3s>><<set $prevpass to $passage>>
-              <<set $nextpass to "1mod1intro">>
-            <<goto "loading">>
-            <</timed>>
-          <</if>>
-            /% CODEWORD INCORRECT %/
-            <<if $codeword isnot "" and $codeword is not "EXTRACTION">>
-            <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
-            <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>>
-            <</if>><</button>> 
-              /% CODEWORD FEEDBACK %/
-              <div class="coderesult"  id="coderesult"></div>
-            </div>
-            </div>
-          /* <<button "start">><<set $prevpass to $passage>><<goto "1kaiIntro">><</button>> */
           </div>
-    <div class="menu-item" id="mod2"> 
-      <img src="./assets/img/mod2.jpg" alt="module two">
-          <div id="codewordWrapper" class="codeword-wrapper">
-      /% CODEWORD INPUT %/
-          <div class="code-input">
-          <<textbox "$codeword" "">>
-        </div>
-      <div class="btn-result-wrapper">
+          <div class="btn-result-wrapper">
           <<button "Enter">>  
                 </div>
             /% STANDARDISE INPUT %/
             <<set $codeword to $codeword.toUpperCase()>>
-            /% CODEWORD CORRECT %/
+            /% CODEWORD CORRECT %/s
+            <<if $codeword isnot "" and $codeword is "EXTRACTION">>
+            <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+            <<timed 2s>>
+              <<addclass "#mod2" "disappear">>
+               <<addclass "#mod1" "twist">>
+             <</timed>>
+      
+            <<timed 6s>>
+                  <<set $prevpass to $passage>>
+               <<set $nextpass to "1mod1intro">>
+            <<goto "loading">>
+             <</timed>>
+            <</if>>
+              /% CODEWORD INCORRECT %/
+              <<if $codeword isnot "" and $codeword is not "EXTRACTION">>
+              <<replace "#coderesult">><h2 class="subtitle">Thats not right.</h2><</replace>>
+              /* <<timed 1.5s>><<replace "#coderesult">><</replace>><</timed>> */
+              <</if>>
+          <</button>> 
+          /% CODEWORD FEEDBACK %/
+            <div class="coderesult" id="coderesult"></div>   
+      </div>
+        </div>
+      </div>
+      <div class="flip-card-back">
+        <img src="./assets/img/mod1rev.jpeg" alt="module card" >
+      </div>
+    </div>
+  </div>  
+  
+  
+  <div class="menu-item flip-card" id="mod2"> 
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+      <img src="./assets/img/mod2.jpg" alt="module card" >
+        <div id="codewordWrapper" class="codeword-wrapper">
+      /% CODEWORD INPUT %/
+          <div class="code-input">
+          <<textbox "$codeword" "">>
+          </div>
+          <div class="btn-result-wrapper">
+          <<button "Enter">>  
+                </div>
+            /% STANDARDISE INPUT %/
+            <<set $codeword to $codeword.toUpperCase()>>
+            /% CODEWORD CORRECT %/s
             <<if $codeword isnot "" and $codeword is "FRONT">>
             <<replace "#coderesult2">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+            <<timed 0.5s>>
+              <<addclass "#mod1" "dissolve">>
+             <</timed>>
+             <<timed 1s>>
+              <<addclass "#mod1" "disappear">>
+             <</timed>>
             <<timed 3s>>
-              <<set $prevpass to $passage>>
+                <<addclass "#mod2" "twist">>
+             <</timed>>
+            <<timed 6s>>
+                  <<set $prevpass to $passage>>
                <<set $nextpass to "1mod2intro">>
             <<goto "loading">>
-            <</timed>>
+             <</timed>>
             <</if>>
               /% CODEWORD INCORRECT %/
               <<if $codeword isnot "" and $codeword is not "FRONT">>
@@ -580,10 +606,15 @@ setup.checkForRepeats = (array,element) => {
             <div class="coderesult" id="coderesult2"></div>   
       </div>
         </div>
-          /* <<button "start">><<set $prevpass to $passage>><<goto "1CodewordMod2">><</button>> */
-          </div>
       </div>
-  </main>
+      <div class="flip-card-back">
+        <img src="./assets/img/mod1rev.jpeg" alt="module card" >
+      </div>
+    </div>
+  </div>
+  
+  </div>
+ </main>
   <<include "footerbox">></div>
   <<done>><<include "checkmodules">><</done>>
   
@@ -609,7 +640,7 @@ setup.checkForRepeats = (array,element) => {
 
 
 :: 1mod1a [nobr]
-<<set $passage to "mod1a">>
+<<set $passage to "1mod1a">>
 <div class="wrapper">
   <<include "header">>
     <main  class="speaking">
@@ -618,10 +649,19 @@ setup.checkForRepeats = (array,element) => {
     <p>
     Great – Does everyone understand the rules of the game? </p>
     
-    YES/NO
-    
-    <p>
-      I’ll summarise </p>
+   <<button "Yes">>
+      <<replace "#mount">>
+      <p>Ready for round 1? 3 mins GO. </p>
+      <p>Kipu you have 4 moves first</p>
+      <p>Then Sowe you’ll have 2 moves</p>
+      <p>Then </p>
+      <p> After 3 mins – Kipu make your move, </p>
+      <<button "Next">><<set $prevpass to $passage>><<goto "1mod1bintro">><</button>>
+    <</replace>>
+    <</button>> 
+    <<button "No">>
+      <<replace "#mount">>
+        <p>I’ll summarise </p>
       <ul>
         <li>-	The goal is to end the game with the most money </li>
         <li>-	But you can’t lose more than half of your land</li>
@@ -637,11 +677,309 @@ setup.checkForRepeats = (array,element) => {
       <p>Then Sowe you’ll have 2 moves</p>
       <p>Then </p>
       <p> After 3 mins – Kipu make your move, </p>
-      <<button "Next">><<set $prevpass to $passage>><<goto "1mod1outroKai">><</button>>
-    <</replace>><</button>>
+      <<button "Next">><<set $prevpass to $passage>><<goto "1mod1bintro">><</button>>
+    <</replace>><</button>><</replace>>
+    <</button>> 
+    
  </div>
   </div>
 
+  </main>
+  <<include "footer">>
+</div>
+
+:: 1mod1bintro [nobr]
+<<set $passage to "1mod1b">><<set $seconds to 10>>
+/* Tactics & Defense  */
+<div class="wrapper box">
+  <<include "header">>
+<main class="game">
+        <h1 class="title">Round 1</h1>
+ <div class="game-wrapper">
+  	<div class="timer" id="timer">
+  	  <span id="countdown" class="countdown"><h3 class="">$seconds</h3></span>
+  	</div>
+   <div id="mount">
+    <h2 class="subtitle">Tactics</h2>
+    </div>
+
+ </div >
+  </main>
+  <<include "footer">>
+</div>
+
+<<silently>>
+<<repeat 1s>>
+  <<set $seconds to $seconds - 1>>
+    <<if $seconds gt 0>>
+        <<replace "#countdown">><h3 >$seconds</h3><</replace>>
+     <<elseif $seconds is 0>>   
+      <<replace "#timer">><</replace>>
+      <<replace "#mount">>
+          <h2 class="subtitle">Defense</h2>
+           <<button "Next">><<set $prevpass to $passage>><<goto "1mod1br1">><</button>>
+        <</replace>>
+        <<else>><<stop>>
+    <</if>>
+  <</repeat>>
+<</silently>>
+
+:: 1mod1br1 [nobr]
+/* Extract */
+<<set $order to ["Kipu", "Tez", "Outa", "Sowe", "Allo", "Lucia"]>>
+<<set $passage to "1mod1br1">>
+<div class="wrapper box">
+  <<include "header">>
+<main class="game">
+        <h1 class="title">Round 1</h1>
+ <div class="game-wrapper">
+   <div id="mount" class="flex-col">
+    <h2 class="subtitle">Extract</h2>
+    <div class="options-wrapper">
+       <<for _i to 0; _i lt $order.length; _i++>>
+       <<capture _i>>
+          <div class="option">
+          <<linkreplace "Reveal">>
+            <span><<print _i + 1>>.</span>
+            <span>$order[_i]</span>
+          <</linkreplace>>
+          </div>
+        <</capture>>
+      <</for>>
+    </div>
+     <<button "Move on">>
+    <<replace "#mount">>
+       <h2 class="subtitle">Payment</h2>
+       <<button "Move on">> 
+        <<set $prevpass to $passage>><<goto "1mod1br2intro">><</button>>
+    <</replace>>
+<</button>>
+  </div>
+   
+ </div >
+
+  </main>
+  <<include "footer">>
+</div>
+
+:: 1mod1br2intro [nobr]
+<<set $passage to "1mod1br2intro">><<set $seconds to 10>>
+/* Tactics & Defense  */
+<div class="wrapper box">
+  <<include "header">>
+<main class="game">
+        <h1 class="title">Round 2</h1>
+ <div class="game-wrapper">
+  	<div class="timer" id="timer">
+  	  <span id="countdown" class="countdown"><h3 class="">$seconds</h3></span>
+  	</div>
+   <div id="mount">
+    <h2 class="subtitle">Tactics</h2>
+    </div>
+
+ </div >
+  </main>
+  <<include "footer">>
+</div>
+
+<<silently>>
+<<repeat 1s>>
+  <<set $seconds to $seconds - 1>>
+    <<if $seconds gt 0>>
+        <<replace "#countdown">><h3 >$seconds</h3><</replace>>
+     <<elseif $seconds is 0>>   
+      <<replace "#timer">><</replace>>
+      <<replace "#mount">>
+          <h2 class="subtitle">Defense</h2>
+           <<button "Next">><<set $prevpass to $passage>><<goto "1mod1br2">><</button>>
+        <</replace>>
+        <<else>><<stop>>
+    <</if>>
+  <</repeat>>
+<</silently>>
+
+:: 1mod1br2 [nobr]
+/* Extract */
+<<set $order to ["Allo","Outa","Sowe", "Tez", "Kipu", "Lucia"]>>
+<<set $passage to "1mod1br2">>
+<div class="wrapper box">
+  <<include "header">>
+<main class="game">
+        <h1 class="title">Round 2</h1>
+ <div class="game-wrapper">
+   <div id="mount" class="flex-col">
+    <h2 class="subtitle">Extract</h2>
+    <div class="options-wrapper">
+       <<for _i to 0; _i lt $order.length; _i++>>
+       <<capture _i>>
+          <div class="option">
+          <<linkreplace "Reveal">>
+            <span><<print _i + 1>>.</span>
+            <span>$order[_i]</span>
+          <</linkreplace>>
+          </div>
+        <</capture>>
+      <</for>>
+    </div>
+    <<button "Move on">>
+    <<replace "#mount">>
+       <h2 class="subtitle">Payment</h2>
+       <<button "Move on">> 
+        <<set $prevpass to $passage>><<goto "1mod1br3intro">><</button>>
+    <</replace>>
+<</button>>
+  </div>
+ </div >
+    
+  </main>
+  <<include "footer">>
+</div>
+
+:: 1mod1br3intro [nobr]
+<<set $passage to "1mod1br3intro">><<set $seconds to 10>>
+/* Tactics & Defense  */
+<div class="wrapper box">
+  <<include "header">>
+<main class="game">
+        <h1 class="title">Round 3</h1>
+ <div class="game-wrapper">
+  	<div class="timer" id="timer">
+  	  <span id="countdown" class="countdown"><h3 class="">$seconds</h3></span>
+  	</div>
+   <div id="mount">
+    <h2 class="subtitle">Tactics</h2>
+    </div>
+
+ </div >
+  </main>
+  <<include "footer">>
+</div>
+
+<<silently>>
+<<repeat 1s>>
+  <<set $seconds to $seconds - 1>>
+    <<if $seconds gt 0>>
+        <<replace "#countdown">><h3 >$seconds</h3><</replace>>
+     <<elseif $seconds is 0>>   
+      <<replace "#timer">><</replace>>
+      <<replace "#mount">>
+          <h2 class="subtitle">Defense</h2>
+           <<button "Next">><<set $prevpass to $passage>><<goto "1mod1br3">><</button>>
+        <</replace>>
+        <<else>><<stop>>
+    <</if>>
+  <</repeat>>
+<</silently>>
+
+:: 1mod1br3 [nobr]
+/* Extract */
+<<set $order to ["Kipu","Allo","Sowe","Outa", "Tez",  "Lucia"]>>
+<<set $passage to "1mod1br3">>
+<div class="wrapper box">
+  <<include "header">>
+<main class="game">
+        <h1 class="title">Round 3</h1>
+ <div class="game-wrapper">
+   <div id="mount" class="flex-col">
+    <h2 class="subtitle">Extract</h2>
+    <div class="options-wrapper">
+       <<for _i to 0; _i lt $order.length; _i++>>
+       <<capture _i>>
+          <div class="option">
+          <<linkreplace "Reveal">>
+            <span><<print _i + 1>>.</span>
+            <span>$order[_i]</span>
+          <</linkreplace>>
+          </div>
+        <</capture>>
+      <</for>>
+    </div>
+         <<button "Move on">>
+    <<replace "#mount">>
+       <h2 class="subtitle">Payment</h2>
+       <<button "Move on">> 
+        <<set $prevpass to $passage>><<goto "1mod1br4intro">><</button>>
+    <</replace>>
+<</button>>
+  </div>
+ </div >
+
+
+   
+  </main>
+  <<include "footer">>
+</div>
+
+:: 1mod1br4intro [nobr]
+<<set $passage to "1mod1br4intro">><<set $seconds to 10>>
+/* Tactics & Defense  */
+<div class="wrapper box">
+  <<include "header">>
+<main class="game">
+        <h1 class="title">Round 4</h1>
+ <div class="game-wrapper">
+  	<div class="timer" id="timer">
+  	  <span id="countdown" class="countdown"><h3 class="">$seconds</h3></span>
+  	</div>
+   <div id="mount">
+    <h2 class="subtitle">Tactics</h2>
+    </div>
+
+ </div >
+  </main>
+  <<include "footer">>
+</div>
+
+<<silently>>
+<<repeat 1s>>
+  <<set $seconds to $seconds - 1>>
+    <<if $seconds gt 0>>
+        <<replace "#countdown">><h3 >$seconds</h3><</replace>>
+     <<elseif $seconds is 0>>   
+      <<replace "#timer">><</replace>>
+      <<replace "#mount">>
+          <h2 class="subtitle">Defense</h2>
+           <<button "Next">><<set $prevpass to $passage>><<goto "1mod1br4">><</button>>
+        <</replace>>
+        <<else>><<stop>>
+    <</if>>
+  <</repeat>>
+<</silently>>
+
+:: 1mod1br4 [nobr]
+/* Extract */
+<<set $order to ["Tez", "Outa","Kipu","Sowe","Lucia", "Allo",]>>
+<<set $passage to "1mod1br4">>
+<div class="wrapper box">
+  <<include "header">>
+<main class="game">
+        <h1 class="title">Round 4</h1>
+ <div class="game-wrapper">
+   <div id="mount" class="flex-col">
+    <h2 class="subtitle">Extract</h2>
+    <div class="options-wrapper">
+       <<for _i to 0; _i lt $order.length; _i++>>
+       <<capture _i>>
+          <div class="option">
+          <<linkreplace "Reveal">>
+            <span><<print _i + 1>>.</span>
+            <span>$order[_i]</span>
+          <</linkreplace>>
+          </div>
+        <</capture>>
+      <</for>>
+    </div>
+    <<button "Move on">>
+    <<replace "#mount">>
+       <h2 class="subtitle">Payment</h2>
+       <<button "Move on">> 
+        <<set $prevpass to $passage>><<goto "1mod1outroKai">><</button>>
+    <</replace>>
+<</button>> 
+  </div>
+ </div >
+
+   
   </main>
   <<include "footer">>
 </div>
