@@ -132,6 +132,11 @@ h2.subtitle {
   /* margin-left: -10rem; */
 }
 
+h2.subtitle.inline {
+  display: inline;
+  transform: rotate(-4deg);
+}
+
 h1.title.left,
 h2.subtitle.left {
   margin-left: -10rem;
@@ -166,6 +171,17 @@ h1.title.top {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+main.speaking.inlineimg {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+main.speaking.inlineimg > img {
+  max-width: 200px;
+  transform: rotate(-4deg);
 }
 
 /* FOOTER */
@@ -592,6 +608,22 @@ main.codeword {
 
 .enter-codename-wrapper > input {
   margin-inline-end: 2rem;
+  min-width: inherit;
+  background-color: black;
+  border: none;
+  border-radius: 4px;
+  transform: rotate(-2deg);
+  color: white;
+}
+
+.enter-codename-wrapper > button {
+  margin-inline-end: 2rem;
+  min-width: inherit;
+  background-color: black;
+  border: none;
+  border-radius: 4px;
+  transform: rotate(-2deg);
+  color: white;
 }
 
 /* LANDING  */
@@ -840,4 +872,41 @@ main.codeword.landing > .hero {
 
 .unlock {
   animation: 2s linear 0s 1 unlock forwards;
+}
+
+/* CHARACTER LIST  */
+
+.char-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.char-item {
+  max-width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.char-item > button {
+  background: black;
+  width: fit-content;
+  padding: 0 2rem;
+  transform: rotate(-4deg);
+  border: none;
+  text-transform: uppercase;
+}
+
+.char-chosen-wrap {
+  max-width: 40%;
+  margin-block-end: 2rem;
+}
+
+main.speaking.chosen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
