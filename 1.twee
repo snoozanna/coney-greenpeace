@@ -1488,7 +1488,7 @@ $(document.head).find('#style-ui-bar').remove();
              <</timed>>
             <<timed 6s>>
                   <<set $prevpass to $passage>>
-               <<set $nextpass to "">>
+               <<set $nextpass to "2mod4intro1">>
             <<goto "loading">>
              <</timed>>
             <</if>>
