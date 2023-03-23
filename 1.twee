@@ -200,7 +200,30 @@ $(document.head).find('#style-ui-bar').remove();
  <<timed 3s>><<replace "#mount">><<type 100ms>> <h2>Loading...</h2> <</type>><</replace>><</timed>>
   </div>
 </div >
- <<timed 5s>><<set $prevpass to $passage>>
+ <<timed 6s>><<set $prevpass to $passage>>
+            /* <<goto "loading">> */
+              <<goto $nextpass>>
+            <</timed>>
+
+:: sending [nobr]
+
+<div class="loading-container" id="mount2">
+  <div class="container" >
+    <div class="side left"></div>
+    <div class="side front"></div>
+    <div class="side right"></div>
+    <div class="side back"></div>
+    /* <div class="shadow"></div> */
+  </div>
+  <div class="loading-title-container" >
+  <div id="mount"></div>
+ <<timed 0.1s>><<replace "#mount">><<type 100ms>> <h2>Sending...</h2> <</type>><</replace>><</timed>>
+ <<timed 3s>><<replace "#mount">><<type 100ms>> <h2>Sending...</h2> <</type>><</replace>><</timed>>
+
+
+  </div>
+</div >
+ <<timed 6s>><<set $prevpass to $passage>>
             /* <<goto "loading">> */
               <<goto $nextpass>>
             <</timed>>
@@ -325,9 +348,9 @@ $(document.head).find('#style-ui-bar').remove();
 <<elseif $module is "Module 7">>
   <<set $modulename to "Mapping A System">>
 <<elseif $module is "Module 8">>
-  <<set $modulename to "Comfort In Action">>
+  <<set $modulename to "Imagining Success">>
 <<elseif $module is "Module 9">>
-  <<set $modulename to "Imagining Success	">>
+  <<set $modulename to "Comfort In Action">>
 <<elseif $module is "Module 10">>
   <<set $modulename to "The Ask">>
 <<elseif $module is "Module 11">>
@@ -355,6 +378,7 @@ $(document.head).find('#style-ui-bar').remove();
 
 <<include "unlock">>
 <div >
+<h1 class="title larger-title">Welcome</h1>
   <div class="codeword-title-wrapper"><h1 class="title">Enter </h1><h1 class="title">session</h1></div>
    <p> Enter session codeword.</p>
    
@@ -371,45 +395,53 @@ $(document.head).find('#style-ui-bar').remove();
         /% STANDARDISE INPUT %/
         <<set $codeword to $codeword.toUpperCase()>>
         /% CODEWORD CORRECT %/
-        <<if $codeword isnot "" and $codeword is "ONE">>
+        <<if $codeword isnot "" and $codeword is "BEGIN">>
         <<addclass "#topTriangle" "unlock">>
         <<replace "#coderesult">><h2 class="subtitle complete">Session 1</h2><</replace>>
-        <<timed 3s>><<set $prevpass to $passage>><<set $audio to true>><<goto "1kaiIntro">><</timed>>
+        <<timed 3s>><<set $prevpass to $passage>><<set $audio to true>>
+        <<set $nextpass to "1kaiIntro">><<goto "loading">><</timed>>
         <</if>>
-            <<if $codeword isnot "" and $codeword is "TWO">>
+            <<if $codeword isnot "" and $codeword is "SMASH">>
               <<addclass "#topTriangle" "unlock">>
         <<replace "#coderesult">><h2 class="subtitle complete">Session 2</h2><</replace>>
-        <<timed 3s>><<set $prevpass to $passage>><<set $audio to true>><<goto "2kaiIntro1">><</timed>>
+        <<timed 3s>><<set $prevpass to $passage>><<set $audio to true>>
+         <<set $nextpass to "2kaiIntro1">><<goto "loading">>
+       <</timed>>
         <</if>>
-        <<if $codeword isnot "" and $codeword is "THREE">>
+        <<if $codeword isnot "" and $codeword is "GLOBAL">>
           <<addclass "#topTriangle" "unlock">>
         <<replace "#coderesult">><h2 class="subtitle complete">Session 3</h2><</replace>>
-        <<timed 3s>><<set $prevpass to $passage>><<set $audio to true>><<goto "3kaiIntro1">><</timed>>
+        <<timed 3s>><<set $prevpass to $passage>><<set $audio to true>>
+         <<set $nextpass to "3kaiIntro1">><<goto "loading">>
+        <</timed>>
         <</if>>
         <<if $codeword isnot "" and $codeword is "FOUR">>
           <<addclass "#topTriangle" "unlock">>
         <<replace "#coderesult">><h2 class="subtitle complete">Session 4</h2><</replace>>
-        <<timed 3s>><<set $prevpass to $passage>><<set $audio to true>><<goto "4kaiIntro1">><</timed>>
+        <<timed 3s>><<set $prevpass to $passage>><<set $audio to true>>
+          <<set $nextpass to "4kaiIntro1">><<goto "loading">>
+        <</timed>>
         <</if>>
          <<if $codeword isnot "" and $codeword is "FIVE">>
           <<addclass "#topTriangle" "unlock">>
         <<replace "#coderesult">><h2 class="subtitle complete">Session 5</h2><</replace>>
-        <<timed 3s>><<set $prevpass to $passage>><<set $audio to true>><<goto "5kaiIntro1">><</timed>>
+        <<timed 3s>><<set $prevpass to $passage>><<set $audio to true>>
+        <<<set $nextpass to "5kaiIntro1">><<goto "loading">><</timed>>
         <</if>>
          <<if $codeword isnot "" and $codeword is "SIX">>
            <<addclass "#topTriangle" "unlock">>
         <<replace "#coderesult">><h2 class="subtitle complete">Session 6</h2><</replace>>
-        <<timed 3s>><<set $prevpass to $passage>><<set $audio to true>><<goto "6kaiIntro1">><</timed>>
+        <<timed 3s>><<set $prevpass to $passage>><<set $audio to true>><<set $nextpass to "6kaiIntro1">><<goto "loading">><</timed>>
         <</if>>
          <<if $codeword isnot "" and $codeword is "SEVEN">>
            <<addclass "#topTriangle" "unlock">>
         <<replace "#coderesult">><h2 class="subtitle complete">Session 7</h2><</replace>>
-        <<timed 3s>><<set $prevpass to $passage>><<set $audio to true>><<goto "7kaiIntro1">><</timed>>
+        <<timed 3s>><<set $prevpass to $passage>><<set $audio to true>><<set $nextpass to "7kaiIntro1">><<goto "loading">><</timed>>
         <</if>>
          <<if $codeword isnot "" and $codeword is "EIGHT">>
            <<addclass "#topTriangle" "unlock">>
         <<replace "#coderesult">><h2 class="subtitle complete">Session 8</h2><</replace>>
-        <<timed 3s>><<set $prevpass to $passage>><<set $audio to true>><<goto "8kaiIntro1">><</timed>>
+        <<timed 3s>><<set $prevpass to $passage>><<set $audio to true>><<set $nextpass to "8kaiIntro1">><<goto "loading">><</timed>>
         <</if>>
           /% CODEWORD INCORRECT %/
           /* <<if $codeword isnot "" and $codeword is not "ONE">>
@@ -428,7 +460,9 @@ $(document.head).find('#style-ui-bar').remove();
 
 
 :: 1kaiIntro [nobr]
-<<set $passage to "1kaiIntro">><<set $nextpass to "1kaiIntro2">><<set $module to "Introduction">><<include "checkmodulenamelist">>
+<<set $prevpass to "landing">>
+<<set $passage to "1kaiIntro">>
+<<set $nextpass to "1kaiIntro2">><<set $module to "Introduction">><<include "checkmodulenamelist">>
 
 <audio src="/assets/audio/SESSION1_INTRO_1.mp3" autoplay >Audio is not supported on your device</audio>
 
@@ -448,7 +482,9 @@ $(document.head).find('#style-ui-bar').remove();
 
 
 :: 1kaiIntro2[nobr]
-<<set $passage to "1kaiIntro2">><<set $nextpass to "1kaiIntro3">><audio src="/assets/audio/SESSION1_INTRO_2.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $prevpass to "1kaiIntro">>
+<<set $passage to "1kaiIntro2">>
+<<set $nextpass to "1kaiIntro3">><audio src="/assets/audio/SESSION1_INTRO_2.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -466,7 +502,10 @@ $(document.head).find('#style-ui-bar').remove();
 
 
 :: 1kaiIntro3 [nobr]
-<<set $passage to "1kaiIntro3">><<set $nextpass to "1kaiIntro4">><audio src="/assets/audio/SESSION1_INTRO_3.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $prevpass to "1kaiIntro2">>
+<<set $passage to "1kaiIntro3">>
+<<set $nextpass to "1kaiIntro4">>
+<audio src="/assets/audio/SESSION1_INTRO_3.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
 <<include "header">>
   <main class="speaking">
@@ -489,7 +528,10 @@ $(document.head).find('#style-ui-bar').remove();
 
 
 :: 1kaiIntro4 [nobr]
-<<set $passage to "1kaiIntro4">><<set $nextpass to "1kaiIntro5">><audio src="/assets/audio/SESSION1_INTRO_4.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $prevpass to "1kaiIntro3">>
+<<set $passage to "1kaiIntro4">>
+<<set $nextpass to "1kaiIntro5">>
+<audio src="/assets/audio/SESSION1_INTRO_4.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
 <<include "header">>
   <main class="speaking">
@@ -505,7 +547,9 @@ $(document.head).find('#style-ui-bar').remove();
 
 
 :: 1kaiIntro5[nobr]
-<<set $passage to "1kaiIntro5">><<set $nextpass to "1kaiIntro6">><audio src="/assets/audio/SESSION1_INTRO_5.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $prevpass to "1kaiIntro4">>
+<<set $passage to "1kaiIntro5">>
+<<set $nextpass to "1kaiIntro6">><audio src="/assets/audio/SESSION1_INTRO_5.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
 <<include "header">>
   <main class="speaking">
@@ -521,6 +565,7 @@ $(document.head).find('#style-ui-bar').remove();
 </div>
 
 :: 1kaiIntro6[nobr]
+<<set $prevpass to "1kaiIntro5">>
 <<set $passage to "1kaiIntro6">><<set $nextpass to "1modulelist">><audio src="/assets/audio/SESSION1_INTRO_6.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
 <<include "header">>
@@ -531,6 +576,7 @@ $(document.head).find('#style-ui-bar').remove();
 <p>  A game I made actually. </p>
   <p>But to get in, you need a codeword. </p>
   <p>Enter the codeword for Module 1  </p>
+  <p>You can find it on the card in your first envelope.</p>
   <<timed 16s>><<set $prevpass to $passage>><<goto "1modulelist">><</timed>>
   </div>
   </main>
@@ -539,6 +585,17 @@ $(document.head).find('#style-ui-bar').remove();
 
 :: 1modulelist [nobr]
 <<set $passage to "1modulelist">><<set $session to 1>>
+<<if $nextnextpass is "1mod2outrokaia" >>
+  <<set $nextpass to "1mod2outrokaia">>
+   <<set $nextnextpass to "">>
+<</if>>
+
+<<if $skip is true>>
+    <<timed 5s>>
+      <<set $skip to false>>
+      <<goto $nextpass>>
+    <</timed>>
+<</if>>
 <div class="wrapper box">
   <main class="modules">
   <h1 class="title">SESSION ONE</h1>
@@ -584,7 +641,7 @@ $(document.head).find('#style-ui-bar').remove();
         </div>
       </div>
       <div class="flip-card-back">
-        <img src="./assets/img/mod1-rev.jpeg" alt="module card" >
+        <img src="./assets/img/mod1-rev.jpg" alt="module card" >
       </div>
     </div>
   </div>  
@@ -676,12 +733,30 @@ $(document.head).find('#style-ui-bar').remove();
     Great – Does everyone understand the rules of the game? </p>
       <p>I’ll summarise </p>
       <ul>
-        <li>-	The goal is to end the game with the most money </li>
+        <li>-	The goal is to end the game with the MOST money </li>
         <li>-	But you can’t lose more than half of your land</li>
-        <li>-	You have to pay money each round to the Trade Exchange (your teacher!)</li>
-        <li>-	Some countries have more moves each round. They will play first, and the other countries will follow. </li>
-        <li>-	You’ll have 2 minutes to discuss your tactics then you can make your move, or moves. </li>
-      </ul>
+       </ul>
+       <p>We’ll lead you through the four parts of a Round:</p>
+       <ul>
+        <li>
+          <h4>1st - DEBATE</h4>
+          <p>All countries have 1 minute to debate their moves</p>
+        </li>
+         <li>
+          <h4>2nd - DEFENCE</h4>
+          <p>Defence Moves are placed first. There are a limit of defences lots for each country.</p>
+        </li>
+        <li>
+          <h4>3rd - EXTRACTION</h4>
+          <p> Extraction Moves can then take place - either on your map or another.
+The order you go in will be randomised.</p>
+        </li>
+    <li>
+          <h4>4th - PAYMENT ROUND/SCORE</h4>
+          <p> You pay the Teacher to build up your Money in the Bank andpay off your debt each round.</p>
+        </li>
+        </ul>
+   
        <p>Got it? </p>
    <<button "Yes">>
       <<replace "#mount">><audio src="/assets/audio/SESSION1_MOD1_extractioneconomy_3.mp3" autoplay>Audio is not supported on your device</audio>
@@ -746,12 +821,9 @@ $(document.head).find('#style-ui-bar').remove();
         <h1 class="title">Round 1</h1>
  <div class="game-wrapper">
    <div id="mount" class="flex-col">
-    <div>
+ 
       <h2 class="subtitle">Extract</h2>
-       <p>So, let’s mod the game. Now you can use your move counters to protect your map and resources.</p> 
-       <p>This defends you. </p>
-       <p>1 move protects you from 1 attack. </p>
-    </div>
+
     <div class="options-wrapper">
        <<for _i to 0; _i lt $order.length; _i++>>
        <<capture _i>>
@@ -780,7 +852,7 @@ $(document.head).find('#style-ui-bar').remove();
 </div>
 
 :: 1mod1br2intro [nobr]
-<<set $passage to "1mod1br2intro">><<set $seconds to 10>>
+<<set $passage to "1mod1br2intro">><<set $seconds to 60>>
 /* Tactics & Defense  */
 <div class="wrapper box">
   <<include "header">>
@@ -853,7 +925,7 @@ $(document.head).find('#style-ui-bar').remove();
 </div>
 
 :: 1mod1br3intro [nobr]
-<<set $passage to "1mod1br3intro">><<set $seconds to 10>>
+<<set $passage to "1mod1br3intro">><<set $seconds to 60>>
 /* Tactics & Defense  */
 <div class="wrapper box">
   <<include "header">>
@@ -928,7 +1000,7 @@ $(document.head).find('#style-ui-bar').remove();
 </div>
 
 :: 1mod1br4intro [nobr]
-<<set $passage to "1mod1br4intro">><<set $seconds to 10>>
+<<set $passage to "1mod1br4intro">><<set $seconds to 60>>
 /* Tactics & Defense  */
 <div class="wrapper box">
   <<include "header">>
@@ -990,7 +1062,7 @@ $(document.head).find('#style-ui-bar').remove();
     <<replace "#mount">>
        <h2 class="subtitle">Payment</h2>
        <<button "Move on">> 
-        <<set $prevpass to $passage>><<goto "1mod1outroKaia">><</button>>
+        <<set $prevpass to $passage>><<goto "1mod1gameoutro">><</button>>
     <</replace>>
 <</button>> 
   </div>
@@ -999,6 +1071,27 @@ $(document.head).find('#style-ui-bar').remove();
    
   </main>
   <<include "footer">>
+</div>
+
+:: 1mod1gameoutro [nobr]
+<<set $passage to "1mod1outroKaia">>
+<<set $nextpass to "1mod1outroKaib">><audio src="" autoplay>Audio is not supported on your device</audio>
+/* TODO Split this up  */
+<div class="wrapper">
+<<include "header">>
+  <main class="speaking">
+      <div class="text-wrapper">
+
+  <h1 class="title">Teacher</h1>
+  <p>Read out the final scores and then there are some questions you can ask the class in your teacher pack.</p>
+ 
+
+  <<button "Move on">> 
+        <<set $prevpass to $passage>><<goto $nextpass>><</button>>
+
+  </div>
+  </main>
+    <<include "footer">>
 </div>
 
 :: 1mod1outroKaia [nobr]
@@ -1066,7 +1159,11 @@ $(document.head).find('#style-ui-bar').remove();
   <p>
   Now we're going to leave the extraction economy for today, and instead look at what we’re doing here in this room, and what we’re going to do together in this project. </p>
   
-  <p>Together we’re going to make a piece of Playful Climate Activism.</p> 
+  <p>Together we’re going to make a piece of...  </p> 
+  <div id="mount"></div>
+  <<timed 12s>><<replace "#mount">>
+  <h2 class="subtitle inline">Playful Climate Activism.</h2>
+  <</replace>><</timed>>
   
   <<timed 17s>><<set $prevpass to $passage>><<goto "1mod1outrob">><</timed>>
   </div>
@@ -1099,11 +1196,19 @@ $(document.head).find('#style-ui-bar').remove();
 <div class="wrapper">
   <<include "header">>
   <main class="speaking scroll">
-      <div class="text-wrapper">
+      <div class="text-wrapper" id="mount2">
   <p>Coney & Greenpeace have worked together before, on a piece of Playful Activism. </p>
 <p>  On an operation we’ll explore more about together.</p>
   <p>One I was involved in planning, creating and delivering.</p>
-  <p>The operation was called Codename: Violet. </p>
+  <p>The operation was called...</p>
+    <div id="mount"></div>
+   
+   <<timed 13s>><<replace "#mount">>
+  <h2 class="subtitle inline">  Codename: Violet. </h2>
+  <</replace>><</timed>>
+     <<timed 17s>><<replace "#mount2">>
+    <p>Enter Module 2's codeword for the final game of this session.</p>
+  <</replace>><</timed>>
 
   <<timed 22s>><<set $mod1 to true>><<set $prevpass to $passage>><<goto "1modulelist">><</timed>>
   </div>
@@ -1155,7 +1260,7 @@ $(document.head).find('#style-ui-bar').remove();
       <div class="text-wrapper">
   <p>You’re going to find the Most Interesting Thing You Have In Common.</p> 
   <p>Teacher, over to you for this one, all of the instructions are on the Mod Card. </p>
-  <p>When ready click <<button "Move On">><<set $prevpass to $passage>><<goto "1mod2outro">><</button>>
+  <p>When completed click <<button "Move On">><<set $prevpass to $passage>><<goto "1mod2outro">><</button>>
   </p>
   </div>
   </main>
@@ -1167,21 +1272,68 @@ $(document.head).find('#style-ui-bar').remove();
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
-      <div class="text-wrapper">
+      <div class="text-wrapper" id="mount">
   <p> Sometimes it’s useful to have a codename, to have a front </p>
   <p>A codename can keep things secret or hidden if we need it </p>
  <p> And a front allows us to play </p>
  <p> Like an avatar </p>
  <p> I game under ‘keepitshort’ </p>
  <p> I’ve got no issue with my height. </p>
-<p>  And now you have a front too, your codename. </p> 
-<p>  Enter it here and it will be sent through to the team at Coney and Greenpeace. </p>
- <p> (You may want to make it short and snappy)</p>
- <div class="enter-codename-wrapper ">
-   <<textbox "$codename" "">>
-       <<button "SEND">><<set $prevpass to $passage>><<goto "1mod2outrokaia">><</button>>
-       </div>
+ <<timed 15s>>
+<<replace "#mount">>
+  <p>  And now you have a front too, your <h2 class="subtitle inline">CODENAME</h2> </p> 
+  <p>  Enter it here and it will be sent through to the team at Coney and Greenpeace. </p>
+   <p> (You may want to make it short and snappy)</p>
+<</replace>>
+<</timed>>
+ <<timed 25s>>
+<<replace "#mount">>
+   <div class="enter-codename-container">
+     <div class="enter-codename-wrapper">
+     <h2 class="subtitle">Enter Codename:</h2>
+       /* <form id="codenameForm">
+        <form id="contact-form">
+        <input type="hidden" name="contact_number">
+        <label>Name</label>
+        <input type="text" name="user_name">
+        <label>Email</label>
+        <input type="email" name="user_email">
+        <label>Message</label>
+        <textarea name="message"></textarea>
+        <input type="submit" value="Send">
+    </form> */
+         <<textbox "$codename" "">>
+             <<button "SEND">><<set $prevpass to $passage>>
+             <<set $mod2 to true>><<set $nextnextpass to "1mod2outrokaia">><<set $skip to true>><<set $nextpass to "1modulelist">><<goto "sending">><</button>>
+       
+      </div>
+   </div >
+<</replace>>
+<</timed>>
  </div>
+ /* <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('vBWVf7sYQ5SNXH8tb');
+        })();
+    </script>
+  <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('codenameForm').addEventListener('click', function(event) {
+                event.preventDefault();
+                // generate a five digit number for the contact_number variable
+                this.contact_number.value = Math.random() * 100000 | 0;
+                // these IDs from the previous steps
+                emailjs.sendForm('contact_service', 'codenameForm', this)
+                    .then(function() {
+                        console.log('SUCCESS!');
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script> */
+
   </main>
      <<include "footer">>
 </div>
@@ -1192,10 +1344,11 @@ $(document.head).find('#style-ui-bar').remove();
   <<include "header">>
   <main class="speaking ">
  <div class="codeword-title-wrapper indent">
-   <h1 class="title"> Thank you! </h1>
-    <h1 class="title"> $codename </h1>
+   <h1 class="title"> Received</h1>
+    <h1 class="title"> Codename: $codename </h1>
  </div>
       <div class="text-wrapper">
+      <p> Thannk you!</p>
   <p>That’s the end of the first session – we are off - on our way!</p>
   <p>As we go through this process together, I'm going to tell you more about playful climate activism and more about Codename: Violet.</p>
  <p> For now, the codename is all I'll tell you, but at the start, it was all we knew too.</p>
@@ -1213,8 +1366,8 @@ $(document.head).find('#style-ui-bar').remove();
   <<include "header">>
   <main class="speaking ">
  <div class="codeword-title-wrapper indent">
-   <h1 class="title"> Thank you! </h1>
-    <h1 class="title"> $codename </h1>
+
+    <h1 class="title"> Codename: $codename </h1>
  </div>
       <div class="text-wrapper">
   
@@ -1229,23 +1382,26 @@ $(document.head).find('#style-ui-bar').remove();
 </div>
 
 :: 1mod2outrokaic [nobr]
-<<set $passage to "1mod2outrokaic">><audio src="/assets/audio/SESSION1_outro_3.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $passage to "1mod2outrokaic">>
+<audio src="/assets/audio/SESSION1_outro_3.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking ">
  <div class="codeword-title-wrapper indent">
-   <h1 class="title"> Thank you! </h1>
-    <h1 class="title"> $codename </h1>
+    /* <h1 class="title">Codename:  $codename </h1> */
  </div>
-      <div class="text-wrapper">
+      <div class="text-wrapper" id="mount">
       <p> But for now, let’s open another portal too.</p>
       <p>  A way for us to reflect together</p>
       <p>  To speak honestly about today, what we’ve discussed, created and played  </p>
-      <p> Text <h2 class="subtitle inline">HONEST</h2> to <h2 class="subtitle inline">07400179362</h2>, when you get the chance. </p>
-      <p>  You may need to write it down, so you can do it after school. </p>
-      <p> Speak soon</p>
-  
-
+    <<timed 11s>> <<replace "#mount">>
+        <p> Text <h2 class="subtitle inline">HONEST</h2> to <h2 class="subtitle inline">07400179362</h2>, when you get the chance. </p>
+        <p>  You may need to write it down, so you can do it after school. </p>
+        <p> Speak soon</p>
+    
+  <<button "Finish">><<set $prevpass to $passage>><<goto "landing">><</button>>
+     <</replace>>
+     <</timed>>
 </div>
   </main>
      <<include "footer">>
@@ -1293,7 +1449,7 @@ $(document.head).find('#style-ui-bar').remove();
   <main class="speaking">
     <div class="text-wrapper">
         <p>Last time we spoke I introduced myself, and I told you some things about me. I told you that I work with Greenpeace and Coney and a bit about who Greenpeace and Coney are. </p>
-     
+     <p>I also told you that I'm a playful activist but I didn't really tell you what that means...</p>
          <<timed 15s>><<set $prevpass to $passage>><<goto "2kaiIntro3">><</timed>>
     </div>
   
@@ -1655,8 +1811,8 @@ $(document.head).find('#style-ui-bar').remove();
         <div class="text-wrapper">
 <p>
 We’re going to hear from Dr Mya-Rose Craig and watch a video she made for Greenpeace.
-Dr Mya-Rose Craig is a climate activist from the UK 
-She’s great. 
+Dr Mya-Rose Craig is a climate activist from the UK. </p>
+<p>She’s great. 
 </p>
     <<timed 12s>><<set $prevpass to $passage>><<goto "2mod3intro8">><</timed>>
    </div>
@@ -1718,6 +1874,8 @@ She’s great.
         	<div id="video" role="video" aria-label="MOTT Training 6 video"><iframe src="https://player.vimeo.com/video/809481059?h=be62f22dd5&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:90%;" allowfullscreen title="Mya-Rose Vid 1"></iframe></div>
     </main>
      <<include "footervid">>
+     <<timed 200s >><<goto "2mod1int1">>
+     <</timed>>
 </div>
 
 :: 2mod1int1 [nobr]
@@ -1730,13 +1888,12 @@ She’s great.
   /* <p> 3.18</p> */
 <p>Ok, let’s hold there, we’ve just heard a lot and let’s sit with it for a second. </p>
 <p>
-  Teacher, either as a class or in small groups can we take a moment to reflect on w
-  hat we’ve just watched.
+  Teacher, either as a class or in small groups can we take a moment to reflect on what we’ve just watched.
 </p> 
 <p>Can you check in on the following questions</p>
 <ul>
  <li> -	How do people feel? </li>
- <li> -	Mya-Rose talked about how our nature and climate emergencies have roots in the British Empire and systemic racism - How do you think they’re connected? </li>
+ <li> -	Mya-Rose talked about how our nature and climate emergencies have roots in the British Empire and systemic racism - how do you think they’re connected? </li>
 </ul>
 
 
@@ -1757,7 +1914,10 @@ She’s great.
         /* <div class="text-wrapper"> */
         	<div id="video" role="video" aria-label="MOTT Training 6 video"><iframe src="https://player.vimeo.com/video/809466454?h=1dc0529321&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:90%;" allowfullscreen title="Mya-Rose Vid 2"></iframe></div>
     </main>
-     <<include "footervid">>
+    
+<<include "footervid">>
+     <<timed 191s >><<goto "2mod1int2">>
+     <</timed>>
 </div>
 
 :: 2mod1int2 [nobr]
@@ -1771,13 +1931,12 @@ She’s great.
 <p>Mya-Rose has covered a lot – the drastic inequality of those who are living with the impacts of the climate crisis yet causing the least pollution. And we’ve heard lots about palm oil too…like lots of things, the raw ingredient of palm oil itself isn’t bad, but when it’s commercially extracted (like Unilever do) that’s when we get 250,000 football pitches worth of deforestation. </p>
 <p>Teacher, can we take a moment to reflect on what we’ve heard. Let’s cover these questions</p>
 <ul>
-  <li>-	How are you feeling in your bodies? </li>
- <li> -	Do you see any new connections? </li>
-  <li>-	How do you think this all links to us, in the UK?</li>
+<li> - How are you feeling? How does your body feel?</li>
+<li>- How do you think this all links to us, in the UK?</li>
 </ul>
 
 
-<p>When ready click <<button "Move On">><<set $prevpass to $passage>><<goto "2mod3vid3">><</button>></p>
+<p><<button "Move On">><<set $prevpass to $passage>><<goto "2mod3vid3">><</button>></p>
 </div>
   </main>
      <<include "footer">>
@@ -1793,7 +1952,9 @@ She’s great.
         /* <div class="text-wrapper"> */
         	<div id="video" role="video" aria-label="MOTT Training 6 video"><iframe src="https://player.vimeo.com/video/809466843?h=58b979fd6e&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:90%;" allowfullscreen title="Mya-Rose Vid 3"></iframe></div>
     </main>
-     <<include "footervid">>
+<<include "footervid">>
+     <<timed 166s >><<goto "2mod1int3">>
+     <</timed>>
 </div>
 
 :: 2mod1int3 [nobr]
@@ -2057,7 +2218,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
     <div class="text-wrapper">
 <p>That’s it for this week. </p>
 
-<p>Oh yeah, a codeword. To get into the next session of the box you’ll need one.  </p>
+<p>Oh yeah, a codeword. To get into the next compartment of the box you’ll need one.  </p>
 <p>Text me  <h2 class="subtitle inline"> CARE</h2> to get that –  <h2 class="subtitle inline"> 07400179362 </h2> if you’ve forgotten. </p>
 
 <p>Take care. </p>
@@ -2135,16 +2296,17 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
     /* <h1 class="title top">Hello - it's Kai again</h1> */
   <main class="speaking">
     <div class="text-wrapper">
-<p>It all started with an email from Greenpeace to Coney. </p>
-<p><em>(in a fake voice 1)</em>  Do you know any kids who might want to be involved in our Ditch Diesel Campaign?</p>
-<p><em>(in a fake voice 2)</em> What’s that? </p>
-<p><em>(in a fake voice 1)</em> A campaign about Air Pollution & Diesel cars. </p>
-<p><em>(in a fake voice 2)</em> Yep, maybe, but what would they do? </p>
-<p><em>(in a fake voice 1)</em> We want them to come up with a plan. We’ll help but we want you to design it. Make it using their skills. </p>
+<div class="convo-wrapper">
+  <p>It all started with an email from Greenpeace to Coney. </p>
+  <p class="msg msgl"> Do you know any kids who might want to be involved in our Ditch Diesel Campaign?</p>
+  <p class="msg msgr"> What’s that? </p>
+  <p class="msg msgl">A campaign about Air Pollution & Diesel cars. </p>
+  <p class="msg msgr"> Yep, maybe, but what would they do? </p>
+  <p class="msg msgl"> We want them to come up with a plan. We’ll help but we want you to design it. Make it using their skills. </p>
+</div>
 
-  <<timed 21s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
-    </div>
-  
+  <<timed 21s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>  
+ </div> 
 </main>
 <<include "footerskip">>
 </div>
@@ -2312,11 +2474,12 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 
   <div class="wrapper">
     <<include "header">>
-    <main  class="speaking">
+    <main  class="speaking inlineimg">
         <div class="text-wrapper">
-<p>Everyone has a mundane making skill, and we share ours to build us as a team. Each mundane making skill, each thing we know about each other helps us build a connection. My mundane making skill is that I am excellent at Roast Potatoes. Seriously I am the Roastie Expert. Also, making fake voices…as you saw earlier. </p>
+<p>Everyone has a mundane making skill. My mundane making skill is that I am excellent at Roast Potatoes. Seriously I am the Roastie Expert. Also, making fake voices... as you saw earlier. </p>
  <<timed 17s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
    </div>
+   <img src="./assets/img/KAI-24.jpg">
     </main>
          <<include "footerskip">>
   </div>
@@ -2376,7 +2539,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <p>I’m probably a 78.7 on Roasties</p>
 <p>A 52 on fake voices. (Let’s be honest)</p>
 <p>And a 96 on making references to my height. </p>
-    <p>When you have finished <<button "Move On">><<set $prevpass to $passage>><<goto $nextpass>><</button>> </p>
+    <p>After the 6 humans have been presented  <<button "Move On">><<set $prevpass to $passage>><<goto $nextpass>><</button>> </p>
    </div>
     </main>
          <<include "footer">>
@@ -2659,8 +2822,8 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
   <div id="img" class="char-chosen-wrap"></div>
     <div class="text-wrapper" id="mount">
 
-<p>We’ve seen humans from across the world taking action.  </p>
-<<timed 4s>>
+
+<<timed 0.1s>>
 <<include "checkmod6audio">>
   <<replace "#mount">>
     <p>You’ve picked to focus on $choice</p>
@@ -2687,8 +2850,19 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
     <p>That’s why we are working with you – the experts on the target.  </p>
     <p>The target for your act is</p>
     <p>Here. </p>
-    <p>This school. </p>
-    <<button "Finish">><<set $prevpass to $passage>><<goto "landing">><</button>>
+    <<timed 23s>>
+    <<replace "#mount">>
+      <p><h2 class="subtitle inline">This school. </h2></p>
+      <br/>
+      <br/>
+      <<timed 2s>>
+        <<append "#mount">>
+      <div><<button "Finish">><<set $prevpass to $passage>><<goto $nextpass>><</button>></div>
+      <</append>>
+      <</timed>>
+      <</replace>>
+      <</timed>>
+    
 
 </div>
   </main>
@@ -2712,7 +2886,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
     <p>To get intelligence on our target. </p>
     <p>Time to close for today. </p>
     <p>But a code for you to dive deeper.</p>
-    <p>[HOPEY]. </p>
+    <h2 class="subtitle inline">[HOPEY]. </h2>
     <p>Take care. </p>
 
     <<button "Finish">><<set $prevpass to $passage>><<goto "landing">><</button>>
