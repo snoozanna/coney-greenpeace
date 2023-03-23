@@ -1448,6 +1448,14 @@ The order you go in will be randomised.&lt;/p&gt;
 &lt;&lt;set $passage to &quot;2kaiIntro7&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;2modulelist&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;&lt;audio src=&quot;/assets/audio/SESSION2_INTRO_7.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+
+&lt;&lt;if $skip is true&gt;&gt;
+    &lt;&lt;timed 5s&gt;&gt;
+      &lt;&lt;set $skip to false&gt;&gt;
+      &lt;&lt;goto $nextpass&gt;&gt;
+    &lt;&lt;/timed&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
 
@@ -1575,7 +1583,7 @@ The order you go in will be randomised.&lt;/p&gt;
  &lt;p&gt; I may not be present, but Teacher you are! &lt;/p&gt;
     &lt;p&gt;Can you help me out here? &lt;/p&gt;
    &lt;p&gt; Can you ask the class: &lt;/p&gt;
-   &lt;p&gt;When you hear the words Climate Emergency, what is the first thing you think of? &lt;/p&gt;&lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;goto &quot;2mod3intro1&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+   &lt;p&gt;When you hear the words &lt;h2 class=&quot;subtitle inline&quot;&gt;Climate Emergency&lt;/h2&gt;, what is the first thing you think of? &lt;/p&gt;&lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;goto &quot;2mod3intro1&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
  
    &lt;/div&gt;
     &lt;/main&gt;

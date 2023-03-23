@@ -1548,6 +1548,14 @@ The order you go in will be randomised.</p>
 <<set $passage to "2kaiIntro7">>
 <<set $nextpass to "2modulelist">>
 <<set $module to "Introduction">><<include "checkmodulenamelist">><audio src="/assets/audio/SESSION2_INTRO_7.mp3" autoplay>Audio is not supported on your device</audio>
+
+<<if $skip is true>>
+    <<timed 5s>>
+      <<set $skip to false>>
+      <<goto $nextpass>>
+    <</timed>>
+<</if>>
+
 <div class="wrapper">
   <<include "header">>
 
@@ -1683,7 +1691,7 @@ The order you go in will be randomised.</p>
  <p> I may not be present, but Teacher you are! </p>
     <p>Can you help me out here? </p>
    <p> Can you ask the class: </p>
-   <p>When you hear the words Climate Emergency, what is the first thing you think of? </p><<button "Next">><<goto "2mod3intro1">><</button>>
+   <p>When you hear the words <h2 class="subtitle inline">Climate Emergency</h2>, what is the first thing you think of? </p><<button "Next">><<goto "2mod3intro1">><</button>>
  
    </div>
     </main>
