@@ -505,6 +505,18 @@ main.speaking > .text-wrapper {
   /* overflow: scroll; */
 }
 
+main.speaking > .text-wrapper.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: x-large;
+}
+
+main.speaking > .text-wrapper.hero > h2.subtitle {
+  font-size: 5rem;
+}
+
 /* GAME  */
 
 main.game {
