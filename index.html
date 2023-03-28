@@ -98,7 +98,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<!-- UUID://F9E39354-F641-4070-8B45-C314A3FDC8C8// --><tw-storydata name="Greenpeace X Coney" startnode="13" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="F9E39354-F641-4070-8B45-C314A3FDC8C8" zoom="0.6" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
+	<!-- UUID://F9E39354-F641-4070-8B45-C314A3FDC8C8// --><tw-storydata name="Greenpeace X Coney" startnode="187" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="F9E39354-F641-4070-8B45-C314A3FDC8C8" zoom="0.6" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;700&display=swap');
 @import url("./styles/generics.css");
 @import url("./styles/styles.css");</style><script role="script" id="twine-user-script" type="text/twine-javascript">$('#ui-bar').remove();
@@ -4729,16 +4729,26 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;&lt;set $passage to &quot;complete&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;7mod16outro1&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
+  /* &lt;&lt;include &quot;header&quot;&gt;&gt; */
   &lt;main class=&quot;speaking&quot;&gt;
     &lt;div class=&quot;text-wrapper&quot; id=&quot;mount&quot;&gt;
-&lt;h1&gt;TBC COMPLETION MOMENT&lt;/h1&gt;
+ 
+&lt;div class=&quot;trianglepulse-wrapper&quot;&gt;
+   &lt;h1 class=&quot;title titlepulse&quot;&gt;COMPLETE&lt;/h1&gt;
+  &lt;div id=&#39;container&#39; class=&quot;trianglepulse-container&quot;&gt;
+    &lt;div class=&#39;trianglepulse&#39;&gt;&lt;/div&gt;
+    &lt;div class=&#39;trianglepulse&#39;&gt;&lt;/div&gt;
+    &lt;div class=&#39;trianglepulse&#39;&gt;&lt;/div&gt;
+    &lt;div class=&#39;trianglepulse&#39;&gt;&lt;/div&gt;
+    &lt;div class=&#39;trianglepulse&#39;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 
 &lt;/div&gt;
-&lt;&lt;timed 2s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 10s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
  &lt;/main&gt;
  
-     &lt;&lt;include &quot;footer&quot;&gt;&gt;
+     /* &lt;&lt;include &quot;footer&quot;&gt;&gt; */
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="188" name="7mod16outro1" tags="nobr" position="975,2350" size="100,100">&lt;&lt;set $prevpass to &quot;7mod16intro3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;7mod16outro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;7mod16outro2&quot;&gt;&gt;

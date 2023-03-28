@@ -695,6 +695,10 @@ main.codeword.landing > .hero {
   transform: rotate(0deg);
 }
 
+.triangle.gold {
+  border-color: goldenrod;
+}
+
 .x {
   animation: x 13s linear infinite alternate;
 }
@@ -978,4 +982,137 @@ main.speaking.chosen {
 .convo-wrapper > .msgr {
   align-self: flex-end;
   background-color: #a5a44d;
+}
+
+/* pulsing triangle  */
+
+.trianglepulse-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+h1.title.titlepulse {
+  position: absolute;
+  left: 33%;
+  bottom: -17%;
+  z-index: 999;
+  font-size: 4rem;
+}
+
+.trianglepulse-container {
+  width: 600px;
+  margin: 360px auto 0 auto;
+}
+triangleCon {
+  height: 600px;
+}
+.trianglepulse {
+  width: 0px;
+  height: 0px;
+  opacity: 0.75;
+  margin: auto;
+  position: relative;
+  animation: enlarge_1 2s infinite;
+}
+
+.trianglepulse:nth-child(2) {
+  animation: enlarge_2 2s infinite;
+  animation-delay: 0.2s;
+}
+
+.trianglepulse:nth-child(3) {
+  animation: enlarge_3 2s infinite;
+  animation-delay: 0.4s;
+}
+.trianglepulse:nth-child(4) {
+  animation: enlarge_4 2s infinite;
+  animation-delay: 0.6s;
+}
+.trianglepulse:nth-child(5) {
+  animation: enlarge_5 2s infinite;
+  animation-delay: 0.8s;
+}
+@keyframes enlarge_1 {
+  from {
+    opcatiy: 1;
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+    border-bottom: 4px solid rgb(255, 187, 0);
+    margin-top: 0px;
+  }
+  to {
+    opacity: 0;
+    border-left: 200px solid transparent;
+    border-right: 200px solid transparent;
+    border-bottom: 300px solid rgb(255, 187, 0);
+    margin-top: -300px;
+  }
+}
+
+@keyframes enlarge_2 {
+  from {
+    opcatiy: 1;
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+    border-bottom: 4px solid rgb(255, 128, 0);
+    margin-top: -4px;
+  }
+  to {
+    opacity: 0;
+    border-left: 200px solid transparent;
+    border-right: 200px solid transparent;
+    border-bottom: 300px solid rgb(255, 128, 0);
+    margin-top: -300px;
+  }
+}
+
+@keyframes enlarge_3 {
+  from {
+    opcatiy: 1;
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+    border-bottom: 4px solid rgb(255, 0, 102);
+    margin-top: -4px;
+  }
+  to {
+    opacity: 0;
+    border-left: 200px solid transparent;
+    border-right: 200px solid transparent;
+    border-bottom: 300px solid rgb(255, 0, 102);
+    margin-top: -300px;
+  }
+}
+@keyframes enlarge_4 {
+  from {
+    opcatiy: 1;
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+    border-bottom: 4px solid rgb(45, 0, 128);
+    margin-top: -4px;
+  }
+  to {
+    opacity: 0;
+    border-left: 200px solid transparent;
+    border-right: 200px solid transparent;
+    border-bottom: 300px solid rgb(45, 0, 128);
+    margin-top: -300px;
+  }
+}
+@keyframes enlarge_5 {
+  from {
+    opcatiy: 1;
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+    border-bottom: 4px solid brown;
+    margin-top: -4px;
+  }
+  to {
+    opacity: 0;
+    border-left: 200px solid transparent;
+    border-right: 200px solid transparent;
+    border-bottom: 300px solid brown;
+    margin-top: -300px;
+  }
 }

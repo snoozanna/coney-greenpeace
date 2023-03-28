@@ -7,7 +7,7 @@ Greenpeace X Coney
 	"ifid": "F9E39354-F641-4070-8B45-C314A3FDC8C8",
 	"format": "SugarCube",
 	"format-version": "2.36.1",
-	"start": "landing",
+	"start": "complete",
 	"zoom": 0.6
 }
 
@@ -5327,16 +5327,26 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $passage to "complete">>
 <<set $nextpass to "7mod16outro1">>
 <div class="wrapper">
-  <<include "header">>
+  /* <<include "header">> */
   <main class="speaking">
     <div class="text-wrapper" id="mount">
-<h1>TBC COMPLETION MOMENT</h1>
+ 
+<div class="trianglepulse-wrapper">
+   <h1 class="title titlepulse">COMPLETE</h1>
+  <div id='container' class="trianglepulse-container">
+    <div class='trianglepulse'></div>
+    <div class='trianglepulse'></div>
+    <div class='trianglepulse'></div>
+    <div class='trianglepulse'></div>
+    <div class='trianglepulse'></div>
+  </div>
+</div>
 
 </div>
-<<timed 2s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+<<timed 10s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
  </main>
  
-     <<include "footer">>
+     /* <<include "footer">> */
 </div>
 
 
