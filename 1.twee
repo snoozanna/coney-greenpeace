@@ -7,7 +7,7 @@ Greenpeace X Coney
 	"ifid": "F9E39354-F641-4070-8B45-C314A3FDC8C8",
 	"format": "SugarCube",
 	"format-version": "2.36.1",
-	"start": "complete",
+	"start": "landing",
 	"zoom": 0.6
 }
 
@@ -1348,7 +1348,7 @@ The order you go in will be randomised.</p>
     <h1 class="title"> Codename: $codename </h1>
  </div>
       <div class="text-wrapper">
-      <p> Thannk you!</p>
+      <p> Thank you!</p>
   <p>That’s the end of the first session – we are off - on our way!</p>
   <p>As we go through this process together, I'm going to tell you more about playful climate activism and more about Codename: Violet.</p>
  <p> For now, the codename is all I'll tell you, but at the start, it was all we knew too.</p>
@@ -1572,7 +1572,10 @@ The order you go in will be randomised.</p>
 
 
 :: 2modulelist [nobr]
-<<set $passage to "2modulelist">><<set $session to 1>>
+<<set $passage to "2modulelist">><<set $session to 2>>
+<<if $skip is true>><<timed 5s>><<set $skip to false>>
+<<goto $nextpass>>
+<</timed>><</if>>
 <div class="wrapper box">
   <main class="modules">
   <h1 class="title">SESSION TWO</h1>
@@ -2138,7 +2141,10 @@ Anyone like Potatoes? Amazing – everyone. I can’t see so I’ll just make up
 <<button "I've explained!">>
   <<replace "#mount">>
     <audio src="/assets/audio/SESSION2_MOD4_intro_3.mp3" autoplay>Audio is not supported on your device</audio>
-    <p>When you have finished click <<button "Move On">><<set $prevpass to $passage>><<goto $nextpass>><</button>></p>
+    <p>When you have finished click <<button "Move On">>
+      <<set $prevpass to $passage>><<set $mod4 to true>>
+      <<set $skip to true>><<goto "2modulelist">>
+      <</button>></p>
   <</replace>>
 <</button>>
 </div>
@@ -2206,7 +2212,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <p>It reminds us that change is possible.</p>
 <p>Isn’t it time we played a different game?</p>
 
-<<button "Next">><<set $prevpass to $passage>><<set $mod4 to true>><<goto $nextpass>><</button>>
+<<button "Next">><<set $prevpass to $passage>><<goto $nextpass>><</button>>
 </div>
  </main>
      <<include "footerskip">>
@@ -2346,6 +2352,9 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 
 :: 3modulelist [nobr]
 <<set $passage to "3modulelist">><<set $session to 3>>
+<<if $skip is true>><<timed 5s>><<set $skip to false>>
+<<goto $nextpass>>
+<</timed>><</if>>
 <div class="wrapper box">
   <main class="modules">
   <h1 class="title">SESSION THREE</h1>
@@ -2707,7 +2716,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
  
   <<set $choice to "Air Pollution – inspired by Alejandro Daly">>
   <<set $mod6audio to "air">>
-  <<timed 5s>><<set $prevpass to $passage>><<set $mod6 to true>><<goto $nextpass>><</timed>>
+  <<timed 2s>><<set $prevpass to $passage>><<set $mod6 to true>><<goto $nextpass>><</timed>>
 <</button>>
 </div>
 <div class="char-item">
@@ -2716,7 +2725,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
 
   <<set $choice to "Meat Consumption – inspired by Genesis Butler">>
     <<set $mod6audio to "meat">>
-  <<timed 5s>><<set $prevpass to $passage>><<set $mod6 to true>><<goto $nextpass>><</timed>>
+  <<timed 2s>><<set $prevpass to $passage>><<set $mod6 to true>><<goto $nextpass>><</timed>>
 <</button>>
 </div>
 <div class="char-item">
@@ -2725,7 +2734,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
 
   <<set $choice to "Plastic Pollution – inspired by Melati & Isabel Wijsen">>
     <<set $mod6audio to "plastic">>
-  <<timed 5s>><<set $prevpass to $passage>><<set $mod6 to true>><<goto $nextpass>><</timed>>
+  <<timed 2s>><<set $prevpass to $passage>><<set $mod6 to true>><<goto $nextpass>><</timed>>
 <</button>>
 </div>
 <div class="char-item">
@@ -2734,7 +2743,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
 
   <<set $choice to "Sustainable Palm Oil – inspired by Salsabila Khairunnisa">>
     <<set $mod6audio to "palmoil">>
-  <<timed 5s>><<set $prevpass to $passage>><<set $mod6 to true>><<goto $nextpass>><</timed>>
+  <<timed 2s>><<set $prevpass to $passage>><<set $mod6 to true>><<goto $nextpass>><</timed>>
 <</button>>
 </div>
 <div class="char-item">
@@ -2743,7 +2752,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
  
   <<set $choice to "Deforestation & Biodiversity – inspired by Professor Wangari Maathai">>
     <<set $mod6audio to "deforestation">>
-  <<timed 5s>><<set $prevpass to $passage>><<set $mod6 to true>><<goto $nextpass>><</timed>>
+  <<timed 2s>><<set $prevpass to $passage>><<set $mod6 to true>><<goto $nextpass>><</timed>>
 <</button>>
 </div>
 <div class="char-item">
@@ -2752,7 +2761,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
 
   <<set $choice to "Fast Fashion – inspired by Céline Semaan-Vernon">>
     <<set $mod6audio to "fastfashion">>
-  <<timed 5s>><<set $prevpass to $passage>><<set $mod6 to true>><<goto $nextpass>><</timed>>
+  <<timed 2s>><<set $prevpass to $passage>><<set $mod6 to true>><<goto $nextpass>><</timed>>
 <</button>>
 </div>
 </div>
@@ -2835,7 +2844,8 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
 <<include "checkmod6audio">>
   <<replace "#mount">>
     <p>You’ve picked to focus on $choice</p>
-    <<timed 8s>><<goto "3sessionoutro2">><</timed>>
+    <<timed 10s>><<set $mod6 to true>>
+      <<set $skip to true>><<goto "3modulelist">><</timed>>
   <</replace>>
 <</timed>>
 </div>
@@ -2988,6 +2998,9 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
 
 :: 4modulelist [nobr]
 <<set $passage to "4modulelist">><<set $session to 4>>
+<<if $skip is true>><<timed 5s>><<set $skip to false>>
+<<goto $nextpass>>
+<</timed>><</if>>
 <div class="wrapper box">
   <main class="modules">
   <h1 class="title">SESSION FOUR</h1>
@@ -3605,7 +3618,8 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
 <p>I hope you all feel more comfortable thinking about where you are comfortable </p>
 <p>You all look pretty comfy… or well, I’m going to assume you do! </p>
 
-  <<timed 8s>><<set $prevpass to $passage>><<set $mod9 to true>><<goto $nextpass>><</timed>>
+  <<timed 8s>><<set $prevpass to $passage>><<set $mod9 to true>>
+      <<set $skip to true>><<goto "4modulelist">><</timed>>
     </div>
 </main>
      <<include "footerskip">>
@@ -3741,6 +3755,9 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
 
 :: 5modulelist [nobr]
 <<set $passage to "5modulelist">><<set $session to 5>>
+<<if $skip is true>><<timed 5s>><<set $skip to false>>
+<<goto $nextpass>>
+<</timed>><</if>>
 <div class="wrapper box">
   <main class="modules">
   <h1 class="title">SESSION FIVE</h1>
@@ -4312,7 +4329,8 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
 
 <p>Your Artist will go away and help pull the ideas together, based on the work you have done today. </p>
 
-<<button "Next">><<set $prevpass to $passage>><<set $mod12 to true>><<goto $nextpass>><</button>>
+<<button "Next">><<set $prevpass to $passage>><<set $mod12 to true>>
+      <<set $skip to true>><<goto "5modulelist">><</button>>
 
 </div>
  </main>
@@ -4476,6 +4494,9 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
 
 :: 6modulelist [nobr]
 <<set $passage to "6modulelist">><<set $session to 6>>
+<<if $skip is true>><<timed 5s>><<set $skip to false>>
+<<goto $nextpass>>
+<</timed>><</if>>
 <div class="wrapper box">
   <main class="modules">
   <h1 class="title">SESSION SIX</h1>
@@ -4820,7 +4841,8 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <p>Or close at least! </p>
 
 
-<<button "Next">><<set $prevpass to $passage>><<set $mod14 to true>><<goto $nextpass>><</button>>
+<<button "Next">><<set $prevpass to $passage>><<set $mod14 to true>>
+      <<set $skip to true>><<goto "6modulelist">><</button>>
 
 </div>
  </main>
@@ -4976,6 +4998,9 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 
 :: 7modulelist [nobr]
 <<set $passage to "7modulelist">><<set $session to 7>>
+<<if $skip is true>><<timed 5s>><<set $skip to false>>
+<<goto $nextpass>>
+<</timed>><</if>>
 <div class="wrapper box">
   <main class="modules">
   <h1 class="title">SESSION SEVEN</h1>
@@ -5392,7 +5417,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <p>That what you did today, </p>
 <p>And what you’ve done over the past few weeks is the start of something </p>
 
-<<timed 12s>><<set $prevpass to $passage>><<set $mod16 to true>><<goto $nextpass>><</timed>>
+<<timed 12s>><<set $prevpass to $passage>><<set $mod16 to true>><<set $skip to true>><<goto "7modulelist">><</timed>>
 
 </div>
  </main>
@@ -5594,6 +5619,9 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 
 :: 8modulelist [nobr]
 <<set $passage to "8modulelist">><<set $session to 8>>
+<<if $skip is true>><<timed 5s>><<set $skip to false>>
+<<goto $nextpass>>
+<</timed>><</if>>
 <div class="wrapper box">
   <main class="modules">
   <h1 class="title">SESSION EIGHT</h1>
@@ -5758,14 +5786,18 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 
 
 :: 8mod17outro1 [nobr]
+<<set $prevpass to "8mod17intro4">>
 <<set $passage to "8mod17outro">>
+<<set $nextpass to "8sessionoutro1">>
+
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
       <div class="text-wrapper">
 <p>TBC </p>
 
-<<button "Next">><<set $prevpass to $passage>><<set $mod17 to true>><<goto "8sessionoutro1">><</button>>
+<<button "Next">><<set $prevpass to $passage>><<set $mod17 to true>>
+      <<set $skip to true>><<goto "8modulelist">><</button>>
 </div>
 </main>
      <<include "footer">>
