@@ -588,13 +588,16 @@ $(document.head).find('#style-ui-bar').remove();
   &lt;&lt;set $nextpass to &quot;1mod2outrokaia&quot;&gt;&gt;
    &lt;&lt;set $nextnextpass to &quot;&quot;&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $skip is true&gt;&gt;
-    &lt;&lt;timed 5s&gt;&gt;
-      &lt;&lt;set $skip to false&gt;&gt;
-      &lt;&lt;goto $nextpass&gt;&gt;
-    &lt;&lt;/timed&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;timed 0.1s&gt;&gt;
+  &lt;&lt;if $skip is true&gt;&gt;
+    &lt;&lt;addclass &quot;#codewordWrapper1&quot; &quot;disappear&quot;&gt;&gt;
+    &lt;&lt;addclass &quot;#codewordWrapper2&quot; &quot;disappear&quot;&gt;&gt;
+      &lt;&lt;timed 5s&gt;&gt;
+        &lt;&lt;set $skip to false&gt;&gt;
+        &lt;&lt;goto $nextpass&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+  &lt;&lt;/if&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 &lt;div class=&quot;wrapper box&quot;&gt;
   &lt;main class=&quot;modules&quot;&gt;
   &lt;h1 class=&quot;title&quot;&gt;SESSION ONE&lt;/h1&gt;
@@ -604,7 +607,7 @@ $(document.head).find('#style-ui-bar').remove();
     &lt;div class=&quot;flip-card-inner&quot;&gt;
       &lt;div class=&quot;flip-card-front&quot;&gt;
       &lt;img src=&quot;./assets/img/mod1.jpg&quot; alt=&quot;module card&quot; &gt;
-        &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+        &lt;div id=&quot;codewordWrapper1&quot; class=&quot;codeword-wrapper&quot;&gt;
       /% CODEWORD INPUT %/
           &lt;div class=&quot;code-input&quot;&gt;
           &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
@@ -650,7 +653,7 @@ $(document.head).find('#style-ui-bar').remove();
     &lt;div class=&quot;flip-card-inner&quot;&gt;
       &lt;div class=&quot;flip-card-front&quot;&gt;
       &lt;img src=&quot;./assets/img/mod2.jpg&quot; alt=&quot;module card&quot; &gt;
-        &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+        &lt;div id=&quot;codewordWrapper2&quot; class=&quot;codeword-wrapper&quot;&gt;
       /% CODEWORD INPUT %/
           &lt;div class=&quot;code-input&quot;&gt;
           &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
@@ -1039,8 +1042,9 @@ The order you go in will be randomised.&lt;/p&gt;
    
   &lt;/main&gt;
   &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="1mod1gameoutro" tags="nobr" position="100,475" size="100,100">&lt;&lt;set $passage to &quot;1mod1outroKaia&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;1mod1outroKaib&quot;&gt;&gt;&lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="1mod1gameoutro" tags="nobr" position="100,475" size="100,100">&lt;&lt;set $prevpass to &quot;1mod1br4&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;1mod1gameoutro&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;1mod1outroKaia&quot;&gt;&gt;&lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 /* TODO Split this up  */
 &lt;div class=&quot;wrapper&quot;&gt;
 &lt;&lt;include &quot;header&quot;&gt;&gt;
@@ -1058,7 +1062,7 @@ The order you go in will be randomised.&lt;/p&gt;
   &lt;/main&gt;
     &lt;&lt;include &quot;footer&quot;&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="1mod1outroKaia" tags="nobr" position="225,475" size="100,100">&lt;&lt;set $passage to &quot;1mod1outroKaia&quot;&gt;&gt;&lt;audio src=&quot;/assets/audio/SESSION1_MOD1_eegreflection_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-/* TODO Split this up  */
+
 &lt;div class=&quot;wrapper&quot;&gt;
 &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -1096,7 +1100,7 @@ The order you go in will be randomised.&lt;/p&gt;
       &lt;div class=&quot;text-wrapper&quot;&gt;
 
  
-&lt;p&gt;  Different countries have different amounts of natural resources, but so often it comes down to technology, violence and power. Particularly power historical power that exists from centuries of colonialism &amp; empire. &lt;/p&gt;
+&lt;p&gt;  Different countries have different amounts of natural resources, but so often it comes down to technology, violence and power. Particularly historical power that exists from centuries of colonialism &amp; empire. &lt;/p&gt;
   &lt;p&gt;Those who can and will take what they need, with no care for what comes next or what is left behind.&lt;/p&gt;
   &lt;p&gt;We’ll explore where some of that power has come from in the next session. &lt;/p&gt;
  
@@ -1128,7 +1132,7 @@ The order you go in will be randomised.&lt;/p&gt;
   &lt;main class=&quot;speaking scroll&quot;&gt;
       &lt;div class=&quot;text-wrapper&quot;&gt;
  &lt;p&gt;Greenpeace were founded in 1971 as a meeting of two existing movements for change:
-    the climate movement: giving us &#39;green&#39; and the anti-war movement: where we get peace &#39;peace&#39;.&lt;/p&gt;
+    the climate movement: giving us &#39;green&#39; and the anti-war movement: where we get &#39;peace&#39;.&lt;/p&gt;
     &lt;p&gt;In the same way that Greenpeace was two movements meeting, this project is too:&lt;/p&gt;
    &lt;p&gt; it&#39;s a meeting of Greenpeace and Coney.
   &lt;/p&gt;
@@ -1196,7 +1200,10 @@ The order you go in will be randomised.&lt;/p&gt;
       &lt;div class=&quot;text-wrapper&quot;&gt;
   &lt;p&gt;You’re going to find the Most Interesting Thing You Have In Common.&lt;/p&gt; 
   &lt;p&gt;Teacher, over to you for this one, all of the instructions are on the Mod Card. &lt;/p&gt;
+  &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+  &lt;&lt;timed 120s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;
   &lt;p&gt;When completed click &lt;&lt;button &quot;Move On&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;1mod2outro&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
   &lt;/p&gt;
   &lt;/div&gt;
   &lt;/main&gt;
@@ -1469,9 +1476,16 @@ The order you go in will be randomised.&lt;/p&gt;
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="52" name="2modulelist" tags="nobr" position="225,725" size="100,100">&lt;&lt;set $passage to &quot;2modulelist&quot;&gt;&gt;&lt;&lt;set $session to 2&gt;&gt;
-&lt;&lt;if $skip is true&gt;&gt;&lt;&lt;timed 5s&gt;&gt;&lt;&lt;set $skip to false&gt;&gt;
-&lt;&lt;goto $nextpass&gt;&gt;
-&lt;&lt;/timed&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;timed 0.1s&gt;&gt;
+  &lt;&lt;if $skip is true&gt;&gt;
+    &lt;&lt;addclass &quot;#codewordWrapper1&quot; &quot;disappear&quot;&gt;&gt;
+    &lt;&lt;addclass &quot;#codewordWrapper2&quot; &quot;disappear&quot;&gt;&gt;
+      &lt;&lt;timed 5s&gt;&gt;
+        &lt;&lt;set $skip to false&gt;&gt;
+        &lt;&lt;goto $nextpass&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+  &lt;&lt;/if&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 &lt;div class=&quot;wrapper box&quot;&gt;
   &lt;main class=&quot;modules&quot;&gt;
   &lt;h1 class=&quot;title&quot;&gt;SESSION TWO&lt;/h1&gt;
@@ -1481,7 +1495,7 @@ The order you go in will be randomised.&lt;/p&gt;
     &lt;div class=&quot;flip-card-inner&quot;&gt;
       &lt;div class=&quot;flip-card-front&quot;&gt;
       &lt;img src=&quot;./assets/img/mod3.jpg&quot; alt=&quot;module card&quot; &gt;
-        &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+        &lt;div id=&quot;codewordWrapper1&quot; class=&quot;codeword-wrapper&quot;&gt;
       /% CODEWORD INPUT %/
           &lt;div class=&quot;code-input&quot;&gt;
           &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
@@ -1527,7 +1541,7 @@ The order you go in will be randomised.&lt;/p&gt;
     &lt;div class=&quot;flip-card-inner&quot;&gt;
       &lt;div class=&quot;flip-card-front&quot;&gt;
       &lt;img src=&quot;./assets/img/mod4.jpg&quot; alt=&quot;module card&quot; &gt;
-        &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+        &lt;div id=&quot;codewordWrapper2&quot; class=&quot;codeword-wrapper&quot;&gt;
       /% CODEWORD INPUT %/
           &lt;div class=&quot;code-input&quot;&gt;
           &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
@@ -1737,7 +1751,7 @@ Dr Mya-Rose Craig is a climate activist from the UK. &lt;/p&gt;
 &lt;&lt;set $nextpass to &quot;2mod1int1&quot;&gt;&gt;
 /* TODO NEEDS VIDEO  */
 &lt;div class=&quot;wrapper&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
+  /* &lt;&lt;include &quot;header&quot;&gt;&gt; */
     &lt;main  &gt;
         /* &lt;div class=&quot;text-wrapper&quot;&gt; */
         	&lt;div id=&quot;video&quot; role=&quot;video&quot; aria-label=&quot;MOTT Training 6 video&quot;&gt;&lt;iframe src=&quot;https://player.vimeo.com/video/809481059?h=be62f22dd5&amp;amp;badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture&quot; style=&quot;position:absolute;top:0;left:0;width:100%;height:90%;&quot; allowfullscreen title=&quot;Mya-Rose Vid 1&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
@@ -1772,7 +1786,7 @@ Dr Mya-Rose Craig is a climate activist from the UK. &lt;/p&gt;
 &lt;&lt;set $nextpass to &quot;2mod1int2&quot;&gt;&gt;
 /* TODO NEEDS VIDEO  */
 &lt;div class=&quot;wrapper&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
+  /* &lt;&lt;include &quot;header&quot;&gt;&gt; */
     &lt;main  &gt;
         /* &lt;div class=&quot;text-wrapper&quot;&gt; */
         	&lt;div id=&quot;video&quot; role=&quot;video&quot; aria-label=&quot;MOTT Training 6 video&quot;&gt;&lt;iframe src=&quot;https://player.vimeo.com/video/809466454?h=1dc0529321&amp;amp;badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture&quot; style=&quot;position:absolute;top:0;left:0;width:100%;height:90%;&quot; allowfullscreen title=&quot;Mya-Rose Vid 2&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
@@ -1804,7 +1818,7 @@ Dr Mya-Rose Craig is a climate activist from the UK. &lt;/p&gt;
 &lt;&lt;set $nextpass to &quot;2mod1int3&quot;&gt;&gt;
 /* TODO NEEDS VIDEO  */
 &lt;div class=&quot;wrapper&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
+  /* &lt;&lt;include &quot;header&quot;&gt;&gt; */
     &lt;main  &gt;
         /* &lt;div class=&quot;text-wrapper&quot;&gt; */
         	&lt;div id=&quot;video&quot; role=&quot;video&quot; aria-label=&quot;MOTT Training 6 video&quot;&gt;&lt;iframe src=&quot;https://player.vimeo.com/video/809466843?h=58b979fd6e&amp;amp;badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture&quot; style=&quot;position:absolute;top:0;left:0;width:100%;height:90%;&quot; allowfullscreen title=&quot;Mya-Rose Vid 3&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
@@ -1913,7 +1927,7 @@ Dr Mya-Rose Craig is a climate activist from the UK. &lt;/p&gt;
   &lt;&lt;timed 14s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod3 to true&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;/div&gt;
 &lt;/main&gt;
-     &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
+     &lt;&lt;include &quot;footer&quot;&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="74" name="2mod3outro6" tags="nobr" position="475,975" size="100,100">&lt;&lt;set $prevpass to &quot;2mod3outro5&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;2mod3outro6&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;2modulelist&quot;&gt;&gt;
@@ -2132,9 +2146,16 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="85" name="3modulelist" tags="nobr" position="600,1100" size="100,100">&lt;&lt;set $passage to &quot;3modulelist&quot;&gt;&gt;&lt;&lt;set $session to 3&gt;&gt;
-&lt;&lt;if $skip is true&gt;&gt;&lt;&lt;timed 5s&gt;&gt;&lt;&lt;set $skip to false&gt;&gt;
-&lt;&lt;goto $nextpass&gt;&gt;
-&lt;&lt;/timed&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;timed 0.1s&gt;&gt;
+  &lt;&lt;if $skip is true&gt;&gt;
+    &lt;&lt;addclass &quot;#codewordWrapper1&quot; &quot;disappear&quot;&gt;&gt;
+    &lt;&lt;addclass &quot;#codewordWrapper2&quot; &quot;disappear&quot;&gt;&gt;
+      &lt;&lt;timed 5s&gt;&gt;
+        &lt;&lt;set $skip to false&gt;&gt;
+        &lt;&lt;goto $nextpass&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+  &lt;&lt;/if&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 &lt;div class=&quot;wrapper box&quot;&gt;
   &lt;main class=&quot;modules&quot;&gt;
   &lt;h1 class=&quot;title&quot;&gt;SESSION THREE&lt;/h1&gt;
@@ -2143,7 +2164,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
   &lt;div class=&quot;flip-card-inner&quot;&gt;
       &lt;div class=&quot;flip-card-front&quot;&gt;
 &lt;img src=&quot;./assets/img/mod5.jpg&quot; alt=&quot;module three&quot;&gt;
-  &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+  &lt;div id=&quot;codewordWrapper1&quot; class=&quot;codeword-wrapper&quot;&gt;
   /% CODEWORD INPUT %/
       &lt;div class=&quot;code-input&quot;&gt;
       &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
@@ -2190,7 +2211,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
  &lt;div class=&quot;flip-card-inner&quot;&gt;
       &lt;div class=&quot;flip-card-front&quot;&gt;
  &lt;img src=&quot;./assets/img/mod6.jpg&quot; alt=&quot;module six&quot;&gt;
-  &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+  &lt;div id=&quot;codewordWrapper2&quot; class=&quot;codeword-wrapper&quot;&gt;
   /% CODEWORD INPUT %/
       &lt;div class=&quot;code-input&quot;&gt;
       &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
@@ -2260,12 +2281,12 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 
   &lt;div class=&quot;wrapper&quot;&gt;
     &lt;&lt;include &quot;header&quot;&gt;&gt;
-    &lt;main  class=&quot;speaking inlineimg&quot;&gt;
+    &lt;main  class=&quot;speaking &quot;&gt;
         &lt;div class=&quot;text-wrapper&quot;&gt;
 &lt;p&gt;Everyone has a mundane making skill. My mundane making skill is that I am excellent at Roast Potatoes. Seriously I am the Roastie Expert. Also, making fake voices... as you saw earlier. &lt;/p&gt;
  &lt;&lt;timed 17s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
    &lt;/div&gt;
-   &lt;img src=&quot;./assets/img/KAI-24.jpg&quot;&gt;
+
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
   &lt;/div&gt;</tw-passagedata><tw-passagedata pid="88" name="3mod5intro3" tags="nobr" position="975,1100" size="100,100">&lt;&lt;set $prevpass to &quot;3mod5intro2&quot;&gt;&gt;
@@ -2306,15 +2327,16 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 
   &lt;div class=&quot;wrapper&quot;&gt;
     &lt;&lt;include &quot;header&quot;&gt;&gt;
-    &lt;main  class=&quot;speaking&quot;&gt;
+    &lt;main  class=&quot;speaking inlineimg&quot;&gt;
     &lt;div id=&quot;audio&quot;&gt;&lt;audio src=&quot;/assets/audio/SESSION3_MOD5_talents_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
         &lt;div class=&quot;text-wrapper&quot;&gt;
 &lt;p&gt;Teacher, time to hand out the cards – fill out the cards and give yourself a rating out of 100 for your Mundane Making skills, it’s a bit like Top Trumps.  &lt;/p&gt;
 &lt;p&gt;I’m probably a 78.7 on Roasties&lt;/p&gt;
 &lt;p&gt;A 52 on fake voices. (Let’s be honest)&lt;/p&gt;
 &lt;p&gt;And a 96 on making references to my height. &lt;/p&gt;
-    &lt;p&gt;After the 6 humans have been presented  &lt;&lt;button &quot;Move On&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/p&gt;
+    &lt;p&gt;When you have finished, click  &lt;&lt;button &quot;Move On&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/p&gt;
    &lt;/div&gt;
+      &lt;img src=&quot;./assets/img/KAI-24.jpg&quot;&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footer&quot;&gt;&gt;
   &lt;/div&gt;</tw-passagedata><tw-passagedata pid="91" name="3mod5outro1" tags="nobr" position="100,1225" size="100,100">&lt;&lt;set $prevpass to &quot;3mod5b&quot;&gt;&gt;
@@ -2568,8 +2590,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;&lt;include &quot;checkmod6audio&quot;&gt;&gt;
   &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
     &lt;p&gt;You’ve picked to focus on $choice&lt;/p&gt;
-    &lt;&lt;timed 10s&gt;&gt;&lt;&lt;set $mod6 to true&gt;&gt;
-      &lt;&lt;set $skip to true&gt;&gt;&lt;&lt;goto &quot;3modulelist&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
+    &lt;&lt;timed 10s&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
   &lt;&lt;/replace&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;/div&gt;
@@ -2596,7 +2617,8 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
       &lt;br/&gt;
       &lt;&lt;timed 2s&gt;&gt;
         &lt;&lt;append &quot;#mount&quot;&gt;&gt;
-      &lt;div&gt;&lt;&lt;button &quot;Finish&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
+      &lt;div&gt;&lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod6 to true&gt;&gt;
+      &lt;&lt;set $skip to true&gt;&gt;&lt;&lt;goto &quot;3modulelist&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
       &lt;&lt;/append&gt;&gt;
       &lt;&lt;/timed&gt;&gt;
       &lt;&lt;/replace&gt;&gt;
@@ -2621,7 +2643,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
     &lt;p&gt;To get intelligence on our target. &lt;/p&gt;
     &lt;p&gt;Time to close for today. &lt;/p&gt;
     &lt;p&gt;But a code for you to dive deeper.&lt;/p&gt;
-    &lt;h2 class=&quot;subtitle inline&quot;&gt;[HOPEY]. &lt;/h2&gt;
+    &lt;h2 class=&quot;subtitle inline&quot;&gt;HOPEY. &lt;/h2&gt;
     &lt;p&gt;Take care. &lt;/p&gt;
 
     &lt;&lt;button &quot;Finish&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;landing&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
@@ -2700,9 +2722,17 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="105" name="4modulelist" tags="nobr" position="600,1350" size="100,100">&lt;&lt;set $passage to &quot;4modulelist&quot;&gt;&gt;&lt;&lt;set $session to 4&gt;&gt;
-&lt;&lt;if $skip is true&gt;&gt;&lt;&lt;timed 5s&gt;&gt;&lt;&lt;set $skip to false&gt;&gt;
-&lt;&lt;goto $nextpass&gt;&gt;
-&lt;&lt;/timed&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;timed 0.1s&gt;&gt;
+  &lt;&lt;if $skip is true&gt;&gt;
+    &lt;&lt;addclass &quot;#codewordWrapper1&quot; &quot;disappear&quot;&gt;&gt;
+    &lt;&lt;addclass &quot;#codewordWrapper2&quot; &quot;disappear&quot;&gt;&gt;
+    &lt;&lt;addclass &quot;#codewordWrapper3&quot; &quot;disappear&quot;&gt;&gt;
+      &lt;&lt;timed 5s&gt;&gt;
+        &lt;&lt;set $skip to false&gt;&gt;
+        &lt;&lt;goto $nextpass&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+  &lt;&lt;/if&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 &lt;div class=&quot;wrapper box&quot;&gt;
   &lt;main class=&quot;modules&quot;&gt;
   &lt;h1 class=&quot;title&quot;&gt;SESSION FOUR&lt;/h1&gt;
@@ -2711,7 +2741,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
     &lt;div class=&quot;flip-card-inner&quot;&gt;
       &lt;div class=&quot;flip-card-front&quot;&gt;
   &lt;img src=&quot;./assets/img/mod7.jpg&quot; alt=&quot;module seven&quot;&gt;
-   &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+   &lt;div id=&quot;codewordWrapper1&quot; class=&quot;codeword-wrapper&quot;&gt;
 
   /% CODEWORD INPUT %/
       &lt;div class=&quot;code-input&quot;&gt;
@@ -2761,7 +2791,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
   &lt;div class=&quot;flip-card-inner&quot;&gt;
       &lt;div class=&quot;flip-card-front&quot;&gt;
  &lt;img src=&quot;./assets/img/mod8.jpg&quot; alt=&quot;module eight&quot;&gt;
-    &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+    &lt;div id=&quot;codewordWrapper2&quot; class=&quot;codeword-wrapper&quot;&gt;
   /% CODEWORD INPUT %/
       &lt;div class=&quot;code-input&quot;&gt;
       &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
@@ -2810,7 +2840,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
   &lt;div class=&quot;flip-card-inner&quot;&gt;
       &lt;div class=&quot;flip-card-front&quot;&gt;
 &lt;img src=&quot;./assets/img/mod9.jpg&quot; alt=&quot;module nine&quot;&gt;
-      &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+      &lt;div id=&quot;codewordWrapper3&quot; class=&quot;codeword-wrapper&quot;&gt;
   /% CODEWORD INPUT %/
       &lt;div class=&quot;code-input&quot;&gt;
       &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
@@ -3067,7 +3097,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="116" name="4mod8outro1" tags="nobr" position="725,1475" size="100,100">&lt;&lt;set $prevpass to &quot;4mod8intro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="116" name="4mod8outro1" tags="nobr" position="725,1475" size="100,100">&lt;&lt;set $prevpass to &quot;4mod8b&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod8outro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4mod8outro2&quot;&gt;&gt;
 &lt;audio src=&quot;/assets/audio/SESSION4_MOD8_outro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -3076,17 +3106,11 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
   &lt;main class=&quot;speaking inlineimg&quot;&gt;
     &lt;div class=&quot;text-wrapper&quot; id=&quot;mount&quot;&gt;
 &lt;p&gt;And now you have your goal &lt;/p&gt;
-
 &lt;p&gt;If this was a game &lt;/p&gt;
 &lt;p&gt;(You know I love games) &lt;/p&gt;
-
 &lt;p&gt;This would be your objective, your mission &lt;/p&gt;
-
 &lt;p&gt;WE WANT A SCHOOL THAT… you can fill in the blanks. &lt;/p&gt;
-
 &lt;p&gt;Actually do, summarise it and write it on the ASK Card &lt;/p&gt;
-
-/* TODO IS THIS RIGHT PLACE  */
 &lt;p&gt;Use the Rule change section to help fill this out. You’ll have 1 Ask Card for each group.&lt;/p&gt;
 
 
@@ -3282,7 +3306,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
     &lt;div class=&quot;text-wrapper&quot;&gt;
 &lt;p&gt;Now you’ve done the looking, it’s time to start doing. &lt;/p&gt;
 
-&lt;p&gt;Next session you’re going to meet someone. They’re the artist I mentioned, another Playful Activist.  &lt;/p&gt;
+&lt;p&gt;Next session you’re going to meet someone. They’re an Artist, another Playful Activist.&lt;/p&gt;
 
 &lt;p&gt;They’re the last missing member of our team, and they’re going to join you to put these ideas into playful action. &lt;/p&gt;
   &lt;&lt;timed 16s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
@@ -3357,9 +3381,17 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="131" name="5modulelist" tags="nobr" position="100,1725" size="100,100">&lt;&lt;set $passage to &quot;5modulelist&quot;&gt;&gt;&lt;&lt;set $session to 5&gt;&gt;
-&lt;&lt;if $skip is true&gt;&gt;&lt;&lt;timed 5s&gt;&gt;&lt;&lt;set $skip to false&gt;&gt;
-&lt;&lt;goto $nextpass&gt;&gt;
-&lt;&lt;/timed&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;timed 0.1s&gt;&gt;
+  &lt;&lt;if $skip is true&gt;&gt;
+    &lt;&lt;addclass &quot;#codewordWrapper1&quot; &quot;disappear&quot;&gt;&gt;
+    &lt;&lt;addclass &quot;#codewordWrapper2&quot; &quot;disappear&quot;&gt;&gt;
+    &lt;&lt;addclass &quot;#codewordWrapper3&quot; &quot;disappear&quot;&gt;&gt;
+      &lt;&lt;timed 5s&gt;&gt;
+        &lt;&lt;set $skip to false&gt;&gt;
+        &lt;&lt;goto $nextpass&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+  &lt;&lt;/if&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 &lt;div class=&quot;wrapper box&quot;&gt;
   &lt;main class=&quot;modules&quot;&gt;
   &lt;h1 class=&quot;title&quot;&gt;SESSION FIVE&lt;/h1&gt;
@@ -3368,7 +3400,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
     &lt;div class=&quot;flip-card-inner&quot;&gt;
       &lt;div class=&quot;flip-card-front&quot;&gt;
   &lt;img src=&quot;./assets/img/mod10.jpg&quot; alt=&quot;module ten&quot;&gt;
-      &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+      &lt;div id=&quot;codewordWrapper1&quot; class=&quot;codeword-wrapper&quot;&gt;
  
   /% CODEWORD INPUT %/
       &lt;div class=&quot;code-input&quot;&gt;
@@ -3412,7 +3444,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
   &lt;div class=&quot;flip-card-inner&quot;&gt;
       &lt;div class=&quot;flip-card-front&quot;&gt;
   &lt;img src=&quot;./assets/img/mod11.jpg&quot; alt=&quot;module eleven&quot;&gt;
-      &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+      &lt;div id=&quot;codewordWrapper2&quot; class=&quot;codeword-wrapper&quot;&gt;
   /% CODEWORD INPUT %/
       &lt;div class=&quot;code-input&quot;&gt;
       &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
@@ -3463,7 +3495,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
       &lt;div class=&quot;flip-card-front&quot;&gt;
   &lt;img src=&quot;./assets/img/mod12.jpg&quot; alt=&quot;module twelve&quot;&gt;
       /* &lt;h2 class=&quot;subtitle&quot;&gt;Module 12&lt;/h2&gt; */
-       &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+       &lt;div id=&quot;codewordWrapper3&quot; class=&quot;codeword-wrapper&quot;&gt;
   /% CODEWORD INPUT %/
       &lt;div class=&quot;code-input&quot;&gt;
       &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
@@ -3787,7 +3819,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 
 
 &lt;p&gt;Enter the next codeword for the final part of today’s session&lt;/p&gt;
-&lt;&lt;timed 12s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod11 to true&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 18s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod11 to true&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
@@ -3861,8 +3893,8 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 
 &lt;p&gt;Your Artist will go away and help pull the ideas together, based on the work you have done today. &lt;/p&gt;
 
-&lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod12 to true&gt;&gt;
-      &lt;&lt;set $skip to true&gt;&gt;&lt;&lt;goto &quot;5modulelist&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;&lt;timed 22s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod12 to true&gt;&gt;
+      &lt;&lt;set $skip to true&gt;&gt;&lt;&lt;goto &quot;5modulelist&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
 &lt;/div&gt;
  &lt;/main&gt;
@@ -3994,17 +4026,24 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;p&gt;I’ve got chills &lt;/p&gt;
 &lt;p&gt;Not really but I am excited &lt;/p&gt;
 &lt;p&gt;I hope you are too &lt;/p&gt;
-&lt;p&gt;Before we let you, and your Artist, of the creative leash, we need to chat about hats. &lt;/p&gt;
-  &lt;&lt;timed 18s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+
+  &lt;&lt;timed 15s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
     &lt;/div&gt;
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="157" name="6modulelist" tags="nobr" position="850,1975" size="100,100">&lt;&lt;set $passage to &quot;6modulelist&quot;&gt;&gt;&lt;&lt;set $session to 6&gt;&gt;
-&lt;&lt;if $skip is true&gt;&gt;&lt;&lt;timed 5s&gt;&gt;&lt;&lt;set $skip to false&gt;&gt;
-&lt;&lt;goto $nextpass&gt;&gt;
-&lt;&lt;/timed&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;timed 0.1s&gt;&gt;
+  &lt;&lt;if $skip is true&gt;&gt;
+    &lt;&lt;addclass &quot;#codewordWrapper1&quot; &quot;disappear&quot;&gt;&gt;
+    &lt;&lt;addclass &quot;#codewordWrapper2&quot; &quot;disappear&quot;&gt;&gt;
+      &lt;&lt;timed 5s&gt;&gt;
+        &lt;&lt;set $skip to false&gt;&gt;
+        &lt;&lt;goto $nextpass&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+  &lt;&lt;/if&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 &lt;div class=&quot;wrapper box&quot;&gt;
   &lt;main class=&quot;modules&quot;&gt;
   &lt;h1 class=&quot;title&quot;&gt;SESSION SIX&lt;/h1&gt;
@@ -4014,7 +4053,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
       &lt;div class=&quot;flip-card-front&quot;&gt;
   &lt;img src=&quot;./assets/img/mod13.jpg&quot; alt=&quot;module thirteen&quot;&gt;
       /* &lt;h2 class=&quot;subtitle&quot;&gt;Module 13&lt;/h2&gt; */
-       &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+       &lt;div id=&quot;codewordWrapper1&quot; class=&quot;codeword-wrapper&quot;&gt;
  
   /% CODEWORD INPUT %/
       &lt;div class=&quot;code-input&quot;&gt;
@@ -4059,7 +4098,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
       &lt;div class=&quot;flip-card-front&quot;&gt;
   &lt;img src=&quot;./assets/img/mod14.jpg&quot; alt=&quot;module fourteen&quot;&gt;
       /* &lt;h2 class=&quot;subtitle&quot;&gt;Module 14&lt;/h2&gt; */
-&lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+&lt;div id=&quot;codewordWrapper2&quot; class=&quot;codeword-wrapper&quot;&gt;
   /% CODEWORD INPUT %/
       &lt;div class=&quot;code-input&quot;&gt;
       &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
@@ -4285,11 +4324,12 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
-  &lt;main class=&quot;speaking&quot;&gt;
+  &lt;main class=&quot;speaking inlineimg&quot;&gt;
     &lt;div class=&quot;text-wrapper&quot;&gt;
 
 When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;6mod14outro&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
+        &lt;img src=&quot;./assets/img/mod14-rev.jpg&quot;&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="168" name="6mod14outro" tags="nobr" position="975,2100" size="100,100">&lt;&lt;set $prevpass to &quot;6mod14a&quot;&gt;&gt;
@@ -4329,7 +4369,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;p&gt;But that’s next time! &lt;/p&gt;
 
 
-&lt;&lt;button &quot;Finish&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;landing&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;&lt;button &quot;Finish&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
@@ -4365,7 +4405,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
  &lt;h1 class=&quot;title &quot;&gt;Hello again. &lt;/h1&gt;
 
     &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt;Wow – we’ve dismantled a lot of this pyramid now – reaching the end. &lt;/p&gt;
+&lt;p&gt;Wow – we’ve dismantled a lot of this pyramid now. &lt;/p&gt;
 &lt;p&gt;Today you’re going to deliver your gift to its recipient &lt;/p&gt;
 &lt;p&gt;How are you feeling? &lt;/p&gt;
 &lt;p&gt;Good? &lt;/p&gt;
@@ -4441,9 +4481,16 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="175" name="7modulelist" tags="nobr" position="600,2225" size="100,100">&lt;&lt;set $passage to &quot;7modulelist&quot;&gt;&gt;&lt;&lt;set $session to 7&gt;&gt;
-&lt;&lt;if $skip is true&gt;&gt;&lt;&lt;timed 5s&gt;&gt;&lt;&lt;set $skip to false&gt;&gt;
-&lt;&lt;goto $nextpass&gt;&gt;
-&lt;&lt;/timed&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;timed 0.1s&gt;&gt;
+  &lt;&lt;if $skip is true&gt;&gt;
+    &lt;&lt;addclass &quot;#codewordWrapper1&quot; &quot;disappear&quot;&gt;&gt;
+    &lt;&lt;addclass &quot;#codewordWrapper2&quot; &quot;disappear&quot;&gt;&gt;
+      &lt;&lt;timed 5s&gt;&gt;
+        &lt;&lt;set $skip to false&gt;&gt;
+        &lt;&lt;goto $nextpass&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+  &lt;&lt;/if&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 &lt;div class=&quot;wrapper box&quot;&gt;
   &lt;main class=&quot;modules&quot;&gt;
   &lt;h1 class=&quot;title&quot;&gt;SESSION SEVEN&lt;/h1&gt;
@@ -4453,7 +4500,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
       &lt;div class=&quot;flip-card-front&quot;&gt;
   &lt;img src=&quot;./assets/img/mod15.jpg&quot; alt=&quot;module fifteen&quot;&gt;
       /* &lt;h2 class=&quot;subtitle&quot;&gt;Module 15&lt;/h2&gt; */
-       &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+       &lt;div id=&quot;codewordWrapper1&quot; class=&quot;codeword-wrapper&quot;&gt;
   /% CODEWORD INPUT %/
       &lt;div class=&quot;code-input&quot;&gt;
       &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
@@ -4498,7 +4545,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
       &lt;div class=&quot;flip-card-front&quot;&gt;
   &lt;img src=&quot;./assets/img/mod16.jpg&quot; alt=&quot;module sixteen&quot;&gt;
       /* &lt;h2 class=&quot;subtitle&quot;&gt;Module 16&lt;/h2&gt; */
-        &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+        &lt;div id=&quot;codewordWrapper2&quot; class=&quot;codeword-wrapper&quot;&gt;
   /% CODEWORD INPUT %/
       &lt;div class=&quot;code-input&quot;&gt;
       &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;
@@ -4981,9 +5028,15 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="199" name="8modulelist" tags="nobr" position="1100,2475" size="100,100">&lt;&lt;set $passage to &quot;8modulelist&quot;&gt;&gt;&lt;&lt;set $session to 8&gt;&gt;
-&lt;&lt;if $skip is true&gt;&gt;&lt;&lt;timed 5s&gt;&gt;&lt;&lt;set $skip to false&gt;&gt;
-&lt;&lt;goto $nextpass&gt;&gt;
-&lt;&lt;/timed&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;timed 0.1s&gt;&gt;
+  &lt;&lt;if $skip is true&gt;&gt;
+    &lt;&lt;addclass &quot;#codewordWrapper1&quot; &quot;disappear&quot;&gt;&gt;
+      &lt;&lt;timed 5s&gt;&gt;
+        &lt;&lt;set $skip to false&gt;&gt;
+        &lt;&lt;goto $nextpass&gt;&gt;
+      &lt;&lt;/timed&gt;&gt;
+  &lt;&lt;/if&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 &lt;div class=&quot;wrapper box&quot;&gt;
   &lt;main class=&quot;modules&quot;&gt;
   &lt;h1 class=&quot;title&quot;&gt;SESSION EIGHT&lt;/h1&gt;
@@ -4994,7 +5047,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
       &lt;div class=&quot;flip-card-front&quot;&gt;
   &lt;img src=&quot;./assets/img/mod17.jpg&quot; alt=&quot;module seventeen&quot;&gt;
       /* &lt;h2 class=&quot;subtitle&quot;&gt;Module 17&lt;/h2&gt; */
-      &lt;div id=&quot;codewordWrapper&quot; class=&quot;codeword-wrapper&quot;&gt;
+      &lt;div id=&quot;codewordWrapper1&quot; class=&quot;codeword-wrapper&quot;&gt;
   /% CODEWORD INPUT %/
       &lt;div class=&quot;code-input&quot;&gt;
       &lt;&lt;textbox &quot;$codeword&quot; &quot;&quot;&gt;&gt;

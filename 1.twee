@@ -589,13 +589,16 @@ $(document.head).find('#style-ui-bar').remove();
   <<set $nextpass to "1mod2outrokaia">>
    <<set $nextnextpass to "">>
 <</if>>
-
-<<if $skip is true>>
-    <<timed 5s>>
-      <<set $skip to false>>
-      <<goto $nextpass>>
-    <</timed>>
-<</if>>
+<<timed 0.1s>>
+  <<if $skip is true>>
+    <<addclass "#codewordWrapper1" "disappear">>
+    <<addclass "#codewordWrapper2" "disappear">>
+      <<timed 5s>>
+        <<set $skip to false>>
+        <<goto $nextpass>>
+      <</timed>>
+  <</if>>
+<</timed>>
 <div class="wrapper box">
   <main class="modules">
   <h1 class="title">SESSION ONE</h1>
@@ -605,7 +608,7 @@ $(document.head).find('#style-ui-bar').remove();
     <div class="flip-card-inner">
       <div class="flip-card-front">
       <img src="./assets/img/mod1.jpg" alt="module card" >
-        <div id="codewordWrapper" class="codeword-wrapper">
+        <div id="codewordWrapper1" class="codeword-wrapper">
       /% CODEWORD INPUT %/
           <div class="code-input">
           <<textbox "$codeword" "">>
@@ -651,7 +654,7 @@ $(document.head).find('#style-ui-bar').remove();
     <div class="flip-card-inner">
       <div class="flip-card-front">
       <img src="./assets/img/mod2.jpg" alt="module card" >
-        <div id="codewordWrapper" class="codeword-wrapper">
+        <div id="codewordWrapper2" class="codeword-wrapper">
       /% CODEWORD INPUT %/
           <div class="code-input">
           <<textbox "$codeword" "">>
@@ -1074,8 +1077,9 @@ The order you go in will be randomised.</p>
 </div>
 
 :: 1mod1gameoutro [nobr]
-<<set $passage to "1mod1outroKaia">>
-<<set $nextpass to "1mod1outroKaib">><audio src="" autoplay>Audio is not supported on your device</audio>
+<<set $prevpass to "1mod1br4">>
+<<set $passage to "1mod1gameoutro">>
+<<set $nextpass to "1mod1outroKaia">><audio src="" autoplay>Audio is not supported on your device</audio>
 /* TODO Split this up  */
 <div class="wrapper">
 <<include "header">>
@@ -1096,7 +1100,7 @@ The order you go in will be randomised.</p>
 
 :: 1mod1outroKaia [nobr]
 <<set $passage to "1mod1outroKaia">><audio src="/assets/audio/SESSION1_MOD1_eegreflection_1.mp3" autoplay>Audio is not supported on your device</audio>
-/* TODO Split this up  */
+
 <div class="wrapper">
 <<include "header">>
   <main class="speaking">
@@ -1140,7 +1144,7 @@ The order you go in will be randomised.</p>
       <div class="text-wrapper">
 
  
-<p>  Different countries have different amounts of natural resources, but so often it comes down to technology, violence and power. Particularly power historical power that exists from centuries of colonialism & empire. </p>
+<p>  Different countries have different amounts of natural resources, but so often it comes down to technology, violence and power. Particularly historical power that exists from centuries of colonialism & empire. </p>
   <p>Those who can and will take what they need, with no care for what comes next or what is left behind.</p>
   <p>We’ll explore where some of that power has come from in the next session. </p>
  
@@ -1178,7 +1182,7 @@ The order you go in will be randomised.</p>
   <main class="speaking scroll">
       <div class="text-wrapper">
  <p>Greenpeace were founded in 1971 as a meeting of two existing movements for change:
-    the climate movement: giving us 'green' and the anti-war movement: where we get peace 'peace'.</p>
+    the climate movement: giving us 'green' and the anti-war movement: where we get 'peace'.</p>
     <p>In the same way that Greenpeace was two movements meeting, this project is too:</p>
    <p> it's a meeting of Greenpeace and Coney.
   </p>
@@ -1260,7 +1264,10 @@ The order you go in will be randomised.</p>
       <div class="text-wrapper">
   <p>You’re going to find the Most Interesting Thing You Have In Common.</p> 
   <p>Teacher, over to you for this one, all of the instructions are on the Mod Card. </p>
+  <div id="mount"></div>
+  <<timed 120s>><<replace "#mount">>
   <p>When completed click <<button "Move On">><<set $prevpass to $passage>><<goto "1mod2outro">><</button>>
+<</replace>><</timed>>
   </p>
   </div>
   </main>
@@ -1573,9 +1580,16 @@ The order you go in will be randomised.</p>
 
 :: 2modulelist [nobr]
 <<set $passage to "2modulelist">><<set $session to 2>>
-<<if $skip is true>><<timed 5s>><<set $skip to false>>
-<<goto $nextpass>>
-<</timed>><</if>>
+<<timed 0.1s>>
+  <<if $skip is true>>
+    <<addclass "#codewordWrapper1" "disappear">>
+    <<addclass "#codewordWrapper2" "disappear">>
+      <<timed 5s>>
+        <<set $skip to false>>
+        <<goto $nextpass>>
+      <</timed>>
+  <</if>>
+<</timed>>
 <div class="wrapper box">
   <main class="modules">
   <h1 class="title">SESSION TWO</h1>
@@ -1585,7 +1599,7 @@ The order you go in will be randomised.</p>
     <div class="flip-card-inner">
       <div class="flip-card-front">
       <img src="./assets/img/mod3.jpg" alt="module card" >
-        <div id="codewordWrapper" class="codeword-wrapper">
+        <div id="codewordWrapper1" class="codeword-wrapper">
       /% CODEWORD INPUT %/
           <div class="code-input">
           <<textbox "$codeword" "">>
@@ -1631,7 +1645,7 @@ The order you go in will be randomised.</p>
     <div class="flip-card-inner">
       <div class="flip-card-front">
       <img src="./assets/img/mod4.jpg" alt="module card" >
-        <div id="codewordWrapper" class="codeword-wrapper">
+        <div id="codewordWrapper2" class="codeword-wrapper">
       /% CODEWORD INPUT %/
           <div class="code-input">
           <<textbox "$codeword" "">>
@@ -1879,7 +1893,7 @@ Dr Mya-Rose Craig is a climate activist from the UK. </p>
 <<set $nextpass to "2mod1int1">>
 /* TODO NEEDS VIDEO  */
 <div class="wrapper">
-  <<include "header">>
+  /* <<include "header">> */
     <main  >
         /* <div class="text-wrapper"> */
         	<div id="video" role="video" aria-label="MOTT Training 6 video"><iframe src="https://player.vimeo.com/video/809481059?h=be62f22dd5&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:90%;" allowfullscreen title="Mya-Rose Vid 1"></iframe></div>
@@ -1920,7 +1934,7 @@ Dr Mya-Rose Craig is a climate activist from the UK. </p>
 <<set $nextpass to "2mod1int2">>
 /* TODO NEEDS VIDEO  */
 <div class="wrapper">
-  <<include "header">>
+  /* <<include "header">> */
     <main  >
         /* <div class="text-wrapper"> */
         	<div id="video" role="video" aria-label="MOTT Training 6 video"><iframe src="https://player.vimeo.com/video/809466454?h=1dc0529321&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:90%;" allowfullscreen title="Mya-Rose Vid 2"></iframe></div>
@@ -1958,7 +1972,7 @@ Dr Mya-Rose Craig is a climate activist from the UK. </p>
 <<set $nextpass to "2mod1int3">>
 /* TODO NEEDS VIDEO  */
 <div class="wrapper">
-  <<include "header">>
+  /* <<include "header">> */
     <main  >
         /* <div class="text-wrapper"> */
         	<div id="video" role="video" aria-label="MOTT Training 6 video"><iframe src="https://player.vimeo.com/video/809466843?h=58b979fd6e&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:90%;" allowfullscreen title="Mya-Rose Vid 3"></iframe></div>
@@ -2086,7 +2100,7 @@ Dr Mya-Rose Craig is a climate activist from the UK. </p>
   <<timed 14s>><<set $prevpass to $passage>><<set $mod3 to true>><<goto $nextpass>><</timed>>
 </div>
 </main>
-     <<include "footerskip">>
+     <<include "footer">>
 </div>
 
 :: 2mod3outro6 [nobr]
@@ -2352,9 +2366,16 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 
 :: 3modulelist [nobr]
 <<set $passage to "3modulelist">><<set $session to 3>>
-<<if $skip is true>><<timed 5s>><<set $skip to false>>
-<<goto $nextpass>>
-<</timed>><</if>>
+<<timed 0.1s>>
+  <<if $skip is true>>
+    <<addclass "#codewordWrapper1" "disappear">>
+    <<addclass "#codewordWrapper2" "disappear">>
+      <<timed 5s>>
+        <<set $skip to false>>
+        <<goto $nextpass>>
+      <</timed>>
+  <</if>>
+<</timed>>
 <div class="wrapper box">
   <main class="modules">
   <h1 class="title">SESSION THREE</h1>
@@ -2363,7 +2384,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
   <div class="flip-card-inner">
       <div class="flip-card-front">
 <img src="./assets/img/mod5.jpg" alt="module three">
-  <div id="codewordWrapper" class="codeword-wrapper">
+  <div id="codewordWrapper1" class="codeword-wrapper">
   /% CODEWORD INPUT %/
       <div class="code-input">
       <<textbox "$codeword" "">>
@@ -2410,7 +2431,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
  <div class="flip-card-inner">
       <div class="flip-card-front">
  <img src="./assets/img/mod6.jpg" alt="module six">
-  <div id="codewordWrapper" class="codeword-wrapper">
+  <div id="codewordWrapper2" class="codeword-wrapper">
   /% CODEWORD INPUT %/
       <div class="code-input">
       <<textbox "$codeword" "">>
@@ -2491,12 +2512,12 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 
   <div class="wrapper">
     <<include "header">>
-    <main  class="speaking inlineimg">
+    <main  class="speaking ">
         <div class="text-wrapper">
 <p>Everyone has a mundane making skill. My mundane making skill is that I am excellent at Roast Potatoes. Seriously I am the Roastie Expert. Also, making fake voices... as you saw earlier. </p>
  <<timed 17s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
    </div>
-   <img src="./assets/img/KAI-24.jpg">
+
     </main>
          <<include "footerskip">>
   </div>
@@ -2549,15 +2570,16 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 
   <div class="wrapper">
     <<include "header">>
-    <main  class="speaking">
+    <main  class="speaking inlineimg">
     <div id="audio"><audio src="/assets/audio/SESSION3_MOD5_talents_2.mp3" autoplay>Audio is not supported on your device</audio></div>
         <div class="text-wrapper">
 <p>Teacher, time to hand out the cards – fill out the cards and give yourself a rating out of 100 for your Mundane Making skills, it’s a bit like Top Trumps.  </p>
 <p>I’m probably a 78.7 on Roasties</p>
 <p>A 52 on fake voices. (Let’s be honest)</p>
 <p>And a 96 on making references to my height. </p>
-    <p>After the 6 humans have been presented  <<button "Move On">><<set $prevpass to $passage>><<goto $nextpass>><</button>> </p>
+    <p>When you have finished, click  <<button "Move On">><<set $prevpass to $passage>><<goto $nextpass>><</button>> </p>
    </div>
+      <img src="./assets/img/KAI-24.jpg">
     </main>
          <<include "footer">>
   </div>
@@ -2844,8 +2866,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
 <<include "checkmod6audio">>
   <<replace "#mount">>
     <p>You’ve picked to focus on $choice</p>
-    <<timed 10s>><<set $mod6 to true>>
-      <<set $skip to true>><<goto "3modulelist">><</timed>>
+    <<timed 10s>><<goto $nextpass>><</timed>>
   <</replace>>
 <</timed>>
 </div>
@@ -2875,7 +2896,8 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
       <br/>
       <<timed 2s>>
         <<append "#mount">>
-      <div><<button "Finish">><<set $prevpass to $passage>><<goto $nextpass>><</button>></div>
+      <div><<button "Next">><<set $prevpass to $passage>><<set $mod6 to true>>
+      <<set $skip to true>><<goto "3modulelist">><</button>></div>
       <</append>>
       <</timed>>
       <</replace>>
@@ -2904,7 +2926,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
     <p>To get intelligence on our target. </p>
     <p>Time to close for today. </p>
     <p>But a code for you to dive deeper.</p>
-    <h2 class="subtitle inline">[HOPEY]. </h2>
+    <h2 class="subtitle inline">HOPEY. </h2>
     <p>Take care. </p>
 
     <<button "Finish">><<set $prevpass to $passage>><<goto "landing">><</button>>
@@ -2998,9 +3020,17 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
 
 :: 4modulelist [nobr]
 <<set $passage to "4modulelist">><<set $session to 4>>
-<<if $skip is true>><<timed 5s>><<set $skip to false>>
-<<goto $nextpass>>
-<</timed>><</if>>
+<<timed 0.1s>>
+  <<if $skip is true>>
+    <<addclass "#codewordWrapper1" "disappear">>
+    <<addclass "#codewordWrapper2" "disappear">>
+    <<addclass "#codewordWrapper3" "disappear">>
+      <<timed 5s>>
+        <<set $skip to false>>
+        <<goto $nextpass>>
+      <</timed>>
+  <</if>>
+<</timed>>
 <div class="wrapper box">
   <main class="modules">
   <h1 class="title">SESSION FOUR</h1>
@@ -3009,7 +3039,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
     <div class="flip-card-inner">
       <div class="flip-card-front">
   <img src="./assets/img/mod7.jpg" alt="module seven">
-   <div id="codewordWrapper" class="codeword-wrapper">
+   <div id="codewordWrapper1" class="codeword-wrapper">
 
   /% CODEWORD INPUT %/
       <div class="code-input">
@@ -3059,7 +3089,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
   <div class="flip-card-inner">
       <div class="flip-card-front">
  <img src="./assets/img/mod8.jpg" alt="module eight">
-    <div id="codewordWrapper" class="codeword-wrapper">
+    <div id="codewordWrapper2" class="codeword-wrapper">
   /% CODEWORD INPUT %/
       <div class="code-input">
       <<textbox "$codeword" "">>
@@ -3108,7 +3138,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
   <div class="flip-card-inner">
       <div class="flip-card-front">
 <img src="./assets/img/mod9.jpg" alt="module nine">
-      <div id="codewordWrapper" class="codeword-wrapper">
+      <div id="codewordWrapper3" class="codeword-wrapper">
   /% CODEWORD INPUT %/
       <div class="code-input">
       <<textbox "$codeword" "">>
@@ -3410,7 +3440,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
 
 
 :: 4mod8outro1 [nobr]
-<<set $prevpass to "4mod8intro2">>
+<<set $prevpass to "4mod8b">>
 <<set $passage to "4mod8outro1">>
 <<set $nextpass to "4mod8outro2">>
 <audio src="/assets/audio/SESSION4_MOD8_outro_1.mp3" autoplay>Audio is not supported on your device</audio>
@@ -3419,17 +3449,11 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
   <main class="speaking inlineimg">
     <div class="text-wrapper" id="mount">
 <p>And now you have your goal </p>
-
 <p>If this was a game </p>
 <p>(You know I love games) </p>
-
 <p>This would be your objective, your mission </p>
-
 <p>WE WANT A SCHOOL THAT… you can fill in the blanks. </p>
-
 <p>Actually do, summarise it and write it on the ASK Card </p>
-
-/* TODO IS THIS RIGHT PLACE  */
 <p>Use the Rule change section to help fill this out. You’ll have 1 Ask Card for each group.</p>
 
 
@@ -3662,7 +3686,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
     <div class="text-wrapper">
 <p>Now you’ve done the looking, it’s time to start doing. </p>
 
-<p>Next session you’re going to meet someone. They’re the artist I mentioned, another Playful Activist.  </p>
+<p>Next session you’re going to meet someone. They’re an Artist, another Playful Activist.</p>
 
 <p>They’re the last missing member of our team, and they’re going to join you to put these ideas into playful action. </p>
   <<timed 16s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
@@ -3755,9 +3779,17 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
 
 :: 5modulelist [nobr]
 <<set $passage to "5modulelist">><<set $session to 5>>
-<<if $skip is true>><<timed 5s>><<set $skip to false>>
-<<goto $nextpass>>
-<</timed>><</if>>
+<<timed 0.1s>>
+  <<if $skip is true>>
+    <<addclass "#codewordWrapper1" "disappear">>
+    <<addclass "#codewordWrapper2" "disappear">>
+    <<addclass "#codewordWrapper3" "disappear">>
+      <<timed 5s>>
+        <<set $skip to false>>
+        <<goto $nextpass>>
+      <</timed>>
+  <</if>>
+<</timed>>
 <div class="wrapper box">
   <main class="modules">
   <h1 class="title">SESSION FIVE</h1>
@@ -3766,7 +3798,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
     <div class="flip-card-inner">
       <div class="flip-card-front">
   <img src="./assets/img/mod10.jpg" alt="module ten">
-      <div id="codewordWrapper" class="codeword-wrapper">
+      <div id="codewordWrapper1" class="codeword-wrapper">
  
   /% CODEWORD INPUT %/
       <div class="code-input">
@@ -3810,7 +3842,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
   <div class="flip-card-inner">
       <div class="flip-card-front">
   <img src="./assets/img/mod11.jpg" alt="module eleven">
-      <div id="codewordWrapper" class="codeword-wrapper">
+      <div id="codewordWrapper2" class="codeword-wrapper">
   /% CODEWORD INPUT %/
       <div class="code-input">
       <<textbox "$codeword" "">>
@@ -3861,7 +3893,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
       <div class="flip-card-front">
   <img src="./assets/img/mod12.jpg" alt="module twelve">
       /* <h2 class="subtitle">Module 12</h2> */
-       <div id="codewordWrapper" class="codeword-wrapper">
+       <div id="codewordWrapper3" class="codeword-wrapper">
   /% CODEWORD INPUT %/
       <div class="code-input">
       <<textbox "$codeword" "">>
@@ -4239,7 +4271,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
 
 
 <p>Enter the next codeword for the final part of today’s session</p>
-<<timed 12s>><<set $prevpass to $passage>><<set $mod11 to true>><<goto $nextpass>><</timed>>
+<<timed 18s>><<set $prevpass to $passage>><<set $mod11 to true>><<goto $nextpass>><</timed>>
 </div>
  </main>
      <<include "footerskip">>
@@ -4329,8 +4361,8 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
 
 <p>Your Artist will go away and help pull the ideas together, based on the work you have done today. </p>
 
-<<button "Next">><<set $prevpass to $passage>><<set $mod12 to true>>
-      <<set $skip to true>><<goto "5modulelist">><</button>>
+<<timed 22s>><<set $prevpass to $passage>><<set $mod12 to true>>
+      <<set $skip to true>><<goto "5modulelist">><</timed>>
 
 </div>
  </main>
@@ -4482,8 +4514,8 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
 <p>I’ve got chills </p>
 <p>Not really but I am excited </p>
 <p>I hope you are too </p>
-<p>Before we let you, and your Artist, of the creative leash, we need to chat about hats. </p>
-  <<timed 18s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+
+  <<timed 15s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
 
     </div>
 
@@ -4494,9 +4526,16 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
 
 :: 6modulelist [nobr]
 <<set $passage to "6modulelist">><<set $session to 6>>
-<<if $skip is true>><<timed 5s>><<set $skip to false>>
-<<goto $nextpass>>
-<</timed>><</if>>
+<<timed 0.1s>>
+  <<if $skip is true>>
+    <<addclass "#codewordWrapper1" "disappear">>
+    <<addclass "#codewordWrapper2" "disappear">>
+      <<timed 5s>>
+        <<set $skip to false>>
+        <<goto $nextpass>>
+      <</timed>>
+  <</if>>
+<</timed>>
 <div class="wrapper box">
   <main class="modules">
   <h1 class="title">SESSION SIX</h1>
@@ -4506,7 +4545,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
       <div class="flip-card-front">
   <img src="./assets/img/mod13.jpg" alt="module thirteen">
       /* <h2 class="subtitle">Module 13</h2> */
-       <div id="codewordWrapper" class="codeword-wrapper">
+       <div id="codewordWrapper1" class="codeword-wrapper">
  
   /% CODEWORD INPUT %/
       <div class="code-input">
@@ -4551,7 +4590,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
       <div class="flip-card-front">
   <img src="./assets/img/mod14.jpg" alt="module fourteen">
       /* <h2 class="subtitle">Module 14</h2> */
-<div id="codewordWrapper" class="codeword-wrapper">
+<div id="codewordWrapper2" class="codeword-wrapper">
   /% CODEWORD INPUT %/
       <div class="code-input">
       <<textbox "$codeword" "">>
@@ -4815,11 +4854,12 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
 
 <div class="wrapper">
   <<include "header">>
-  <main class="speaking">
+  <main class="speaking inlineimg">
     <div class="text-wrapper">
 
 When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mod14outro">><</button>>
 </div>
+        <img src="./assets/img/mod14-rev.jpg">
  </main>
      <<include "footer">>
 </div>
@@ -4866,7 +4906,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <p>But that’s next time! </p>
 
 
-<<button "Finish">><<set $prevpass to $passage>><<goto "landing">><</button>>
+<<button "Finish">><<set $prevpass to $passage>><<goto $nextpass>><</button>>
 </div>
   </main>
      <<include "footer">>
@@ -4909,7 +4949,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
  <h1 class="title ">Hello again. </h1>
 
     <div class="text-wrapper">
-<p>Wow – we’ve dismantled a lot of this pyramid now – reaching the end. </p>
+<p>Wow – we’ve dismantled a lot of this pyramid now. </p>
 <p>Today you’re going to deliver your gift to its recipient </p>
 <p>How are you feeling? </p>
 <p>Good? </p>
@@ -4998,9 +5038,16 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 
 :: 7modulelist [nobr]
 <<set $passage to "7modulelist">><<set $session to 7>>
-<<if $skip is true>><<timed 5s>><<set $skip to false>>
-<<goto $nextpass>>
-<</timed>><</if>>
+<<timed 0.1s>>
+  <<if $skip is true>>
+    <<addclass "#codewordWrapper1" "disappear">>
+    <<addclass "#codewordWrapper2" "disappear">>
+      <<timed 5s>>
+        <<set $skip to false>>
+        <<goto $nextpass>>
+      <</timed>>
+  <</if>>
+<</timed>>
 <div class="wrapper box">
   <main class="modules">
   <h1 class="title">SESSION SEVEN</h1>
@@ -5010,7 +5057,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
       <div class="flip-card-front">
   <img src="./assets/img/mod15.jpg" alt="module fifteen">
       /* <h2 class="subtitle">Module 15</h2> */
-       <div id="codewordWrapper" class="codeword-wrapper">
+       <div id="codewordWrapper1" class="codeword-wrapper">
   /% CODEWORD INPUT %/
       <div class="code-input">
       <<textbox "$codeword" "">>
@@ -5055,7 +5102,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
       <div class="flip-card-front">
   <img src="./assets/img/mod16.jpg" alt="module sixteen">
       /* <h2 class="subtitle">Module 16</h2> */
-        <div id="codewordWrapper" class="codeword-wrapper">
+        <div id="codewordWrapper2" class="codeword-wrapper">
   /% CODEWORD INPUT %/
       <div class="code-input">
       <<textbox "$codeword" "">>
@@ -5619,9 +5666,15 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 
 :: 8modulelist [nobr]
 <<set $passage to "8modulelist">><<set $session to 8>>
-<<if $skip is true>><<timed 5s>><<set $skip to false>>
-<<goto $nextpass>>
-<</timed>><</if>>
+<<timed 0.1s>>
+  <<if $skip is true>>
+    <<addclass "#codewordWrapper1" "disappear">>
+      <<timed 5s>>
+        <<set $skip to false>>
+        <<goto $nextpass>>
+      <</timed>>
+  <</if>>
+<</timed>>
 <div class="wrapper box">
   <main class="modules">
   <h1 class="title">SESSION EIGHT</h1>
@@ -5632,7 +5685,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
       <div class="flip-card-front">
   <img src="./assets/img/mod17.jpg" alt="module seventeen">
       /* <h2 class="subtitle">Module 17</h2> */
-      <div id="codewordWrapper" class="codeword-wrapper">
+      <div id="codewordWrapper1" class="codeword-wrapper">
   /% CODEWORD INPUT %/
       <div class="code-input">
       <<textbox "$codeword" "">>

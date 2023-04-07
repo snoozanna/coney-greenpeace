@@ -197,8 +197,9 @@ main.speaking.inlineimg {
 }
 
 main.speaking.inlineimg > img {
-  max-width: 200px;
+  max-width: 300px;
   transform: rotate(-4deg);
+  margin-inline-start: 4rem;
 }
 
 /* FOOTER */
