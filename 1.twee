@@ -3252,8 +3252,12 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
 <p>Clubs, Hearts, Diamonds & Spades. </p>
 <p>I like games. </p>
 <p>Hand the Mapping Resources out, and let’s Power Map.</p>
+<div id="mount"><div>
+<<timed 22s>><<replace "#mount">>
 <p>When you have the resources, I’ll explain more. </p>
 <p>Click <<button "here">><<set $prevpass to $passage>><<goto "4mod7b">><</button>> when ready for the explanation</p>
+<</replace>>
+<</timed>>
 /* <div id="mount"></div> */
 /* <<timed 300s>>
 <<replace "#mount">>
@@ -3407,8 +3411,11 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
     <div class="text-wrapper">
 <p>Teacher, hand out Module 8’s resources and let’s imagine Utopia
 </p>
+<div id="mount"></div>
+<<timed 11s>><<replace "#mount">>
 <p>When you have the resources, I’ll explain more. </p>
 <p>Click <<button "here">><<set $prevpass to $passage>><<goto $nextpass>><</button>> when ready for the explanation</p>
+<</replace>><</timed>>
 </div>
  </main>
      <<include "footerskip">>
@@ -3566,8 +3573,10 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
 <p>Teacher, the instructions are on the Module Card. </p>
 <p>We need a Comfort Marker. </p>
 <p>Lucky you were given a potato in compartment 1, hey? </p>
+<div id="mount"></div>
+<<timed 18s>><<replace "#mount">>
 <p>When you have completed this click <<button "Move on">><<set $prevpass to $passage>><<goto "4mod9outro1">><</button>></p>
-
+<</replace>><</timed>>
 </div>
  </main>
      <<include "footerskip">>
