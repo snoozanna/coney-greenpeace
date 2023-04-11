@@ -726,20 +726,15 @@ $(document.head).find('#style-ui-bar').remove();
 
 
 :: 1mod1a [nobr]
-<<set $passage to "1mod1a">><audio src="/assets/audio/SESSION1_MOD1_extractioneconomy_2.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $passage to "1mod1a">><audio src="/assets/audio/eeg_rules.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
     <main  class="speaking">
         <div class="text-wrapper">
  <div id="mount">
     <p>
-    Great – Does everyone understand the rules of the game? </p>
-      <p>I’ll summarise </p>
-      <ul>
-        <li>-	The goal is to end the game with the MOST money </li>
-        <li>-	But you can’t lose more than half of your land</li>
-       </ul>
-       <p>We’ll lead you through the four parts of a Round:</p>
+    We’ll lead you through the four parts of a Round. </p>
+     
        <ul>
         <li>
           <h4>1st - DEBATE</h4>
@@ -747,7 +742,7 @@ $(document.head).find('#style-ui-bar').remove();
         </li>
          <li>
           <h4>2nd - DEFENCE</h4>
-          <p>Defence Moves are placed first. There are a limit of defences lots for each country.</p>
+          <p>Defence Moves are placed first. There are a limit of defences lots for each country. Defence counters are replaced each round.</p>
         </li>
         <li>
           <h4>3rd - EXTRACTION</h4>
@@ -756,14 +751,14 @@ The order you go in will be randomised.</p>
         </li>
     <li>
           <h4>4th - PAYMENT ROUND/SCORE</h4>
-          <p> You pay the Teacher to build up your Money in the Bank andpay off your debt each round.</p>
+          <p> You pay the Teacher to build up your Money in the Bank and pay off your debt each round.</p>
         </li>
         </ul>
    
        <p>Got it? </p>
    <<button "Yes">>
-      <<replace "#mount">><audio src="/assets/audio/SESSION1_MOD1_extractioneconomy_3.mp3" autoplay>Audio is not supported on your device</audio>
-      <p>Ready for round 1? 1 min GO. </p>
+      <<replace "#mount">><audio src="/assets/audio/eeg_letsplay.mp3" autoplay>Audio is not supported on your device</audio>
+      <p>Let’s play The Extraction Economy Game!</p>
      <<timed 4s>><<set $prevpass to $passage>><<goto "1mod1bintro">><</timed>>
     <</replace>>
     <</button>> 
@@ -777,7 +772,7 @@ The order you go in will be randomised.</p>
 </div>
 
 :: 1mod1bintro [nobr]
-<<set $passage to "1mod1b">><<set $seconds to 60>>
+<<set $passage to "1mod1b">><<set $seconds to 60>><audio src="/assets/audio/eeg_round1.mp3" autoplay>Audio is not supported on your device</audio>
 /* Tactics & Defense  */
 <div class="wrapper box">
   <<include "header">>
@@ -805,7 +800,9 @@ The order you go in will be randomised.</p>
      <<elseif $seconds is 0>>   
       <<replace "#timer">><</replace>>
       <<replace "#mount">>
+         <audio src="/assets/audio/eeg_placeyourdefensemarkers.mp3" autoplay>Audio is not supported on your device</audio>
           <h2 class="subtitle">Defence</h2>
+          <p>Place your Defence Markers now. You might not choose to place any.</p>
            <<button "Next">><<set $prevpass to $passage>><<goto "1mod1br1">><</button>>
         <</replace>>
         <<else>><<stop>>
@@ -816,8 +813,9 @@ The order you go in will be randomised.</p>
 :: 1mod1br1 [nobr]
 /* Extract */
 <<set $order to ["Kipu", "Tez", "Outa", "Sowe", "Allo", "Lucia"]>>
-/* TODO FIX PLACEMENT HERE */
-<<set $passage to "1mod1br1">><audio src="/assets/audio/SESSION1_MOD1_extractioneconomy_4.mp3" autoplay>Audio is not supported on your device</audio>
+/* TODO DYNAMIC AUDIO  */
+
+<<set $passage to "1mod1br1">><audio src="/assets/audio/eeg_timetoextract.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper box">
   <<include "header">>
 <main class="game">
@@ -825,7 +823,7 @@ The order you go in will be randomised.</p>
  <div class="game-wrapper">
    <div id="mount" class="flex-col">
  
-      <h2 class="subtitle">Extract</h2>
+      <h2 class="subtitle">Time to Extract</h2>
 
     <div class="options-wrapper">
        <<for _i to 0; _i lt $order.length; _i++>>
@@ -841,7 +839,9 @@ The order you go in will be randomised.</p>
     </div>
      <<button "Move on">>
     <<replace "#mount">>
-       <h2 class="subtitle">Payment</h2>
+    <audio src="/assets/audio/eeg_moneymoney.mp3" autoplay>Audio is not supported on your device</audio>
+       <h2 class="subtitle">Money Money</h2>
+       <p>Pay off this round’s debt and add money to your bank. The country with the most money wins!</p>
        <<button "Move on">> 
         <<set $prevpass to $passage>><<goto "1mod1br2intro">><</button>>
     <</replace>>
@@ -855,7 +855,7 @@ The order you go in will be randomised.</p>
 </div>
 
 :: 1mod1br2intro [nobr]
-<<set $passage to "1mod1br2intro">><<set $seconds to 60>>
+<<set $passage to "1mod1br2intro">><<set $seconds to 60>><audio src="/assets/audio/eeg_round2.mp3" autoplay>Audio is not supported on your device</audio>
 /* Tactics & Defense  */
 <div class="wrapper box">
   <<include "header">>
@@ -882,7 +882,9 @@ The order you go in will be randomised.</p>
      <<elseif $seconds is 0>>   
       <<replace "#timer">><</replace>>
       <<replace "#mount">>
+      <audio src="/assets/audio/eeg_placeyourdefensemarkers.mp3" autoplay>Audio is not supported on your device</audio>
           <h2 class="subtitle">Defence</h2>
+          <p>Place your Defence Markers now. You might not choose to place any.</p>
            <<button "Next">><<set $prevpass to $passage>><<goto "1mod1br2">><</button>>
         <</replace>>
         <<else>><<stop>>
@@ -892,7 +894,7 @@ The order you go in will be randomised.</p>
 
 :: 1mod1br2 [nobr]
 /* Extract */
-<<set $order to ["Allo","Outa","Sowe", "Tez", "Kipu", "Lucia"]>>
+<<set $order to ["Allo","Outa","Sowe", "Tez", "Kipu", "Lucia"]>><audio src="/assets/audio/eeg_timetoextract.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $passage to "1mod1br2">>
 <div class="wrapper box">
   <<include "header">>
@@ -900,7 +902,7 @@ The order you go in will be randomised.</p>
         <h1 class="title">Round 2</h1>
  <div class="game-wrapper">
    <div id="mount" class="flex-col">
-    <h2 class="subtitle">Extract</h2>
+    <h2 class="subtitle">Time to Extract</h2>
     <div class="options-wrapper">
        <<for _i to 0; _i lt $order.length; _i++>>
        <<capture _i>>
@@ -915,7 +917,9 @@ The order you go in will be randomised.</p>
     </div>
     <<button "Move on">>
     <<replace "#mount">>
-       <h2 class="subtitle">Payment</h2>
+          <audio src="/assets/audio/eeg_moneymoney.mp3" autoplay>Audio is not supported on your device</audio>
+       <h2 class="subtitle">Money Money</h2>
+       <p>Pay off this round’s debt and add money to your bank. The country with the most money wins!</p>
        <<button "Move on">> 
         <<set $prevpass to $passage>><<goto "1mod1br3intro">><</button>>
     <</replace>>
@@ -928,7 +932,7 @@ The order you go in will be randomised.</p>
 </div>
 
 :: 1mod1br3intro [nobr]
-<<set $passage to "1mod1br3intro">><<set $seconds to 60>>
+<<set $passage to "1mod1br3intro">><<set $seconds to 60>><audio src="/assets/audio/eeg_round3.mp3" autoplay>Audio is not supported on your device</audio>
 /* Tactics & Defense  */
 <div class="wrapper box">
   <<include "header">>
@@ -955,7 +959,9 @@ The order you go in will be randomised.</p>
      <<elseif $seconds is 0>>   
       <<replace "#timer">><</replace>>
       <<replace "#mount">>
+           <audio src="/assets/audio/eeg_placeyourdefensemarkers.mp3" autoplay>Audio is not supported on your device</audio>
           <h2 class="subtitle">Defence</h2>
+          <p>Place your Defence Markers now. You might not choose to place any.</p>
            <<button "Next">><<set $prevpass to $passage>><<goto "1mod1br3">><</button>>
         <</replace>>
         <<else>><<stop>>
@@ -965,7 +971,7 @@ The order you go in will be randomised.</p>
 
 :: 1mod1br3 [nobr]
 /* Extract */
-<<set $order to ["Kipu","Allo","Sowe","Outa", "Tez",  "Lucia"]>>
+<<set $order to ["Kipu","Allo","Sowe","Outa", "Tez",  "Lucia"]>><audio src="/assets/audio/eeg_timetoextract.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $passage to "1mod1br3">>
 <div class="wrapper box">
   <<include "header">>
@@ -973,7 +979,7 @@ The order you go in will be randomised.</p>
         <h1 class="title">Round 3</h1>
  <div class="game-wrapper">
    <div id="mount" class="flex-col">
-    <h2 class="subtitle">Extract</h2>
+    <h2 class="subtitle">Time to Extract</h2>
     <div class="options-wrapper">
        <<for _i to 0; _i lt $order.length; _i++>>
        <<capture _i>>
@@ -988,7 +994,9 @@ The order you go in will be randomised.</p>
     </div>
          <<button "Move on">>
     <<replace "#mount">>
-       <h2 class="subtitle">Payment</h2>
+         <audio src="/assets/audio/eeg_moneymoney.mp3" autoplay>Audio is not supported on your device</audio>
+       <h2 class="subtitle">Money Money</h2>
+       <p>Pay off this round’s debt and add money to your bank. The country with the most money wins!</p>
        <<button "Move on">> 
         <<set $prevpass to $passage>><<goto "1mod1br4intro">><</button>>
     <</replace>>
@@ -1003,7 +1011,7 @@ The order you go in will be randomised.</p>
 </div>
 
 :: 1mod1br4intro [nobr]
-<<set $passage to "1mod1br4intro">><<set $seconds to 60>>
+<<set $passage to "1mod1br4intro">><<set $seconds to 60>><audio src="/assets/audio/eeg_round4.mp3" autoplay>Audio is not supported on your device</audio>
 /* Tactics & Defense  */
 <div class="wrapper box">
   <<include "header">>
@@ -1030,7 +1038,9 @@ The order you go in will be randomised.</p>
      <<elseif $seconds is 0>>   
       <<replace "#timer">><</replace>>
       <<replace "#mount">>
+           <audio src="/assets/audio/eeg_placeyourdefensemarkers.mp3" autoplay>Audio is not supported on your device</audio>
           <h2 class="subtitle">Defence</h2>
+          <p>Place your Defence Markers now. You might not choose to place any.</p>
            <<button "Next">><<set $prevpass to $passage>><<goto "1mod1br4">><</button>>
         <</replace>>
         <<else>><<stop>>
@@ -1040,7 +1050,7 @@ The order you go in will be randomised.</p>
 
 :: 1mod1br4 [nobr]
 /* Extract */
-<<set $order to ["Tez", "Outa","Kipu","Sowe","Lucia", "Allo",]>>
+<<set $order to ["Tez", "Outa","Kipu","Sowe","Lucia", "Allo",]>><audio src="/assets/audio/eeg_timetoextract.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $passage to "1mod1br4">>
 <div class="wrapper box">
   <<include "header">>
@@ -1048,7 +1058,7 @@ The order you go in will be randomised.</p>
         <h1 class="title">Round 4</h1>
  <div class="game-wrapper">
    <div id="mount" class="flex-col">
-    <h2 class="subtitle">Extract</h2>
+    <h2 class="subtitle">Time to Extract</h2>
     <div class="options-wrapper">
        <<for _i to 0; _i lt $order.length; _i++>>
        <<capture _i>>
@@ -1063,7 +1073,9 @@ The order you go in will be randomised.</p>
     </div>
     <<button "Move on">>
     <<replace "#mount">>
-       <h2 class="subtitle">Payment</h2>
+          <audio src="/assets/audio/eeg_moneymoney.mp3" autoplay>Audio is not supported on your device</audio>
+       <h2 class="subtitle">Money Money</h2>
+       <p>Pay off this round’s debt and add money to your bank. The country with the most money wins!</p>
        <<button "Move on">> 
         <<set $prevpass to $passage>><<goto "1mod1gameoutro">><</button>>
     <</replace>>
@@ -1079,15 +1091,16 @@ The order you go in will be randomised.</p>
 :: 1mod1gameoutro [nobr]
 <<set $prevpass to "1mod1br4">>
 <<set $passage to "1mod1gameoutro">>
-<<set $nextpass to "1mod1outroKaia">><audio src="" autoplay>Audio is not supported on your device</audio>
+<<set $nextpass to "1mod1outroKaia">><audio src="/assets/audio/eeg_greatgame.mp3" autoplay>Audio is not supported on your device</audio>
 /* TODO Split this up  */
 <div class="wrapper">
 <<include "header">>
   <main class="speaking">
       <div class="text-wrapper">
 
-  <h1 class="title">Teacher</h1>
-  <p>Read out the final scores and then there are some questions you can ask the class in your teacher pack.</p>
+<p>  Great Game.</p>
+<p>I can’t see of course, as I’m pre-recorded, but I imagine it was a close-run thing with lots of tension! Or maybe it was a broken game…</p>
+<p>Teacher, read out the final scores and then there are some questions you can ask the class in your teacher pack.</p>
  
 
   <<button "Move on">> 
@@ -1257,7 +1270,7 @@ The order you go in will be randomised.</p>
 </div>
 
 :: 1mod2introc[nobr]
-<<set $passage to "1mod2introc">><audio src="/assets/audio/SESSION1_MOD2_codename.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $passage to "1mod2introc">><audio src="/assets/audio/SESSION1_MOD2_codename_rerecord.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -2676,7 +2689,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 :: 3mod6a [nobr]
 <<set $prevpass to "3mod6intro2">>
 <<set $passage to "3mod6a">>
-<<set $nextpass to "3mod6outro1">><audio src="/assets/audio/SESSION3_MOD6_focus.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $nextpass to "3mod6outro1">><audio src="/assets/audio/SESSION3_MOD6_focus_rerecord.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -2689,7 +2702,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 
 <p>All the information is on the cards. </p>
 
-When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nextpass>><</button>>
+<p>After the 6 humans have been presented click <<button "Move on">><<set $prevpass to $passage>><<goto $nextpass>><</button>></p>
 </div>
  </main>
      <<include "footerskip">>
@@ -2781,7 +2794,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
 <img src="./assets/img/characters-29.jpg">
 <<button "Fast Fashion">>
 
-  <<set $choice to "Fast Fashion – inspired by Céline Semaan-Vernon">>
+  <<set $choice to "Fast Fashion – inspired by Céline Semaan">>
     <<set $mod6audio to "fastfashion">>
   <<timed 2s>><<set $prevpass to $passage>><<set $mod6 to true>><<goto $nextpass>><</timed>>
 <</button>>
@@ -2845,7 +2858,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
       <img src="./assets/img/characters-29.jpg" autoplay>
     <</replace>>
   <<replace "#audio">>
-      <audio src="/assets/audio/SESSION3_OUTRO_2.6_fastfashion.mp3" autoplay>Audio is not supported on your device</audio>
+      <audio src="/assets/audio/SESSION3_OUTRO_2.x_celinesermanvernon.mp3" autoplay>Audio is not supported on your device</audio>
     <</replace>>
 <</if>>
 
@@ -2866,7 +2879,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
 <<include "checkmod6audio">>
   <<replace "#mount">>
     <p>You’ve picked to focus on $choice</p>
-    <<timed 10s>><<goto $nextpass>><</timed>>
+    <<timed 9s>><<goto $nextpass>><</timed>>
   <</replace>>
 <</timed>>
 </div>
@@ -2914,7 +2927,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
 <<set $prevpass to "3sessionoutro2">>
 <<set $passage to "3sessionoutro3">>
  <<set $nextpass to "3sessionoutro4">>
-<div id="audio"><audio src="/assets/audio/SESSION3_OUTRO_4.mp3" autoplay>Audio is not supported on your device</audio></div>
+<div id="audio"><audio src="/assets/audio/SESSION3_OUTRO_4_rerecord.mp3" autoplay>Audio is not supported on your device</audio></div>
 
 <div class="wrapper">
   <<include "header">>
@@ -2924,12 +2937,19 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
     <p>The last envelope in the compartment has your Recon Cards. </p>
     <p>Cards to inspire you before the next session. </p>
     <p>To get intelligence on our target. </p>
+    <<timed 9s>><<replace "#mount">>
     <p>Time to close for today. </p>
     <p>But a code for you to dive deeper.</p>
     <h2 class="subtitle inline">HOPEY. </h2>
     <p>Take care. </p>
-
-    <<button "Finish">><<set $prevpass to $passage>><<goto "landing">><</button>>
+    <</replace>>
+<</timed>>
+<<timed 23s>><<append "#mount">>
+<p>Teacher, hand the cards out to everyone. </p>
+<<button "Finish">><<set $prevpass to $passage>><<goto "landing">><</button>>
+<</append>>
+<</timed>>
+    
 
 </div>
   </main>
@@ -3243,7 +3263,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
 <<set $prevpass to "4mod7intro2">>
 <<set $passage to "4mod7a">>
 <<set $nextpass to "4mod7b">>
-<audio src="/assets/audio/SESSION4_MOD7_intro_3.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="/assets/audio/SESSION4_MOD7_intro_3_rerecord.mp3" autoplay>Audio is not supported on your device</audio>
   <div class="wrapper">
     <<include "header">>
     <main  class="speaking">
@@ -3273,7 +3293,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
 <<set $prevpass to "4mod7a">>
 <<set $passage to "4mod7b">>
 <<set $nextpass to "4mod7outro1">>
-/* <audio src="/assets/audio/" autoplay>Audio is not supported on your device</audio> */
+<audio src="/assets/audio/SESSION4_MOD7_intro_5.mp3" autoplay>Audio is not supported on your device</audio>
   <div class="wrapper">
     <<include "header">>
     <main  class="speaking">
@@ -3425,7 +3445,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
 <<set $prevpass to "4mod8a">>
 <<set $passage to "4mod8b">>
 <<set $nextpass to "4mod8outro1">>
-/* <audio src="/assets/audio/SESSION4_MOD8_intro_3.mp3" autoplay>Audio is not supported on your device</audio> */
+<audio src="/assets/audio/SESSION4_MOD8_intro_4.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -3461,11 +3481,12 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto $nex
 <p>This would be your objective, your mission </p>
 <p>WE WANT A SCHOOL THAT… you can fill in the blanks. </p>
 <p>Actually do, summarise it and write it on the ASK Card </p>
+
+<<timed 24s>> <<replace "#mount">>
 <p>Use the Rule change section to help fill this out. You’ll have 1 Ask Card for each group.</p>
 
-
- <<timed 19s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
-
+ <<button "Next">><<set $prevpass to $passage>><<goto $nextpass>><</button>>
+<</replace>><</timed>>
 </div>
 <img src="./assets/img/ruleRGB-87.jpg">
  </main>
@@ -4958,7 +4979,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
  <h1 class="title ">Hello again. </h1>
 
     <div class="text-wrapper">
-<p>Wow – we’ve dismantled a lot of this pyramid now. </p>
+<p>Wow – we’ve dismantled a lot of this pyramid now - reaching the end.</p>
 <p>Today you’re going to deliver your gift to its recipient </p>
 <p>How are you feeling? </p>
 <p>Good? </p>
@@ -5570,9 +5591,9 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 :: 8kaiIntro1 [nobr]
 <<set $prevpass to "landing">>
 <<set $passage to "8kaiIntro1">>
-<<set $nextpass to "8kaiIntro2">>
+<<set $nextpass to "8kaiIntrob">>
 <<set $module to "Introduction">><<include "checkmodulenamelist">>
-<audio src="/assets/audio/SESSION8_INTRO_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="/assets/audio/SESSION8_finalcompartment_1.mp3" autoplay>Audio is not supported on your device</audio>
 
 <div class="wrapper">
   <<include "header">>
@@ -5581,13 +5602,76 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
  <h1 class="title ">Hi</h1>
 
 <div class="text-wrapper">
-  <p>Well done on unlocking the last compartment. </p>
-  <p>Within the last compartment, one more gift. </p>
-  <p>But now you’re the recipient </p>
-  <p>Underneath the box is one last compartment.</p> 
-<p>Enter 672 for your gift. </p>
+<p>Well done on unlocking the Online Platform.</p>
 
-    <<timed 12s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+<p>There are no more sections in this Pyramid to unlock.</p>
+<p>No more surprises to find.</p>
+<p>We’ve dismantled it all.</p>
+
+    <<timed 14s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+</div>
+</main>
+<<include "footerskip">>
+</div>
+
+
+:: 8kaiIntrob [nobr]
+<<set $prevpass to "8kaiIntro1">>
+<<set $passage to "8kaiIntrob">>
+<<set $nextpass to "8kaiIntroc">>
+<<set $module to "Introduction">><<include "checkmodulenamelist">>
+<audio src="/assets/audio/SESSION8_finalcompartment_2.mp3" autoplay>Audio is not supported on your device</audio>
+
+<div class="wrapper">
+  <<include "header">>
+
+  <main class="speaking">
+<div class="text-wrapper">
+<p>Or perhaps we have been missing something.</p>
+<p>Hiding in plain sight.</p>
+<p>To be discovered when the time was right.</p>
+    <<timed 11s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+</div>
+</main>
+<<include "footerskip">>
+</div>
+
+:: 8kaiIntroc [nobr]
+<<set $prevpass to "8kaiIntrob">>
+<<set $passage to "8kaiIntroc">>
+<<set $nextpass to "8kaiIntrod">>
+<<set $module to "Introduction">><<include "checkmodulenamelist">>
+<audio src="/assets/audio/SESSION8_finalcompartment_3.mp3" autoplay>Audio is not supported on your device</audio>
+
+<div class="wrapper">
+  <<include "header">>
+
+  <main class="speaking">
+<div class="text-wrapper">
+<p>Now is that time.</p>
+    <<timed 5s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+</div>
+</main>
+<<include "footerskip">>
+</div>
+
+:: 8kaiIntrod [nobr]
+<<set $prevpass to "8kaiIntroc">>
+<<set $passage to "8kaiIntrod">>
+<<set $nextpass to "8kaiIntro2">>
+<<set $module to "Introduction">><<include "checkmodulenamelist">>
+<audio src="/assets/audio/SESSION8_finalcompartment_4.mp3" autoplay>Audio is not supported on your device</audio>
+
+<div class="wrapper">
+  <<include "header">>
+
+  <main class="speaking">
+<div class="text-wrapper">
+<p>Within the last compartment, one more gift.</p>
+<p>But now you’re the recipient</p>
+<p>Underneath the box is one last compartment.</p>
+<p>Enter 672 for your gift.</p>
+    <<button "Next">><<set $prevpass to $passage>><<goto $nextpass>><</button>>
 </div>
 </main>
 <<include "footerskip">>
@@ -5603,7 +5687,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
   <<include "header">>
   <main class="speaking">
 <div class="text-wrapper">
-<p>You might wear this gift to remind you that you’re a playful climate activist </p>
+<p>You might wear this gift to remind you that you’re a  <h2 class="subtitle inline">Playful Climate Activist</h2></p>
     <<timed 7s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
 </div>
 </main>

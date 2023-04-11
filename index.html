@@ -718,20 +718,15 @@ $(document.head).find('#style-ui-bar').remove();
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footer&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="1mod1a" tags="nobr" position="225,350" size="100,100">&lt;&lt;set $passage to &quot;1mod1a&quot;&gt;&gt;&lt;audio src=&quot;/assets/audio/SESSION1_MOD1_extractioneconomy_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="1mod1a" tags="nobr" position="225,350" size="100,100">&lt;&lt;set $passage to &quot;1mod1a&quot;&gt;&gt;&lt;audio src=&quot;/assets/audio/eeg_rules.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
     &lt;main  class=&quot;speaking&quot;&gt;
         &lt;div class=&quot;text-wrapper&quot;&gt;
  &lt;div id=&quot;mount&quot;&gt;
     &lt;p&gt;
-    Great – Does everyone understand the rules of the game? &lt;/p&gt;
-      &lt;p&gt;I’ll summarise &lt;/p&gt;
-      &lt;ul&gt;
-        &lt;li&gt;-	The goal is to end the game with the MOST money &lt;/li&gt;
-        &lt;li&gt;-	But you can’t lose more than half of your land&lt;/li&gt;
-       &lt;/ul&gt;
-       &lt;p&gt;We’ll lead you through the four parts of a Round:&lt;/p&gt;
+    We’ll lead you through the four parts of a Round. &lt;/p&gt;
+     
        &lt;ul&gt;
         &lt;li&gt;
           &lt;h4&gt;1st - DEBATE&lt;/h4&gt;
@@ -739,7 +734,7 @@ $(document.head).find('#style-ui-bar').remove();
         &lt;/li&gt;
          &lt;li&gt;
           &lt;h4&gt;2nd - DEFENCE&lt;/h4&gt;
-          &lt;p&gt;Defence Moves are placed first. There are a limit of defences lots for each country.&lt;/p&gt;
+          &lt;p&gt;Defence Moves are placed first. There are a limit of defences lots for each country. Defence counters are replaced each round.&lt;/p&gt;
         &lt;/li&gt;
         &lt;li&gt;
           &lt;h4&gt;3rd - EXTRACTION&lt;/h4&gt;
@@ -748,14 +743,14 @@ The order you go in will be randomised.&lt;/p&gt;
         &lt;/li&gt;
     &lt;li&gt;
           &lt;h4&gt;4th - PAYMENT ROUND/SCORE&lt;/h4&gt;
-          &lt;p&gt; You pay the Teacher to build up your Money in the Bank andpay off your debt each round.&lt;/p&gt;
+          &lt;p&gt; You pay the Teacher to build up your Money in the Bank and pay off your debt each round.&lt;/p&gt;
         &lt;/li&gt;
         &lt;/ul&gt;
    
        &lt;p&gt;Got it? &lt;/p&gt;
    &lt;&lt;button &quot;Yes&quot;&gt;&gt;
-      &lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;audio src=&quot;/assets/audio/SESSION1_MOD1_extractioneconomy_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-      &lt;p&gt;Ready for round 1? 1 min GO. &lt;/p&gt;
+      &lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;audio src=&quot;/assets/audio/eeg_letsplay.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+      &lt;p&gt;Let’s play The Extraction Economy Game!&lt;/p&gt;
      &lt;&lt;timed 4s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;1mod1bintro&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
     &lt;&lt;/replace&gt;&gt;
     &lt;&lt;/button&gt;&gt; 
@@ -766,7 +761,7 @@ The order you go in will be randomised.&lt;/p&gt;
 
   &lt;/main&gt;
   &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="1mod1bintro" tags="nobr" position="350,350" size="100,100">&lt;&lt;set $passage to &quot;1mod1b&quot;&gt;&gt;&lt;&lt;set $seconds to 60&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="1mod1bintro" tags="nobr" position="350,350" size="100,100">&lt;&lt;set $passage to &quot;1mod1b&quot;&gt;&gt;&lt;&lt;set $seconds to 60&gt;&gt;&lt;audio src=&quot;/assets/audio/eeg_round1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 /* Tactics &amp; Defense  */
 &lt;div class=&quot;wrapper box&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
@@ -794,7 +789,9 @@ The order you go in will be randomised.&lt;/p&gt;
      &lt;&lt;elseif $seconds is 0&gt;&gt;   
       &lt;&lt;replace &quot;#timer&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
       &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+         &lt;audio src=&quot;/assets/audio/eeg_placeyourdefensemarkers.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
           &lt;h2 class=&quot;subtitle&quot;&gt;Defence&lt;/h2&gt;
+          &lt;p&gt;Place your Defence Markers now. You might not choose to place any.&lt;/p&gt;
            &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;1mod1br1&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
         &lt;&lt;/replace&gt;&gt;
         &lt;&lt;else&gt;&gt;&lt;&lt;stop&gt;&gt;
@@ -802,8 +799,9 @@ The order you go in will be randomised.&lt;/p&gt;
   &lt;&lt;/repeat&gt;&gt;
 &lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="1mod1br1" tags="nobr" position="475,350" size="100,100">/* Extract */
 &lt;&lt;set $order to [&quot;Kipu&quot;, &quot;Tez&quot;, &quot;Outa&quot;, &quot;Sowe&quot;, &quot;Allo&quot;, &quot;Lucia&quot;]&gt;&gt;
-/* TODO FIX PLACEMENT HERE */
-&lt;&lt;set $passage to &quot;1mod1br1&quot;&gt;&gt;&lt;audio src=&quot;/assets/audio/SESSION1_MOD1_extractioneconomy_4.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+/* TODO DYNAMIC AUDIO  */
+
+&lt;&lt;set $passage to &quot;1mod1br1&quot;&gt;&gt;&lt;audio src=&quot;/assets/audio/eeg_timetoextract.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;div class=&quot;wrapper box&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
 &lt;main class=&quot;game&quot;&gt;
@@ -811,7 +809,7 @@ The order you go in will be randomised.&lt;/p&gt;
  &lt;div class=&quot;game-wrapper&quot;&gt;
    &lt;div id=&quot;mount&quot; class=&quot;flex-col&quot;&gt;
  
-      &lt;h2 class=&quot;subtitle&quot;&gt;Extract&lt;/h2&gt;
+      &lt;h2 class=&quot;subtitle&quot;&gt;Time to Extract&lt;/h2&gt;
 
     &lt;div class=&quot;options-wrapper&quot;&gt;
        &lt;&lt;for _i to 0; _i lt $order.length; _i++&gt;&gt;
@@ -827,7 +825,9 @@ The order you go in will be randomised.&lt;/p&gt;
     &lt;/div&gt;
      &lt;&lt;button &quot;Move on&quot;&gt;&gt;
     &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
-       &lt;h2 class=&quot;subtitle&quot;&gt;Payment&lt;/h2&gt;
+    &lt;audio src=&quot;/assets/audio/eeg_moneymoney.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+       &lt;h2 class=&quot;subtitle&quot;&gt;Money Money&lt;/h2&gt;
+       &lt;p&gt;Pay off this round’s debt and add money to your bank. The country with the most money wins!&lt;/p&gt;
        &lt;&lt;button &quot;Move on&quot;&gt;&gt; 
         &lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;1mod1br2intro&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
     &lt;&lt;/replace&gt;&gt;
@@ -838,7 +838,7 @@ The order you go in will be randomised.&lt;/p&gt;
 
   &lt;/main&gt;
   &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="25" name="1mod1br2intro" tags="nobr" position="600,350" size="100,100">&lt;&lt;set $passage to &quot;1mod1br2intro&quot;&gt;&gt;&lt;&lt;set $seconds to 60&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="25" name="1mod1br2intro" tags="nobr" position="600,350" size="100,100">&lt;&lt;set $passage to &quot;1mod1br2intro&quot;&gt;&gt;&lt;&lt;set $seconds to 60&gt;&gt;&lt;audio src=&quot;/assets/audio/eeg_round2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 /* Tactics &amp; Defense  */
 &lt;div class=&quot;wrapper box&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
@@ -865,14 +865,16 @@ The order you go in will be randomised.&lt;/p&gt;
      &lt;&lt;elseif $seconds is 0&gt;&gt;   
       &lt;&lt;replace &quot;#timer&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
       &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+      &lt;audio src=&quot;/assets/audio/eeg_placeyourdefensemarkers.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
           &lt;h2 class=&quot;subtitle&quot;&gt;Defence&lt;/h2&gt;
+          &lt;p&gt;Place your Defence Markers now. You might not choose to place any.&lt;/p&gt;
            &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;1mod1br2&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
         &lt;&lt;/replace&gt;&gt;
         &lt;&lt;else&gt;&gt;&lt;&lt;stop&gt;&gt;
     &lt;&lt;/if&gt;&gt;
   &lt;&lt;/repeat&gt;&gt;
 &lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="1mod1br2" tags="nobr" position="725,350" size="100,100">/* Extract */
-&lt;&lt;set $order to [&quot;Allo&quot;,&quot;Outa&quot;,&quot;Sowe&quot;, &quot;Tez&quot;, &quot;Kipu&quot;, &quot;Lucia&quot;]&gt;&gt;
+&lt;&lt;set $order to [&quot;Allo&quot;,&quot;Outa&quot;,&quot;Sowe&quot;, &quot;Tez&quot;, &quot;Kipu&quot;, &quot;Lucia&quot;]&gt;&gt;&lt;audio src=&quot;/assets/audio/eeg_timetoextract.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;&lt;set $passage to &quot;1mod1br2&quot;&gt;&gt;
 &lt;div class=&quot;wrapper box&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
@@ -880,7 +882,7 @@ The order you go in will be randomised.&lt;/p&gt;
         &lt;h1 class=&quot;title&quot;&gt;Round 2&lt;/h1&gt;
  &lt;div class=&quot;game-wrapper&quot;&gt;
    &lt;div id=&quot;mount&quot; class=&quot;flex-col&quot;&gt;
-    &lt;h2 class=&quot;subtitle&quot;&gt;Extract&lt;/h2&gt;
+    &lt;h2 class=&quot;subtitle&quot;&gt;Time to Extract&lt;/h2&gt;
     &lt;div class=&quot;options-wrapper&quot;&gt;
        &lt;&lt;for _i to 0; _i lt $order.length; _i++&gt;&gt;
        &lt;&lt;capture _i&gt;&gt;
@@ -895,7 +897,9 @@ The order you go in will be randomised.&lt;/p&gt;
     &lt;/div&gt;
     &lt;&lt;button &quot;Move on&quot;&gt;&gt;
     &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
-       &lt;h2 class=&quot;subtitle&quot;&gt;Payment&lt;/h2&gt;
+          &lt;audio src=&quot;/assets/audio/eeg_moneymoney.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+       &lt;h2 class=&quot;subtitle&quot;&gt;Money Money&lt;/h2&gt;
+       &lt;p&gt;Pay off this round’s debt and add money to your bank. The country with the most money wins!&lt;/p&gt;
        &lt;&lt;button &quot;Move on&quot;&gt;&gt; 
         &lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;1mod1br3intro&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
     &lt;&lt;/replace&gt;&gt;
@@ -905,7 +909,7 @@ The order you go in will be randomised.&lt;/p&gt;
     
   &lt;/main&gt;
   &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="27" name="1mod1br3intro" tags="nobr" position="850,350" size="100,100">&lt;&lt;set $passage to &quot;1mod1br3intro&quot;&gt;&gt;&lt;&lt;set $seconds to 60&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="27" name="1mod1br3intro" tags="nobr" position="850,350" size="100,100">&lt;&lt;set $passage to &quot;1mod1br3intro&quot;&gt;&gt;&lt;&lt;set $seconds to 60&gt;&gt;&lt;audio src=&quot;/assets/audio/eeg_round3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 /* Tactics &amp; Defense  */
 &lt;div class=&quot;wrapper box&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
@@ -932,14 +936,16 @@ The order you go in will be randomised.&lt;/p&gt;
      &lt;&lt;elseif $seconds is 0&gt;&gt;   
       &lt;&lt;replace &quot;#timer&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
       &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+           &lt;audio src=&quot;/assets/audio/eeg_placeyourdefensemarkers.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
           &lt;h2 class=&quot;subtitle&quot;&gt;Defence&lt;/h2&gt;
+          &lt;p&gt;Place your Defence Markers now. You might not choose to place any.&lt;/p&gt;
            &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;1mod1br3&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
         &lt;&lt;/replace&gt;&gt;
         &lt;&lt;else&gt;&gt;&lt;&lt;stop&gt;&gt;
     &lt;&lt;/if&gt;&gt;
   &lt;&lt;/repeat&gt;&gt;
 &lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="28" name="1mod1br3" tags="nobr" position="975,350" size="100,100">/* Extract */
-&lt;&lt;set $order to [&quot;Kipu&quot;,&quot;Allo&quot;,&quot;Sowe&quot;,&quot;Outa&quot;, &quot;Tez&quot;,  &quot;Lucia&quot;]&gt;&gt;
+&lt;&lt;set $order to [&quot;Kipu&quot;,&quot;Allo&quot;,&quot;Sowe&quot;,&quot;Outa&quot;, &quot;Tez&quot;,  &quot;Lucia&quot;]&gt;&gt;&lt;audio src=&quot;/assets/audio/eeg_timetoextract.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;&lt;set $passage to &quot;1mod1br3&quot;&gt;&gt;
 &lt;div class=&quot;wrapper box&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
@@ -947,7 +953,7 @@ The order you go in will be randomised.&lt;/p&gt;
         &lt;h1 class=&quot;title&quot;&gt;Round 3&lt;/h1&gt;
  &lt;div class=&quot;game-wrapper&quot;&gt;
    &lt;div id=&quot;mount&quot; class=&quot;flex-col&quot;&gt;
-    &lt;h2 class=&quot;subtitle&quot;&gt;Extract&lt;/h2&gt;
+    &lt;h2 class=&quot;subtitle&quot;&gt;Time to Extract&lt;/h2&gt;
     &lt;div class=&quot;options-wrapper&quot;&gt;
        &lt;&lt;for _i to 0; _i lt $order.length; _i++&gt;&gt;
        &lt;&lt;capture _i&gt;&gt;
@@ -962,7 +968,9 @@ The order you go in will be randomised.&lt;/p&gt;
     &lt;/div&gt;
          &lt;&lt;button &quot;Move on&quot;&gt;&gt;
     &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
-       &lt;h2 class=&quot;subtitle&quot;&gt;Payment&lt;/h2&gt;
+         &lt;audio src=&quot;/assets/audio/eeg_moneymoney.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+       &lt;h2 class=&quot;subtitle&quot;&gt;Money Money&lt;/h2&gt;
+       &lt;p&gt;Pay off this round’s debt and add money to your bank. The country with the most money wins!&lt;/p&gt;
        &lt;&lt;button &quot;Move on&quot;&gt;&gt; 
         &lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;1mod1br4intro&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
     &lt;&lt;/replace&gt;&gt;
@@ -974,7 +982,7 @@ The order you go in will be randomised.&lt;/p&gt;
    
   &lt;/main&gt;
   &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="29" name="1mod1br4intro" tags="nobr" position="1100,350" size="100,100">&lt;&lt;set $passage to &quot;1mod1br4intro&quot;&gt;&gt;&lt;&lt;set $seconds to 60&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="29" name="1mod1br4intro" tags="nobr" position="1100,350" size="100,100">&lt;&lt;set $passage to &quot;1mod1br4intro&quot;&gt;&gt;&lt;&lt;set $seconds to 60&gt;&gt;&lt;audio src=&quot;/assets/audio/eeg_round4.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 /* Tactics &amp; Defense  */
 &lt;div class=&quot;wrapper box&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
@@ -1001,14 +1009,16 @@ The order you go in will be randomised.&lt;/p&gt;
      &lt;&lt;elseif $seconds is 0&gt;&gt;   
       &lt;&lt;replace &quot;#timer&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
       &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+           &lt;audio src=&quot;/assets/audio/eeg_placeyourdefensemarkers.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
           &lt;h2 class=&quot;subtitle&quot;&gt;Defence&lt;/h2&gt;
+          &lt;p&gt;Place your Defence Markers now. You might not choose to place any.&lt;/p&gt;
            &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;1mod1br4&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
         &lt;&lt;/replace&gt;&gt;
         &lt;&lt;else&gt;&gt;&lt;&lt;stop&gt;&gt;
     &lt;&lt;/if&gt;&gt;
   &lt;&lt;/repeat&gt;&gt;
 &lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="30" name="1mod1br4" tags="nobr" position="1225,350" size="100,100">/* Extract */
-&lt;&lt;set $order to [&quot;Tez&quot;, &quot;Outa&quot;,&quot;Kipu&quot;,&quot;Sowe&quot;,&quot;Lucia&quot;, &quot;Allo&quot;,]&gt;&gt;
+&lt;&lt;set $order to [&quot;Tez&quot;, &quot;Outa&quot;,&quot;Kipu&quot;,&quot;Sowe&quot;,&quot;Lucia&quot;, &quot;Allo&quot;,]&gt;&gt;&lt;audio src=&quot;/assets/audio/eeg_timetoextract.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;&lt;set $passage to &quot;1mod1br4&quot;&gt;&gt;
 &lt;div class=&quot;wrapper box&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
@@ -1016,7 +1026,7 @@ The order you go in will be randomised.&lt;/p&gt;
         &lt;h1 class=&quot;title&quot;&gt;Round 4&lt;/h1&gt;
  &lt;div class=&quot;game-wrapper&quot;&gt;
    &lt;div id=&quot;mount&quot; class=&quot;flex-col&quot;&gt;
-    &lt;h2 class=&quot;subtitle&quot;&gt;Extract&lt;/h2&gt;
+    &lt;h2 class=&quot;subtitle&quot;&gt;Time to Extract&lt;/h2&gt;
     &lt;div class=&quot;options-wrapper&quot;&gt;
        &lt;&lt;for _i to 0; _i lt $order.length; _i++&gt;&gt;
        &lt;&lt;capture _i&gt;&gt;
@@ -1031,7 +1041,9 @@ The order you go in will be randomised.&lt;/p&gt;
     &lt;/div&gt;
     &lt;&lt;button &quot;Move on&quot;&gt;&gt;
     &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
-       &lt;h2 class=&quot;subtitle&quot;&gt;Payment&lt;/h2&gt;
+          &lt;audio src=&quot;/assets/audio/eeg_moneymoney.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+       &lt;h2 class=&quot;subtitle&quot;&gt;Money Money&lt;/h2&gt;
+       &lt;p&gt;Pay off this round’s debt and add money to your bank. The country with the most money wins!&lt;/p&gt;
        &lt;&lt;button &quot;Move on&quot;&gt;&gt; 
         &lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;1mod1gameoutro&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
     &lt;&lt;/replace&gt;&gt;
@@ -1044,15 +1056,16 @@ The order you go in will be randomised.&lt;/p&gt;
   &lt;&lt;include &quot;footer&quot;&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="1mod1gameoutro" tags="nobr" position="100,475" size="100,100">&lt;&lt;set $prevpass to &quot;1mod1br4&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;1mod1gameoutro&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;1mod1outroKaia&quot;&gt;&gt;&lt;audio src=&quot;&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;&lt;set $nextpass to &quot;1mod1outroKaia&quot;&gt;&gt;&lt;audio src=&quot;/assets/audio/eeg_greatgame.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 /* TODO Split this up  */
 &lt;div class=&quot;wrapper&quot;&gt;
 &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
       &lt;div class=&quot;text-wrapper&quot;&gt;
 
-  &lt;h1 class=&quot;title&quot;&gt;Teacher&lt;/h1&gt;
-  &lt;p&gt;Read out the final scores and then there are some questions you can ask the class in your teacher pack.&lt;/p&gt;
+&lt;p&gt;  Great Game.&lt;/p&gt;
+&lt;p&gt;I can’t see of course, as I’m pre-recorded, but I imagine it was a close-run thing with lots of tension! Or maybe it was a broken game…&lt;/p&gt;
+&lt;p&gt;Teacher, read out the final scores and then there are some questions you can ask the class in your teacher pack.&lt;/p&gt;
  
 
   &lt;&lt;button &quot;Move on&quot;&gt;&gt; 
@@ -1193,7 +1206,7 @@ The order you go in will be randomised.&lt;/p&gt;
    &lt;/div&gt;
   &lt;/main&gt;
   &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="40" name="1mod2introc" tags="nobr" position="1225,475" size="100,100">&lt;&lt;set $passage to &quot;1mod2introc&quot;&gt;&gt;&lt;audio src=&quot;/assets/audio/SESSION1_MOD2_codename.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="40" name="1mod2introc" tags="nobr" position="1225,475" size="100,100">&lt;&lt;set $passage to &quot;1mod2introc&quot;&gt;&gt;&lt;audio src=&quot;/assets/audio/SESSION1_MOD2_codename_rerecord.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -2413,7 +2426,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="95" name="3mod6a" tags="nobr" position="600,1225" size="100,100">&lt;&lt;set $prevpass to &quot;3mod6intro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3mod6a&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;3mod6outro1&quot;&gt;&gt;&lt;audio src=&quot;/assets/audio/SESSION3_MOD6_focus.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;&lt;set $nextpass to &quot;3mod6outro1&quot;&gt;&gt;&lt;audio src=&quot;/assets/audio/SESSION3_MOD6_focus_rerecord.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -2426,7 +2439,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 
 &lt;p&gt;All the information is on the cards. &lt;/p&gt;
 
-When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;p&gt;After the 6 humans have been presented click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/p&gt;
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
@@ -2511,7 +2524,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;img src=&quot;./assets/img/characters-29.jpg&quot;&gt;
 &lt;&lt;button &quot;Fast Fashion&quot;&gt;&gt;
 
-  &lt;&lt;set $choice to &quot;Fast Fashion – inspired by Céline Semaan-Vernon&quot;&gt;&gt;
+  &lt;&lt;set $choice to &quot;Fast Fashion – inspired by Céline Semaan&quot;&gt;&gt;
     &lt;&lt;set $mod6audio to &quot;fastfashion&quot;&gt;&gt;
   &lt;&lt;timed 2s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod6 to true&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;&lt;/button&gt;&gt;
@@ -2572,7 +2585,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
       &lt;img src=&quot;./assets/img/characters-29.jpg&quot; autoplay&gt;
     &lt;&lt;/replace&gt;&gt;
   &lt;&lt;replace &quot;#audio&quot;&gt;&gt;
-      &lt;audio src=&quot;/assets/audio/SESSION3_OUTRO_2.6_fastfashion.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+      &lt;audio src=&quot;/assets/audio/SESSION3_OUTRO_2.x_celinesermanvernon.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
     &lt;&lt;/replace&gt;&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="99" name="3sessionoutro1" tags="nobr" position="1100,1225" size="100,100">&lt;&lt;set $prevpass to &quot;3mod6outro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3sessionoutro1&quot;&gt;&gt;
@@ -2590,7 +2603,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;&lt;include &quot;checkmod6audio&quot;&gt;&gt;
   &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
     &lt;p&gt;You’ve picked to focus on $choice&lt;/p&gt;
-    &lt;&lt;timed 10s&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+    &lt;&lt;timed 9s&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
   &lt;&lt;/replace&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;/div&gt;
@@ -2631,7 +2644,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="101" name="3sessionoutro3" tags="nobr" position="100,1350" size="100,100">&lt;&lt;set $prevpass to &quot;3sessionoutro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3sessionoutro3&quot;&gt;&gt;
  &lt;&lt;set $nextpass to &quot;3sessionoutro4&quot;&gt;&gt;
-&lt;div id=&quot;audio&quot;&gt;&lt;audio src=&quot;/assets/audio/SESSION3_OUTRO_4.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
+&lt;div id=&quot;audio&quot;&gt;&lt;audio src=&quot;/assets/audio/SESSION3_OUTRO_4_rerecord.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
 
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
@@ -2641,12 +2654,19 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
     &lt;p&gt;The last envelope in the compartment has your Recon Cards. &lt;/p&gt;
     &lt;p&gt;Cards to inspire you before the next session. &lt;/p&gt;
     &lt;p&gt;To get intelligence on our target. &lt;/p&gt;
+    &lt;&lt;timed 9s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;
     &lt;p&gt;Time to close for today. &lt;/p&gt;
     &lt;p&gt;But a code for you to dive deeper.&lt;/p&gt;
     &lt;h2 class=&quot;subtitle inline&quot;&gt;HOPEY. &lt;/h2&gt;
     &lt;p&gt;Take care. &lt;/p&gt;
-
-    &lt;&lt;button &quot;Finish&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;landing&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+    &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 23s&gt;&gt;&lt;&lt;append &quot;#mount&quot;&gt;&gt;
+&lt;p&gt;Teacher, hand the cards out to everyone. &lt;/p&gt;
+&lt;&lt;button &quot;Finish&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;landing&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+    
 
 &lt;/div&gt;
   &lt;/main&gt;
@@ -2930,7 +2950,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
   &lt;/div&gt;</tw-passagedata><tw-passagedata pid="108" name="4mod7a" tags="nobr" position="975,1350" size="100,100">&lt;&lt;set $prevpass to &quot;4mod7intro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod7a&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4mod7b&quot;&gt;&gt;
-&lt;audio src=&quot;/assets/audio/SESSION4_MOD7_intro_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;audio src=&quot;/assets/audio/SESSION4_MOD7_intro_3_rerecord.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
   &lt;div class=&quot;wrapper&quot;&gt;
     &lt;&lt;include &quot;header&quot;&gt;&gt;
     &lt;main  class=&quot;speaking&quot;&gt;
@@ -2957,7 +2977,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
   &lt;/div&gt;</tw-passagedata><tw-passagedata pid="109" name="4mod7b" tags="nobr" position="1100,1350" size="100,100">&lt;&lt;set $prevpass to &quot;4mod7a&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod7b&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4mod7outro1&quot;&gt;&gt;
-/* &lt;audio src=&quot;/assets/audio/&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt; */
+&lt;audio src=&quot;/assets/audio/SESSION4_MOD7_intro_5.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
   &lt;div class=&quot;wrapper&quot;&gt;
     &lt;&lt;include &quot;header&quot;&gt;&gt;
     &lt;main  class=&quot;speaking&quot;&gt;
@@ -3086,7 +3106,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="115" name="4mod8b" tags="nobr" position="600,1475" size="100,100">&lt;&lt;set $prevpass to &quot;4mod8a&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod8b&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4mod8outro1&quot;&gt;&gt;
-/* &lt;audio src=&quot;/assets/audio/SESSION4_MOD8_intro_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt; */
+&lt;audio src=&quot;/assets/audio/SESSION4_MOD8_intro_4.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -3118,11 +3138,12 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;p&gt;This would be your objective, your mission &lt;/p&gt;
 &lt;p&gt;WE WANT A SCHOOL THAT… you can fill in the blanks. &lt;/p&gt;
 &lt;p&gt;Actually do, summarise it and write it on the ASK Card &lt;/p&gt;
+
+&lt;&lt;timed 24s&gt;&gt; &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
 &lt;p&gt;Use the Rule change section to help fill this out. You’ll have 1 Ask Card for each group.&lt;/p&gt;
 
-
- &lt;&lt;timed 19s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
-
+ &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;/div&gt;
 &lt;img src=&quot;./assets/img/ruleRGB-87.jpg&quot;&gt;
  &lt;/main&gt;
@@ -4414,7 +4435,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
  &lt;h1 class=&quot;title &quot;&gt;Hello again. &lt;/h1&gt;
 
     &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt;Wow – we’ve dismantled a lot of this pyramid now. &lt;/p&gt;
+&lt;p&gt;Wow – we’ve dismantled a lot of this pyramid now - reaching the end.&lt;/p&gt;
 &lt;p&gt;Today you’re going to deliver your gift to its recipient &lt;/p&gt;
 &lt;p&gt;How are you feeling? &lt;/p&gt;
 &lt;p&gt;Good? &lt;/p&gt;
@@ -4949,9 +4970,9 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 
 /* SESSION 8 */</tw-passagedata><tw-passagedata pid="194" name="8kaiIntro1" tags="nobr" position="475,2475" size="100,100">&lt;&lt;set $prevpass to &quot;landing&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8kaiIntro1&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;8kaiIntro2&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;8kaiIntrob&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
-&lt;audio src=&quot;/assets/audio/SESSION8_INTRO_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;audio src=&quot;/assets/audio/SESSION8_finalcompartment_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
@@ -4960,17 +4981,70 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
  &lt;h1 class=&quot;title &quot;&gt;Hi&lt;/h1&gt;
 
 &lt;div class=&quot;text-wrapper&quot;&gt;
-  &lt;p&gt;Well done on unlocking the last compartment. &lt;/p&gt;
-  &lt;p&gt;Within the last compartment, one more gift. &lt;/p&gt;
-  &lt;p&gt;But now you’re the recipient &lt;/p&gt;
-  &lt;p&gt;Underneath the box is one last compartment.&lt;/p&gt; 
-&lt;p&gt;Enter 672 for your gift. &lt;/p&gt;
+&lt;p&gt;Well done on unlocking the Online Platform.&lt;/p&gt;
 
-    &lt;&lt;timed 12s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;p&gt;There are no more sections in this Pyramid to unlock.&lt;/p&gt;
+&lt;p&gt;No more surprises to find.&lt;/p&gt;
+&lt;p&gt;We’ve dismantled it all.&lt;/p&gt;
+
+    &lt;&lt;timed 14s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;/div&gt;
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="195" name="8kaiIntro2" tags="nobr" position="600,2475" size="100,100">&lt;&lt;set $prevpass to &quot;8kaiIntro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="195" name="8kaiIntrob" tags="nobr" position="600,2475" size="100,100">&lt;&lt;set $prevpass to &quot;8kaiIntro1&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;8kaiIntrob&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;8kaiIntroc&quot;&gt;&gt;
+&lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
+&lt;audio src=&quot;/assets/audio/SESSION8_finalcompartment_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+
+&lt;div class=&quot;wrapper&quot;&gt;
+  &lt;&lt;include &quot;header&quot;&gt;&gt;
+
+  &lt;main class=&quot;speaking&quot;&gt;
+&lt;div class=&quot;text-wrapper&quot;&gt;
+&lt;p&gt;Or perhaps we have been missing something.&lt;/p&gt;
+&lt;p&gt;Hiding in plain sight.&lt;/p&gt;
+&lt;p&gt;To be discovered when the time was right.&lt;/p&gt;
+    &lt;&lt;timed 11s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;/div&gt;
+&lt;/main&gt;
+&lt;&lt;include &quot;footerskip&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="196" name="8kaiIntroc" tags="nobr" position="725,2475" size="100,100">&lt;&lt;set $prevpass to &quot;8kaiIntrob&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;8kaiIntroc&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;8kaiIntrod&quot;&gt;&gt;
+&lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
+&lt;audio src=&quot;/assets/audio/SESSION8_finalcompartment_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+
+&lt;div class=&quot;wrapper&quot;&gt;
+  &lt;&lt;include &quot;header&quot;&gt;&gt;
+
+  &lt;main class=&quot;speaking&quot;&gt;
+&lt;div class=&quot;text-wrapper&quot;&gt;
+&lt;p&gt;Now is that time.&lt;/p&gt;
+    &lt;&lt;timed 5s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;/div&gt;
+&lt;/main&gt;
+&lt;&lt;include &quot;footerskip&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="197" name="8kaiIntrod" tags="nobr" position="850,2475" size="100,100">&lt;&lt;set $prevpass to &quot;8kaiIntroc&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;8kaiIntrod&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;8kaiIntro2&quot;&gt;&gt;
+&lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
+&lt;audio src=&quot;/assets/audio/SESSION8_finalcompartment_4.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+
+&lt;div class=&quot;wrapper&quot;&gt;
+  &lt;&lt;include &quot;header&quot;&gt;&gt;
+
+  &lt;main class=&quot;speaking&quot;&gt;
+&lt;div class=&quot;text-wrapper&quot;&gt;
+&lt;p&gt;Within the last compartment, one more gift.&lt;/p&gt;
+&lt;p&gt;But now you’re the recipient&lt;/p&gt;
+&lt;p&gt;Underneath the box is one last compartment.&lt;/p&gt;
+&lt;p&gt;Enter 672 for your gift.&lt;/p&gt;
+    &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;/div&gt;
+&lt;/main&gt;
+&lt;&lt;include &quot;footerskip&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="198" name="8kaiIntro2" tags="nobr" position="975,2475" size="100,100">&lt;&lt;set $prevpass to &quot;8kaiIntro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8kaiIntro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8kaiIntro3&quot;&gt;&gt;
 &lt;audio src=&quot;/assets/audio/SESSION8_INTRO_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -4979,12 +5053,12 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
 &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt;You might wear this gift to remind you that you’re a playful climate activist &lt;/p&gt;
+&lt;p&gt;You might wear this gift to remind you that you’re a  &lt;h2 class=&quot;subtitle inline&quot;&gt;Playful Climate Activist&lt;/h2&gt;&lt;/p&gt;
     &lt;&lt;timed 7s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;/div&gt;
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="196" name="8kaiIntro3" tags="nobr" position="725,2475" size="100,100">&lt;&lt;set $prevpass to &quot;8kaiIntro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="199" name="8kaiIntro3" tags="nobr" position="1100,2475" size="100,100">&lt;&lt;set $prevpass to &quot;8kaiIntro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8kaiIntro3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8kaiIntro4&quot;&gt;&gt;
 &lt;audio src=&quot;/assets/audio/SESSION8_INTRO_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -4999,7 +5073,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="197" name="8kaiIntro4" tags="nobr" position="850,2475" size="100,100">&lt;&lt;set $prevpass to &quot;8kaiIntro3&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="200" name="8kaiIntro4" tags="nobr" position="1225,2475" size="100,100">&lt;&lt;set $prevpass to &quot;8kaiIntro3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8kaiIntro4&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8kaiIntro5&quot;&gt;&gt;
 &lt;audio src=&quot;/assets/audio/SESSION8_INTRO_4.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -5017,7 +5091,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="198" name="8kaiIntro5" tags="nobr" position="975,2475" size="100,100">&lt;&lt;set $prevpass to &quot;8kaiIntro4&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="201" name="8kaiIntro5" tags="nobr" position="100,2600" size="100,100">&lt;&lt;set $prevpass to &quot;8kaiIntro4&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8kaiIntro5&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8modulelist&quot;&gt;&gt;
 &lt;audio src=&quot;/assets/audio/SESSION8_INTRO_5.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -5036,7 +5110,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="199" name="8modulelist" tags="nobr" position="1100,2475" size="100,100">&lt;&lt;set $passage to &quot;8modulelist&quot;&gt;&gt;&lt;&lt;set $session to 8&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="202" name="8modulelist" tags="nobr" position="225,2600" size="100,100">&lt;&lt;set $passage to &quot;8modulelist&quot;&gt;&gt;&lt;&lt;set $session to 8&gt;&gt;
 &lt;&lt;timed 0.1s&gt;&gt;
   &lt;&lt;if $skip is true&gt;&gt;
     &lt;&lt;addclass &quot;#codewordWrapper1&quot; &quot;disappear&quot;&gt;&gt;
@@ -5097,7 +5171,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 
   &lt;/main&gt;
   &lt;&lt;include &quot;footerbox&quot;&gt;&gt;&lt;/div&gt;
-  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="200" name="8mod17intro1" tags="nobr" position="1225,2475" size="100,100">&lt;&lt;set $prevpass to &quot;8modulelist&quot;&gt;&gt;
+  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="203" name="8mod17intro1" tags="nobr" position="350,2600" size="100,100">&lt;&lt;set $prevpass to &quot;8modulelist&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8mod17intro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8mod17introVid&quot;&gt;&gt;
 &lt;audio src=&quot;/assets/audio/SESSION8_MOD17_intro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -5120,7 +5194,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="201" name="8mod17introVid" tags="nobr" position="100,2600" size="100,100">&lt;&lt;set $prevpass to &quot;8mod17intro1&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="204" name="8mod17introVid" tags="nobr" position="475,2600" size="100,100">&lt;&lt;set $prevpass to &quot;8mod17intro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8mod17introVid&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8mod17intro2&quot;&gt;&gt;
   &lt;div class=&quot;wrapper&quot;&gt;
@@ -5130,7 +5204,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
         	&lt;div id=&quot;video&quot; role=&quot;video&quot; aria-label=&quot;&quot;&gt;&lt;iframe src=&quot;https://player.vimeo.com/video/809464688?h=c6aec791bb&amp;amp;badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture&quot; style=&quot;position:absolute;top:0;left:0;width:100%;height:90%;&quot; allowfullscreen title=&quot;greenpeace violet.mp4&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footervid&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="202" name="8mod17intro2" tags="nobr" position="225,2600" size="100,100">&lt;&lt;set $prevpass to &quot;8mod17introVid&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="205" name="8mod17intro2" tags="nobr" position="600,2600" size="100,100">&lt;&lt;set $prevpass to &quot;8mod17introVid&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8mod17intro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8mod17intro3&quot;&gt;&gt;
 &lt;audio src=&quot;/assets/audio/SESSION8_MOD17_intro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -5149,7 +5223,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="203" name="8mod17intro3" tags="nobr" position="350,2600" size="100,100">&lt;&lt;set $prevpass to &quot;8mod17intro2&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="206" name="8mod17intro3" tags="nobr" position="725,2600" size="100,100">&lt;&lt;set $prevpass to &quot;8mod17intro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8mod17intro3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8mod17intro4&quot;&gt;&gt;
 &lt;audio src=&quot;/assets/audio/SESSION8_MOD17_intro_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -5168,7 +5242,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="204" name="8mod17intro4" tags="nobr" position="475,2600" size="100,100">&lt;&lt;set $prevpass to &quot;8mod17intro2&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="207" name="8mod17intro4" tags="nobr" position="850,2600" size="100,100">&lt;&lt;set $prevpass to &quot;8mod17intro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8mod17intro4&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8mod17outro1&quot;&gt;&gt;
 &lt;audio src=&quot;/assets/audio/SESSION8_MOD17_intro_4.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -5187,7 +5261,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="205" name="8mod17outro1" tags="nobr" position="600,2600" size="100,100">&lt;&lt;set $prevpass to &quot;8mod17intro4&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="208" name="8mod17outro1" tags="nobr" position="975,2600" size="100,100">&lt;&lt;set $prevpass to &quot;8mod17intro4&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8mod17outro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8sessionoutro1&quot;&gt;&gt;
 
@@ -5202,7 +5276,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;
 &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="206" name="8sessionoutro1" tags="nobr" position="725,2600" size="100,100">&lt;&lt;set $prevpass to &quot;8mod17outro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="209" name="8sessionoutro1" tags="nobr" position="1100,2600" size="100,100">&lt;&lt;set $prevpass to &quot;8mod17outro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8sessionoutro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8sessionoutro2&quot;&gt;&gt;
 &lt;audio src=&quot;/assets/audio/SESSION8_OUTRO_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -5223,7 +5297,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="207" name="8sessionoutro2" tags="nobr" position="850,2600" size="100,100">&lt;&lt;set $prevpass to &quot;8sessionoutro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="210" name="8sessionoutro2" tags="nobr" position="1225,2600" size="100,100">&lt;&lt;set $prevpass to &quot;8sessionoutro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8sessionoutro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8sessionoutro3&quot;&gt;&gt;
 &lt;audio src=&quot;/assets/audio/SESSION8_OUTRO_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -5246,7 +5320,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="208" name="8sessionoutro3" tags="nobr" position="975,2600" size="100,100">&lt;&lt;set $prevpass to &quot;8sessionoutro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="211" name="8sessionoutro3" tags="nobr" position="100,2725" size="100,100">&lt;&lt;set $prevpass to &quot;8sessionoutro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8sessionoutro3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8sessionoutro4&quot;&gt;&gt;
 &lt;audio src=&quot;/assets/audio/SESSION8_OUTRO_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
