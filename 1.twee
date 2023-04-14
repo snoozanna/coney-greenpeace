@@ -2995,7 +2995,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "3sessionoutro2">>
 <<set $passage to "3sessionoutro3">>
  <<set $nextpass to "3sessionoutro4">>
-<div id="audio"><audio src="/assets/audio/SESSION3_OUTRO_4_rerecord.mp3" autoplay>Audio is not supported on your device</audio></div>
+<div id="audio"><audio src="/assets/audio/SESSION3_OUTRO_4.mp3" autoplay>Audio is not supported on your device</audio></div>
 
 <div class="wrapper">
   <<include "header">>
