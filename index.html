@@ -162,7 +162,22 @@ $(document.head).find('#style-ui-bar').remove();
             }
         ,t);
     };
-}();</script><tw-passagedata pid="1" name="StoryInit" tags="" position="100,100" size="100,100">&lt;&lt;cacheaudio &quot;badjoke&quot; &quot;https://youhavefoundconey.net/CG/what/assets/audio/badjoke.mp3&quot;&gt;&gt;
+}();</script><tw-passagedata pid="1" name="StoryInit" tags="" position="100,100" size="100,100">&lt;&lt;cacheaudio &quot;weirdnoise&quot; &quot;./../assets/audio/weirdnoise.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;pyramidtransition_1&quot; &quot;./../assets/audio/pyramidtransition_1.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;pyramidtransition_2&quot; &quot;./../assets/audio/pyramidtransition_2.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;pyramidtransition_4&quot; &quot;./../assets/audio/pyramidtransition_4.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;completionbloop_4&quot; &quot;./../assets/audio/completionbloop_4.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;modulelist_1&quot; &quot;./../assets/audio/modulelist_1.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;eeg_1&quot; &quot;./../assets/audio/eeg_1.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;Kipu&quot; &quot;./../assets/audio/eeg_kipu.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;Allo&quot; &quot;./../assets/audio/eeg_allo.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;Tez&quot; &quot;./../assets/audio/eeg_tez.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;Outa&quot; &quot;./../assets/audio/eeg_outa.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;Lucia&quot; &quot;./../assets/audio/eeg_lucia.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;Sowe&quot; &quot;./../assets/audio/eeg_sowe.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;60supported&quot; &quot;./../assets/audio/60secs_supported.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;buildwithcul&quot; &quot;./../assets/audio/buildwithculmination_1.mp3&quot;&gt;&gt;
+
 &lt;&lt;waitforaudio&gt;&gt;
 
 &lt;&lt;set $mod1 to false&gt;&gt;
@@ -240,6 +255,7 @@ $(document.head).find('#style-ui-bar').remove();
   &lt;/div&gt;
   &lt;div class=&quot;loading-title-container&quot;&gt;
   &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+  &lt;&lt;audio &quot;pyramidtransition_4&quot; play&gt;&gt;
  &lt;&lt;timed 0.1s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 100ms&gt;&gt; &lt;h2&gt;Loading...&lt;/h2&gt; &lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
  &lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 100ms&gt;&gt; &lt;h2&gt;Loading...&lt;/h2&gt; &lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
   &lt;/div&gt;
@@ -257,6 +273,7 @@ $(document.head).find('#style-ui-bar').remove();
   &lt;/div&gt;
   &lt;div class=&quot;loading-title-container&quot; &gt;
   &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+  &lt;&lt;audio &quot;pyramidtransition_4&quot; play&gt;&gt;
  &lt;&lt;timed 0.1s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 100ms&gt;&gt; &lt;h2&gt;Sending...&lt;/h2&gt; &lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
  &lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 100ms&gt;&gt; &lt;h2&gt;Sending...&lt;/h2&gt; &lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
@@ -423,12 +440,15 @@ $(document.head).find('#style-ui-bar').remove();
         /% CODEWORD CORRECT %/
         &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;BEGIN&quot;&gt;&gt;
         &lt;&lt;addclass &quot;#topTriangle&quot; &quot;unlock&quot;&gt;&gt;
+          &lt;&lt;audio &quot;weirdnoise&quot; play &gt;&gt;
+        &lt;&lt;audio &quot;weirdnoise&quot; play &gt;&gt;
         &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;Session 1&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
         &lt;&lt;timed 3s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $audio to true&gt;&gt;
         &lt;&lt;set $nextpass to &quot;1kaiIntro&quot;&gt;&gt;&lt;&lt;goto &quot;loading&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
         &lt;&lt;/if&gt;&gt;
             &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;SMASH&quot;&gt;&gt;
               &lt;&lt;addclass &quot;#topTriangle&quot; &quot;unlock&quot;&gt;&gt;
+                &lt;&lt;audio &quot;weirdnoise&quot; play &gt;&gt;
         &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;Session 2&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
         &lt;&lt;timed 3s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $audio to true&gt;&gt;
          &lt;&lt;set $nextpass to &quot;2kaiIntro1&quot;&gt;&gt;&lt;&lt;goto &quot;loading&quot;&gt;&gt;
@@ -436,6 +456,7 @@ $(document.head).find('#style-ui-bar').remove();
         &lt;&lt;/if&gt;&gt;
         &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;GLOBAL&quot;&gt;&gt;
           &lt;&lt;addclass &quot;#topTriangle&quot; &quot;unlock&quot;&gt;&gt;
+            &lt;&lt;audio &quot;weirdnoise&quot; play &gt;&gt;
         &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;Session 3&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
         &lt;&lt;timed 3s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $audio to true&gt;&gt;
          &lt;&lt;set $nextpass to &quot;3kaiIntro1&quot;&gt;&gt;&lt;&lt;goto &quot;loading&quot;&gt;&gt;
@@ -443,6 +464,7 @@ $(document.head).find('#style-ui-bar').remove();
         &lt;&lt;/if&gt;&gt;
         &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;SYSTEM&quot;&gt;&gt;
           &lt;&lt;addclass &quot;#topTriangle&quot; &quot;unlock&quot;&gt;&gt;
+            &lt;&lt;audio &quot;weirdnoise&quot; play &gt;&gt;
         &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;Session 4&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
         &lt;&lt;timed 3s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $audio to true&gt;&gt;
           &lt;&lt;set $nextpass to &quot;4kaiIntro1&quot;&gt;&gt;&lt;&lt;goto &quot;loading&quot;&gt;&gt;
@@ -450,22 +472,26 @@ $(document.head).find('#style-ui-bar').remove();
         &lt;&lt;/if&gt;&gt;
          &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;PLOT&quot;&gt;&gt;
           &lt;&lt;addclass &quot;#topTriangle&quot; &quot;unlock&quot;&gt;&gt;
+            &lt;&lt;audio &quot;weirdnoise&quot; play &gt;&gt;
         &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;Session 5&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
         &lt;&lt;timed 3s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $audio to true&gt;&gt;
         &lt;&lt;set $nextpass to &quot;5kaiIntro1&quot;&gt;&gt;&lt;&lt;goto &quot;loading&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
         &lt;&lt;/if&gt;&gt;
          &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;OUR&quot;&gt;&gt;
            &lt;&lt;addclass &quot;#topTriangle&quot; &quot;unlock&quot;&gt;&gt;
+             &lt;&lt;audio &quot;weirdnoise&quot; play &gt;&gt;
         &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;Session 6&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
         &lt;&lt;timed 3s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $audio to true&gt;&gt;&lt;&lt;set $nextpass to &quot;6kaiIntro1&quot;&gt;&gt;&lt;&lt;goto &quot;loading&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
         &lt;&lt;/if&gt;&gt;
          &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;SURVIVAL&quot;&gt;&gt;
            &lt;&lt;addclass &quot;#topTriangle&quot; &quot;unlock&quot;&gt;&gt;
+             &lt;&lt;audio &quot;weirdnoise&quot; play &gt;&gt;
         &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;Session 7&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
         &lt;&lt;timed 3s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $audio to true&gt;&gt;&lt;&lt;set $nextpass to &quot;7kaiIntro1&quot;&gt;&gt;&lt;&lt;goto &quot;loading&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
         &lt;&lt;/if&gt;&gt;
          &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;NOW&quot;&gt;&gt;
            &lt;&lt;addclass &quot;#topTriangle&quot; &quot;unlock&quot;&gt;&gt;
+             &lt;&lt;audio &quot;weirdnoise&quot; play &gt;&gt;
         &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;Session 8&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
         &lt;&lt;timed 3s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $audio to true&gt;&gt;&lt;&lt;set $nextpass to &quot;8kaiIntro1&quot;&gt;&gt;&lt;&lt;goto &quot;loading&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
         &lt;&lt;/if&gt;&gt;
@@ -590,12 +616,15 @@ $(document.head).find('#style-ui-bar').remove();
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;timed 0.1s&gt;&gt;
   &lt;&lt;if $skip is true&gt;&gt;
+    &lt;&lt;audio &quot;completionbloop_4&quot; play&gt;&gt;
     &lt;&lt;addclass &quot;#codewordWrapper1&quot; &quot;disappear&quot;&gt;&gt;
     &lt;&lt;addclass &quot;#codewordWrapper2&quot; &quot;disappear&quot;&gt;&gt;
       &lt;&lt;timed 5s&gt;&gt;
         &lt;&lt;set $skip to false&gt;&gt;
         &lt;&lt;goto $nextpass&gt;&gt;
       &lt;&lt;/timed&gt;&gt;
+  &lt;&lt;else&gt;&gt;
+    &lt;&lt;audio &quot;modulelist_1&quot; play&gt;&gt;
   &lt;&lt;/if&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;div class=&quot;wrapper box&quot;&gt;
@@ -620,6 +649,8 @@ $(document.head).find('#style-ui-bar').remove();
             /% CODEWORD CORRECT %/s
             &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;EXTRACTION&quot;&gt;&gt;
             &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+              &lt;&lt;audio &quot;eeg_1&quot; play&gt;&gt;
+            &lt;&lt;audio &quot;eeg_1&quot; play&gt;&gt;
             &lt;&lt;timed 2s&gt;&gt;
               &lt;&lt;addclass &quot;#mod2&quot; &quot;disappear&quot;&gt;&gt;
                &lt;&lt;addclass &quot;#mod1&quot; &quot;twist&quot;&gt;&gt;
@@ -666,6 +697,7 @@ $(document.head).find('#style-ui-bar').remove();
             /% CODEWORD CORRECT %/s
             &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;FRONT&quot;&gt;&gt;
             &lt;&lt;replace &quot;#coderesult2&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+            &lt;&lt;audio &quot;eeg_1&quot; play&gt;&gt;
             &lt;&lt;timed 0.5s&gt;&gt;
               &lt;&lt;addclass &quot;#mod1&quot; &quot;dissolve&quot;&gt;&gt;
              &lt;&lt;/timed&gt;&gt;
@@ -734,7 +766,7 @@ $(document.head).find('#style-ui-bar').remove();
         &lt;/li&gt;
          &lt;li&gt;
           &lt;h4&gt;2nd - DEFENCE&lt;/h4&gt;
-          &lt;p&gt;Defence Moves are placed first. There are a limit of defences lots for each country. Defence counters are replaced each round.&lt;/p&gt;
+          &lt;p&gt;Defence Moves are placed first. There are a limit of defence slots for each country. Defence counters are replaced each round.&lt;/p&gt;
         &lt;/li&gt;
         &lt;li&gt;
           &lt;h4&gt;3rd - EXTRACTION&lt;/h4&gt;
@@ -742,7 +774,7 @@ $(document.head).find('#style-ui-bar').remove();
 The order you go in will be randomised.&lt;/p&gt;
         &lt;/li&gt;
     &lt;li&gt;
-          &lt;h4&gt;4th - PAYMENT ROUND/SCORE&lt;/h4&gt;
+          &lt;h4&gt;4th - PAYMENT&lt;/h4&gt;
           &lt;p&gt; You pay the Teacher to build up your Money in the Bank and pay off your debt each round.&lt;/p&gt;
         &lt;/li&gt;
         &lt;/ul&gt;
@@ -750,7 +782,8 @@ The order you go in will be randomised.&lt;/p&gt;
        &lt;p&gt;Got it? &lt;/p&gt;
    &lt;&lt;button &quot;Yes&quot;&gt;&gt;
       &lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;audio src=&quot;/assets/audio/eeg_letsplay.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-      &lt;p&gt;Let’s play The Extraction Economy Game!&lt;/p&gt;
+      &lt;&lt;audio &quot;pyramidtransition_2&quot; play&gt;&gt;
+      &lt;p&gt;Let’s play &lt;h2 class=&quot;subtitle inline&quot;&gt; The Extraction Economy Game!&lt;/h2&gt;&lt;/p&gt;
      &lt;&lt;timed 4s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;1mod1bintro&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
     &lt;&lt;/replace&gt;&gt;
     &lt;&lt;/button&gt;&gt; 
@@ -762,6 +795,7 @@ The order you go in will be randomised.&lt;/p&gt;
   &lt;/main&gt;
   &lt;&lt;include &quot;footer&quot;&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="1mod1bintro" tags="nobr" position="350,350" size="100,100">&lt;&lt;set $passage to &quot;1mod1b&quot;&gt;&gt;&lt;&lt;set $seconds to 60&gt;&gt;&lt;audio src=&quot;/assets/audio/eeg_round1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;&lt;audio &quot;60supported&quot; play&gt;&gt;
 /* Tactics &amp; Defense  */
 &lt;div class=&quot;wrapper box&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
@@ -774,7 +808,6 @@ The order you go in will be randomised.&lt;/p&gt;
    &lt;div id=&quot;mount&quot;&gt;
     &lt;h2 class=&quot;subtitle&quot;&gt;Tactics&lt;/h2&gt;
     &lt;/div&gt;
-
     
  &lt;/div &gt;
   &lt;/main&gt;
@@ -792,7 +825,7 @@ The order you go in will be randomised.&lt;/p&gt;
          &lt;audio src=&quot;/assets/audio/eeg_placeyourdefensemarkers.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
           &lt;h2 class=&quot;subtitle&quot;&gt;Defence&lt;/h2&gt;
           &lt;p&gt;Place your Defence Markers now. You might not choose to place any.&lt;/p&gt;
-           &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;1mod1br1&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+           &lt;div class=&quot;flex-col&quot;&gt;&lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;1mod1br1&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
         &lt;&lt;/replace&gt;&gt;
         &lt;&lt;else&gt;&gt;&lt;&lt;stop&gt;&gt;
     &lt;&lt;/if&gt;&gt;
@@ -816,8 +849,10 @@ The order you go in will be randomised.&lt;/p&gt;
        &lt;&lt;capture _i&gt;&gt;
           &lt;div class=&quot;option&quot;&gt;
           &lt;&lt;linkreplace &quot;Reveal&quot;&gt;&gt;
+            &lt;&lt;set $audioname to $order[_i]&gt;&gt;
+            &lt;&lt;audio $audioname play&gt;&gt;
             &lt;span&gt;&lt;&lt;print _i + 1&gt;&gt;.&lt;/span&gt;
-            &lt;span&gt;$order[_i]&lt;/span&gt;
+            &lt;span&gt;$audioname&lt;/span&gt;
           &lt;&lt;/linkreplace&gt;&gt;
           &lt;/div&gt;
         &lt;&lt;/capture&gt;&gt;
@@ -868,7 +903,9 @@ The order you go in will be randomised.&lt;/p&gt;
       &lt;audio src=&quot;/assets/audio/eeg_placeyourdefensemarkers.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
           &lt;h2 class=&quot;subtitle&quot;&gt;Defence&lt;/h2&gt;
           &lt;p&gt;Place your Defence Markers now. You might not choose to place any.&lt;/p&gt;
+           &lt;div class=&quot;flex-col&quot;&gt;
            &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;1mod1br2&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+           &lt;/div&gt;
         &lt;&lt;/replace&gt;&gt;
         &lt;&lt;else&gt;&gt;&lt;&lt;stop&gt;&gt;
     &lt;&lt;/if&gt;&gt;
@@ -887,9 +924,11 @@ The order you go in will be randomised.&lt;/p&gt;
        &lt;&lt;for _i to 0; _i lt $order.length; _i++&gt;&gt;
        &lt;&lt;capture _i&gt;&gt;
           &lt;div class=&quot;option&quot;&gt;
-          &lt;&lt;linkreplace &quot;Reveal&quot;&gt;&gt;
+           &lt;&lt;linkreplace &quot;Reveal&quot;&gt;&gt;
+            &lt;&lt;set $audioname to $order[_i]&gt;&gt;
+            &lt;&lt;audio $audioname play&gt;&gt;
             &lt;span&gt;&lt;&lt;print _i + 1&gt;&gt;.&lt;/span&gt;
-            &lt;span&gt;$order[_i]&lt;/span&gt;
+            &lt;span&gt;$audioname&lt;/span&gt;
           &lt;&lt;/linkreplace&gt;&gt;
           &lt;/div&gt;
         &lt;&lt;/capture&gt;&gt;
@@ -910,6 +949,7 @@ The order you go in will be randomised.&lt;/p&gt;
   &lt;/main&gt;
   &lt;&lt;include &quot;footer&quot;&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="27" name="1mod1br3intro" tags="nobr" position="850,350" size="100,100">&lt;&lt;set $passage to &quot;1mod1br3intro&quot;&gt;&gt;&lt;&lt;set $seconds to 60&gt;&gt;&lt;audio src=&quot;/assets/audio/eeg_round3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;&lt;audio &quot;60supported&quot; play&gt;&gt;
 /* Tactics &amp; Defense  */
 &lt;div class=&quot;wrapper box&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
@@ -939,7 +979,9 @@ The order you go in will be randomised.&lt;/p&gt;
            &lt;audio src=&quot;/assets/audio/eeg_placeyourdefensemarkers.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
           &lt;h2 class=&quot;subtitle&quot;&gt;Defence&lt;/h2&gt;
           &lt;p&gt;Place your Defence Markers now. You might not choose to place any.&lt;/p&gt;
+           &lt;div class=&quot;flex-col&quot;&gt;
            &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;1mod1br3&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+           &lt;/div&gt;
         &lt;&lt;/replace&gt;&gt;
         &lt;&lt;else&gt;&gt;&lt;&lt;stop&gt;&gt;
     &lt;&lt;/if&gt;&gt;
@@ -958,9 +1000,11 @@ The order you go in will be randomised.&lt;/p&gt;
        &lt;&lt;for _i to 0; _i lt $order.length; _i++&gt;&gt;
        &lt;&lt;capture _i&gt;&gt;
           &lt;div class=&quot;option&quot;&gt;
-          &lt;&lt;linkreplace &quot;Reveal&quot;&gt;&gt;
+           &lt;&lt;linkreplace &quot;Reveal&quot;&gt;&gt;
+            &lt;&lt;set $audioname to $order[_i]&gt;&gt;
+            &lt;&lt;audio $audioname play&gt;&gt;
             &lt;span&gt;&lt;&lt;print _i + 1&gt;&gt;.&lt;/span&gt;
-            &lt;span&gt;$order[_i]&lt;/span&gt;
+            &lt;span&gt;$audioname&lt;/span&gt;
           &lt;&lt;/linkreplace&gt;&gt;
           &lt;/div&gt;
         &lt;&lt;/capture&gt;&gt;
@@ -983,6 +1027,7 @@ The order you go in will be randomised.&lt;/p&gt;
   &lt;/main&gt;
   &lt;&lt;include &quot;footer&quot;&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="29" name="1mod1br4intro" tags="nobr" position="1100,350" size="100,100">&lt;&lt;set $passage to &quot;1mod1br4intro&quot;&gt;&gt;&lt;&lt;set $seconds to 60&gt;&gt;&lt;audio src=&quot;/assets/audio/eeg_round4.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;&lt;audio &quot;60supported&quot; play&gt;&gt;
 /* Tactics &amp; Defense  */
 &lt;div class=&quot;wrapper box&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
@@ -1012,7 +1057,9 @@ The order you go in will be randomised.&lt;/p&gt;
            &lt;audio src=&quot;/assets/audio/eeg_placeyourdefensemarkers.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
           &lt;h2 class=&quot;subtitle&quot;&gt;Defence&lt;/h2&gt;
           &lt;p&gt;Place your Defence Markers now. You might not choose to place any.&lt;/p&gt;
+           &lt;div class=&quot;flex-col&quot;&gt;
            &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;1mod1br4&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+           &lt;/div&gt;
         &lt;&lt;/replace&gt;&gt;
         &lt;&lt;else&gt;&gt;&lt;&lt;stop&gt;&gt;
     &lt;&lt;/if&gt;&gt;
@@ -1031,9 +1078,11 @@ The order you go in will be randomised.&lt;/p&gt;
        &lt;&lt;for _i to 0; _i lt $order.length; _i++&gt;&gt;
        &lt;&lt;capture _i&gt;&gt;
           &lt;div class=&quot;option&quot;&gt;
-          &lt;&lt;linkreplace &quot;Reveal&quot;&gt;&gt;
+           &lt;&lt;linkreplace &quot;Reveal&quot;&gt;&gt;
+            &lt;&lt;set $audioname to $order[_i]&gt;&gt;
+            &lt;&lt;audio $audioname play&gt;&gt;
             &lt;span&gt;&lt;&lt;print _i + 1&gt;&gt;.&lt;/span&gt;
-            &lt;span&gt;$order[_i]&lt;/span&gt;
+            &lt;span&gt;$audioname&lt;/span&gt;
           &lt;&lt;/linkreplace&gt;&gt;
           &lt;/div&gt;
         &lt;&lt;/capture&gt;&gt;
@@ -1215,9 +1264,9 @@ The order you go in will be randomised.&lt;/p&gt;
   &lt;p&gt;Teacher, over to you for this one, all of the instructions are on the Mod Card. &lt;/p&gt;
   &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
   &lt;&lt;timed 120s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;
-  &lt;p&gt;When completed click &lt;&lt;button &quot;Move On&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;1mod2outro&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+  &lt;p&gt;When completed click &lt;&lt;button &quot;Move On&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;1mod2outro&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;  &lt;/p&gt;
 &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
-  &lt;/p&gt;
+
   &lt;/div&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
@@ -1491,6 +1540,7 @@ The order you go in will be randomised.&lt;/p&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="52" name="2modulelist" tags="nobr" position="225,725" size="100,100">&lt;&lt;set $passage to &quot;2modulelist&quot;&gt;&gt;&lt;&lt;set $session to 2&gt;&gt;
 &lt;&lt;timed 0.1s&gt;&gt;
   &lt;&lt;if $skip is true&gt;&gt;
+   &lt;&lt;audio &quot;completionbloop_4&quot; play&gt;&gt;
     &lt;&lt;addclass &quot;#codewordWrapper1&quot; &quot;disappear&quot;&gt;&gt;
     &lt;&lt;addclass &quot;#codewordWrapper2&quot; &quot;disappear&quot;&gt;&gt;
       &lt;&lt;timed 5s&gt;&gt;
@@ -1521,6 +1571,7 @@ The order you go in will be randomised.&lt;/p&gt;
             /% CODEWORD CORRECT %/s
             &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;CONTEXT&quot;&gt;&gt;
             &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+              &lt;&lt;audio &quot;eeg_1&quot; play&gt;&gt;
             &lt;&lt;timed 2s&gt;&gt;
               &lt;&lt;addclass &quot;#mod4&quot; &quot;disappear&quot;&gt;&gt;
                &lt;&lt;addclass &quot;#mod3&quot; &quot;twist&quot;&gt;&gt;
@@ -1567,6 +1618,7 @@ The order you go in will be randomised.&lt;/p&gt;
             /% CODEWORD CORRECT %/s
             &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;POTATO&quot;&gt;&gt;
             &lt;&lt;replace &quot;#coderesult2&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+            &lt;&lt;audio &quot;eeg_1&quot; play&gt;&gt;
             &lt;&lt;timed 0.5s&gt;&gt;
               &lt;&lt;addclass &quot;#mod3&quot; &quot;dissolve&quot;&gt;&gt;
              &lt;&lt;/timed&gt;&gt;
@@ -2062,7 +2114,9 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 
 &lt;p&gt;Take care. &lt;/p&gt;
 
-&lt;&lt;button &quot;Finish&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;landing&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;&lt;button &quot;Finish&quot;&gt;&gt;
+&lt;&lt;audio &quot;pyramidtransition_1&quot; play &gt;&gt;
+&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;landing&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
@@ -2161,6 +2215,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="85" name="3modulelist" tags="nobr" position="600,1100" size="100,100">&lt;&lt;set $passage to &quot;3modulelist&quot;&gt;&gt;&lt;&lt;set $session to 3&gt;&gt;
 &lt;&lt;timed 0.1s&gt;&gt;
   &lt;&lt;if $skip is true&gt;&gt;
+     &lt;&lt;audio &quot;completionbloop_4&quot; play&gt;&gt;
     &lt;&lt;addclass &quot;#codewordWrapper1&quot; &quot;disappear&quot;&gt;&gt;
     &lt;&lt;addclass &quot;#codewordWrapper2&quot; &quot;disappear&quot;&gt;&gt;
       &lt;&lt;timed 5s&gt;&gt;
@@ -2190,6 +2245,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
       /% CODEWORD CORRECT %/
   &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;SKILL&quot;&gt;&gt;
 &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+  &lt;&lt;audio &quot;eeg_1&quot; play&gt;&gt;
     &lt;&lt;timed 0.5s&gt;&gt;
               &lt;&lt;addclass &quot;#mod6&quot; &quot;dissolve&quot;&gt;&gt;
              &lt;&lt;/timed&gt;&gt;
@@ -2237,6 +2293,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
       /% CODEWORD CORRECT %/
       &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;FOCUS&quot;&gt;&gt;
       &lt;&lt;replace &quot;#coderesult2&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;audio &quot;eeg_1&quot; play&gt;&gt;
 
    &lt;&lt;timed 0.5s&gt;&gt;
               &lt;&lt;addclass &quot;#mod5&quot; &quot;dissolve&quot;&gt;&gt;
@@ -2430,7 +2487,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
-    &lt;div class=&quot;text-wrapper&quot;&gt;
+    &lt;div class=&quot;text-wrapper&quot; id=&quot;mount&quot;&gt;
 &lt;p&gt;So, we’re going to look global and meet 6 humans. &lt;/p&gt;
 
 &lt;p&gt;Teacher, get the class into 6 groups and share out the Character Cards. &lt;/p&gt;
@@ -2439,8 +2496,11 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 
 &lt;p&gt;All the information is on the cards. &lt;/p&gt;
 
-&lt;p&gt;After the 6 humans have been presented click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/p&gt;
 &lt;/div&gt;
+&lt;&lt;timed 30s&gt;&gt;&lt;&lt;append &quot;#mount&quot;&gt;&gt;
+&lt;br/&gt;
+  &lt;p&gt;After the 6 humans have been presented click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/p&gt;
+&lt;&lt;/append&gt;&gt;&lt;&lt;/timed&gt;&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="96" name="3mod6outro1" tags="nobr" position="725,1225" size="100,100">&lt;&lt;set $prevpass to &quot;3mod6a&quot;&gt;&gt;
@@ -2464,6 +2524,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="97" name="3mod6outro2" tags="nobr" position="850,1225" size="100,100">&lt;&lt;set $prevpass to &quot;3mod6a&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3mod6outro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;3sessionoutro1&quot;&gt;&gt;&lt;audio src=&quot;/assets/audio/SESSION3_MOD6_outro2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;&lt;audio &quot;60supported&quot; play&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -2474,11 +2535,13 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 
 
 &lt;&lt;timed 12s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+
 &lt;div class=&quot;char-wrapper&quot;&gt;
 &lt;div class=&quot;char-item&quot;&gt;
 &lt;img src=&quot;./assets/img/characters-26.jpg&quot;&gt;
 &lt;&lt;button &quot;Air Pollution&quot;&gt;&gt;
- 
+  &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
+  &lt;&lt;audio &quot;eeg_1&quot; play&gt;&gt;
   &lt;&lt;set $choice to &quot;Air Pollution – inspired by Alejandro Daly&quot;&gt;&gt;
   &lt;&lt;set $mod6audio to &quot;air&quot;&gt;&gt;
   &lt;&lt;timed 2s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod6 to true&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
@@ -2487,7 +2550,8 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 &lt;div class=&quot;char-item&quot;&gt;
 &lt;img src=&quot;./assets/img/characters-36.jpg&quot;&gt;
 &lt;&lt;button &quot;Meat Consumption&quot;&gt;&gt;
-
+   &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
+  &lt;&lt;audio &quot;eeg_1&quot; play&gt;&gt;
   &lt;&lt;set $choice to &quot;Meat Consumption – inspired by Genesis Butler&quot;&gt;&gt;
     &lt;&lt;set $mod6audio to &quot;meat&quot;&gt;&gt;
   &lt;&lt;timed 2s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod6 to true&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
@@ -2496,7 +2560,8 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 &lt;div class=&quot;char-item&quot;&gt;
 &lt;img src=&quot;./assets/img/characters-27.jpg&quot;&gt;
 &lt;&lt;button &quot;Plastic Pollution&quot;&gt;&gt;
-
+   &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
+  &lt;&lt;audio &quot;eeg_1&quot; play&gt;&gt;
   &lt;&lt;set $choice to &quot;Plastic Pollution – inspired by Melati &amp; Isabel Wijsen&quot;&gt;&gt;
     &lt;&lt;set $mod6audio to &quot;plastic&quot;&gt;&gt;
   &lt;&lt;timed 2s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod6 to true&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
@@ -2505,7 +2570,8 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 &lt;div class=&quot;char-item&quot;&gt;
 &lt;img src=&quot;./assets/img/characters-28.jpg&quot;&gt;
 &lt;&lt;button &quot;Sustainable Palm Oil&quot;&gt;&gt;
-
+   &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
+  &lt;&lt;audio &quot;eeg_1&quot; play&gt;&gt;
   &lt;&lt;set $choice to &quot;Sustainable Palm Oil – inspired by Salsabila Khairunnisa&quot;&gt;&gt;
     &lt;&lt;set $mod6audio to &quot;palmoil&quot;&gt;&gt;
   &lt;&lt;timed 2s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod6 to true&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
@@ -2514,7 +2580,8 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 &lt;div class=&quot;char-item&quot;&gt;
 &lt;img src=&quot;./assets/img/characters-30.jpg&quot;&gt;
 &lt;&lt;button &quot;Deforestation &amp; Biodiversity&quot;&gt;&gt;
- 
+   &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
+  &lt;&lt;audio &quot;eeg_1&quot; play&gt;&gt;
   &lt;&lt;set $choice to &quot;Deforestation &amp; Biodiversity – inspired by Professor Wangari Maathai&quot;&gt;&gt;
     &lt;&lt;set $mod6audio to &quot;deforestation&quot;&gt;&gt;
   &lt;&lt;timed 2s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod6 to true&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
@@ -2523,7 +2590,8 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 &lt;div class=&quot;char-item&quot;&gt;
 &lt;img src=&quot;./assets/img/characters-29.jpg&quot;&gt;
 &lt;&lt;button &quot;Fast Fashion&quot;&gt;&gt;
-
+   &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
+  &lt;&lt;audio &quot;eeg_1&quot; play&gt;&gt;
   &lt;&lt;set $choice to &quot;Fast Fashion – inspired by Céline Semaan&quot;&gt;&gt;
     &lt;&lt;set $mod6audio to &quot;fastfashion&quot;&gt;&gt;
   &lt;&lt;timed 2s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod6 to true&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
@@ -2663,7 +2731,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 &lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 23s&gt;&gt;&lt;&lt;append &quot;#mount&quot;&gt;&gt;
 &lt;p&gt;Teacher, hand the cards out to everyone. &lt;/p&gt;
-&lt;&lt;button &quot;Finish&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;landing&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;&lt;button &quot;Finish&quot;&gt;&gt;&lt;&lt;audio &quot;pyramidtransition_1&quot; play &gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;landing&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
     
@@ -2744,6 +2812,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="105" name="4modulelist" tags="nobr" position="600,1350" size="100,100">&lt;&lt;set $passage to &quot;4modulelist&quot;&gt;&gt;&lt;&lt;set $session to 4&gt;&gt;
 &lt;&lt;timed 0.1s&gt;&gt;
   &lt;&lt;if $skip is true&gt;&gt;
+     &lt;&lt;audio &quot;completionbloop_4&quot; play&gt;&gt;
     &lt;&lt;addclass &quot;#codewordWrapper1&quot; &quot;disappear&quot;&gt;&gt;
     &lt;&lt;addclass &quot;#codewordWrapper2&quot; &quot;disappear&quot;&gt;&gt;
     &lt;&lt;addclass &quot;#codewordWrapper3&quot; &quot;disappear&quot;&gt;&gt;
@@ -2775,6 +2844,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
       /% CODEWORD CORRECT %/
   &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;RECON&quot;&gt;&gt;
 &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+  &lt;&lt;audio &quot;eeg_1&quot; play&gt;&gt;
    &lt;&lt;timed 0.5s&gt;&gt;
         &lt;&lt;addclass &quot;#mod8&quot; &quot;dissolve&quot;&gt;&gt;
         &lt;&lt;addclass &quot;#mod9&quot; &quot;dissolve&quot;&gt;&gt;
@@ -2824,6 +2894,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
       /% CODEWORD CORRECT %/
       &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;SUCCESS&quot;&gt;&gt;
       &lt;&lt;replace &quot;#coderesult2&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;audio &quot;eeg_1&quot; play&gt;&gt;
      &lt;&lt;timed 0.5s&gt;&gt;
               &lt;&lt;addclass &quot;#mod7&quot; &quot;dissolve&quot;&gt;&gt;
                &lt;&lt;addclass &quot;#mod9&quot; &quot;dissolve&quot;&gt;&gt;
@@ -2873,6 +2944,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
       /% CODEWORD CORRECT %/
       &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;COMFORT&quot;&gt;&gt;
       &lt;&lt;replace &quot;#coderesult3&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;audio &quot;eeg_1&quot; play&gt;&gt;
       &lt;&lt;timed 0.5s&gt;&gt;
               &lt;&lt;addclass &quot;#mod7&quot; &quot;dissolve&quot;&gt;&gt;
               &lt;&lt;addclass &quot;#mod8&quot; &quot;dissolve&quot;&gt;&gt;
@@ -2951,26 +3023,27 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 &lt;&lt;set $passage to &quot;4mod7a&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4mod7b&quot;&gt;&gt;
 &lt;audio src=&quot;/assets/audio/SESSION4_MOD7_intro_3_rerecord.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-  &lt;div class=&quot;wrapper&quot;&gt;
+&lt;div class=&quot;wrapper&quot;&gt;
     &lt;&lt;include &quot;header&quot;&gt;&gt;
-    &lt;main  class=&quot;speaking&quot;&gt;
-        &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt;Teacher, time to break the class into 4 groups or suits. &lt;/p&gt;
-&lt;p&gt;Clubs, Hearts, Diamonds &amp; Spades. &lt;/p&gt;
-&lt;p&gt;I like games. &lt;/p&gt;
-&lt;p&gt;Hand the Mapping Resources out, and let’s Power Map.&lt;/p&gt;
-&lt;div id=&quot;mount&quot;&gt;&lt;div&gt;
-&lt;&lt;timed 22s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;
-&lt;p&gt;When you have the resources, I’ll explain more. &lt;/p&gt;
-&lt;p&gt;Click &lt;&lt;button &quot;here&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;4mod7b&quot;&gt;&gt;&lt;&lt;/button&gt;&gt; when ready for the explanation&lt;/p&gt;
-&lt;&lt;/replace&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
-/* &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt; */
-/* &lt;&lt;timed 300s&gt;&gt;
-&lt;&lt;replace &quot;#mount&quot;&gt;&gt;
-    &lt;p&gt;When done click &lt;&lt;button &quot;Move On&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;4mod7outro1&quot;&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/p&gt;
+&lt;main class=&quot;speaking&quot;&gt;
+&lt;div class=&quot;text-wrapper&quot;&gt;
+  &lt;p&gt;Teacher, time to break the class into 4 groups or suits. &lt;/p&gt;
+  &lt;p&gt;Clubs, Hearts, Diamonds &amp; Spades. &lt;/p&gt;
+  &lt;p&gt;I like games. &lt;/p&gt;
+  &lt;p&gt;Hand the Mapping Resources out, and let’s Power Map.&lt;/p&gt;
+  &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+  &lt;&lt;timed 22s&gt;&gt;
+    &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+      &lt;p&gt;When you have the resources, I’ll explain more. &lt;/p&gt;
+      &lt;p&gt;Click &lt;&lt;button &quot;here&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;4mod7b&quot;&gt;&gt;&lt;&lt;/button&gt;&gt; when ready for the explanation&lt;/p&gt;
     &lt;&lt;/replace&gt;&gt;
-    &lt;&lt;/timed&gt;&gt; */
+  &lt;&lt;/timed&gt;&gt;
+  /* &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt; */
+  /* &lt;&lt;timed 300s&gt;&gt;
+  &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+      &lt;p&gt;When done click &lt;&lt;button &quot;Move On&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;4mod7outro1&quot;&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/p&gt;
+      &lt;&lt;/replace&gt;&gt;
+      &lt;&lt;/timed&gt;&gt; */
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
@@ -2991,7 +3064,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
  &lt;li&gt; – Lastly it’s Tactics &amp; Objectives.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
-&lt;&lt;timed 300s&gt;&gt;
+&lt;&lt;timed 200s&gt;&gt;
 &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
     &lt;p&gt;When done click &lt;&lt;button &quot;Move On&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;4mod7outro1&quot;&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/p&gt;
     &lt;&lt;/replace&gt;&gt;
@@ -3233,7 +3306,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
     &lt;div class=&quot;text-wrapper&quot;&gt;
 &lt;p&gt;Teacher, the instructions are on the Module Card. &lt;/p&gt;
 &lt;p&gt;We need a Comfort Marker. &lt;/p&gt;
-&lt;p&gt;Lucky you were given a potato in compartment 1, hey? &lt;/p&gt;
+&lt;p&gt;Lucky you were given a potato, hey? &lt;/p&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 &lt;&lt;timed 18s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;
 &lt;p&gt;When you have completed this click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;4mod9outro1&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/p&gt;
@@ -3359,7 +3432,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 &lt;p&gt;Text  &lt;h2 class=&quot;subtitle inline&quot;&gt;POWER&lt;/h2&gt; to  &lt;h2 class=&quot;subtitle inline&quot;&gt;07400179362&lt;/h2&gt; to pick it up &lt;/p&gt;
 
 &lt;p&gt;I’ll see you soon. &lt;/p&gt;
-&lt;&lt;button &quot;Finish&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;&lt;button &quot;Finish&quot;&gt;&gt;&lt;&lt;audio &quot;pyramidtransition_1&quot; play &gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
 
 &lt;/div&gt;
   &lt;/main&gt;
@@ -3413,6 +3486,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="131" name="5modulelist" tags="nobr" position="100,1725" size="100,100">&lt;&lt;set $passage to &quot;5modulelist&quot;&gt;&gt;&lt;&lt;set $session to 5&gt;&gt;
 &lt;&lt;timed 0.1s&gt;&gt;
   &lt;&lt;if $skip is true&gt;&gt;
+     &lt;&lt;audio &quot;completionbloop_4&quot; play&gt;&gt;
     &lt;&lt;addclass &quot;#codewordWrapper1&quot; &quot;disappear&quot;&gt;&gt;
     &lt;&lt;addclass &quot;#codewordWrapper2&quot; &quot;disappear&quot;&gt;&gt;
     &lt;&lt;addclass &quot;#codewordWrapper3&quot; &quot;disappear&quot;&gt;&gt;
@@ -3444,6 +3518,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
       /% CODEWORD CORRECT %/
   &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;ASK&quot;&gt;&gt;
 &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+  &lt;&lt;audio &quot;eeg_1&quot; play&gt;&gt;
  &lt;&lt;timed 2s&gt;&gt;
   &lt;&lt;addclass &quot;#mod11&quot; &quot;disappear&quot;&gt;&gt;
   &lt;&lt;addclass &quot;#mod12&quot; &quot;disappear&quot;&gt;&gt;
@@ -3487,6 +3562,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
       /% CODEWORD CORRECT %/
       &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;ACTION&quot;&gt;&gt;
       &lt;&lt;replace &quot;#coderesult2&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;audio &quot;eeg_1&quot; play&gt;&gt;
           &lt;&lt;timed 0.5s&gt;&gt;
               &lt;&lt;addclass &quot;#mod10&quot; &quot;dissolve&quot;&gt;&gt;
               &lt;&lt;addclass &quot;#mod12&quot; &quot;dissolve&quot;&gt;&gt;
@@ -3947,7 +4023,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 &lt;p&gt;Text  &lt;h2 class=&quot;subtitle inline&quot;&gt;ACTIONY&lt;/h2&gt; to find it &lt;/p&gt;
 &lt;p&gt;Until next time &lt;/p&gt;
 
-&lt;&lt;button &quot;Finish&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;&lt;button &quot;Finish&quot;&gt;&gt;&lt;&lt;audio &quot;pyramidtransition_1&quot; play &gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;/div&gt;
   &lt;/main&gt;
@@ -4066,6 +4142,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="157" name="6modulelist" tags="nobr" position="850,1975" size="100,100">&lt;&lt;set $passage to &quot;6modulelist&quot;&gt;&gt;&lt;&lt;set $session to 6&gt;&gt;
 &lt;&lt;timed 0.1s&gt;&gt;
   &lt;&lt;if $skip is true&gt;&gt;
+     &lt;&lt;audio &quot;completionbloop_4&quot; play&gt;&gt;
     &lt;&lt;addclass &quot;#codewordWrapper1&quot; &quot;disappear&quot;&gt;&gt;
     &lt;&lt;addclass &quot;#codewordWrapper2&quot; &quot;disappear&quot;&gt;&gt;
       &lt;&lt;timed 5s&gt;&gt;
@@ -4097,6 +4174,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
       /% CODEWORD CORRECT %/
   &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;HATS&quot;&gt;&gt;
 &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+  &lt;&lt;audio &quot;eeg_1&quot; play&gt;&gt;
 &lt;&lt;timed 2s&gt;&gt;
               &lt;&lt;addclass &quot;#mod14&quot; &quot;disappear&quot;&gt;&gt;
                &lt;&lt;addclass &quot;#mod13&quot; &quot;twist&quot;&gt;&gt;
@@ -4141,6 +4219,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
       /% CODEWORD CORRECT %/
       &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;MAKING&quot;&gt;&gt;
       &lt;&lt;replace &quot;#coderesult2&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;audio &quot;eeg_1&quot; play&gt;&gt;
 
      &lt;&lt;timed 0.5s&gt;&gt;
               &lt;&lt;addclass &quot;#mod13&quot; &quot;dissolve&quot;&gt;&gt;
@@ -4406,7 +4485,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="170" name="6sessionoutro2" tags="nobr" position="1225,2100" size="100,100">&lt;&lt;set $prevpass to &quot;6sessionoutro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;6sessionoutro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;landing&quot;&gt;&gt;
-&lt;audio src=&quot;/assets/audio/SESSION6_OUTRO_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;audio src=&quot;/assets/audio/SESSION6_OUTRO_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -4415,7 +4494,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;p&gt;You’ll need that codeword to get in &lt;/p&gt;
 &lt;p&gt;Text &lt;h2 class=&quot;subtitle inline&quot;&gt; COLLECTIVE&lt;/h2&gt; to find it &lt;/p&gt;
 
-&lt;&lt;button &quot;Finish&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;&lt;button &quot;Finish&quot;&gt;&gt;&lt;&lt;audio &quot;pyramidtransition_1&quot; play &gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
@@ -4513,6 +4592,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="175" name="7modulelist" tags="nobr" position="600,2225" size="100,100">&lt;&lt;set $passage to &quot;7modulelist&quot;&gt;&gt;&lt;&lt;set $session to 7&gt;&gt;
 &lt;&lt;timed 0.1s&gt;&gt;
   &lt;&lt;if $skip is true&gt;&gt;
+     &lt;&lt;audio &quot;completionbloop_4&quot; play&gt;&gt;
     &lt;&lt;addclass &quot;#codewordWrapper1&quot; &quot;disappear&quot;&gt;&gt;
     &lt;&lt;addclass &quot;#codewordWrapper2&quot; &quot;disappear&quot;&gt;&gt;
       &lt;&lt;timed 5s&gt;&gt;
@@ -4543,6 +4623,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
       /% CODEWORD CORRECT %/
   &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;ABORT&quot;&gt;&gt;
 &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+  &lt;&lt;audio &quot;eeg_1&quot; play&gt;&gt;
 &lt;&lt;timed 2s&gt;&gt;
               &lt;&lt;addclass &quot;#mod16&quot; &quot;disappear&quot;&gt;&gt;
                &lt;&lt;addclass &quot;#mod15&quot; &quot;twist&quot;&gt;&gt;
@@ -4588,6 +4669,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
       /% CODEWORD CORRECT %/
       &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;DELIVERY&quot;&gt;&gt;
       &lt;&lt;replace &quot;#coderesult2&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+      &lt;&lt;audio &quot;eeg_1&quot; play&gt;&gt;
     &lt;&lt;timed 0.5s&gt;&gt;
               &lt;&lt;addclass &quot;#mod15&quot; &quot;dissolve&quot;&gt;&gt;
              &lt;&lt;/timed&gt;&gt;
@@ -4813,6 +4895,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
       /% CODEWORD CORRECT %/
       &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;COMPLETE&quot;&gt;&gt;
       &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+        &lt;&lt;audio &quot;eeg_1&quot; play&gt;&gt;
       &lt;&lt;timed 3s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
       &lt;&lt;/if&gt;&gt;
         /% CODEWORD INCORRECT %/
@@ -4834,7 +4917,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
   /* &lt;&lt;include &quot;header&quot;&gt;&gt; */
   &lt;main class=&quot;speaking&quot;&gt;
     &lt;div class=&quot;text-wrapper&quot; id=&quot;mount&quot;&gt;
- 
+ &lt;&lt;audio &quot;buildwithcul&quot; play&gt;&gt;
 &lt;div class=&quot;trianglepulse-wrapper&quot;&gt;
    &lt;h1 class=&quot;title titlepulse&quot;&gt;COMPLETE&lt;/h1&gt;
   &lt;div id=&#39;container&#39; class=&quot;trianglepulse-container&quot;&gt;
@@ -4960,7 +5043,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;p&gt;Text  &lt;h2 class=&quot;subtitle inline&quot;&gt;SUCCESS&lt;/h2&gt; to find it &lt;/p&gt;
 &lt;p&gt;I’ll see you then &lt;/p&gt;
 
-&lt;&lt;button &quot;Finish&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;&lt;button &quot;Finish&quot;&gt;&gt;&lt;&lt;audio &quot;pyramidtransition_1&quot; play &gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
@@ -5053,7 +5136,8 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
 &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt;You might wear this gift to remind you that you’re a  &lt;h2 class=&quot;subtitle inline&quot;&gt;Playful Climate Activist&lt;/h2&gt;&lt;/p&gt;
+&lt;p&gt;You might wear this gift to remind you that you’re a &lt;/p&gt;
+&lt;p&gt;&lt;h2 class=&quot;subtitle inline&quot;&gt;Playful Climate Activist&lt;/h2&gt;&lt;/p&gt;
     &lt;&lt;timed 7s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;/div&gt;
 &lt;/main&gt;
@@ -5113,6 +5197,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="202" name="8modulelist" tags="nobr" position="225,2600" size="100,100">&lt;&lt;set $passage to &quot;8modulelist&quot;&gt;&gt;&lt;&lt;set $session to 8&gt;&gt;
 &lt;&lt;timed 0.1s&gt;&gt;
   &lt;&lt;if $skip is true&gt;&gt;
+     &lt;&lt;audio &quot;completionbloop_4&quot; play&gt;&gt;
     &lt;&lt;addclass &quot;#codewordWrapper1&quot; &quot;disappear&quot;&gt;&gt;
       &lt;&lt;timed 5s&gt;&gt;
         &lt;&lt;set $skip to false&gt;&gt;
@@ -5143,6 +5228,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
       /% CODEWORD CORRECT %/
   &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;STORY&quot;&gt;&gt;
 &lt;&lt;replace &quot;#coderesult&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+  &lt;&lt;audio &quot;eeg_1&quot; play&gt;&gt;
  &lt;&lt;timed 1s&gt;&gt;
                &lt;&lt;addclass &quot;#mod17&quot; &quot;twist&quot;&gt;&gt;
              &lt;&lt;/timed&gt;&gt;
@@ -5163,7 +5249,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
     &lt;/div&gt;
       &lt;/div&gt;
       &lt;div class=&quot;flip-card-back&quot;&gt;
-        &lt;img src=&quot;./assets/img/mod17-rev.jpg&quot; alt=&quot;module card&quot; &gt;
+        &lt;img src=&quot;./assets/img/mod17-rev.png&quot; alt=&quot;module card&quot; &gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;  
@@ -5198,7 +5284,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;&lt;set $passage to &quot;8mod17introVid&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8mod17intro2&quot;&gt;&gt;
   &lt;div class=&quot;wrapper&quot;&gt;
-    &lt;&lt;include &quot;header&quot;&gt;&gt;
+    /* &lt;&lt;include &quot;header&quot;&gt;&gt; */
     &lt;main  &gt;
         /* &lt;div class=&quot;text-wrapper&quot;&gt; */
         	&lt;div id=&quot;video&quot; role=&quot;video&quot; aria-label=&quot;&quot;&gt;&lt;iframe src=&quot;https://player.vimeo.com/video/809464688?h=c6aec791bb&amp;amp;badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture&quot; style=&quot;position:absolute;top:0;left:0;width:100%;height:90%;&quot; allowfullscreen title=&quot;greenpeace violet.mp4&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
@@ -5244,7 +5330,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
   &lt;/div&gt;</tw-passagedata><tw-passagedata pid="207" name="8mod17intro4" tags="nobr" position="850,2600" size="100,100">&lt;&lt;set $prevpass to &quot;8mod17intro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8mod17intro4&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;8mod17outro1&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;8sessionoutro1&quot;&gt;&gt;
 &lt;audio src=&quot;/assets/audio/SESSION8_MOD17_intro_4.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;&lt;set $module to &quot;Module 17&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
   &lt;div class=&quot;wrapper&quot;&gt;
@@ -5261,22 +5347,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="208" name="8mod17outro1" tags="nobr" position="975,2600" size="100,100">&lt;&lt;set $prevpass to &quot;8mod17intro4&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;8mod17outro&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;8sessionoutro1&quot;&gt;&gt;
-
-&lt;div class=&quot;wrapper&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-  &lt;main class=&quot;speaking&quot;&gt;
-      &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt;TBC &lt;/p&gt;
-
-&lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod17 to true&gt;&gt;
-      &lt;&lt;set $skip to true&gt;&gt;&lt;&lt;goto &quot;8modulelist&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
-&lt;/div&gt;
-&lt;/main&gt;
-     &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="209" name="8sessionoutro1" tags="nobr" position="1100,2600" size="100,100">&lt;&lt;set $prevpass to &quot;8mod17outro1&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="208" name="8sessionoutro1" tags="nobr" position="975,2600" size="100,100">&lt;&lt;set $prevpass to &quot;8mod17intro4&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8sessionoutro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8sessionoutro2&quot;&gt;&gt;
 &lt;audio src=&quot;/assets/audio/SESSION8_OUTRO_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -5297,7 +5368,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="210" name="8sessionoutro2" tags="nobr" position="1225,2600" size="100,100">&lt;&lt;set $prevpass to &quot;8sessionoutro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="209" name="8sessionoutro2" tags="nobr" position="1100,2600" size="100,100">&lt;&lt;set $prevpass to &quot;8sessionoutro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8sessionoutro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8sessionoutro3&quot;&gt;&gt;
 &lt;audio src=&quot;/assets/audio/SESSION8_OUTRO_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -5320,7 +5391,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="211" name="8sessionoutro3" tags="nobr" position="100,2725" size="100,100">&lt;&lt;set $prevpass to &quot;8sessionoutro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="210" name="8sessionoutro3" tags="nobr" position="1225,2600" size="100,100">&lt;&lt;set $prevpass to &quot;8sessionoutro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8sessionoutro3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8sessionoutro4&quot;&gt;&gt;
 &lt;audio src=&quot;/assets/audio/SESSION8_OUTRO_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -5343,7 +5414,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 
 &lt;p&gt;Thank you and goodbye Playful Activists &lt;/p&gt;
 
-&lt;&lt;button &quot;Finish&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;landing&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;&lt;button &quot;Finish&quot;&gt;&gt;&lt;&lt;audio &quot;pyramidtransition_1&quot; play &gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;landing&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;

@@ -92,7 +92,22 @@ $(document.head).find('#style-ui-bar').remove();
 
 
 :: StoryInit {"position":"100,100","size":"100,100"}
-<<cacheaudio "badjoke" "https://youhavefoundconey.net/CG/what/assets/audio/badjoke.mp3">>
+<<cacheaudio "weirdnoise" "./../assets/audio/weirdnoise.mp3">>
+<<cacheaudio "pyramidtransition_1" "./../assets/audio/pyramidtransition_1.mp3">>
+<<cacheaudio "pyramidtransition_2" "./../assets/audio/pyramidtransition_2.mp3">>
+<<cacheaudio "pyramidtransition_4" "./../assets/audio/pyramidtransition_4.mp3">>
+<<cacheaudio "completionbloop_4" "./../assets/audio/completionbloop_4.mp3">>
+<<cacheaudio "modulelist_1" "./../assets/audio/modulelist_1.mp3">>
+<<cacheaudio "eeg_1" "./../assets/audio/eeg_1.mp3">>
+<<cacheaudio "Kipu" "./../assets/audio/eeg_kipu.mp3">>
+<<cacheaudio "Allo" "./../assets/audio/eeg_allo.mp3">>
+<<cacheaudio "Tez" "./../assets/audio/eeg_tez.mp3">>
+<<cacheaudio "Outa" "./../assets/audio/eeg_outa.mp3">>
+<<cacheaudio "Lucia" "./../assets/audio/eeg_lucia.mp3">>
+<<cacheaudio "Sowe" "./../assets/audio/eeg_sowe.mp3">>
+<<cacheaudio "60supported" "./../assets/audio/60secs_supported.mp3">>
+<<cacheaudio "buildwithcul" "./../assets/audio/buildwithculmination_1.mp3">>
+
 <<waitforaudio>>
 
 <<set $mod1 to false>>
@@ -196,6 +211,7 @@ $(document.head).find('#style-ui-bar').remove();
   </div>
   <div class="loading-title-container">
   <div id="mount"></div>
+  <<audio "pyramidtransition_4" play>>
  <<timed 0.1s>><<replace "#mount">><<type 100ms>> <h2>Loading...</h2> <</type>><</replace>><</timed>>
  <<timed 3s>><<replace "#mount">><<type 100ms>> <h2>Loading...</h2> <</type>><</replace>><</timed>>
   </div>
@@ -217,6 +233,7 @@ $(document.head).find('#style-ui-bar').remove();
   </div>
   <div class="loading-title-container" >
   <div id="mount"></div>
+  <<audio "pyramidtransition_4" play>>
  <<timed 0.1s>><<replace "#mount">><<type 100ms>> <h2>Sending...</h2> <</type>><</replace>><</timed>>
  <<timed 3s>><<replace "#mount">><<type 100ms>> <h2>Sending...</h2> <</type>><</replace>><</timed>>
 
@@ -397,12 +414,15 @@ $(document.head).find('#style-ui-bar').remove();
         /% CODEWORD CORRECT %/
         <<if $codeword isnot "" and $codeword is "BEGIN">>
         <<addclass "#topTriangle" "unlock">>
+          <<audio "weirdnoise" play >>
+        <<audio "weirdnoise" play >>
         <<replace "#coderesult">><h2 class="subtitle complete">Session 1</h2><</replace>>
         <<timed 3s>><<set $prevpass to $passage>><<set $audio to true>>
         <<set $nextpass to "1kaiIntro">><<goto "loading">><</timed>>
         <</if>>
             <<if $codeword isnot "" and $codeword is "SMASH">>
               <<addclass "#topTriangle" "unlock">>
+                <<audio "weirdnoise" play >>
         <<replace "#coderesult">><h2 class="subtitle complete">Session 2</h2><</replace>>
         <<timed 3s>><<set $prevpass to $passage>><<set $audio to true>>
          <<set $nextpass to "2kaiIntro1">><<goto "loading">>
@@ -410,6 +430,7 @@ $(document.head).find('#style-ui-bar').remove();
         <</if>>
         <<if $codeword isnot "" and $codeword is "GLOBAL">>
           <<addclass "#topTriangle" "unlock">>
+            <<audio "weirdnoise" play >>
         <<replace "#coderesult">><h2 class="subtitle complete">Session 3</h2><</replace>>
         <<timed 3s>><<set $prevpass to $passage>><<set $audio to true>>
          <<set $nextpass to "3kaiIntro1">><<goto "loading">>
@@ -417,6 +438,7 @@ $(document.head).find('#style-ui-bar').remove();
         <</if>>
         <<if $codeword isnot "" and $codeword is "SYSTEM">>
           <<addclass "#topTriangle" "unlock">>
+            <<audio "weirdnoise" play >>
         <<replace "#coderesult">><h2 class="subtitle complete">Session 4</h2><</replace>>
         <<timed 3s>><<set $prevpass to $passage>><<set $audio to true>>
           <<set $nextpass to "4kaiIntro1">><<goto "loading">>
@@ -424,22 +446,26 @@ $(document.head).find('#style-ui-bar').remove();
         <</if>>
          <<if $codeword isnot "" and $codeword is "PLOT">>
           <<addclass "#topTriangle" "unlock">>
+            <<audio "weirdnoise" play >>
         <<replace "#coderesult">><h2 class="subtitle complete">Session 5</h2><</replace>>
         <<timed 3s>><<set $prevpass to $passage>><<set $audio to true>>
         <<set $nextpass to "5kaiIntro1">><<goto "loading">><</timed>>
         <</if>>
          <<if $codeword isnot "" and $codeword is "OUR">>
            <<addclass "#topTriangle" "unlock">>
+             <<audio "weirdnoise" play >>
         <<replace "#coderesult">><h2 class="subtitle complete">Session 6</h2><</replace>>
         <<timed 3s>><<set $prevpass to $passage>><<set $audio to true>><<set $nextpass to "6kaiIntro1">><<goto "loading">><</timed>>
         <</if>>
          <<if $codeword isnot "" and $codeword is "SURVIVAL">>
            <<addclass "#topTriangle" "unlock">>
+             <<audio "weirdnoise" play >>
         <<replace "#coderesult">><h2 class="subtitle complete">Session 7</h2><</replace>>
         <<timed 3s>><<set $prevpass to $passage>><<set $audio to true>><<set $nextpass to "7kaiIntro1">><<goto "loading">><</timed>>
         <</if>>
          <<if $codeword isnot "" and $codeword is "NOW">>
            <<addclass "#topTriangle" "unlock">>
+             <<audio "weirdnoise" play >>
         <<replace "#coderesult">><h2 class="subtitle complete">Session 8</h2><</replace>>
         <<timed 3s>><<set $prevpass to $passage>><<set $audio to true>><<set $nextpass to "8kaiIntro1">><<goto "loading">><</timed>>
         <</if>>
@@ -591,12 +617,15 @@ $(document.head).find('#style-ui-bar').remove();
 <</if>>
 <<timed 0.1s>>
   <<if $skip is true>>
+    <<audio "completionbloop_4" play>>
     <<addclass "#codewordWrapper1" "disappear">>
     <<addclass "#codewordWrapper2" "disappear">>
       <<timed 5s>>
         <<set $skip to false>>
         <<goto $nextpass>>
       <</timed>>
+  <<else>>
+    <<audio "modulelist_1" play>>
   <</if>>
 <</timed>>
 <div class="wrapper box">
@@ -621,6 +650,8 @@ $(document.head).find('#style-ui-bar').remove();
             /% CODEWORD CORRECT %/s
             <<if $codeword isnot "" and $codeword is "EXTRACTION">>
             <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+              <<audio "eeg_1" play>>
+            <<audio "eeg_1" play>>
             <<timed 2s>>
               <<addclass "#mod2" "disappear">>
                <<addclass "#mod1" "twist">>
@@ -667,6 +698,7 @@ $(document.head).find('#style-ui-bar').remove();
             /% CODEWORD CORRECT %/s
             <<if $codeword isnot "" and $codeword is "FRONT">>
             <<replace "#coderesult2">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+            <<audio "eeg_1" play>>
             <<timed 0.5s>>
               <<addclass "#mod1" "dissolve">>
              <</timed>>
@@ -742,7 +774,7 @@ $(document.head).find('#style-ui-bar').remove();
         </li>
          <li>
           <h4>2nd - DEFENCE</h4>
-          <p>Defence Moves are placed first. There are a limit of defences lots for each country. Defence counters are replaced each round.</p>
+          <p>Defence Moves are placed first. There are a limit of defence slots for each country. Defence counters are replaced each round.</p>
         </li>
         <li>
           <h4>3rd - EXTRACTION</h4>
@@ -750,7 +782,7 @@ $(document.head).find('#style-ui-bar').remove();
 The order you go in will be randomised.</p>
         </li>
     <li>
-          <h4>4th - PAYMENT ROUND/SCORE</h4>
+          <h4>4th - PAYMENT</h4>
           <p> You pay the Teacher to build up your Money in the Bank and pay off your debt each round.</p>
         </li>
         </ul>
@@ -758,7 +790,8 @@ The order you go in will be randomised.</p>
        <p>Got it? </p>
    <<button "Yes">>
       <<replace "#mount">><audio src="/assets/audio/eeg_letsplay.mp3" autoplay>Audio is not supported on your device</audio>
-      <p>Let’s play The Extraction Economy Game!</p>
+      <<audio "pyramidtransition_2" play>>
+      <p>Let’s play <h2 class="subtitle inline"> The Extraction Economy Game!</h2></p>
      <<timed 4s>><<set $prevpass to $passage>><<goto "1mod1bintro">><</timed>>
     <</replace>>
     <</button>> 
@@ -773,6 +806,7 @@ The order you go in will be randomised.</p>
 
 :: 1mod1bintro [nobr]
 <<set $passage to "1mod1b">><<set $seconds to 60>><audio src="/assets/audio/eeg_round1.mp3" autoplay>Audio is not supported on your device</audio>
+<<audio "60supported" play>>
 /* Tactics & Defense  */
 <div class="wrapper box">
   <<include "header">>
@@ -785,7 +819,6 @@ The order you go in will be randomised.</p>
    <div id="mount">
     <h2 class="subtitle">Tactics</h2>
     </div>
-
     
  </div >
   </main>
@@ -803,7 +836,7 @@ The order you go in will be randomised.</p>
          <audio src="/assets/audio/eeg_placeyourdefensemarkers.mp3" autoplay>Audio is not supported on your device</audio>
           <h2 class="subtitle">Defence</h2>
           <p>Place your Defence Markers now. You might not choose to place any.</p>
-           <<button "Next">><<set $prevpass to $passage>><<goto "1mod1br1">><</button>>
+           <div class="flex-col"><<button "Next">><<set $prevpass to $passage>><<goto "1mod1br1">><</button>></div>
         <</replace>>
         <<else>><<stop>>
     <</if>>
@@ -830,8 +863,10 @@ The order you go in will be randomised.</p>
        <<capture _i>>
           <div class="option">
           <<linkreplace "Reveal">>
+            <<set $audioname to $order[_i]>>
+            <<audio $audioname play>>
             <span><<print _i + 1>>.</span>
-            <span>$order[_i]</span>
+            <span>$audioname</span>
           <</linkreplace>>
           </div>
         <</capture>>
@@ -885,7 +920,9 @@ The order you go in will be randomised.</p>
       <audio src="/assets/audio/eeg_placeyourdefensemarkers.mp3" autoplay>Audio is not supported on your device</audio>
           <h2 class="subtitle">Defence</h2>
           <p>Place your Defence Markers now. You might not choose to place any.</p>
+           <div class="flex-col">
            <<button "Next">><<set $prevpass to $passage>><<goto "1mod1br2">><</button>>
+           </div>
         <</replace>>
         <<else>><<stop>>
     <</if>>
@@ -907,9 +944,11 @@ The order you go in will be randomised.</p>
        <<for _i to 0; _i lt $order.length; _i++>>
        <<capture _i>>
           <div class="option">
-          <<linkreplace "Reveal">>
+           <<linkreplace "Reveal">>
+            <<set $audioname to $order[_i]>>
+            <<audio $audioname play>>
             <span><<print _i + 1>>.</span>
-            <span>$order[_i]</span>
+            <span>$audioname</span>
           <</linkreplace>>
           </div>
         <</capture>>
@@ -933,6 +972,7 @@ The order you go in will be randomised.</p>
 
 :: 1mod1br3intro [nobr]
 <<set $passage to "1mod1br3intro">><<set $seconds to 60>><audio src="/assets/audio/eeg_round3.mp3" autoplay>Audio is not supported on your device</audio>
+<<audio "60supported" play>>
 /* Tactics & Defense  */
 <div class="wrapper box">
   <<include "header">>
@@ -962,7 +1002,9 @@ The order you go in will be randomised.</p>
            <audio src="/assets/audio/eeg_placeyourdefensemarkers.mp3" autoplay>Audio is not supported on your device</audio>
           <h2 class="subtitle">Defence</h2>
           <p>Place your Defence Markers now. You might not choose to place any.</p>
+           <div class="flex-col">
            <<button "Next">><<set $prevpass to $passage>><<goto "1mod1br3">><</button>>
+           </div>
         <</replace>>
         <<else>><<stop>>
     <</if>>
@@ -984,9 +1026,11 @@ The order you go in will be randomised.</p>
        <<for _i to 0; _i lt $order.length; _i++>>
        <<capture _i>>
           <div class="option">
-          <<linkreplace "Reveal">>
+           <<linkreplace "Reveal">>
+            <<set $audioname to $order[_i]>>
+            <<audio $audioname play>>
             <span><<print _i + 1>>.</span>
-            <span>$order[_i]</span>
+            <span>$audioname</span>
           <</linkreplace>>
           </div>
         <</capture>>
@@ -1012,6 +1056,7 @@ The order you go in will be randomised.</p>
 
 :: 1mod1br4intro [nobr]
 <<set $passage to "1mod1br4intro">><<set $seconds to 60>><audio src="/assets/audio/eeg_round4.mp3" autoplay>Audio is not supported on your device</audio>
+<<audio "60supported" play>>
 /* Tactics & Defense  */
 <div class="wrapper box">
   <<include "header">>
@@ -1041,7 +1086,9 @@ The order you go in will be randomised.</p>
            <audio src="/assets/audio/eeg_placeyourdefensemarkers.mp3" autoplay>Audio is not supported on your device</audio>
           <h2 class="subtitle">Defence</h2>
           <p>Place your Defence Markers now. You might not choose to place any.</p>
+           <div class="flex-col">
            <<button "Next">><<set $prevpass to $passage>><<goto "1mod1br4">><</button>>
+           </div>
         <</replace>>
         <<else>><<stop>>
     <</if>>
@@ -1063,9 +1110,11 @@ The order you go in will be randomised.</p>
        <<for _i to 0; _i lt $order.length; _i++>>
        <<capture _i>>
           <div class="option">
-          <<linkreplace "Reveal">>
+           <<linkreplace "Reveal">>
+            <<set $audioname to $order[_i]>>
+            <<audio $audioname play>>
             <span><<print _i + 1>>.</span>
-            <span>$order[_i]</span>
+            <span>$audioname</span>
           <</linkreplace>>
           </div>
         <</capture>>
@@ -1279,9 +1328,9 @@ The order you go in will be randomised.</p>
   <p>Teacher, over to you for this one, all of the instructions are on the Mod Card. </p>
   <div id="mount"></div>
   <<timed 120s>><<replace "#mount">>
-  <p>When completed click <<button "Move On">><<set $prevpass to $passage>><<goto "1mod2outro">><</button>>
+  <p>When completed click <<button "Move On">><<set $prevpass to $passage>><<goto "1mod2outro">><</button>>  </p>
 <</replace>><</timed>>
-  </p>
+
   </div>
   </main>
      <<include "footer">>
@@ -1595,6 +1644,7 @@ The order you go in will be randomised.</p>
 <<set $passage to "2modulelist">><<set $session to 2>>
 <<timed 0.1s>>
   <<if $skip is true>>
+   <<audio "completionbloop_4" play>>
     <<addclass "#codewordWrapper1" "disappear">>
     <<addclass "#codewordWrapper2" "disappear">>
       <<timed 5s>>
@@ -1625,6 +1675,7 @@ The order you go in will be randomised.</p>
             /% CODEWORD CORRECT %/s
             <<if $codeword isnot "" and $codeword is "CONTEXT">>
             <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+              <<audio "eeg_1" play>>
             <<timed 2s>>
               <<addclass "#mod4" "disappear">>
                <<addclass "#mod3" "twist">>
@@ -1671,6 +1722,7 @@ The order you go in will be randomised.</p>
             /% CODEWORD CORRECT %/s
             <<if $codeword isnot "" and $codeword is "POTATO">>
             <<replace "#coderesult2">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+            <<audio "eeg_1" play>>
             <<timed 0.5s>>
               <<addclass "#mod3" "dissolve">>
              <</timed>>
@@ -2264,7 +2316,9 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 
 <p>Take care. </p>
 
-<<button "Finish">><<set $prevpass to $passage>><<goto "landing">><</button>>
+<<button "Finish">>
+<<audio "pyramidtransition_1" play >>
+<<set $prevpass to $passage>><<goto "landing">><</button>>
 </div>
   </main>
      <<include "footer">>
@@ -2381,6 +2435,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $passage to "3modulelist">><<set $session to 3>>
 <<timed 0.1s>>
   <<if $skip is true>>
+     <<audio "completionbloop_4" play>>
     <<addclass "#codewordWrapper1" "disappear">>
     <<addclass "#codewordWrapper2" "disappear">>
       <<timed 5s>>
@@ -2410,6 +2465,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
       /% CODEWORD CORRECT %/
   <<if $codeword isnot "" and $codeword is "SKILL">>
 <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+  <<audio "eeg_1" play>>
     <<timed 0.5s>>
               <<addclass "#mod6" "dissolve">>
              <</timed>>
@@ -2457,6 +2513,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
       /% CODEWORD CORRECT %/
       <<if $codeword isnot "" and $codeword is "FOCUS">>
       <<replace "#coderesult2">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+      <<audio "eeg_1" play>>
 
    <<timed 0.5s>>
               <<addclass "#mod5" "dissolve">>
@@ -2693,7 +2750,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
-    <div class="text-wrapper">
+    <div class="text-wrapper" id="mount">
 <p>So, we’re going to look global and meet 6 humans. </p>
 
 <p>Teacher, get the class into 6 groups and share out the Character Cards. </p>
@@ -2702,8 +2759,11 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 
 <p>All the information is on the cards. </p>
 
-<p>After the 6 humans have been presented click <<button "Move on">><<set $prevpass to $passage>><<goto $nextpass>><</button>></p>
 </div>
+<<timed 30s>><<append "#mount">>
+<br/>
+  <p>After the 6 humans have been presented click <<button "Move on">><<set $prevpass to $passage>><<goto $nextpass>><</button>></p>
+<</append>><</timed>>
  </main>
      <<include "footerskip">>
 </div>
@@ -2734,6 +2794,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "3mod6a">>
 <<set $passage to "3mod6outro1">>
 <<set $nextpass to "3sessionoutro1">><audio src="/assets/audio/SESSION3_MOD6_outro2.mp3" autoplay>Audio is not supported on your device</audio>
+<<audio "60supported" play>>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -2744,11 +2805,13 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 
 
 <<timed 12s>><<replace "#mount">>
+
 <div class="char-wrapper">
 <div class="char-item">
 <img src="./assets/img/characters-26.jpg">
 <<button "Air Pollution">>
- 
+  <<audio ":all" stop>>
+  <<audio "eeg_1" play>>
   <<set $choice to "Air Pollution – inspired by Alejandro Daly">>
   <<set $mod6audio to "air">>
   <<timed 2s>><<set $prevpass to $passage>><<set $mod6 to true>><<goto $nextpass>><</timed>>
@@ -2757,7 +2820,8 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <div class="char-item">
 <img src="./assets/img/characters-36.jpg">
 <<button "Meat Consumption">>
-
+   <<audio ":all" stop>>
+  <<audio "eeg_1" play>>
   <<set $choice to "Meat Consumption – inspired by Genesis Butler">>
     <<set $mod6audio to "meat">>
   <<timed 2s>><<set $prevpass to $passage>><<set $mod6 to true>><<goto $nextpass>><</timed>>
@@ -2766,7 +2830,8 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <div class="char-item">
 <img src="./assets/img/characters-27.jpg">
 <<button "Plastic Pollution">>
-
+   <<audio ":all" stop>>
+  <<audio "eeg_1" play>>
   <<set $choice to "Plastic Pollution – inspired by Melati & Isabel Wijsen">>
     <<set $mod6audio to "plastic">>
   <<timed 2s>><<set $prevpass to $passage>><<set $mod6 to true>><<goto $nextpass>><</timed>>
@@ -2775,7 +2840,8 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <div class="char-item">
 <img src="./assets/img/characters-28.jpg">
 <<button "Sustainable Palm Oil">>
-
+   <<audio ":all" stop>>
+  <<audio "eeg_1" play>>
   <<set $choice to "Sustainable Palm Oil – inspired by Salsabila Khairunnisa">>
     <<set $mod6audio to "palmoil">>
   <<timed 2s>><<set $prevpass to $passage>><<set $mod6 to true>><<goto $nextpass>><</timed>>
@@ -2784,7 +2850,8 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <div class="char-item">
 <img src="./assets/img/characters-30.jpg">
 <<button "Deforestation & Biodiversity">>
- 
+   <<audio ":all" stop>>
+  <<audio "eeg_1" play>>
   <<set $choice to "Deforestation & Biodiversity – inspired by Professor Wangari Maathai">>
     <<set $mod6audio to "deforestation">>
   <<timed 2s>><<set $prevpass to $passage>><<set $mod6 to true>><<goto $nextpass>><</timed>>
@@ -2793,7 +2860,8 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <div class="char-item">
 <img src="./assets/img/characters-29.jpg">
 <<button "Fast Fashion">>
-
+   <<audio ":all" stop>>
+  <<audio "eeg_1" play>>
   <<set $choice to "Fast Fashion – inspired by Céline Semaan">>
     <<set $mod6audio to "fastfashion">>
   <<timed 2s>><<set $prevpass to $passage>><<set $mod6 to true>><<goto $nextpass>><</timed>>
@@ -2946,7 +3014,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <</timed>>
 <<timed 23s>><<append "#mount">>
 <p>Teacher, hand the cards out to everyone. </p>
-<<button "Finish">><<set $prevpass to $passage>><<goto "landing">><</button>>
+<<button "Finish">><<audio "pyramidtransition_1" play >><<set $prevpass to $passage>><<goto "landing">><</button>>
 <</append>>
 <</timed>>
     
@@ -3042,6 +3110,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $passage to "4modulelist">><<set $session to 4>>
 <<timed 0.1s>>
   <<if $skip is true>>
+     <<audio "completionbloop_4" play>>
     <<addclass "#codewordWrapper1" "disappear">>
     <<addclass "#codewordWrapper2" "disappear">>
     <<addclass "#codewordWrapper3" "disappear">>
@@ -3073,6 +3142,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
       /% CODEWORD CORRECT %/
   <<if $codeword isnot "" and $codeword is "RECON">>
 <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+  <<audio "eeg_1" play>>
    <<timed 0.5s>>
         <<addclass "#mod8" "dissolve">>
         <<addclass "#mod9" "dissolve">>
@@ -3122,6 +3192,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
       /% CODEWORD CORRECT %/
       <<if $codeword isnot "" and $codeword is "SUCCESS">>
       <<replace "#coderesult2">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+      <<audio "eeg_1" play>>
      <<timed 0.5s>>
               <<addclass "#mod7" "dissolve">>
                <<addclass "#mod9" "dissolve">>
@@ -3171,6 +3242,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
       /% CODEWORD CORRECT %/
       <<if $codeword isnot "" and $codeword is "COMFORT">>
       <<replace "#coderesult3">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+      <<audio "eeg_1" play>>
       <<timed 0.5s>>
               <<addclass "#mod7" "dissolve">>
               <<addclass "#mod8" "dissolve">>
@@ -3264,26 +3336,27 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $passage to "4mod7a">>
 <<set $nextpass to "4mod7b">>
 <audio src="/assets/audio/SESSION4_MOD7_intro_3_rerecord.mp3" autoplay>Audio is not supported on your device</audio>
-  <div class="wrapper">
+<div class="wrapper">
     <<include "header">>
-    <main  class="speaking">
-        <div class="text-wrapper">
-<p>Teacher, time to break the class into 4 groups or suits. </p>
-<p>Clubs, Hearts, Diamonds & Spades. </p>
-<p>I like games. </p>
-<p>Hand the Mapping Resources out, and let’s Power Map.</p>
-<div id="mount"><div>
-<<timed 22s>><<replace "#mount">>
-<p>When you have the resources, I’ll explain more. </p>
-<p>Click <<button "here">><<set $prevpass to $passage>><<goto "4mod7b">><</button>> when ready for the explanation</p>
-<</replace>>
-<</timed>>
-/* <div id="mount"></div> */
-/* <<timed 300s>>
-<<replace "#mount">>
-    <p>When done click <<button "Move On">><<set $prevpass to $passage>><<goto "4mod7outro1">><</button>> </p>
+<main class="speaking">
+<div class="text-wrapper">
+  <p>Teacher, time to break the class into 4 groups or suits. </p>
+  <p>Clubs, Hearts, Diamonds & Spades. </p>
+  <p>I like games. </p>
+  <p>Hand the Mapping Resources out, and let’s Power Map.</p>
+  <div id="mount"></div>
+  <<timed 22s>>
+    <<replace "#mount">>
+      <p>When you have the resources, I’ll explain more. </p>
+      <p>Click <<button "here">><<set $prevpass to $passage>><<goto "4mod7b">><</button>> when ready for the explanation</p>
     <</replace>>
-    <</timed>> */
+  <</timed>>
+  /* <div id="mount"></div> */
+  /* <<timed 300s>>
+  <<replace "#mount">>
+      <p>When done click <<button "Move On">><<set $prevpass to $passage>><<goto "4mod7outro1">><</button>> </p>
+      <</replace>>
+      <</timed>> */
    </div>
     </main>
          <<include "footerskip">>
@@ -3307,7 +3380,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
  <li> – Lastly it’s Tactics & Objectives.</li>
 </ul>
 <div id="mount"></div>
-<<timed 300s>>
+<<timed 200s>>
 <<replace "#mount">>
     <p>When done click <<button "Move On">><<set $prevpass to $passage>><<goto "4mod7outro1">><</button>> </p>
     <</replace>>
@@ -3593,7 +3666,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
     <div class="text-wrapper">
 <p>Teacher, the instructions are on the Module Card. </p>
 <p>We need a Comfort Marker. </p>
-<p>Lucky you were given a potato in compartment 1, hey? </p>
+<p>Lucky you were given a potato, hey? </p>
 <div id="mount"></div>
 <<timed 18s>><<replace "#mount">>
 <p>When you have completed this click <<button "Move on">><<set $prevpass to $passage>><<goto "4mod9outro1">><</button>></p>
@@ -3742,7 +3815,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <p>Text  <h2 class="subtitle inline">POWER</h2> to  <h2 class="subtitle inline">07400179362</h2> to pick it up </p>
 
 <p>I’ll see you soon. </p>
-<<button "Finish">><<set $prevpass to $passage>><<goto $nextpass>><</button>>
+<<button "Finish">><<audio "pyramidtransition_1" play >><<set $prevpass to $passage>><<goto $nextpass>><</button>>
 
 </div>
   </main>
@@ -3811,6 +3884,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $passage to "5modulelist">><<set $session to 5>>
 <<timed 0.1s>>
   <<if $skip is true>>
+     <<audio "completionbloop_4" play>>
     <<addclass "#codewordWrapper1" "disappear">>
     <<addclass "#codewordWrapper2" "disappear">>
     <<addclass "#codewordWrapper3" "disappear">>
@@ -3842,6 +3916,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
       /% CODEWORD CORRECT %/
   <<if $codeword isnot "" and $codeword is "ASK">>
 <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+  <<audio "eeg_1" play>>
  <<timed 2s>>
   <<addclass "#mod11" "disappear">>
   <<addclass "#mod12" "disappear">>
@@ -3885,6 +3960,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
       /% CODEWORD CORRECT %/
       <<if $codeword isnot "" and $codeword is "ACTION">>
       <<replace "#coderesult2">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+      <<audio "eeg_1" play>>
           <<timed 0.5s>>
               <<addclass "#mod10" "dissolve">>
               <<addclass "#mod12" "dissolve">>
@@ -4419,7 +4495,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <p>Text  <h2 class="subtitle inline">ACTIONY</h2> to find it </p>
 <p>Until next time </p>
 
-<<button "Finish">><<set $prevpass to $passage>><<goto $nextpass>><</button>>
+<<button "Finish">><<audio "pyramidtransition_1" play >><<set $prevpass to $passage>><<goto $nextpass>><</button>>
 <</replace>><</timed>>
 </div>
   </main>
@@ -4558,6 +4634,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $passage to "6modulelist">><<set $session to 6>>
 <<timed 0.1s>>
   <<if $skip is true>>
+     <<audio "completionbloop_4" play>>
     <<addclass "#codewordWrapper1" "disappear">>
     <<addclass "#codewordWrapper2" "disappear">>
       <<timed 5s>>
@@ -4589,6 +4666,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
       /% CODEWORD CORRECT %/
   <<if $codeword isnot "" and $codeword is "HATS">>
 <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+  <<audio "eeg_1" play>>
 <<timed 2s>>
               <<addclass "#mod14" "disappear">>
                <<addclass "#mod13" "twist">>
@@ -4633,6 +4711,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
       /% CODEWORD CORRECT %/
       <<if $codeword isnot "" and $codeword is "MAKING">>
       <<replace "#coderesult2">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+      <<audio "eeg_1" play>>
 
      <<timed 0.5s>>
               <<addclass "#mod13" "dissolve">>
@@ -4947,7 +5026,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $prevpass to "6sessionoutro1">>
 <<set $passage to "6sessionoutro2">>
 <<set $nextpass to "landing">>
-<audio src="/assets/audio/SESSION6_OUTRO_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="/assets/audio/SESSION6_OUTRO_2.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -4956,7 +5035,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <p>You’ll need that codeword to get in </p>
 <p>Text <h2 class="subtitle inline"> COLLECTIVE</h2> to find it </p>
 
-<<button "Finish">><<set $prevpass to $passage>><<goto $nextpass>><</button>>
+<<button "Finish">><<audio "pyramidtransition_1" play >><<set $prevpass to $passage>><<goto $nextpass>><</button>>
 </div>
   </main>
      <<include "footer">>
@@ -5070,6 +5149,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $passage to "7modulelist">><<set $session to 7>>
 <<timed 0.1s>>
   <<if $skip is true>>
+     <<audio "completionbloop_4" play>>
     <<addclass "#codewordWrapper1" "disappear">>
     <<addclass "#codewordWrapper2" "disappear">>
       <<timed 5s>>
@@ -5100,6 +5180,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
       /% CODEWORD CORRECT %/
   <<if $codeword isnot "" and $codeword is "ABORT">>
 <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+  <<audio "eeg_1" play>>
 <<timed 2s>>
               <<addclass "#mod16" "disappear">>
                <<addclass "#mod15" "twist">>
@@ -5145,6 +5226,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
       /% CODEWORD CORRECT %/
       <<if $codeword isnot "" and $codeword is "DELIVERY">>
       <<replace "#coderesult2">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+      <<audio "eeg_1" play>>
     <<timed 0.5s>>
               <<addclass "#mod15" "dissolve">>
              <</timed>>
@@ -5408,6 +5490,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
       /% CODEWORD CORRECT %/
       <<if $codeword isnot "" and $codeword is "COMPLETE">>
       <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+        <<audio "eeg_1" play>>
       <<timed 3s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
       <</if>>
         /% CODEWORD INCORRECT %/
@@ -5432,7 +5515,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
   /* <<include "header">> */
   <main class="speaking">
     <div class="text-wrapper" id="mount">
- 
+ <<audio "buildwithcul" play>>
 <div class="trianglepulse-wrapper">
    <h1 class="title titlepulse">COMPLETE</h1>
   <div id='container' class="trianglepulse-container">
@@ -5578,7 +5661,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <p>Text  <h2 class="subtitle inline">SUCCESS</h2> to find it </p>
 <p>I’ll see you then </p>
 
-<<button "Finish">><<set $prevpass to $passage>><<goto $nextpass>><</button>>
+<<button "Finish">><<audio "pyramidtransition_1" play >><<set $prevpass to $passage>><<goto $nextpass>><</button>>
 </div>
   </main>
      <<include "footer">>
@@ -5687,7 +5770,8 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
   <<include "header">>
   <main class="speaking">
 <div class="text-wrapper">
-<p>You might wear this gift to remind you that you’re a  <h2 class="subtitle inline">Playful Climate Activist</h2></p>
+<p>You might wear this gift to remind you that you’re a </p>
+<p><h2 class="subtitle inline">Playful Climate Activist</h2></p>
     <<timed 7s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
 </div>
 </main>
@@ -5761,6 +5845,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $passage to "8modulelist">><<set $session to 8>>
 <<timed 0.1s>>
   <<if $skip is true>>
+     <<audio "completionbloop_4" play>>
     <<addclass "#codewordWrapper1" "disappear">>
       <<timed 5s>>
         <<set $skip to false>>
@@ -5791,6 +5876,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
       /% CODEWORD CORRECT %/
   <<if $codeword isnot "" and $codeword is "STORY">>
 <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
+  <<audio "eeg_1" play>>
  <<timed 1s>>
                <<addclass "#mod17" "twist">>
              <</timed>>
@@ -5811,7 +5897,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
     </div>
       </div>
       <div class="flip-card-back">
-        <img src="./assets/img/mod17-rev.jpg" alt="module card" >
+        <img src="./assets/img/mod17-rev.png" alt="module card" >
       </div>
     </div>
   </div>  
@@ -5856,7 +5942,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $passage to "8mod17introVid">>
 <<set $nextpass to "8mod17intro2">>
   <div class="wrapper">
-    <<include "header">>
+    /* <<include "header">> */
     <main  >
         /* <div class="text-wrapper"> */
         	<div id="video" role="video" aria-label=""><iframe src="https://player.vimeo.com/video/809464688?h=c6aec791bb&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:90%;" allowfullscreen title="greenpeace violet.mp4"></iframe></div>
@@ -5911,7 +5997,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 :: 8mod17intro4 [nobr]
 <<set $prevpass to "8mod17intro2">>
 <<set $passage to "8mod17intro4">>
-<<set $nextpass to "8mod17outro1">>
+<<set $nextpass to "8sessionoutro1">>
 <audio src="/assets/audio/SESSION8_MOD17_intro_4.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Module 17">><<include "checkmodulenamelist">>
   <div class="wrapper">
@@ -5931,27 +6017,11 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
   </div>
 
 
-:: 8mod17outro1 [nobr]
-<<set $prevpass to "8mod17intro4">>
-<<set $passage to "8mod17outro">>
-<<set $nextpass to "8sessionoutro1">>
 
-<div class="wrapper">
-  <<include "header">>
-  <main class="speaking">
-      <div class="text-wrapper">
-<p>TBC </p>
-
-<<button "Next">><<set $prevpass to $passage>><<set $mod17 to true>>
-      <<set $skip to true>><<goto "8modulelist">><</button>>
-</div>
-</main>
-     <<include "footer">>
-</div>
 
 
 :: 8sessionoutro1 [nobr]
-<<set $prevpass to "8mod17outro1">>
+<<set $prevpass to "8mod17intro4">>
 <<set $passage to "8sessionoutro1">>
 <<set $nextpass to "8sessionoutro2">>
 <audio src="/assets/audio/SESSION8_OUTRO_1.mp3" autoplay>Audio is not supported on your device</audio>
@@ -6024,7 +6094,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 
 <p>Thank you and goodbye Playful Activists </p>
 
-<<button "Finish">><<set $prevpass to $passage>><<goto "landing">><</button>>
+<<button "Finish">><<audio "pyramidtransition_1" play >><<set $prevpass to $passage>><<goto "landing">><</button>>
 </div>
   </main>
      <<include "footer">>
