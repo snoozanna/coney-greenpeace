@@ -737,7 +737,11 @@ $(document.head).find('#style-ui-bar').remove();
   <<done>><<include "checkmodules">><</done>>
   
 :: 1mod1intro [nobr]
-  <<set $passage to "1mod1intro">><<set $module to "Module 1">><<include "checkmodulenamelist">><audio src="/assets/audio/SESSION1_MOD1_intro.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $prevpass to "1modulelist">>
+<<set $passage to "1mod1intro">>
+<<set $nextpass to "1mod1a">>
+  <<set $passage to "1mod1intro">>
+  <<set $module to "Module 1">><<include "checkmodulenamelist">><audio src="/assets/audio/SESSION1_MOD1_intro.mp3" autoplay>Audio is not supported on your device</audio>
   <div class="wrapper">
     <<include "header">>
     <main  class="speaking">
@@ -750,15 +754,17 @@ $(document.head).find('#style-ui-bar').remove();
       Break the class into groups, hand out the resources and come back to me when you are ready to start playing. </p>
    <p> I’ll take us through. </p>
     
-   <p> When ready click <<button "Move On">><<set $prevpass to $passage>><<goto "1mod1a">><</button>></p>
+   <p> When ready click <<button "Move On">><<set $prevpass to $passage>><<goto $nextpass>><</button>></p>
    </div>
     </main>
-         <<include "footer">>
+         <<include "footerskip">>
   </div>
 
 
 :: 1mod1a [nobr]
-<<set $passage to "1mod1a">><audio src="/assets/audio/eeg_rules.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $prevpass to "1mod1intro">>
+<<set $passage to "1mod1a">>
+<<set $nextpass to "1mod1bintro">><audio src="/assets/audio/eeg_rules.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
     <main  class="speaking">
@@ -792,7 +798,7 @@ The order you go in will be randomised.</p>
       <<replace "#mount">><audio src="/assets/audio/eeg_letsplay.mp3" autoplay>Audio is not supported on your device</audio>
       <<audio "pyramidtransition_2" play>>
       <p>Let’s play <h2 class="subtitle inline"> The Extraction Economy Game!</h2></p>
-     <<timed 4s>><<set $prevpass to $passage>><<goto "1mod1bintro">><</timed>>
+     <<timed 4s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
     <</replace>>
     <</button>> 
     
@@ -801,11 +807,14 @@ The order you go in will be randomised.</p>
   </div>
 
   </main>
-  <<include "footer">>
+  <<include "footerskip">>
 </div>
 
 :: 1mod1bintro [nobr]
-<<set $passage to "1mod1b">><<set $seconds to 60>><audio src="/assets/audio/eeg_round1.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $prevpass to "1mod1a">>
+<<set $passage to "1mod1bintro">>
+<<set $nextpass to "1mod1br1">>
+<<set $seconds to 60>><audio src="/assets/audio/eeg_round1.mp3" autoplay>Audio is not supported on your device</audio>
 <<audio "60supported" play>>
 /* Tactics & Defense  */
 <div class="wrapper box">
@@ -822,7 +831,7 @@ The order you go in will be randomised.</p>
     
  </div >
   </main>
-  <<include "footer">>
+  <<include "footerskip">>
 </div>
 
 <<silently>>
@@ -836,7 +845,7 @@ The order you go in will be randomised.</p>
          <audio src="/assets/audio/eeg_placeyourdefensemarkers.mp3" autoplay>Audio is not supported on your device</audio>
           <h2 class="subtitle">Defence</h2>
           <p>Place your Defence Markers now. You might not choose to place any.</p>
-           <div class="flex-col"><<button "Next">><<set $prevpass to $passage>><<goto "1mod1br1">><</button>></div>
+           <div class="flex-col"><<button "Next">><<set $prevpass to $passage>><<goto $nextpass>><</button>></div>
         <</replace>>
         <<else>><<stop>>
     <</if>>
@@ -844,11 +853,13 @@ The order you go in will be randomised.</p>
 <</silently>>
 
 :: 1mod1br1 [nobr]
+<<set $prevpass to "1mod1bintro">>
+<<set $passage to "1mod1br1">>
+<<set $nextpass to "1mod1br2intro">>
 /* Extract */
 <<set $order to ["Kipu", "Tez", "Outa", "Sowe", "Allo", "Lucia"]>>
-/* TODO DYNAMIC AUDIO  */
-
-<<set $passage to "1mod1br1">><audio src="/assets/audio/eeg_timetoextract.mp3" autoplay>Audio is not supported on your device</audio>
+<<audio ":all" stop>><<audio "60supported" play>>
+<audio src="/assets/audio/eeg_timetoextract.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper box">
   <<include "header">>
 <main class="game">
@@ -878,7 +889,7 @@ The order you go in will be randomised.</p>
        <h2 class="subtitle">Money Money</h2>
        <p>Pay off this round’s debt and add money to your bank. The country with the most money wins!</p>
        <<button "Move on">> 
-        <<set $prevpass to $passage>><<goto "1mod1br2intro">><</button>>
+        <<set $prevpass to $passage>><<goto $nextpass>><</button>>
     <</replace>>
 <</button>>
   </div>
@@ -886,11 +897,14 @@ The order you go in will be randomised.</p>
  </div >
 
   </main>
-  <<include "footer">>
+  <<include "footerskip">>
 </div>
 
 :: 1mod1br2intro [nobr]
-<<set $passage to "1mod1br2intro">><<set $seconds to 60>><audio src="/assets/audio/eeg_round2.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $prevpass to "1mod1br1">>
+<<set $passage to "1mod1br2intro">>
+<<set $nextpass to "1mod1br2">><<set $seconds to 60>><audio src="/assets/audio/eeg_round2.mp3" autoplay>Audio is not supported on your device</audio>
+<<audio ":all" stop>><<audio "60supported" play>>
 /* Tactics & Defense  */
 <div class="wrapper box">
   <<include "header">>
@@ -906,7 +920,7 @@ The order you go in will be randomised.</p>
 
  </div >
   </main>
-  <<include "footer">>
+  <<include "footerskip">>
 </div>
 
 <<silently>>
@@ -921,7 +935,7 @@ The order you go in will be randomised.</p>
           <h2 class="subtitle">Defence</h2>
           <p>Place your Defence Markers now. You might not choose to place any.</p>
            <div class="flex-col">
-           <<button "Next">><<set $prevpass to $passage>><<goto "1mod1br2">><</button>>
+           <<button "Next">><<set $prevpass to $passage>><<goto $nextpass>><</button>>
            </div>
         <</replace>>
         <<else>><<stop>>
@@ -930,9 +944,13 @@ The order you go in will be randomised.</p>
 <</silently>>
 
 :: 1mod1br2 [nobr]
+<<set $prevpass to "1mod1br2intro">>
+<<set $passage to "1mod1br2">>
+<<set $nextpass to "1mod1br3intro">>
 /* Extract */
 <<set $order to ["Allo","Outa","Sowe", "Tez", "Kipu", "Lucia"]>><audio src="/assets/audio/eeg_timetoextract.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $passage to "1mod1br2">>
+<<audio ":all" stop>><<audio "60supported" play>>
 <div class="wrapper box">
   <<include "header">>
 <main class="game">
@@ -960,18 +978,20 @@ The order you go in will be randomised.</p>
        <h2 class="subtitle">Money Money</h2>
        <p>Pay off this round’s debt and add money to your bank. The country with the most money wins!</p>
        <<button "Move on">> 
-        <<set $prevpass to $passage>><<goto "1mod1br3intro">><</button>>
+        <<set $prevpass to $passage>><<goto $nextpass>><</button>>
     <</replace>>
 <</button>>
   </div>
  </div >
     
   </main>
-  <<include "footer">>
+  <<include "footerskip">>
 </div>
 
 :: 1mod1br3intro [nobr]
-<<set $passage to "1mod1br3intro">><<set $seconds to 60>><audio src="/assets/audio/eeg_round3.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $prevpass to "1mod1br2">>
+<<set $passage to "1mod1br3intro">>
+<<set $nextpass to "1mod1br3">><<set $seconds to 60>><audio src="/assets/audio/eeg_round3.mp3" autoplay>Audio is not supported on your device</audio>
 <<audio "60supported" play>>
 /* Tactics & Defense  */
 <div class="wrapper box">
@@ -988,7 +1008,7 @@ The order you go in will be randomised.</p>
 
  </div >
   </main>
-  <<include "footer">>
+  <<include "footerskip">>
 </div>
 
 <<silently>>
@@ -1003,7 +1023,7 @@ The order you go in will be randomised.</p>
           <h2 class="subtitle">Defence</h2>
           <p>Place your Defence Markers now. You might not choose to place any.</p>
            <div class="flex-col">
-           <<button "Next">><<set $prevpass to $passage>><<goto "1mod1br3">><</button>>
+           <<button "Next">><<set $prevpass to $passage>><<goto $nextpass>><</button>>
            </div>
         <</replace>>
         <<else>><<stop>>
@@ -1012,9 +1032,13 @@ The order you go in will be randomised.</p>
 <</silently>>
 
 :: 1mod1br3 [nobr]
+<<set $prevpass to "1mod1br3intro">>
+<<set $passage to "1mod1br3">>
+<<set $nextpass to "1mod1br4intro">>
 /* Extract */
 <<set $order to ["Kipu","Allo","Sowe","Outa", "Tez",  "Lucia"]>><audio src="/assets/audio/eeg_timetoextract.mp3" autoplay>Audio is not supported on your device</audio>
-<<set $passage to "1mod1br3">>
+
+<<audio ":all" stop>><<audio "60supported" play>>
 <div class="wrapper box">
   <<include "header">>
 <main class="game">
@@ -1042,7 +1066,7 @@ The order you go in will be randomised.</p>
        <h2 class="subtitle">Money Money</h2>
        <p>Pay off this round’s debt and add money to your bank. The country with the most money wins!</p>
        <<button "Move on">> 
-        <<set $prevpass to $passage>><<goto "1mod1br4intro">><</button>>
+        <<set $prevpass to $passage>><<goto $nextpass>><</button>>
     <</replace>>
 <</button>>
   </div>
@@ -1051,11 +1075,13 @@ The order you go in will be randomised.</p>
 
    
   </main>
-  <<include "footer">>
+  <<include "footerskip">>
 </div>
 
 :: 1mod1br4intro [nobr]
-<<set $passage to "1mod1br4intro">><<set $seconds to 60>><audio src="/assets/audio/eeg_round4.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $prevpass to "1mod1br3">>
+<<set $passage to "1mod1br4intro">>
+<<set $nextpass to "1mod1br4">><<set $seconds to 60>><audio src="/assets/audio/eeg_round4.mp3" autoplay>Audio is not supported on your device</audio>
 <<audio "60supported" play>>
 /* Tactics & Defense  */
 <div class="wrapper box">
@@ -1072,7 +1098,7 @@ The order you go in will be randomised.</p>
 
  </div >
   </main>
-  <<include "footer">>
+  <<include "footerskip">>
 </div>
 
 <<silently>>
@@ -1087,7 +1113,7 @@ The order you go in will be randomised.</p>
           <h2 class="subtitle">Defence</h2>
           <p>Place your Defence Markers now. You might not choose to place any.</p>
            <div class="flex-col">
-           <<button "Next">><<set $prevpass to $passage>><<goto "1mod1br4">><</button>>
+           <<button "Next">><<set $prevpass to $passage>><<goto $nextpass>><</button>>
            </div>
         <</replace>>
         <<else>><<stop>>
@@ -1096,9 +1122,13 @@ The order you go in will be randomised.</p>
 <</silently>>
 
 :: 1mod1br4 [nobr]
+<<set $prevpass to "1mod1br4intro">>
+<<set $passage to "1mod1br4">>
+<<set $nextpass to "1mod1gameoutro">>
 /* Extract */
 <<set $order to ["Tez", "Outa","Kipu","Sowe","Lucia", "Allo",]>><audio src="/assets/audio/eeg_timetoextract.mp3" autoplay>Audio is not supported on your device</audio>
-<<set $passage to "1mod1br4">>
+
+<<audio ":all" stop>><<audio "60supported" play>>
 <div class="wrapper box">
   <<include "header">>
 <main class="game">
@@ -1126,7 +1156,7 @@ The order you go in will be randomised.</p>
        <h2 class="subtitle">Money Money</h2>
        <p>Pay off this round’s debt and add money to your bank. The country with the most money wins!</p>
        <<button "Move on">> 
-        <<set $prevpass to $passage>><<goto "1mod1gameoutro">><</button>>
+        <<set $prevpass to $passage>><<goto $nextpass>><</button>>
     <</replace>>
 <</button>> 
   </div>
@@ -1134,13 +1164,14 @@ The order you go in will be randomised.</p>
 
    
   </main>
-  <<include "footer">>
+  <<include "footerskip">>
 </div>
 
 :: 1mod1gameoutro [nobr]
 <<set $prevpass to "1mod1br4">>
 <<set $passage to "1mod1gameoutro">>
 <<set $nextpass to "1mod1outroKaia">><audio src="/assets/audio/eeg_greatgame.mp3" autoplay>Audio is not supported on your device</audio>
+<<audio ":all" stop>>
 /* TODO Split this up  */
 <div class="wrapper">
 <<include "header">>
@@ -1157,11 +1188,15 @@ The order you go in will be randomised.</p>
 
   </div>
   </main>
-    <<include "footer">>
+    <<include "footerskip">>
 </div>
 
 :: 1mod1outroKaia [nobr]
-<<set $passage to "1mod1outroKaia">><audio src="/assets/audio/SESSION1_MOD1_eegreflection_1.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $prevpass to "1mod1gameoutro">>
+<<set $passage to "1mod1outroKaia">>
+<<set $nextpass to "1mod1outroKaib">>
+<audio src="/assets/audio/SESSION1_MOD1_eegreflection_1.mp3" autoplay>Audio is not supported on your device</audio>
+
 
 <div class="wrapper">
 <<include "header">>
@@ -1172,14 +1207,16 @@ The order you go in will be randomised.</p>
   <p>I call this the ‘extraction economy game’ because it shows us just how the extraction economy works and what it can do </p>
   <p>The 'extraction economy' game lays bare our flawed system.</p>
  
-  <<timed 13s>><<set $prevpass to $passage>><<goto "1mod1outroKaib">><</timed>>
+  <<timed 13s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
   </div>
   </main>
-    <<include "footer">>
+    <<include "footerskip">>
 </div>
 
 :: 1mod1outroKaib [nobr]
-<<set $passage to "1mod1outroKaib">><audio src="/assets/audio/SESSION1_MOD1_eegreflection_2.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $prevpass to "1mod1outroKaia">>
+<<set $passage to "1mod1outroKaib">>
+<<set $nextpass to "1mod1outroKaic">><audio src="/assets/audio/SESSION1_MOD1_eegreflection_2.mp3" autoplay>Audio is not supported on your device</audio>
 /* TODO Split this up  */
 <div class="wrapper">
 <<include "header">>
@@ -1191,14 +1228,17 @@ The order you go in will be randomised.</p>
  <p> How we keep taking and taking, cutting up our map, so that soon there may be no land left.</p>
  <p> The game shows us too how inequitable our system is.</p>
  
-  <<timed 15s>><<set $prevpass to $passage>><<goto "1mod1outroKaic">><</timed>>
+  <<timed 15s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
   </div>
   </main>
-    <<include "footer">>
+    <<include "footerskip">>
 </div>
 
 :: 1mod1outroKaic [nobr]
-<<set $passage to "1mod1outroKaic">><audio src="/assets/audio/SESSION1_MOD1_eegreflection_3.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $prevpass to "1mod1outroKaib">>
+<<set $passage to "1mod1outroKaic">>
+<<set $nextpass to "1mod1outroa">>
+<audio src="/assets/audio/SESSION1_MOD1_eegreflection_3.mp3" autoplay>Audio is not supported on your device</audio>
 /* TODO Split this up  */
 <div class="wrapper">
 <<include "header">>
@@ -1210,14 +1250,16 @@ The order you go in will be randomised.</p>
   <p>Those who can and will take what they need, with no care for what comes next or what is left behind.</p>
   <p>We’ll explore where some of that power has come from in the next session. </p>
  
-  <<timed 22s>><<set $prevpass to $passage>><<goto "1mod1outroa">><</timed>>
+  <<timed 22s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
   </div>
   </main>
-    <<include "footer">>
+    <<include "footerskip">>
 </div>
 
 :: 1mod1outroa [nobr]
-<<set $passage to "1mod1outroa">><audio src="/assets/audio/SESSION1_MOD1_outro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $prevpass to "1mod1outroKaic">>
+<<set $passage to "1mod1outroa">>
+<<set $nextpass to "1mod1outrob">><audio src="/assets/audio/SESSION1_MOD1_outro_1.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking scroll">
@@ -1231,14 +1273,16 @@ The order you go in will be randomised.</p>
   <h2 class="subtitle inline">Playful Climate Activism.</h2>
   <</replace>><</timed>>
   
-  <<timed 17s>><<set $prevpass to $passage>><<goto "1mod1outrob">><</timed>>
+  <<timed 17s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
   </div>
   </main>
-  <<include "footer">>
+  <<include "footerskip">>
 </div>
 
 :: 1mod1outrob [nobr]
-<<set $passage to "1mod1outrob">><audio src="/assets/audio/SESSION1_MOD1_outro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $prevpass to "1mod1outroa">>
+<<set $passage to "1mod1outrob">>
+<<set $nextpass to "1mod1outroc">><audio src="/assets/audio/SESSION1_MOD1_outro_2.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking scroll">
@@ -1251,14 +1295,16 @@ The order you go in will be randomised.</p>
   
  <p> It brings Greenpeace's work as climate campaigners and Coney's work as playful activists together: Playful Climate Activism </p>
   
-  <<timed 30s>><<set $prevpass to $passage>><<goto "1mod1outroc">><</timed>>
+  <<timed 30s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
   </div>
   </main>
-  <<include "footer">>
+  <<include "footerskip">>
 </div>
 
 :: 1mod1outroc [nobr]
-<<set $passage to "1mod1outroc">><audio src="/assets/audio/SESSION1_MOD1_outro_3.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $prevpass to "1mod1outrob">>
+<<set $passage to "1mod1outroc">>
+<<set $nextpass to "1modulelist">><audio src="/assets/audio/SESSION1_MOD1_outro_3.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking scroll">
@@ -1276,16 +1322,18 @@ The order you go in will be randomised.</p>
     <p>Enter Module 2's codeword for the final game of this session.</p>
   <</replace>><</timed>>
 
-  <<timed 22s>><<set $mod1 to true>><<set $prevpass to $passage>><<goto "1modulelist">><</timed>>
+  <<timed 22s>><<set $mod1 to true>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
   </div>
   </main>
-  <<include "footer">>
+  <<include "footerskip">>
 </div>
 
 
 
 :: 1mod2introa[nobr]
-<<set $passage to "1mod2introa">><<set $module to "Module 2">><<include "checkmodulenamelist">><audio src="/assets/audio/SESSION1_MOD2_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $prevpass to "1modulelist">>
+<<set $passage to "1mod2introa">>
+<<set $nextpass to "1mod2introb">><<set $module to "Module 2">><<include "checkmodulenamelist">><audio src="/assets/audio/SESSION1_MOD2_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -1296,14 +1344,17 @@ The order you go in will be randomised.</p>
  <p> Violet seemingly had nothing to do with the Action. </p>
  <p> It was like that to keep it secretive. </p>
  
-   <<timed 13s>><<set $prevpass to $passage>><<goto "1mod2introb">><</timed>>
+   <<timed 13s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
    </div>
   </main>
-  <<include "footer">>
+  <<include "footerskip">>
 </div>
 
 :: 1mod2introb[nobr]
-<<set $passage to "1mod2introb">><<set $module to "Module 2">><<include "checkmodulenamelist">><audio src="/assets/audio/SESSION1_MOD2_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $prevpass to "1mod2introa">>
+<<set $passage to "1mod2introb">>
+<<set $nextpass to "1mod2introc">>
+<<set $module to "Module 2">><<include "checkmodulenamelist">><audio src="/assets/audio/SESSION1_MOD2_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -1312,14 +1363,16 @@ The order you go in will be randomised.</p>
  <p> But actually, Violet was chosen by the group of Playful Activists. </p>
  <p> It was chosen as the identity of the group. </p>
  <p> So, we are going to work out our Codename. </p>
-   <<timed 12s>><<set $prevpass to $passage>><<goto "1mod2introc">><</timed>>
+   <<timed 12s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
    </div>
   </main>
-  <<include "footer">>
+  <<include "footerskip">>
 </div>
 
 :: 1mod2introc[nobr]
-<<set $passage to "1mod2introc">><audio src="/assets/audio/SESSION1_MOD2_codename_rerecord.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $prevpass to "1mod2introb">>
+<<set $passage to "1mod2introc">>
+<<set $nextpass to "1mod2outro">><audio src="/assets/audio/SESSION1_MOD2_codename_rerecord.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -1328,12 +1381,12 @@ The order you go in will be randomised.</p>
   <p>Teacher, over to you for this one, all of the instructions are on the Mod Card. </p>
   <div id="mount"></div>
   <<timed 120s>><<replace "#mount">>
-  <p>When completed click <<button "Move On">><<set $prevpass to $passage>><<goto "1mod2outro">><</button>>  </p>
+  <p>When completed click <<button "Move On">><<set $prevpass to $passage>><<goto $nextpass>><</button>>  </p>
 <</replace>><</timed>>
 
   </div>
   </main>
-     <<include "footer">>
+     <<include "footerskip">>
 </div>
 
 :: 1mod2outro[nobr]
@@ -1380,28 +1433,7 @@ The order you go in will be randomised.</p>
 <</replace>>
 <</timed>>
  </div>
- /* <script type="text/javascript">
-        (function() {
-            // https://dashboard.emailjs.com/admin/account
-            emailjs.init('vBWVf7sYQ5SNXH8tb');
-        })();
-    </script>
-  <script type="text/javascript">
-        window.onload = function() {
-            document.getElementById('codenameForm').addEventListener('click', function(event) {
-                event.preventDefault();
-                // generate a five digit number for the contact_number variable
-                this.contact_number.value = Math.random() * 100000 | 0;
-                // these IDs from the previous steps
-                emailjs.sendForm('contact_service', 'codenameForm', this)
-                    .then(function() {
-                        console.log('SUCCESS!');
-                    }, function(error) {
-                        console.log('FAILED...', error);
-                    });
-            });
-        }
-    </script> */
+ 
 
   </main>
      <<include "footer">>
@@ -1468,7 +1500,8 @@ The order you go in will be randomised.</p>
         <p>  You may need to write it down, so you can do it after school. </p>
         <p> Speak soon</p>
     
-  <<button "Finish">><<set $prevpass to $passage>><<goto "landing">><</button>>
+  <<button "Finish">>
+  <<audio "pyramidtransition_1" play >><<set $prevpass to $passage>><<goto "landing">><</button>>
      <</replace>>
      <</timed>>
 </div>
@@ -1651,6 +1684,8 @@ The order you go in will be randomised.</p>
         <<set $skip to false>>
         <<goto $nextpass>>
       <</timed>>
+      <<else>>
+    <<audio "modulelist_1" play>>
   <</if>>
 <</timed>>
 <div class="wrapper box">
@@ -2130,9 +2165,9 @@ Dr Mya-Rose Craig is a climate activist from the UK. </p>
 </div>
 
 :: 2mod3outro4 [nobr]
-<<set $prevpass to "2mod3outro4">>
-<<set $passage to "2mod3outro5">>
-<<set $nextpass to "2mod3outro6">>
+<<set $prevpass to "2mod3outro3">>
+<<set $passage to "2mod3outro4">>
+<<set $nextpass to "2mod3outro5">>
 <audio src="/assets/audio/SESSION2_MOD3_outro_4.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
@@ -2165,7 +2200,7 @@ Dr Mya-Rose Craig is a climate activist from the UK. </p>
   <<timed 14s>><<set $prevpass to $passage>><<set $mod3 to true>><<goto $nextpass>><</timed>>
 </div>
 </main>
-     <<include "footer">>
+     <<include "footerskip">>
 </div>
 
 :: 2mod3outro6 [nobr]
@@ -2442,6 +2477,8 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
         <<set $skip to false>>
         <<goto $nextpass>>
       <</timed>>
+        <<else>>
+    <<audio "modulelist_1" play>>
   <</if>>
 <</timed>>
 <div class="wrapper box">
@@ -2691,6 +2728,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
   Fold the feet out on your cards, and this will become your Playful Activist Card.
   Keep them safe, we’ll need them later in this process. 
 </p>
+<p>Enter the Module 6 codeword now.</p>
 
  <<timed 36s>><<set $prevpass to $passage>><<set $mod5 to true>><<goto $nextpass>><</timed>>
 </div>
@@ -3119,6 +3157,8 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
         <<goto $nextpass>>
       <</timed>>
   <</if>>
+    <<else>>
+    <<audio "modulelist_1" play>>
 <</timed>>
 <div class="wrapper box">
   <main class="modules">
@@ -3892,6 +3932,8 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
         <<set $skip to false>>
         <<goto $nextpass>>
       <</timed>>
+        <<else>>
+    <<audio "modulelist_1" play>>
   <</if>>
 <</timed>>
 <div class="wrapper box">
@@ -4641,6 +4683,8 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
         <<set $skip to false>>
         <<goto $nextpass>>
       <</timed>>
+      <<else>>
+    <<audio "modulelist_1" play>>
   <</if>>
 <</timed>>
 <div class="wrapper box">
@@ -5156,6 +5200,8 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
         <<set $skip to false>>
         <<goto $nextpass>>
       <</timed>>
+        <<else>>
+    <<audio "modulelist_1" play>>
   <</if>>
 <</timed>>
 <div class="wrapper box">
@@ -5852,6 +5898,8 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
         <<goto $nextpass>>
       <</timed>>
   <</if>>
+    <<else>>
+    <<audio "modulelist_1" play>>
 <</timed>>
 <div class="wrapper box">
   <main class="modules">
