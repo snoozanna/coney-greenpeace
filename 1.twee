@@ -92,21 +92,21 @@ $(document.head).find('#style-ui-bar').remove();
 
 
 :: StoryInit {"position":"100,100","size":"100,100"}
-<<cacheaudio "weirdnoise" "./../assets/audio/weirdnoise.mp3">>
-<<cacheaudio "pyramidtransition_1" "./../assets/audio/pyramidtransition_1.mp3">>
-<<cacheaudio "pyramidtransition_2" "./../assets/audio/pyramidtransition_2.mp3">>
-<<cacheaudio "pyramidtransition_4" "./../assets/audio/pyramidtransition_4.mp3">>
-<<cacheaudio "completionbloop_4" "./../assets/audio/completionbloop_4.mp3">>
-<<cacheaudio "modulelist_1" "./../assets/audio/modulelist_1.mp3">>
-<<cacheaudio "eeg_1" "./../assets/audio/eeg_1.mp3">>
-<<cacheaudio "Kipu" "./../assets/audio/eeg_kipu.mp3">>
-<<cacheaudio "Allo" "./../assets/audio/eeg_allo.mp3">>
-<<cacheaudio "Tez" "./../assets/audio/eeg_tez.mp3">>
-<<cacheaudio "Outa" "./../assets/audio/eeg_outa.mp3">>
-<<cacheaudio "Lucia" "./../assets/audio/eeg_lucia.mp3">>
-<<cacheaudio "Sowe" "./../assets/audio/eeg_sowe.mp3">>
-<<cacheaudio "60supported" "./../assets/audio/60secs_supported.mp3">>
-<<cacheaudio "buildwithcul" "./../assets/audio/buildwithculmination_1.mp3">>
+<<cacheaudio "weirdnoise" "assets/audio/weirdnoise.mp3">>
+<<cacheaudio "pyramidtransition_1" "assets/audio/pyramidtransition_1.mp3">>
+<<cacheaudio "pyramidtransition_2" "assets/audio/pyramidtransition_2.mp3">>
+<<cacheaudio "pyramidtransition_4" "assets/audio/pyramidtransition_4.mp3">>
+<<cacheaudio "completionbloop_4" "assets/audio/completionbloop_4.mp3">>
+<<cacheaudio "modulelist_1" "assets/audio/modulelist_1.mp3">>
+<<cacheaudio "eeg_1" "assets/audio/eeg_1.mp3">>
+<<cacheaudio "Kipu" "assets/audio/eeg_kipu.mp3">>
+<<cacheaudio "Allo" "assets/audio/eeg_allo.mp3">>
+<<cacheaudio "Tez" "assets/audio/eeg_tez.mp3">>
+<<cacheaudio "Outa" "assets/audio/eeg_outa.mp3">>
+<<cacheaudio "Lucia" "assets/audio/eeg_lucia.mp3">>
+<<cacheaudio "Sowe" "assets/audio/eeg_sowe.mp3">>
+<<cacheaudio "60supported" "assets/audio/60secs_supported.mp3">>
+<<cacheaudio "buildwithcul" "assets/audio/buildwithculmination_1.mp3">>
 
 <<waitforaudio>>
 
@@ -135,7 +135,7 @@ $(document.head).find('#style-ui-bar').remove();
   </div>
   <div class="nav-wrapper">
     <div class="nav-item logo">
-      <img src="./assets/img/triangles-08.png">
+      <img src="assets/img/triangles-08.png">
     </div>
   </div></footer>
 
@@ -151,7 +151,7 @@ $(document.head).find('#style-ui-bar').remove();
   </div>
   <div class="nav-wrapper">
     <div class="nav-item logo">
-      <img src="./assets/img/triangles-08.png">
+      <img src="assets/img/triangles-08.png">
     </div>
   </div></footer>
 
@@ -170,7 +170,7 @@ $(document.head).find('#style-ui-bar').remove();
   </div>
   <div class="nav-wrapper">
     <div class="nav-item logo">
-      <img src="./assets/img/triangles-08.png">
+      <img src="assets/img/triangles-08.png">
     </div>
   </div></footer>
 
@@ -195,7 +195,7 @@ $(document.head).find('#style-ui-bar').remove();
   </div>
   <div class="nav-wrapper">
     <div class="nav-item logo">
-          <img src="./assets/img/triangles-08.png">
+          <img src="assets/img/triangles-08.png">
     </div>
   </div></footer>
 
@@ -354,6 +354,8 @@ $(document.head).find('#style-ui-bar').remove();
   <<set $modulename to "Playing The System">>
 <<elseif $module is "Module 2">>
   <<set $modulename to "Codename">>
+  <<elseif $module is "Introducing Kai">>
+  <<set $modulename to "">>
 <<elseif $module is "Module 3">>
   <<set $modulename to "The Context	">>
 <<elseif $module is "Module 4">>
@@ -391,7 +393,7 @@ $(document.head).find('#style-ui-bar').remove();
 <div class="wrapper box">
 
   <main class="codeword landing">
-/* <img src="./assets/img/triangles-08.png" class="hero"> */
+/* <img src="assets/img/triangles-08.png" class="hero"> */
 
 <<include "unlock">>
 <div >
@@ -418,7 +420,15 @@ $(document.head).find('#style-ui-bar').remove();
         <<audio "weirdnoise" play >>
         <<replace "#coderesult">><h2 class="subtitle complete">Session 1</h2><</replace>>
         <<timed 3s>><<set $prevpass to $passage>><<set $audio to true>>
-        <<set $nextpass to "1kaiIntro">><<goto "loading">><</timed>>
+        <<set $nextpass to "1modulelist">><<goto "loading">><</timed>>
+        <</if>>
+        <<if $codeword isnot "" and $codeword is "KAI">>
+        <<addclass "#topTriangle" "unlock">>
+          <<audio "weirdnoise" play >>
+        <<audio "weirdnoise" play >>
+        <<replace "#coderesult">><h2 class="subtitle complete">Introducing Kai</h2><</replace>>
+        <<timed 3s>><<set $prevpass to $passage>><<set $audio to true>>
+        <<set $nextpass to "1mod2outrokaib">><<goto "loading">><</timed>>
         <</if>>
             <<if $codeword isnot "" and $codeword is "SMASH">>
               <<addclass "#topTriangle" "unlock">>
@@ -485,134 +495,11 @@ $(document.head).find('#style-ui-bar').remove();
   </div>
 
 
-:: 1kaiIntro [nobr]
-<<set $prevpass to "landing">>
-<<set $passage to "1kaiIntro">>
-<<set $nextpass to "1kaiIntro2">><<set $module to "Introduction">><<include "checkmodulenamelist">>
-
-<audio src="/assets/audio/SESSION1_INTRO_1.mp3" autoplay >Audio is not supported on your device</audio>
-
-<div class="wrapper">
-<<include "header">>
-<main class="speaking">
-<div class="text-wrapper">
-  <h1 class="title">Hi! I'm Kai</h1>
-  <p>I'm a playful activist.</p>
-  <p>I’m here because I work with Greenpeace & Coney.</p>
-  <p>I’ll explain more about them later</p>
-  <<timed 12s>><<set $prevpass to $passage>><<goto "1kaiIntro2">><</timed>>
-</div>
-</main>
-<<include "footerskip">>
-</div>
-
-
-:: 1kaiIntro2[nobr]
-<<set $prevpass to "1kaiIntro">>
-<<set $passage to "1kaiIntro2">>
-<<set $nextpass to "1kaiIntro3">><audio src="/assets/audio/SESSION1_INTRO_2.mp3" autoplay>Audio is not supported on your device</audio>
-<div class="wrapper">
-  <<include "header">>
-  <main class="speaking">
-  <div class="text-wrapper">
-    <p> But first, a bit about me </p>
-    <p>I use she/her pronouns.</p>
-    <p>I’m 5ft 6</p>
-    <p>I make games, like Roast Potatoes and, occasionally, make bad jokes. </p>
-    <p>It's great to meet all of you.</p>
-    <<timed 15s>><<set $prevpass to $passage>><<goto "1kaiIntro3">><</timed>>
-  </div >
-  </main>
-  <<include "footerskip">>
-</div>
-
-
-:: 1kaiIntro3 [nobr]
-<<set $prevpass to "1kaiIntro2">>
-<<set $passage to "1kaiIntro3">>
-<<set $nextpass to "1kaiIntro4">>
-<audio src="/assets/audio/SESSION1_INTRO_3.mp3" autoplay>Audio is not supported on your device</audio>
-<div class="wrapper">
-<<include "header">>
-  <main class="speaking">
-      <div class="text-wrapper">
-  <p>
-  If we were in the same space, no screen </p>
-<p>  I’d ask about you </p>
-<p>  For your name, your height, maybe  </p>
-<p>  But – and it’s bit of a rabbit in the room with us – </p>
-<p>  I can’t </p>
-<p>  I’m pre-recorded </p>
-<p>  But that doesn’t mean that everything is pre-decided </p>
- <p> Or that there is nothing to be discovered - it’s just all up to you. </p>
-  <<timed 22s>><<set $prevpass to $passage>><<goto "1kaiIntro4">><</timed>>
-  </div>
-  </main>
-    <<include "footerskip">>
-</div>
-
-
-
-:: 1kaiIntro4 [nobr]
-<<set $prevpass to "1kaiIntro3">>
-<<set $passage to "1kaiIntro4">>
-<<set $nextpass to "1kaiIntro5">>
-<audio src="/assets/audio/SESSION1_INTRO_4.mp3" autoplay>Audio is not supported on your device</audio>
-<div class="wrapper">
-<<include "header">>
-  <main class="speaking">
-      <div class="text-wrapper">
-<p>So, you've maybe heard of Greenpeace before.</p>
-<p>Greenpeace are a group of activists who take action against the climate and nature emergencies.</p>
-<p>  They believe we are all Activists</p>
-  <<timed 12s>><<set $prevpass to $passage>><<goto "1kaiIntro5">><</timed>>
-  </div>
-  </main>
-      <<include "footerskip">>
-</div>
-
-
-:: 1kaiIntro5[nobr]
-<<set $prevpass to "1kaiIntro4">>
-<<set $passage to "1kaiIntro5">>
-<<set $nextpass to "1kaiIntro6">><audio src="/assets/audio/SESSION1_INTRO_5.mp3" autoplay>Audio is not supported on your device</audio>
-<div class="wrapper">
-<<include "header">>
-  <main class="speaking">
-    <div class="text-wrapper">
-  <p>You may have heard of Coney too (quite possible not but ya know)</p>
-<p>  Coney are a group of playful activists.</p>
- <p> Coney create interactive performances, adventures, and games to make change through play.</p>
-
-  <<timed 15s>><<set $prevpass to $passage>><<goto "1kaiIntro6">><</timed>>
-  </div>
-  </main>
-      <<include "footerskip">>
-</div>
-
-:: 1kaiIntro6[nobr]
-<<set $prevpass to "1kaiIntro5">>
-<<set $passage to "1kaiIntro6">><<set $nextpass to "1modulelist">><audio src="/assets/audio/SESSION1_INTRO_6.mp3" autoplay>Audio is not supported on your device</audio>
-<div class="wrapper">
-<<include "header">>
-  <main class="speaking">
-    <div class="text-wrapper">
-
- <p> We're going to start this project by playing a game.</p>
-<p>  A game I made actually. </p>
-  <p>But to get in, you need a codeword. </p>
-  <p>Enter the codeword for Module 1  </p>
-  <p>You can find it on the card in your first envelope.</p>
-  <<timed 16s>><<set $prevpass to $passage>><<goto "1modulelist">><</timed>>
-  </div>
-  </main>
-      <<include "footerskip">>
-</div>
-
 :: 1modulelist [nobr]
-<<set $passage to "1modulelist">><<set $session to 1>>
+<<set $passage to "1modulelist">><<set $session to 1>><<audio ":all" stop>>
 <<if $nextnextpass is "1mod2outrokaia" >>
   <<set $nextpass to "1mod2outrokaia">>
+  
    <<set $nextnextpass to "">>
 <</if>>
 <<timed 0.1s>>
@@ -636,7 +523,7 @@ $(document.head).find('#style-ui-bar').remove();
      <div class="menu-item flip-card" id="mod1"> 
     <div class="flip-card-inner">
       <div class="flip-card-front">
-      <img src="./assets/img/mod1.jpg" alt="module card" >
+      <img src="assets/img/mod1.jpg" alt="module card" >
         <div id="codewordWrapper1" class="codeword-wrapper">
       /% CODEWORD INPUT %/
           <div class="code-input">
@@ -659,7 +546,7 @@ $(document.head).find('#style-ui-bar').remove();
       
             <<timed 6s>>
                   <<set $prevpass to $passage>>
-               <<set $nextpass to "1mod1intro">>
+               <<set $nextpass to "1mod1a">>
             <<goto "loading">>
              <</timed>>
             <</if>>
@@ -675,7 +562,7 @@ $(document.head).find('#style-ui-bar').remove();
         </div>
       </div>
       <div class="flip-card-back">
-        <img src="./assets/img/mod1-rev.jpg" alt="module card" >
+        <img src="assets/img/mod1-rev.jpg" alt="module card" >
       </div>
     </div>
   </div>  
@@ -684,7 +571,7 @@ $(document.head).find('#style-ui-bar').remove();
   <div class="menu-item flip-card" id="mod2"> 
     <div class="flip-card-inner">
       <div class="flip-card-front">
-      <img src="./assets/img/mod2.jpg" alt="module card" >
+      <img src="assets/img/mod2.jpg" alt="module card" >
         <div id="codewordWrapper2" class="codeword-wrapper">
       /% CODEWORD INPUT %/
           <div class="code-input">
@@ -710,7 +597,7 @@ $(document.head).find('#style-ui-bar').remove();
              <</timed>>
             <<timed 6s>>
                   <<set $prevpass to $passage>>
-               <<set $nextpass to "1mod2introa">>
+               <<set $nextpass to "1mod2outro">>
             <<goto "loading">>
              <</timed>>
             <</if>>
@@ -726,7 +613,7 @@ $(document.head).find('#style-ui-bar').remove();
         </div>
       </div>
       <div class="flip-card-back">
-        <img src="./assets/img/mod2-rev.jpg" alt="module card" >
+        <img src="assets/img/mod2-rev.jpg" alt="module card" >
       </div>
     </div>
   </div>
@@ -736,43 +623,26 @@ $(document.head).find('#style-ui-bar').remove();
   <<include "footerbox">></div>
   <<done>><<include "checkmodules">><</done>>
   
-:: 1mod1intro [nobr]
-<<set $prevpass to "1modulelist">>
-<<set $passage to "1mod1intro">>
-<<set $nextpass to "1mod1a">>
-  <<set $passage to "1mod1intro">>
-  <<set $module to "Module 1">><<include "checkmodulenamelist">><audio src="/assets/audio/SESSION1_MOD1_intro.mp3" autoplay>Audio is not supported on your device</audio>
-  <div class="wrapper">
-    <<include "header">>
-    <main  class="speaking">
-        <div class="text-wrapper">
-    <p>Good find – we’ll need those codewords when we move forward. </p>
-    <p>This game is going to introduce a system to you all, and then give you the chance to play with it. </p>
-    
-  <p>  Teacher, seeing as I’m pre-recorded, it may be easier for you to get the game setup.</p>
-   <p>
-      Break the class into groups, hand out the resources and come back to me when you are ready to start playing. </p>
-   <p> I’ll take us through. </p>
-    
-   <p> When ready click <<button "Move On">><<set $prevpass to $passage>><<goto $nextpass>><</button>></p>
-   </div>
-    </main>
-         <<include "footerskip">>
-  </div>
+
 
 
 :: 1mod1a [nobr]
-<<set $prevpass to "1mod1intro">>
+<<set $module to "Module 1">><<include "checkmodulenamelist">>
+<<set $prevpass to "1modulelist">>
 <<set $passage to "1mod1a">>
-<<set $nextpass to "1mod1bintro">><audio src="/assets/audio/eeg_rules.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $nextpass to "1mod1bintro">>
 <div class="wrapper">
   <<include "header">>
     <main  class="speaking">
         <div class="text-wrapper">
  <div id="mount">
-    <p>
-    We’ll lead you through the four parts of a Round. </p>
-     
+ <h2>The Extraction Economy Game</h2>
+ <p>The goal is to end the game with the most money. </p>
+ <p>But you can’t lose more than half of your land.</p>
+ <p> We’ll lead you through the four parts of a Round. </p>
+
+<<timed 6s>>
+  <<replace "#mount">>
        <ul>
         <li>
           <h4>1st - DEBATE</h4>
@@ -780,7 +650,7 @@ $(document.head).find('#style-ui-bar').remove();
         </li>
          <li>
           <h4>2nd - DEFENCE</h4>
-          <p>Defence Moves are placed first. There are a limit of defence slots for each country. Defence counters are replaced each round.</p>
+          <p>Defence Moves are placed first. There are a limit of defence slots for each country. </p>
         </li>
         <li>
           <h4>3rd - EXTRACTION</h4>
@@ -795,12 +665,15 @@ The order you go in will be randomised.</p>
    
        <p>Got it? </p>
    <<button "Yes">>
-      <<replace "#mount">><audio src="/assets/audio/eeg_letsplay.mp3" autoplay>Audio is not supported on your device</audio>
+      <<replace "#mount">>
+     
       <<audio "pyramidtransition_2" play>>
       <p>Let’s play <h2 class="subtitle inline"> The Extraction Economy Game!</h2></p>
      <<timed 4s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
     <</replace>>
     <</button>> 
+    <</replace>>
+    <</timed>>
     
     
  </div>
@@ -814,7 +687,9 @@ The order you go in will be randomised.</p>
 <<set $prevpass to "1mod1a">>
 <<set $passage to "1mod1bintro">>
 <<set $nextpass to "1mod1br1">>
-<<set $seconds to 60>><audio src="/assets/audio/eeg_round1.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $seconds to 60>>
+
+<<audio ":all" stop>>
 <<audio "60supported" play>>
 /* Tactics & Defense  */
 <div class="wrapper box">
@@ -842,7 +717,7 @@ The order you go in will be randomised.</p>
      <<elseif $seconds is 0>>   
       <<replace "#timer">><</replace>>
       <<replace "#mount">>
-         <audio src="/assets/audio/eeg_placeyourdefensemarkers.mp3" autoplay>Audio is not supported on your device</audio>
+     
           <h2 class="subtitle">Defence</h2>
           <p>Place your Defence Markers now. You might not choose to place any.</p>
            <div class="flex-col"><<button "Next">><<set $prevpass to $passage>><<goto $nextpass>><</button>></div>
@@ -859,7 +734,7 @@ The order you go in will be randomised.</p>
 /* Extract */
 <<set $order to ["Kipu", "Tez", "Outa", "Sowe", "Allo", "Lucia"]>>
 <<audio ":all" stop>><<audio "60supported" play>>
-<audio src="/assets/audio/eeg_timetoextract.mp3" autoplay>Audio is not supported on your device</audio>
+/* <audio src="assets/audio/eeg_timetoextract.mp3" autoplay>Audio is not supported on your device</audio> */
 <div class="wrapper box">
   <<include "header">>
 <main class="game">
@@ -875,7 +750,7 @@ The order you go in will be randomised.</p>
           <div class="option">
           <<linkreplace "Reveal">>
             <<set $audioname to $order[_i]>>
-            <<audio $audioname play>>
+            /* <<audio $audioname play>> */
             <span><<print _i + 1>>.</span>
             <span>$audioname</span>
           <</linkreplace>>
@@ -885,7 +760,7 @@ The order you go in will be randomised.</p>
     </div>
      <<button "Move on">>
     <<replace "#mount">>
-    <audio src="/assets/audio/eeg_moneymoney.mp3" autoplay>Audio is not supported on your device</audio>
+
        <h2 class="subtitle">Money Money</h2>
        <p>Pay off this round’s debt and add money to your bank. The country with the most money wins!</p>
        <<button "Move on">> 
@@ -903,7 +778,8 @@ The order you go in will be randomised.</p>
 :: 1mod1br2intro [nobr]
 <<set $prevpass to "1mod1br1">>
 <<set $passage to "1mod1br2intro">>
-<<set $nextpass to "1mod1br2">><<set $seconds to 60>><audio src="/assets/audio/eeg_round2.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $nextpass to "1mod1br2">><<set $seconds to 60>>
+
 <<audio ":all" stop>><<audio "60supported" play>>
 /* Tactics & Defense  */
 <div class="wrapper box">
@@ -931,7 +807,7 @@ The order you go in will be randomised.</p>
      <<elseif $seconds is 0>>   
       <<replace "#timer">><</replace>>
       <<replace "#mount">>
-      <audio src="/assets/audio/eeg_placeyourdefensemarkers.mp3" autoplay>Audio is not supported on your device</audio>
+    
           <h2 class="subtitle">Defence</h2>
           <p>Place your Defence Markers now. You might not choose to place any.</p>
            <div class="flex-col">
@@ -948,7 +824,7 @@ The order you go in will be randomised.</p>
 <<set $passage to "1mod1br2">>
 <<set $nextpass to "1mod1br3intro">>
 /* Extract */
-<<set $order to ["Allo","Outa","Sowe", "Tez", "Kipu", "Lucia"]>><audio src="/assets/audio/eeg_timetoextract.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $order to ["Allo","Outa","Sowe", "Tez", "Kipu", "Lucia"]>>
 <<set $passage to "1mod1br2">>
 <<audio ":all" stop>><<audio "60supported" play>>
 <div class="wrapper box">
@@ -964,7 +840,7 @@ The order you go in will be randomised.</p>
           <div class="option">
            <<linkreplace "Reveal">>
             <<set $audioname to $order[_i]>>
-            <<audio $audioname play>>
+            /* <<audio $audioname play>> */
             <span><<print _i + 1>>.</span>
             <span>$audioname</span>
           <</linkreplace>>
@@ -974,7 +850,7 @@ The order you go in will be randomised.</p>
     </div>
     <<button "Move on">>
     <<replace "#mount">>
-          <audio src="/assets/audio/eeg_moneymoney.mp3" autoplay>Audio is not supported on your device</audio>
+      
        <h2 class="subtitle">Money Money</h2>
        <p>Pay off this round’s debt and add money to your bank. The country with the most money wins!</p>
        <<button "Move on">> 
@@ -991,7 +867,8 @@ The order you go in will be randomised.</p>
 :: 1mod1br3intro [nobr]
 <<set $prevpass to "1mod1br2">>
 <<set $passage to "1mod1br3intro">>
-<<set $nextpass to "1mod1br3">><<set $seconds to 60>><audio src="/assets/audio/eeg_round3.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $nextpass to "1mod1br3">><<set $seconds to 60>>
+<<audio ":all" stop>>
 <<audio "60supported" play>>
 /* Tactics & Defense  */
 <div class="wrapper box">
@@ -1019,7 +896,7 @@ The order you go in will be randomised.</p>
      <<elseif $seconds is 0>>   
       <<replace "#timer">><</replace>>
       <<replace "#mount">>
-           <audio src="/assets/audio/eeg_placeyourdefensemarkers.mp3" autoplay>Audio is not supported on your device</audio>
+          
           <h2 class="subtitle">Defence</h2>
           <p>Place your Defence Markers now. You might not choose to place any.</p>
            <div class="flex-col">
@@ -1036,7 +913,7 @@ The order you go in will be randomised.</p>
 <<set $passage to "1mod1br3">>
 <<set $nextpass to "1mod1br4intro">>
 /* Extract */
-<<set $order to ["Kipu","Allo","Sowe","Outa", "Tez",  "Lucia"]>><audio src="/assets/audio/eeg_timetoextract.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $order to ["Kipu","Allo","Sowe","Outa", "Tez",  "Lucia"]>>
 
 <<audio ":all" stop>><<audio "60supported" play>>
 <div class="wrapper box">
@@ -1052,7 +929,7 @@ The order you go in will be randomised.</p>
           <div class="option">
            <<linkreplace "Reveal">>
             <<set $audioname to $order[_i]>>
-            <<audio $audioname play>>
+            /* <<audio $audioname play>> */
             <span><<print _i + 1>>.</span>
             <span>$audioname</span>
           <</linkreplace>>
@@ -1062,7 +939,7 @@ The order you go in will be randomised.</p>
     </div>
          <<button "Move on">>
     <<replace "#mount">>
-         <audio src="/assets/audio/eeg_moneymoney.mp3" autoplay>Audio is not supported on your device</audio>
+       
        <h2 class="subtitle">Money Money</h2>
        <p>Pay off this round’s debt and add money to your bank. The country with the most money wins!</p>
        <<button "Move on">> 
@@ -1081,7 +958,8 @@ The order you go in will be randomised.</p>
 :: 1mod1br4intro [nobr]
 <<set $prevpass to "1mod1br3">>
 <<set $passage to "1mod1br4intro">>
-<<set $nextpass to "1mod1br4">><<set $seconds to 60>><audio src="/assets/audio/eeg_round4.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $nextpass to "1mod1br4">><<set $seconds to 60>>
+<<audio ":all" stop>>
 <<audio "60supported" play>>
 /* Tactics & Defense  */
 <div class="wrapper box">
@@ -1109,7 +987,7 @@ The order you go in will be randomised.</p>
      <<elseif $seconds is 0>>   
       <<replace "#timer">><</replace>>
       <<replace "#mount">>
-           <audio src="/assets/audio/eeg_placeyourdefensemarkers.mp3" autoplay>Audio is not supported on your device</audio>
+           
           <h2 class="subtitle">Defence</h2>
           <p>Place your Defence Markers now. You might not choose to place any.</p>
            <div class="flex-col">
@@ -1124,9 +1002,9 @@ The order you go in will be randomised.</p>
 :: 1mod1br4 [nobr]
 <<set $prevpass to "1mod1br4intro">>
 <<set $passage to "1mod1br4">>
-<<set $nextpass to "1mod1gameoutro">>
+<<set $nextpass to "1modulelist">>
 /* Extract */
-<<set $order to ["Tez", "Outa","Kipu","Sowe","Lucia", "Allo",]>><audio src="/assets/audio/eeg_timetoextract.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $order to ["Tez", "Outa","Kipu","Sowe","Lucia", "Allo",]>>
 
 <<audio ":all" stop>><<audio "60supported" play>>
 <div class="wrapper box">
@@ -1142,7 +1020,7 @@ The order you go in will be randomised.</p>
           <div class="option">
            <<linkreplace "Reveal">>
             <<set $audioname to $order[_i]>>
-            <<audio $audioname play>>
+            /* <<audio $audioname play>> */
             <span><<print _i + 1>>.</span>
             <span>$audioname</span>
           <</linkreplace>>
@@ -1152,11 +1030,12 @@ The order you go in will be randomised.</p>
     </div>
     <<button "Move on">>
     <<replace "#mount">>
-          <audio src="/assets/audio/eeg_moneymoney.mp3" autoplay>Audio is not supported on your device</audio>
+       
        <h2 class="subtitle">Money Money</h2>
        <p>Pay off this round’s debt and add money to your bank. The country with the most money wins!</p>
        <<button "Move on">> 
-        <<set $prevpass to $passage>><<goto $nextpass>><</button>>
+        <<set $mod1 to true>><<set $prevpass to $passage>><<goto $nextpass>>
+        <</button>>
     <</replace>>
 <</button>> 
   </div>
@@ -1167,263 +1046,22 @@ The order you go in will be randomised.</p>
   <<include "footerskip">>
 </div>
 
-:: 1mod1gameoutro [nobr]
-<<set $prevpass to "1mod1br4">>
-<<set $passage to "1mod1gameoutro">>
-<<set $nextpass to "1mod1outroKaia">><audio src="/assets/audio/eeg_greatgame.mp3" autoplay>Audio is not supported on your device</audio>
-<<audio ":all" stop>>
-/* TODO Split this up  */
-<div class="wrapper">
-<<include "header">>
-  <main class="speaking">
-      <div class="text-wrapper">
-
-<p>  Great Game.</p>
-<p>I can’t see of course, as I’m pre-recorded, but I imagine it was a close-run thing with lots of tension! Or maybe it was a broken game…</p>
-<p>Teacher, read out the final scores and then there are some questions you can ask the class in your teacher pack.</p>
- 
-
-  <<button "Move on">> 
-        <<set $prevpass to $passage>><<goto $nextpass>><</button>>
-
-  </div>
-  </main>
-    <<include "footerskip">>
-</div>
-
-:: 1mod1outroKaia [nobr]
-<<set $prevpass to "1mod1gameoutro">>
-<<set $passage to "1mod1outroKaia">>
-<<set $nextpass to "1mod1outroKaib">>
-<audio src="/assets/audio/SESSION1_MOD1_eegreflection_1.mp3" autoplay>Audio is not supported on your device</audio>
 
 
-<div class="wrapper">
-<<include "header">>
-  <main class="speaking">
-      <div class="text-wrapper">
-
-
-  <p>I call this the ‘extraction economy game’ because it shows us just how the extraction economy works and what it can do </p>
-  <p>The 'extraction economy' game lays bare our flawed system.</p>
- 
-  <<timed 13s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
-  </div>
-  </main>
-    <<include "footerskip">>
-</div>
-
-:: 1mod1outroKaib [nobr]
-<<set $prevpass to "1mod1outroKaia">>
-<<set $passage to "1mod1outroKaib">>
-<<set $nextpass to "1mod1outroKaic">><audio src="/assets/audio/SESSION1_MOD1_eegreflection_2.mp3" autoplay>Audio is not supported on your device</audio>
-/* TODO Split this up  */
-<div class="wrapper">
-<<include "header">>
-  <main class="speaking">
-      <div class="text-wrapper">
-
-
-  <p>It shows how we rip resources from the ground and send them into the sky.</p>
- <p> How we keep taking and taking, cutting up our map, so that soon there may be no land left.</p>
- <p> The game shows us too how inequitable our system is.</p>
- 
-  <<timed 15s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
-  </div>
-  </main>
-    <<include "footerskip">>
-</div>
-
-:: 1mod1outroKaic [nobr]
-<<set $prevpass to "1mod1outroKaib">>
-<<set $passage to "1mod1outroKaic">>
-<<set $nextpass to "1mod1outroa">>
-<audio src="/assets/audio/SESSION1_MOD1_eegreflection_3.mp3" autoplay>Audio is not supported on your device</audio>
-/* TODO Split this up  */
-<div class="wrapper">
-<<include "header">>
-  <main class="speaking">
-      <div class="text-wrapper">
-
- 
-<p>  Different countries have different amounts of natural resources, but so often it comes down to technology, violence and power. Particularly historical power that exists from centuries of colonialism & empire. </p>
-  <p>Those who can and will take what they need, with no care for what comes next or what is left behind.</p>
-  <p>We’ll explore where some of that power has come from in the next session. </p>
- 
-  <<timed 22s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
-  </div>
-  </main>
-    <<include "footerskip">>
-</div>
-
-:: 1mod1outroa [nobr]
-<<set $prevpass to "1mod1outroKaic">>
-<<set $passage to "1mod1outroa">>
-<<set $nextpass to "1mod1outrob">><audio src="/assets/audio/SESSION1_MOD1_outro_1.mp3" autoplay>Audio is not supported on your device</audio>
-<div class="wrapper">
-  <<include "header">>
-  <main class="speaking scroll">
-      <div class="text-wrapper">
-  <p>
-  Now we're going to leave the extraction economy for today, and instead look at what we’re doing here in this room, and what we’re going to do together in this project. </p>
-  
-  <p>Together we’re going to make a piece of...  </p> 
-  <div id="mount"></div>
-  <<timed 12s>><<replace "#mount">>
-  <h2 class="subtitle inline">Playful Climate Activism.</h2>
-  <</replace>><</timed>>
-  
-  <<timed 17s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
-  </div>
-  </main>
-  <<include "footerskip">>
-</div>
-
-:: 1mod1outrob [nobr]
-<<set $prevpass to "1mod1outroa">>
-<<set $passage to "1mod1outrob">>
-<<set $nextpass to "1mod1outroc">><audio src="/assets/audio/SESSION1_MOD1_outro_2.mp3" autoplay>Audio is not supported on your device</audio>
-<div class="wrapper">
-  <<include "header">>
-  <main class="speaking scroll">
-      <div class="text-wrapper">
- <p>Greenpeace were founded in 1971 as a meeting of two existing movements for change:
-    the climate movement: giving us 'green' and the anti-war movement: where we get 'peace'.</p>
-    <p>In the same way that Greenpeace was two movements meeting, this project is too:</p>
-   <p> it's a meeting of Greenpeace and Coney.
-  </p>
-  
- <p> It brings Greenpeace's work as climate campaigners and Coney's work as playful activists together: Playful Climate Activism </p>
-  
-  <<timed 30s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
-  </div>
-  </main>
-  <<include "footerskip">>
-</div>
-
-:: 1mod1outroc [nobr]
-<<set $prevpass to "1mod1outrob">>
-<<set $passage to "1mod1outroc">>
-<<set $nextpass to "1modulelist">><audio src="/assets/audio/SESSION1_MOD1_outro_3.mp3" autoplay>Audio is not supported on your device</audio>
-<div class="wrapper">
-  <<include "header">>
-  <main class="speaking scroll">
-      <div class="text-wrapper" id="mount2">
-  <p>Coney & Greenpeace have worked together before, on a piece of Playful Activism. </p>
-<p>  On an operation we’ll explore more about together.</p>
-  <p>One I was involved in planning, creating and delivering.</p>
-  <p>The operation was called...</p>
-    <div id="mount"></div>
-   
-   <<timed 13s>><<replace "#mount">>
-  <h2 class="subtitle inline">  Codename: Violet. </h2>
-  <</replace>><</timed>>
-     <<timed 17s>><<replace "#mount2">>
-    <p>Enter Module 2's codeword for the final game of this session.</p>
-  <</replace>><</timed>>
-
-  <<timed 22s>><<set $mod1 to true>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
-  </div>
-  </main>
-  <<include "footerskip">>
-</div>
-
-
-
-:: 1mod2introa[nobr]
-<<set $prevpass to "1modulelist">>
-<<set $passage to "1mod2introa">>
-<<set $nextpass to "1mod2introb">><<set $module to "Module 2">><<include "checkmodulenamelist">><audio src="/assets/audio/SESSION1_MOD2_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
-<div class="wrapper">
-  <<include "header">>
-  <main class="speaking">
-      <div class="text-wrapper">
-  <p>  Codename: Violet was an odd name. </p>
- <p> Often names gives us a clue of what is to come</p>
-  <p>They tell us something… </p>
- <p> Violet seemingly had nothing to do with the Action. </p>
- <p> It was like that to keep it secretive. </p>
- 
-   <<timed 13s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
-   </div>
-  </main>
-  <<include "footerskip">>
-</div>
-
-:: 1mod2introb[nobr]
-<<set $prevpass to "1mod2introa">>
-<<set $passage to "1mod2introb">>
-<<set $nextpass to "1mod2introc">>
-<<set $module to "Module 2">><<include "checkmodulenamelist">><audio src="/assets/audio/SESSION1_MOD2_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
-<div class="wrapper">
-  <<include "header">>
-  <main class="speaking">
-      <div class="text-wrapper">
-
- <p> But actually, Violet was chosen by the group of Playful Activists. </p>
- <p> It was chosen as the identity of the group. </p>
- <p> So, we are going to work out our Codename. </p>
-   <<timed 12s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
-   </div>
-  </main>
-  <<include "footerskip">>
-</div>
-
-:: 1mod2introc[nobr]
-<<set $prevpass to "1mod2introb">>
-<<set $passage to "1mod2introc">>
-<<set $nextpass to "1mod2outro">><audio src="/assets/audio/SESSION1_MOD2_codename_rerecord.mp3" autoplay>Audio is not supported on your device</audio>
-<div class="wrapper">
-  <<include "header">>
-  <main class="speaking">
-      <div class="text-wrapper">
-  <p>You’re going to find the Most Interesting Thing You Have In Common.</p> 
-  <p>Teacher, over to you for this one, all of the instructions are on the Mod Card. </p>
-  <div id="mount"></div>
-  <<timed 120s>><<replace "#mount">>
-  <p>When completed click <<button "Move On">><<set $prevpass to $passage>><<goto $nextpass>><</button>>  </p>
-<</replace>><</timed>>
-
-  </div>
-  </main>
-     <<include "footerskip">>
-</div>
 
 :: 1mod2outro[nobr]
-<<set $passage to "1mod2outro">><audio src="/assets/audio/SESSION1_MOD2_outro.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $passage to "1mod2outro">><<set $module to "Module 2">><<include "checkmodulenamelist">>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
       <div class="text-wrapper" id="mount">
-  <p> Sometimes it’s useful to have a codename, to have a front </p>
-  <p>A codename can keep things secret or hidden if we need it </p>
- <p> And a front allows us to play </p>
- <p> Like an avatar </p>
- <p> I game under ‘keepitshort’ </p>
- <p> I’ve got no issue with my height. </p>
- <<timed 15s>>
-<<replace "#mount">>
-  <p>  And now you have a front too, your <h2 class="subtitle inline">CODENAME</h2> </p> 
-  <p>  Enter it here and it will be sent through to the team at Coney and Greenpeace. </p>
-   <p> (You may want to make it short and snappy)</p>
-<</replace>>
-<</timed>>
- <<timed 25s>>
+  
+ <<timed 0.1s>>
 <<replace "#mount">>
    <div class="enter-codename-container">
      <div class="enter-codename-wrapper">
      <h2 class="subtitle">Enter Codename:</h2>
-       /* <form id="codenameForm">
-        <form id="contact-form">
-        <input type="hidden" name="contact_number">
-        <label>Name</label>
-        <input type="text" name="user_name">
-        <label>Email</label>
-        <input type="email" name="user_email">
-        <label>Message</label>
-        <textarea name="message"></textarea>
-        <input type="submit" value="Send">
-    </form> */
+    
          <<textbox "$codename" "">>
              <<button "SEND">><<set $prevpass to $passage>>
              <<set $mod2 to true>><<set $nextnextpass to "1mod2outrokaia">><<set $skip to true>><<set $nextpass to "1modulelist">><<goto "sending">><</button>>
@@ -1440,7 +1078,7 @@ The order you go in will be randomised.</p>
 </div>
 
 :: 1mod2outrokaia [nobr]
-<<set $passage to "1mod2outrokaia">><audio src="/assets/audio/SESSION1_outro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $passage to "1mod2outrokaia">>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking ">
@@ -1450,33 +1088,37 @@ The order you go in will be randomised.</p>
  </div>
       <div class="text-wrapper">
       <p> Thank you!</p>
-  <p>That’s the end of the first session – we are off - on our way!</p>
-  <p>As we go through this process together, I'm going to tell you more about playful climate activism and more about Codename: Violet.</p>
- <p> For now, the codename is all I'll tell you, but at the start, it was all we knew too.</p>
-<p>  And that we would create a piece of playful climate activism</p>
   
-  <<timed 24s>><<set $prevpass to $passage>><<set $mod2 to true>><<goto "1mod2outrokaib">><</timed>>
+  
+  <<timed 8s>><<set $prevpass to $passage>><<set $mod2 to true>><<goto "landing">><</timed>>
 </div>
   </main>
      <<include "footer">>
 </div>
 
 :: 1mod2outrokaib [nobr]
-<<set $passage to "1mod2outrokaib">><audio src="/assets/audio/SESSION1_outro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $passage to "1mod2outrokaib">><<set $module to "Introducing Kai">><<include "checkmodulenamelist">>
+/* TODO REPLACE  */
+/* <audio src="assets/audio/SESSION1_outro_2.mp3" autoplay>Audio is not supported on your device</audio> */
 <div class="wrapper">
   <<include "header">>
   <main class="speaking ">
  <div class="codeword-title-wrapper indent">
 
-    <h1 class="title"> Codename: $codename </h1>
  </div>
       <div class="text-wrapper">
   
- <p> And that is what we are going to do together here too. </p>
- <p> We are going to make a piece of Playful Climate Activism.</p>
-<p>  I’ll explain more next session. </p>
-  
-  <<timed 12s>><<set $prevpass to $passage>><<set $mod2 to true>><<goto "1mod2outrokaic">><</timed>>
+ <p> Hello, I’m Kai – I’m going to be the voice on this screen for the rest of this project. </p>
+<p>I’m also a Playful Activist. </p>
+<p>If we were in the same space, no screen </p>
+<p>I’d ask about you </p>
+<p>But – and it’s bit of a rabbit in the room with us – </p>
+<p>I can’t </p>
+<p>I’m pre-recorded </p>
+<p>But that doesn’t mean that everything is pre-decided </p>
+<p>Or that there is nothing to be discovered - it’s just all up to you.  </p>
+
+  <<timed 8s>><<set $prevpass to $passage>><<set $mod2 to true>><<goto "1mod2outrokaic">><</timed>>
 </div>
   </main>
      <<include "footer">>
@@ -1484,24 +1126,32 @@ The order you go in will be randomised.</p>
 
 :: 1mod2outrokaic [nobr]
 <<set $passage to "1mod2outrokaic">>
-<audio src="/assets/audio/SESSION1_outro_3.mp3" autoplay>Audio is not supported on your device</audio>
+/* TODO REPLACE  */
+/* <audio src="assets/audio/SESSION1_outro_3.mp3" autoplay>Audio is not supported on your device</audio> */
 <div class="wrapper">
   <<include "header">>
   <main class="speaking ">
  <div class="codeword-title-wrapper indent">
-    /* <h1 class="title">Codename:  $codename </h1> */
  </div>
       <div class="text-wrapper" id="mount">
-      <p> But for now, let’s open another portal too.</p>
-      <p>  A way for us to reflect together</p>
-      <p>  To speak honestly about today, what we’ve discussed, created and played  </p>
-    <<timed 11s>> <<replace "#mount">>
-        <p> Text <h2 class="subtitle inline">HONEST</h2> to <h2 class="subtitle inline">07400179362</h2>, when you get the chance. </p>
-        <p>  You may need to write it down, so you can do it after school. </p>
-        <p> Speak soon</p>
-    
-  <<button "Finish">>
-  <<audio "pyramidtransition_1" play >><<set $prevpass to $passage>><<goto "landing">><</button>>
+    <p>As we go through this process together, I'm going to tell you more about playful climate activism and more about Codename: Violet.</p>
+<p>And that is what we are going to do together</p>
+<p>We are going to make a piece of Playful Climate Activism. here, together. </p>
+<p>I’ll explain more next session. </p>
+<p>See you then. </p>
+
+ <<timed 8s>> <<replace "#mount">>
+  <<button "Entry to the box">>
+    <<timed 1s>>
+      <<replace "#mount">>
+        <p> Text <h2 class="subtitle inline">HONEST</h2> to <h2 class="subtitle inline">07400179362</h2>, when you get the chance. </p>     
+      <<button "Finish">>
+      <<audio "pyramidtransition_1" play >><<set $prevpass to $passage>><<goto "landing">><</button>>
+        <</replace>>
+      <</timed>>
+    <</button>>
+      
+
      <</replace>>
      <</timed>>
 </div>
@@ -1521,7 +1171,7 @@ The order you go in will be randomised.</p>
 <<set $prevpass to "landing">>
 <<set $module to "Introduction">>
 <<include "checkmodulenamelist">>
-<audio src="/assets/audio/SESSION2_INTRO_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION2_INTRO_1.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
     /* <h1 class="title top">Hello - it's Kai again</h1> */
@@ -1544,7 +1194,7 @@ The order you go in will be randomised.</p>
 <<set $passage to "2kaiIntro2">>
 <<set $nextpass to "2kaiIntro3">>
 <<set $module to "Introduction">>
-<<include "checkmodulenamelist">><audio src="/assets/audio/SESSION2_INTRO_2.mp3" autoplay>Audio is not supported on your device</audio>
+<<include "checkmodulenamelist">><audio src="assets/audio/SESSION2_INTRO_2.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
 
@@ -1565,7 +1215,7 @@ The order you go in will be randomised.</p>
 <<set $passage to "2kaiIntro3">>
 <<set $nextpass to "2kaiIntro4">>
 <<set $module to "Introduction">>
-<<include "checkmodulenamelist">><audio src="/assets/audio/SESSION2_INTRO_3.mp3" autoplay>Audio is not supported on your device</audio>
+<<include "checkmodulenamelist">><audio src="assets/audio/SESSION2_INTRO_3.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
 
@@ -1589,7 +1239,7 @@ The order you go in will be randomised.</p>
 <<set $passage to "2kaiIntro4">>
 <<set $nextpass to "2kaiIntro5">>
 <<set $module to "Introduction">>
-<<include "checkmodulenamelist">><audio src="/assets/audio/SESSION2_INTRO_4.mp3" autoplay>Audio is not supported on your device</audio>
+<<include "checkmodulenamelist">><audio src="assets/audio/SESSION2_INTRO_4.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
 
@@ -1609,7 +1259,7 @@ The order you go in will be randomised.</p>
 <<set $passage to "2kaiIntro5">>
 <<set $nextpass to "2kaiIntro6">>
 <<set $module to "Introduction">>
-<<include "checkmodulenamelist">><audio src="/assets/audio/SESSION2_INTRO_5.mp3" autoplay>Audio is not supported on your device</audio>
+<<include "checkmodulenamelist">><audio src="assets/audio/SESSION2_INTRO_5.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
 
@@ -1629,7 +1279,7 @@ The order you go in will be randomised.</p>
 <<set $prevpass to "2kaiIntro5">>
 <<set $passage to "2kaiIntro6">>
 <<set $nextpass to "2kaiIntro7">>
-<<set $module to "Introduction">><<include "checkmodulenamelist">><audio src="/assets/audio/SESSION2_INTRO_6.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $module to "Introduction">><<include "checkmodulenamelist">><audio src="assets/audio/SESSION2_INTRO_6.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
 
@@ -1649,7 +1299,7 @@ The order you go in will be randomised.</p>
 <<set $prevpass to "2kaiIntro6">>
 <<set $passage to "2kaiIntro7">>
 <<set $nextpass to "2modulelist">>
-<<set $module to "Introduction">><<include "checkmodulenamelist">><audio src="/assets/audio/SESSION2_INTRO_7.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $module to "Introduction">><<include "checkmodulenamelist">><audio src="assets/audio/SESSION2_INTRO_7.mp3" autoplay>Audio is not supported on your device</audio>
 
 <<if $skip is true>>
     <<timed 5s>>
@@ -1696,7 +1346,7 @@ The order you go in will be randomised.</p>
      <div class="menu-item flip-card" id="mod3"> 
     <div class="flip-card-inner">
       <div class="flip-card-front">
-      <img src="./assets/img/mod3.jpg" alt="module card" >
+      <img src="assets/img/mod3.jpg" alt="module card" >
         <div id="codewordWrapper1" class="codeword-wrapper">
       /% CODEWORD INPUT %/
           <div class="code-input">
@@ -1734,7 +1384,7 @@ The order you go in will be randomised.</p>
         </div>
       </div>
       <div class="flip-card-back">
-        <img src="./assets/img/mod3-rev.jpg" alt="module card" >
+        <img src="assets/img/mod3-rev.jpg" alt="module card" >
       </div>
     </div>
   </div>  
@@ -1743,7 +1393,7 @@ The order you go in will be randomised.</p>
   <div class="menu-item flip-card" id="mod4"> 
     <div class="flip-card-inner">
       <div class="flip-card-front">
-      <img src="./assets/img/mod4.jpg" alt="module card" >
+      <img src="assets/img/mod4.jpg" alt="module card" >
         <div id="codewordWrapper2" class="codeword-wrapper">
       /% CODEWORD INPUT %/
           <div class="code-input">
@@ -1785,7 +1435,7 @@ The order you go in will be randomised.</p>
         </div>
       </div>
       <div class="flip-card-back">
-        <img src="./assets/img/mod4-rev.jpg" alt="module card" >
+        <img src="assets/img/mod4-rev.jpg" alt="module card" >
       </div>
     </div>
   </div>
@@ -1800,7 +1450,7 @@ The order you go in will be randomised.</p>
 <<set $prevpass to "2modulelist">>
 <<set $passage to "2mod3intro">>
 <<set $nextpass to "2mod3intro">>
-<<set $module to "Module 3">><<include "checkmodulenamelist">><audio src="/assets/audio/SESSION2_INTRO_8.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $module to "Module 3">><<include "checkmodulenamelist">><audio src="assets/audio/SESSION2_INTRO_8.mp3" autoplay>Audio is not supported on your device</audio>
   <div class="wrapper">
     <<include "header">>
     <main  class="speaking">
@@ -1821,7 +1471,7 @@ The order you go in will be randomised.</p>
 <<set $prevpass to "2mod3preintro">>
 <<set $passage to "2mod3intro1">>
 <<set $nextpass to "2mod3vid">>
-<<set $module to "Module 3">><<include "checkmodulenamelist">><audio src="/assets/audio/SESSION2_MOD3_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $module to "Module 3">><<include "checkmodulenamelist">><audio src="assets/audio/SESSION2_MOD3_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
   <div class="wrapper">
     <<include "header">>
     <main  class="speaking">
@@ -1839,7 +1489,7 @@ The order you go in will be randomised.</p>
 <<set $passage to "2mod3intro2">>
 <<set $nextpass to "2mod3vid">>
 <<set $module to "Module 3">><<include "checkmodulenamelist">>
-<audio src="/assets/audio/SESSION2_MOD3_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION2_MOD3_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
   <div class="wrapper">
     <<include "header">>
     <main  class="speaking">
@@ -1857,7 +1507,7 @@ The order you go in will be randomised.</p>
 <<set $passage to "2mod3intro3">>
 <<set $nextpass to "2mod3intro4">>
 <<set $module to "Module 3">><<include "checkmodulenamelist">>
-<audio src="/assets/audio/SESSION2_MOD3_intro_3.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION2_MOD3_intro_3.mp3" autoplay>Audio is not supported on your device</audio>
   <div class="wrapper">
     <<include "header">>
     <main  class="speaking">
@@ -1873,7 +1523,7 @@ The order you go in will be randomised.</p>
 <<set $prevpass to "2mod3intro3">>
 <<set $passage to "2mod3intro4">>
 <<set $nextpass to "2mod3intro5">>
-<<set $module to "Module 3">><<include "checkmodulenamelist">><audio src="/assets/audio/SESSION2_MOD3_intro_4.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $module to "Module 3">><<include "checkmodulenamelist">><audio src="assets/audio/SESSION2_MOD3_intro_4.mp3" autoplay>Audio is not supported on your device</audio>
   <div class="wrapper">
     <<include "header">>
     <main  class="speaking">
@@ -1890,7 +1540,7 @@ The order you go in will be randomised.</p>
 <<set $passage to "2mod3intro5">>
 <<set $nextpass to "2mod3intro6">>
 <<set $module to "Module 3">><<include "checkmodulenamelist">>
-<audio src="/assets/audio/SESSION2_MOD3_intro_5.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION2_MOD3_intro_5.mp3" autoplay>Audio is not supported on your device</audio>
   <div class="wrapper">
     <<include "header">>
     <main  class="speaking">
@@ -1910,7 +1560,7 @@ The order you go in will be randomised.</p>
 <<set $passage to "2mod3intro6">>
 <<set $nextpass to "2mod3intro7">>
 <<set $module to "Module 3">>
-<<include "checkmodulenamelist">><audio src="/assets/audio/SESSION2_MOD3_intro_6.mp3" autoplay>Audio is not supported on your device</audio>
+<<include "checkmodulenamelist">><audio src="assets/audio/SESSION2_MOD3_intro_6.mp3" autoplay>Audio is not supported on your device</audio>
   <div class="wrapper">
     <<include "header">>
     <main  class="speaking">
@@ -1929,7 +1579,7 @@ The order you go in will be randomised.</p>
 <<set $prevpass to "2mod3intro6">>
 <<set $passage to "2mod3intro7">>
 <<set $nextpass to "2mod3intro8">>
-<<set $module to "Module 3">><<include "checkmodulenamelist">><audio src="/assets/audio/SESSION2_MOD3_intro_7.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $module to "Module 3">><<include "checkmodulenamelist">><audio src="assets/audio/SESSION2_MOD3_intro_7.mp3" autoplay>Audio is not supported on your device</audio>
   <div class="wrapper">
     <<include "header">>
     <main  class="speaking">
@@ -1951,7 +1601,7 @@ Dr Mya-Rose Craig is a climate activist from the UK. </p>
 <<set $nextpass to "2mod3intro9">>
 <<set $module to "Module 3">>
 <<include "checkmodulenamelist">>
-<audio src="/assets/audio/SESSION2_MOD3_intro_8.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION2_MOD3_intro_8.mp3" autoplay>Audio is not supported on your device</audio>
   <div class="wrapper">
     <<include "header">>
     <main  class="speaking">
@@ -1973,7 +1623,7 @@ Dr Mya-Rose Craig is a climate activist from the UK. </p>
 <<set $prevpass to "2mod3intro8">>
 <<set $passage to "2mod3intro9">>
 <<set $nextpass to "2mod3vid">>
-<<set $module to "Module 3">><<include "checkmodulenamelist">><audio src="/assets/audio/SESSION2_MOD3_intro_9.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $module to "Module 3">><<include "checkmodulenamelist">><audio src="assets/audio/SESSION2_MOD3_intro_9.mp3" autoplay>Audio is not supported on your device</audio>
   <div class="wrapper">
     <<include "header">>
     <main  class="speaking">
@@ -2005,7 +1655,7 @@ Dr Mya-Rose Craig is a climate activist from the UK. </p>
 
 :: 2mod1int1 [nobr]
 <<set $passage to "2mod1int1">>
-<audio src="/assets/audio/SESSION2_MOD3_context_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION2_MOD3_context_1.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -2046,7 +1696,7 @@ Dr Mya-Rose Craig is a climate activist from the UK. </p>
 </div>
 
 :: 2mod1int2 [nobr]
-<<set $passage to "2mod1int2">><audio src="/assets/audio/SESSION2_MOD3_context_2.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $passage to "2mod1int2">><audio src="assets/audio/SESSION2_MOD3_context_2.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -2083,7 +1733,7 @@ Dr Mya-Rose Craig is a climate activist from the UK. </p>
 </div>
 
 :: 2mod1int3 [nobr]
-<<set $passage to "2mod1int3">><audio src="/assets/audio/SESSION2_MOD3_context_3.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $passage to "2mod1int3">><audio src="assets/audio/SESSION2_MOD3_context_3.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -2108,7 +1758,7 @@ Dr Mya-Rose Craig is a climate activist from the UK. </p>
 :: 2mod3outro1 [nobr]
 <<set $passage to "2mod3outro1">>
 <<set $nextpass to "2mod3outro2">>
-<audio src="/assets/audio/SESSION2_MOD3_outro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION2_MOD3_outro_1.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -2129,7 +1779,7 @@ Dr Mya-Rose Craig is a climate activist from the UK. </p>
 <<set $prevpass to "2mod3outro1">>
 <<set $passage to "2mod3outro2">>
 <<set $nextpass to "2mod3outro3">>
-<audio src="/assets/audio/SESSION2_MOD3_outro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION2_MOD3_outro_2.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -2150,7 +1800,7 @@ Dr Mya-Rose Craig is a climate activist from the UK. </p>
 <<set $prevpass to "2mod3outro2">>
 <<set $passage to "2mod3outro3">>
 <<set $nextpass to "2mod3outro4">>
-<audio src="/assets/audio/SESSION2_MOD3_outro_3.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION2_MOD3_outro_3.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -2168,7 +1818,7 @@ Dr Mya-Rose Craig is a climate activist from the UK. </p>
 <<set $prevpass to "2mod3outro3">>
 <<set $passage to "2mod3outro4">>
 <<set $nextpass to "2mod3outro5">>
-<audio src="/assets/audio/SESSION2_MOD3_outro_4.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION2_MOD3_outro_4.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -2189,7 +1839,7 @@ Dr Mya-Rose Craig is a climate activist from the UK. </p>
 <<set $prevpass to "2mod3outro4">>
 <<set $passage to "2mod3outro5">>
 <<set $nextpass to "2mod3outro6">>
-<audio src="/assets/audio/SESSION2_MOD3_outro_5.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION2_MOD3_outro_5.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -2207,7 +1857,7 @@ Dr Mya-Rose Craig is a climate activist from the UK. </p>
 <<set $prevpass to "2mod3outro5">>
 <<set $passage to "2mod3outro6">>
 <<set $nextpass to "2modulelist">>
-<audio src="/assets/audio/SESSION2_MOD3_outro_6.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION2_MOD3_outro_6.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -2225,7 +1875,7 @@ Dr Mya-Rose Craig is a climate activist from the UK. </p>
 <<set $prevpass to "2modulelist">>
 <<set $passage to "2mod4intro1">>
 <<set $nextpass to "2mod4intro2">>
-<<set $module to "Module 4">><<include "checkmodulenamelist">><audio src="/assets/audio/SESSION2_MOD4_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $module to "Module 4">><<include "checkmodulenamelist">><audio src="assets/audio/SESSION2_MOD4_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -2243,7 +1893,7 @@ Anyone like Potatoes? Amazing – everyone. I can’t see so I’ll just make up
 <<set $prevpass to "2mod4intro1">>
 <<set $passage to "2mod4intro2">>
 <<set $nextpass to "2mod4outro1">>
-<<set $module to "Module 4">><<include "checkmodulenamelist">><audio src="/assets/audio/SESSION2_MOD4_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $module to "Module 4">><<include "checkmodulenamelist">><audio src="assets/audio/SESSION2_MOD4_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -2254,7 +1904,7 @@ Anyone like Potatoes? Amazing – everyone. I can’t see so I’ll just make up
 <p>Teacher I’ll hand over to you to explain how to Roast.  </p>
 <<button "I've explained!">>
   <<replace "#mount">>
-    <audio src="/assets/audio/SESSION2_MOD4_intro_3.mp3" autoplay>Audio is not supported on your device</audio>
+    <audio src="assets/audio/SESSION2_MOD4_intro_3.mp3" autoplay>Audio is not supported on your device</audio>
     <p>When you have finished click <<button "Move On">>
       <<set $prevpass to $passage>><<set $mod4 to true>>
       <<set $skip to true>><<goto "2modulelist">>
@@ -2273,7 +1923,7 @@ Anyone like Potatoes? Amazing – everyone. I can’t see so I’ll just make up
 <<set $prevpass to "2mod4outro1">>
 <<set $passage to "2mod4outro1">>
 <<set $nextpass to "2mod4outro2">>
-<audio src="/assets/audio/SESSION2_MOD4_outro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION2_MOD4_outro_1.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -2297,7 +1947,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "2mod4outro1">>
 <<set $passage to "2mod4outro2">>
 <<set $nextpass to "2mod4outro3">>
-<audio src="/assets/audio/SESSION2_MOD4_outro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION2_MOD4_outro_2.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -2317,7 +1967,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "2mod4outro2">>
 <<set $passage to "2mod4outro3">>
 <<set $nextpass to "2mod4outrob">>
-<audio src="/assets/audio/SESSION2_MOD4_outro_3.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION2_MOD4_outro_3.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -2339,7 +1989,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "2mod4outro3">>
 <<set $passage to "2mod4outrob">>
 <<set $nextpass to "landing">>
-<audio src="/assets/audio/SESSION2_OUTRO.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION2_OUTRO.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -2369,7 +2019,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $nextpass to "3kaiIntro2">>
 <<set $module to "Introduction">>
 <<include "checkmodulenamelist">>
-<audio src="/assets/audio/SESSION3_INTRO_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION3_INTRO_1.mp3" autoplay>Audio is not supported on your device</audio>
 
 <div class="wrapper">
   <<include "header">>
@@ -2397,7 +2047,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $nextpass to "3kaiIntro3">>
 
 <<include "checkmodulenamelist">>
-<audio src="/assets/audio/SESSION3_INTRO_2.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION3_INTRO_2.mp3" autoplay>Audio is not supported on your device</audio>
 
 <div class="wrapper">
   <<include "header">>
@@ -2419,7 +2069,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $nextpass to "3kaiIntro4">>
 
 <<include "checkmodulenamelist">>
-<audio src="/assets/audio/SESSION3_INTRO_3.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION3_INTRO_3.mp3" autoplay>Audio is not supported on your device</audio>
 
 <div class="wrapper">
   <<include "header">>
@@ -2447,7 +2097,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $nextpass to "3modulelist">>
 <<set $module to "Introduction">>
 <<include "checkmodulenamelist">>
-<audio src="/assets/audio/SESSION3_INTRO_4.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION3_INTRO_4.mp3" autoplay>Audio is not supported on your device</audio>
 
 <div class="wrapper">
   <<include "header">>
@@ -2488,7 +2138,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <div class="menu-item flip-card" id="mod5"> 
   <div class="flip-card-inner">
       <div class="flip-card-front">
-<img src="./assets/img/mod5.jpg" alt="module three">
+<img src="assets/img/mod5.jpg" alt="module three">
   <div id="codewordWrapper1" class="codeword-wrapper">
   /% CODEWORD INPUT %/
       <div class="code-input">
@@ -2529,14 +2179,14 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
     </div>
       </div>
          <div class="flip-card-back">
-        <img src="./assets/img/mod5-rev.jpg" alt="module card" >
+        <img src="assets/img/mod5-rev.jpg" alt="module card" >
       </div>
     </div>
    </div>
  <div class="menu-item flip-card" id="mod6"> 
  <div class="flip-card-inner">
       <div class="flip-card-front">
- <img src="./assets/img/mod6.jpg" alt="module six">
+ <img src="assets/img/mod6.jpg" alt="module six">
   <div id="codewordWrapper2" class="codeword-wrapper">
   /% CODEWORD INPUT %/
       <div class="code-input">
@@ -2579,7 +2229,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
       </div>
 
     <div class="flip-card-back">
-        <img src="./assets/img/mod6-rev.jpg" alt="module card" >
+        <img src="assets/img/mod6-rev.jpg" alt="module card" >
       </div>
     </div>
   </div>
@@ -2597,7 +2247,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "3modulelist">>
 <<set $passage to "3mod5intro1">>
 <<set $nextpass to "3mod5intro2">>
-<<set $module to "Module 5">><<include "checkmodulenamelist">><audio src="/assets/audio/SESSION3_MOD5_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $module to "Module 5">><<include "checkmodulenamelist">><audio src="assets/audio/SESSION3_MOD5_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
   <div class="wrapper">
     <<include "header">>
     <main  class="speaking">
@@ -2615,7 +2265,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "3mod5intro1">>
 <<set $passage to "3mod5intro2">>
 <<set $nextpass to "3mod5intro3">>
-<<set $module to "Module 5">><<include "checkmodulenamelist">><audio src="/assets/audio/SESSION3_MOD5_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $module to "Module 5">><<include "checkmodulenamelist">><audio src="assets/audio/SESSION3_MOD5_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
 
   <div class="wrapper">
     <<include "header">>
@@ -2633,7 +2283,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "3mod5intro2">>
 <<set $passage to "3mod5intro3">>
 <<set $nextpass to "3mod5a">>
-<<set $module to "Module 5">><<include "checkmodulenamelist">><audio src="/assets/audio/SESSION3_MOD5_intro_3.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $module to "Module 5">><<include "checkmodulenamelist">><audio src="assets/audio/SESSION3_MOD5_intro_3.mp3" autoplay>Audio is not supported on your device</audio>
 
   <div class="wrapper">
     <<include "header">>
@@ -2652,7 +2302,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "3mod5intro3">>
 <<set $passage to "3mod5a">>
 <<set $nextpass to "3mod5b">>
-<audio src="/assets/audio/SESSION3_MOD5_talents_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION3_MOD5_talents_1.mp3" autoplay>Audio is not supported on your device</audio>
   <div class="wrapper">
     <<include "header">>
     <main  class="speaking">
@@ -2673,12 +2323,12 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "3mod5a">>
 <<set $passage to "3mod5b">>
 <<set $nextpass to "3mod5outro1">>
-<<timed 20s >><<replace "#audio">><audio src="/assets/audio/SESSION3_MOD5_talents_3.mp3" autoplay>Audio is not supported on your device</audio><</replace>><</timed>>
+<<timed 20s >><<replace "#audio">><audio src="assets/audio/SESSION3_MOD5_talents_3.mp3" autoplay>Audio is not supported on your device</audio><</replace>><</timed>>
 
   <div class="wrapper">
     <<include "header">>
     <main  class="speaking inlineimg">
-    <div id="audio"><audio src="/assets/audio/SESSION3_MOD5_talents_2.mp3" autoplay>Audio is not supported on your device</audio></div>
+    <div id="audio"><audio src="assets/audio/SESSION3_MOD5_talents_2.mp3" autoplay>Audio is not supported on your device</audio></div>
         <div class="text-wrapper">
 <p>Teacher, time to hand out the cards – fill out the cards and give yourself a rating out of 100 for your Mundane Making skills, it’s a bit like Top Trumps.  </p>
 <p>I’m probably a 78.7 on Roasties</p>
@@ -2686,7 +2336,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <p>And a 96 on making references to my height. </p>
     <p>When you have finished, click  <<button "Move On">><<set $prevpass to $passage>><<goto $nextpass>><</button>> </p>
    </div>
-      <img src="./assets/img/KAI-24.jpg">
+      <img src="assets/img/KAI-24.jpg">
     </main>
          <<include "footer">>
   </div>
@@ -2698,7 +2348,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "3mod5b">>
 <<set $passage to "3mod5outro1">>
 <<set $nextpass to "3mod5outro2">>
-<audio src="/assets/audio/SESSION3_MOD5_outro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION3_MOD5_outro_1.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -2717,7 +2367,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "3mod5outro1">>
 <<set $passage to "3mod5outro2">>
 <<set $nextpass to "3modulelist">>
-<audio src="/assets/audio/SESSION3_MOD5_outro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION3_MOD5_outro_2.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -2740,7 +2390,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 :: 3mod6intro1 [nobr]
 <<set $prevpass to "3modulelist">>
 <<set $passage to "3mod6intro1">>
-<<set $nextpass to "3mod6intro2">><audio src="/assets/audio/SESSION3_MOD6_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $nextpass to "3mod6intro2">><audio src="assets/audio/SESSION3_MOD6_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Module 6">><<include "checkmodulenamelist">>
 <div class="wrapper">
   <<include "header">>
@@ -2758,7 +2408,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 :: 3mod6intro2 [nobr]
 <<set $prevpass to "3modulelist">>
 <<set $passage to "3mod6intro2">>
-<<set $nextpass to "3mod6a">><audio src="/assets/audio/SESSION3_MOD6_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $nextpass to "3mod6a">><audio src="assets/audio/SESSION3_MOD6_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Module 6">><<include "checkmodulenamelist">>
 <div class="wrapper">
   <<include "header">>
@@ -2784,7 +2434,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 :: 3mod6a [nobr]
 <<set $prevpass to "3mod6intro2">>
 <<set $passage to "3mod6a">>
-<<set $nextpass to "3mod6outro1">><audio src="/assets/audio/SESSION3_MOD6_focus_rerecord.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $nextpass to "3mod6outro1">><audio src="assets/audio/SESSION3_MOD6_focus_rerecord.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -2809,7 +2459,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 :: 3mod6outro1 [nobr]
 <<set $prevpass to "3mod6a">>
 <<set $passage to "3mod6outro1">>
-<<set $nextpass to "3mod6outro2">><audio src="/assets/audio/SESSION3_MOD6_outro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $nextpass to "3mod6outro2">><audio src="assets/audio/SESSION3_MOD6_outro_1.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -2831,7 +2481,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 :: 3mod6outro2 [nobr]
 <<set $prevpass to "3mod6a">>
 <<set $passage to "3mod6outro1">>
-<<set $nextpass to "3sessionoutro1">><audio src="/assets/audio/SESSION3_MOD6_outro2.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $nextpass to "3sessionoutro1">><audio src="assets/audio/SESSION3_MOD6_outro2.mp3" autoplay>Audio is not supported on your device</audio>
 <<audio "60supported" play>>
 <div class="wrapper">
   <<include "header">>
@@ -2846,7 +2496,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 
 <div class="char-wrapper">
 <div class="char-item">
-<img src="./assets/img/characters-26.jpg">
+<img src="assets/img/characters-26.jpg">
 <<button "Air Pollution">>
   <<audio ":all" stop>>
   <<audio "eeg_1" play>>
@@ -2856,7 +2506,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <</button>>
 </div>
 <div class="char-item">
-<img src="./assets/img/characters-36.jpg">
+<img src="assets/img/characters-36.jpg">
 <<button "Meat Consumption">>
    <<audio ":all" stop>>
   <<audio "eeg_1" play>>
@@ -2866,7 +2516,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <</button>>
 </div>
 <div class="char-item">
-<img src="./assets/img/characters-27.jpg">
+<img src="assets/img/characters-27.jpg">
 <<button "Plastic Pollution">>
    <<audio ":all" stop>>
   <<audio "eeg_1" play>>
@@ -2876,7 +2526,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <</button>>
 </div>
 <div class="char-item">
-<img src="./assets/img/characters-28.jpg">
+<img src="assets/img/characters-28.jpg">
 <<button "Sustainable Palm Oil">>
    <<audio ":all" stop>>
   <<audio "eeg_1" play>>
@@ -2886,7 +2536,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <</button>>
 </div>
 <div class="char-item">
-<img src="./assets/img/characters-30.jpg">
+<img src="assets/img/characters-30.jpg">
 <<button "Deforestation & Biodiversity">>
    <<audio ":all" stop>>
   <<audio "eeg_1" play>>
@@ -2896,7 +2546,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <</button>>
 </div>
 <div class="char-item">
-<img src="./assets/img/characters-29.jpg">
+<img src="assets/img/characters-29.jpg">
 <<button "Fast Fashion">>
    <<audio ":all" stop>>
   <<audio "eeg_1" play>>
@@ -2916,55 +2566,55 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 :: checkmod6audio[nobr]
 <<if $mod6audio is "air">>
   <<replace "#img">>
-      <img src="./assets/img/characters-26.jpg" autoplay>
+      <img src="assets/img/characters-26.jpg" autoplay>
     <</replace>>
   <<replace "#audio">>
-      <audio src="/assets/audio/SESSION3_OUTRO_2.1_airpollusion.mp3" autoplay>Audio is not supported on your device</audio>
+      <audio src="assets/audio/SESSION3_OUTRO_2.1_airpollusion.mp3" autoplay>Audio is not supported on your device</audio>
     <</replace>>
 <</if>>
 
 <<if $mod6audio is "meat">>
   <<replace "#img">>
-      <img src="./assets/img/characters-36.jpg" autoplay>
+      <img src="assets/img/characters-36.jpg" autoplay>
     <</replace>>
   <<replace "#audio">>
-      <audio src="/assets/audio/SESSION3_OUTRO_2.2_meat.mp3" autoplay>Audio is not supported on your device</audio>
+      <audio src="assets/audio/SESSION3_OUTRO_2.2_meat.mp3" autoplay>Audio is not supported on your device</audio>
     <</replace>>
 <</if>>
 
 <<if $mod6audio is "plastic">>
 <<replace "#img">>
-      <img src="./assets/img/characters-27.jpg" autoplay>
+      <img src="assets/img/characters-27.jpg" autoplay>
     <</replace>>
   <<replace "#audio">>
-      <audio src="/assets/audio/SESSION3_OUTRO_2.3_plastic.mp3" autoplay>Audio is not supported on your device</audio>
+      <audio src="assets/audio/SESSION3_OUTRO_2.3_plastic.mp3" autoplay>Audio is not supported on your device</audio>
     <</replace>>
 <</if>>
 
 <<if $mod6audio is "palmoil">>
 <<replace "#img">>
-      <img src="./assets/img/characters-28.jpg" autoplay>
+      <img src="assets/img/characters-28.jpg" autoplay>
     <</replace>>
   <<replace "#audio">>
-      <audio src="/assets/audio/SESSION3_OUTRO_2.4_palmoil.mp3" autoplay>Audio is not supported on your device</audio>
+      <audio src="assets/audio/SESSION3_OUTRO_2.4_palmoil.mp3" autoplay>Audio is not supported on your device</audio>
     <</replace>>
 <</if>>
 
 <<if $mod6audio is "deforestation">>
 <<replace "#img">>
-      <img src="./assets/img/characters-30.jpg" autoplay>
+      <img src="assets/img/characters-30.jpg" autoplay>
     <</replace>>
   <<replace "#audio">>
-      <audio src="/assets/audio/SESSION3_OUTRO_2.5_deforestation.mp3" autoplay>Audio is not supported on your device</audio>
+      <audio src="assets/audio/SESSION3_OUTRO_2.5_deforestation.mp3" autoplay>Audio is not supported on your device</audio>
     <</replace>>
 <</if>>
 
 <<if $mod6audio is "fastfashion">>
   <<replace "#img">>
-      <img src="./assets/img/characters-29.jpg" autoplay>
+      <img src="assets/img/characters-29.jpg" autoplay>
     <</replace>>
   <<replace "#audio">>
-      <audio src="/assets/audio/SESSION3_OUTRO_2.x_celinesermanvernon.mp3" autoplay>Audio is not supported on your device</audio>
+      <audio src="assets/audio/SESSION3_OUTRO_2.x_celinesermanvernon.mp3" autoplay>Audio is not supported on your device</audio>
     <</replace>>
 <</if>>
 
@@ -2972,7 +2622,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "3mod6outro2">>
 <<set $passage to "3sessionoutro1">>
  <<set $nextpass to "3sessionoutro2">>
-<div id="audio"><audio src="/assets/audio/SESSION3_OUTRO_1.mp3" autoplay>Audio is not supported on your device</audio></div>
+<div id="audio"><audio src="assets/audio/SESSION3_OUTRO_1.mp3" autoplay>Audio is not supported on your device</audio></div>
 
 <div class="wrapper">
   <<include "header">>
@@ -2997,7 +2647,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "3sessionoutro1">>
 <<set $passage to "3sessionoutro2">>
  <<set $nextpass to "3sessionoutro3">>
-<div id="audio"><audio src="/assets/audio/SESSION3_OUTRO_3.mp3" autoplay>Audio is not supported on your device</audio></div>
+<div id="audio"><audio src="assets/audio/SESSION3_OUTRO_3.mp3" autoplay>Audio is not supported on your device</audio></div>
 
 <div class="wrapper">
   <<include "header">>
@@ -3033,7 +2683,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "3sessionoutro2">>
 <<set $passage to "3sessionoutro3">>
  <<set $nextpass to "3sessionoutro4">>
-<div id="audio"><audio src="/assets/audio/SESSION3_OUTRO_4.mp3" autoplay>Audio is not supported on your device</audio></div>
+<div id="audio"><audio src="assets/audio/SESSION3_OUTRO_4.mp3" autoplay>Audio is not supported on your device</audio></div>
 
 <div class="wrapper">
   <<include "header">>
@@ -3071,7 +2721,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $passage to "4kaiIntro1">>
  <<set $nextpass to "4kaiIntro2">>
 <<set $module to "Introduction">><<include "checkmodulenamelist">>
-<audio src="/assets/audio/SESSION4_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION4_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
     /* <h1 class="title top">Hello - it's Kai again</h1> */
@@ -3096,7 +2746,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $passage to "4kaiIntro2">>
  <<set $nextpass to "4kaiIntro3">>
 <<set $module to "Introduction">><<include "checkmodulenamelist">>
-<audio src="/assets/audio/SESSION4_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION4_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
     /* <h1 class="title top">Hello - it's Kai again</h1> */
@@ -3123,7 +2773,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $passage to "4kaiIntro3">>
  <<set $nextpass to "4modulelist">>
 <<set $module to "Introduction">><<include "checkmodulenamelist">>
-<audio src="/assets/audio/SESSION4_intro_3.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION4_intro_3.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
     /* <h1 class="title top">Hello - it's Kai again</h1> */
@@ -3167,7 +2817,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <div class="menu-item flip-card" id="mod7"> 
     <div class="flip-card-inner">
       <div class="flip-card-front">
-  <img src="./assets/img/mod7.jpg" alt="module seven">
+  <img src="assets/img/mod7.jpg" alt="module seven">
    <div id="codewordWrapper1" class="codeword-wrapper">
 
   /% CODEWORD INPUT %/
@@ -3210,7 +2860,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
     </div>
 </div>
  <div class="flip-card-back">
-        <img src="./assets/img/mod7-rev.jpg" alt="module card" >
+        <img src="assets/img/mod7-rev.jpg" alt="module card" >
       </div>
 </div>
 </div>
@@ -3218,7 +2868,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
  <div class="menu-item flip-card" id="mod8"> 
   <div class="flip-card-inner">
       <div class="flip-card-front">
- <img src="./assets/img/mod8.jpg" alt="module eight">
+ <img src="assets/img/mod8.jpg" alt="module eight">
     <div id="codewordWrapper2" class="codeword-wrapper">
   /% CODEWORD INPUT %/
       <div class="code-input">
@@ -3261,14 +2911,14 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
     </div>
       </div>
       <div class="flip-card-back">
-        <img src="./assets/img/mod8-rev.jpg" alt="module card" >
+        <img src="assets/img/mod8-rev.jpg" alt="module card" >
       </div>
     </div>
   </div>
 <div class="menu-item flip-card" id="mod9"> 
   <div class="flip-card-inner">
       <div class="flip-card-front">
-<img src="./assets/img/mod9.jpg" alt="module nine">
+<img src="assets/img/mod9.jpg" alt="module nine">
       <div id="codewordWrapper3" class="codeword-wrapper">
   /% CODEWORD INPUT %/
       <div class="code-input">
@@ -3311,7 +2961,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
     </div>
       </div>
        <div class="flip-card-back">
-        <img src="./assets/img/mod9-rev.jpg" alt="module card" >
+        <img src="assets/img/mod9-rev.jpg" alt="module card" >
       </div>
     </div>
   </div>
@@ -3325,7 +2975,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "4modulelist">>
 <<set $passage to "4mod7intro1">>
 <<set $nextpass to "4mod7intro2">>
-<audio src="/assets/audio/SESSION4_MOD7_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION4_MOD7_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
 
 <<set $module to "Module 7">><<include "checkmodulenamelist">>
   <div class="wrapper">
@@ -3348,7 +2998,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "4mod7intro1">>
 <<set $passage to "4mod7intro2">>
 <<set $nextpass to "4mod7a">>
-<audio src="/assets/audio/SESSION4_MOD7_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION4_MOD7_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
 
 <<set $module to "Module 7">><<include "checkmodulenamelist">>
   <div class="wrapper">
@@ -3375,7 +3025,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "4mod7intro2">>
 <<set $passage to "4mod7a">>
 <<set $nextpass to "4mod7b">>
-<audio src="/assets/audio/SESSION4_MOD7_intro_3_rerecord.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION4_MOD7_intro_3_rerecord.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
     <<include "header">>
 <main class="speaking">
@@ -3406,7 +3056,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "4mod7a">>
 <<set $passage to "4mod7b">>
 <<set $nextpass to "4mod7outro1">>
-<audio src="/assets/audio/SESSION4_MOD7_intro_5.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION4_MOD7_intro_5.mp3" autoplay>Audio is not supported on your device</audio>
   <div class="wrapper">
     <<include "header">>
     <main  class="speaking">
@@ -3436,7 +3086,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "4mod7b">>
 <<set $passage to "4mod7outro1">>
 <<set $nextpass to "4mod7outro2">>
-<audio src="/assets/audio/SESSION4_MOD7_outro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION4_MOD7_outro_1.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -3463,7 +3113,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "4mod7outro1">>
 <<set $passage to "4mod7outro2">>
 <<set $nextpass to "4modulelist">>
-<audio src="/assets/audio/SESSION4_MOD7_outro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION4_MOD7_outro_2.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -3489,7 +3139,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "4modulelist">>
 <<set $passage to "4mod8intro1">>
 <<set $nextpass to "4mod8intro2">>
-<audio src="/assets/audio/SESSION4_MOD8_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION4_MOD8_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Module 8">><<include "checkmodulenamelist">>
 <div class="wrapper">
   <<include "header">>
@@ -3513,7 +3163,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "4mod8intro1">>
 <<set $passage to "4mod8intro2">>
 <<set $nextpass to "4mod8a">>
-<audio src="/assets/audio/SESSION4_MOD8_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION4_MOD8_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Module 8">><<include "checkmodulenamelist">>
 <div class="wrapper">
   <<include "header">>
@@ -3537,7 +3187,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "4mod8intro2">>
 <<set $passage to "4mod8a">>
 <<set $nextpass to "4mod8b">>
-<audio src="/assets/audio/SESSION4_MOD8_intro_3.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION4_MOD8_intro_3.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -3558,7 +3208,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "4mod8a">>
 <<set $passage to "4mod8b">>
 <<set $nextpass to "4mod8outro1">>
-<audio src="/assets/audio/SESSION4_MOD8_intro_4.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION4_MOD8_intro_4.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -3583,7 +3233,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "4mod8b">>
 <<set $passage to "4mod8outro1">>
 <<set $nextpass to "4mod8outro2">>
-<audio src="/assets/audio/SESSION4_MOD8_outro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION4_MOD8_outro_1.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking inlineimg">
@@ -3601,7 +3251,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
  <<button "Next">><<set $prevpass to $passage>><<goto $nextpass>><</button>>
 <</replace>><</timed>>
 </div>
-<img src="./assets/img/ruleRGB-87.jpg">
+<img src="assets/img/ruleRGB-87.jpg">
  </main>
      <<include "footerskip">>
 </div>
@@ -3610,7 +3260,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "4mod8intro1">>
 <<set $passage to "4mod8outro2">>
 <<set $nextpass to "4modulelist">>
-<audio src="/assets/audio/SESSION4_MOD8_outro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION4_MOD8_outro_2.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -3634,7 +3284,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "4modulelist">>
 <<set $passage to "4mod9intro1">>
 <<set $nextpass to "4mod9intro2">>
-<audio src="/assets/audio/SESSION4_MOD9_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION4_MOD9_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Module 9">><<include "checkmodulenamelist">>
 <div class="wrapper">
   <<include "header">>
@@ -3654,7 +3304,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "4mod9intro1">>
 <<set $passage to "4mod9intro2">>
 <<set $nextpass to "4mod9intro3">>
-<audio src="/assets/audio/SESSION4_MOD9_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION4_MOD9_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Module 9">><<include "checkmodulenamelist">>
 <div class="wrapper">
   <<include "header">>
@@ -3676,7 +3326,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "4mod9intro2">>
 <<set $passage to "4mod9intro3">>
 <<set $nextpass to "4mod9a">>
-<audio src="/assets/audio/SESSION4_MOD9_intro_3.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION4_MOD9_intro_3.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Module 9">><<include "checkmodulenamelist">>
 <div class="wrapper">
   <<include "header">>
@@ -3698,7 +3348,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "4mod9intro3">>
 <<set $passage to "4mod9a">>
 <<set $nextpass to "4mod9outro1">>
-<audio src="/assets/audio/SESSION4_MOD9_intro_4.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION4_MOD9_intro_4_fixed.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Module 9">><<include "checkmodulenamelist">>
 <div class="wrapper">
   <<include "header">>
@@ -3720,7 +3370,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "4mod9a">>
 <<set $passage to "4mod9outro1">>
 <<set $nextpass to "4mod9outro2">>
-<audio src="/assets/audio/SESSION4_MOD9_outro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION4_MOD9_outro_1.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -3741,7 +3391,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "4mod9outro1">>
 <<set $passage to "4mod9outro2">>
 <<set $nextpass to "4mod9outro3">>
-<audio src="/assets/audio/SESSION4_MOD9_outro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION4_MOD9_outro_2.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -3759,7 +3409,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "4mod9outro2">>
 <<set $passage to "4mod9outro3">>
 <<set $nextpass to "4mod9outro4">>
-<audio src="/assets/audio/SESSION4_MOD9_outro_3.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION4_MOD9_outro_3.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -3777,7 +3427,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "4mod9outro3">>
 <<set $passage to "4mod9outro4">>
 <<set $nextpass to "4sessionoutro1">>
-<audio src="/assets/audio/SESSION4_MOD9_outro_4.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION4_MOD9_outro_4.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -3798,7 +3448,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "4mod9outro4">>
 <<set $passage to "4sessionoutro1">>
 <<set $nextpass to "4sessionoutro2">>
-<audio src="/assets/audio/SESSION4_OUTRO_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION4_OUTRO_1.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -3822,7 +3472,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "4sessionoutro1">>
 <<set $passage to "4sessionoutro2">>
 <<set $nextpass to "4sessionoutro3">>
-<audio src="/assets/audio/SESSION4_OUTRO_2.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION4_OUTRO_2.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -3843,7 +3493,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "4sessionoutro2">>
 <<set $passage to "4sessionoutro3">>
 <<set $nextpass to "landing">>
-<audio src="/assets/audio/SESSION4_OUTRO_3.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION4_OUTRO_3.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -3871,7 +3521,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "landing">>
 <<set $passage to "5kaiIntro1">>
 <<set $nextpass to "5kaiIntro2">>
-<audio src="/assets/audio/SESSION5_INTRO_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION5_INTRO_1.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Introduction">>
 <<include "checkmodulenamelist">>
 <div class="wrapper">
@@ -3894,7 +3544,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "5kaiIntro1">>
 <<set $passage to "5kaiIntro2">>
 <<set $nextpass to "5modulelist">>
-<audio src="/assets/audio/SESSION5_INTRO_2.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION5_INTRO_2.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Introduction">>
 <<include "checkmodulenamelist">>
 <div class="wrapper">
@@ -3943,7 +3593,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <div class="menu-item flip-card" id="mod10"> 
     <div class="flip-card-inner">
       <div class="flip-card-front">
-  <img src="./assets/img/mod10.jpg" alt="module ten">
+  <img src="assets/img/mod10.jpg" alt="module ten">
       <div id="codewordWrapper1" class="codeword-wrapper">
  
   /% CODEWORD INPUT %/
@@ -3981,14 +3631,14 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
     </div>
       </div>
   <div class="flip-card-back">
-        <img src="./assets/img/mod10-rev.jpg" alt="module card" >
+        <img src="assets/img/mod10-rev.jpg" alt="module card" >
       </div>
     </div>
   </div> 
  <div class="menu-item flip-card" id="mod11"> 
   <div class="flip-card-inner">
       <div class="flip-card-front">
-  <img src="./assets/img/mod11.jpg" alt="module eleven">
+  <img src="assets/img/mod11.jpg" alt="module eleven">
       <div id="codewordWrapper2" class="codeword-wrapper">
   /% CODEWORD INPUT %/
       <div class="code-input">
@@ -4031,7 +3681,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
     </div>
       </div>
 <div class="flip-card-back">
-        <img src="./assets/img/mod11-rev.jpg" alt="module card" >
+        <img src="assets/img/mod11-rev.jpg" alt="module card" >
       </div>
     </div>
   </div>
@@ -4039,7 +3689,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
  <div class="menu-item flip-card" id="mod12"> 
  <div class="flip-card-inner">
       <div class="flip-card-front">
-  <img src="./assets/img/mod12.jpg" alt="module twelve">
+  <img src="assets/img/mod12.jpg" alt="module twelve">
       /* <h2 class="subtitle">Module 12</h2> */
        <div id="codewordWrapper3" class="codeword-wrapper">
   /% CODEWORD INPUT %/
@@ -4082,7 +3732,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
     </div>
       </div>
 <div class="flip-card-back">
-        <img src="./assets/img/mod12-rev.jpg" alt="module card" >
+        <img src="assets/img/mod12-rev.jpg" alt="module card" >
       </div>
     </div>
   </div>
@@ -4097,7 +3747,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $passage to "5mod10intro1">>
 <<set $nextpass to "5mod10intro2">>
 <<set $module to "Module 10">><<include "checkmodulenamelist">>
-<audio src="/assets/audio/SESSION5_MOD10_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION5_MOD10_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
   <div class="wrapper">
     <<include "header">>
     <main  class="speaking">
@@ -4127,7 +3777,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $passage to "5mod10intro2">>
 <<set $nextpass to "5mod10a">>
 <<set $module to "Module 10">><<include "checkmodulenamelist">>
-<audio src="/assets/audio/SESSION5_MOD10_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION5_MOD10_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
   <div class="wrapper">
     <<include "header">>
     <main  class="speaking">
@@ -4156,7 +3806,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "5mod10intro2">>
 <<set $passage to "5mod10a">>
 <<set $nextpass to "5mod10outro">>
-<audio src="/assets/audio/SESSION5_MOD10_intro_3.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION5_MOD10_intro_3.mp3" autoplay>Audio is not supported on your device</audio>
   <div class="wrapper">
     <<include "header">>
     <main  class="speaking">
@@ -4173,7 +3823,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "5mod10a">>
 <<set $passage to "5mod10outro1">>
 <<set $nextpass to "5mod10outro2">>
-<audio src="/assets/audio/SESSION5_MOD10_outro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION5_MOD10_outro_1.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -4200,7 +3850,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "5mod10outro1">>
 <<set $passage to "5mod10outro2">>
 <<set $nextpass to "5mod10outro3">>
-<audio src="/assets/audio/SESSION5_MOD10_outro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION5_MOD10_outro_2.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -4222,7 +3872,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "5mod10outro2">>
 <<set $passage to "5mod10outro3">>
 <<set $nextpass to "5modulelist">>
-<audio src="/assets/audio/SESSION5_MOD10_outro_3.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION5_MOD10_outro_3.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -4243,7 +3893,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "5modulelist">>
 <<set $passage to "5mod11intro1">>
 <<set $nextpass to "5mod11intro2">>
-<audio src="/assets/audio/SESSION5_MOD11_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION5_MOD11_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Module 11">><<include "checkmodulenamelist">>
 <div class="wrapper">
   <<include "header">>
@@ -4263,7 +3913,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "5mod11intro1">>
 <<set $passage to "5mod11intro2">>
 <<set $nextpass to "5mod11intro3">>
-<audio src="/assets/audio/SESSION5_MOD11_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION5_MOD11_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Module 11">><<include "checkmodulenamelist">>
 <div class="wrapper">
   <<include "header">>
@@ -4284,7 +3934,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "5mod11intro2">>
 <<set $passage to "5mod11intro3">>
 <<set $nextpass to "5mod11intro4">>
-<audio src="/assets/audio/SESSION5_MOD11_intro_3.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION5_MOD11_intro_3.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Module 11">><<include "checkmodulenamelist">>
 <div class="wrapper">
   <<include "header">>
@@ -4304,7 +3954,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "5mod11intro3">>
 <<set $passage to "5mod11intro4">>
 <<set $nextpass to "5mod11a">>
-<audio src="/assets/audio/SESSION5_MOD11_intro_4.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION5_MOD11_intro_4.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Module 11">><<include "checkmodulenamelist">>
 <div class="wrapper">
   <<include "header">>
@@ -4341,7 +3991,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "5mod11a">>
 <<set $passage to "5mod11outro1">>
 <<set $nextpass to "5mod11outro2">>
-<audio src="/assets/audio/SESSION5_MOD11_outro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION5_MOD11_outro_1.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -4366,7 +4016,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "5mod11outro1">>
 <<set $passage to "5mod11outro2">>
 <<set $nextpass to "5mod11outro3">>
-<audio src="/assets/audio/SESSION5_MOD11_outro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION5_MOD11_outro_2.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -4388,7 +4038,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "5mod11outro2">>
 <<set $passage to "5mod11outro3">>
 <<set $nextpass to "5mod11outro4">>
-<audio src="/assets/audio/SESSION5_MOD11_outro_3.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION5_MOD11_outro_3.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -4408,7 +4058,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "5mod11outro3">>
 <<set $passage to "5mod11outro4">>
 <<set $nextpass to "5modulelist">>
-<audio src="/assets/audio/SESSION5_MOD11_outro_4.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION5_MOD11_outro_4.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -4430,7 +4080,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "5modulelist">>
 <<set $passage to "5mod12intro1">>
 <<set $nextpass to "5mod12intro2">>
-<audio src="/assets/audio/SESSION5_MOD12_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION5_MOD12_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Module 12">><<include "checkmodulenamelist">>
 <div class="wrapper">
   <<include "header">>
@@ -4451,7 +4101,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "5mod12intro1">>
 <<set $passage to "5mod12intro2">>
 <<set $nextpass to "5mod12a">>
-<audio src="/assets/audio/SESSION5_MOD12_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION5_MOD12_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Module 12">><<include "checkmodulenamelist">>
 <div class="wrapper">
   <<include "header">>
@@ -4494,7 +4144,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "5mod12a">>
 <<set $passage to "5mod12outro">>
 <<set $nextpass to "5sessionoutro">>
-<audio src="/assets/audio/SESSION5_MOD12_outro.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION5_MOD12_outro.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -4522,7 +4172,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "5mod12outro">>
 <<set $passage to "5sessionoutro">>
 <<set $nextpass to "landing">>
-<audio src="/assets/audio/SESSION5_OUTRO.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION5_OUTRO.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -4552,7 +4202,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "landing">>
 <<set $passage to "6kaiIntro1">>
 <<set $nextpass to "6kaiIntro2">>
-<audio src="/assets/audio/SESSION6_INTRO_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION6_INTRO_1.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Introduction">><<include "checkmodulenamelist">>
 <div class="wrapper">
   <<include "header">>
@@ -4580,7 +4230,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "6kaiIntro1">>
 <<set $passage to "6kaiIntro2">>
 <<set $nextpass to "6kaiIntro3">>
-<audio src="/assets/audio/SESSION6_INTRO_2.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION6_INTRO_2.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Introduction">><<include "checkmodulenamelist">>
 <div class="wrapper">
   <<include "header">>
@@ -4601,7 +4251,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "6kaiIntro2">>
 <<set $passage to "6kaiIntro3">>
 <<set $nextpass to "6kaiIntro4">>
-<audio src="/assets/audio/SESSION6_INTRO_3.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION6_INTRO_3.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Introduction">><<include "checkmodulenamelist">>
 <div class="wrapper">
   <<include "header">>
@@ -4625,7 +4275,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "6kaiIntro3">>
 <<set $passage to "6kaiIntro4">>
 <<set $nextpass to "6kaiIntro5">>
-<audio src="/assets/audio/SESSION6_INTRO_4.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION6_INTRO_4.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Introduction">><<include "checkmodulenamelist">>
 <div class="wrapper">
   <<include "header">>
@@ -4650,7 +4300,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "6kaiIntro4">>
 <<set $passage to "6kaiIntro5">>
 <<set $nextpass to "6modulelist">>
-<audio src="/assets/audio/SESSION6_INTRO_5.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION6_INTRO_5.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Introduction">><<include "checkmodulenamelist">>
 <div class="wrapper">
   <<include "header">>
@@ -4694,7 +4344,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <div class="menu-item flip-card" id="mod13"> 
   <div class="flip-card-inner">
       <div class="flip-card-front">
-  <img src="./assets/img/mod13.jpg" alt="module thirteen">
+  <img src="assets/img/mod13.jpg" alt="module thirteen">
       /* <h2 class="subtitle">Module 13</h2> */
        <div id="codewordWrapper1" class="codeword-wrapper">
  
@@ -4733,14 +4383,14 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
     </div>
       </div>
   <div class="flip-card-back">
-        <img src="./assets/img/mod13-rev.jpg" alt="module card" >
+        <img src="assets/img/mod13-rev.jpg" alt="module card" >
       </div>
     </div>
   </div>  
  <div class="menu-item flip-card" id="mod14"> 
   <div class="flip-card-inner">
       <div class="flip-card-front">
-  <img src="./assets/img/mod14.jpg" alt="module fourteen">
+  <img src="assets/img/mod14.jpg" alt="module fourteen">
       /* <h2 class="subtitle">Module 14</h2> */
 <div id="codewordWrapper2" class="codeword-wrapper">
   /% CODEWORD INPUT %/
@@ -4783,7 +4433,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
     </div>
       </div>
       <div class="flip-card-back">
-        <img src="./assets/img/mod14-rev.jpg" alt="module card" >
+        <img src="assets/img/mod14-rev.jpg" alt="module card" >
       </div>
     </div>
   </div>  
@@ -4798,7 +4448,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "6modulelist">>
 <<set $passage to "6mod13intro1">>
 <<set $nextpass to "6mod13intro2">>
-<audio src="/assets/audio/SESSION6_MOD13_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION6_MOD13_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Module 13">><<include "checkmodulenamelist">>
   <div class="wrapper">
     <<include "header">>
@@ -4820,7 +4470,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "6mod13intro1">>
 <<set $passage to "6mod13intro2">>
 <<set $nextpass to "6mod13intro3">>
-<audio src="/assets/audio/SESSION6_MOD13_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION6_MOD13_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Module 13">><<include "checkmodulenamelist">>
   <div class="wrapper">
     <<include "header">>
@@ -4840,7 +4490,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "6mod13intro2">>
 <<set $passage to "6mod13intro3">>
 <<set $nextpass to "6mod13a">>
-<audio src="/assets/audio/SESSION6_MOD13_intro_3.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION6_MOD13_intro_3.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Module 13">><<include "checkmodulenamelist">>
   <div class="wrapper">
     <<include "header">>
@@ -4879,7 +4529,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "6mod13a">>
 <<set $passage to "6mod13outro1">>
 <<set $nextpass to "6mod13outro2">>
-<audio src="/assets/audio/SESSION6_MOD13_outro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION6_MOD13_outro_1.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -4905,7 +4555,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "6mod13outro1">>
 <<set $passage to "6mod13outro2">>
 <<set $nextpass to "6modulelist">>
-<audio src="/assets/audio/SESSION6_MOD13_outro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION6_MOD13_outro_2.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -4933,7 +4583,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "6modulelist">>
 <<set $passage to "6mod14intro1">>
 <<set $nextpass to "6mod14intro2">>
-<audio src="/assets/audio/SESSION6_MOD14_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION6_MOD14_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Module 14">><<include "checkmodulenamelist">>
 <div class="wrapper">
   <<include "header">>
@@ -4961,7 +4611,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "6mod14intro1">>
 <<set $passage to "6mod14intro2">>
 <<set $nextpass to "6mod14intro3">>
-<audio src="/assets/audio/SESSION6_MOD14_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION6_MOD14_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Module 14">><<include "checkmodulenamelist">>
 <div class="wrapper">
   <<include "header">>
@@ -4983,7 +4633,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 <<set $prevpass to "6mod14intro2">>
 <<set $passage to "6mod14intro3">>
 <<set $nextpass to "6mod14a">>
-<audio src="/assets/audio/SESSION6_MOD14_intro_3.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION6_MOD14_intro_3.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Module 14">><<include "checkmodulenamelist">>
 <div class="wrapper">
   <<include "header">>
@@ -5012,7 +4662,7 @@ We play games of systems not to reduce them, not to suggest they are unreal, not
 
 When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mod14outro">><</button>>
 </div>
-        <img src="./assets/img/mod14-rev.jpg">
+        <img src="assets/img/mod14-rev.jpg">
  </main>
      <<include "footer">>
 </div>
@@ -5022,7 +4672,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $prevpass to "6mod14a">>
 <<set $passage to "6mod14outro">>
 <<set $nextpass to "6sessionoutro1">>
-<audio src="/assets/audio/SESSION6_MOD14_outro.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION6_MOD14_outro.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -5046,7 +4696,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $prevpass to "6mod14outro">>
 <<set $passage to "6sessionoutro1">>
 <<set $nextpass to "6sessionoutro2">>
-<audio src="/assets/audio/SESSION6_OUTRO_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION6_OUTRO_1.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -5070,7 +4720,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $prevpass to "6sessionoutro1">>
 <<set $passage to "6sessionoutro2">>
 <<set $nextpass to "landing">>
-<audio src="/assets/audio/SESSION6_OUTRO_2.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION6_OUTRO_2.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -5093,7 +4743,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $prevpass to "landing">>
 <<set $passage to "7kaiIntro1">>
 <<set $nextpass to "7kaiIntro2">>
-<audio src="/assets/audio/SESSION7_INTRO_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION7_INTRO_1.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Introduction">><<include "checkmodulenamelist">>
 <div class="wrapper">
   <<include "header">>
@@ -5118,7 +4768,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $prevpass to "7kaiIntro1">>
 <<set $passage to "7kaiIntro2">>
 <<set $nextpass to "7kaiIntro3">>
-<audio src="/assets/audio/SESSION7_INTRO_2.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION7_INTRO_2.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Introduction">><<include "checkmodulenamelist">>
 <div class="wrapper">
   <<include "header">>
@@ -5143,7 +4793,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $prevpass to "7kaiIntro2">>
 <<set $passage to "7kaiIntro3">>
 <<set $nextpass to "7kaiIntro4">>
-<audio src="/assets/audio/SESSION7_INTRO_3.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION7_INTRO_3.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Introduction">><<include "checkmodulenamelist">>
 <div class="wrapper">
   <<include "header">>
@@ -5167,7 +4817,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $prevpass to "7kaiIntro3">>
 <<set $passage to "7kaiIntro4">>
 <<set $nextpass to "7modulelist">>
-<audio src="/assets/audio/SESSION7_INTRO_4.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION7_INTRO_4.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Introduction">><<include "checkmodulenamelist">>
 <div class="wrapper">
   <<include "header">>
@@ -5211,7 +4861,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <div class="menu-item flip-card" id="mod15"> 
   <div class="flip-card-inner">
       <div class="flip-card-front">
-  <img src="./assets/img/mod15.jpg" alt="module fifteen">
+  <img src="assets/img/mod15.jpg" alt="module fifteen">
       /* <h2 class="subtitle">Module 15</h2> */
        <div id="codewordWrapper1" class="codeword-wrapper">
   /% CODEWORD INPUT %/
@@ -5249,7 +4899,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
     </div>
       </div>
   <div class="flip-card-back">
-        <img src="./assets/img/mod15-rev.jpg" alt="module card" >
+        <img src="assets/img/mod15-rev.jpg" alt="module card" >
       </div>
     </div>
   </div>  
@@ -5257,7 +4907,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
  <div class="menu-item flip-card" id="mod16"> 
    <div class="flip-card-inner">
       <div class="flip-card-front">
-  <img src="./assets/img/mod16.jpg" alt="module sixteen">
+  <img src="assets/img/mod16.jpg" alt="module sixteen">
       /* <h2 class="subtitle">Module 16</h2> */
         <div id="codewordWrapper2" class="codeword-wrapper">
   /% CODEWORD INPUT %/
@@ -5299,7 +4949,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
     </div>
       </div>
 <div class="flip-card-back">
-        <img src="./assets/img/mod16-rev.jpg" alt="module card" >
+        <img src="assets/img/mod16-rev.jpg" alt="module card" >
       </div>
     </div>
   </div>  
@@ -5315,7 +4965,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $prevpass to "7modulelist">>
 <<set $passage to "7mod15intro1">>
 <<set $nextpass to "7mod15intro2">>
-<audio src="/assets/audio/SESSION7_MOD15_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION7_MOD15_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Module 15">><<include "checkmodulenamelist">>
   <div class="wrapper">
     <<include "header">>
@@ -5335,7 +4985,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $prevpass to "7mod15intro1">>
 <<set $passage to "7mod15intro2">>
 <<set $nextpass to "7mod15intro3">>
-<audio src="/assets/audio/SESSION7_MOD15_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION7_MOD15_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Module 15">><<include "checkmodulenamelist">>
   <div class="wrapper">
     <<include "header">>
@@ -5355,7 +5005,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $prevpass to "7mod15intro2">>
 <<set $passage to "7mod15intro3">>
 <<set $nextpass to "7mod15intro4">>
-<audio src="/assets/audio/SESSION7_MOD15_intro_3.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION7_MOD15_intro_3.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Module 15">><<include "checkmodulenamelist">>
   <div class="wrapper">
     <<include "header">>
@@ -5374,7 +5024,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $prevpass to "7mod15intro3">>
 <<set $passage to "7mod15intro4">>
 <<set $nextpass to "7mod15a">>
-<audio src="/assets/audio/SESSION7_MOD15_intro_4.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION7_MOD15_intro_4.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Module 15">><<include "checkmodulenamelist">>
   <div class="wrapper">
     <<include "header">>
@@ -5401,7 +5051,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $prevpass to "7mod15intro4">>
 <<set $passage to "7mod15a">>
 <<set $nextpass to "7mod15outro1">>
-<audio src="/assets/audio/SESSION7_MOD15_intro_5.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION7_MOD15_intro_5.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Module 15">><<include "checkmodulenamelist">>
   <div class="wrapper">
     <<include "header">>
@@ -5419,7 +5069,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $prevpass to "7mod15a">>
 <<set $passage to "7mod15outro1">>
 <<set $nextpass to "7mod15outro2">>
-<audio src="/assets/audio/SESSION7_MOD15_outro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION7_MOD15_outro_1.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -5440,7 +5090,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $prevpass to "7mod15outro1">>
 <<set $passage to "7mod15outro2">>
 <<set $nextpass to "7mod15outro3">>
-<audio src="/assets/audio/SESSION7_MOD15_outro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION7_MOD15_outro_2.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -5458,7 +5108,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $prevpass to "7mod15outro2">>
 <<set $passage to "7mod15outro3">>
 <<set $nextpass to "7modulelist">>
-<audio src="/assets/audio/SESSION7_MOD15_outro_3.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION7_MOD15_outro_3.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -5476,7 +5126,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $passage to "7mod16intro1">>
 <<set $nextpass to "7mod16intro2">>
 <<set $module to "Module 16">><<include "checkmodulenamelist">>
-<audio src="/assets/audio/SESSION7_MOD16_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION7_MOD16_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -5495,7 +5145,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $prevpass to "7mod16intro1">>
 <<set $passage to "7mod16intro2">>
 <<set $nextpass to "7mod16intro3">>
-<audio src="/assets/audio/SESSION7_MOD16_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION7_MOD16_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -5515,7 +5165,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $prevpass to "7mod16intro2">>
 <<set $passage to "7mod16intro3">>
 <<set $nextpass to "complete">>
-<audio src="/assets/audio/SESSION7_MOD16_intro_3.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION7_MOD16_intro_3.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Module 16">><<include "checkmodulenamelist">>
 <div class="wrapper">
   <<include "header">>
@@ -5586,7 +5236,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $prevpass to "7mod16intro3">>
 <<set $passage to "7mod16outro1">>
 <<set $nextpass to "7mod16outro2">>
-<audio src="/assets/audio/SESSION7_MOD16_outro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION7_MOD16_outro_1.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -5613,7 +5263,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $passage to "7mod16outro2">>
 <<set $nextpass to "7sessionoutro1">>
 <<set $module to "Module 16">><<include "checkmodulenamelist">>
-<audio src="/assets/audio/SESSION7_MOD16_outro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION7_MOD16_outro_2.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -5634,7 +5284,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $prevpass to "7mod16outro2">>
 <<set $passage to "7sessionoutro1">>
 <<set $nextpass to "7sessionoutro2">>
-<audio src="/assets/audio/SESSION7_OUTRO_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION7_OUTRO_1.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -5655,7 +5305,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $prevpass to "7sessionoutro1">>
 <<set $passage to "7sessionoutro2">>
 <<set $nextpass to "7sessionoutro3">>
-<audio src="/assets/audio/SESSION7_OUTRO_2.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION7_OUTRO_2.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -5677,7 +5327,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $prevpass to "7sessionoutro2">>
 <<set $passage to "7sessionoutro3">>
 <<set $nextpass to "7sessionoutro4">>
-<audio src="/assets/audio/SESSION7_OUTRO_3.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION7_OUTRO_3.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -5696,7 +5346,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $prevpass to "7sessionoutro3">>
 <<set $passage to "7sessionoutro4">>
 <<set $nextpass to "landing">>
-<audio src="/assets/audio/SESSION7_OUTRO_4.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION7_OUTRO_4.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -5722,7 +5372,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $passage to "8kaiIntro1">>
 <<set $nextpass to "8kaiIntrob">>
 <<set $module to "Introduction">><<include "checkmodulenamelist">>
-<audio src="/assets/audio/SESSION8_finalcompartment_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION8_finalcompartment_1.mp3" autoplay>Audio is not supported on your device</audio>
 
 <div class="wrapper">
   <<include "header">>
@@ -5749,7 +5399,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $passage to "8kaiIntrob">>
 <<set $nextpass to "8kaiIntroc">>
 <<set $module to "Introduction">><<include "checkmodulenamelist">>
-<audio src="/assets/audio/SESSION8_finalcompartment_2.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION8_finalcompartment_2.mp3" autoplay>Audio is not supported on your device</audio>
 
 <div class="wrapper">
   <<include "header">>
@@ -5770,7 +5420,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $passage to "8kaiIntroc">>
 <<set $nextpass to "8kaiIntrod">>
 <<set $module to "Introduction">><<include "checkmodulenamelist">>
-<audio src="/assets/audio/SESSION8_finalcompartment_3.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION8_finalcompartment_3.mp3" autoplay>Audio is not supported on your device</audio>
 
 <div class="wrapper">
   <<include "header">>
@@ -5789,7 +5439,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $passage to "8kaiIntrod">>
 <<set $nextpass to "8kaiIntro2">>
 <<set $module to "Introduction">><<include "checkmodulenamelist">>
-<audio src="/assets/audio/SESSION8_finalcompartment_4.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION8_finalcompartment_4.mp3" autoplay>Audio is not supported on your device</audio>
 
 <div class="wrapper">
   <<include "header">>
@@ -5810,7 +5460,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $prevpass to "8kaiIntro1">>
 <<set $passage to "8kaiIntro2">>
 <<set $nextpass to "8kaiIntro3">>
-<audio src="/assets/audio/SESSION8_INTRO_2.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION8_INTRO_2.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Introduction">>
 <div class="wrapper">
   <<include "header">>
@@ -5828,7 +5478,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $prevpass to "8kaiIntro2">>
 <<set $passage to "8kaiIntro3">>
 <<set $nextpass to "8kaiIntro4">>
-<audio src="/assets/audio/SESSION8_INTRO_3.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION8_INTRO_3.mp3" autoplay>Audio is not supported on your device</audio>
 
 <<set $module to "Introduction">>
 <div class="wrapper">
@@ -5846,7 +5496,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $prevpass to "8kaiIntro3">>
 <<set $passage to "8kaiIntro4">>
 <<set $nextpass to "8kaiIntro5">>
-<audio src="/assets/audio/SESSION8_INTRO_4.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION8_INTRO_4.mp3" autoplay>Audio is not supported on your device</audio>
 
 <<set $module to "Introduction">>
 <div class="wrapper">
@@ -5867,7 +5517,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $prevpass to "8kaiIntro4">>
 <<set $passage to "8kaiIntro5">>
 <<set $nextpass to "8modulelist">>
-<audio src="/assets/audio/SESSION8_INTRO_5.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION8_INTRO_5.mp3" autoplay>Audio is not supported on your device</audio>
 
 <<set $module to "Introduction">>
 <div class="wrapper">
@@ -5909,7 +5559,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <div class="menu-item flip-card" id="mod17"> 
 <div class="flip-card-inner">
       <div class="flip-card-front">
-  <img src="./assets/img/mod17.jpg" alt="module seventeen">
+  <img src="assets/img/mod17.jpg" alt="module seventeen">
       /* <h2 class="subtitle">Module 17</h2> */
       <div id="codewordWrapper1" class="codeword-wrapper">
   /% CODEWORD INPUT %/
@@ -5945,7 +5595,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
     </div>
       </div>
       <div class="flip-card-back">
-        <img src="./assets/img/mod17-rev.png" alt="module card" >
+        <img src="assets/img/mod17-rev.png" alt="module card" >
       </div>
     </div>
   </div>  
@@ -5961,7 +5611,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $prevpass to "8modulelist">>
 <<set $passage to "8mod17intro1">>
 <<set $nextpass to "8mod17introVid">>
-<audio src="/assets/audio/SESSION8_MOD17_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION8_MOD17_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Module 17">><<include "checkmodulenamelist">>
   <div class="wrapper">
     <<include "header">>
@@ -6002,7 +5652,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $prevpass to "8mod17introVid">>
 <<set $passage to "8mod17intro2">>
 <<set $nextpass to "8mod17intro3">>
-<audio src="/assets/audio/SESSION8_MOD17_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION8_MOD17_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Module 17">><<include "checkmodulenamelist">>
   <div class="wrapper">
     <<include "header">>
@@ -6024,7 +5674,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $prevpass to "8mod17intro2">>
 <<set $passage to "8mod17intro3">>
 <<set $nextpass to "8mod17intro4">>
-<audio src="/assets/audio/SESSION8_MOD17_intro_3.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION8_MOD17_intro_3.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Module 17">><<include "checkmodulenamelist">>
   <div class="wrapper">
     <<include "header">>
@@ -6046,7 +5696,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $prevpass to "8mod17intro2">>
 <<set $passage to "8mod17intro4">>
 <<set $nextpass to "8sessionoutro1">>
-<audio src="/assets/audio/SESSION8_MOD17_intro_4.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION8_MOD17_intro_4.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Module 17">><<include "checkmodulenamelist">>
   <div class="wrapper">
     <<include "header">>
@@ -6072,7 +5722,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $prevpass to "8mod17intro4">>
 <<set $passage to "8sessionoutro1">>
 <<set $nextpass to "8sessionoutro2">>
-<audio src="/assets/audio/SESSION8_OUTRO_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION8_OUTRO_1.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -6096,7 +5746,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $prevpass to "8sessionoutro1">>
 <<set $passage to "8sessionoutro2">>
 <<set $nextpass to "8sessionoutro3">>
-<audio src="/assets/audio/SESSION8_OUTRO_2.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION8_OUTRO_2.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -6122,7 +5772,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<goto "6mo
 <<set $prevpass to "8sessionoutro2">>
 <<set $passage to "8sessionoutro3">>
 <<set $nextpass to "8sessionoutro4">>
-<audio src="/assets/audio/SESSION8_OUTRO_3.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/SESSION8_OUTRO_3.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
