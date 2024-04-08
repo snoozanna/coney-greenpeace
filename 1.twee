@@ -419,7 +419,7 @@ $(document.head).find('#style-ui-bar').remove();
           <<audio "weirdnoise" play >>
         <<audio "weirdnoise" play >>
         <<replace "#coderesult">><h2 class="subtitle complete">Session 1</h2><</replace>>
-        <<timed 3s>><<set $prevpass to $passage>><<set $audio to true>>
+        <<timed 2s>><<set $prevpass to $passage>><<set $audio to true>>
         <<set $nextpass to "1modulelist">><<goto "loading">><</timed>>
         <</if>>
         <<if $codeword isnot "" and $codeword is "KAI">>
@@ -427,14 +427,14 @@ $(document.head).find('#style-ui-bar').remove();
           <<audio "weirdnoise" play >>
         <<audio "weirdnoise" play >>
         <<replace "#coderesult">><h2 class="subtitle complete">Introducing Kai</h2><</replace>>
-        <<timed 3s>><<set $prevpass to $passage>><<set $audio to true>>
+        <<timed 2s>><<set $prevpass to $passage>><<set $audio to true>>
         <<set $nextpass to "1mod2outrokaib">><<goto "loading">><</timed>>
         <</if>>
             <<if $codeword isnot "" and $codeword is "SMASH">>
               <<addclass "#topTriangle" "unlock">>
                 <<audio "weirdnoise" play >>
         <<replace "#coderesult">><h2 class="subtitle complete">Session 2</h2><</replace>>
-        <<timed 3s>><<set $prevpass to $passage>><<set $audio to true>>
+        <<timed 2s>><<set $prevpass to $passage>><<set $audio to true>>
          <<set $nextpass to "2kaiIntro1">><<goto "loading">>
        <</timed>>
         <</if>>
@@ -442,7 +442,7 @@ $(document.head).find('#style-ui-bar').remove();
           <<addclass "#topTriangle" "unlock">>
             <<audio "weirdnoise" play >>
         <<replace "#coderesult">><h2 class="subtitle complete">Session 3</h2><</replace>>
-        <<timed 3s>><<set $prevpass to $passage>><<set $audio to true>>
+        <<timed 2s>><<set $prevpass to $passage>><<set $audio to true>>
          <<set $nextpass to "3kaiIntro1">><<goto "loading">>
         <</timed>>
         <</if>>
@@ -450,7 +450,7 @@ $(document.head).find('#style-ui-bar').remove();
           <<addclass "#topTriangle" "unlock">>
             <<audio "weirdnoise" play >>
         <<replace "#coderesult">><h2 class="subtitle complete">Session 4</h2><</replace>>
-        <<timed 3s>><<set $prevpass to $passage>><<set $audio to true>>
+        <<timed 2s>><<set $prevpass to $passage>><<set $audio to true>>
           <<set $nextpass to "4kaiIntro1">><<goto "loading">>
         <</timed>>
         <</if>>
@@ -458,26 +458,26 @@ $(document.head).find('#style-ui-bar').remove();
           <<addclass "#topTriangle" "unlock">>
             <<audio "weirdnoise" play >>
         <<replace "#coderesult">><h2 class="subtitle complete">Session 5</h2><</replace>>
-        <<timed 3s>><<set $prevpass to $passage>><<set $audio to true>>
+        <<timed 2s>><<set $prevpass to $passage>><<set $audio to true>>
         <<set $nextpass to "5kaiIntro1">><<goto "loading">><</timed>>
         <</if>>
          <<if $codeword isnot "" and $codeword is "OUR">>
            <<addclass "#topTriangle" "unlock">>
              <<audio "weirdnoise" play >>
         <<replace "#coderesult">><h2 class="subtitle complete">Session 6</h2><</replace>>
-        <<timed 3s>><<set $prevpass to $passage>><<set $audio to true>><<set $nextpass to "6kaiIntro1">><<goto "loading">><</timed>>
+        <<timed 2s>><<set $prevpass to $passage>><<set $audio to true>><<set $nextpass to "6kaiIntro1">><<goto "loading">><</timed>>
         <</if>>
          <<if $codeword isnot "" and $codeword is "SURVIVAL">>
            <<addclass "#topTriangle" "unlock">>
              <<audio "weirdnoise" play >>
         <<replace "#coderesult">><h2 class="subtitle complete">Session 7</h2><</replace>>
-        <<timed 3s>><<set $prevpass to $passage>><<set $audio to true>><<set $nextpass to "7kaiIntro1">><<goto "loading">><</timed>>
+        <<timed 2s>><<set $prevpass to $passage>><<set $audio to true>><<set $nextpass to "7kaiIntro1">><<goto "loading">><</timed>>
         <</if>>
          <<if $codeword isnot "" and $codeword is "NOW">>
            <<addclass "#topTriangle" "unlock">>
              <<audio "weirdnoise" play >>
         <<replace "#coderesult">><h2 class="subtitle complete">Session 8</h2><</replace>>
-        <<timed 3s>><<set $prevpass to $passage>><<set $audio to true>><<set $nextpass to "8kaiIntro1">><<goto "loading">><</timed>>
+        <<timed 2s>><<set $prevpass to $passage>><<set $audio to true>><<set $nextpass to "8kaiIntro1">><<goto "loading">><</timed>>
         <</if>>
           /% CODEWORD INCORRECT %/
           /* <<if $codeword isnot "" and $codeword is not "ONE">>
@@ -539,12 +539,12 @@ $(document.head).find('#style-ui-bar').remove();
             <<replace "#coderesult">><h2 class="subtitle complete">CORRECT</h2><</replace>>
               <<audio "eeg_1" play>>
             <<audio "eeg_1" play>>
-            <<timed 2s>>
+            <<timed 1s>>
               <<addclass "#mod2" "disappear">>
                <<addclass "#mod1" "twist">>
              <</timed>>
       
-            <<timed 6s>>
+            <<timed 2s>>
                   <<set $prevpass to $passage>>
                <<set $nextpass to "1mod1a">>
             <<goto "loading">>
@@ -592,10 +592,10 @@ $(document.head).find('#style-ui-bar').remove();
              <<timed 1s>>
               <<addclass "#mod1" "disappear">>
              <</timed>>
-            <<timed 3s>>
+            <<timed 2s>>
                 <<addclass "#mod2" "twist">>
              <</timed>>
-            <<timed 6s>>
+            <<timed 3s>>
                   <<set $prevpass to $passage>>
                <<set $nextpass to "1mod2outro">>
             <<goto "loading">>
@@ -642,7 +642,7 @@ $(document.head).find('#style-ui-bar').remove();
  <p> We’ll lead you through the four parts of a Round. </p>
 
 <<timed 6s>>
-  <<replace "#mount">>
+  <<append "#mount">>
        <ul>
         <li>
           <h4>1st - DEBATE</h4>
@@ -672,7 +672,7 @@ The order you go in will be randomised.</p>
      <<timed 4s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
     <</replace>>
     <</button>> 
-    <</replace>>
+    <</append>>
     <</timed>>
     
     
@@ -1090,7 +1090,7 @@ The order you go in will be randomised.</p>
       <p> Thank you!</p>
   
   
-  <<timed 8s>><<set $prevpass to $passage>><<set $mod2 to true>><<goto "landing">><</timed>>
+  <<timed 5s>><<set $prevpass to $passage>><<set $mod2 to true>><<goto "landing">><</timed>>
 </div>
   </main>
      <<include "footer">>
@@ -1099,7 +1099,7 @@ The order you go in will be randomised.</p>
 :: 1mod2outrokaib [nobr]
 <<set $passage to "1mod2outrokaib">><<set $module to "Introducing Kai">><<include "checkmodulenamelist">>
 /* TODO REPLACE  */
-/* <audio src="assets/audio/SESSION1_outro_2.mp3" autoplay>Audio is not supported on your device</audio> */
+<audio src="assets/audio/gpce1.5_SESSION1_OUTRO_1.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking ">
@@ -1118,7 +1118,7 @@ The order you go in will be randomised.</p>
 <p>But that doesn’t mean that everything is pre-decided </p>
 <p>Or that there is nothing to be discovered - it’s just all up to you.  </p>
 
-  <<timed 8s>><<set $prevpass to $passage>><<set $mod2 to true>><<goto "1mod2outrokaic">><</timed>>
+  <<timed 26s>><<set $prevpass to $passage>><<set $mod2 to true>><<goto "1mod2outrokaic">><</timed>>
 </div>
   </main>
      <<include "footer">>
@@ -1127,7 +1127,7 @@ The order you go in will be randomised.</p>
 :: 1mod2outrokaic [nobr]
 <<set $passage to "1mod2outrokaic">>
 /* TODO REPLACE  */
-/* <audio src="assets/audio/SESSION1_outro_3.mp3" autoplay>Audio is not supported on your device</audio> */
+<audio src="assets/audio/gpce1.5_SESSION1_OUTRO_2.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking ">
@@ -1140,7 +1140,7 @@ The order you go in will be randomised.</p>
 <p>I’ll explain more next session. </p>
 <p>See you then. </p>
 
- <<timed 8s>> <<replace "#mount">>
+ <<timed 19s>> <<replace "#mount">>
   <<button "Entry to the box">>
     <<timed 1s>>
       <<replace "#mount">>
