@@ -637,6 +637,7 @@ $(document.head).find('#style-ui-bar').remove();
         <div class="text-wrapper">
  <div id="mount">
  <h2>The Extraction Economy Game</h2>
+ <p>Toby - hand out the Maps to each team.</p>
  <p>The goal is to end the game with the most money. </p>
  <p>But you can’t lose more than half of your land.</p>
  <p> We’ll lead you through the four parts of a Round. </p>
@@ -646,11 +647,11 @@ $(document.head).find('#style-ui-bar').remove();
        <ul>
         <li>
           <h4>1st - DEBATE</h4>
-          <p>All countries have 1 minute to debate their moves</p>
+          <p>All countries have 1 minute to debate their moves.</p>
         </li>
          <li>
           <h4>2nd - DEFENCE</h4>
-          <p>Defence Moves are placed first. There are a limit of defence slots for each country. </p>
+          <p>Defence markers are placed first. There is a limit of defence slots for each country. Defence markers are removed each round.</p>
         </li>
         <li>
           <h4>3rd - EXTRACTION</h4>
@@ -663,8 +664,7 @@ The order you go in will be randomised.</p>
         </li>
         </ul>
    
-       <p>Got it? </p>
-   <<button "Yes">>
+   <<button "Ready">>
       <<replace "#mount">>
      
       <<audio "pyramidtransition_2" play>>
@@ -1058,6 +1058,9 @@ The order you go in will be randomised.</p>
   
  <<timed 0.1s>>
 <<replace "#mount">>
+  <p>Toby - find out the Front for this group.</p>
+<p>Enter it in below:</p>
+
    <div class="enter-codename-container">
      <div class="enter-codename-wrapper">
      <h2 class="subtitle">Enter Codename:</h2>
@@ -1097,7 +1100,10 @@ The order you go in will be randomised.</p>
 </div>
 
 :: 1mod2outrokaib [nobr]
-<<set $passage to "1mod2outrokaib">><<set $module to "Introducing Kai">><<include "checkmodulenamelist">>
+<<set $prevpass to "1mod2outrokaia">>
+<<set $passage to "1mod2outrokaib">>
+<<set $nextpass to "1mod2outrokaic">>
+<<set $module to "Introducing Kai">><<include "checkmodulenamelist">>
 /* TODO REPLACE  */
 <audio src="assets/audio/gpce1.5_SESSION1_OUTRO_1.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
@@ -1121,12 +1127,14 @@ The order you go in will be randomised.</p>
   <<timed 26s>><<set $prevpass to $passage>><<set $mod2 to true>><<goto "1mod2outrokaic">><</timed>>
 </div>
   </main>
-     <<include "footer">>
+     <<include "footerskip">>
 </div>
 
 :: 1mod2outrokaic [nobr]
+<<set $prevpass to "1mod2outrokaib">>
 <<set $passage to "1mod2outrokaic">>
-/* TODO REPLACE  */
+<<set $nextpass to "prebox">>
+
 <audio src="assets/audio/gpce1.5_SESSION1_OUTRO_2.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
@@ -1140,24 +1148,54 @@ The order you go in will be randomised.</p>
 <p>I’ll explain more next session. </p>
 <p>See you then. </p>
 
- <<timed 19s>> <<replace "#mount">>
-  <<button "Entry to the box">>
-    <<timed 1s>>
-      <<replace "#mount">>
-        <p> Text <h2 class="subtitle inline">HONEST</h2> to <h2 class="subtitle inline">07400179362</h2>, when you get the chance. </p>     
-      <<button "Finish">>
-      <<audio "pyramidtransition_1" play >><<set $prevpass to $passage>><<goto "landing">><</button>>
-        <</replace>>
-      <</timed>>
-    <</button>>
-      
+ <<timed 19s>> <<append "#mount">>
+  
+      <<button "Next">>
+<<set $prevpass to $passage>><<goto "prebox">>
+        <</button>>
 
-     <</replace>>
+     <</append>>
      <</timed>>
 </div>
   </main>
      <<include "footer">>
 </div>
+
+:: prebox [nobr]{"position":"450,50","size":"100,100"}
+<<set $prevpass to "1mod2outrokaic">>
+<<set $passage to "prebox">>
+<<set $nextpass to "landing">>
+<div class="wrapper box">
+
+  <main class="codeword landing">
+/* <img src="assets/img/triangles-08.png" class="hero"> */
+
+<<include "unlock">>
+<div >
+<h1 class="title larger-title" id="titleMount">Welcome</h1>
+  <div class="codeword-title-wrapper" id="mount"><h1 class="title">Entry to </h1><h1 class="title">The Box</h1></div>
+
+   
+  <div id="btnMount">
+    <<button "Enter">>
+      <<timed 0.1s>>
+        <<replace "#titleMount">><</replace>>
+        <<replace "#btnMount">><</replace>>
+        <<replace "#mount">>
+          <p>To dive in deeper</p>
+          <p> Text <h2 class="subtitle inline">HONEST</h2> to <h2 class="subtitle inline">07400179362</h2>. </p>     
+        <<button "Finish">>
+        <<audio "pyramidtransition_1" play >><<set $prevpass to $passage>><<goto "landing">><</button>>
+          <</replace>>
+        <</timed>>
+      <</button>>
+  </div>
+  
+</div>
+  </main>
+    /* <<include "footercode">> */
+  </div>
+
 
 
 /* SESSION 2 */
