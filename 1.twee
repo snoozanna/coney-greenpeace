@@ -1172,17 +1172,17 @@ The order you go in will be randomised.</p>
 
 <<include "unlock">>
 <div >
-<h1 class="title larger-title" id="titleMount">Welcome</h1>
-  <div class="codeword-title-wrapper" id="mount"><h1 class="title">Entry to </h1><h1 class="title">The Box</h1></div>
+<h1 class="title larger-title" id="titleMount">Toby</h1>
+  <div class="codeword-title-wrapper" id="mount"><h1 class="title">Reveal the box </h1><h1 class="title">To the group</h1></div>
 
    
   <div id="btnMount">
-    <<button "Enter">>
+    <<button "Reveal">>
       <<timed 0.1s>>
         <<replace "#titleMount">><</replace>>
         <<replace "#btnMount">><</replace>>
         <<replace "#mount">>
-          <p>To dive in deeper</p>
+          <p>And to dive in deeper</p>
           <p> Text <h2 class="subtitle inline">HONEST</h2> to <h2 class="subtitle inline">07400179362</h2>. </p>     
         <<button "Finish">>
         <<audio "pyramidtransition_1" play >><<set $prevpass to $passage>><<goto "landing">><</button>>
