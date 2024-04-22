@@ -1209,7 +1209,7 @@ The order you go in will be randomised.</p>
 <<set $prevpass to "landing">>
 <<set $module to "Introduction">>
 <<include "checkmodulenamelist">>
-<audio src="assets/audio/SESSION2_INTRO_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/gpce1.5_SESSION2_INTRO_1.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
     /* <h1 class="title top">Hello - it's Kai again</h1> */
@@ -1217,8 +1217,10 @@ The order you go in will be randomised.</p>
  <h1 class="title ">Hello - it's Kai again</h1>
 
     <div class="text-wrapper">
-      <p>  If you are listening to me that means you must have my Gift to you, and you must have found the codeword to get in, so someone must have listened to the phone message. Great work.</p>
-    <<timed 13s>><<set $prevpass to $passage>><<goto "2kaiIntro2">><</timed>>
+      <p> If you are listening to me that means you must have found the codeword to get in, so someone must have listened to the phone message. Great work.</p>
+<p>Last time you heard a bit about who Greenpeace and Coney are. </p>
+<p>I also told you that I'm a playful activist but I didn't really tell you what that means...</p>
+    <<timed 21s>><<set $prevpass to $passage>><<goto "2kaiIntro2">><</timed>>
     </div>
   
  
@@ -1232,15 +1234,18 @@ The order you go in will be randomised.</p>
 <<set $passage to "2kaiIntro2">>
 <<set $nextpass to "2kaiIntro3">>
 <<set $module to "Introduction">>
-<<include "checkmodulenamelist">><audio src="assets/audio/SESSION2_INTRO_2.mp3" autoplay>Audio is not supported on your device</audio>
+<<include "checkmodulenamelist">><audio src="assets/audio/gpce1.5_SESSION2_INTRO_2.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
 
   <main class="speaking">
     <div class="text-wrapper">
-        <p>Last time we spoke I introduced myself, and I told you some things about me. I told you that I work with Greenpeace and Coney and a bit about who Greenpeace and Coney are. </p>
-     <p>I also told you that I'm a playful activist but I didn't really tell you what that means...</p>
-         <<timed 15s>><<set $prevpass to $passage>><<goto "2kaiIntro3">><</timed>>
+       <p>Playful activists spark change through play.</p>
+<p>We do this through 'playfulness' - which is an attitude.</p>
+<p>It's a way of relating to the world, to systems, and to the act of making change - we play with them.</p>
+<p>We also spark change through the act of 'playing'.</p>
+
+         <<timed 19s>><<set $prevpass to $passage>><<goto "2kaiIntro3">><</timed>>
     </div>
   
 
@@ -1253,19 +1258,15 @@ The order you go in will be randomised.</p>
 <<set $passage to "2kaiIntro3">>
 <<set $nextpass to "2kaiIntro4">>
 <<set $module to "Introduction">>
-<<include "checkmodulenamelist">><audio src="assets/audio/SESSION2_INTRO_3.mp3" autoplay>Audio is not supported on your device</audio>
+<<include "checkmodulenamelist">><audio src="assets/audio/gpce1.5_SESSION2_INTRO_3.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
 
   <main class="speaking">
     <div class="text-wrapper">
- <p>Playful activists spark change through play.</p>
-      <p>We do this through 'playfulness' - which is an attitude.</p>
-      <p>It's a way of relating to the world, to systems, and to the act of making change - we play with them.</p>
-      <p>We also spark change through the act of 'playing'.</p>
-      <p>We create games or interactive experiences that ask questions, offer new solutions, and show the frank reality of how things are.</p>
+ <p>Together in this project we will be playful activists making a piece of Playful Climate Activism.</p>
      
-         <<timed 27s>><<set $prevpass to $passage>><<goto "2kaiIntro4">><</timed>>
+         <<timed 7s>><<set $prevpass to $passage>><<goto "2kaiIntro4">><</timed>>
     </div>
 
 </main>
@@ -1277,15 +1278,16 @@ The order you go in will be randomised.</p>
 <<set $passage to "2kaiIntro4">>
 <<set $nextpass to "2kaiIntro5">>
 <<set $module to "Introduction">>
-<<include "checkmodulenamelist">><audio src="assets/audio/SESSION2_INTRO_4.mp3" autoplay>Audio is not supported on your device</audio>
+<<include "checkmodulenamelist">><audio src="assets/audio/gpce1.5_SESSION2_INTRO_4.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
 
   <main class="speaking">
     <div class="text-wrapper">
- <p>Together in this project we’ll be playful activists making a piece of Playful Climate Activism. </p>
+ <p>We’re going to be looking at Climate Change. </p>
+<p>Sorry, some people would like us to say Climate Change... but sometimes I find it hard to even get the words out of my mouth, because let’s be honest - it’s a Climate Emergency.</p>
      
-         <<timed 7s>><<set $prevpass to $passage>><<goto "2kaiIntro5">><</timed>>
+         <<timed 15s>><<set $prevpass to $passage>><<goto "2kaiIntro5">><</timed>>
     </div>
 
 </main>
@@ -1297,16 +1299,18 @@ The order you go in will be randomised.</p>
 <<set $passage to "2kaiIntro5">>
 <<set $nextpass to "2kaiIntro6">>
 <<set $module to "Introduction">>
-<<include "checkmodulenamelist">><audio src="assets/audio/SESSION2_INTRO_5.mp3" autoplay>Audio is not supported on your device</audio>
+<<include "checkmodulenamelist">><audio src="assets/audio/gpce1.5_SESSION2_INTRO_5.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
 
   <main class="speaking">
     <div class="text-wrapper">
-      <p>We’re going to be looking at Climate Change. </p>
-      <p>Sorry, some people would like us to say Climate Change... but sometimes I find it hard to even get the words out of my mouth, because let’s be honest - it’s a Climate Emergency.</p>
+      <p>Change sounds natural, or even reversible, and what we’re really looking at is destruction. It’s a crisis. </p>
+<p>As we’re at the start of the project, let’s work out where we’re starting from. </p>
+<p>Let’s enter Module 3’s codeword to dive in.</p>
+
      
-         <<timed 14s>><<set $prevpass to $passage>><<goto "2kaiIntro6">><</timed>>
+         <<timed 20s>><<set $prevpass to $passage>><<goto "2kaiIntro6">><</timed>>
     </div>
 
 </main>
@@ -1316,44 +1320,18 @@ The order you go in will be randomised.</p>
 :: 2kaiIntro6 [nobr]
 <<set $prevpass to "2kaiIntro5">>
 <<set $passage to "2kaiIntro6">>
-<<set $nextpass to "2kaiIntro7">>
-<<set $module to "Introduction">><<include "checkmodulenamelist">><audio src="assets/audio/SESSION2_INTRO_6.mp3" autoplay>Audio is not supported on your device</audio>
-<div class="wrapper">
-  <<include "header">>
-
-  <main class="speaking">
-    <div class="text-wrapper">
-      <p>Change sounds natural, or even reversible, like changing your height by growing just a little bit taller.  No, I’m kidding 5ft 6 suits me fine thank you, and what we’re really looking at is destruction. It’s a crisis. </p>
-      <p>As we’re at the start of the project, let’s work out where we’re starting from. </p>
-     
-         <<timed 19s>><<set $prevpass to $passage>><<goto "2kaiIntro7">><</timed>>
-    </div>
-
-</main>
-<<include "footerskip">>
-</div>
-
-:: 2kaiIntro7 [nobr]
-<<set $prevpass to "2kaiIntro6">>
-<<set $passage to "2kaiIntro7">>
 <<set $nextpass to "2modulelist">>
-<<set $module to "Introduction">><<include "checkmodulenamelist">><audio src="assets/audio/SESSION2_INTRO_7.mp3" autoplay>Audio is not supported on your device</audio>
-
-<<if $skip is true>>
-    <<timed 5s>>
-      <<set $skip to false>>
-      <<goto $nextpass>>
-    <</timed>>
-<</if>>
-
+<<set $module to "Introduction">><<include "checkmodulenamelist">><audio src="assets/audio/gpce1.5_SESSION2_INTRO_6.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
 
   <main class="speaking">
     <div class="text-wrapper">
-      <p>Let's enter Module 3's codeword to dive in</p>
+    <p> I may not be present, but Teacher you are! </p>
+<p>Can you ask the class: When you hear the words Climate Emergency, what is the first thing you think of? </p>
+
      
-         <<timed 4s>><<set $prevpass to $passage>><<goto "2modulelist">><</timed>>
+         <<timed 12s>><<set $prevpass to $passage>><<goto "2modulelist">><</timed>>
     </div>
 
 </main>
@@ -1406,7 +1384,7 @@ The order you go in will be randomised.</p>
       
             <<timed 6s>>
                   <<set $prevpass to $passage>>
-               <<set $nextpass to "2mod3preintro">>
+               <<set $nextpass to "2mod3intro1">>
             <<goto "loading">>
              <</timed>>
             <</if>>
@@ -1484,39 +1462,22 @@ The order you go in will be randomised.</p>
   <<done>><<include "checkmodules">><</done>>
 
 
-:: 2mod3preintro [nobr]
-<<set $prevpass to "2modulelist">>
-<<set $passage to "2mod3intro">>
-<<set $nextpass to "2mod3intro">>
-<<set $module to "Module 3">><<include "checkmodulenamelist">><audio src="assets/audio/SESSION2_INTRO_8.mp3" autoplay>Audio is not supported on your device</audio>
-  <div class="wrapper">
-    <<include "header">>
-    <main  class="speaking">
-        <div class="text-wrapper">
- <p> I may not be present, but Teacher you are! </p>
-    <p>Can you help me out here? </p>
-   <p> Can you ask the class: </p>
-   <p>When you hear the words <h2 class="subtitle inline">Climate Emergency</h2>, what is the first thing you think of? </p><<button "Next">><<goto "2mod3intro1">><</button>>
- 
-   </div>
-    </main>
-         <<include "footerskip">>
-  </div>
-
-
 
 :: 2mod3intro1 [nobr]
-<<set $prevpass to "2mod3preintro">>
+<<set $prevpass to "2modulelist">>
 <<set $passage to "2mod3intro1">>
 <<set $nextpass to "2mod3vid">>
-<<set $module to "Module 3">><<include "checkmodulenamelist">><audio src="assets/audio/SESSION2_MOD3_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $module to "Module 3">><<include "checkmodulenamelist">><audio src="assets/audio/gpce1.5_SESSION2_MOD3_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
   <div class="wrapper">
     <<include "header">>
     <main  class="speaking">
         <div class="text-wrapper">
-<p>  You might have discussed how the planet is warming up because of human’s carbon emissions. You might have talked about cars, planes, or cows. </p>
+<p>You might have discussed how the planet is warming up because of human’s carbon emissions. You might have talked about cars, planes, or cows. </p>
+<p>You might have spoken about how the richest 10% of people cause half the world’s total CO2 emissions. </p>
+<p>You may have spoken about eating vegan, pollution, Fridays for Future, Autumn Peltier, Net Zero by 2050, a target of 1.5 degrees, Greta Thunberg, Extinction Rebellion, Reduce, Reuse, Recycle...</p> 
 
-    <<timed 9s>><<set $prevpass to $passage>><<goto "2mod3intro2">><</timed>>
+
+    <<timed 29s>><<set $prevpass to $passage>><<goto "2mod3intro2">><</timed>>
    </div>
     </main>
          <<include "footerskip">>
@@ -1527,14 +1488,16 @@ The order you go in will be randomised.</p>
 <<set $passage to "2mod3intro2">>
 <<set $nextpass to "2mod3vid">>
 <<set $module to "Module 3">><<include "checkmodulenamelist">>
-<audio src="assets/audio/SESSION2_MOD3_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/gpce1.5_SESSION2_MOD3_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
   <div class="wrapper">
     <<include "header">>
     <main  class="speaking">
         <div class="text-wrapper">
-<p>You might have spoken about how the richest 10% of people cause half the world’s total CO2 emissions. </p>
-<p>You may have spoken about eating vegan, pollution, Fridays for Future, Autumn Peltier, Net Zero by 2050, a target of 1.5 degrees, Greta Thunberg, Extinction Rebellion, Reduce, Reuse, Recycle... </p>
-    <<timed 22s>><<set $prevpass to $passage>><<goto "2mod3intro3">><</timed>>
+<p>You might not have said any of this, or you might have said a million other things. You’ll know totally different things from me, and probably more, and you’ll know so much more how the Climate Emergency affects you - where you live, where you go to school. </p>
+<p>We can see this emergency happening all around us. </p>
+<p>History has taught us you don’t stand still in an emergency. You act. </p>
+
+    <<timed 23s>><<set $prevpass to $passage>><<goto "2mod3intro3">><</timed>>
    </div>
     </main>
          <<include "footerskip">>
@@ -1545,138 +1508,56 @@ The order you go in will be randomised.</p>
 <<set $passage to "2mod3intro3">>
 <<set $nextpass to "2mod3intro4">>
 <<set $module to "Module 3">><<include "checkmodulenamelist">>
-<audio src="assets/audio/SESSION2_MOD3_intro_3.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/gpce1.5_SESSION2_MOD3_intro_3.mp3" autoplay>Audio is not supported on your device</audio>
   <div class="wrapper">
     <<include "header">>
     <main  class="speaking">
         <div class="text-wrapper">
-<p>You might have talked about the Climate Emergency being complex, or about how it overlaps with so many other emergencies: the pandemic, the cost-of-living crisis…. </p>
-    <<timed 9s>><<set $prevpass to $passage>><<goto "2mod3intro4">><</timed>>
+<p>Before we think about action, we need to start by understanding how things are.</p>
+<p>And from the very beginning, we need to understand that the Climate Emergency is not isolated, it's not separate from other struggles, or violence, or destruction. It is all interconnected. </p>
+<p>We’re going to hear from Dr Mya-Rose Craig and watch a video she made for Greenpeace.</p>
+<p>Dr Mya-Rose Craig is a climate activist from the UK. </p>
+<p>She’s great. </p>
+
+    <<timed 28s>><<set $prevpass to $passage>><<goto "2mod3intro4">><</timed>>
    </div>
     </main>
          <<include "footerskip">>
   </div>  
   
+
 :: 2mod3intro4 [nobr]
 <<set $prevpass to "2mod3intro3">>
 <<set $passage to "2mod3intro4">>
-<<set $nextpass to "2mod3intro5">>
-<<set $module to "Module 3">><<include "checkmodulenamelist">><audio src="assets/audio/SESSION2_MOD3_intro_4.mp3" autoplay>Audio is not supported on your device</audio>
-  <div class="wrapper">
-    <<include "header">>
-    <main  class="speaking">
-        <div class="text-wrapper">
-<p>You might not have said any of this, or you might have said a million other things. You’ll know totally different things from me, and probably more, and you’ll know so much more how the Climate Emergency affects you - where you live, where you go to school. </p>
-    <<timed 15s>><<set $prevpass to $passage>><<goto "2mod3intro5">><</timed>>
-   </div>
-    </main>
-         <<include "footerskip">>
-  </div>  
-
-:: 2mod3intro5 [nobr]
-<<set $prevpass to "2mod3intro4">>
-<<set $passage to "2mod3intro5">>
-<<set $nextpass to "2mod3intro6">>
-<<set $module to "Module 3">><<include "checkmodulenamelist">>
-<audio src="assets/audio/SESSION2_MOD3_intro_5.mp3" autoplay>Audio is not supported on your device</audio>
-  <div class="wrapper">
-    <<include "header">>
-    <main  class="speaking">
-        <div class="text-wrapper">
-<p>
-  We can see this emergency happening all around us. 
-  History has taught us you don’t stand still in an emergency. You act. 
-</p>
-    <<timed 8s>><<set $prevpass to $passage>><<goto "2mod3intro6">><</timed>>
-   </div>
-    </main>
-         <<include "footerskip">>
-  </div>  
-
-:: 2mod3intro6 [nobr]
-<<set $prevpass to "2mod3intro5">>
-<<set $passage to "2mod3intro6">>
-<<set $nextpass to "2mod3intro7">>
-<<set $module to "Module 3">>
-<<include "checkmodulenamelist">><audio src="assets/audio/SESSION2_MOD3_intro_6.mp3" autoplay>Audio is not supported on your device</audio>
-  <div class="wrapper">
-    <<include "header">>
-    <main  class="speaking">
-        <div class="text-wrapper">
-<p>
-  Before we think about action, we need to start by understanding how things are.
-  And from the very beginning, we need to understand that the Climate Emergency is not isolated, it's not separate from other struggles. or violence, or destruction. It is all interconnected. 
-</p>
-    <<timed 16s>><<set $prevpass to $passage>><<goto "2mod3intro7">><</timed>>
-   </div>
-    </main>
-         <<include "footerskip">>
-  </div>  
-
-:: 2mod3intro7 [nobr]
-<<set $prevpass to "2mod3intro6">>
-<<set $passage to "2mod3intro7">>
-<<set $nextpass to "2mod3intro8">>
-<<set $module to "Module 3">><<include "checkmodulenamelist">><audio src="assets/audio/SESSION2_MOD3_intro_7.mp3" autoplay>Audio is not supported on your device</audio>
-  <div class="wrapper">
-    <<include "header">>
-    <main  class="speaking">
-        <div class="text-wrapper">
-<p>
-We’re going to hear from Dr Mya-Rose Craig and watch a video she made for Greenpeace.
-Dr Mya-Rose Craig is a climate activist from the UK. </p>
-<p>She’s great. 
-</p>
-    <<timed 12s>><<set $prevpass to $passage>><<goto "2mod3intro8">><</timed>>
-   </div>
-    </main>
-         <<include "footerskip">>
-  </div>  
-
-:: 2mod3intro8 [nobr]
-<<set $prevpass to "2mod3intro7">>
-<<set $passage to "2mod3intro8">>
-<<set $nextpass to "2mod3intro9">>
+<<set $nextpass to "2mod3vid">>
 <<set $module to "Module 3">>
 <<include "checkmodulenamelist">>
-<audio src="assets/audio/SESSION2_MOD3_intro_8.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/gpce1.5_SESSION2_MOD3_intro_4.mp3" autoplay>Audio is not supported on your device</audio>
   <div class="wrapper">
     <<include "header">>
     <main  class="speaking">
-        <div class="text-wrapper">
+        <div class="text-wrapper" id="twrapper">
 <p>Before the video though, I’m going to give a content warning. </p>
 <p>Her video is about racism and environmental destruction.</p>
-<p>This video is really honest</p>
-<p>And you might find it hard to watch at points. </p>
+<nd>This video is really honest, and you might find it hard to watch at points. </p>
 <p>We’ll break it up though. </p>
 <p>Take it step by step, together. </p>
-<p>Teacher, please do speak to the class about what they might need whilst watching this video</p>
-    <<timed 23s>><<set $prevpass to $passage>><<goto "2mod3intro9">><</timed>>
-   </div>
-    </main>
-         <<include "footerskip">>
-  </div>  
+<p>Teacher, please do speak to the class about what they might need whilst watching this video.</p>
 
-:: 2mod3intro9 [nobr]
-<<set $prevpass to "2mod3intro8">>
-<<set $passage to "2mod3intro9">>
-<<set $nextpass to "2mod3vid">>
-<<set $module to "Module 3">><<include "checkmodulenamelist">><audio src="assets/audio/SESSION2_MOD3_intro_9.mp3" autoplay>Audio is not supported on your device</audio>
-  <div class="wrapper">
-    <<include "header">>
-    <main  class="speaking">
-        <div class="text-wrapper">
-<p>I'm going to hand over to Dr Mya-Rose Craig now – </p>
-    
+<<timed 23s>>
+  <<replace "#twrapper">>
+ <p>I'm going to hand over to Dr Mya-Rose Craig – </p>
    <p> Click <<button "Play">><<set $prevpass to $passage>><<goto "2mod3vid">><</button>> when you are ready. </p>
+   <</replace>>
+   <</timed>>
    </div>
     </main>
          <<include "footerskip">>
   </div>  
-
 
 
 :: 2mod3vid [nobr]
+<<set $prevpass to "2mod3intro4">>
 <<set $passage to "2mod3vid">>
 <<set $nextpass to "2mod1int1">>
 /* TODO NEEDS VIDEO  */
@@ -1693,21 +1574,15 @@ Dr Mya-Rose Craig is a climate activist from the UK. </p>
 
 :: 2mod1int1 [nobr]
 <<set $passage to "2mod1int1">>
-<audio src="assets/audio/SESSION2_MOD3_context_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/gpce1.5_SESSION2_MOD3_Interjection_1.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
       <div class="text-wrapper">
-  /* <p> 3.18</p> */
 <p>Ok, let’s hold there, we’ve just heard a lot and let’s sit with it for a second. </p>
-<p>
-  Teacher, either as a class or in small groups can we take a moment to reflect on what we’ve just watched.
-</p> 
-<p>Can you check in on the following questions</p>
-<ul>
- <li> -	How do people feel? </li>
- <li> -	Mya-Rose talked about how our nature and climate emergencies have roots in the British Empire and systemic racism - how do you think they’re connected? </li>
-</ul>
+<p>Teacher, either as a class or in small groups can we take a moment to reflect on what we’ve just watched.</p> 
+<p>Can you check in on the following questions:</p>
+<p>Mya-Rose talked about how our nature and climate emergencies have roots in the British Empire and systemic racism - How do you think they’re connected? </p>
 
 
 <p>When ready click <<button "Move On">><<set $prevpass to $passage>><<goto "2mod3vid2">><</button>></p>
@@ -1734,22 +1609,28 @@ Dr Mya-Rose Craig is a climate activist from the UK. </p>
 </div>
 
 :: 2mod1int2 [nobr]
-<<set $passage to "2mod1int2">><audio src="assets/audio/SESSION2_MOD3_context_2.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $passage to "2mod1int2">><audio src="assets/audio/gpce1.5_SESSION2_MOD3_Interjection_2.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
-      <div class="text-wrapper">
+      <div class="text-wrapper" id="text">
   /* <p> 6.25</p> */
 <p>Ok let’s pause again for a moment. </p>
-<p>Mya-Rose has covered a lot – the drastic inequality of those who are living with the impacts of the climate crisis yet causing the least pollution. And we’ve heard lots about palm oil too…like lots of things, the raw ingredient of palm oil itself isn’t bad, but when it’s commercially extracted (like Unilever do) that’s when we get 250,000 football pitches worth of deforestation. </p>
-<p>Teacher, can we take a moment to reflect on what we’ve heard. Let’s cover these questions</p>
+<p>Mya-Rose has covered a lot – the drastic inequality of those who are living with the impacts of the climate crisis yet causing the least pollution. </p>
+<p>And we’ve heard lots about palm oil too…like lots of things, the raw ingredient of palm oil itself isn’t bad, but when it’s commercially extracted (like Unilever do) that’s when we get 250,000 football pitches worth of deforestation. </p>
+<<timed 29s>>
+  <<replace "#text">>
+<p>Teacher, can we take a moment to reflect on what we’ve heard. </p>
+
+<p>Let’s cover these questions:</p>
 <ul>
-<li> - How are you feeling? How does your body feel?</li>
-<li>- How do you think this all links to us, in the UK?</li>
+<li> - How are you feeling?</li>
+<li>- How do you think this all links to us, in the UK? </li>
 </ul>
 
-
 <p><<button "Move On">><<set $prevpass to $passage>><<goto "2mod3vid3">><</button>></p>
+<</replace>>
+<</timed>>
 </div>
   </main>
      <<include "footer">>
@@ -1771,15 +1652,16 @@ Dr Mya-Rose Craig is a climate activist from the UK. </p>
 </div>
 
 :: 2mod1int3 [nobr]
-<<set $passage to "2mod1int3">><audio src="assets/audio/SESSION2_MOD3_context_3.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $passage to "2mod1int3">><audio src="assets/audio/gpce1.5_SESSION2_MOD3_Interjection_3.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
-      <div class="text-wrapper">
+      <div class="text-wrapper" id="text">
   /* <p> 9.10</p> */
 <p>Thanks Mya-Rose. </p>
-<p>We’ll move on in a moment, but before we do, let’s reflect on what we’ve just heard.</p> 
-<p>A lot of that was closer to home, maybe it shifted something for you. </p>
+<p>We’ll move on in a moment, but before we do, let’s reflect on what we’ve just heard. A lot of that was closer to home, maybe it shifted something for you.</p>
+<<timed 12s>>
+  <<replace "#text">>
 <p>Some questions you might ask</p>
 <ul>
 <li>  -	Did you think the climate emergency and racism were linked before? </li>
@@ -1787,7 +1669,9 @@ Dr Mya-Rose Craig is a climate activist from the UK. </p>
  <li> -	What do you think it means for activists to come together to make change? </li>
 </ul>
 
-<p>I’d recommend 5 minutes to chat here, and when ready click <<button "Move On">><<set $prevpass to $passage>><<goto "2mod3outro1">><</button>></p>
+<p><<button "Move On">><<set $prevpass to $passage>><<goto "2mod3outro1">><</button>></p>
+<</replace>>
+<</timed>>
 </div>
   </main>
      <<include "footer">>
@@ -1796,18 +1680,28 @@ Dr Mya-Rose Craig is a climate activist from the UK. </p>
 :: 2mod3outro1 [nobr]
 <<set $passage to "2mod3outro1">>
 <<set $nextpass to "2mod3outro2">>
-<audio src="assets/audio/SESSION2_MOD3_outro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/gpce1.5_SESSION2_MOD3_outro_1.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
-      <div class="text-wrapper">
-<p>You might have found that video hard to watch </p>
+      <div class="text-wrapper" id="text">
+<p>You might have found that video hard to watch. </p>
 <p>You might have been upset by what you saw. </p>
-<p>You might feel angry, numb, frustrated </p>
+<p>You might feel angry, numb, frustrated. </p>
 <p>It might leave a feeling in your stomach that you don’t have the words for at the moment.</p>
 <p>You might not know how you feel yet. </p>
-
-  <<timed 16s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+<p>This video only brings everything into sharper focus,</p>
+<<timed 26s>>
+  <<replace "#text">>
+  <p>In order to begin, we have to look honestly at the way things are</p>
+  <p>At the legacies of colonialism</p>
+  <p>At who is already living in the realities of the climate emergency</p>
+  <p>At how systemic racism, the British empire and the climate emergency are intertwined. </p>
+  
+   
+<</replace>>
+<</timed>>
+ <<timed 46s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
 </div>
 </main>
      <<include "footerskip">>
@@ -1817,18 +1711,21 @@ Dr Mya-Rose Craig is a climate activist from the UK. </p>
 <<set $prevpass to "2mod3outro1">>
 <<set $passage to "2mod3outro2">>
 <<set $nextpass to "2mod3outro3">>
-<audio src="assets/audio/SESSION2_MOD3_outro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/gpce1.5_SESSION2_MOD3_outro_2.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
       <div class="text-wrapper">
-<p>This video only brings everything into sharper focus</p>
-<p>In order to begin, we have to look honestly at the way things are</p>
-<p>At the legacies of colonialism</p>
-<p>At who is already living in the realities of the climate emergency</p>
-<p>At how systemic racism, the British empire and the climate emergency are intertwined. </p>
+<p>This project is about taking action </p>
+<p>About not standing still </p>
+<p>It's about making change</p>
+<p>Activism is hard, and complicated </p>
+<p>It won’t be nice all the time, and we might get things wrong </p>
+<p>We’re going to have to work together, as Mya-Rose said </p>
+<p>But I know you are the group to do this.</p>
+<p>You wouldn’t be in this room if you weren’t </p>
 
-  <<timed 20s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+  <<timed 24s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
 </div>
 </main>
      <<include "footerskip">>
@@ -1837,197 +1734,94 @@ Dr Mya-Rose Craig is a climate activist from the UK. </p>
 :: 2mod3outro3 [nobr]
 <<set $prevpass to "2mod3outro2">>
 <<set $passage to "2mod3outro3">>
-<<set $nextpass to "2mod3outro4">>
-<audio src="assets/audio/SESSION2_MOD3_outro_3.mp3" autoplay>Audio is not supported on your device</audio>
-<div class="wrapper">
-  <<include "header">>
-  <main class="speaking">
-      <div class="text-wrapper">
-<p>This project is about taking action </p>
-<p>About not standing still </p>
-<p>It's about making change</p>
-  <<timed 8s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
-</div>
-</main>
-     <<include "footerskip">>
-</div>
-
-:: 2mod3outro4 [nobr]
-<<set $prevpass to "2mod3outro3">>
-<<set $passage to "2mod3outro4">>
-<<set $nextpass to "2mod3outro5">>
-<audio src="assets/audio/SESSION2_MOD3_outro_4.mp3" autoplay>Audio is not supported on your device</audio>
-<div class="wrapper">
-  <<include "header">>
-  <main class="speaking">
-      <div class="text-wrapper">
-<p>Activism is hard, and complicated </p>
-<p>It won’t be nice all the time, and we might get things wrong </p>
-<p>We’re going to have to work together, as Mya-Rose said </p>
-<p>But I know you are the group to do this.</p>
-<p>You wouldn’t be in this room if you weren’t </p>
-  <<timed 18s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
-</div>
-</main>
-     <<include "footerskip">>
-</div>
-
-
-:: 2mod3outro5 [nobr]
-<<set $prevpass to "2mod3outro4">>
-<<set $passage to "2mod3outro5">>
-<<set $nextpass to "2mod3outro6">>
-<audio src="assets/audio/SESSION2_MOD3_outro_5.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $nextpass to "2modulelist">>
+<<set $mod3 to true>>
+<audio src="assets/audio/gpce1.5_SESSION2_MOD3_outro_3.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
       <div class="text-wrapper">
 <p>So, we have looked at the big world system and seen its flaws, now let’s pull it back to this room. To a different type of system. </p>
 <p>A game system. </p>
-<p>And how we mod it.</p> 
-  <<timed 14s>><<set $prevpass to $passage>><<set $mod3 to true>><<goto $nextpass>><</timed>>
+<p>And how we modify it. </p>
+<p>Enter the Module 4 Codeword. </p>
+
+  <<timed 15s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
 </div>
 </main>
      <<include "footerskip">>
 </div>
-
-:: 2mod3outro6 [nobr]
-<<set $prevpass to "2mod3outro5">>
-<<set $passage to "2mod3outro6">>
-<<set $nextpass to "2modulelist">>
-<audio src="assets/audio/SESSION2_MOD3_outro_6.mp3" autoplay>Audio is not supported on your device</audio>
-<div class="wrapper">
-  <<include "header">>
-  <main class="speaking">
-      <div class="text-wrapper">
-<p>Enter the Module 4 codeword</p> 
-  <<timed 4s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
-</div>
-</main>
-     <<include "footerskip">>
-</div>
-
 
 
 :: 2mod4intro1 [nobr]
 <<set $prevpass to "2modulelist">>
 <<set $passage to "2mod4intro1">>
-<<set $nextpass to "2mod4intro2">>
-<<set $module to "Module 4">><<include "checkmodulenamelist">><audio src="assets/audio/SESSION2_MOD4_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
-<div class="wrapper">
-  <<include "header">>
-  <main class="speaking">
-    <div class="text-wrapper">
-<p>
-Anyone like Potatoes? Amazing – everyone. I can’t see so I’ll just make up what I’d like to think is happening. </p>
-<p>We’re going to play a game called Roast-The-Potato. </p>
-  <<timed 13s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
-</div>
- </main>
-     <<include "footerskip">>
-</div>
-
-:: 2mod4intro2 [nobr]
-<<set $prevpass to "2mod4intro1">>
-<<set $passage to "2mod4intro2">>
 <<set $nextpass to "2mod4outro1">>
-<<set $module to "Module 4">><<include "checkmodulenamelist">><audio src="assets/audio/SESSION2_MOD4_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $module to "Module 4">><<include "checkmodulenamelist">><audio src="assets/audio/gpce1.5_SESSION2_MOD4_intro.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
-    <div class="text-wrapper" id="mount">
+    <div class="text-wrapper" id="text">
+<p>Anyone like Potatoes?</p> 
+<p>Amazing – great. I can’t see everyone so I’ll just make up what I’d like to think is happening. </p>
+<p>We’re going to play a game called Roast-The-Potato.</p> 
 <p>It used to be Roast-The-Goose, but ya know, I’m trying to reduce my emissions and I like Roast Potatoes. </p>
+<<timed 16s>>
+  <<replace "#text">>
 <p>For this game you’ll need a chair and to be sat in a circle. </p>
 <p>One person needs to put their chair in the centre of the circle though. </p>
 <p>Teacher I’ll hand over to you to explain how to Roast.  </p>
-<<button "I've explained!">>
-  <<replace "#mount">>
-    <audio src="assets/audio/SESSION2_MOD4_intro_3.mp3" autoplay>Audio is not supported on your device</audio>
-    <p>When you have finished click <<button "Move On">>
+<</replace>>
+<</timed>>
+  <<timed 31s>>
+    <<append "#text">>
+ <p>When you have finished click <<button "Move On">>
       <<set $prevpass to $passage>><<set $mod4 to true>>
       <<set $skip to true>><<goto "2modulelist">>
       <</button>></p>
-  <</replace>>
-<</button>>
+      <</append>>
+    <</timed>>
 </div>
  </main>
      <<include "footerskip">>
 </div>
-
-
 
 
 :: 2mod4outro1 [nobr]
 <<set $prevpass to "2mod4outro1">>
 <<set $passage to "2mod4outro1">>
-<<set $nextpass to "2mod4outro2">>
-<audio src="assets/audio/SESSION2_MOD4_outro_1.mp3" autoplay>Audio is not supported on your device</audio>
-<div class="wrapper">
-  <<include "header">>
-  <main class="speaking">
-    <div class="text-wrapper">
-<p>
-We play games of systems not to reduce them, not to suggest they are unreal, not to forget the violence they cause.</p>
-<p>We play games of systems because games can change.</p>
-<p>
-  When we play a game of a system, this shows us that systems can change too.
-  We can mod a system to create a different one.
-</p>
-<p>When we know what we're trying to build, the kind of system we want to create, we can use this to guide us.</p>
-
- <<timed 29s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
-</div>
- </main>
-     <<include "footerskip">>
-</div>
-
-:: 2mod4outro2 [nobr]
-<<set $prevpass to "2mod4outro1">>
-<<set $passage to "2mod4outro2">>
-<<set $nextpass to "2mod4outro3">>
-<audio src="assets/audio/SESSION2_MOD4_outro_2.mp3" autoplay>Audio is not supported on your device</audio>
-<div class="wrapper">
-  <<include "header">>
-  <main class="speaking">
-    <div class="text-wrapper">
-<p>We can use games to look to the future, to imagine how things could be different.</p>
-<p>Games can also remind us how flawed and broken things are. Like the extraction economy game did in our last session. </p>
-<p>They can remind us that we're living in a system that destroys our Earth by pulling things out of it.</p>
-<p>That this system serves those with power. </p>
-
- <<timed 22s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
-</div>
- </main>
-     <<include "footerskip">>
-</div>
-
-:: 2mod4outro3 [nobr]
-<<set $prevpass to "2mod4outro2">>
-<<set $passage to "2mod4outro3">>
 <<set $nextpass to "2mod4outrob">>
-<audio src="assets/audio/SESSION2_MOD4_outro_3.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/gpce1.5_SESSION2_MOD4_outro.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
-    <div class="text-wrapper">
+    <div class="text-wrapper" id="text">
+
+<p>We play games of systems not to reduce them, not to suggest they are unreal, not to forget the violence they cause.</p>
+<p>We play games of systems because games can change, and this shows us that systems can change too.</p>
+<<timed 15s>>
+<<replace "#text">>
+<p>We can mod a system to create a different one.</p>
+<p>When we know what we're trying to build, the kind of system we want to create, we can use this to guide us.</p>
 <p>And changing games reminds us that things can be different.</p>
 <p>It reminds us that change is possible.</p>
 <p>Isn’t it time we played a different game?</p>
+<</replace>>
+<</timed>>
 
-<<button "Next">><<set $prevpass to $passage>><<goto $nextpass>><</button>>
+ <<timed 35s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
 </div>
  </main>
      <<include "footerskip">>
 </div>
-
 
 
 
 :: 2mod4outrob [nobr]
-<<set $prevpass to "2mod4outro3">>
+<<set $prevpass to "2mod4outro1">>
 <<set $passage to "2mod4outrob">>
 <<set $nextpass to "landing">>
-<audio src="assets/audio/SESSION2_OUTRO.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/gpce1.5_SESSION2_OUTRO.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
