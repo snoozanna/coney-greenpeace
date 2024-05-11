@@ -950,6 +950,19 @@ main.codeword.landing > .hero {
   text-transform: uppercase;
 }
 
+.char-item > button:hover {
+  font-size: 3rem;
+}
+
+.char-item > button:active, 
+.char-item > button:focus, 
+.char-item > button:visited {
+  font-size: 3rem;
+  background: white;
+  color: black;
+  border: 7px solid gold;
+}
+
 .char-chosen-wrap {
   max-width: 40%;
   margin-block-end: 2rem;

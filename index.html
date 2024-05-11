@@ -386,23 +386,23 @@ $(document.head).find('#style-ui-bar').remove();
   &lt;&lt;elseif $module is &quot;Introducing Kai&quot;&gt;&gt;
   &lt;&lt;set $modulename to &quot;&quot;&gt;&gt;
 &lt;&lt;elseif $module is &quot;Module 3&quot;&gt;&gt;
-  &lt;&lt;set $modulename to &quot;The Context	&quot;&gt;&gt;
+  &lt;&lt;set $modulename to &quot;Context&quot;&gt;&gt;
 &lt;&lt;elseif $module is &quot;Module 4&quot;&gt;&gt;
-  &lt;&lt;set $modulename to &quot;Moding A System&quot;&gt;&gt;
+  &lt;&lt;set $modulename to &quot;Mod the Game&quot;&gt;&gt;
 &lt;&lt;elseif $module is &quot;Module 5&quot;&gt;&gt;
-  &lt;&lt;set $modulename to &quot;Playful Activist Cards&quot;&gt;&gt;
+  &lt;&lt;set $modulename to &quot;Talents&quot;&gt;&gt;
 &lt;&lt;elseif $module is &quot;Module 6&quot;&gt;&gt;
-  &lt;&lt;set $modulename to &quot;The Focus&quot;&gt;&gt;
+  &lt;&lt;set $modulename to &quot;Focus&quot;&gt;&gt;
 &lt;&lt;elseif $module is &quot;Module 7&quot;&gt;&gt;
-  &lt;&lt;set $modulename to &quot;Mapping A System&quot;&gt;&gt;
+  &lt;&lt;set $modulename to &quot;Mapping&quot;&gt;&gt;
 &lt;&lt;elseif $module is &quot;Module 8&quot;&gt;&gt;
   &lt;&lt;set $modulename to &quot;Imagining Success&quot;&gt;&gt;
 &lt;&lt;elseif $module is &quot;Module 9&quot;&gt;&gt;
   &lt;&lt;set $modulename to &quot;Comfort In Action&quot;&gt;&gt;
 &lt;&lt;elseif $module is &quot;Module 10&quot;&gt;&gt;
-  &lt;&lt;set $modulename to &quot;The Ask&quot;&gt;&gt;
+  &lt;&lt;set $modulename to &quot;Sharing Intelligence/The ASK&quot;&gt;&gt;
 &lt;&lt;elseif $module is &quot;Module 11&quot;&gt;&gt;
-  &lt;&lt;set $modulename to &quot;The Actions&quot;&gt;&gt;
+  &lt;&lt;set $modulename to &quot;Worthwhile/Winnable Actions&quot;&gt;&gt;
 &lt;&lt;elseif $module is &quot;Module 12&quot;&gt;&gt;
   &lt;&lt;set $modulename to &quot;Planning A Gift&quot;&gt;&gt;
 &lt;&lt;elseif $module is &quot;Module 13&quot;&gt;&gt;
@@ -1739,7 +1739,7 @@ The order you go in will be randomised.&lt;/p&gt;
 &lt;&lt;set $nextpass to &quot;3kaiIntro2&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;
 &lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION3_INTRO_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;audio src=&quot;assets/audio/gpce1.5_SESSION3_INTRO_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
@@ -1750,81 +1750,56 @@ The order you go in will be randomised.&lt;/p&gt;
     &lt;div class=&quot;text-wrapper&quot;&gt;
 &lt;p&gt;Glad you got into the next compartment! &lt;/p&gt;
 &lt;p&gt;Here we are then – ready to play.&lt;/p&gt;
-&lt;p&gt;Working towards a Playful Action. &lt;/p&gt;
+&lt;p&gt;Working towards a Playful Action.&lt;/p&gt; 
 &lt;p&gt;Inspired by Codename: Violet. &lt;/p&gt;
-&lt;p&gt;I should probably explain more about how Codename: Violet started, seeing as we are starting our action too. I’ll sum it up in 32 seconds. &lt;/p&gt;
+&lt;p&gt;I should probably explain more about how Codename: Violet started, seeing as we are starting our action too. I’ll sum it up in 33 seconds. &lt;/p&gt;
 
-  &lt;&lt;timed 22s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+
+  &lt;&lt;timed 24.5s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
     &lt;/div&gt;
   
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="53" name="3kaiIntro2" tags="nobr" position="350,725" size="100,100">&lt;&lt;set $prevpass to &quot;3kaiIntro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3kaiIntro2&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;3kaiIntro3&quot;&gt;&gt;
-
-&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION3_INTRO_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-
-&lt;div class=&quot;wrapper&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-    /* &lt;h1 class=&quot;title top&quot;&gt;Hello - it&#39;s Kai again&lt;/h1&gt; */
-  &lt;main class=&quot;speaking&quot;&gt;
-    &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt;Codename: Violet was run by a group of 8-10 year olds who Coney work with. We call them the Young Coneys, because, well it’s simple really, they work with Coney &amp; they are young. They make play about the stuff they are passionate about. They’re Playful Activists too. In fact, they started all this Playful Activism stuff for us. Codename: Violet did. &lt;/p&gt;
-
-  &lt;&lt;timed 20s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
-    &lt;/div&gt;
-  
-&lt;/main&gt;
-&lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="54" name="3kaiIntro3" tags="nobr" position="475,725" size="100,100">&lt;&lt;set $prevpass to &quot;3kaiIntro2&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;3kaiIntro3&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;3kaiIntro4&quot;&gt;&gt;
-
-&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION3_INTRO_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-
-&lt;div class=&quot;wrapper&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-    /* &lt;h1 class=&quot;title top&quot;&gt;Hello - it&#39;s Kai again&lt;/h1&gt; */
-  &lt;main class=&quot;speaking&quot;&gt;
-    &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;div class=&quot;convo-wrapper&quot;&gt;
-  &lt;p&gt;It all started with an email from Greenpeace to Coney. &lt;/p&gt;
-  &lt;p class=&quot;msg msgl&quot;&gt; Do you know any kids who might want to be involved in our Ditch Diesel Campaign?&lt;/p&gt;
-  &lt;p class=&quot;msg msgr&quot;&gt; What’s that? &lt;/p&gt;
-  &lt;p class=&quot;msg msgl&quot;&gt;A campaign about Air Pollution &amp; Diesel cars. &lt;/p&gt;
-  &lt;p class=&quot;msg msgr&quot;&gt; Yep, maybe, but what would they do? &lt;/p&gt;
-  &lt;p class=&quot;msg msgl&quot;&gt; We want them to come up with a plan. We’ll help but we want you to design it. Make it using their skills. &lt;/p&gt;
-&lt;/div&gt;
-
-  &lt;&lt;timed 21s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;  
- &lt;/div&gt; 
-&lt;/main&gt;
-&lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="55" name="3kaiIntro4" tags="nobr" position="600,725" size="100,100">&lt;&lt;set $prevpass to &quot;3kaiIntro3&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;3kaiIntro4&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;3modulelist&quot;&gt;&gt;
-&lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;
+
 &lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION3_INTRO_4.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;audio src=&quot;assets/audio/gpce1.5_SESSION3_INTRO_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
     /* &lt;h1 class=&quot;title top&quot;&gt;Hello - it&#39;s Kai again&lt;/h1&gt; */
   &lt;main class=&quot;speaking&quot;&gt;
-    &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt;Great voices Kai – thanks everyone. &lt;/p&gt;
-&lt;p&gt;32 seconds…ish.&lt;/p&gt; 
-&lt;p&gt;Enter the codeword for Module 5.&lt;/p&gt; 
+    &lt;div class=&quot;text-wrapper&quot; id=&quot;text&quot;&gt;
+&lt;p&gt;Codename: Violet was run by a group of 8-10 year olds who Coney work with. 
+&lt;br/&gt;&lt;br/&gt;We call them the Young Coneys, because, well it’s simple really, they work with Coney &amp; they are young.
+&lt;br/&gt; 
+&lt;br/&gt;They make play about the stuff they are passionate about. They’re Playful Activists too.
+&lt;br/&gt;&lt;br/&gt; In fact, they started all this Playful Activism stuff for us. Codename: Violet did.  &lt;/p&gt;
 
- &lt;&lt;timed 9s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;3modulelist&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
+  &lt;&lt;timed 18s&gt;&gt;
+    &lt;&lt;replace &quot;#text&quot;&gt;&gt;
+      &lt;p&gt;It all started with an email from Greenpeace to Coney. &lt;/p&gt;
+&lt;p&gt;They had a campaign called Ditch Diesel&lt;/p&gt;
+&lt;p&gt;About Air Pollution &amp; Diesel cars&lt;/p&gt;
+&lt;p&gt;And wanted to work with young people on it. &lt;/p&gt;
+&lt;p&gt;The young people could design it themselves. &lt;/p&gt;
+&lt;p&gt;It became Codename: Violet&lt;/p&gt;
+&lt;&lt;timed 14s&gt;&gt;
+  &lt;&lt;append &quot;#text&quot;&gt;&gt;
+&lt;p&gt;DONE.&lt;/p&gt;
+&lt;p&gt;Enter the codeword for Module 5. &lt;/p&gt;
+&lt;&lt;/append&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+ &lt;&lt;timed 19s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;3modulelist&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
+      &lt;&lt;/replace&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
     &lt;/div&gt;
   
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="56" name="3modulelist" tags="nobr" position="725,725" size="100,100">&lt;&lt;set $passage to &quot;3modulelist&quot;&gt;&gt;&lt;&lt;set $session to 3&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="54" name="3modulelist" tags="nobr" position="475,725" size="100,100">&lt;&lt;set $passage to &quot;3modulelist&quot;&gt;&gt;&lt;&lt;set $session to 3&gt;&gt;
 &lt;&lt;timed 0.1s&gt;&gt;
   &lt;&lt;if $skip is true&gt;&gt;
      &lt;&lt;audio &quot;completionbloop_4&quot; play&gt;&gt;
@@ -1944,146 +1919,105 @@ The order you go in will be randomised.&lt;/p&gt;
   &lt;/main&gt;
 
   &lt;&lt;include &quot;footerbox&quot;&gt;&gt;&lt;/div&gt;
-  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="57" name="3mod5intro1" tags="nobr" position="850,725" size="100,100">&lt;&lt;set $prevpass to &quot;3modulelist&quot;&gt;&gt;
+  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="55" name="3mod5intro1" tags="nobr" position="600,725" size="100,100">&lt;&lt;set $prevpass to &quot;3modulelist&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3mod5intro1&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;3mod5intro2&quot;&gt;&gt;
-&lt;&lt;set $module to &quot;Module 5&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;&lt;audio src=&quot;assets/audio/SESSION3_MOD5_intro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;&lt;set $nextpass to &quot;3mod5a&quot;&gt;&gt;
+&lt;&lt;set $module to &quot;Module 5&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;&lt;audio src=&quot;assets/audio/gpce1.5_SESSION3_MOD5_intro.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
   &lt;div class=&quot;wrapper&quot;&gt;
     &lt;&lt;include &quot;header&quot;&gt;&gt;
     &lt;main  class=&quot;speaking&quot;&gt;
         &lt;div class=&quot;text-wrapper&quot;&gt;
 &lt;p&gt;We began Codename: Violet by playing a game called Mundane Making Mastery to help us get to know one another and the different things we can make. &lt;/p&gt;
+&lt;p&gt;Everyone has making skills. &lt;/p&gt;
+&lt;p&gt;Skills that might be useful in our Playful Activism. &lt;/p&gt;
+&lt;p&gt;It might be you are good at drawing. Maybe you are great at making spag bol, you can make great playlists for friends or maybe you are just good at making loud noises.&lt;/p&gt;
+&lt;p&gt;And we’re going to play it here. &lt;/p&gt;
 
- &lt;&lt;timed 8s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+
+ &lt;&lt;timed 24s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="58" name="3mod5intro2" tags="nobr" position="975,725" size="100,100">&lt;&lt;set $prevpass to &quot;3mod5intro1&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;3mod5intro2&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;3mod5intro3&quot;&gt;&gt;
-&lt;&lt;set $module to &quot;Module 5&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;&lt;audio src=&quot;assets/audio/SESSION3_MOD5_intro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-
-  &lt;div class=&quot;wrapper&quot;&gt;
-    &lt;&lt;include &quot;header&quot;&gt;&gt;
-    &lt;main  class=&quot;speaking &quot;&gt;
-        &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt;Everyone has a mundane making skill. My mundane making skill is that I am excellent at Roast Potatoes. Seriously I am the Roastie Expert. Also, making fake voices... as you saw earlier. &lt;/p&gt;
- &lt;&lt;timed 17s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
-   &lt;/div&gt;
-
-    &lt;/main&gt;
-         &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="59" name="3mod5intro3" tags="nobr" position="1100,725" size="100,100">&lt;&lt;set $prevpass to &quot;3mod5intro2&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;3mod5intro3&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;3mod5a&quot;&gt;&gt;
-&lt;&lt;set $module to &quot;Module 5&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;&lt;audio src=&quot;assets/audio/SESSION3_MOD5_intro_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-
-  &lt;div class=&quot;wrapper&quot;&gt;
-    &lt;&lt;include &quot;header&quot;&gt;&gt;
-    &lt;main  class=&quot;speaking&quot;&gt;
-        &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt; And we’re going to play it here.  &lt;/p&gt;
- &lt;&lt;timed 3s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
-   &lt;/div&gt;
-    &lt;/main&gt;
- &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="60" name="3mod5a" tags="nobr" position="1225,725" size="100,100">&lt;&lt;set $prevpass to &quot;3mod5intro3&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="56" name="3mod5a" tags="nobr" position="725,725" size="100,100">&lt;&lt;set $prevpass to &quot;3mod5intro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3mod5a&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;3mod5b&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION3_MOD5_talents_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;&lt;set $nextpass to &quot;3mod5outro1&quot;&gt;&gt;
+&lt;audio src=&quot;assets/audio/gpce1.5_SESSION3_MOD5_talents.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
   &lt;div class=&quot;wrapper&quot;&gt;
     &lt;&lt;include &quot;header&quot;&gt;&gt;
     &lt;main  class=&quot;speaking&quot;&gt;
         &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt;Teacher, can we pair up? &lt;/p&gt;
-&lt;p&gt;Once you’ve got a pair, find out their mundane making skills, and tell them yours. &lt;/p&gt;
-&lt;p&gt;Then you’ll share that back to the group. Maybe you are great at making spag bol, you can make great playlists for friends or maybe you are just good at making loud noises.&lt;/p&gt;
-
-
-    &lt;p&gt;When done click &lt;&lt;button &quot;Move On&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/p&gt;
+&lt;p&gt;Teacher, can you hand out the Activist Cards?&lt;/p&gt;
+&lt;p&gt;We need 3 Making skills you think are useful as a Playful Activist. &lt;/p&gt;
+&lt;p&gt;Whatever you think will be useful. &lt;/p&gt;
+ &lt;p&gt;When you have finished &lt;&lt;button &quot;Move On&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/p&gt;
+&lt;p&gt;Teacher you may want to pin them up so we can see all the skills in the room. &lt;/p&gt;
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footer&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="61" name="3mod5b" tags="nobr" position="100,850" size="100,100">&lt;&lt;set $prevpass to &quot;3mod5a&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;3mod5b&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;3mod5outro1&quot;&gt;&gt;
-&lt;&lt;timed 20s &gt;&gt;&lt;&lt;replace &quot;#audio&quot;&gt;&gt;&lt;audio src=&quot;assets/audio/SESSION3_MOD5_talents_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
-
-  &lt;div class=&quot;wrapper&quot;&gt;
-    &lt;&lt;include &quot;header&quot;&gt;&gt;
-    &lt;main  class=&quot;speaking inlineimg&quot;&gt;
-    &lt;div id=&quot;audio&quot;&gt;&lt;audio src=&quot;assets/audio/SESSION3_MOD5_talents_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
-        &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt;Teacher, time to hand out the cards – fill out the cards and give yourself a rating out of 100 for your Mundane Making skills, it’s a bit like Top Trumps.  &lt;/p&gt;
-&lt;p&gt;I’m probably a 78.7 on Roasties&lt;/p&gt;
-&lt;p&gt;A 52 on fake voices. (Let’s be honest)&lt;/p&gt;
-&lt;p&gt;And a 96 on making references to my height. &lt;/p&gt;
-    &lt;p&gt;When you have finished, click  &lt;&lt;button &quot;Move On&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/p&gt;
-   &lt;/div&gt;
-      &lt;img src=&quot;assets/img/KAI-24.jpg&quot;&gt;
-    &lt;/main&gt;
-         &lt;&lt;include &quot;footer&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="62" name="3mod5outro1" tags="nobr" position="225,850" size="100,100">&lt;&lt;set $prevpass to &quot;3mod5b&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="57" name="3mod5outro1" tags="nobr" position="850,725" size="100,100">&lt;&lt;set $prevpass to &quot;3mod5a&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3mod5outro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;3mod5outro2&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION3_MOD5_outro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;audio src=&quot;assets/audio/gpce1.5_SESSION3_MOD5_outro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
-      &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt;Excellent Talents to have in the room. &lt;/p&gt;
-&lt;p&gt;I say that, again not knowing for sure, as I’m not live. &lt;/p&gt;
-&lt;p&gt;A pre-record. &lt;/p&gt;
+      &lt;div class=&quot;text-wrapper&quot; id=&quot;text&quot;&gt;
+&lt;p&gt;Excellent making skills to have in the room. &lt;/p&gt;
+&lt;p&gt;
+  I say that, again not knowing for sure, as I’m not live. 
+  A pre-record. 
+&lt;/p&gt;
 &lt;p&gt;I can share things, but you can’t share things back– it’s a bit of a shame really – but it doesn’t mean we’re not connected. &lt;/p&gt;
- &lt;&lt;timed 15s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+
+ &lt;&lt;timed 15s&gt;&gt;
+ &lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;
+ &lt;&lt;/timed&gt;&gt;
 &lt;/div&gt;
 &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="63" name="3mod5outro2" tags="nobr" position="350,850" size="100,100">&lt;&lt;set $prevpass to &quot;3mod5outro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="58" name="3mod5outro2" tags="nobr" position="975,725" size="100,100">&lt;&lt;set $prevpass to &quot;3mod5outro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3mod5outro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;3modulelist&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION3_MOD5_outro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;audio src=&quot;assets/audio/gpce1.5_SESSION3_MOD5_outro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
       &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt;By understanding where we&#39;re all coming from, what we value, what mundane making mastery we have in the space, we build a collective. When we&#39;re all connected it&#39;s like a web, we&#39;re strong, and flexible, and we stop working as a set of individuals and we start to collaborate as a group. &lt;/p&gt;
+&lt;p&gt;  By understanding where we&#39;re all coming from, what we value, what mundane making mastery we have in the space, we build a collective. When we&#39;re all connected it&#39;s like a web, we&#39;re strong, and flexible, and we stop working as a set of individuals and we start to collaborate as a group. &lt;/p&gt;
 &lt;p&gt;Playful Action is built on that – collaboration.  &lt;/p&gt;
-&lt;p&gt;
-  Fold the feet out on your cards, and this will become your Playful Activist Card.
-  Keep them safe, we’ll need them later in this process. 
-&lt;/p&gt;
-&lt;p&gt;Enter the Module 6 codeword now.&lt;/p&gt;
+&lt;p&gt;Keep the Activist Cards safe, we’ll need them later in the process. &lt;/p&gt;
+&lt;p&gt;Enter the Module 6 Codeword now. &lt;/p&gt;
 
- &lt;&lt;timed 36s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod5 to true&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+ &lt;&lt;timed 31s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod5 to true&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;/div&gt;
 &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="64" name="3mod6intro1" tags="nobr" position="475,850" size="100,100">&lt;&lt;set $prevpass to &quot;3modulelist&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="59" name="3mod6intro1" tags="nobr" position="1100,725" size="100,100">&lt;&lt;set $prevpass to &quot;3modulelist&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3mod6intro1&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;3mod6intro2&quot;&gt;&gt;&lt;audio src=&quot;assets/audio/SESSION3_MOD6_intro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;&lt;set $nextpass to &quot;3mod6intro2&quot;&gt;&gt;&lt;audio src=&quot;assets/audio/gpce1.5_SESSION3_MOD6_intro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;&lt;set $module to &quot;Module 6&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
     &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt;So, we now know who we are but what is our focus? We need to know what you are passionate about. &lt;/p&gt;
-&lt;p&gt;The Young Coneys were working on Air Pollution – they knew more than most people in the room already – because it was affecting them in the day to day. They were experts.  &lt;/p&gt;
+&lt;p&gt;So, we now know who we are but what is our focus. We need to know what you are passionate about. &lt;/p&gt;
+&lt;p&gt;The Young Coneys were working on Air Pollution –  It was given to them as a focus – but we’re going to let you choose yours. &lt;/p&gt;
 
-  &lt;&lt;timed 18s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+
+  &lt;&lt;timed 17s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="65" name="3mod6intro2" tags="nobr" position="600,850" size="100,100">&lt;&lt;set $prevpass to &quot;3modulelist&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="60" name="3mod6intro2" tags="nobr" position="1225,725" size="100,100">&lt;&lt;set $prevpass to &quot;3mod6intro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3mod6intro2&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;3mod6a&quot;&gt;&gt;&lt;audio src=&quot;assets/audio/SESSION3_MOD6_intro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;&lt;set $nextpass to &quot;3mod6a&quot;&gt;&gt;&lt;audio src=&quot;assets/audio/gpce1.5_SESSION3_MOD6_intro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;&lt;set $module to &quot;Module 6&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
     &lt;div class=&quot;text-wrapper&quot;&gt;
 &lt;p&gt;Now for the biggest understatement ever to have left my lips &lt;/p&gt;
-&lt;p&gt;The Climate Crisis is quite a large topic...&lt;/p&gt;
+&lt;p&gt;The Climate Crisis is quite a large topic…&lt;/p&gt;
 &lt;p&gt;Wow Kai understatement of the year &lt;/p&gt;
 &lt;p&gt;And we can’t focus on all of it. &lt;/p&gt;
 &lt;p&gt;Wow, Kai, 2 for 2&lt;/p&gt;
@@ -2092,13 +2026,14 @@ The order you go in will be randomised.&lt;/p&gt;
 &lt;p&gt;So, we need to find our path. &lt;/p&gt;
 &lt;p&gt;The route we are going to go down as a group. &lt;/p&gt;
 
-  &lt;&lt;timed 26s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+
+  &lt;&lt;timed 25s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="66" name="3mod6a" tags="nobr" position="725,850" size="100,100">&lt;&lt;set $prevpass to &quot;3mod6intro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="61" name="3mod6a" tags="nobr" position="100,850" size="100,100">&lt;&lt;set $prevpass to &quot;3mod6intro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3mod6a&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;3mod6outro1&quot;&gt;&gt;&lt;audio src=&quot;assets/audio/SESSION3_MOD6_focus_rerecord.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;&lt;set $nextpass to &quot;3mod6outro1&quot;&gt;&gt;&lt;audio src=&quot;assets/audio/gpce1.5_SESSION3_MOD6_focus.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -2109,18 +2044,17 @@ The order you go in will be randomised.&lt;/p&gt;
 
 &lt;p&gt;In 6 groups, you will introduce us to these humans and why their passion should be ours here.&lt;/p&gt;
 
-&lt;p&gt;All the information is on the cards. &lt;/p&gt;
+&lt;p&gt;All the information is on the cards.&lt;/p&gt;
+
+ &lt;p&gt;When you have finished &lt;&lt;button &quot;Move On&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/p&gt;
 
 &lt;/div&gt;
-&lt;&lt;timed 30s&gt;&gt;&lt;&lt;append &quot;#mount&quot;&gt;&gt;
-&lt;br/&gt;
-  &lt;p&gt;After the 6 humans have been presented click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/p&gt;
-&lt;&lt;/append&gt;&gt;&lt;&lt;/timed&gt;&gt;
+
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="67" name="3mod6outro1" tags="nobr" position="850,850" size="100,100">&lt;&lt;set $prevpass to &quot;3mod6a&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="62" name="3mod6outro1" tags="nobr" position="225,850" size="100,100">&lt;&lt;set $prevpass to &quot;3mod6a&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3mod6outro1&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;3mod6outro2&quot;&gt;&gt;&lt;audio src=&quot;assets/audio/SESSION3_MOD6_outro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;&lt;set $nextpass to &quot;3mod6outro2&quot;&gt;&gt;&lt;audio src=&quot;assets/audio/gpce1.5_SESSION3_MOD6_outro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -2129,24 +2063,27 @@ The order you go in will be randomised.&lt;/p&gt;
 &lt;p&gt;These stories give us a small insight into playful activism that is happening all over the Earth &lt;/p&gt;
 &lt;p&gt;Then by thinking about us: about how their stories relate to us here, and about what we want to change &lt;/p&gt;
 &lt;p&gt;We can find our focus. &lt;/p&gt;
-&lt;p&gt;We need to choose a path&lt;/p&gt;
 
-  &lt;&lt;timed 20s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+
+  &lt;&lt;timed 18s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="68" name="3mod6outro2" tags="nobr" position="975,850" size="100,100">&lt;&lt;set $prevpass to &quot;3mod6a&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;3mod6outro1&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;3sessionoutro1&quot;&gt;&gt;&lt;audio src=&quot;assets/audio/SESSION3_MOD6_outro2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="63" name="3mod6outro2" tags="nobr" position="350,850" size="100,100">&lt;&lt;set $prevpass to &quot;3mod6outro1&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;3mod6outro2&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;3sessionoutro1&quot;&gt;&gt;&lt;audio src=&quot;assets/audio/gpce1.5_SESSION3_MOD6_outro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;&lt;audio &quot;60supported&quot; play&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
     &lt;div class=&quot;text-wrapper&quot; id=&quot;mount&quot;&gt;
 
-&lt;p&gt;Who do you connect to most in this school? What theme do you feel passionate about? We’re going to take an old-fashioned vote. &lt;/p&gt;
+&lt;p&gt;So, who do you think connects most to what is happening in this school? &lt;/p&gt;
+&lt;p&gt;What theme do you feel passionate about? &lt;/p&gt;
+&lt;p&gt;We’re going to take an old-fashioned vote. &lt;/p&gt;
 &lt;p&gt;Teacher, can you hold the vote, and then select which theme you’ll focus on. &lt;/p&gt;
+
 
 
 &lt;&lt;timed 12s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;
@@ -2218,12 +2155,12 @@ The order you go in will be randomised.&lt;/p&gt;
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="69" name="checkmod6audio" tags="nobr" position="1100,850" size="100,100">&lt;&lt;if $mod6audio is &quot;air&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="64" name="checkmod6audio" tags="nobr" position="475,850" size="100,100">&lt;&lt;if $mod6audio is &quot;air&quot;&gt;&gt;
   &lt;&lt;replace &quot;#img&quot;&gt;&gt;
       &lt;img src=&quot;assets/img/characters-26.jpg&quot; autoplay&gt;
     &lt;&lt;/replace&gt;&gt;
   &lt;&lt;replace &quot;#audio&quot;&gt;&gt;
-      &lt;audio src=&quot;assets/audio/SESSION3_OUTRO_2.1_airpollusion.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+      &lt;audio src=&quot;assets/audio/gpce1.5_SESSION3_outro_1_airpollution.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
     &lt;&lt;/replace&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -2232,7 +2169,7 @@ The order you go in will be randomised.&lt;/p&gt;
       &lt;img src=&quot;assets/img/characters-36.jpg&quot; autoplay&gt;
     &lt;&lt;/replace&gt;&gt;
   &lt;&lt;replace &quot;#audio&quot;&gt;&gt;
-      &lt;audio src=&quot;assets/audio/SESSION3_OUTRO_2.2_meat.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+      &lt;audio src=&quot;assets/audio/gpce1.5_SESSION3_outro_1_meat.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
     &lt;&lt;/replace&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -2241,7 +2178,7 @@ The order you go in will be randomised.&lt;/p&gt;
       &lt;img src=&quot;assets/img/characters-27.jpg&quot; autoplay&gt;
     &lt;&lt;/replace&gt;&gt;
   &lt;&lt;replace &quot;#audio&quot;&gt;&gt;
-      &lt;audio src=&quot;assets/audio/SESSION3_OUTRO_2.3_plastic.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+      &lt;audio src=&quot;assets/audio/gpce1.5_SESSION3_outro_1_plastic.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
     &lt;&lt;/replace&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -2250,7 +2187,7 @@ The order you go in will be randomised.&lt;/p&gt;
       &lt;img src=&quot;assets/img/characters-28.jpg&quot; autoplay&gt;
     &lt;&lt;/replace&gt;&gt;
   &lt;&lt;replace &quot;#audio&quot;&gt;&gt;
-      &lt;audio src=&quot;assets/audio/SESSION3_OUTRO_2.4_palmoil.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+      &lt;audio src=&quot;assets/audio/gpce1.5_SESSION3_outro_1_palmoil.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
     &lt;&lt;/replace&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -2259,7 +2196,7 @@ The order you go in will be randomised.&lt;/p&gt;
       &lt;img src=&quot;assets/img/characters-30.jpg&quot; autoplay&gt;
     &lt;&lt;/replace&gt;&gt;
   &lt;&lt;replace &quot;#audio&quot;&gt;&gt;
-      &lt;audio src=&quot;assets/audio/SESSION3_OUTRO_2.5_deforestation.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+      &lt;audio src=&quot;assets/audio/gpce1.5_SESSION3_outro_1_deforestationbiodiversity.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
     &lt;&lt;/replace&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -2268,9 +2205,9 @@ The order you go in will be randomised.&lt;/p&gt;
       &lt;img src=&quot;assets/img/characters-29.jpg&quot; autoplay&gt;
     &lt;&lt;/replace&gt;&gt;
   &lt;&lt;replace &quot;#audio&quot;&gt;&gt;
-      &lt;audio src=&quot;assets/audio/SESSION3_OUTRO_2.x_celinesermanvernon.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+      &lt;audio src=&quot;assets/audio/gpce1.5_SESSION3_outro_1_fastfashion.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
     &lt;&lt;/replace&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="70" name="3sessionoutro1" tags="nobr" position="1225,850" size="100,100">&lt;&lt;set $prevpass to &quot;3mod6outro2&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="65" name="3sessionoutro1" tags="nobr" position="600,850" size="100,100">&lt;&lt;set $prevpass to &quot;3mod6outro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3sessionoutro1&quot;&gt;&gt;
  &lt;&lt;set $nextpass to &quot;3sessionoutro2&quot;&gt;&gt;
 &lt;div id=&quot;audio&quot;&gt;&lt;audio src=&quot;assets/audio/SESSION3_OUTRO_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
@@ -2280,38 +2217,40 @@ The order you go in will be randomised.&lt;/p&gt;
   &lt;main class=&quot;speaking chosen&quot;&gt;
   &lt;div id=&quot;img&quot; class=&quot;char-chosen-wrap&quot;&gt;&lt;/div&gt;
     &lt;div class=&quot;text-wrapper&quot; id=&quot;mount&quot;&gt;
-
-
+&lt;p&gt;We’ve seen humans from across the world taking action.  &lt;/p&gt;
 &lt;&lt;timed 0.1s&gt;&gt;
 &lt;&lt;include &quot;checkmod6audio&quot;&gt;&gt;
-  &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+  &lt;&lt;append &quot;#mount&quot;&gt;&gt;
     &lt;p&gt;You’ve picked to focus on $choice&lt;/p&gt;
-    &lt;&lt;timed 9s&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
-  &lt;&lt;/replace&gt;&gt;
+   &lt;p&gt; This will be your focus for your activism. &lt;/p&gt;
+    &lt;&lt;timed 15s&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+  &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;/div&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="71" name="3sessionoutro2" tags="nobr" position="100,975" size="100,100">&lt;&lt;set $prevpass to &quot;3sessionoutro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="66" name="3sessionoutro2" tags="nobr" position="725,850" size="100,100">&lt;&lt;set $prevpass to &quot;3sessionoutro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3sessionoutro2&quot;&gt;&gt;
  &lt;&lt;set $nextpass to &quot;3sessionoutro3&quot;&gt;&gt;
-&lt;div id=&quot;audio&quot;&gt;&lt;audio src=&quot;assets/audio/SESSION3_OUTRO_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
+&lt;div id=&quot;audio&quot;&gt;&lt;audio src=&quot;assets/audio/gpce1.5_SESSION3_outro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
 
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
     &lt;div class=&quot;text-wrapper&quot; id=&quot;mount&quot;&gt;
-    &lt;p&gt;Each of the acts though were gifts given by the groups to their communities.&lt;/p&gt;
-    &lt;p&gt;Just like your act of playful activism will be a gift to your community&lt;/p&gt;
-    &lt;p&gt;That’s why we are working with you – the experts on the target.  &lt;/p&gt;
-    &lt;p&gt;The target for your act is&lt;/p&gt;
-    &lt;p&gt;Here. &lt;/p&gt;
-    &lt;&lt;timed 23s&gt;&gt;
+&lt;p&gt;  Each of the activists found their focus. &lt;/p&gt;
+&lt;p&gt;Then found their target.&lt;/p&gt;
+&lt;p&gt;The system they were going to change.&lt;/p&gt;
+&lt;p&gt;That’s why we are working with you – the experts on the target.  &lt;/p&gt;
+&lt;p&gt;The target for your act is&lt;/p&gt;
+&lt;p&gt;Here. &lt;/p&gt;
+
+    &lt;&lt;timed 17s&gt;&gt;
     &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
       &lt;p&gt;&lt;h2 class=&quot;subtitle inline&quot;&gt;This school. &lt;/h2&gt;&lt;/p&gt;
       &lt;br/&gt;
       &lt;br/&gt;
-      &lt;&lt;timed 2s&gt;&gt;
+      &lt;&lt;timed 3s&gt;&gt;
         &lt;&lt;append &quot;#mount&quot;&gt;&gt;
       &lt;div&gt;&lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod6 to true&gt;&gt;
       &lt;&lt;set $skip to true&gt;&gt;&lt;&lt;goto &quot;3modulelist&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
@@ -2324,28 +2263,34 @@ The order you go in will be randomised.&lt;/p&gt;
 &lt;/div&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="72" name="3sessionoutro3" tags="nobr" position="225,975" size="100,100">&lt;&lt;set $prevpass to &quot;3sessionoutro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="67" name="3sessionoutro3" tags="nobr" position="850,850" size="100,100">&lt;&lt;set $prevpass to &quot;3sessionoutro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;3sessionoutro3&quot;&gt;&gt;
  &lt;&lt;set $nextpass to &quot;3sessionoutro4&quot;&gt;&gt;
-&lt;div id=&quot;audio&quot;&gt;&lt;audio src=&quot;assets/audio/SESSION3_OUTRO_4.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
+&lt;div id=&quot;audio&quot;&gt;&lt;audio src=&quot;assets/audio/gpce1.5_SESSION3_outro_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;&lt;/div&gt;
 
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
     &lt;div class=&quot;text-wrapper&quot; id=&quot;mount&quot;&gt;
+&lt;p&gt;Now you have your focus. &lt;/p&gt;
+&lt;p&gt;
+  You might need to research a bit more about why it is a problem.
+  Teacher, there’s some great resources on Greenpeace’s website to help. 
+&lt;/p&gt;
+&lt;p&gt;And we need to know how it is being played out here. &lt;/p&gt;
+&lt;p&gt;Teacher, hand out the Recon Cards.&lt;/p&gt;
+&lt;p&gt;These will help us know what is happening here. &lt;/p&gt;
 
-    &lt;p&gt;The last envelope in the compartment has your Recon Cards. &lt;/p&gt;
-    &lt;p&gt;Cards to inspire you before the next session. &lt;/p&gt;
-    &lt;p&gt;To get intelligence on our target. &lt;/p&gt;
-    &lt;&lt;timed 9s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;
-    &lt;p&gt;Time to close for today. &lt;/p&gt;
-    &lt;p&gt;But a code for you to dive deeper.&lt;/p&gt;
+
+    &lt;&lt;timed 21s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+   &lt;p&gt;Time to close for today. &lt;/p&gt;
+&lt;p&gt;But a code for you to dive deeper.&lt;/p&gt;
     &lt;h2 class=&quot;subtitle inline&quot;&gt;HOPEY. &lt;/h2&gt;
+    &lt;br/&gt;&lt;br/&gt;
     &lt;p&gt;Take care. &lt;/p&gt;
     &lt;&lt;/replace&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 23s&gt;&gt;&lt;&lt;append &quot;#mount&quot;&gt;&gt;
-&lt;p&gt;Teacher, hand the cards out to everyone. &lt;/p&gt;
+&lt;&lt;timed 29s&gt;&gt;&lt;&lt;append &quot;#mount&quot;&gt;&gt;
 &lt;&lt;button &quot;Finish&quot;&gt;&gt;&lt;&lt;audio &quot;pyramidtransition_1&quot; play &gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;landing&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;&lt;/append&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
@@ -2357,11 +2302,11 @@ The order you go in will be randomised.&lt;/p&gt;
 &lt;/div&gt;
 
 
-/* SESSION 4  */</tw-passagedata><tw-passagedata pid="73" name="4kaiIntro1" tags="nobr" position="350,975" size="100,100">&lt;&lt;set $prevpass to &quot;landing&quot;&gt;&gt;
+/* SESSION 4  */</tw-passagedata><tw-passagedata pid="68" name="4kaiIntro1" tags="nobr" position="975,850" size="100,100">&lt;&lt;set $prevpass to &quot;landing&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4kaiIntro1&quot;&gt;&gt;
  &lt;&lt;set $nextpass to &quot;4kaiIntro2&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION4_intro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;audio src=&quot;assets/audio/gpce1.5_SESSION4_INTRO_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
     /* &lt;h1 class=&quot;title top&quot;&gt;Hello - it&#39;s Kai again&lt;/h1&gt; */
@@ -2371,7 +2316,7 @@ The order you go in will be randomised.&lt;/p&gt;
 
 &lt;p&gt;Hope you are enjoying the surprise of each of these compartments – and breaking up the pyramid! &lt;/p&gt;
 &lt;p&gt;Here we are again ready to play.&lt;/p&gt;
-&lt;p&gt;Working towards a Playful Action. &lt;/p&gt;
+&lt;p&gt;Working towards a Playful Action.&lt;/p&gt; 
 &lt;p&gt;Inspired by Codename: Violet. &lt;/p&gt;
 
 &lt;&lt;timed 14s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
@@ -2379,52 +2324,37 @@ The order you go in will be randomised.&lt;/p&gt;
   
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="74" name="4kaiIntro2" tags="nobr" position="475,975" size="100,100">&lt;&lt;set $prevpass to &quot;4kaiIntro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="69" name="4kaiIntro2" tags="nobr" position="1100,850" size="100,100">&lt;&lt;set $prevpass to &quot;4kaiIntro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4kaiIntro2&quot;&gt;&gt;
- &lt;&lt;set $nextpass to &quot;4kaiIntro3&quot;&gt;&gt;
+ &lt;&lt;set $nextpass to &quot;4modulelist&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION4_intro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;audio src=&quot;assets/audio/gpce1.5_SESSION4_INTRO_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
     /* &lt;h1 class=&quot;title top&quot;&gt;Hello - it&#39;s Kai again&lt;/h1&gt; */
   &lt;main class=&quot;speaking&quot;&gt;
 
     &lt;div class=&quot;text-wrapper&quot;&gt;
-
-&lt;p&gt;So, you’ve chosen your focus. &lt;/p&gt;
-&lt;p&gt;You might have gone and looked up a bit more about it – or maybe not.&lt;/p&gt;
+&lt;p&gt;
+  
+  So, you’ve chosen your focus. 
+&lt;/p&gt;
 &lt;p&gt;In Violet we did a deep dive to look at who had power to do something about our focus. &lt;/p&gt;
 &lt;p&gt;Breaking it down: &lt;/p&gt;
 &lt;p&gt;Diesel Cars = Air Pollution&lt;/p&gt;
-
-&lt;&lt;timed 16s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
-    &lt;/div&gt;
-  
-&lt;/main&gt;
-&lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="75" name="4kaiIntro3" tags="nobr" position="600,975" size="100,100">&lt;&lt;set $prevpass to &quot;4kaiIntro2&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;4kaiIntro3&quot;&gt;&gt;
- &lt;&lt;set $nextpass to &quot;4modulelist&quot;&gt;&gt;
-&lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION4_intro_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;div class=&quot;wrapper&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-    /* &lt;h1 class=&quot;title top&quot;&gt;Hello - it&#39;s Kai again&lt;/h1&gt; */
-  &lt;main class=&quot;speaking&quot;&gt;
-    &lt;div class=&quot;text-wrapper&quot;&gt;
-
 &lt;p&gt;And our target became those people who make Diesel Cars and make lots of money off them&lt;/p&gt;
 &lt;p&gt;So, we targeted a Car Industry Gala Dinner where all the executives and leaders in the industry would be meeting. &lt;/p&gt;
 &lt;p&gt;Power is what we’re looking at today &lt;/p&gt;
 &lt;p&gt;First up, let’s build on those Recon Cards. &lt;/p&gt;
-&lt;p&gt;Enter the codeword for Module 7 to unlock&lt;/p&gt;
+&lt;p&gt;Enter the codeword for Module 7 to unlock.&lt;/p&gt;
 
-&lt;&lt;timed 21s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 37s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
     &lt;/div&gt;
   
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="76" name="4modulelist" tags="nobr" position="725,975" size="100,100">&lt;&lt;set $passage to &quot;4modulelist&quot;&gt;&gt;&lt;&lt;set $session to 4&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="70" name="4modulelist" tags="nobr" position="1225,850" size="100,100">&lt;&lt;set $passage to &quot;4modulelist&quot;&gt;&gt;&lt;&lt;set $session to 4&gt;&gt;
 &lt;&lt;timed 0.1s&gt;&gt;
   &lt;&lt;if $skip is true&gt;&gt;
      &lt;&lt;audio &quot;completionbloop_4&quot; play&gt;&gt;
@@ -2435,9 +2365,10 @@ The order you go in will be randomised.&lt;/p&gt;
         &lt;&lt;set $skip to false&gt;&gt;
         &lt;&lt;goto $nextpass&gt;&gt;
       &lt;&lt;/timed&gt;&gt;
-  &lt;&lt;/if&gt;&gt;
+ 
     &lt;&lt;else&gt;&gt;
     &lt;&lt;audio &quot;modulelist_1&quot; play&gt;&gt;
+     &lt;&lt;/if&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;div class=&quot;wrapper box&quot;&gt;
   &lt;main class=&quot;modules&quot;&gt;
@@ -2597,10 +2528,10 @@ The order you go in will be randomised.&lt;/p&gt;
   &lt;/div&gt;
   &lt;/main&gt;
   &lt;&lt;include &quot;footerbox&quot;&gt;&gt;&lt;/div&gt;
-  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="77" name="4mod7intro1" tags="nobr" position="850,975" size="100,100">&lt;&lt;set $prevpass to &quot;4modulelist&quot;&gt;&gt;
+  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="71" name="4mod7intro1" tags="nobr" position="100,975" size="100,100">&lt;&lt;set $prevpass to &quot;4modulelist&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod7intro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4mod7intro2&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION4_MOD7_intro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;audio src=&quot;assets/audio/gpce1.5_SESSION4_MOD7_intro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 
 &lt;&lt;set $module to &quot;Module 7&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
   &lt;div class=&quot;wrapper&quot;&gt;
@@ -2608,66 +2539,43 @@ The order you go in will be randomised.&lt;/p&gt;
     &lt;main  class=&quot;speaking&quot;&gt;
         &lt;div class=&quot;text-wrapper&quot;&gt;
 &lt;p&gt;We’ve spoken about the system in play in the world&lt;/p&gt;
-&lt;p&gt;And where power sits but now it’s time to focus on our target. &lt;/p&gt;
+&lt;p&gt;And where power sits but now it’s time to focus on our target.&lt;/p&gt; 
 &lt;p&gt;It’s time to work out who has power around us in this space. &lt;/p&gt;
+&lt;p&gt;Once we understand power, we can make choices strategically about how we take action. &lt;/p&gt;
 &lt;p&gt;As we are making our Playful Action at this school. &lt;/p&gt;
 &lt;p&gt;So, we need to know what is happening here. &lt;/p&gt;
-  &lt;&lt;timed 18s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+
+  &lt;&lt;timed 24s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="78" name="4mod7intro2" tags="nobr" position="975,975" size="100,100">&lt;&lt;set $prevpass to &quot;4mod7intro1&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="72" name="4mod7intro2" tags="nobr" position="225,975" size="100,100">&lt;&lt;set $prevpass to &quot;4mod7intro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod7intro2&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;4mod7a&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION4_MOD7_intro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;&lt;set $nextpass to &quot;4mod7b&quot;&gt;&gt;
+&lt;audio src=&quot;assets/audio/gpce1.5_SESSION4_MOD7_intro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 
 &lt;&lt;set $module to &quot;Module 7&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
   &lt;div class=&quot;wrapper&quot;&gt;
     &lt;&lt;include &quot;header&quot;&gt;&gt;
     &lt;main  class=&quot;speaking&quot;&gt;
         &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt;You know it fairly well I bet, that’s one of the reasons we are working with you.&lt;/p&gt; 
-&lt;p&gt;You are the experts. &lt;/p&gt;
-&lt;p&gt;You go to the school.&lt;/p&gt;
-&lt;p&gt;But now we need to come together to look at our target. To share the things we know, and notice things we haven’t seen. &lt;/p&gt;
-&lt;p&gt;So, we’re going to map it. The system that is in play, and who has power here. &lt;/p&gt;
-&lt;p&gt;Once we understand power, we can make choices strategically about how we take action. &lt;/p&gt;
-  &lt;&lt;timed 27s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;p&gt;Teacher, time to break the class into 4 groups or suits. &lt;/p&gt;
+&lt;p&gt;Clubs, Hearts, Diamonds &amp; Spades. &lt;/p&gt;
+
+&lt;p&gt;We’re going to map an open-world game. &lt;/p&gt;
+&lt;p&gt;The open-world is your school. &lt;/p&gt;
+&lt;p&gt;What is the game being played here? &lt;/p&gt;
+&lt;p&gt;Hand the Mapping Resources out, and let’s Power Map.&lt;/p&gt;
+&lt;p&gt;When you have the resources, I’ll explain more. &lt;/p&gt;
+ &lt;p&gt;Click &lt;&lt;button &quot;here&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;4mod7b&quot;&gt;&gt;&lt;&lt;/button&gt;&gt; when ready for the explanation.&lt;/p&gt;
+
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="79" name="4mod7a" tags="nobr" position="1100,975" size="100,100">&lt;&lt;set $prevpass to &quot;4mod7intro2&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;4mod7a&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;4mod7b&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION4_MOD7_intro_3_rerecord.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;div class=&quot;wrapper&quot;&gt;
-    &lt;&lt;include &quot;header&quot;&gt;&gt;
-&lt;main class=&quot;speaking&quot;&gt;
-&lt;div class=&quot;text-wrapper&quot;&gt;
-  &lt;p&gt;Teacher, time to break the class into 4 groups or suits. &lt;/p&gt;
-  &lt;p&gt;Clubs, Hearts, Diamonds &amp; Spades. &lt;/p&gt;
-  &lt;p&gt;I like games. &lt;/p&gt;
-  &lt;p&gt;Hand the Mapping Resources out, and let’s Power Map.&lt;/p&gt;
-  &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
-  &lt;&lt;timed 22s&gt;&gt;
-    &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
-      &lt;p&gt;When you have the resources, I’ll explain more. &lt;/p&gt;
-      &lt;p&gt;Click &lt;&lt;button &quot;here&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;4mod7b&quot;&gt;&gt;&lt;&lt;/button&gt;&gt; when ready for the explanation&lt;/p&gt;
-    &lt;&lt;/replace&gt;&gt;
-  &lt;&lt;/timed&gt;&gt;
-  /* &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt; */
-  /* &lt;&lt;timed 300s&gt;&gt;
-  &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
-      &lt;p&gt;When done click &lt;&lt;button &quot;Move On&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;4mod7outro1&quot;&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/p&gt;
-      &lt;&lt;/replace&gt;&gt;
-      &lt;&lt;/timed&gt;&gt; */
-   &lt;/div&gt;
-    &lt;/main&gt;
-         &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="80" name="4mod7b" tags="nobr" position="1225,975" size="100,100">&lt;&lt;set $prevpass to &quot;4mod7a&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="73" name="4mod7b" tags="nobr" position="350,975" size="100,100">&lt;&lt;set $prevpass to &quot;4mod7intro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod7b&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4mod7outro1&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION4_MOD7_intro_5.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;audio src=&quot;assets/audio/gpce1.5_SESSION4_MOD7_mapping.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
   &lt;div class=&quot;wrapper&quot;&gt;
     &lt;&lt;include &quot;header&quot;&gt;&gt;
     &lt;main  class=&quot;speaking&quot;&gt;
@@ -2680,6 +2588,7 @@ The order you go in will be randomised.&lt;/p&gt;
  &lt;li&gt; – Then you have Power Cards - place them on your map.&lt;/li&gt;
  &lt;li&gt; – Lastly it’s Tactics &amp; Objectives.&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;Teacher, over to you.&lt;/p&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 &lt;&lt;timed 200s&gt;&gt;
 &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
@@ -2689,10 +2598,10 @@ The order you go in will be randomised.&lt;/p&gt;
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="81" name="4mod7outro1" tags="nobr" position="100,1100" size="100,100">&lt;&lt;set $prevpass to &quot;4mod7b&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="74" name="4mod7outro1" tags="nobr" position="475,975" size="100,100">&lt;&lt;set $prevpass to &quot;4mod7b&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod7outro1&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;4mod7outro2&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION4_MOD7_outro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;&lt;set $nextpass to &quot;4modulelist&quot;&gt;&gt;
+&lt;audio src=&quot;assets/audio/gpce1.5_SESSION4_MOD7_outro.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -2709,36 +2618,22 @@ The order you go in will be randomised.&lt;/p&gt;
 
 &lt;p&gt;Or one of those videos where you knock over a glass, which pours out water, which turns on a light which toasts a marshmallow… you know &lt;/p&gt;
 
-  &lt;&lt;timed 22s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
-&lt;/div&gt;
-&lt;/main&gt;
-     &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="82" name="4mod7outro2" tags="nobr" position="225,1100" size="100,100">&lt;&lt;set $prevpass to &quot;4mod7outro1&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;4mod7outro2&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;4modulelist&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION4_MOD7_outro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;div class=&quot;wrapper&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-  &lt;main class=&quot;speaking&quot;&gt;
-      &lt;div class=&quot;text-wrapper&quot;&gt;
-
-
 &lt;p&gt;When we can see power, and how its all connected, we know which domino to knock over &lt;/p&gt;
 
 &lt;p&gt;Once the dominoes are falling, then things start to change &lt;/p&gt;
 
-&lt;p&gt;Let’s look at the potential of that change…&lt;/p&gt;
+&lt;p&gt;Let’s look at the potential of that change...&lt;/p&gt;
 
 &lt;p&gt;Enter the codeword for Module 8&lt;/p&gt;
 
-  &lt;&lt;timed 13s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod7 to true&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+  &lt;&lt;timed 36s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod7 to true&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;/div&gt;
 &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="83" name="4mod8intro1" tags="nobr" position="350,1100" size="100,100">&lt;&lt;set $prevpass to &quot;4modulelist&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="75" name="4mod8intro1" tags="nobr" position="600,975" size="100,100">&lt;&lt;set $prevpass to &quot;4modulelist&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod8intro1&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;4mod8intro2&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION4_MOD8_intro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;&lt;set $nextpass to &quot;4mod8a&quot;&gt;&gt;
+&lt;audio src=&quot;assets/audio/gpce1.5_SESSION4_MOD8_intro.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;&lt;set $module to &quot;Module 8&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
@@ -2748,120 +2643,80 @@ The order you go in will be randomised.&lt;/p&gt;
 
 &lt;p&gt;To imagine what if? &lt;/p&gt;
 
-&lt;p&gt;For you to think not about what you want to change, but to think about how your school will be different when it has changed &lt;/p&gt;
-
-&lt;p&gt;Having the dream, imagining success is the first step &lt;/p&gt;
-
-  &lt;&lt;timed 15s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
-&lt;/div&gt;
- &lt;/main&gt;
-     &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="84" name="4mod8intro2" tags="nobr" position="475,1100" size="100,100">&lt;&lt;set $prevpass to &quot;4mod8intro1&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;4mod8intro2&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;4mod8a&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION4_MOD8_intro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;set $module to &quot;Module 8&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
-&lt;div class=&quot;wrapper&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-  &lt;main class=&quot;speaking&quot;&gt;
-    &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt;  Imagining myself 2 inches taller is the only way I can get there&lt;/p&gt;
-&lt;p&gt;I kid I kid &lt;/p&gt;
-
-&lt;p&gt;But for real, it’s important that we imagine, that we think about what success could be  &lt;/p&gt;
-
 &lt;p&gt;How would your school be different if you were successful? &lt;/p&gt;
-  &lt;&lt;timed 14s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
-&lt;/div&gt;
- &lt;/main&gt;
-     &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="85" name="4mod8a" tags="nobr" position="600,1100" size="100,100">&lt;&lt;set $prevpass to &quot;4mod8intro2&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;4mod8a&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;4mod8b&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION4_MOD8_intro_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;div class=&quot;wrapper&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-  &lt;main class=&quot;speaking&quot;&gt;
-    &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt;Teacher, hand out Module 8’s resources and let’s imagine Utopia
-&lt;/p&gt;
-&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
-&lt;&lt;timed 11s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;
-&lt;p&gt;When you have the resources, I’ll explain more. &lt;/p&gt;
-&lt;p&gt;Click &lt;&lt;button &quot;here&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; when ready for the explanation&lt;/p&gt;
-&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
-&lt;/div&gt;
- &lt;/main&gt;
-     &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="86" name="4mod8b" tags="nobr" position="725,1100" size="100,100">&lt;&lt;set $prevpass to &quot;4mod8a&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;4mod8b&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;4mod8outro1&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION4_MOD8_intro_4.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;div class=&quot;wrapper&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-  &lt;main class=&quot;speaking&quot;&gt;
-    &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt;First, place the overlay on top of your map - it may help to hold it with something – then there are some questions to help you.&lt;/p&gt;
-&lt;p&gt;Start by drawing the changes to the school, where we have solved your focus. Then, complete the Tactics sections&lt;/p&gt;
-&lt;p&gt;And lastly, what rule might help us get from the original school to the new school.&lt;/p&gt;
-&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 
-&lt;&lt;timed 120s&gt;&gt;
-&lt;&lt;replace &quot;#mount&quot;&gt;&gt;
-    &lt;p&gt;When done click &lt;&lt;button &quot;Move On&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;4mod8outro1&quot;&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/p&gt;
-    &lt;&lt;/replace&gt;&gt;
-    &lt;&lt;/timed&gt;&gt;
+&lt;p&gt;Teacher, I want you to list down all of the people + places that are linked to our focus.&lt;/p&gt; 
+
+&lt;p&gt;&lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/p&gt;
+
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="87" name="4mod8outro1" tags="nobr" position="850,1100" size="100,100">&lt;&lt;set $prevpass to &quot;4mod8b&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="76" name="4mod8a" tags="nobr" position="725,975" size="100,100">&lt;&lt;set $prevpass to &quot;4mod8intro2&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;4mod8a&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;4mod8outro1&quot;&gt;&gt;
+&lt;audio src=&quot;assets/audio/gpce1.5_SESSION4_MOD8_imaginingsuccess.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;div class=&quot;wrapper&quot;&gt;
+  &lt;&lt;include &quot;header&quot;&gt;&gt;
+  &lt;main class=&quot;speaking&quot;&gt;
+    &lt;div class=&quot;text-wrapper&quot; id=&quot;mount&quot;&gt;
+&lt;p&gt;Now you have the list, let’s discuss a simple question in small groups. ‘What if?’&lt;/p&gt;
+
+&lt;p&gt;What if this was different. &lt;/p&gt;
+&lt;p&gt;What if we didn’t need packaging...&lt;/p&gt;
+&lt;p&gt;What if we didn’t eat meat everyday here...&lt;/p&gt;
+&lt;p&gt;What if we had solar panels on every site...&lt;/p&gt;
+&lt;p&gt;What if...&lt;/p&gt;
+
+&lt;&lt;timed 17s&gt;&gt;&lt;&lt;append &quot;#mount&quot;&gt;&gt;
+&lt;p&gt;When done click &lt;&lt;button &quot;Move On&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/p&gt;
+&lt;&lt;/append&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;/div&gt;
+ &lt;/main&gt;
+     &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="77" name="4mod8outro1" tags="nobr" position="850,975" size="100,100">&lt;&lt;set $prevpass to &quot;4mod8a&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod8outro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4mod8outro2&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION4_MOD8_outro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;audio src=&quot;assets/audio/gpce1.5_SESSION4_MOD8_outro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking inlineimg&quot;&gt;
     &lt;div class=&quot;text-wrapper&quot; id=&quot;mount&quot;&gt;
-&lt;p&gt;And now you have your goal &lt;/p&gt;
-&lt;p&gt;If this was a game &lt;/p&gt;
-&lt;p&gt;(You know I love games) &lt;/p&gt;
-&lt;p&gt;This would be your objective, your mission &lt;/p&gt;
-&lt;p&gt;WE WANT A SCHOOL THAT… you can fill in the blanks. &lt;/p&gt;
-&lt;p&gt;Actually do, summarise it and write it on the ASK Card &lt;/p&gt;
+&lt;p&gt;What were the ‘What Ifs’ you imagined? &lt;/p&gt;
+&lt;p&gt;What one do you think you want to hold onto? &lt;/p&gt;
+&lt;p&gt;This ‘What If’ could become the Ask of our Action. &lt;/p&gt;
+&lt;p&gt;What we want to happen. &lt;/p&gt;
+&lt;p&gt;In your small groups I want you to take an ASK card and write that down. &lt;/p&gt;
 
-&lt;&lt;timed 24s&gt;&gt; &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
-&lt;p&gt;Use the Rule change section to help fill this out. You’ll have 1 Ask Card for each group.&lt;/p&gt;
-
- &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
-&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+ &lt;&lt;button &quot;Done&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
-&lt;img src=&quot;assets/img/ruleRGB-87.jpg&quot;&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="88" name="4mod8outro2" tags="nobr" position="975,1100" size="100,100">&lt;&lt;set $prevpass to &quot;4mod8intro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="78" name="4mod8outro2" tags="nobr" position="975,975" size="100,100">&lt;&lt;set $prevpass to &quot;4mod8intro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod8outro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4modulelist&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION4_MOD8_outro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;audio src=&quot;assets/audio/gpce1.5_SESSION4_MOD8_outro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
     &lt;div class=&quot;text-wrapper&quot; id=&quot;mount&quot;&gt;
-&lt;p&gt;Seeing success doesn’t make it happen, of course, there are many more steps to take, obstacles in the way… but no worries, obstacles are what makes a game good. &lt;/p&gt;
+&lt;p&gt;Seeing success doesn’t make it happen, of course, there are many more steps to take, obstacles in the way... but no worries, obstacles are what makes a game good. &lt;/p&gt;
 
-&lt;p&gt;It’d be no fun if it was all easy, would it? &lt;/p&gt;
-
-&lt;p&gt;Last up in our exploration of power, we need to look at ourselves. &lt;/p&gt;
-
+&lt;p&gt;
+  Last up in our exploration of power, we need to look at ourselves. 
+  
+&lt;/p&gt;
 &lt;p&gt;Enter the Module 9 codeword below&lt;/p&gt;
 
- &lt;&lt;timed 22s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod8 to true&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+
+ &lt;&lt;timed 19s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod8 to true&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="89" name="4mod9intro1" tags="nobr" position="1100,1100" size="100,100">&lt;&lt;set $prevpass to &quot;4modulelist&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="79" name="4mod9intro1" tags="nobr" position="1100,975" size="100,100">&lt;&lt;set $prevpass to &quot;4modulelist&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod9intro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4mod9intro2&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION4_MOD9_intro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;audio src=&quot;assets/audio/gpce1.5_SESSION4_MOD9_intro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;&lt;set $module to &quot;Module 9&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
@@ -2871,14 +2726,15 @@ The order you go in will be randomised.&lt;/p&gt;
 &lt;p&gt;Your teacher has power over this space.  &lt;/p&gt;
 &lt;p&gt;There is power with you as a group of activists, as people making change &lt;/p&gt;
 &lt;p&gt;I have power too – quite a lot actually – I can say words without much interruption – I can talk about Roasting Potatoes with no concerns you’ll interrupt!  &lt;/p&gt;
+
   &lt;&lt;timed 20s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="90" name="4mod9intro2" tags="nobr" position="1225,1100" size="100,100">&lt;&lt;set $prevpass to &quot;4mod9intro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="80" name="4mod9intro2" tags="nobr" position="1225,975" size="100,100">&lt;&lt;set $prevpass to &quot;4mod9intro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod9intro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4mod9intro3&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION4_MOD9_intro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;audio src=&quot;assets/audio/gpce1.5_SESSION4_MOD9_intro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;&lt;set $module to &quot;Module 9&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
@@ -2886,18 +2742,17 @@ The order you go in will be randomised.&lt;/p&gt;
     &lt;div class=&quot;text-wrapper&quot;&gt;
 &lt;p&gt;Each of you will have power over others &lt;/p&gt;
 &lt;p&gt;But power is rarely something that is balanced &lt;/p&gt;
-&lt;p&gt;
-  People have power because of their job, because of money, because of the connections they have or because of the family they come from, because of how they’re gendered or how they’re racialised. 
-  Some of these can be unearned privileges, that others don’t have. For one person, something might be easy, while for someone else, it is very hard. 
-&lt;/p&gt;
-  &lt;&lt;timed 23s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;p&gt;People have power because of their job, because of money, because of the connections they have or because of the family they come from, because of how they’re gendered or how they’re racialised. &lt;/p&gt;
+&lt;p&gt;Some of these can be unearned privileges, that others don’t have. For one person, something might be easy, while for someone else, it is very hard.&lt;/p&gt;
+
+  &lt;&lt;timed 28s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="91" name="4mod9intro3" tags="nobr" position="100,1225" size="100,100">&lt;&lt;set $prevpass to &quot;4mod9intro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="81" name="4mod9intro3" tags="nobr" position="100,1100" size="100,100">&lt;&lt;set $prevpass to &quot;4mod9intro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod9intro3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4mod9a&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION4_MOD9_intro_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;audio src=&quot;assets/audio/gpce1.5_SESSION4_MOD9_intro_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;&lt;set $module to &quot;Module 9&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
@@ -2905,36 +2760,35 @@ The order you go in will be randomised.&lt;/p&gt;
     &lt;div class=&quot;text-wrapper&quot;&gt;
 &lt;p&gt;The imbalance of power exists all over the world, and it exists in this very room too &lt;/p&gt;
 &lt;p&gt;If we want to act together, we need to see that &lt;/p&gt;
-&lt;p&gt;We need to look at power and privilege, and at what we find comfortable &lt;/p&gt;
 &lt;p&gt;We have to do this for us to be able to work honestly and well together &lt;/p&gt;
 &lt;p&gt;We’re going to find our Comfort in Action &lt;/p&gt;
-  &lt;&lt;timed 23s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+
+  &lt;&lt;timed 18s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="92" name="4mod9a" tags="nobr" position="225,1225" size="100,100">&lt;&lt;set $prevpass to &quot;4mod9intro3&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="82" name="4mod9a" tags="nobr" position="225,1100" size="100,100">&lt;&lt;set $prevpass to &quot;4mod9intro3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod9a&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4mod9outro1&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION4_MOD9_intro_4_fixed.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;audio src=&quot;assets/audio/gpce1.5_SESSION4_MOD9_comfortinaction.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;&lt;set $module to &quot;Module 9&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
     &lt;div class=&quot;text-wrapper&quot;&gt;
 &lt;p&gt;Teacher, the instructions are on the Module Card. &lt;/p&gt;
-&lt;p&gt;We need a Comfort Marker. &lt;/p&gt;
-&lt;p&gt;Lucky you were given a potato, hey? &lt;/p&gt;
-&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
-&lt;&lt;timed 18s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;
-&lt;p&gt;When you have completed this click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;4mod9outro1&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/p&gt;
-&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;p&gt;Alongside, a Comfort Marker. &lt;/p&gt;
+&lt;p&gt;Lucky you were given a potato in compartment 1 hey. &lt;/p&gt;
+
+&lt;p&gt;Click when you are ready to &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;4mod9outro1&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/p&gt;
+
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="93" name="4mod9outro1" tags="nobr" position="350,1225" size="100,100">&lt;&lt;set $prevpass to &quot;4mod9a&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="83" name="4mod9outro1" tags="nobr" position="350,1100" size="100,100">&lt;&lt;set $prevpass to &quot;4mod9a&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod9outro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4mod9outro2&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION4_MOD9_outro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;audio src=&quot;assets/audio/gpce1.5_SESSION4_MOD9_outro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -2942,126 +2796,86 @@ The order you go in will be randomised.&lt;/p&gt;
 &lt;p&gt;Comfort in Action is a layered thing. &lt;/p&gt;
 &lt;p&gt;It’s about us and the roles we want to play. But it’s also about the systems that we’re part of. &lt;/p&gt;
 &lt;p&gt;For some of us, there are environments, circumstances, systems that can be unsafe. &lt;/p&gt;
+&lt;p&gt;As a biracial black woman, I don’t look like other climate protestors, and when I started being a playful activist, I found that hard.&lt;/p&gt;  
 
-&lt;p&gt;As a biracial Black woman of mixed Bajan and Jewish heritage, I don’t look like other climate protestors, and when I started being a playful activist, I found that hard. &lt;/p&gt;
 
-  &lt;&lt;timed 27s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+
+
+  &lt;&lt;timed 25s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
   &lt;/div&gt;
 &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="94" name="4mod9outro2" tags="nobr" position="475,1225" size="100,100">&lt;&lt;set $prevpass to &quot;4mod9outro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="84" name="4mod9outro2" tags="nobr" position="475,1100" size="100,100">&lt;&lt;set $prevpass to &quot;4mod9outro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod9outro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4mod9outro3&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION4_MOD9_outro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;audio src=&quot;assets/audio/gpce1.5_SESSION4_MOD9_outro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
       &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt;I wondered where my space was, where I fit in and where I could play the part I wanted to. &lt;/p&gt;
-&lt;p&gt;But looking honestly at my comfort in action and sharing that comfort in action with others helped. It meant that I only had to take on the roles I felt comfortable with, and I didn’t feel any need to explain or justify where I was, or why I was there. By discussing comfort in action, we made sure it was all out in the open. &lt;/p&gt;
+&lt;p&gt;
+  I wondered where my space was, where I fit in and where I could play the part I wanted to. &lt;/p&gt;
+  &lt;p&gt;But looking honestly at my comfort in action and sharing that comfort in action with others helped. It meant that I only had to take on the roles I felt comfortable with, and I didn’t feel any need to explain or justify where I was, or why I was there. &lt;/p&gt;
+  &lt;p&gt;By discussing comfort in action, we made sure it was all out in the open. 
+&lt;/p&gt;
 
-  &lt;&lt;timed 26s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+  &lt;&lt;timed 25s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
   &lt;/div&gt;
 &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="95" name="4mod9outro3" tags="nobr" position="600,1225" size="100,100">&lt;&lt;set $prevpass to &quot;4mod9outro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="85" name="4mod9outro3" tags="nobr" position="600,1100" size="100,100">&lt;&lt;set $prevpass to &quot;4mod9outro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4mod9outro3&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;4mod9outro4&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION4_MOD9_outro_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;div class=&quot;wrapper&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-  &lt;main class=&quot;speaking&quot;&gt;
-      &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt;We can note that some of us have greater privileges and we might use our power to reduce the burden on others in the activist spaces, particularly those who share the identities or experience of those who we are seeking justice for. &lt;/p&gt;
-&lt;p&gt;By understanding comfort in action for our whole team we&#39;re able to work as a collective. We can work together to make sure everything happens, that all roles are played, but that no one is put at risk, that all of us are comfortable.  &lt;/p&gt;
-
-  &lt;&lt;timed 27s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
-    &lt;/div&gt;
-&lt;/main&gt;
-     &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="96" name="4mod9outro4" tags="nobr" position="725,1225" size="100,100">&lt;&lt;set $prevpass to &quot;4mod9outro3&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;4mod9outro4&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;4sessionoutro1&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION4_MOD9_outro_4.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;audio src=&quot;assets/audio/gpce1.5_SESSION4_MOD9_outro_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
       &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt;I hope you all feel more comfortable thinking about where you are comfortable &lt;/p&gt;
-&lt;p&gt;You all look pretty comfy… or well, I’m going to assume you do! &lt;/p&gt;
+&lt;p&gt;By understanding comfort in action for our whole team we&#39;re able to work as a collective. We can work together to make sure everything happens, that all roles are played, but that no one is put at risk, that all of us are comfortable.  &lt;/p&gt;
+&lt;p&gt;I hope you all feel more comfortable thinking about where you are comfortable&lt;/p&gt;
 
-  &lt;&lt;timed 8s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod9 to true&gt;&gt;
+  &lt;&lt;timed 21s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod9 to true&gt;&gt;
       &lt;&lt;set $skip to true&gt;&gt;&lt;&lt;goto &quot;4modulelist&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
     &lt;/div&gt;
 &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="97" name="4sessionoutro1" tags="nobr" position="850,1225" size="100,100">&lt;&lt;set $prevpass to &quot;4mod9outro4&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="86" name="4sessionoutro1" tags="nobr" position="725,1100" size="100,100">&lt;&lt;set $prevpass to &quot;4mod9outro3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;4sessionoutro1&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;4sessionoutro2&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION4_OUTRO_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;&lt;set $nextpass to &quot;landing&quot;&gt;&gt;
+&lt;audio src=&quot;assets/audio/gpce1.5_SESSION4_OUTRO.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
-    &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt;And so that’s us at the end of today. &lt;/p&gt;
+    &lt;div class=&quot;text-wrapper&quot; id=&quot;text&quot;&gt;
+&lt;p&gt;So that’s it for today. &lt;/p&gt;
 
 &lt;p&gt;Today has been all about looking. &lt;/p&gt;
 &lt;p&gt;about looking around to see your school, and where power sits in it, &lt;/p&gt;
-&lt;p&gt;
-  about looking in to see where you feel comfortable in action 
-  and about looking to the future, to imagine what success looks like 
-&lt;/p&gt;
-  &lt;&lt;timed 18s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;p&gt;about looking in to see where you feel comfortable in action &lt;/p&gt;
+&lt;p&gt;and about looking to the future, to imagine what success looks like &lt;/p&gt;
 
-&lt;/div&gt;
-  &lt;/main&gt;
-     &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="98" name="4sessionoutro2" tags="nobr" position="975,1225" size="100,100">&lt;&lt;set $prevpass to &quot;4sessionoutro1&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;4sessionoutro2&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;4sessionoutro3&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION4_OUTRO_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;div class=&quot;wrapper&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-  &lt;main class=&quot;speaking&quot;&gt;
-    &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt;Now you’ve done the looking, it’s time to start doing. &lt;/p&gt;
-
-&lt;p&gt;Next session you’re going to meet someone. They’re an Artist, another Playful Activist.&lt;/p&gt;
-
-&lt;p&gt;They’re the last missing member of our team, and they’re going to join you to put these ideas into playful action. &lt;/p&gt;
-  &lt;&lt;timed 16s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
-
-&lt;/div&gt;
-  &lt;/main&gt;
-     &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="99" name="4sessionoutro3" tags="nobr" position="1100,1225" size="100,100">&lt;&lt;set $prevpass to &quot;4sessionoutro2&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;4sessionoutro3&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;landing&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION4_OUTRO_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;div class=&quot;wrapper&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-  &lt;main class=&quot;speaking&quot;&gt;
-    &lt;div class=&quot;text-wrapper&quot;&gt;
-
+&lt;p&gt;Now you’ve done the looking, it’s time to start doing.&lt;/p&gt; 
 &lt;p&gt;Until next time… &lt;/p&gt;
+
+&lt;&lt;timed 22s&gt;&gt;
+&lt;&lt;replace &quot;#text&quot;&gt;&gt;
 &lt;p&gt;And in case that wasn’t quite enough &lt;/p&gt;
+
 &lt;p&gt;There’s a final message for you &lt;/p&gt;
 &lt;p&gt;Text  &lt;h2 class=&quot;subtitle inline&quot;&gt;POWER&lt;/h2&gt; to  &lt;h2 class=&quot;subtitle inline&quot;&gt;07400179362&lt;/h2&gt; to pick it up &lt;/p&gt;
-
-&lt;p&gt;I’ll see you soon. &lt;/p&gt;
 &lt;&lt;button &quot;Finish&quot;&gt;&gt;&lt;&lt;audio &quot;pyramidtransition_1&quot; play &gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
-
+&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 &lt;/div&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
 &lt;/div&gt;
 
 
-
-/* SESSION 5 */</tw-passagedata><tw-passagedata pid="100" name="5kaiIntro1" tags="nobr" position="1225,1225" size="100,100">&lt;&lt;set $prevpass to &quot;landing&quot;&gt;&gt;
+/* SESSION 5 */</tw-passagedata><tw-passagedata pid="87" name="5kaiIntro1" tags="nobr" position="850,1100" size="100,100">&lt;&lt;set $prevpass to &quot;landing&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5kaiIntro1&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;5kaiIntro2&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION5_INTRO_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;&lt;set $nextpass to &quot;5modulelist&quot;&gt;&gt;
+&lt;audio src=&quot;assets/audio/gpce1.5_SESSION5_INTRO.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;
 &lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
@@ -3071,36 +2885,16 @@ The order you go in will be randomised.&lt;/p&gt;
  &lt;h1 class=&quot;title &quot;&gt;And, we&#39;re back!&lt;/h1&gt;
 
     &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt;It’s great to be in the room with you again. &lt;/p&gt;
-&lt;p&gt;And with someone new too &lt;/p&gt;
-&lt;p&gt;Today we’re joined by our artist. &lt;/p&gt;
- &lt;&lt;timed 10s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
-    &lt;/div&gt;
-&lt;/main&gt;
-&lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="101" name="5kaiIntro2" tags="nobr" position="100,1350" size="100,100">&lt;&lt;set $prevpass to &quot;5kaiIntro1&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;5kaiIntro2&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;5modulelist&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION5_INTRO_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;
-&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
-&lt;div class=&quot;wrapper&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-
-  &lt;main class=&quot;speaking&quot;&gt;
-
-    &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt;You must have met already, to combine codewords and find your way into the next compartment! &lt;/p&gt;
-&lt;p&gt;Together with this artist and your teacher, you will plot, make, and deliver your playful action. &lt;/p&gt;
+&lt;p&gt;It’s great to be in the room with you again.&lt;/p&gt; 
 &lt;p&gt;Today we begin with plotting. &lt;/p&gt;
 &lt;p&gt;You’re going to work out what your action will be.  &lt;/p&gt;
-&lt;p&gt;Artist, over to you&lt;/p&gt;
-&lt;p&gt;And when you are ready for Module 10, you know what to do. &lt;/p&gt;
- &lt;&lt;timed 21s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;p&gt;When you are ready for Module 10, you know what to do. &lt;/p&gt;
+
+ &lt;&lt;timed 14s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
     &lt;/div&gt;
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="102" name="5modulelist" tags="nobr" position="225,1350" size="100,100">&lt;&lt;set $passage to &quot;5modulelist&quot;&gt;&gt;&lt;&lt;set $session to 5&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="88" name="5modulelist" tags="nobr" position="975,1100" size="100,100">&lt;&lt;set $passage to &quot;5modulelist&quot;&gt;&gt;&lt;&lt;set $session to 5&gt;&gt;
 &lt;&lt;timed 0.1s&gt;&gt;
   &lt;&lt;if $skip is true&gt;&gt;
      &lt;&lt;audio &quot;completionbloop_4&quot; play&gt;&gt;
@@ -3233,6 +3027,7 @@ The order you go in will be randomised.&lt;/p&gt;
       /% CODEWORD CORRECT %/
       &lt;&lt;if $codeword isnot &quot;&quot; and $codeword is &quot;GIFT&quot;&gt;&gt;
       &lt;&lt;replace &quot;#coderesult3&quot;&gt;&gt;&lt;h2 class=&quot;subtitle complete&quot;&gt;CORRECT&lt;/h2&gt;&lt;&lt;/replace&gt;&gt;
+        &lt;&lt;audio &quot;eeg_1&quot; play&gt;&gt;
               &lt;&lt;timed 0.5s&gt;&gt;
               &lt;&lt;addclass &quot;#mod10&quot; &quot;dissolve&quot;&gt;&gt;
               &lt;&lt;addclass &quot;#mod11&quot; &quot;dissolve&quot;&gt;&gt;
@@ -3268,11 +3063,11 @@ The order you go in will be randomised.&lt;/p&gt;
   &lt;/div&gt;
   &lt;/main&gt;
   &lt;&lt;include &quot;footerbox&quot;&gt;&gt;&lt;/div&gt;
-  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="103" name="5mod10intro1" tags="nobr" position="350,1350" size="100,100">&lt;&lt;set $prevpass to &quot;5modulelist&quot;&gt;&gt;
+  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="89" name="5mod10intro1" tags="nobr" position="1100,1100" size="100,100">&lt;&lt;set $prevpass to &quot;5modulelist&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod10intro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5mod10intro2&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 10&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION5_MOD10_intro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;audio src=&quot;assets/audio/gpce1.5_SESSION5_MOD10_intro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
   &lt;div class=&quot;wrapper&quot;&gt;
     &lt;&lt;include &quot;header&quot;&gt;&gt;
     &lt;main  class=&quot;speaking&quot;&gt;
@@ -3282,47 +3077,63 @@ The order you go in will be randomised.&lt;/p&gt;
 &lt;p&gt;You’re going to take the Asks you created already and look at two things: &lt;/p&gt;
 &lt;p&gt;First, you’ll look at how winnable the ask is. &lt;/p&gt;
 &lt;p&gt;This is how easy the ask is to achieve &lt;/p&gt;
-
-&lt;p&gt;If a game is winnable, you can win it easily &lt;/p&gt;
-
-&lt;p&gt;Which, honestly, happens to me quite a lot… &lt;/p&gt;
-
 &lt;p&gt;Then, you’ll look at how worthwhile the ask is. &lt;/p&gt;
 &lt;p&gt;A worthwhile ask creates the change you want. &lt;/p&gt;
 
-  &lt;&lt;timed 25s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+
+  &lt;&lt;timed 18s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="104" name="5mod10intro2" tags="nobr" position="475,1350" size="100,100">&lt;&lt;set $prevpass to &quot;5mod10intro1&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="90" name="5mod10intro2" tags="nobr" position="1225,1100" size="100,100">&lt;&lt;set $prevpass to &quot;5mod10intro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod10intro2&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;5mod10a&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;5mod10intro3&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 10&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION5_MOD10_intro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;audio src=&quot;assets/audio/gpce1.5_SESSION5_MOD10_intro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
   &lt;div class=&quot;wrapper&quot;&gt;
     &lt;&lt;include &quot;header&quot;&gt;&gt;
     &lt;main  class=&quot;speaking&quot;&gt;
         &lt;div class=&quot;text-wrapper&quot;&gt;
+&lt;p&gt;On Violet, it took us some time to find our Ask. &lt;/p&gt;
+&lt;p&gt;To find that balance of worthwhile to winnable. &lt;/p&gt;
+&lt;p&gt;Some of us wanted the ask to be ‘no more petrol’ &lt;/p&gt;
+&lt;p&gt;It’s great - worthwhile, but not winnable &lt;/p&gt;
 
-&lt;p&gt;We call this worthwhile / winnable, because, well, we’re looking at how worthwhile and how winnable the ask is &lt;/p&gt;
+&lt;p&gt;Some of us wanted the ask to be ‘reduce diesel cars by 5%’ &lt;/p&gt;
+&lt;p&gt;Winnable but not worthwhile &lt;/p&gt;
+&lt;p&gt;Worthwhile asks are hard, and winnable asks are easy &lt;/p&gt;
+&lt;p&gt;Finding one that’s both, that’s complicated &lt;/p&gt;
 
-&lt;p&gt;I’m pretty good at creative names, I think. &lt;/p&gt;
-
-&lt;p&gt;You can make a worthwhile / winnable graph to help you see how each ask is different, some will be more worthwhile, others will be more winnable  &lt;/p&gt;
-
-&lt;p&gt;You can use this graph to help you choose which one ask you what to use &lt;/p&gt;
-
-&lt;p&gt;The challenge, if you can, is to find an ask that is both. &lt;/p&gt;
   &lt;&lt;timed 26s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="105" name="5mod10a" tags="nobr" position="600,1350" size="100,100">&lt;&lt;set $prevpass to &quot;5mod10intro2&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="91" name="5mod10intro3" tags="nobr" position="100,1225" size="100,100">&lt;&lt;set $prevpass to &quot;5mod10intro2&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;5mod10intro3&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;5mod10a&quot;&gt;&gt;
+&lt;&lt;set $module to &quot;Module 10&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
+&lt;audio src=&quot;assets/audio/gpce1.5_SESSION5_MOD10_intro_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+  &lt;div class=&quot;wrapper&quot;&gt;
+    &lt;&lt;include &quot;header&quot;&gt;&gt;
+    &lt;main  class=&quot;speaking&quot;&gt;
+        &lt;div class=&quot;text-wrapper&quot;&gt;
+&lt;p&gt;You can make a worthwhile / winnable graph to help you see how each ask is different, some will be more worthwhile, others will be more winnable  &lt;/p&gt;
+
+&lt;p&gt;The challenge, if you can, is to find an ask that is both. &lt;/p&gt;
+
+&lt;p&gt;You can use this graph to help you choose which ask you what to use&lt;/p&gt;
+
+  &lt;&lt;timed 18s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+
+   &lt;/div&gt;
+    &lt;/main&gt;
+         &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="92" name="5mod10a" tags="nobr" position="225,1225" size="100,100">&lt;&lt;set $prevpass to &quot;5mod10intro3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod10a&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5mod10outro&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION5_MOD10_intro_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+/* &lt;audio src=&quot;assets/audio/gpce1.5_SESSION5_MOD10_intro_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt; */
   &lt;div class=&quot;wrapper&quot;&gt;
     &lt;&lt;include &quot;header&quot;&gt;&gt;
     &lt;main  class=&quot;speaking&quot;&gt;
@@ -3331,10 +3142,10 @@ The order you go in will be randomised.&lt;/p&gt;
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footer&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="106" name="5mod10outro1" tags="nobr" position="725,1350" size="100,100">&lt;&lt;set $prevpass to &quot;5mod10a&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="93" name="5mod10outro1" tags="nobr" position="350,1225" size="100,100">&lt;&lt;set $prevpass to &quot;5mod10a&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod10outro1&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;5mod10outro2&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION5_MOD10_outro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;&lt;set $nextpass to &quot;5modulelist&quot;&gt;&gt;
+&lt;audio src=&quot;assets/audio/gpce1.5_SESSION5_MOD10_outro.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -3347,247 +3158,161 @@ The order you go in will be randomised.&lt;/p&gt;
 
 &lt;p&gt;But I do trust you&lt;/p&gt;
 
-&lt;p&gt;And the Artist.&lt;/p&gt; 
+&lt;p&gt;When you are ready to move on to the Target, enter the codeword for Module 11.&lt;/p&gt;
 
-&lt;p&gt;And that your ask will be something great &lt;/p&gt;
-
-  &lt;&lt;timed 13s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 13s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod10 to true&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;/div&gt;
 &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="107" name="5mod10outro2" tags="nobr" position="850,1350" size="100,100">&lt;&lt;set $prevpass to &quot;5mod10outro1&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;5mod10outro2&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;5mod10outro3&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION5_MOD10_outro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;div class=&quot;wrapper&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-  &lt;main class=&quot;speaking&quot;&gt;
-      &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt;On Violet, it took us some time to find our Ask. &lt;/p&gt;
-&lt;p&gt;To find that balance of worthwhile to winnable. &lt;/p&gt;
-&lt;p&gt;Some of us wanted the ask to be ‘no more petrol’ &lt;/p&gt;
-&lt;p&gt;It’s great - worthwhile, but not winnable &lt;/p&gt;
-
-&lt;p&gt;Some of us wanted the ask to be ‘reduce diesel cars by 5%’ &lt;/p&gt;
-&lt;p&gt;Winnable but not worthwhile &lt;/p&gt;
-  &lt;&lt;timed 20s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
-&lt;/div&gt;
-&lt;/main&gt;
-     &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="108" name="5mod10outro3" tags="nobr" position="975,1350" size="100,100">&lt;&lt;set $prevpass to &quot;5mod10outro2&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;5mod10outro3&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;5modulelist&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION5_MOD10_outro_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;div class=&quot;wrapper&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-  &lt;main class=&quot;speaking&quot;&gt;
-      &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt;Worthwhile asks are hard, and winnable asks are easy &lt;/p&gt;
-&lt;p&gt;Finding one that’s both, that’s complicated &lt;/p&gt;
-
-&lt;p&gt;When you are ready to move on to Actions, enter the codeword for Module 11&lt;/p&gt;
-
-&lt;&lt;timed 14s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod10 to true&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
-&lt;/div&gt;
-&lt;/main&gt;
-     &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="109" name="5mod11intro1" tags="nobr" position="1100,1350" size="100,100">&lt;&lt;set $prevpass to &quot;5modulelist&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="94" name="5mod11intro1" tags="nobr" position="475,1225" size="100,100">&lt;&lt;set $prevpass to &quot;5modulelist&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod11intro1&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;5mod11intro2&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION5_MOD11_intro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;&lt;set $nextpass to &quot;5mod11a&quot;&gt;&gt;
+&lt;audio src=&quot;assets/audio/gpce1.5_SESSION5_MOD11_intro.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;&lt;set $module to &quot;Module 11&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
     &lt;div class=&quot;text-wrapper&quot;&gt;
 &lt;p&gt;Now: your playful action. &lt;/p&gt;
-&lt;p&gt;Your ask is what you’re asking for, the change you want to make.&lt;/p&gt; 
+&lt;p&gt;Your ask is what you’re asking for, the change you want to make. &lt;/p&gt;
 &lt;p&gt;Your playful action is what you’re going to do. &lt;/p&gt;
-&lt;p&gt;In Violet, our focus was the gala dinner, and our ask was: ‘ditch diesel’: asking car companies to stop making diesel cars. &lt;/p&gt;
-  &lt;&lt;timed 20s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
-&lt;/div&gt;
- &lt;/main&gt;
-     &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="110" name="5mod11intro2" tags="nobr" position="1225,1350" size="100,100">&lt;&lt;set $prevpass to &quot;5mod11intro1&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;5mod11intro2&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;5mod11intro3&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION5_MOD11_intro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;set $module to &quot;Module 11&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
-&lt;div class=&quot;wrapper&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-  &lt;main class=&quot;speaking&quot;&gt;
-    &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt;To find our action, we looked at what we had in our room: what we knew, what we cared about, what we were experts in. &lt;/p&gt;
-&lt;p&gt;The Young Coneys were experts in air pollution. &lt;/p&gt;
-&lt;p&gt;They lived with it every day; they felt how it impacts their lives.&lt;/p&gt;
-&lt;p&gt;And they were great at making games. It was one of their Mundane Making Skills. &lt;/p&gt;
-&lt;p&gt;Expertise and experience can be a great place to start &lt;/p&gt;
-  &lt;&lt;timed 21s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
-&lt;/div&gt;
- &lt;/main&gt;
-     &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="111" name="5mod11intro3" tags="nobr" position="100,1475" size="100,100">&lt;&lt;set $prevpass to &quot;5mod11intro2&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;5mod11intro3&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;5mod11intro4&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION5_MOD11_intro_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;set $module to &quot;Module 11&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
-&lt;div class=&quot;wrapper&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-  &lt;main class=&quot;speaking&quot;&gt;
-    &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt;But there are still so many options… &lt;/p&gt;
-&lt;p&gt;Do you play a big game of snakes and ladders, where the snakes are all diesel cars that send you back to the start? &lt;/p&gt;
-&lt;p&gt;Do you enter the gala dinner and then all start coughing? &lt;/p&gt;
-&lt;p&gt;Do you put stickers on all the diesel cars that tell the truth about all the damage they do? &lt;/p&gt;
-  &lt;&lt;timed 14s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
-&lt;/div&gt;
- &lt;/main&gt;
-     &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="112" name="5mod11intro4" tags="nobr" position="225,1475" size="100,100">&lt;&lt;set $prevpass to &quot;5mod11intro3&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;5mod11intro4&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;5mod11a&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION5_MOD11_intro_4.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;set $module to &quot;Module 11&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
-&lt;div class=&quot;wrapper&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-  &lt;main class=&quot;speaking inlineimg&quot;&gt;
-    &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt;To find the action that’s best for you&lt;/p&gt;
+&lt;p&gt;We need to work out who is best to ASK. &lt;/p&gt;
+&lt;p&gt;Who can get us what we want? &lt;/p&gt;
 &lt;p&gt;You can use worthwhile / winnable &lt;/p&gt;
-&lt;p&gt;A winnable action will be easier for you to do &lt;/p&gt;
-&lt;p&gt;And worthwhile action will make the change you want. &lt;/p&gt;
-&lt;p&gt;Over to you Artist. &lt;/p&gt;
-  &lt;&lt;timed 12s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
-&lt;/div&gt;
+&lt;p&gt;A winnable target will be easier for you to reach. &lt;/p&gt;
+&lt;p&gt;And a worthwhile target will have the power to make the change you want.  &lt;/p&gt;
+&lt;p&gt;Over to you Teacher. &lt;/p&gt;
 
+  &lt;&lt;timed 28s&gt;&gt;
+   &lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
+&lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="113" name="5mod11a" tags="nobr" position="350,1475" size="100,100">&lt;&lt;set $passage to &quot;5mod11a&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="95" name="5mod11a" tags="nobr" position="600,1225" size="100,100">&lt;&lt;set $prevpass to &quot;5mod11intro1&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;5mod11a&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
     &lt;div class=&quot;text-wrapper hero&quot;&gt;
-   &lt;p&gt;When you have &lt;/p&gt;&lt;h2 class=&quot;subtitle &quot;&gt;THE ACTION&lt;/h2&gt;&lt;p&gt; click &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;5mod11outro1&quot;&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/p&gt;
+   &lt;p&gt;When you have your &lt;/p&gt;&lt;h2 class=&quot;subtitle &quot;&gt;TARGET&lt;/h2&gt;&lt;p&gt; click &lt;&lt;button &quot;Ready&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;5mod11outro1&quot;&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/p&gt;
 
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="114" name="5mod11outro1" tags="nobr" position="475,1475" size="100,100">&lt;&lt;set $prevpass to &quot;5mod11a&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="96" name="5mod11outro1" tags="nobr" position="725,1225" size="100,100">&lt;&lt;set $prevpass to &quot;5mod11a&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod11outro1&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;5mod11outro2&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION5_MOD11_outro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;&lt;set $nextpass to &quot;5modulelist&quot;&gt;&gt;
+&lt;audio src=&quot;assets/audio/gpce1.5_SESSION5_MOD11_outro.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
     &lt;div class=&quot;text-wrapper&quot; id=&quot;mount&quot;&gt;
-&lt;p&gt;An excellent collection of actions&lt;/p&gt;
+&lt;p&gt;Great, you have a target. &lt;/p&gt;
 
-&lt;p&gt;Yes, I can’t be sure &lt;/p&gt;
+&lt;p&gt;Enter the next codeword for the final part of today’s session&lt;/p&gt;
 
-&lt;p&gt;Pre-recorded and all&lt;/p&gt;
 
-&lt;p&gt;But I do know &lt;/p&gt;
-
-&lt;p&gt;Because they were created and chosen by you &lt;/p&gt;
-
-&lt;&lt;timed 12s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 6s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="115" name="5mod11outro2" tags="nobr" position="600,1475" size="100,100">&lt;&lt;set $prevpass to &quot;5mod11outro1&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;5mod11outro2&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;5mod11outro3&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION5_MOD11_outro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="97" name="5mod12intro1" tags="nobr" position="850,1225" size="100,100">&lt;&lt;set $prevpass to &quot;5modulelist&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;5mod12intro1&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;5mod12intro2&quot;&gt;&gt;
+&lt;audio src=&quot;assets/audio/gpce1.5_SESSION5_MOD12_intro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;&lt;set $module to &quot;Module 12&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
-    &lt;div class=&quot;text-wrapper&quot; id=&quot;mount&quot;&gt;
-&lt;p&gt;In Violet, our playful action was an intervention by a group of very junior doctors. &lt;/p&gt;
+    &lt;div class=&quot;text-wrapper&quot; id=&quot;text&quot;&gt;
+&lt;p&gt;Greenpeace &amp; Coney have a sweet spot – the sweet spot is Gifting. &lt;/p&gt;
+&lt;p&gt;Making something for the Target that will engage them – a Gift. &lt;/p&gt;
+&lt;p&gt;A gift doesn’t mean we buy the target a Hat &lt;/p&gt;
+&lt;p&gt;or some platform heeled shoes &lt;/p&gt;
+&lt;p&gt;Gifting is a mindset&lt;/p&gt;
+&lt;p&gt;Making something for someone that starts a conversation&lt;/p&gt;
+&lt;p&gt;That invites them in &lt;/p&gt;
+&lt;p&gt;Putting the Play in our Playful Activism. &lt;/p&gt;
+&lt;&lt;timed 25s&gt;&gt;
+  &lt;&lt;replace &quot;#text&quot;&gt;&gt;
+    &lt;p&gt;It sounds simple, but some people forget to think of who the gift is for, who they are connecting with and what they want to do with their gift.&lt;/p&gt;
 
-&lt;p&gt;Outside the gala dinner, our very junior doctors set up an emergency health station: &lt;/p&gt;
-&lt;p&gt;They operated on lungs impacted by air pollution &lt;/p&gt;
-&lt;p&gt;They played operation &lt;/p&gt;
-&lt;p&gt;They conducted emergency health checks &lt;/p&gt;
+  
+ &lt;&lt;/replace&gt;&gt;
+ &lt;&lt;/timed&gt;&gt;
+ &lt;&lt;timed 31s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;/div&gt;
+ &lt;/main&gt;
+     &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="98" name="5mod12intro2" tags="nobr" position="975,1225" size="100,100">&lt;&lt;set $prevpass to &quot;5mod12intro1&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;5mod12intro2&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;5mod12intro3&quot;&gt;&gt;
+&lt;audio src=&quot;assets/audio/gpce1.5_SESSION5_MOD12_intro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;&lt;set $module to &quot;Module 12&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
+&lt;div class=&quot;wrapper&quot;&gt;
+  &lt;&lt;include &quot;header&quot;&gt;&gt;
+  &lt;main class=&quot;speaking&quot;&gt;
+    &lt;div class=&quot;text-wrapper&quot;&gt;
+&lt;p&gt;First part involves building intelligence on the target or targets?  &lt;/p&gt;
+&lt;p&gt;What do we know about them? &lt;/p&gt;
+&lt;p&gt;What do they like? &lt;/p&gt;
+&lt;p&gt;What could help us engage with them?&lt;/p&gt;
+
+&lt;p&gt;This will help us design the Gift. &lt;/p&gt;
+
+
+ &lt;p&gt;When done click &lt;&lt;button &quot;Move On&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/p&gt;
+&lt;/div&gt;
+ &lt;/main&gt;
+     &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="99" name="5mod12intro3" tags="nobr" position="1100,1225" size="100,100">&lt;&lt;set $prevpass to &quot;5mod12intro2&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;5mod12intro3&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;5mod12intro4&quot;&gt;&gt;
+&lt;audio src=&quot;assets/audio/gpce1.5_SESSION5_MOD12_intro_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;&lt;set $module to &quot;Module 12&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
+&lt;div class=&quot;wrapper&quot;&gt;
+  &lt;&lt;include &quot;header&quot;&gt;&gt;
+  &lt;main class=&quot;speaking&quot;&gt;
+    &lt;div class=&quot;text-wrapper&quot;&gt;
+&lt;p&gt;In Violet, our target was the gala dinner guests, and our Ask was: ‘ditch diesel’: asking car companies to stop making diesel cars. &lt;/p&gt;
+&lt;p&gt;To find our action, we looked at what we knew about the target. &lt;/p&gt;
+&lt;p&gt;And designed a gift from us to them. &lt;/p&gt;
+&lt;p&gt;Based on our Making Skills. &lt;/p&gt;
+
 
 &lt;&lt;timed 17s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="116" name="5mod11outro3" tags="nobr" position="725,1475" size="100,100">&lt;&lt;set $prevpass to &quot;5mod11outro2&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;5mod11outro3&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;5mod11outro4&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION5_MOD11_outro_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;div class=&quot;wrapper&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-  &lt;main class=&quot;speaking&quot;&gt;
-    &lt;div class=&quot;text-wrapper&quot; id=&quot;mount&quot;&gt;
-&lt;p&gt;And these doctors asked for help &lt;/p&gt;
-&lt;p&gt;This was an emergency after all. &lt;/p&gt;
-&lt;p&gt;And fortunately, the conference attendees had exactly what they needed: knowledge of diesel cars and their damaging effects &lt;/p&gt;
-&lt;p&gt;And the power to do something about it. &lt;/p&gt;
-
-&lt;&lt;timed 15s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
-&lt;/div&gt;
- &lt;/main&gt;
-     &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="117" name="5mod11outro4" tags="nobr" position="850,1475" size="100,100">&lt;&lt;set $prevpass to &quot;5mod11outro3&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;5mod11outro4&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;5modulelist&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION5_MOD11_outro_4.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;div class=&quot;wrapper&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-  &lt;main class=&quot;speaking&quot;&gt;
-    &lt;div class=&quot;text-wrapper&quot; id=&quot;mount&quot;&gt;
-&lt;p&gt;The very Junior Doctors invited the car executives to see who suffers and how they suffer when diesel cars are on the road. &lt;/p&gt;
-
-&lt;p&gt;But don’t worry, don’t worry, it’s just a game, we’re just playing here… aren’t we? &lt;/p&gt;
-
-
-&lt;p&gt;Enter the next codeword for the final part of today’s session&lt;/p&gt;
-&lt;&lt;timed 18s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod11 to true&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
-&lt;/div&gt;
- &lt;/main&gt;
-     &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="118" name="5mod12intro1" tags="nobr" position="975,1475" size="100,100">&lt;&lt;set $prevpass to &quot;5modulelist&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;5mod12intro1&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;5mod12intro2&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION5_MOD12_intro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;set $module to &quot;Module 12&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
-&lt;div class=&quot;wrapper&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-  &lt;main class=&quot;speaking&quot;&gt;
-    &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt;Greenpeace &amp; Coney have a sweet spot – the sweet spot is Gifting. &lt;/p&gt;
-&lt;p&gt;Making something for the Target that will engage them – a Gift.&lt;/p&gt; 
-
-&lt;p&gt;A gift doesn’t mean we buy the target a Hat or some platform heeled shoes &lt;/p&gt;
-&lt;p&gt;As much as I love wearing platforms (and not just for the height) &lt;/p&gt;
-  &lt;&lt;timed 19s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
-&lt;/div&gt;
- &lt;/main&gt;
-     &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="119" name="5mod12intro2" tags="nobr" position="1100,1475" size="100,100">&lt;&lt;set $prevpass to &quot;5mod12intro1&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;5mod12intro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="100" name="5mod12intro4" tags="nobr" position="1225,1225" size="100,100">&lt;&lt;set $prevpass to &quot;5mod12intro3&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;5mod12intro4&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5mod12a&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION5_MOD12_intro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;audio src=&quot;assets/audio/gpce1.5_SESSION5_MOD12_intro_4.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;&lt;set $module to &quot;Module 12&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
     &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt;Gifting is a mindset&lt;/p&gt;
-&lt;p&gt;Making something for someone that starts a conversation&lt;/p&gt;
-&lt;p&gt;That invites them in &lt;/p&gt;
-&lt;p&gt;Putting the Play into our Playful Activism. &lt;/p&gt;
+&lt;p&gt;The Young Coneys liked to make games.&lt;/p&gt;
+&lt;p&gt;So, outside the gala dinner, our very junior doctors set up an emergency health station with lots of games. &lt;/p&gt;
 
-&lt;p&gt;It sounds simple, but some people forget to think of who the gift is for, who they are connecting with and what they want to do with their gift. &lt;/p&gt;
+&lt;p&gt;They operated on lungs impacted by air pollution &lt;/p&gt;
+&lt;p&gt;They played operation &lt;/p&gt;
+&lt;p&gt;They conducted emergency health checks &lt;/p&gt;
+&lt;p&gt;It was about our focus, but playful. &lt;/p&gt;
+&lt;p&gt;It was a Gift for our recipients. &lt;/p&gt;
+&lt;p&gt;It was a piece of Playful Activism.&lt;/p&gt;
 
-&lt;p&gt;You have the tools, over to you&lt;/p&gt;
-  &lt;&lt;timed 20s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;p&gt;So, if you have time, let’s get some ideas on a Gift that could reach our recipient, based on the skills we have in the room, which will Ask what we want to change at this school. &lt;/p&gt;
+
+ &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
+
+
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="120" name="5mod12a" tags="nobr" position="1225,1475" size="100,100">&lt;&lt;set $prevpass to &quot;5mod12intro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="101" name="5mod12a" tags="nobr" position="100,1350" size="100,100">&lt;&lt;set $prevpass to &quot;5mod12intro4&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod12a&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5mod12outro&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
@@ -3600,34 +3325,31 @@ The order you go in will be randomised.&lt;/p&gt;
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="121" name="5mod12outro" tags="nobr" position="100,1600" size="100,100">&lt;&lt;set $prevpass to &quot;5mod12a&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="102" name="5mod12outro" tags="nobr" position="225,1350" size="100,100">&lt;&lt;set $prevpass to &quot;5mod12a&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5mod12outro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;5sessionoutro&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION5_MOD12_outro.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;audio src=&quot;assets/audio/gpce1.5_SESSION5_MOD12_outro.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
     &lt;div class=&quot;text-wrapper&quot; id=&quot;mount&quot;&gt;
 &lt;p&gt;The ask, the target, the action… &lt;/p&gt;
 &lt;p&gt;It’s the toolkit of a playful activist &lt;/p&gt;
-
 &lt;p&gt;And at the middle of it all is the gift: &lt;/p&gt;
 &lt;p&gt;The start of a conversation, &lt;/p&gt;
 &lt;p&gt;A new perspective, &lt;/p&gt;
 &lt;p&gt;An invitation to play &lt;/p&gt;
 
-&lt;p&gt;Your Artist will go away and help pull the ideas together, based on the work you have done today. &lt;/p&gt;
-
-&lt;&lt;timed 22s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod12 to true&gt;&gt;
+&lt;&lt;timed 15s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod12 to true&gt;&gt;
       &lt;&lt;set $skip to true&gt;&gt;&lt;&lt;goto &quot;5modulelist&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="122" name="5sessionoutro" tags="nobr" position="225,1600" size="100,100">&lt;&lt;set $prevpass to &quot;5mod12outro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="103" name="5sessionoutro" tags="nobr" position="350,1350" size="100,100">&lt;&lt;set $prevpass to &quot;5mod12outro&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;5sessionoutro&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;landing&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION5_OUTRO.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;audio src=&quot;assets/audio/gpce1.5_SESSION5_OUTRO.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -3637,6 +3359,7 @@ The order you go in will be randomised.&lt;/p&gt;
 &lt;p&gt;We can start making… &lt;/p&gt;
 &lt;p&gt;Well, not quite yet, next time. &lt;/p&gt;
 &lt;p&gt;Come prepared &lt;/p&gt;
+
 &lt;&lt;timed 12s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;
 &lt;p&gt;You’ll need a codeword to get in &lt;/p&gt;
 &lt;p&gt;Text  &lt;h2 class=&quot;subtitle inline&quot;&gt;ACTIONY&lt;/h2&gt; to find it &lt;/p&gt;
@@ -3650,10 +3373,10 @@ The order you go in will be randomised.&lt;/p&gt;
 &lt;/div&gt;
 
 
-/* SESSION 6 */</tw-passagedata><tw-passagedata pid="123" name="6kaiIntro1" tags="nobr" position="350,1600" size="100,100">&lt;&lt;set $prevpass to &quot;landing&quot;&gt;&gt;
+/* SESSION 6 */</tw-passagedata><tw-passagedata pid="104" name="6kaiIntro1" tags="nobr" position="475,1350" size="100,100">&lt;&lt;set $prevpass to &quot;landing&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;6kaiIntro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;6kaiIntro2&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION6_INTRO_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;audio src=&quot;assets/audio/gpce1.5_SESSION6_INTRO_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
@@ -3663,40 +3386,27 @@ The order you go in will be randomised.&lt;/p&gt;
 
     &lt;div class=&quot;text-wrapper&quot;&gt;
 
+&lt;p&gt;Hello. &lt;/p&gt;
 &lt;p&gt;Welcome back. &lt;/p&gt;
 &lt;p&gt;Today is all about making &lt;/p&gt;
 &lt;p&gt;Making can mean many different things. &lt;/p&gt;
 &lt;p&gt;It might mean building something &lt;/p&gt;
-&lt;p&gt;But it also might mean writing something, rehearsing something, &lt;/p&gt;
-&lt;p&gt;perhaps recording something, or assembling something, or even dismantling something&lt;/p&gt;
-  &lt;&lt;timed 17s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
-
-    &lt;/div&gt;
-
-&lt;/main&gt;
-&lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="124" name="6kaiIntro2" tags="nobr" position="475,1600" size="100,100">&lt;&lt;set $prevpass to &quot;6kaiIntro1&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;6kaiIntro2&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;6kaiIntro3&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION6_INTRO_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
-&lt;div class=&quot;wrapper&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-
-  &lt;main class=&quot;speaking&quot;&gt;
-    &lt;div class=&quot;text-wrapper&quot;&gt;
-
+&lt;p&gt;
+  But it also might mean writing something, rehearsing something, 
+  perhaps recording something, or assembling something, or even dismantling something
+&lt;/p&gt;
 &lt;p&gt;It has to do with something. &lt;/p&gt;
-  &lt;&lt;timed 4s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+
+  &lt;&lt;timed 21s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
     &lt;/div&gt;
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="125" name="6kaiIntro3" tags="nobr" position="600,1600" size="100,100">&lt;&lt;set $prevpass to &quot;6kaiIntro2&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;6kaiIntro3&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;6kaiIntro4&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION6_INTRO_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="105" name="6kaiIntro2" tags="nobr" position="600,1350" size="100,100">&lt;&lt;set $prevpass to &quot;6kaiIntro1&quot;&gt;&gt;
+&lt;&lt;set $passage to &quot;6kaiIntro2&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;6modulelist&quot;&gt;&gt;
+&lt;audio src=&quot;assets/audio/gpce1.5_SESSION6_INTRO_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
@@ -3705,60 +3415,24 @@ The order you go in will be randomised.&lt;/p&gt;
     &lt;div class=&quot;text-wrapper&quot;&gt;
 
 &lt;p&gt;It’ll all depend on what your action is, and the gift you’re giving &lt;/p&gt;
-&lt;p&gt;For Violet we knew the young coneys were going to be very junior doctors, but when we got to making we had to work out what that meant: Would we give consultations? Would we operate on someone? Would we deliver public service announcements? Would we do all 3?&lt;/p&gt;
-&lt;p&gt;We began making by writing. We wrote a script for those very junior doctors &lt;/p&gt;
-&lt;p&gt;And then we rehearsed: we practiced our roles, what we were going to say, how to have the conversations we wanted (and needed) to have &lt;/p&gt;
-  &lt;&lt;timed 32s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
-
-    &lt;/div&gt;
-
-&lt;/main&gt;
-&lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="126" name="6kaiIntro4" tags="nobr" position="725,1600" size="100,100">&lt;&lt;set $prevpass to &quot;6kaiIntro3&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;6kaiIntro4&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;6kaiIntro5&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION6_INTRO_4.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
-&lt;div class=&quot;wrapper&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-
-  &lt;main class=&quot;speaking&quot;&gt;
-    &lt;div class=&quot;text-wrapper&quot;&gt;
+&lt;p&gt;For Violet we began making by writing. We wrote a script for those very junior doctors &lt;/p&gt;
+&lt;p&gt;And then we rehearsed: we practised our roles, what we were going to say, how to have the conversations we wanted (and needed) to have &lt;/p&gt;
 &lt;p&gt;Your making might look like this &lt;/p&gt;
 &lt;p&gt;It might be something very different &lt;/p&gt;
 &lt;p&gt;If I can make one suggestion though - &lt;/p&gt;
 &lt;p&gt;It’s to hold onto the playful in playful activist &lt;/p&gt;
 &lt;p&gt;What are you playing and who is getting to play? &lt;/p&gt;
 &lt;p&gt;How is playfulness your attitude? &lt;/p&gt;
-  &lt;&lt;timed 18s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;p&gt;Before you kick off though, it may help to find the Hat you’ll be wearing for this Action.&lt;/p&gt;
+&lt;p&gt;Enter the codeword for Module 13. &lt;/p&gt;
+
+  &lt;&lt;timed 44s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
     &lt;/div&gt;
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="127" name="6kaiIntro5" tags="nobr" position="850,1600" size="100,100">&lt;&lt;set $prevpass to &quot;6kaiIntro4&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;6kaiIntro5&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;6modulelist&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION6_INTRO_5.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
-&lt;div class=&quot;wrapper&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-
-  &lt;main class=&quot;speaking&quot;&gt;
-    &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt;And then next session, YES next session &lt;/p&gt;
-&lt;p&gt;You’ll deliver your gift to its recipient &lt;/p&gt;
-&lt;p&gt;I’ve got chills &lt;/p&gt;
-&lt;p&gt;Not really but I am excited &lt;/p&gt;
-&lt;p&gt;I hope you are too &lt;/p&gt;
-
-  &lt;&lt;timed 15s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
-
-    &lt;/div&gt;
-
-&lt;/main&gt;
-&lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="128" name="6modulelist" tags="nobr" position="975,1600" size="100,100">&lt;&lt;set $passage to &quot;6modulelist&quot;&gt;&gt;&lt;&lt;set $session to 6&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="106" name="6modulelist" tags="nobr" position="725,1350" size="100,100">&lt;&lt;set $passage to &quot;6modulelist&quot;&gt;&gt;&lt;&lt;set $session to 6&gt;&gt;
 &lt;&lt;timed 0.1s&gt;&gt;
   &lt;&lt;if $skip is true&gt;&gt;
      &lt;&lt;audio &quot;completionbloop_4&quot; play&gt;&gt;
@@ -3875,10 +3549,10 @@ The order you go in will be randomised.&lt;/p&gt;
   &lt;/div&gt;
   &lt;/main&gt;
   &lt;&lt;include &quot;footerbox&quot;&gt;&gt;&lt;/div&gt;
-  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="129" name="6mod13intro1" tags="nobr" position="1100,1600" size="100,100">&lt;&lt;set $prevpass to &quot;6modulelist&quot;&gt;&gt;
+  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="107" name="6mod13intro1" tags="nobr" position="850,1350" size="100,100">&lt;&lt;set $prevpass to &quot;6modulelist&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;6mod13intro1&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;6mod13intro2&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION6_MOD13_intro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;&lt;set $nextpass to &quot;6mod13a&quot;&gt;&gt;
+&lt;audio src=&quot;assets/audio/gpce1.5_SESSION6_MOD13_intro.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;&lt;set $module to &quot;Module 13&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
   &lt;div class=&quot;wrapper&quot;&gt;
     &lt;&lt;include &quot;header&quot;&gt;&gt;
@@ -3890,60 +3564,38 @@ The order you go in will be randomised.&lt;/p&gt;
 &lt;p&gt;Others will be behind the scenes making sure everything goes to plan &lt;/p&gt;
 &lt;p&gt;Some will be capturing the story of the gift &lt;/p&gt;
 &lt;p&gt;And others checking in to make sure it’s been received well &lt;/p&gt;
-  &lt;&lt;timed 18s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
-   &lt;/div&gt;
-    &lt;/main&gt;
-         &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="130" name="6mod13intro2" tags="nobr" position="1225,1600" size="100,100">&lt;&lt;set $prevpass to &quot;6mod13intro1&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;6mod13intro2&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;6mod13intro3&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION6_MOD13_intro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;set $module to &quot;Module 13&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
-  &lt;div class=&quot;wrapper&quot;&gt;
-    &lt;&lt;include &quot;header&quot;&gt;&gt;
-    &lt;main  class=&quot;speaking&quot;&gt;
-        &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt;Your artist will now take a moment to discuss roles &lt;/p&gt;
-&lt;p&gt;And decide who will do what &lt;/p&gt;
 &lt;p&gt;As you discuss &lt;/p&gt;
 &lt;p&gt;Think back to your comfort in action &lt;/p&gt;
-  &lt;&lt;timed 10s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
-   &lt;/div&gt;
-    &lt;/main&gt;
-         &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="131" name="6mod13intro3" tags="nobr" position="100,1725" size="100,100">&lt;&lt;set $prevpass to &quot;6mod13intro2&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;6mod13intro3&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;6mod13a&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION6_MOD13_intro_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;set $module to &quot;Module 13&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
-  &lt;div class=&quot;wrapper&quot;&gt;
-    &lt;&lt;include &quot;header&quot;&gt;&gt;
-    &lt;main  class=&quot;speaking&quot;&gt;
-        &lt;div class=&quot;text-wrapper&quot;&gt;
 &lt;p&gt;Be aware of who wants to be on the ground &lt;/p&gt;
 &lt;p&gt;Who wants to be behind the scenes? &lt;/p&gt;
 &lt;p&gt;Where do people feel comfortable?&lt;/p&gt;
 &lt;p&gt;Where do they feel safe? &lt;/p&gt;
 &lt;p&gt;What role will you play in delivering this action together? &lt;/p&gt;
-  &lt;&lt;timed 10s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+
+  &lt;&lt;timed 39s&gt;&gt;
+    &lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;
+  &lt;&lt;/timed&gt;&gt;
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="132" name="6mod13a" tags="nobr" position="225,1725" size="100,100">&lt;&lt;set $prevpass to &quot;6mod13intro3&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="108" name="6mod13a" tags="nobr" position="975,1350" size="100,100">&lt;&lt;set $prevpass to &quot;6mod14intro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;6mod13a&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;6mod13outro1&quot;&gt;&gt;
-  &lt;div class=&quot;wrapper&quot;&gt;
-    &lt;&lt;include &quot;header&quot;&gt;&gt;
-    &lt;main  class=&quot;speaking&quot;&gt;
-        &lt;div class=&quot;text-wrapper&quot;&gt;
-    &lt;p&gt;Over to you , Artist &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/p&gt;
-   &lt;/div&gt;
-    &lt;/main&gt;
-         &lt;&lt;include &quot;footer&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="133" name="6mod13outro1" tags="nobr" position="350,1725" size="100,100">&lt;&lt;set $prevpass to &quot;6mod13a&quot;&gt;&gt;
+
+&lt;div class=&quot;wrapper&quot;&gt;
+  &lt;&lt;include &quot;header&quot;&gt;&gt;
+  &lt;main class=&quot;speaking inlineimg&quot;&gt;
+    &lt;div class=&quot;text-wrapper&quot;&gt;
+
+When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;/div&gt;
+        &lt;img src=&quot;assets/img/mod13-rev.jpg&quot;&gt;
+ &lt;/main&gt;
+     &lt;&lt;include &quot;footer&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="109" name="6mod13outro1" tags="nobr" position="1100,1350" size="100,100">&lt;&lt;set $prevpass to &quot;6mod13a&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;6mod13outro1&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;6mod13outro2&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION6_MOD13_outro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;&lt;set $nextpass to &quot;6modulelist&quot;&gt;&gt;
+&lt;audio src=&quot;assets/audio/gpce1.5_SESSION6_MOD13_outro.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
@@ -3956,21 +3608,6 @@ The order you go in will be randomised.&lt;/p&gt;
 
 &lt;p&gt;The person who says that one, important line &lt;/p&gt;
 
-&lt;p&gt;The person who is taller than 5ft6 &lt;/p&gt;
-
-&lt;p&gt;Kidding &lt;/p&gt;
- &lt;&lt;timed 17s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
-&lt;/div&gt;
-&lt;/main&gt;
-     &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="134" name="6mod13outro2" tags="nobr" position="475,1725" size="100,100">&lt;&lt;set $prevpass to &quot;6mod13outro1&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;6mod13outro2&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;6modulelist&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION6_MOD13_outro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;div class=&quot;wrapper&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-  &lt;main class=&quot;speaking&quot;&gt;
-      &lt;div class=&quot;text-wrapper&quot;&gt;
 &lt;p&gt;Even if it feels as though some roles are more central &lt;/p&gt;
 
 &lt;p&gt;That’s not how it is &lt;/p&gt;
@@ -3983,14 +3620,15 @@ The order you go in will be randomised.&lt;/p&gt;
 
 &lt;p&gt;Right, it’s time for making. &lt;/p&gt;
 &lt;p&gt;You know the game, time for the Codeword. &lt;/p&gt;
- &lt;&lt;timed 18s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod13 to true&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
+
+ &lt;&lt;timed 33s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod13 to true&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;/div&gt;
 &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="135" name="6mod14intro1" tags="nobr" position="600,1725" size="100,100">&lt;&lt;set $prevpass to &quot;6modulelist&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="110" name="6mod14intro1" tags="nobr" position="1225,1350" size="100,100">&lt;&lt;set $prevpass to &quot;6modulelist&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;6mod14intro1&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;6mod14intro2&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION6_MOD14_intro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;&lt;set $nextpass to &quot;6mod14a&quot;&gt;&gt;
+&lt;audio src=&quot;assets/audio/gpce1.5_SESSION6_MOD14_intro.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;&lt;set $module to &quot;Module 14&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
@@ -3999,121 +3637,54 @@ The order you go in will be randomised.&lt;/p&gt;
 &lt;p&gt;Now it’s time to get making &lt;/p&gt;
 &lt;p&gt;So, roll up your sleeves &lt;/p&gt;
 &lt;p&gt;Or don’t if you’re wearing a T-shirt &lt;/p&gt;
-&lt;p&gt;And get stuck in &lt;/p&gt;
-&lt;p&gt;Maybe all of you are wearing T-shirts &lt;/p&gt;
-&lt;&lt;timed 10s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;
-  &lt;p&gt;I can’t know really &lt;/p&gt;
-  &lt;p&gt;Because &lt;/p&gt;
-  &lt;p&gt;Let’s say it together &lt;/p&gt;
-  &lt;p&gt;I’m pre-recorded &lt;/p&gt;
-&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;p&gt;And get stuck in. &lt;/p&gt;
+&lt;p&gt;Over to you Teacher. &lt;/p&gt;
+
   &lt;&lt;timed 18s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="136" name="6mod14intro2" tags="nobr" position="725,1725" size="100,100">&lt;&lt;set $prevpass to &quot;6mod14intro1&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;6mod14intro2&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;6mod14intro3&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION6_MOD14_intro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;set $module to &quot;Module 14&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
-&lt;div class=&quot;wrapper&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-  &lt;main class=&quot;speaking&quot;&gt;
-    &lt;div class=&quot;text-wrapper&quot;&gt;
-
-&lt;p&gt;Did you say it with me? &lt;/p&gt;
-&lt;p&gt;To be honest though, me being pre-recorded doesn’t matter &lt;/p&gt;
-&lt;p&gt;I don’t need to be there because I trust every one of you to make this happen &lt;/p&gt;
-&lt;p&gt;And you’ve all got to trust yourselves &lt;/p&gt;
-  &lt;&lt;timed 11s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
-&lt;/div&gt;
- &lt;/main&gt;
-     &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="137" name="6mod14intro3" tags="nobr" position="850,1725" size="100,100">&lt;&lt;set $prevpass to &quot;6mod14intro2&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;6mod14intro3&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;6mod14a&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION6_MOD14_intro_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;&lt;set $module to &quot;Module 14&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
-&lt;div class=&quot;wrapper&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-  &lt;main class=&quot;speaking&quot;&gt;
-    &lt;div class=&quot;text-wrapper&quot;&gt;
-
-
-&lt;p&gt;Trust that you’ve thought this all through &lt;/p&gt;
-&lt;p&gt;Trust that you’ve asked yourself the hard questions. &lt;/p&gt;
-&lt;p&gt;Trust that this is the right gift for your school right now. &lt;/p&gt;
-  &lt;&lt;timed 10s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/timed&gt;&gt;
-&lt;/div&gt;
- &lt;/main&gt;
-     &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="138" name="6mod14a" tags="nobr" position="975,1725" size="100,100">&lt;&lt;set $prevpass to &quot;6mod14intro3&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="111" name="6mod14a" tags="nobr" position="100,1475" size="100,100">&lt;&lt;set $prevpass to &quot;6mod14intro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;6mod14a&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;6mod14outro&quot;&gt;&gt;
+&lt;&lt;set $nextpass to &quot;6sessionoutro1&quot;&gt;&gt;
 
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking inlineimg&quot;&gt;
     &lt;div class=&quot;text-wrapper&quot;&gt;
 
-When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;6mod14outro&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod14 to true&gt;&gt;
+      &lt;&lt;set $skip to true&gt;&gt;&lt;&lt;goto &quot;6modulelist&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
         &lt;img src=&quot;assets/img/mod14-rev.jpg&quot;&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="139" name="6mod14outro" tags="nobr" position="1100,1725" size="100,100">&lt;&lt;set $prevpass to &quot;6mod14a&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;6mod14outro&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;6sessionoutro1&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION6_MOD14_outro.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;div class=&quot;wrapper&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-  &lt;main class=&quot;speaking&quot;&gt;
-    &lt;div class=&quot;text-wrapper&quot; id=&quot;mount&quot;&gt;
-&lt;p&gt; And that’s it.&lt;/p&gt;
-
-&lt;p&gt;Your gift is made: written, rehearsed, crafted, built &lt;/p&gt;
-&lt;p&gt;Wrapped, and ready to be delivered… &lt;/p&gt;
-&lt;p&gt;Or close at least! &lt;/p&gt;
-
-
-&lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;set $mod14 to true&gt;&gt;
-      &lt;&lt;set $skip to true&gt;&gt;&lt;&lt;goto &quot;6modulelist&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
-
-&lt;/div&gt;
- &lt;/main&gt;
-     &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="140" name="6sessionoutro1" tags="nobr" position="1225,1725" size="100,100">&lt;&lt;set $prevpass to &quot;6mod14outro&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="112" name="6sessionoutro1" tags="nobr" position="225,1475" size="100,100">&lt;&lt;set $prevpass to &quot;6mod14a&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;6sessionoutro1&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;6sessionoutro2&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION6_OUTRO_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
+&lt;&lt;set $nextpass to &quot;landing&quot;&gt;&gt;
+&lt;audio src=&quot;assets/audio/gpce1.5_SESSION6_OUTRO.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
   &lt;&lt;include &quot;header&quot;&gt;&gt;
   &lt;main class=&quot;speaking&quot;&gt;
     &lt;div class=&quot;text-wrapper&quot;&gt;
-&lt;p&gt;We’ve reached the end of the session &lt;/p&gt;
+&lt;p&gt;And that’s it.&lt;/p&gt;
+
+&lt;p&gt;Your gift is made: written, rehearsed, crafted, built &lt;/p&gt;
+&lt;p&gt;Wrapped, and ready to be delivered… &lt;/p&gt;
+&lt;p&gt;Or close at least! &lt;/p&gt;
+&lt;p&gt;You might need a bit more making time. &lt;/p&gt;
+
+&lt;p&gt;But we’ve reached the end of the session &lt;/p&gt;
 &lt;p&gt;And we’re getting closer to the end of our time together too&lt;/p&gt;
 &lt;p&gt;But that end will be a start of something else &lt;/p&gt;
 &lt;p&gt;The start of your school being a different place, &lt;/p&gt;
 &lt;p&gt;Different because of the change you have made &lt;/p&gt;
 &lt;p&gt;But that’s next time! &lt;/p&gt;
-
-
-&lt;&lt;button &quot;Finish&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
-&lt;/div&gt;
-  &lt;/main&gt;
-     &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="141" name="6sessionoutro2" tags="nobr" position="100,1850" size="100,100">&lt;&lt;set $prevpass to &quot;6sessionoutro1&quot;&gt;&gt;
-&lt;&lt;set $passage to &quot;6sessionoutro2&quot;&gt;&gt;
-&lt;&lt;set $nextpass to &quot;landing&quot;&gt;&gt;
-&lt;audio src=&quot;assets/audio/SESSION6_OUTRO_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
-&lt;div class=&quot;wrapper&quot;&gt;
-  &lt;&lt;include &quot;header&quot;&gt;&gt;
-  &lt;main class=&quot;speaking&quot;&gt;
-    &lt;div class=&quot;text-wrapper&quot;&gt;
-
 &lt;p&gt;You’ll need that codeword to get in &lt;/p&gt;
 &lt;p&gt;Text &lt;h2 class=&quot;subtitle inline&quot;&gt; COLLECTIVE&lt;/h2&gt; to find it &lt;/p&gt;
+
+
 
 &lt;&lt;button &quot;Finish&quot;&gt;&gt;&lt;&lt;audio &quot;pyramidtransition_1&quot; play &gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpass&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
@@ -4123,7 +3694,9 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 
 
 
-/* SESSION 7 */</tw-passagedata><tw-passagedata pid="142" name="7kaiIntro1" tags="nobr" position="225,1850" size="100,100">&lt;&lt;set $prevpass to &quot;landing&quot;&gt;&gt;
+
+
+/* SESSION 7 */</tw-passagedata><tw-passagedata pid="113" name="7kaiIntro1" tags="nobr" position="350,1475" size="100,100">&lt;&lt;set $prevpass to &quot;landing&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;7kaiIntro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;7kaiIntro2&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/SESSION7_INTRO_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -4145,7 +3718,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
   
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="143" name="7kaiIntro2" tags="nobr" position="350,1850" size="100,100">&lt;&lt;set $prevpass to &quot;7kaiIntro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="114" name="7kaiIntro2" tags="nobr" position="475,1475" size="100,100">&lt;&lt;set $prevpass to &quot;7kaiIntro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;7kaiIntro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;7kaiIntro3&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/SESSION7_INTRO_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -4167,7 +3740,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
   
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="144" name="7kaiIntro3" tags="nobr" position="475,1850" size="100,100">&lt;&lt;set $prevpass to &quot;7kaiIntro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="115" name="7kaiIntro3" tags="nobr" position="600,1475" size="100,100">&lt;&lt;set $prevpass to &quot;7kaiIntro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;7kaiIntro3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;7kaiIntro4&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/SESSION7_INTRO_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -4188,7 +3761,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
   
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="145" name="7kaiIntro4" tags="nobr" position="600,1850" size="100,100">&lt;&lt;set $prevpass to &quot;7kaiIntro3&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="116" name="7kaiIntro4" tags="nobr" position="725,1475" size="100,100">&lt;&lt;set $prevpass to &quot;7kaiIntro3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;7kaiIntro4&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;7modulelist&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/SESSION7_INTRO_4.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -4210,7 +3783,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
   
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="146" name="7modulelist" tags="nobr" position="725,1850" size="100,100">&lt;&lt;set $passage to &quot;7modulelist&quot;&gt;&gt;&lt;&lt;set $session to 7&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="117" name="7modulelist" tags="nobr" position="850,1475" size="100,100">&lt;&lt;set $passage to &quot;7modulelist&quot;&gt;&gt;&lt;&lt;set $session to 7&gt;&gt;
 &lt;&lt;timed 0.1s&gt;&gt;
   &lt;&lt;if $skip is true&gt;&gt;
      &lt;&lt;audio &quot;completionbloop_4&quot; play&gt;&gt;
@@ -4326,7 +3899,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
   &lt;/div&gt;
   &lt;/main&gt;
   &lt;&lt;include &quot;footerbox&quot;&gt;&gt;&lt;/div&gt;
-  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="147" name="7mod15intro1" tags="nobr" position="850,1850" size="100,100">&lt;&lt;set $prevpass to &quot;7modulelist&quot;&gt;&gt;
+  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="118" name="7mod15intro1" tags="nobr" position="975,1475" size="100,100">&lt;&lt;set $prevpass to &quot;7modulelist&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;7mod15intro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;7mod15intro2&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/SESSION7_MOD15_intro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -4343,7 +3916,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="148" name="7mod15intro2" tags="nobr" position="975,1850" size="100,100">&lt;&lt;set $prevpass to &quot;7mod15intro1&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="119" name="7mod15intro2" tags="nobr" position="1100,1475" size="100,100">&lt;&lt;set $prevpass to &quot;7mod15intro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;7mod15intro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;7mod15intro3&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/SESSION7_MOD15_intro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -4360,7 +3933,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="149" name="7mod15intro3" tags="nobr" position="1100,1850" size="100,100">&lt;&lt;set $prevpass to &quot;7mod15intro2&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="120" name="7mod15intro3" tags="nobr" position="1225,1475" size="100,100">&lt;&lt;set $prevpass to &quot;7mod15intro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;7mod15intro3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;7mod15intro4&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/SESSION7_MOD15_intro_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -4376,7 +3949,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="150" name="7mod15intro4" tags="nobr" position="1225,1850" size="100,100">&lt;&lt;set $prevpass to &quot;7mod15intro3&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="121" name="7mod15intro4" tags="nobr" position="100,1600" size="100,100">&lt;&lt;set $prevpass to &quot;7mod15intro3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;7mod15intro4&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;7mod15a&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/SESSION7_MOD15_intro_4.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -4400,7 +3973,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="151" name="7mod15a" tags="nobr" position="100,1975" size="100,100">&lt;&lt;set $prevpass to &quot;7mod15intro4&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="122" name="7mod15a" tags="nobr" position="225,1600" size="100,100">&lt;&lt;set $prevpass to &quot;7mod15intro4&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;7mod15a&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;7mod15outro1&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/SESSION7_MOD15_intro_5.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -4413,7 +3986,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="152" name="7mod15outro1" tags="nobr" position="225,1975" size="100,100">&lt;&lt;set $prevpass to &quot;7mod15a&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="123" name="7mod15outro1" tags="nobr" position="350,1600" size="100,100">&lt;&lt;set $prevpass to &quot;7mod15a&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;7mod15outro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;7mod15outro2&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/SESSION7_MOD15_outro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -4431,7 +4004,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;
 &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="153" name="7mod15outro2" tags="nobr" position="350,1975" size="100,100">&lt;&lt;set $prevpass to &quot;7mod15outro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="124" name="7mod15outro2" tags="nobr" position="475,1600" size="100,100">&lt;&lt;set $prevpass to &quot;7mod15outro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;7mod15outro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;7mod15outro3&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/SESSION7_MOD15_outro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -4446,7 +4019,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;
 &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="154" name="7mod15outro3" tags="nobr" position="475,1975" size="100,100">&lt;&lt;set $prevpass to &quot;7mod15outro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="125" name="7mod15outro3" tags="nobr" position="600,1600" size="100,100">&lt;&lt;set $prevpass to &quot;7mod15outro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;7mod15outro3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;7modulelist&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/SESSION7_MOD15_outro_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -4460,7 +4033,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;
 &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="155" name="7mod16intro1" tags="nobr" position="600,1975" size="100,100">&lt;&lt;set $prevpass to &quot;7modulelist&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="126" name="7mod16intro1" tags="nobr" position="725,1600" size="100,100">&lt;&lt;set $prevpass to &quot;7modulelist&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;7mod16intro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;7mod16intro2&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 16&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -4477,7 +4050,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;
 &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="156" name="7mod16intro2" tags="nobr" position="725,1975" size="100,100">&lt;&lt;set $prevpass to &quot;7mod16intro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="127" name="7mod16intro2" tags="nobr" position="850,1600" size="100,100">&lt;&lt;set $prevpass to &quot;7mod16intro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;7mod16intro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;7mod16intro3&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/SESSION7_MOD16_intro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -4494,7 +4067,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;
 &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="157" name="7mod16intro3" tags="nobr" position="850,1975" size="100,100">&lt;&lt;set $prevpass to &quot;7mod16intro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="128" name="7mod16intro3" tags="nobr" position="975,1600" size="100,100">&lt;&lt;set $prevpass to &quot;7mod16intro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;7mod16intro3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;complete&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/SESSION7_MOD16_intro_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -4533,7 +4106,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="158" name="complete" tags="nobr" position="975,1975" size="100,100">&lt;&lt;set $prevpass to &quot;7mod16intro3&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="129" name="complete" tags="nobr" position="1100,1600" size="100,100">&lt;&lt;set $prevpass to &quot;7mod16intro3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;complete&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;7mod16outro1&quot;&gt;&gt;
 &lt;div class=&quot;wrapper&quot;&gt;
@@ -4557,7 +4130,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
  &lt;/main&gt;
  
      /* &lt;&lt;include &quot;footer&quot;&gt;&gt; */
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="159" name="7mod16outro1" tags="nobr" position="1100,1975" size="100,100">&lt;&lt;set $prevpass to &quot;7mod16intro3&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="130" name="7mod16outro1" tags="nobr" position="1225,1600" size="100,100">&lt;&lt;set $prevpass to &quot;7mod16intro3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;7mod16outro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;7mod16outro2&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/SESSION7_MOD16_outro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -4580,7 +4153,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="160" name="7mod16outro2" tags="nobr" position="1225,1975" size="100,100">&lt;&lt;set $prevpass to &quot;7mod16intro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="131" name="7mod16outro2" tags="nobr" position="100,1725" size="100,100">&lt;&lt;set $prevpass to &quot;7mod16intro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;7mod16outro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;7sessionoutro1&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Module 16&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -4599,7 +4172,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;
  &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="161" name="7sessionoutro1" tags="nobr" position="100,2100" size="100,100">&lt;&lt;set $prevpass to &quot;7mod16outro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="132" name="7sessionoutro1" tags="nobr" position="225,1725" size="100,100">&lt;&lt;set $prevpass to &quot;7mod16outro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;7sessionoutro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;7sessionoutro2&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/SESSION7_OUTRO_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -4617,7 +4190,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="162" name="7sessionoutro2" tags="nobr" position="225,2100" size="100,100">&lt;&lt;set $prevpass to &quot;7sessionoutro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="133" name="7sessionoutro2" tags="nobr" position="350,1725" size="100,100">&lt;&lt;set $prevpass to &quot;7sessionoutro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;7sessionoutro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;7sessionoutro3&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/SESSION7_OUTRO_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -4636,7 +4209,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="163" name="7sessionoutro3" tags="nobr" position="350,2100" size="100,100">&lt;&lt;set $prevpass to &quot;7sessionoutro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="134" name="7sessionoutro3" tags="nobr" position="475,1725" size="100,100">&lt;&lt;set $prevpass to &quot;7sessionoutro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;7sessionoutro3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;7sessionoutro4&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/SESSION7_OUTRO_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -4652,7 +4225,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footer&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="164" name="7sessionoutro4" tags="nobr" position="475,2100" size="100,100">&lt;&lt;set $prevpass to &quot;7sessionoutro3&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="135" name="7sessionoutro4" tags="nobr" position="600,1725" size="100,100">&lt;&lt;set $prevpass to &quot;7sessionoutro3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;7sessionoutro4&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;landing&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/SESSION7_OUTRO_4.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -4674,7 +4247,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 
 
 
-/* SESSION 8 */</tw-passagedata><tw-passagedata pid="165" name="8kaiIntro1" tags="nobr" position="600,2100" size="100,100">&lt;&lt;set $prevpass to &quot;landing&quot;&gt;&gt;
+/* SESSION 8 */</tw-passagedata><tw-passagedata pid="136" name="8kaiIntro1" tags="nobr" position="725,1725" size="100,100">&lt;&lt;set $prevpass to &quot;landing&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8kaiIntro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8kaiIntrob&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -4697,7 +4270,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="166" name="8kaiIntrob" tags="nobr" position="725,2100" size="100,100">&lt;&lt;set $prevpass to &quot;8kaiIntro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="137" name="8kaiIntrob" tags="nobr" position="850,1725" size="100,100">&lt;&lt;set $prevpass to &quot;8kaiIntro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8kaiIntrob&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8kaiIntroc&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -4715,7 +4288,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="167" name="8kaiIntroc" tags="nobr" position="850,2100" size="100,100">&lt;&lt;set $prevpass to &quot;8kaiIntrob&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="138" name="8kaiIntroc" tags="nobr" position="975,1725" size="100,100">&lt;&lt;set $prevpass to &quot;8kaiIntrob&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8kaiIntroc&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8kaiIntrod&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -4731,7 +4304,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="168" name="8kaiIntrod" tags="nobr" position="975,2100" size="100,100">&lt;&lt;set $prevpass to &quot;8kaiIntroc&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="139" name="8kaiIntrod" tags="nobr" position="1100,1725" size="100,100">&lt;&lt;set $prevpass to &quot;8kaiIntroc&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8kaiIntrod&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8kaiIntro2&quot;&gt;&gt;
 &lt;&lt;set $module to &quot;Introduction&quot;&gt;&gt;&lt;&lt;include &quot;checkmodulenamelist&quot;&gt;&gt;
@@ -4750,7 +4323,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="169" name="8kaiIntro2" tags="nobr" position="1100,2100" size="100,100">&lt;&lt;set $prevpass to &quot;8kaiIntro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="140" name="8kaiIntro2" tags="nobr" position="1225,1725" size="100,100">&lt;&lt;set $prevpass to &quot;8kaiIntro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8kaiIntro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8kaiIntro3&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/SESSION8_INTRO_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -4765,7 +4338,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="170" name="8kaiIntro3" tags="nobr" position="1225,2100" size="100,100">&lt;&lt;set $prevpass to &quot;8kaiIntro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="141" name="8kaiIntro3" tags="nobr" position="100,1850" size="100,100">&lt;&lt;set $prevpass to &quot;8kaiIntro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8kaiIntro3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8kaiIntro4&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/SESSION8_INTRO_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -4780,7 +4353,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="171" name="8kaiIntro4" tags="nobr" position="100,2225" size="100,100">&lt;&lt;set $prevpass to &quot;8kaiIntro3&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="142" name="8kaiIntro4" tags="nobr" position="225,1850" size="100,100">&lt;&lt;set $prevpass to &quot;8kaiIntro3&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8kaiIntro4&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8kaiIntro5&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/SESSION8_INTRO_4.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -4798,7 +4371,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="172" name="8kaiIntro5" tags="nobr" position="225,2225" size="100,100">&lt;&lt;set $prevpass to &quot;8kaiIntro4&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="143" name="8kaiIntro5" tags="nobr" position="350,1850" size="100,100">&lt;&lt;set $prevpass to &quot;8kaiIntro4&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8kaiIntro5&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8modulelist&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/SESSION8_INTRO_5.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -4817,7 +4390,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;
 &lt;/main&gt;
 &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="173" name="8modulelist" tags="nobr" position="350,2225" size="100,100">&lt;&lt;set $passage to &quot;8modulelist&quot;&gt;&gt;&lt;&lt;set $session to 8&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="144" name="8modulelist" tags="nobr" position="475,1850" size="100,100">&lt;&lt;set $passage to &quot;8modulelist&quot;&gt;&gt;&lt;&lt;set $session to 8&gt;&gt;
 &lt;&lt;timed 0.1s&gt;&gt;
   &lt;&lt;if $skip is true&gt;&gt;
      &lt;&lt;audio &quot;completionbloop_4&quot; play&gt;&gt;
@@ -4882,7 +4455,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 
   &lt;/main&gt;
   &lt;&lt;include &quot;footerbox&quot;&gt;&gt;&lt;/div&gt;
-  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="174" name="8mod17intro1" tags="nobr" position="475,2225" size="100,100">&lt;&lt;set $prevpass to &quot;8modulelist&quot;&gt;&gt;
+  &lt;&lt;done&gt;&gt;&lt;&lt;include &quot;checkmodules&quot;&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="145" name="8mod17intro1" tags="nobr" position="600,1850" size="100,100">&lt;&lt;set $prevpass to &quot;8modulelist&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8mod17intro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8mod17introVid&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/SESSION8_MOD17_intro_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -4905,7 +4478,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="175" name="8mod17introVid" tags="nobr" position="600,2225" size="100,100">&lt;&lt;set $prevpass to &quot;8mod17intro1&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="146" name="8mod17introVid" tags="nobr" position="725,1850" size="100,100">&lt;&lt;set $prevpass to &quot;8mod17intro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8mod17introVid&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8mod17intro2&quot;&gt;&gt;
   &lt;div class=&quot;wrapper&quot;&gt;
@@ -4915,7 +4488,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
         	&lt;div id=&quot;video&quot; role=&quot;video&quot; aria-label=&quot;&quot;&gt;&lt;iframe src=&quot;https://player.vimeo.com/video/809464688?h=c6aec791bb&amp;amp;badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture&quot; style=&quot;position:absolute;top:0;left:0;width:100%;height:90%;&quot; allowfullscreen title=&quot;greenpeace violet.mp4&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footervid&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="176" name="8mod17intro2" tags="nobr" position="725,2225" size="100,100">&lt;&lt;set $prevpass to &quot;8mod17introVid&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="147" name="8mod17intro2" tags="nobr" position="850,1850" size="100,100">&lt;&lt;set $prevpass to &quot;8mod17introVid&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8mod17intro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8mod17intro3&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/SESSION8_MOD17_intro_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -4934,7 +4507,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="177" name="8mod17intro3" tags="nobr" position="850,2225" size="100,100">&lt;&lt;set $prevpass to &quot;8mod17intro2&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="148" name="8mod17intro3" tags="nobr" position="975,1850" size="100,100">&lt;&lt;set $prevpass to &quot;8mod17intro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8mod17intro3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8mod17intro4&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/SESSION8_MOD17_intro_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -4953,7 +4526,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="178" name="8mod17intro4" tags="nobr" position="975,2225" size="100,100">&lt;&lt;set $prevpass to &quot;8mod17intro2&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="149" name="8mod17intro4" tags="nobr" position="1100,1850" size="100,100">&lt;&lt;set $prevpass to &quot;8mod17intro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8mod17intro4&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8sessionoutro1&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/SESSION8_MOD17_intro_4.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -4972,7 +4545,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
    &lt;/div&gt;
     &lt;/main&gt;
          &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="179" name="8sessionoutro1" tags="nobr" position="1100,2225" size="100,100">&lt;&lt;set $prevpass to &quot;8mod17intro4&quot;&gt;&gt;
+  &lt;/div&gt;</tw-passagedata><tw-passagedata pid="150" name="8sessionoutro1" tags="nobr" position="1225,1850" size="100,100">&lt;&lt;set $prevpass to &quot;8mod17intro4&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8sessionoutro1&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8sessionoutro2&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/SESSION8_OUTRO_1.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -4993,7 +4566,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="180" name="8sessionoutro2" tags="nobr" position="1225,2225" size="100,100">&lt;&lt;set $prevpass to &quot;8sessionoutro1&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="151" name="8sessionoutro2" tags="nobr" position="100,1975" size="100,100">&lt;&lt;set $prevpass to &quot;8sessionoutro1&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8sessionoutro2&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8sessionoutro3&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/SESSION8_OUTRO_2.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
@@ -5016,7 +4589,7 @@ When finished click &lt;&lt;button &quot;Move on&quot;&gt;&gt;&lt;&lt;set $prevp
 &lt;/div&gt;
   &lt;/main&gt;
      &lt;&lt;include &quot;footerskip&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="181" name="8sessionoutro3" tags="nobr" position="100,2350" size="100,100">&lt;&lt;set $prevpass to &quot;8sessionoutro2&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="152" name="8sessionoutro3" tags="nobr" position="225,1975" size="100,100">&lt;&lt;set $prevpass to &quot;8sessionoutro2&quot;&gt;&gt;
 &lt;&lt;set $passage to &quot;8sessionoutro3&quot;&gt;&gt;
 &lt;&lt;set $nextpass to &quot;8sessionoutro4&quot;&gt;&gt;
 &lt;audio src=&quot;assets/audio/SESSION8_OUTRO_3.mp3&quot; autoplay&gt;Audio is not supported on your device&lt;/audio&gt;
