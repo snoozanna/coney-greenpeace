@@ -4051,7 +4051,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<set $prev
 <<set $prevpass to "landing">>
 <<set $passage to "7kaiIntro1">>
 <<set $nextpass to "7kaiIntro2">>
-<audio src="assets/audio/SESSION7_INTRO_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/gpce1.5_SESSION7_INTRO_1.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Introduction">><<include "checkmodulenamelist">>
 <div class="wrapper">
   <<include "header">>
@@ -4060,12 +4060,20 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<set $prev
  <h1 class="title ">Hello again. </h1>
 
     <div class="text-wrapper">
-<p>Wow – we’ve dismantled a lot of this pyramid now - reaching the end.</p>
-<p>Today you’re going to deliver your gift to its recipient </p>
+<p>We’ve dismantled a lot of this pyramid now. </p>
+<p>Today you’re going to deliver you gift to its recipient </p>
 <p>How are you feeling? </p>
 <p>Good? </p>
+<p>I imagine you’re all nodding </p>
+<p>I can’t see you (of course)</p> 
+<p>But I’ll assume you are </p>
+<p>Although, you might not feel good</p>
+<p>You might feel nervous, or cautious or unsure </p>
+<p>Or none of these things </p>
+<p>All of which is understandable </p>
 
-    <<timed 12s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+
+    <<timed 24s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
     </div>
   
 </main>
@@ -4075,38 +4083,13 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<set $prev
 :: 7kaiIntro2 [nobr]
 <<set $prevpass to "7kaiIntro1">>
 <<set $passage to "7kaiIntro2">>
-<<set $nextpass to "7kaiIntro3">>
-<audio src="assets/audio/SESSION7_INTRO_2.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $nextpass to "7modulelist">>
+<audio src="assets/audio/gpce1.5_SESSION7_INTRO_2.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Introduction">><<include "checkmodulenamelist">>
 <div class="wrapper">
   <<include "header">>
     /* <h1 class="title top">Hello - it's Kai again</h1> */
   <main class="speaking">
-    <div class="text-wrapper">
-<p>I imagine you’re all nodding </p>
-<p>I can’t see you (of course) </p>
-<p>But I’ll assume you are </p>
-<p>Although, you might not feel good, of course </p>
-<p>You might feel nervous, or cautious or unsure </p>
-<p>Or none of these things </p>
-<p>All of which is understandable </p>
-    <<timed 16s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
-    </div>
-  
-</main>
-<<include "footerskip">>
-</div>
-
-:: 7kaiIntro3 [nobr]
-<<set $prevpass to "7kaiIntro2">>
-<<set $passage to "7kaiIntro3">>
-<<set $nextpass to "7kaiIntro4">>
-<audio src="assets/audio/SESSION7_INTRO_3.mp3" autoplay>Audio is not supported on your device</audio>
-<<set $module to "Introduction">><<include "checkmodulenamelist">>
-<div class="wrapper">
-  <<include "header">>
-  <main class="speaking">
-
     <div class="text-wrapper">
 <p>Actions often don’t go exactly as we imagined </p>
 <p>Your expectation might not end up being the reality </p>
@@ -4114,37 +4097,16 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<set $prev
 <p>Sometimes success is our action going exactly to plan </p>
 <p>This might be what happens to you today </p>
 <p>But sometimes success is something different </p>
-    <<timed 22s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
-    </div>
-  
-</main>
-<<include "footerskip">>
-</div>
-
-:: 7kaiIntro4 [nobr]
-<<set $prevpass to "7kaiIntro3">>
-<<set $passage to "7kaiIntro4">>
-<<set $nextpass to "7modulelist">>
-<audio src="assets/audio/SESSION7_INTRO_4.mp3" autoplay>Audio is not supported on your device</audio>
-<<set $module to "Introduction">><<include "checkmodulenamelist">>
-<div class="wrapper">
-  <<include "header">>
-  <main class="speaking">
-
-    <div class="text-wrapper">
-<p>Some people might plan to be 6ft tall </p>
-<p>And just because they’re only 5ft6 that doesn’t mean they’re not a success </p>
-<p>Your action might not go to plan today </p>
-<p>But that won’t mean it’s not a success </p>
-<p>It doesn’t mean it won’t have impact </p>
 <p>So, let’s talk about that before the delivery</p>
 <p>Enter the code for Module 15</p>
-    <<timed 22s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+
+    <<timed 25s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
     </div>
   
 </main>
 <<include "footerskip">>
 </div>
+
 
 
 :: 7modulelist [nobr]
@@ -4273,17 +4235,20 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<set $prev
 <<set $prevpass to "7modulelist">>
 <<set $passage to "7mod15intro1">>
 <<set $nextpass to "7mod15intro2">>
-<audio src="assets/audio/SESSION7_MOD15_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/gpce1.5_SESSION7_MOD15_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Module 15">><<include "checkmodulenamelist">>
   <div class="wrapper">
     <<include "header">>
     <main  class="speaking">
         <div class="text-wrapper">
 <p>You might have noticed that I haven’t finished the story of Violet. </p>
-<p>Maybe you’ve been curious about what happened next </p>
 <p>The thing is - Violet didn’t go to plan </p>
+<p>We were due to be stood outside the entrance to the dinner, on the uncovered street</p> 
+<p>And then the night of the gala we were met with torrential downpour </p>
+<p>We wanted to continue with our plan, but we were concerned about the stories that would be told: stories about children stood outside in the cold, stories of drenched junior doctors, stories about our lack of care </p>
+<p>Not stories about our action </p>
 
- <<timed 12s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+ <<timed 33s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
    </div>
     </main>
          <<include "footerskip">>
@@ -4293,27 +4258,7 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<set $prev
 <<set $prevpass to "7mod15intro1">>
 <<set $passage to "7mod15intro2">>
 <<set $nextpass to "7mod15intro3">>
-<audio src="assets/audio/SESSION7_MOD15_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
-<<set $module to "Module 15">><<include "checkmodulenamelist">>
-  <div class="wrapper">
-    <<include "header">>
-    <main  class="speaking">
-        <div class="text-wrapper">
-<p>We were due to be stood outside the entrance to the dinner, on the uncovered street </p>
-<p>And then the night of the gala we were met with torrential downpour </p>
-<p>We wanted to continue with our plan, but we were concerned about the stories that would be told: stories about children stood outside in the cold, stories of drenched junior doctors, stories about our lack of care</p> 
-<p>Not stories about our action </p>
- <<timed 24s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
-   </div>
-    </main>
-         <<include "footerskip">>
-  </div>
-
-:: 7mod15intro3 [nobr]
-<<set $prevpass to "7mod15intro2">>
-<<set $passage to "7mod15intro3">>
-<<set $nextpass to "7mod15intro4">>
-<audio src="assets/audio/SESSION7_MOD15_intro_3.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/gpce1.5_SESSION7_MOD15_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Module 15">><<include "checkmodulenamelist">>
   <div class="wrapper">
     <<include "header">>
@@ -4322,165 +4267,99 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<set $prev
 <p>So, we had to make the call to delay and wait until the rain had stopped </p>
 <p>We still delivered our action, but only to a very small number of people, as they arrived later </p>
 <p>When it wasn’t pouring buckets </p>
- <<timed 13s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+
+ <<timed 14s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
    </div>
     </main>
          <<include "footerskip">>
   </div>
 
-:: 7mod15intro4 [nobr]
-<<set $prevpass to "7mod15intro3">>
-<<set $passage to "7mod15intro4">>
+:: 7mod15intro3 [nobr]
+<<set $prevpass to "7mod15intro2">>
+<<set $passage to "7mod15intro3">>
 <<set $nextpass to "7mod15a">>
-<audio src="assets/audio/SESSION7_MOD15_intro_4.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/gpce1.5_SESSION7_MOD15_intro_3.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Module 15">><<include "checkmodulenamelist">>
   <div class="wrapper">
     <<include "header">>
     <main  class="speaking">
-        <div class="text-wrapper" id="mount">
+        <div class="text-wrapper">
 <p>This reminds me that success is sometimes not what you think </p>
 <p>For Violet, we thought that success would be speaking to everyone at that dinner.  </p>
 <p>But really, it’s the story. </p>
 <p>The story I’ve told you. </p>
-<<timed 14s>><<replace "#mount">>
-  <p>It’s also a reminder that you can always change your plan. </p>
-  <p>You always have the power to abort: </p>
-  <p>to say – no, this isn’t right. </p>
-  <p>To decide to change the action. </p>
-  <p>To decide not to do the action at all. </p>
- <</replace>><</timed>>
-  <<timed 27s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+<p>It’s also a reminder that you can always change your plan. </p>
+<p>You always have the power to abort: </p>
+<p>to say – no, this isn’t right. </p>
+<p>To decide to change the action. </p>
+<p>To decide not to do the action at all.</p>
+
+ <<timed 26s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
    </div>
     </main>
          <<include "footerskip">>
   </div>
 
 :: 7mod15a [nobr]
-<<set $prevpass to "7mod15intro4">>
+<<set $prevpass to "7mod15intro3">>
 <<set $passage to "7mod15a">>
 <<set $nextpass to "7mod15outro1">>
-<audio src="assets/audio/SESSION7_MOD15_intro_5.mp3" autoplay>Audio is not supported on your device</audio>
-<<set $module to "Module 15">><<include "checkmodulenamelist">>
-  <div class="wrapper">
-    <<include "header">>
-    <main  class="speaking">
-        <div class="text-wrapper">
-   <p>I’ll give you a moment to discuss but if you are ready move on, click <<button "Next">><<set $prevpass to $passage>><<goto $nextpass>><</button>> </p>
-   </div>
-    </main>
-         <<include "footerskip">>
-  </div>
 
+<div class="wrapper">
+  <<include "header">>
+  <main class="speaking inlineimg">
+    <div class="text-wrapper">
+
+When ready to move on click <<button "Here">><<set $prevpass to $passage>><<set $prevpass to $passage>><<set $mod15 to true>><<goto "7modulelist">><</button>>
+</div>
+        <img src="assets/img/mod15-rev.jpg">
+ </main>
+     <<include "footer">>
+</div>
 
 
 :: 7mod15outro1 [nobr]
 <<set $prevpass to "7mod15a">>
 <<set $passage to "7mod15outro1">>
-<<set $nextpass to "7mod15outro2">>
-<audio src="assets/audio/SESSION7_MOD15_outro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $nextpass to "7modulelist">>
+<audio src="assets/audio/gpce1.5_SESSION7_MOD15_outro.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
       <div class="text-wrapper">
 <p>The power to abort is about honesty </p>
 
-<p>About looking at your plan, and at where you are </p>
-<p>And asking </p>
-<p>Is this the right thing to do? </p>
-<p>Is it right to do it now? </p>
-  <<timed 12s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+<p>When you have discussed this you may have some bits to get ready or change, so when you are ready to deliver, enter the codeword. </p>
+
+  <<timed 11s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
 </div>
 </main>
      <<include "footerskip">>
 </div>
 
-:: 7mod15outro2 [nobr]
-<<set $prevpass to "7mod15outro1">>
-<<set $passage to "7mod15outro2">>
-<<set $nextpass to "7mod15outro3">>
-<audio src="assets/audio/SESSION7_MOD15_outro_2.mp3" autoplay>Audio is not supported on your device</audio>
-<div class="wrapper">
-  <<include "header">>
-  <main class="speaking">
-      <div class="text-wrapper">
-<p>Success might not be what you expect </p>
-<p>Things can always go differently </p>
-<p>You can always decide to do something else </p>
-  <<timed 8s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
-</div>
-</main>
-     <<include "footerskip">>
-</div>
-
-:: 7mod15outro3 [nobr]
-<<set $prevpass to "7mod15outro2">>
-<<set $passage to "7mod15outro3">>
-<<set $nextpass to "7modulelist">>
-<audio src="assets/audio/SESSION7_MOD15_outro_3.mp3" autoplay>Audio is not supported on your device</audio>
-<div class="wrapper">
-  <<include "header">>
-  <main class="speaking">
-      <div class="text-wrapper">
-<p>Right, you may have some bits to get ready, so when you are ready to deliver, enter the codeword. </p>
-<p>You may be delivering at a different time though, so only enter the codeword when you are ready for delivery.  </p>
-  <<timed 12s>><<set $prevpass to $passage>><<goto $nextpass>><<set $mod15 to true>><</timed>>
-</div>
-</main>
-     <<include "footerskip">>
-</div>
 
 :: 7mod16intro1 [nobr]
 <<set $prevpass to "7modulelist">>
-<<set $passage to "7mod16intro1">>
-<<set $nextpass to "7mod16intro2">>
-<<set $module to "Module 16">><<include "checkmodulenamelist">>
-<audio src="assets/audio/SESSION7_MOD16_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
-<div class="wrapper">
-  <<include "header">>
-  <main class="speaking">
-      <div class="text-wrapper">
-<p>And so, we’re here </p>
-<p>It’s time for you to deliver your gift. </p>
-<p>This is your action, and you know what needs to happen next. </p>
-<p>I have a few final offers for you - </p>
-  <<timed 13s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
-</div>
-</main>
-     <<include "footerskip">>
-</div>
-
-:: 7mod16intro2 [nobr]
-<<set $prevpass to "7mod16intro1">>
-<<set $passage to "7mod16intro2">>
-<<set $nextpass to "7mod16intro3">>
-<audio src="assets/audio/SESSION7_MOD16_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
-<div class="wrapper">
-  <<include "header">>
-  <main class="speaking">
-      <div class="text-wrapper">
-<p>Remember the context </p>
-<p>Remember power </p>
-<p>Remember to play </p>
-<p>And good luck! </p>
-
-  <<timed 9s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
-</div>
-</main>
-     <<include "footerskip">>
-</div>
-
-:: 7mod16intro3 [nobr]
-<<set $prevpass to "7mod16intro2">>
 <<set $passage to "7mod16intro3">>
 <<set $nextpass to "complete">>
-<audio src="assets/audio/SESSION7_MOD16_intro_3.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/gpce1.5_SESSION7_MOD16_intro.mp3" autoplay>Audio is not supported on your device</audio>
 <<set $module to "Module 16">><<include "checkmodulenamelist">>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
     <div class="text-wrapper ">
+<p>And so, we’re here </p>
 
-<p>When you have <h2 class="subtitle inline">DELIVERED</h2> enter the codeword <h2 class="subtitle inline">COMPLETE</h2></p>
+<p>It’s time for you to deliver your gift. </p>
+<p>This is your action, and you know what needs to happen next. </p>
+
+<p>I have a few final offers for you - </p>
+<p>Remember the context</p> 
+<p>Remember power </p>
+<p>Remember to play </p>
+
+<p>And good luck! </p>
+<p>When you have deilvered, enter the codeword <h2 class="subtitle inline">COMPLETE</h2></p>
 <div id="codewordWrapper" class="codeword-wrapper">
   /% CODEWORD INPUT %/
       <div class="code-input">
@@ -4541,10 +4420,10 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<set $prev
 
 
 :: 7mod16outro1 [nobr]
-<<set $prevpass to "7mod16intro3">>
+<<set $prevpass to "7mod16intro1">>
 <<set $passage to "7mod16outro1">>
-<<set $nextpass to "7mod16outro2">>
-<audio src="assets/audio/SESSION7_MOD16_outro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $nextpass to "7sessionoutro1">>
+<audio src="assets/audio/gpce1.5_SESSION7_MOD16_outro.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
@@ -4559,51 +4438,45 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<set $prev
 
 <p>I’m pre-recorded, of course </p>
 
-<<timed 11s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
-
-</div>
- </main>
-     <<include "footerskip">>
-</div>
-
-:: 7mod16outro2 [nobr]
-<<set $prevpass to "7mod16intro1">>
-<<set $passage to "7mod16outro2">>
-<<set $nextpass to "7sessionoutro1">>
-<<set $module to "Module 16">><<include "checkmodulenamelist">>
-<audio src="assets/audio/SESSION7_MOD16_outro_2.mp3" autoplay>Audio is not supported on your device</audio>
-<div class="wrapper">
-  <<include "header">>
-  <main class="speaking">
-    <div class="text-wrapper" id="mount">
 <p>But I do know that whatever happened, </p>
-<p>And I mean whatever, </p>
+<p>And I mean whatever,</p> 
 <p>That what you did today, </p>
-<p>And what you’ve done over the past few weeks is the start of something </p>
+<p>
+  And what you’ve done over the past few weeks is the start of something
+  
+</p>
 
-<<timed 12s>><<set $prevpass to $passage>><<set $mod16 to true>><<set $skip to true>><<goto "7modulelist">><</timed>>
 
+
+<<timed 18s>><<set $prevpass to $passage>><<set $mod16 to true>><<set $skip to true>><<goto "7modulelist">><</timed>>
 </div>
  </main>
      <<include "footerskip">>
 </div>
+
 
 :: 7sessionoutro1 [nobr]
-<<set $prevpass to "7mod16outro2">>
+<<set $prevpass to "7mod16outro1">>
 <<set $passage to "7sessionoutro1">>
 <<set $nextpass to "7sessionoutro2">>
-<audio src="assets/audio/SESSION7_OUTRO_1.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/gpce1.5_SESSION7_OUTRO_1.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
     <div class="text-wrapper">
-<p>You delivered your gift today </p>
-<p>You completed your action </p>
 <p>Congratulations </p>
 <p>For all you’ve done today: </p>
-<p>For the impact that you’ll see, and for the impact you’ll never see </p>
+<p>For the impact that you’ll see, and for the impact you’ll never see.</p>
+<p>
+  On the way back from the Violet action, one of the Young Coneys, Amari, turned to me and she said something. She said: 
+  ‘I can’t believe we just did that’ 
+</p>
+<p>Her words have always stayed with me </p>
+<p>And over time I realised… this was an impact too </p>
+<p>The action was a gift to its recipient, but it was also a gift to some of the Young Coneys. </p>
+<p>And for every Amari who says something, there’s at least one other, who thinks but doesn’t speak </p>
 
-  <<timed 12s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+  <<timed 33s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
 </div>
   </main>
      <<include "footer">>
@@ -4613,57 +4486,38 @@ When finished click <<button "Move on">><<set $prevpass to $passage>><<set $prev
 <<set $prevpass to "7sessionoutro1">>
 <<set $passage to "7sessionoutro2">>
 <<set $nextpass to "7sessionoutro3">>
-<audio src="assets/audio/SESSION7_OUTRO_2.mp3" autoplay>Audio is not supported on your device</audio>
-<div class="wrapper">
-  <<include "header">>
-  <main class="speaking">
-    <div class="text-wrapper">
-<p>On the way back from the Violet action, one of the Young Coneys, Amari, turned to me and she said something. She said: </p>
-<p>‘I can’t believe we just did that’ </p>
-<p>Her words have always stayed with me </p>
-<p>And over time I realised… this was an impact too </p>
-<p>The action was a gift to its recipient, but it was also a gift to some of the Young Coneys. </p>
-<p>And for every Amari who says something, there’s at least one other, who thinks but doesn’t speak </p>
-
-  <<timed 32s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
-</div>
-  </main>
-     <<include "footer">>
-</div>
-
-:: 7sessionoutro3 [nobr]
-<<set $prevpass to "7sessionoutro2">>
-<<set $passage to "7sessionoutro3">>
-<<set $nextpass to "7sessionoutro4">>
-<audio src="assets/audio/SESSION7_OUTRO_3.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/gpce1.5_SESSION7_OUTRO_2.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
     <div class="text-wrapper">
 <p>I hope you can see the power of what you did today </p>
 <p>This is not the end, it’s just the beginning</p>
-<p>It is the end of this session though, and the end of your time with your Artist.  </p>
-<p>I’ll leave you to say goodbye. </p>
-  <<timed 13s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+<p>But not quite a farewell for us yet. </p>
+<p>It is from me, but you’ll receive a visitor next week. </p>
+<p>Toby will be with you again. </p>
+  <<timed 15s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
 </div>
   </main>
      <<include "footer">>
 </div>
 
-:: 7sessionoutro4 [nobr]
-<<set $prevpass to "7sessionoutro3">>
-<<set $passage to "7sessionoutro4">>
+
+
+:: 7sessionoutro3 [nobr]
+<<set $prevpass to "7sessionoutro2">>
+<<set $passage to "7sessionoutro3">>
 <<set $nextpass to "landing">>
-<audio src="assets/audio/SESSION7_OUTRO_4.mp3" autoplay>Audio is not supported on your device</audio>
+<audio src="assets/audio/gpce1.5_SESSION7_OUTRO_3.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
     <div class="text-wrapper">
 
-<p>But not quite a farewell for us yet. </p>
 <p>You’ll need one final codeword </p>
 <p>Text  <h2 class="subtitle inline">SUCCESS</h2> to find it </p>
-<p>I’ll see you then </p>
+<p>Thanks for listening to me. </p>
+<p>Thanks for playing. </p>
 
 <<button "Finish">><<audio "pyramidtransition_1" play >><<set $prevpass to $passage>><<goto $nextpass>><</button>>
 </div>
