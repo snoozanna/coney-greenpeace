@@ -259,6 +259,10 @@ nav {
   /* margin-bottom: -4rem; */
 }
 
+.nav-wrapper.space {
+justify-content: space-between;
+}
+
 .nav-wrapper.btns > .nav-item > button {
   color: black;
 }
@@ -277,6 +281,10 @@ footer.fixed > .nav-wrapper.btns {
 
 footer.fixed > .nav-wrapper > .nav-item.logo {
   margin: 0;
+}
+
+footer.space{
+  justify-content: space-between;
 }
 
 /* MODULE LIST */
@@ -1129,4 +1137,19 @@ triangleCon {
     border-bottom: 300px solid brown;
     margin-top: -300px;
   }
+}
+
+
+/* logos  */
+.logo-wrapper{
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  gap:3rem;
+  align-items: center;
+  margin-block-end: 3rem;
+}
+
+.logo-wrapper > img {
+  max-width: 20rem;
 }

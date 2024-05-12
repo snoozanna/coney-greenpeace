@@ -184,6 +184,22 @@ $(document.head).find('#style-ui-bar').remove();
   </div>
   </div></footer>
 
+:: footervidend [nobr]{"position":"100,375","size":"100,100"}
+<footer class="fixed space">
+ <div class="">
+   <div class="nav-wrapper ">
+    <div class="nav-item">
+    <<button "Back">><<goto $prevpass>><</button>>  </div>
+  </div>
+
+  </div>
+ <div class="nav-wrapper">
+   <div class="nav-wrapper  ">
+      <div class="nav-item">
+    <<button "Click here when done">><<set $prevpass to $passage>><<goto $nextpass>><</button>>  </div>
+  </div>
+  </div></footer>
+
 :: footercode [nobr]{"position":"100,375","size":"100,100"}
 <footer>
   <div class="nav-wrapper ">
@@ -473,7 +489,7 @@ $(document.head).find('#style-ui-bar').remove();
         <<replace "#coderesult">><h2 class="subtitle complete">Session 7</h2><</replace>>
         <<timed 2s>><<set $prevpass to $passage>><<set $audio to true>><<set $nextpass to "7kaiIntro1">><<goto "loading">><</timed>>
         <</if>>
-         <<if $codeword isnot "" and $codeword is "NOW">>
+         <<if $codeword isnot "" and $codeword is "VIOLET">>
            <<addclass "#topTriangle" "unlock">>
              <<audio "weirdnoise" play >>
         <<replace "#coderesult">><h2 class="subtitle complete">Session 8</h2><</replace>>
@@ -4532,170 +4548,22 @@ When ready to move on click <<button "Here">><<set $prevpass to $passage>><<set 
 :: 8kaiIntro1 [nobr]
 <<set $prevpass to "landing">>
 <<set $passage to "8kaiIntro1">>
-<<set $nextpass to "8kaiIntrob">>
-<<set $module to "Introduction">><<include "checkmodulenamelist">>
-<audio src="assets/audio/SESSION8_finalcompartment_1.mp3" autoplay>Audio is not supported on your device</audio>
-
-<div class="wrapper">
-  <<include "header">>
-
-  <main class="speaking">
- <h1 class="title ">Hi</h1>
-
-<div class="text-wrapper">
-<p>Well done on unlocking the Online Platform.</p>
-
-<p>There are no more sections in this Pyramid to unlock.</p>
-<p>No more surprises to find.</p>
-<p>We’ve dismantled it all.</p>
-
-    <<timed 14s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
-</div>
-</main>
-<<include "footerskip">>
-</div>
-
-
-:: 8kaiIntrob [nobr]
-<<set $prevpass to "8kaiIntro1">>
-<<set $passage to "8kaiIntrob">>
-<<set $nextpass to "8kaiIntroc">>
-<<set $module to "Introduction">><<include "checkmodulenamelist">>
-<audio src="assets/audio/SESSION8_finalcompartment_2.mp3" autoplay>Audio is not supported on your device</audio>
-
-<div class="wrapper">
-  <<include "header">>
-
-  <main class="speaking">
-<div class="text-wrapper">
-<p>Or perhaps we have been missing something.</p>
-<p>Hiding in plain sight.</p>
-<p>To be discovered when the time was right.</p>
-    <<timed 11s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
-</div>
-</main>
-<<include "footerskip">>
-</div>
-
-:: 8kaiIntroc [nobr]
-<<set $prevpass to "8kaiIntrob">>
-<<set $passage to "8kaiIntroc">>
-<<set $nextpass to "8kaiIntrod">>
-<<set $module to "Introduction">><<include "checkmodulenamelist">>
-<audio src="assets/audio/SESSION8_finalcompartment_3.mp3" autoplay>Audio is not supported on your device</audio>
-
-<div class="wrapper">
-  <<include "header">>
-
-  <main class="speaking">
-<div class="text-wrapper">
-<p>Now is that time.</p>
-    <<timed 5s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
-</div>
-</main>
-<<include "footerskip">>
-</div>
-
-:: 8kaiIntrod [nobr]
-<<set $prevpass to "8kaiIntroc">>
-<<set $passage to "8kaiIntrod">>
-<<set $nextpass to "8kaiIntro2">>
-<<set $module to "Introduction">><<include "checkmodulenamelist">>
-<audio src="assets/audio/SESSION8_finalcompartment_4.mp3" autoplay>Audio is not supported on your device</audio>
-
-<div class="wrapper">
-  <<include "header">>
-
-  <main class="speaking">
-<div class="text-wrapper">
-<p>Within the last compartment, one more gift.</p>
-<p>But now you’re the recipient</p>
-<p>Underneath the box is one last compartment.</p>
-<p>Enter 672 for your gift.</p>
-    <<button "Next">><<set $prevpass to $passage>><<goto $nextpass>><</button>>
-</div>
-</main>
-<<include "footerskip">>
-</div>
-
-:: 8kaiIntro2 [nobr]
-<<set $prevpass to "8kaiIntro1">>
-<<set $passage to "8kaiIntro2">>
-<<set $nextpass to "8kaiIntro3">>
-<audio src="assets/audio/SESSION8_INTRO_2.mp3" autoplay>Audio is not supported on your device</audio>
-<<set $module to "Introduction">>
-<div class="wrapper">
-  <<include "header">>
-  <main class="speaking">
-<div class="text-wrapper">
-<p>You might wear this gift to remind you that you’re a </p>
-<p><h2 class="subtitle inline">Playful Climate Activist</h2></p>
-    <<timed 7s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
-</div>
-</main>
-<<include "footerskip">>
-</div>
-
-:: 8kaiIntro3 [nobr]
-<<set $prevpass to "8kaiIntro2">>
-<<set $passage to "8kaiIntro3">>
-<<set $nextpass to "8kaiIntro4">>
-<audio src="assets/audio/SESSION8_INTRO_3.mp3" autoplay>Audio is not supported on your device</audio>
-
-<<set $module to "Introduction">>
-<div class="wrapper">
-  <<include "header">>
-  <main class="speaking">
-<div class="text-wrapper">
-<p>Or you might put it somewhere else, as it might not fit with your look, I get that!</p>
-    <<timed 6s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
-</div>
-</main>
-<<include "footerskip">>
-</div>
-
-:: 8kaiIntro4 [nobr]
-<<set $prevpass to "8kaiIntro3">>
-<<set $passage to "8kaiIntro4">>
-<<set $nextpass to "8kaiIntro5">>
-<audio src="assets/audio/SESSION8_INTRO_4.mp3" autoplay>Audio is not supported on your device</audio>
-
-<<set $module to "Introduction">>
-<div class="wrapper">
-  <<include "header">>
-  <main class="speaking">
-<div class="text-wrapper">
-<p>I’m wearing mine.  </p>
-<p>We all wear them because it’s something we do together </p>
-<p>As much as it was your action </p>
-<p>We were part of the team, the collective </p>
-    <<timed 10s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
-</div>
-</main>
-<<include "footerskip">>
-</div>
-
-:: 8kaiIntro5 [nobr]
-<<set $prevpass to "8kaiIntro4">>
-<<set $passage to "8kaiIntro5">>
 <<set $nextpass to "8modulelist">>
-<audio src="assets/audio/SESSION8_INTRO_5.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $module to "Introduction">><<include "checkmodulenamelist">>
+/* <audio src="assets/audio/SESSION8_finalcompartment_1.mp3" autoplay>Audio is not supported on your device</audio> */
 
-<<set $module to "Introduction">>
 <div class="wrapper">
-  <<include "header">>
-  <main class="speaking">
-<div class="text-wrapper">
-<p>We, Greenpeace & Coney, we wrote and spoke these words </p>
-<p>We asked you the questions </p>
-<p>We decided session by session what you’d do </p>
-<p>This was all of us. </p>
-<p>A module card is needed – there’s only one for this session. </p>
-    <<timed 17s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+  /* <<include "header">> */
+
+    <main  >
+        /* <div class="text-wrapper"> */
+       	<div id="video" role="video" aria-label=""><iframe src="https://player.vimeo.com/video/809464688?h=c6aec791bb&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:90%;" allowfullscreen title="greenpeace violet.mp4"></iframe></div>
+    </main>
+<<include "footervidend">>
 </div>
-</main>
-<<include "footerskip">>
-</div>
+
+
+
 
 
 
@@ -4709,9 +4577,9 @@ When ready to move on click <<button "Here">><<set $prevpass to $passage>><<set 
         <<set $skip to false>>
         <<goto $nextpass>>
       <</timed>>
-  <</if>>
     <<else>>
     <<audio "modulelist_1" play>>
+      <</if>>
 <</timed>>
 <div class="wrapper box">
   <main class="modules">
@@ -4772,190 +4640,69 @@ When ready to move on click <<button "Here">><<set $prevpass to $passage>><<set 
 :: 8mod17intro1 [nobr]
 <<set $prevpass to "8modulelist">>
 <<set $passage to "8mod17intro1">>
-<<set $nextpass to "8mod17introVid">>
-<audio src="assets/audio/SESSION8_MOD17_intro_1.mp3" autoplay>Audio is not supported on your device</audio>
+<<set $nextpass to "8sessionoutro">>
+
 <<set $module to "Module 17">><<include "checkmodulenamelist">>
   <div class="wrapper">
     <<include "header">>
     <main  class="speaking">
         <div class="text-wrapper">
-<p>It’s time to close the story of Violet </p>
+<ul>
+<li>Why did you decide to do the action?  </li>
+<li>What name did you choose?</li>
+<li>What did you choose as the focus?</li>
+<li>What did you learn about your focus at this school?</li>
+</ul>
 
-<p>The story that inspired this work with you. </p>
+<ul>
+<li>How was the gift made?</li>
+<li>Who was the gift for and what did you do to make the plan? </li>
+<li>Who made what and why?</li>
+<li>How did it come together?  </li>
+  
+</ul>
+<ul>
+<li>What happened with the delivery?</li>
+<li>What was the intended impact of the gift?</li>
+<li>How was it delivered? </li>
+<li>What happened next? </li>
+</ul>
 
-<p>I wanted to end with a video</p>
-
-<p>A video of violet. </p>
-
-<p>That holds the story we shared. </p>
-
- <<timed 12s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
+<br/><br/>
+ <<timed 12s>><p>When ready click <<button "Move On">><<set $prevpass to $passage>><<goto $nextpass>><</button>></p><</timed>>
    </div>
     </main>
-         <<include "footerskip">>
+         <<include "footer">>
   </div>
 
 
 
-:: 8mod17introVid [nobr]
+
+:: 8sessionoutro [nobr]
 <<set $prevpass to "8mod17intro1">>
-<<set $passage to "8mod17introVid">>
-<<set $nextpass to "8mod17intro2">>
-  <div class="wrapper">
-    /* <<include "header">> */
-    <main  >
-        /* <div class="text-wrapper"> */
-        	<div id="video" role="video" aria-label=""><iframe src="https://player.vimeo.com/video/809464688?h=c6aec791bb&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:90%;" allowfullscreen title="greenpeace violet.mp4"></iframe></div>
-    </main>
-         <<include "footervid">>
-  </div>
+<<set $passage to "8sessionoutro">>
+<<set $nextpass to "landing">>
 
-:: 8mod17intro2 [nobr]
-<<set $prevpass to "8mod17introVid">>
-<<set $passage to "8mod17intro2">>
-<<set $nextpass to "8mod17intro3">>
-<audio src="assets/audio/SESSION8_MOD17_intro_2.mp3" autoplay>Audio is not supported on your device</audio>
-<<set $module to "Module 17">><<include "checkmodulenamelist">>
-  <div class="wrapper">
-    <<include "header">>
-    <main  class="speaking">
-        <div class="text-wrapper">
-<p>What did you think? It is one of my proudest days and the video sums it up perfectly. </p>
-
-<p>And just as I told you the Story of Violet</p>
-
-<p>You’ll now have your story to tell…  </p>
-
- <<timed 14s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
-   </div>
-    </main>
-         <<include "footerskip">>
-  </div>
-
-:: 8mod17intro3 [nobr]
-<<set $prevpass to "8mod17intro2">>
-<<set $passage to "8mod17intro3">>
-<<set $nextpass to "8mod17intro4">>
-<audio src="assets/audio/SESSION8_MOD17_intro_3.mp3" autoplay>Audio is not supported on your device</audio>
-<<set $module to "Module 17">><<include "checkmodulenamelist">>
-  <div class="wrapper">
-    <<include "header">>
-    <main  class="speaking">
-        <div class="text-wrapper">
-<p>It starts by telling the inspiration – the problem – the why. </p>
-
-<p>It moves into talking about how we made the Gift. </p>
-
-<p>Then it shares some of the moments of the Gift delivery. </p>
-
- <<timed 13s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
-   </div>
-    </main>
-         <<include "footerskip">>
-  </div>
-
-:: 8mod17intro4 [nobr]
-<<set $prevpass to "8mod17intro2">>
-<<set $passage to "8mod17intro4">>
-<<set $nextpass to "8sessionoutro1">>
-<audio src="assets/audio/SESSION8_MOD17_intro_4.mp3" autoplay>Audio is not supported on your device</audio>
-<<set $module to "Module 17">><<include "checkmodulenamelist">>
-  <div class="wrapper">
-    <<include "header">>
-    <main  class="speaking">
-        <div class="text-wrapper">
-<p>That’s what I want you to do, as your last task here.</p> 
-<p>You don’t need it to be a film and you can make it your own. </p>
-<p>You know, use some of those Mundane Making Skills. </p>
-
-<p>Teacher, I’ll hand over to you. </p>
-
-<p>When you are ready to move on click  <<button "Next">><<set $prevpass to $passage>><<goto $nextpass>><</button>>  </p>
-   </div>
-    </main>
-         <<include "footerskip">>
-  </div>
-
-
-
-
-
-:: 8sessionoutro1 [nobr]
-<<set $prevpass to "8mod17intro4">>
-<<set $passage to "8sessionoutro1">>
-<<set $nextpass to "8sessionoutro2">>
-<audio src="assets/audio/SESSION8_OUTRO_1.mp3" autoplay>Audio is not supported on your device</audio>
-<div class="wrapper">
-  <<include "header">>
-  <main class="speaking">
-    <div class="text-wrapper">
-<p>And so here we are at the end of the end. </p>
-
-<p>Thank you all </p>
-
-<p>But I won’t say goodbye yet – TWIST! </p>
-<p>I’ll give you an invitation instead </p>
-<p>To a Symposium at Greenpeace HQ</p>
-<p>With other groups who’ve been on a journey like yours </p>
-
-<<timed 17s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
-</div>
-  </main>
-     <<include "footerskip">>
-</div>
-
-:: 8sessionoutro2 [nobr]
-<<set $prevpass to "8sessionoutro1">>
-<<set $passage to "8sessionoutro2">>
-<<set $nextpass to "8sessionoutro3">>
-<audio src="assets/audio/SESSION8_OUTRO_2.mp3" autoplay>Audio is not supported on your device</audio>
 <div class="wrapper">
   <<include "header">>
   <main class="speaking">
     <div class="text-wrapper">
 
-<p>Because as you’ve been doing this, </p>
-
-<p>There have been other playful activists planning and making their own actions and delivering their own gifts. </p>
-
-<p>Soon, we’re going to invite you to all be together </p>
-
-<p>To meet and share the journey you’ve been on and the story of the action you created </p>
-
-<p>I’ll see you there. </p>
-
-<<timed 18s>><<set $prevpass to $passage>><<goto $nextpass>><</timed>>
-</div>
-  </main>
-     <<include "footerskip">>
-</div>
-
-:: 8sessionoutro3 [nobr]
-<<set $prevpass to "8sessionoutro2">>
-<<set $passage to "8sessionoutro3">>
-<<set $nextpass to "8sessionoutro4">>
-<audio src="assets/audio/SESSION8_OUTRO_3.mp3" autoplay>Audio is not supported on your device</audio>
-<div class="wrapper">
-  <<include "header">>
-  <main class="speaking">
-    <div class="text-wrapper">
-
-<p>For now, can I say </p>
-
-<p>You’ve done a great thing </p>
-
-<p>And it has been a great thing to be part of your collective action </p>
-
-<p>Even pre-recorded! </p>
-
-<p>And one final message: </p>
+<p>Your final message: </p>
 
 <p>Send <h2 class="subtitle inline">START</h2> to get the message. </p>
 
 <p>Thank you and goodbye Playful Activists </p>
 
+
+<div class="logo-wrapper">
+  <img src="assets/img/coney-logo.jpg"/>
+  <img src="assets/img/Greenpeace_logo.svg.png"/>
+</div>
+<br/><br/>
 <<button "Finish">><<audio "pyramidtransition_1" play >><<set $prevpass to $passage>><<goto "landing">><</button>>
 </div>
+
   </main>
      <<include "footer">>
 </div>
